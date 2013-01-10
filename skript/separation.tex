@@ -1,0 +1,661 @@
+%
+% c02-separation.tex
+%
+% (c) 2008 Prof Dr Andreas Mueller
+% $Id: c02-separation.tex,v 1.3 2008/09/13 23:01:45 afm Exp $
+%
+\lhead{Separation der Variablen}
+\rhead{}
+\chapter{Separation der Variablen\label{chapter-separation}}
+Beleuchtet man eine Schwingende Saite mit einem Stroboskop mit der
+Frequenz der Eigenschwingung, scheint die Saite stillzustehen. 
+In periodischen Zeit\-ab\-st"an\-den sieht die L"osung der Wellengleichung
+also gleich aus.
+Misst man andererseits die Auslenkung der Saite
+an einer Stelle in Abh"angigkeit von der Zeit, beobachtet man
+eine harmonische Schwingung, die sich mit Hilfe von $\sin$- und
+$\cos$-Funktionen beschreiben l"asst. Man kann also vermuten,
+dass die L"osung der Wellengleichung der schwingenden Saite
+ein Produkt
+$$u(x,t)=X(x)\cdot\sin\omega t\quad\text{oder}\quad X(x)\cdot\cos\omega t.$$
+ist. Ziel dieses Kapitels ist, diese Idee zu einem L"osungsverfahren
+weiterzuwentickeln und auf einige Differentialgleichungen anzuwenden.
+
+\section{Schwingende rechteckige Membran}
+\rhead{Rechteckige Membran}
+Wir betrachten die Schwingung einer rechteckigen Membran, die am Rande
+des Gebietes
+$$R=\{(x,y)|0\le x\le a,0\le y\le b\} =[0,a]\times[0,b]$$
+eingespannt ist. Zur Zeit $t=0$ sei die Form der Membran durch die
+Funktion $f(x,y)$ gegeben.
+F"ur beliebige Zeit $t\ge 0$ wird sie beschrieben durch eine Funktion $u(x,y,t)$,
+welche der Differentialgleichung
+$$\frac1{c^2}\frac{\partial^2u}{\partial t^2}=\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}$$
+mit den Anfangsbedingungen
+\begin{align*}
+u(x,y,0)&=f(x,y)\quad\forall 0\le x\le a,0\le y\le b
+\\
+\frac{\partial}{\partial t}u(x,y,0)&=g(x,y)\quad\forall 0\le x\le a,0\le y\le b
+\end{align*}
+und den Randbedingungen
+\begin{align*}
+u(0,y,t)&=0&u(a,y,t)&=0&\forall t\ge 0,0\le y\le b\\
+u(x,0,t)&=0&u(x,b,t)&=0&\forall t\ge 0,0\le x\le a
+\end{align*}
+
+\subsection{Separation der Zeit}
+Nach der in der Einleitung motivierten Idee suchen wir L"osungen also
+Produkt einer Funktion $T(t)$, die nur von der Zeit abh"angt, und einer Funktion
+$\varphi(x,y)$, welche nur vom Ort abh"angt, also
+$$u(x,y,t)=T(t)\cdot\varphi(x,y).$$
+Leider kann ein einzelnes solches Produkt nicht alle Anfangsbedingungen
+erf"ullen. W"are dies n"amlich m"oglich, m"usste $\varphi(x,y)\sim f(x,y)$
+sein und alle Teile der Membran w"urden im Gleichtakt hin und her schwingen.
+Simulationen oder physikalische Experimente zeigen aber, dass es
+Anfangsbedingungen gibt, bei denen die Teile der Membran gegenl"aufig
+schwingen.
+
+Anderseits, muss die L"osung auf jeden Fall die Randedingung erf"ullen,
+es muss also gelten
+\begin{align*}
+\varphi(0,y)&=0&\varphi(a,y)&=0&0\le y\le b\\
+\varphi(x,0)&=0&\varphi(x,b)&=0&0\le x\le a
+\end{align*}
+Setzen wir diesen Ansatz f"ur $u$ in der Wellengleichung ein,
+erhalten wir
+$$\frac1{c^2}T''(t)\varphi(x,y)=T(t)\left(
+\frac{\partial^2\varphi}{\partial x^2}
++
+\frac{\partial^2\varphi}{\partial y^2}
+\right)
+$$
+Wir suchen eine Funktion $u$, die nicht identisch verschwindet,
+es gibt also einige Zeitpunkte $t$ und Orte $(x,y)$, an denen $T(t)$
+und $\varphi(x,y)$ nicht verschwinden. An diesen Stellen kann man die
+Gleichung umformen in
+\begin{equation}
+\frac1{c^2}\frac{T''(t)}{T(t)}
+= \frac1{\varphi(x,y)}\left( \frac{\partial^2\varphi}{\partial x^2}
++ \frac{\partial^2\varphi}{\partial y^2} \right)
+\label{separiert}
+\end{equation}
+Die rechte Seite h"angt nur
+vom Ort ab, darf sich also nicht "andern, wenn man die Zeit $t$ variert.
+Als Funktion von der Zeit muss die linke Seite also eine Konstante sein,
+es gibt also ein $\lambda$ mit der Eigenschaft
+$$\frac1{c^2}\frac{T''(t)}{T(t)}=-\lambda^2$$
+oder
+$$T''(t)=-c^2\lambda^2 T(t).$$
+Dies ist eine gew"ohnliche Differentialgleichung zweiter Ordnung, welche mit
+bekannten Methoden gel"ost werden kann.
+Die allgemeine L"osung dieser Gleichung ist von der Form
+$$A\cos c\lambda t+B\sin c\lambda t.$$
+
+\subsection{Reduktion auf ein Eigenwertproblem}
+Die linke Seite von (\ref{separiert}) h"angt nur von der Zeit ab, darf sich
+also nicht "andern, wenn man $x$ oder $y$ variert. Als Funktion des Ortes
+muss die rechte Seite also ebenfalls konstant sein:
+\begin{align*}
+\frac1{\varphi(x,y)}\left(
+\frac{\partial^2\varphi}{\partial x^2}
++
+\frac{\partial^2\varphi}{\partial y^2}
+\right)&=-\lambda^2\\
+\frac{\partial^2\varphi}{\partial x^2}
++
+\frac{\partial^2\varphi}{\partial y^2}
+=\Delta\varphi
+&=-\lambda^2
+\varphi(x,y)
+\end{align*}
+Die gesuchte Funktion $\varphi$ ist also ein Eigenvektor des linearen
+Operators $\Delta$ zum Eigenwert $-\lambda^2$.
+Nur die Eigenwerte des Operator $\Delta$ kommen also f"ur die
+Zeitabh"angigkeitsgleichung in Frage.
+
+\subsection{Separation von $x$ und $y$}
+F"ur das Eigenwertproblem k"onnen wir erneut den Separationsansatz
+$$\varphi(x,y)=X(x)\cdot Y(x)$$
+versuchen.
+Einsetzen in die Differentialgleichung ergibt
+\begin{align*}
+X''(x)Y(x)+X(x)Y''(y)&=-\lambda^2 X(x)Y(y)
+\\
+\frac{X''(x)}{X(x)}+\frac{Y''(y)}{Y(y)}&=-\lambda^2
+\end{align*}
+Jeder der Br"uche h"angt nur von jeweils einer Variable ab, was nur
+m"oglich ist, wenn beide Terme konstant sind. Damit ist das Problem
+reduziert auf zwei Gleichungen
+\begin{align*}
+X''(x)&=-\lambda_1^2X(x)\\
+Y''(y)&=-\lambda_2^2Y(y)\\
+\lambda_1^2+\lambda_2^2&=\lambda^2
+\end{align*}
+Die allgemeinen L"osungen dieser Gleichungen, die auch die Randbedingung
+bei $x=0$ bzw.~$y=0$ erf"ullt, sind
+\begin{align*}
+X(x)&=A\sin \lambda_1x\\
+Y(y)&=B\sin \lambda_2y
+\end{align*}
+Die Randbedingungen f"ur $x=a$ und $y=b$ k"onnen nur erf"ullt werden,
+wenn $\lambda_1a$ und $\lambda_2b$ Vielfache von $\pi$ sind, also
+$$\lambda_1=\frac{k\pi}a
+\qquad
+\text{und}
+\qquad
+\lambda_2=\frac{l\pi}b
+$$
+Die m"oglichen Werte von $\lambda$ sind also
+$$\lambda_{kl}^2=\left(\frac{k^2}{a^2} + \frac{l^2}{b^2}\right)\pi^2,\qquad k,l\in\mathbb Z$$
+Damit kann man jetzt die allgemeine L"osung des Schwingungsproblems aus den
+Teill"osungen f"ur das Eigenwertproblem
+$$
+\varphi_{kl}(x,y)=\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y
+$$
+und den Teill"osungen f"ur das zeitabh"angige Problem
+$$
+u_{kl}(x,y,t)
+=
+(A_{kl}\cos c\lambda_{kl} t+
+B_{kl}\sin c\lambda_{kl} t)
+\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y
+$$
+zu einer allgemeinen L"osung zusammensetzen
+\begin{equation}
+u(x,y,t)=\sum_{k,l}
+(A_{kl}\cos c\lambda_{kl} t+
+B_{kl}\sin c\lambda_{kl} t)
+\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y
+\label{allgemeineloesung}
+\end{equation}
+
+\subsection{Anfangsbedingungen}
+Die allgemeine L"osung muss jetzt auch noch die Anfangsbedingung erf"ullen:
+\begin{align*}
+\sum_{k,l}A_{kl}
+\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y&=f(x,y)\\
+\sum_{k,l}B_{kl}c\lambda_{kl}
+\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y&=g(x,y)\\
+\end{align*}
+Die Koeffizienten $A_{kl}$ und $B_{kl}$ k"onnen mit Hilfe der Theorie
+der Fourierreihen berechnet werden.
+
+\section{Kreisgebiet}
+\rhead{Kreisgebiet}
+In diesem Abschnitt betrachten wir eine Kreisscheibe
+$$G=\{(x,y)\in\mathbb R^2|x^2+y^2\le R\}$$
+mit Radius $R$ als Definitionsbereich. Da sich dieses Gebiet durch
+eine Streckung um den Faktor $\frac1R$ immer auf einen Einheitskreis
+abbilden l"asst, k"onnen wir ohne Verlust an Allgemeinheit vorausetzen,
+dass $R=1$ ist.
+
+Ein Kreisgebiet tritt zum Beispiel beim Problem auf, die Schwingungen
+einer kreisf"ormigen Membran zu berechnen, wie sie bei einer Kesselpauke
+vorkommen. Nach den Ergebnissen des ersten Kapitels suchen wir nach einer
+Funktion $u$, welche auf $G$ die Gleichung
+$$\frac1{a^2}\frac{\partial^2 u}{\partial t^2}=\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}$$
+erf"ullt. Wie bei der Schwingung der einer rechteckigen Platte
+wird daraus mit dem Ansatz $ u(x,y,t)=u(x,y)\cdot T(t)$ ein
+Eigenwertproblem:
+\begin{align*}
+T''(t)&=-a^2\lambda^2 T(t)\\
+\Delta u(x,y)&=-\lambda^2u(x,y)
+\end{align*}
+Das Poissonproblem ist der Spezialfall $\lambda=0$.
+
+\subsection{Polarkoordinaten}
+Offenbar sind Polarkoordinaten speziell gut an das Problem angepasst, 
+eine Randbedingung l"asst sich zum Beispiel durch eine Funktion beschreiben,
+welche nur vom Polarwinkel abh"angt.
+Eine schwingende kreisf"ormite Membran f"uhrt also auf die partielle
+Differentialgleichung
+$$\frac{\partial^2u(r,\varphi)}{\partial t^2}=\Delta u(r,\varphi)$$
+mit der Randbedingung
+$$
+u(R,\varphi)=0,\qquad\varphi\in[0,2\pi],
+$$
+wobei wie oben $R$ der Radius der Membran ist.
+
+Damit das Problem auf einem Kreisgebiet in Polarkoordinaten behandelt
+werden kann,
+brauchen wir einen Ausdruck f"ur $\Delta u$ in Polarkoordinaten.
+\begin{align}
+x&=r\cos\varphi\\
+y&=r\sin\varphi
+\label{polarkoordinaten}
+\end{align}
+Um die Ableitungen nach $x$ und $y$ durch Ableitungen $\varphi$ und $r$ zu
+ersetzen, leiten wir (\ref{polarkoordinaten}) nach $x$ und $y$ ab:
+\begin{align*}
+1&=
+\frac{\partial r}{\partial x}\cos\varphi
+-r\sin\varphi \frac{\partial\varphi}{\partial x}
+&
+0&=
+\frac{\partial r}{\partial y}\cos\varphi
+-r\sin\varphi \frac{\partial\varphi}{\partial y}
+\\
+0&=
+\frac{\partial r}{\partial x}\sin\varphi
++r\cos\varphi \frac{\partial\varphi}{\partial x}
+&
+1&=
+\frac{\partial r}{\partial y}\sin\varphi
++r\cos\varphi \frac{\partial\varphi}{\partial y}
+\end{align*}
+In Matrixschreibweise ist dies
+\begin{align*}
+\begin{pmatrix}1\\0\end{pmatrix}
+&=
+\begin{pmatrix}
+\cos\varphi&-\sin\varphi\\
+\sin\varphi&\cos\varphi
+\end{pmatrix}
+\begin{pmatrix}
+\frac{\partial r}{\partial x}\\
+r\frac{\partial \varphi}{\partial x}
+\end{pmatrix}
+&
+\begin{pmatrix}0\\1\end{pmatrix}
+&=
+\begin{pmatrix}
+\cos\varphi&-\sin\varphi\\
+\sin\varphi&\cos\varphi
+\end{pmatrix}
+\begin{pmatrix}
+\frac{\partial r}{\partial y}\\
+r\frac{\partial \varphi}{\partial y}
+\end{pmatrix}
+\end{align*}
+Die $2\times2$ Matrix ist eine Drehmatrix, die Inverse findet man, indem man
+$\varphi$ durch $-\varphi$ ersetzt. Die Multiplikation auf der linken Seite
+ergibt jeweils die erste bzw. zweite Spalte der Drehmatrix zum
+Winkel $\varphi$:
+\begin{align*}
+\cos\varphi
+&=\frac{\partial r}{\partial x}
+&&
+&
+\sin\varphi
+&=
+\frac{\partial r}{\partial y}
+&&
+\\
+-\sin\varphi
+&=r\frac{\partial \varphi}{\partial x}
+&\Rightarrow\quad
+\frac{\partial\varphi}{\partial x}&=-\frac1r\sin\varphi
+&
+\cos\varphi
+&=
+r\frac{\partial\varphi}{\partial y}
+&\Rightarrow\quad
+\frac{\partial\varphi}{\partial y}&=\frac1r\cos\varphi
+\end{align*}
+Mit diesen Formeln k"onnen wir jetzt die h"oheren Ableitungen
+von $u$ nach  $x$ und $y$ durch Ableitungen nach $r$ und $\varphi$
+ersetzen.
+
+Die partiellen Ableitungen von $\varphi$ nach $x$ und $y$ sind
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
+\frac{\partial u}{\partial r}
+\frac{\partial r}{\partial x}
++
+\frac{\partial u}{\partial\varphi}
+\frac{\partial \varphi}{\partial x}
+=
+\frac{\partial u}{\partial r}
+\cos\varphi
+-
+\frac{\partial u}{\partial\varphi}
+\frac1r\sin\varphi
+\\
+\frac{\partial u}{\partial y}
+&=
+\frac{\partial u}{\partial r}
+\frac{\partial r}{\partial y}
++
+\frac{\partial u}{\partial\varphi}
+\frac{\partial \varphi}{\partial y}
+=
+\frac{\partial u}{\partial r}
+\sin\varphi
++
+\frac{\partial u}{\partial\varphi}
+\frac1r\cos\varphi
+\end{align*}
+Die zweiten Ableitungen sind
+\begin{align*}
+\frac{\partial^2u}{\partial x^2}
+&=
+\frac{\partial}{\partial r}
+\left(
+\frac{\partial u}{\partial r}
+\cos\varphi
+-
+\frac{\partial u}{\partial\varphi}
+\frac1r\sin\varphi
+\right)
+\frac{\partial r}{\partial x}
++
+\frac{\partial }{\partial \varphi}
+\left(
+\frac{\partial u}{\partial r}
+\cos\varphi
+-
+\frac{\partial u}{\partial\varphi}
+\frac1r\sin\varphi
+\right)
+\frac{\partial\varphi}{\partial x}
+\\
+&=
+\frac{\partial}{\partial r}
+\left(
+\frac{\partial u}{\partial r}
+\cos\varphi
+-
+\frac{\partial u}{\partial\varphi}
+\frac1r\sin\varphi
+\right)
+\cos\varphi
+-
+\frac{\partial }{\partial \varphi}
+\left(
+\frac{\partial u}{\partial r}
+\cos\varphi
+-
+\frac{\partial u}{\partial\varphi}
+\frac1r\sin\varphi
+\right)
+\frac1r\sin\varphi
+\\
+&=
+\frac{\partial^2u}{\partial r^2} \cos^2\varphi
+-
+\frac{\partial^2u}{\partial r\partial\varphi} \frac1r\sin\varphi \cos\varphi
++
+\frac{\partial u}{\partial\varphi} \frac1{r^2}\sin\varphi\cos\varphi
+\\
+&\quad
+-
+\frac{\partial^2u}{\partial\varphi\partial r}\frac1r \cos\varphi\sin\varphi
++\frac{\partial u}{\partial r}\frac1r\sin^2\varphi
++\frac{\partial^2u}{\partial\varphi^2}
+\frac1{r^2}\sin^2\varphi
++\frac{\partial u}{\partial\varphi}\frac1{r^2}\cos\varphi\sin\varphi
+\\
+\frac{\partial^2u}{\partial y^2}
+&=
+\frac{\partial}{\partial r}
+\left(
+\frac{\partial u}{\partial r}
+\sin\varphi
++
+\frac{\partial u}{\partial\varphi}
+\frac1r\cos\varphi
+\right)
+\frac{\partial r}{\partial y}
++
+\frac{\partial}{\partial \varphi}
+\left(
+\frac{\partial u}{\partial r}
+\sin\varphi
++
+\frac{\partial u}{\partial\varphi}
+\frac1r\cos\varphi
+\right)
+\frac{\partial \varphi}{\partial y}
+\\
+&=
+\frac{\partial}{\partial r}
+\left(
+\frac{\partial u}{\partial r}
+\sin\varphi
++
+\frac{\partial u}{\partial\varphi}
+\frac1r\cos\varphi
+\right)
+\sin\varphi
++
+\frac{\partial}{\partial \varphi}
+\left(
+\frac{\partial u}{\partial r}
+\sin\varphi
++
+\frac{\partial u}{\partial\varphi}
+\frac1r\cos\varphi
+\right)
+\frac1r\cos\varphi
+\\
+&=
+\frac{\partial^2u}{\partial r^2}\sin^2\varphi
++\frac{\partial^2u}{\partial r\partial\varphi}\frac1r\cos\varphi\sin\varphi
+-\frac{\partial u}{\partial\varphi}\frac1{r^2}\cos\varphi\sin\varphi
+\\
+&\quad
++
+\frac{\partial^2u}{\partial\varphi\partial r}\frac1r\sin\varphi\cos\varphi
++\frac{\partial u}{\partial r}\frac1r\cos^2\varphi
++\frac{\partial^2u}{\partial \varphi^2}\frac1{r^2}\cos^2\varphi
+-\frac{\partial u}{\partial \varphi}\frac1{r^2}\sin\varphi\cos\varphi
+\end{align*}
+Die Summe dieser zwei Terme ist die gesucht Darstellung des Laplace-Operators
+in Polarkoordinaten:
+\begin{align*}
+\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}
+&=
+\frac{\partial^2u}{\partial r^2}
++\frac{\partial u}{\partial r}\frac1r
++\frac{\partial^2u}{\partial\varphi^2}\frac1{r^2}
+\\
+&=
+\left(\frac1r\frac{\partial}{\partial r}r\frac{\partial}{\partial r}u+\frac1{r^2}\frac{\partial^2}{\partial \varphi^2}\right)u
+\end{align*}
+Darstellungen des Laplace-Operators in weiteren Koordinatensystemen k"onnen
+in jeder einigermassen vollst"andigen Formelsammlung gefunden werden.
+
+\subsection{Separation der Ortsvariablen}
+Die L"osung des Eigenwertproblems setzen wieder wieder Produkt einer Funktion
+$R(r)$
+nur von  $r$ und einer Funktion $\Phi(\varphi)$ nur von $\varphi$
+ansetzen.
+Mit der im vorangegangenen Abschnitt gefundenen Formel f"ur den Laplace-Operator
+in Polarkoordinaten erhalten wir jetzt die Gleichungen
+\begin{align*}
+\Delta u=
+\left(R''(r) + \frac1rR'(r)\right)\Phi(\varphi)
++\frac1{r^2}R(r)\Phi''(\varphi)&=-\lambda^2 R(r)\cdot\Phi(\varphi)\\
+\frac{r^2R''(r)+rR'(r)}{R(r)}+\frac{\Phi''(\varphi)}{\Phi(\varphi}
+&=-\lambda^2 r^2
+\\
+\frac{r^2R''(r)+rR'(r)}{R(r)}+\lambda^2 r^2&=-\frac{\Phi''(\varphi)}{\Phi(\varphi)}
+\end{align*}
+Da die rechte Seite nur von $\varphi$ abh"angt, die linke Seite aber nur von $r$,
+m"ussen beide Seiten konstant sein, wir nennen diese Konstante $\mu^2$.
+Damit sind die Variablen separiert:
+\begin{align}
+\Phi''(\varphi)+\mu^2\Phi(\varphi)&=0\label{phigleichung}\\
+r^2R''(r)+rR'(r)+(\lambda^2 r^2-\mu^2)R(r)&=0\label{rgleichung}
+\end{align}
+
+\subsection{L"osung der separierten Differentialgleichungen}
+Die allgemeine L"osung der Gleichung (\ref{phigleichung}) ist
+$$\Phi(\varphi)=A\cos\mu\varphi +B\sin\mu\varphi.$$
+Dies ist nur dann $2\pi$-periodisch, wenn $\mu$ eine ganze
+Zahl ist, also $\mu=k$ mit $k\in\mathbb Z$.
+
+Die Gleichung (\ref{rgleichung}) f"ur $R$ bekommt damit die Form
+$$r^2R''(r)+rR'(r)+(\lambda^2 r^2-k^2)R(r)=0,$$
+sie ist verwandt mit der Besselschen Differentialgleichung.
+Die Funktion $P(\varrho)=R(\varrho/\lambda)=R(r)$ hat die Ableitungen
+\begin{align*}
+\varrho P'(\varrho)&=\frac{\varrho}{\lambda}R'(\varrho/\lambda)=rR'(r)\\
+\varrho^2 P''(\varrho)&=\frac{\varrho^2}{\lambda^2}R'(\varrho/\lambda)=r^2R''(r)
+\end{align*}
+und erf"ullt somit die Besselsche Differentialgleichung
+$$\varrho^2P''(\varrho)+\varrho P'(\varrho)+(\varrho^2-k^2)P(\varrho).$$
+L"osungen der Besselschen Differentialgleichungen sind die Besselfunktionen
+$$P(\varrho)=J_{\pm k}(\lambda r)=R(r)$$
+Wie bei der rechteckigen Membran kann die allgemeine L"osung jetzt aus
+den Teill"osungen zusammengesetzt werden.
+
+\rhead{Anfangsbedingungen}
+\section{Anfangsbedingungen}
+In den bisherigen Beispielen haben wir L"osungen einer partiellen
+Differentialgleichung gesucht und gefunden, welche bestenfalls einen
+Teil der Randbedingungen erf"ullt haben.
+So haben wir zwar sichergestellt, dass die schwingende Membran eingespannt
+bleibt, aber die Auslenkung der Membran zu Beginn haben wir ignoriert.
+
+Um zu verstehen, wie die Anfangsbedingungen ebenfalls ber"ucksichtig
+werden k"onnen, betrachten wir die Wellengleichung
+$$\frac{\partial^2 u}{\partial t^2}=\frac{\partial^2 u}{\partial x^2}$$
+auf dem Gebiet $(t,x)\in\mathbb R\times [0,\pi]$
+mit den Randbedingungen
+$$u(t,0)=u(t,\pi)=0.$$
+Wir verwenden den Separationsansatz
+$u(t,x)=T(t)\cdot X(t)$, welcher uns wie fr"uher dargestellt auf eine
+Gleichung
+$$\frac{T''(t)}{T(t)}=\frac{X''(x)}{X(x)}=-\lambda^2$$
+f"uhrt.
+Die Gleichung 
+$$X''(x)=-\lambda^2 X(x)$$
+hat als L"osung linearkombination von Sinus- und Kosinusfunktionen
+$$X(x)=A\cos\lambda x+B\sin\lambda x.$$
+Damit die Anfangsbedingung am linken Rand erf"ullt ist, muss $A=0$
+sein. Am rechten Rand bleibt daher nur $B\sin\lambda \pi$, und wir
+m"ussen $B\ne 0$ annehmen, da sonst die ganze L"osung verschwinden
+w"urde. $\sin\lambda \pi$ wird aber nur dann verschwinden, wenn
+$\lambda$ eine ganze Zahl ist, also
+$$X_k(x)=B\sin kx, \quad 0<k\in\mathbb Z.$$
+Die dazu passende L"osung von $T''(t)=-k^2T(t)$ hat genau die
+gleiche Form, so dass die allgemeine L"osung zum Wert $\lambda=k$
+$$u_k(t,x)=\sin kx\left(A_k\cos kt+B_k\sin kt\right)$$
+ist.
+
+Diese Teill"osungen $u_k(t,x)$ erf"ullen bereits die Differentialgleichung
+und die Randbedingungen. Noch nicht erf"ullt werden die Anfangsbedingungen
+zur Zeit $t=0$. Wir geben sie in der Form
+\begin{align*}
+u(0,x)&=f(x)\quad x\in[0,\pi]\\
+\frac{\partial u}{\partial t}(0,x)&=g(x)\quad x\in[0,\pi]
+\end{align*}
+vor.
+
+Wir suchen jetzt also eine L"osung in der Form
+$$u(t,x)=\sum_{k=1}^{\infty}
+\left(A_k\cos kt+B_k\sin kt\right)
+\sin kx,
+$$
+welche die Anfangsbedingung erf"ullt. Durch Einsetzen erh"alt
+man
+\begin{align*}
+\sum_{k=1}^{\infty}
+A_k \sin kx
+&=f(x)
+\\
+\sum_{k=1}^{\infty}
+B_kk\sin kx
+&=g(x)
+\end{align*}
+f"ur $x\in[0,\pi]$.
+Die L"osung $u(t,x)$ kann also vollst"andig bestimmt werden, indem man
+die Anfangsbedingungen in eine Fourier-$\sin$-Reihe entwickelt. Sind
+$\hat f(k)$ und $\hat g(k)$ die Fourier-Koeffizienten, wird die
+vollst"andige L"osung
+$$ u(t,x)
+=
+\sum_{k=1}^{\infty}(\hat f(k)\cos kt+\hat g(k)k\sin kt)\sin kx.
+$$
+Mit geeigneten Voraussetzungen an die Funktionen $f$ und $g$ werden
+diese Reihen konvergieren.
+
+\section{Allgemeines Prinzip}
+Aus diesen Beispielen l"asst sich jetzt das allgemeine Prinzip 
+ableiten. Gegeben ist eine partielle Differentialgleichung
+beliebiger Ordnung mit unabh"angigen Variablen $x_1,\dots,x_n$.
+Ziel ist, die Differentialgleichung auf eine solche mit weniger
+unabh"angigen Variablen zu reduzieren. Sobald man die Reduktion
+bis auf eine Variable geschafft hat, hat man die partielle
+Differentialgleichung in gew"ohnliche Differentialgleichungen
+umgewandelt, typischerweise in Randwertprobleme,
+die man mit gekannten Techniken l"osen kann.
+
+Da man am Schluss die L"osung aus den Teill"osungen zusammensetzen
+muss, die die separierten Gleichungen liefern, ist dieses Vorgehen
+nur bei linearen PDGL sinnvoll. Wir gehen also im folgenden von
+einer linearen PDGL aus.
+
+Wir gehen also von einer Differentialgleichung f"ur die Funktion
+$u(x_1,\dots,x_n)$ aus, und wollen die Variable $x_1$ separieren.
+Dazu geht man wie folgt vor.
+\begin{enumerate}
+\item Setzt die L"osung $u$ der Differentialgleichung in der
+Form eines Produktes an:
+$$
+u(x_1,\dots,x_n)=X_1(x_1)u_1(x_2,\dots,x_n).
+$$
+\item Einsetzen des Ansatzes in die Differentialgleichung.
+\item
+Mit etwas Gl"uck lassen sich die Terme, die
+$X_1$ und $u_1$ enthalten trennen und auf verschiedene Seiten
+des Gleichheitszeichens bringen.
+Da die L"osung $u\equiv 0$ nicht interessant ist, kann man
+zu diesem Zweck durch $u$ dividieren, die Gleichung muss
+ausserhalb der Nullstellen von $u$ immer noch erf"ullt sein.
+Die Gleichung hat jetzt also die Form
+$$
+F(x_1,X_1,X_1',\dots,X_1^{(n)})
+=
+G(x_2,\dots,x_n,u_1,\partial_2u_1,\dots\partial_nu_n,\dots)
+$$
+\item
+Da die linke Seite nur von $x_1$, die rechte nur von $x_2,\dots,x_n$
+abh"angt, m"ussen beide Konstant sein, wir haben also die urspr"ungliche
+PDGL in zwei Differentialgleichungen zerlegt:
+\begin{equation}
+\begin{aligned}
+F(x_1, X_1,X_1',\dots, X_1^{(n)})&=0\\
+G(x_2,\dots,x_n,u_1,\partial_2u_1,\dots\partial_nu_n,\dots)&=k
+\end{aligned}
+\label{separiert}
+\end{equation}
+wobei $k$ eine Konstante ist.
+Dies sind zwei Differentialgleichungen, die erste ist eine
+gew"ohnliche Differntialgleichung, und falls $n>2$ ist die zweite
+eine partielle Differentialgleichung, die unter Umst"anden noch
+einmal mit dem gleichen Verfahren behandelt werden muss.
+Gesucht werden alle Konstanten,
+f"ur welche beide Gleichungen eine L"osung haben.
+\item Sind $X_1(,x_1)$ und $u_1(k,x_2,\dots,x_n)$ L"osungen der
+Gleichungen (\ref{separiert}), dann sind 
+$$
+u_k(x_1,\dots,x_n)=X_1(k,x_1)u_1(k,x_2,\dots,x_n)
+$$
+L"osungen der urspr"unglichen PDGL. Die allgmeine L"osung ist daher
+eine Summe
+$$
+u(x_1,\dots,x_n)=
+\sum_{k}
+a_k
+u_k(x_1,\dots,x_n)=X_1(k,x_1)u_1(k,x_2,\dots,x_n),
+$$
+wobei die Summe "uber die m"oglichen $k$ zu erstrecken ist.
+\item
+Zur Erf"ullung von Randbedingungen m"ussen jetzt die Koeffizienten
+$a_k$ bestimmt werden, f"ur die die Randtterme korrekt werden.
+\end{enumerate}
+Das Verfahren kann an zwei Stellen zusammenbrechen:
+\begin{itemize}
+\item In Schritt 3 wird vorausgesetzt, dass die Trennung in 
+Terme, die $x_1$ untehalten  und solche, die $x_1$ nicht enthalten
+m"oglich ist. Dies ist nicht automatisch der Fall, kann aber in
+vielen praktisch wichtigen F"allen durch Wahl eines geeigneten
+Koordinatensystems erreicht werden.
+\item In Schritt 6 wird vorausgesetzt, dass die Randbedingungen
+mit Hilfe der Randwerte der Teill"osungen $u_k$ erf"ullt werden
+k"onnen. In den Beispielen in diesem Kapitel wurde daf"ur jeweils
+die nicht triviale Fourier-Theorie ben"otigt. 
+\end{itemize}

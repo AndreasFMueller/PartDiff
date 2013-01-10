@@ -1,0 +1,89 @@
+%
+% skript.tex -- Skript zur Vorlesung Mathematische Grundlagen der Informatik
+%               gehalten an der Hochschule Rapperswil im Wintersemester 09
+%
+% (c) 2009 Prof. Dr. Andreas Mueller, HSR
+% $Id: skript.tex,v 1.34 2008/11/02 22:46:16 afm Exp $
+%
+\documentclass[a4paper,12pt]{book}
+\usepackage{german}
+\usepackage{times}
+\usepackage{alltt}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{picins}
+\usepackage{ifthen}
+\usepackage{multirow}
+\usepackage{txfonts}
+%\usepackage[basic]{circ}
+\usepackage[all]{xy}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{makeidx}
+\usepackage{paralist}
+\makeindex
+\begin{document}
+\pagestyle{fancy}
+\lhead{Aufgabensammlung}
+\rhead{}
+\frontmatter
+\newcommand\HRule{\noindent\rule{\linewidth}{1.5pt}}
+\begin{titlepage}
+\vspace*{\stretch{1}}
+\HRule
+\vspace*{2pt}
+\begin{flushright}
+{\Huge
+Partielle Differentialgleichungen\\
+\bigskip
+Aufgabensammlung}
+\end{flushright}
+\HRule
+\begin{flushright}
+\vspace{30pt}
+\LARGE
+Andreas M"uller
+\end{flushright}
+\vspace*{\stretch{2}}
+\begin{center}
+Hochschule f"ur Technik, Rapperswil, 2008-2013
+\end{center}
+\end{titlepage}
+\rhead{Inhaltsverzeichnis}
+\tableofcontents
+\newenvironment{beispiel}[1][Beispiel]{%
+\begin{proof}[#1]%
+\renewcommand{\qedsymbol}{$\bigcirc$}
+}{\end{proof}}
+\mainmatter
+\input uebungen.tex
+\setboolean{loesungen}{true}
+\aufgabetoplevel{./}
+
+\chapter{Einf"uhrende  Beispiele}
+\input 1.tex
+\chapter{Begriffe und Klassifikation}
+\input 2.tex
+\chapter{Geometrie der partiellen Differentialgleichungen erster Ordnung}
+\input 3.tex
+\chapter{Separation der Variablen}
+\input 4.tex
+\chapter{Transformationsmethode}
+%\input 5.tex
+\chapter{Partielle Differentialgleichungen zweiter Ordnung}
+%\input 6.tex
+\chapter{Elliptische partielle Differentialgleichungen}
+\input 7.tex
+\chapter{Parabolische partielle Differentialgleichungen}
+\input 8.tex
+\chapter{Hyperbolische partielle Differentialgleichungen}
+\input 9.tex
+
+\end{document}

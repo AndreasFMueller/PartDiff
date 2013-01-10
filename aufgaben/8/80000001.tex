@@ -1,0 +1,142 @@
+Die Fokker-Planck Differentialgleichung lautet
+\[
+\frac{\partial u}{\partial t}
+=
+-\frac{\partial u}{\partial x}+\frac{\partial^2u}{\partial x^2},
+\]
+wir wollen Sie auf dem Gebiet
+\[
+\Omega=\{(x,t)\,|\,  t \ge 0\}
+\]
+studieren.
+\begin{teilaufgaben}
+\item Ist diese Gleichung elliptisch, parabolisch oder hyperbolisch?
+\item F"uhren Sie Separation durch und finden Sie zwei gew"ohnliche
+Differentialgleichungen, mit denen Sie Teill"osungen f"ur
+die Fokker-Planck-Gleichung finden k"onnen.
+\item Finden Sie alle Teill"osungen, f"ur die $u(x,t)$ f"ur $t\to\infty$
+und gewisse $x$ unbeschr"ankt w"achst, und f"ur die ausserdem $u(t,0)=0$ gilt.
+\end{teilaufgaben}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+\begin{teilaufgaben}
+\item F"ur die Symbolmatrix sind nur die zweiten Ableitungen massgebend,
+daher ist sie
+\[
+\begin{pmatrix}
+1&0\\
+0&0
+\end{pmatrix}
+\]
+mit Determinante $0$, also ist die Gleichung parabolisch.
+Insbesondere erwarten wir ein Verhalten der L"osungen wie
+bei der W"armeleitungsgleichung.
+\item F"ur die Separation machen wir den Ansatz
+\[
+u(x,t)=X(x)T(t)
+\]
+und setzen diesen in die Differentialgleichung ein:
+\begin{align*}
+X(x)T'(t)&=-X'(x)T(t)+X''(x)T(t)\\
+\frac{T'(t)}{T(t)}&=\frac{-X'(x)+X''(x)}{X(x)}
+\end{align*}
+wobei die Division durch $T(t)X(X)$ erlaubt ist, weil
+dieser Ausdruck nur auf einer kleinen Menge verschwindet.
+Da die linke Seite nur von $t$, die rechte aber nur von $x$ abh"angt,
+m"ussen beide Seiten konstant sein, wir nennen die Konstante
+$\mu$. So erhalten wir die zwei gew"ohnlichen Differentialgleichungen
+\begin{align}
+\frac{T'(t)}{T(t)}&=\mu&&\Rightarrow&T'(t)&=\mu T(t)
+\label{Tgleichung}
+\\
+\frac{-X'(x)+X''(x)}{X(x)}&=\mu&&\Rightarrow&X''(x)-X'(x)-\mu X(x)&=0
+\label{Xgleichung}
+\end{align}
+\item
+Die Gleichung (\ref{Tgleichung}) kann leicht mit der Exponentialfunktion
+gel"ost werden:
+\[
+T(t)=T(0)e^{\mu t}.
+\]
+Dieser Faktor kann nur dann f"ur $t\to\infty$ unbeschr"ankt wachsen, wenn
+$\mu > 0$. Wir suchen also L"osungen von (\ref{Xgleichung}) f"ur
+positives $\mu$.
+Diese gew"ohnliche lineare Differentialgleichung zweiter Ordnung wird
+wie "ublich mit Hilfe des charakteristischen Polynoms gel"ost, welches
+in diesem Fall lautet
+\[
+\lambda^2-\lambda-\mu=0
+\quad
+\Rightarrow
+\quad
+\lambda_{\pm}(\mu)=\frac12\pm\sqrt{\frac14+\mu}
+\]
+Da $\mu > 0$ ist, wird $\lambda_{\pm}(\mu)$ immer reell sein.
+Damit ist die allgmeine L"osung f"ur $X(x)$
+\[
+X(x)=
+A(\mu)e^{\lambda_+(\mu)x}
++
+B(\mu)e^{\lambda_+(\mu)x}
+\]
+Sie soll f"ur $x=0$ verschwinden, also
+\[
+X(0)=
+A(\mu)e^{\lambda_+(\mu)\cdot 0}
++
+B(\mu)e^{\lambda_+(\mu)\cdot 0}
+=A(\mu)+B(\mu)=0
+\]
+oder $B(\mu)=-A(\mu)$. Damit haben wir
+\begin{align*}
+X(x)&=A(e^{\lambda_+(\mu)x}-e^{\lambda_-(\mu)x})
+=Ae^{\frac12x}\left(
+e^{x\sqrt{\frac14+\mu}}
+-
+e^{-x\sqrt{\frac14+\mu}}
+\right)
+\\
+&=2Ae^{\frac12x}\sinh x\sqrt{\frac14+\mu}.
+\end{align*}
+Zusammen mit der bereits gefundenen L"osung f"ur $T(t)$ sind also
+die Teill"osungen
+\[
+u(x,t,\mu)=
+Ce^{\frac12x+\mu t}\sinh x\sqrt{\frac14+\mu}.
+\]
+{\bf Kontrolle:} Zur Kontrolle setzen wir die L"osung $u(x,t,\mu)$
+in die Differentialgleichung ein
+\begin{align*}
+\frac{\partial}{\partial t}u(x,t,\mu)&=
+\mu Ce^{\frac12x+\mu t}\sinh x\sqrt{\frac14+\mu}
+\\
+\frac{\partial}{\partial x}u(x,t,\mu)&=
+\frac12
+Ce^{\frac12x+\mu t}\sinh x\sqrt{\frac14+\mu}
++
+C\sqrt{\frac14+\mu}e^{\frac12x+\mu t}\cosh x\sqrt{\frac14+\mu}
+\\
+\frac{\partial^2}{\partial x^2}u(x,t,\mu)&=
+\frac14
+Ce^{\frac12x+\mu t}\sinh x\sqrt{\frac14+\mu}
++
+C\sqrt{\frac14+\mu}e^{\frac12x+\mu t}\cosh x\sqrt{\frac14+\mu}
+\\
+&\qquad +
+C\biggl(\frac14+\mu\biggr)e^{\frac12x+\mu t}\sinh x\sqrt{\frac14+\mu}
+\\
+-\frac{\partial u}{\partial x}
++
+\frac{\partial^2 u}{\partial x^2}
+&=
+\mu Ce^{\frac12x+\mu t}\sinh x\sqrt{\frac14+\mu}
+=
+\frac{\partial u}{\partial t},
+\end{align*}
+die Funktionen erf"ullen also die partielle Differentialgleichung.
+Wegen $\sinh 0=0$ ist auch die Randbedingung trivial erf"ullt.
+\end{teilaufgaben}
+\end{loesung}
+}{ }
+

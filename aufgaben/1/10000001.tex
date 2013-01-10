@@ -1,0 +1,42 @@
+Sei $f(x)$ eine zweimal stetig differenzierbare Funktion auf $\mathbb R$.
+Rechnen Sie nach, dass die Funktionen
+\[
+u_+(t,x)=f(x+at)
+\qquad
+\text{und}
+\qquad
+u_-(t,x)=f(x-at)
+\]
+L"osungen der Wellengleichung
+\[
+\frac{\partial^2 u}{\partial x^2}=\frac1{a^2}\frac{\partial^2 u}{\partial t^2}
+\]
+sind.
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+Man muss die partiellen Ableitungen von $f(x-at)$ berechnen:
+\begin{align*}
+\frac{\partial}{\partial x}u_{\pm}(t,x)
+&=f'(x\pm at)
+\\
+\frac{\partial^2}{\partial x^2}u_{\pm}(t,x)
+&=f''(x\pm at)
+\\
+\frac{\partial}{\partial t}u_{\pm}(t,x)
+&=\pm af'(x\pm at)
+\\
+\frac{\partial^2}{\partial t^2}u_{\pm}(t,x)
+&=a^2f''(x\pm at)
+\end{align*}
+Setzt man dies in die Wellengleichung ein, findet man
+\[
+\frac{\partial^2}{\partial x^2}u_{\pm}(t,x)
+-\frac1{a^2}\frac{\partial^2}{\partial t^2}u_{\pm}(t,x)
+=f''(x\pm at)
+-\frac1{a^2} a^2f''(x\pm at)=0
+\]
+somit sind die $u_{\pm}(t,x)$ L"osungen der Wellengleichung.
+\end{loesung}
+}{}
+

@@ -1,0 +1,53 @@
+Finden Sie f"ur die folgenden partiellen Differentialgleichungen die
+Funktion $F$
+\begin{teilaufgaben}
+\item $\displaystyle\frac{\partial^2 u}{\partial x_1\partial x_2}=0$
+\item $\displaystyle\frac{\partial u}{\partial x_1}=\frac{\partial u}{\partial x_2}$
+\item $\displaystyle
+\biggl(\frac{\partial u}{\partial x_1}\biggr)+
+\biggl(\frac{\partial u}{\partial x_2}\biggr)=0$
+\item $\displaystyle
+x_1\frac{\partial u}{\partial x_1}+
+x_2\frac{\partial u}{\partial x_2}=\frac{\partial u}{\partial x_3}$
+\end{teilaufgaben}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+\begin{teilaufgaben}
+\item $F(t_{12})=t_{12}$, setzt man f"ur $t_{12}$ die gemischte partielle
+Ableitung ein, erh"alt man
+\[
+F\biggl(\frac{\partial^2 u}{\partial x_1\partial x_2}\biggr)=0.
+\]
+\item
+$F(p_1,p_2)=p_1-p_2$, ersetzt man $p_i$ durch die erste 
+partielle Ableitung von $u$ nach $x_i$, erh"alt man
+\[
+F\biggl(\frac{\partial u}{\partial x_1},\frac{\partial u}{\partial x_2}\biggr)=0.
+\]
+\item
+$F(p_1,p_2)=p_1^2+p_2^2$, ersetzt man $p_i$ durch die erste partielle
+Ableitung nach $x_i$, findet man
+\[
+F\biggl(
+\frac{\partial u}{\partial x_1},
+\frac{\partial u}{\partial x_2}
+\biggr)
+=
+\biggl(\frac{\partial u}{\partial x_1}\biggr)+
+\biggl(\frac{\partial u}{\partial x_2}\biggr).
+\]
+\item
+$F(x_1,x_2,p_1,p_2,p_3)=x_1p_1+x_2p_2-p_3$, ersetzt man darin $p_i$ durch
+die erste partielle Ableitung nach $x_i$, ergibt sich
+\[
+F\biggl(x_1,x_2,
+\frac{\partial u}{\partial x_1},
+\frac{\partial u}{\partial x_2},
+\frac{\partial u}{\partial x_3}\biggr)=
+x_1\frac{\partial u}{\partial x_1}+
+x_2\frac{\partial u}{\partial x_2}-\frac{\partial u}{\partial x_3}=0.
+\]
+\end{teilaufgaben}
+\end{loesung}
+}{}

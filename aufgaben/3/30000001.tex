@@ -1,0 +1,92 @@
+L"osen Sie das Cauchy-Problem f"ur die Differentialgleichung
+\[
+\frac{\partial u}{\partial x}
++
+\frac{\partial u}{\partial y}
+=1
+\]
+mit den Anfangswerten
+\[
+u(x,0)=\cos x.
+\]
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+Zun"achst m"ussen wir die Charakteristiken bestimmen, also die L"osungskurven
+des Vektorfeldes
+\[
+\begin{pmatrix}
+\dot x(t)\\
+\dot y(t)\\
+\dot z(t)
+\end{pmatrix}
+=\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}
+\]
+Diese sind nat"urlich von der Form
+\[
+\begin{pmatrix}
+x(t)\\
+y(t)\\
+z(t)
+\end{pmatrix}
+=
+\begin{pmatrix}x_0\\y_0\\z_0\end{pmatrix}
++
+t\begin{pmatrix}1\\1\\1\end{pmatrix}
+\]
+Dann m"ussen wir zu einem gegebenen Punkt $(x,y)$ den zugeh"origen
+Ausgangspunkt der Charakterisitik finden. Die Anfangsbedingung
+bedeutet $y_0=0$, wir suchen also $x_0$ und $t$ so, dass
+\[
+\begin{pmatrix}
+x\\y
+\end{pmatrix}
+=
+\begin{pmatrix}
+x(t)\\
+y(t)
+\end{pmatrix}
+=
+\begin{pmatrix}x_0\\0\end{pmatrix}
++
+t\begin{pmatrix}1\\1\end{pmatrix}
+=\begin{pmatrix}x_0+t\\t\end{pmatrix}
+\]
+Daraus leiten wir ab, dass $t=y$ sein muss, und weiter dass $x_0+t=x$, also
+$x_0=x-y$. Somit verl"auft die Charakteristik durch den Punkt
+\[
+\biggl(x-y, 0,\cos (x-y)\biggr)
+\]
+(die $z$-Komponente ist der zugeh"orige Anfangswert). Um den Funktionswert
+"uber dem Punkt $(x,y)$ zu finden, muss man jetzt der Charakteristik folgen,
+d.~h.~nach der Gleichung der Charakterisitik bedeutet dies, zu jeder
+Komponenten $y$ hinzuzuaddieren, man bekommt
+\[
+(x, y,y+\cos (x-y)) 
+\Rightarrow u(x,y)=y+\cos(x-y)
+\]
+Wir "uberpr"ufen das Resultat noch durch nachrechnen:
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
+-\sin(x-y)
+\\
+\frac{\partial u}{\partial y}
+&=
+1+\sin(x-y)
+\\
+\frac{\partial u}{\partial x}
++
+\frac{\partial u}{\partial y}
+&=
+-\sin(x-y)
++
+1+\sin(x-y)
+=1,
+\end{align*}
+die Differentialgleichung ist also erf"ullt.
+\end{loesung}
+}{}
+

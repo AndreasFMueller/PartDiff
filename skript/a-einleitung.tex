@@ -1,0 +1,126 @@
+%
+% a-einleitung.tex
+%
+% (c) 2008 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\lhead{Einleitung}
+\chapter*{Einleitung}
+\index{Mechanik!klassische}
+\index{Elektrizitatslehre@Elektrizit\"atslehre}
+\index{Populationsdynamik}
+Gew"ohnliche Differentialgleichungen werden in der klassischen Mechanik,
+in der Elektrizit"atslehre, in der Populationsdynamik, und ganz 
+allgemein "uberall dort erfolgreich eingesetzt, wo die
+"Anderungsrate einer skalaren Gr"osse von den aktuellen Werten dieser Gr"osse
+abh"angt.
+\index{Massepunkt}
+\index{Newtonsches Gesetz}
+Ein Massepunkt bei der Ortskoordinate $x$ "andert seine Position
+gem"ass dem Newtonschen Gesetz
+\[
+ma=m\ddot x=F.
+\]
+H"angt $F$ von der aktuellen Position des Massepunktes ab, wie dies zum
+Beispiel bei einem an einer Feder aufgeh"angten Gewicht der Fall ist,
+liegt eine Differentialgleichung f"ur die von der Zeit abh"angige
+Position $x(t)$ des Massepunktes vor:
+\[
+m\frac{d^2}{dt^2}x(t)=F(x(t)).
+\]
+In der klassischen Analysis wird gezeigt, dass solche Gleichungen bei
+gegebenen Anfangsbedingungen eine eindeutig bestimmte L"osung haben.
+Mit etwas zus"atzlichem Aufwand werden auch Differentialgleichungen
+f"ur mehrere skalare Gr"ossen behandelt, die alle vom gleichen Parameter
+(typischerweise der Zeit) abh"angen.
+
+\index{Felder!elektrische}
+\index{Temperaturverteilung}
+\index{Druck}
+\index{Gas}
+\index{Stromungsgeschwindigkeit@Str\"omungsgeschwindigkeit}
+\index{Flussigkeit@Fl\"ussigkeit}
+Zur Beschreibung elektrischer Felder, der Temperaturverteilung in
+einem Fest\-k"orper, des Druckes in einem Gas oder der Str"omungsgeschwindigkeit
+in einer Fl"ussigkeit reicht eine einzelne oder einige wenige Skalare
+gr"ossen jedoch nicht. Vielmehr muss man in den genannten Beispielen
+zu jedem Zeitpunkt und an jedem Punkt des Raumes die interessierende Gr"osse
+bestimmen. Sie ist also nicht mehr nur eine Funktion der Zeit, sondern eine
+Funktion von Ort und Zeit.
+\index{Saite!schwingende}
+Die Auslenkung einer schwingenden Saite
+beispielsweise ist eine Funktion $f(x,t)$, sie beschreibt, wie stark
+die Saite an der Koordinate $x$ zur Zeit $t$ von der Ruhelage ausgelenkt ist.
+Insbesondere hat die Saite zu jeder Zeit $t_0$ eine andere Form, die durch
+die Funktion von einer Variablen
+\[
+x\mapsto f(x,t_0)
+\]
+gegeben ist.
+
+Man k"onnte vielleicht die Hoffnung hegen, dass die zeitliche "Anderung
+der Auslenkung an der Stelle $x$ nur von der Position $x$ abh"angt.
+Dies kann aber nicht sein, denn wenn die Saite in einer Umgebung
+des Punktes $x$ sehr stark schwankt, ``ziehen'' die ``benachbarten'' Teile
+der Saite ebenfalls an dem Punkt, vor allem dann, wenn die Saite gekr"ummt
+ist. Die zeitliche "Anderung der Auslenkung, also die Ableitung von $f(x,t)$
+nach der Zeit, h"angt also nicht nur von $f(x,t)$, sondern auch von
+den Ableitungen nach $x$. Es entsteht ein Gleichung, die die verschiedenen
+partiellen Ableitungen von $f$ miteinander verkn"upft, zum Beispiel in
+etwa folgender Form:
+\begin{align*}
+a^2\frac{\partial^2}{\partial x^2}f&= \frac{\partial^2}{\partial t^2}f
+\end{align*}
+Kann man diese sogenannte partielle Differentialgleichung l"osen,
+kann man die Form der Saite zu jedem
+beliebigen zuk"unftigen Zeitpunkt voraussagen.
+\index{Differentialgleichung!partielle}
+
+\index{Differentialgleichung!gew\"ohnliche}
+Bei gew"ohnlichen Differentialgleichungen hat man gelernt, dass die Gleichung
+alleine die L"osung noch nicht eindeutig bestimmt, sondern dass dazu noch
+weitere Angaben, sogenannte Anfangs- oder Randbedingungen n"otig sind.
+Die Theorie der partiellen Differentialgleichungen muss daher auf folgende
+Fragen eine Antwort liefern:
+\begin{enumerate}
+\item Wie muss ein Problem, welches mit Hilfe partieller Differentialgleichungen
+gel"ost werden soll, "uberhaupt gestellt werden, damit die L"osung wohlbestimmt
+ist?
+\item Welche Eigenschaften haben die L"osungen? Wieviele Ableitungen haben
+die L"osungen? Wie sieht die L"osung in der N"ahe des Randes aus, bleiben
+sie stetig, oder werden Sie unbegrenzt gross?
+\item Wie berechnet man die L"osung einer partiellen Differentialgleichung?
+\end{enumerate}
+Die Vorlesung ``Partielle Differentialgleichungen'' im Master of Sciences in
+Engineering versucht diese Fragen zu beantworten. Der Kurs ist in zwei Teile
+geteilt. Im ersten Teil werden die genannten Fragen theoretisch untersucht.
+Leider stellt sich heraus, dass man zwar klare Aussagen dar"uber machen kann,
+welche Gleichungen l"osbar sind, und wieviele L"osungen gegebenenfalls
+existieren, dass man auch deren Eigenschaften sehr gut beschreiben kann,
+aber leider auch nur in ganz wenigen F"allen geschlossene Formeln f"ur die
+L"osungen finden kann. Mit der mathematischen Gewissheit, dass L"osungen
+existieren und sich ``anst"andig benehmen'' er"offnet sich aber auch die
+im zweiten Teil behandelte M"oglichkeit, die Gleichungen mit Hilfe eines
+Computers numerisch zu l"osen.
+
+Dieses Skript enth"alt die im ersten Teil der Vorlesung behandelten 
+Themen. Es gliedert sich in folgende Kapitel:
+\begin{enumerate}
+\item Beispiele von partiellen Differentialgleichungen. Die wichtigsten
+Differentialgleichungen aus Mechanik, W"armelehre und Elektrizit"atslehre
+werden vorgestellt. Sie dienen in sp"ateren Kapiteln als Beispiele
+f"ur theoretische "Uberlegungen wie auch f"ur L"osungsmethoden.
+\item L"osung mit Separation der Variablen.
+\index{Separation der Variablen}
+\item L"osung mit Hilfe von Integraltransformationen
+\index{Integraltransformation}
+\item Elliptische partielle Differentialgleichungen
+\index{Differentialgleichung!partielle!elliptische}
+\item Parabolische partielle Differentialgleichungen
+\index{Differentialgleichung!partielle!parabolische}
+\item Hyperbolische partielle Differentialgleichungen
+\index{Differentialgleichung!partielle!hyperbolische}
+\item Nichtlineare Ph"anomene am Beispiel der Gleichung von Burgers.
+\index{Differentialgleichung!partielle!nichtlineare}
+\end{enumerate}
+
+

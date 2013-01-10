@@ -1,0 +1,94 @@
+L"osen Sie die Differentialgleichung
+\[
+\frac{\partial u}{\partial x}+y\frac{\partial u}{\partial y}=0
+\]
+auf dem Gebiet $\Omega=\{(x,y)\,|\, x\ge 0\}$ mit der Randbedingung
+\[
+u(0,y)=g(y)=y^2.
+\]
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+Dies ist eine quasilineare partielle Differentialgleichung
+erster Ordnung, die mit Hilfe von Charakteristiken gel"ost werden
+kann. Das Differentialgleichungssytem f"ur die  Charaketersistiken ist
+\[
+\left.
+\begin{aligned}
+\dot x&=1\\
+\dot y&=y\\
+\dot u&=0
+\end{aligned}
+\right\}\quad\Rightarrow\quad
+\begin{aligned}
+x(t)&=t+C\\
+y(t)&=y_0e^t\\
+u(t)&=u_0
+\end{aligned}
+\]
+Wir k"onnen $C=0$ w"ahlen, also $x=t$, und erhalten damit die
+Charakteristiken in expliziter Form $y(x)=y_0e^x$ und $u(x)=u_0$.
+
+Jetzt muss $u$ als Funktion von $x$ und $y$ ermittelt werden.
+Durch den Punkt $(x,y)$ in der Ebene f"uhrt eine Charakteristik,
+die im Punkt $(0,y_0)$ begonnen hat, wegen $y(x)=y_0e^x$ ist
+$y_0=ye^{-x}$. F"ur $u$ gilt jetzt
+\[
+u(x,y)=u(0,y_0)=g(y_0)=g(ye^{-x})=y^2e^{-2x}=y^2e^{-2x}.
+\]
+Zur Kontrolle setzen wir diese Funktion in die urspr"ungliche
+Differentialgleichung ein:
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
+-2y^2e^{-2x}
+\\
+\frac{\partial u}{\partial y}
+&=
+2ye^{-2x}
+\\
+\frac{\partial u}{\partial x}
++y
+\frac{\partial u}{\partial y}
+&=
+-2y^2e^{-x}
++2y^2e^{-x}
+=0,
+\end{align*}
+die Funktion $u$ erf"ullt also die Differentialgleichung. Sie erf"ullt
+aber auch die Randbedingung, denn
+\[
+u(0,y_0)=y_0^2e^0=y_0^2=g(y_0).
+\]
+Damit ist $u(x,y)=y^2e^{-2x}$ die L"osung der gegebenen Differentialgleichung.
+Alternative L"osung mit einem Separationsansatz: Man kann die DGL auch
+mit einem Separationsansatz l"osen. Dazu schreibt man $u(x,y)=X(x)Y(y)$
+und setzt in die Differentialgleichung ein:
+\begin{align*}
+X'(x)Y(y)+yX(x)Y(y)&=0\\
+\Rightarrow\qquad \frac{X'(x)}{X(x)}&=-y\frac{Y'(y)}{Y(y)}
+\end{align*}
+Da die eine Seite nur von $x$, die andere nur von $y$ abh"angt, m"ussen
+beide Seiten konstant sein, so erh"alt man zwei gew"ohnliche
+Differentialgleichungen
+\begin{align*}
+X'(x)&=cX(x)&\Rightarrow\qquad X(x)&=K_1e^{cx}\\
+Y'(y)&=\frac{c}{y}Y(y)&\Rightarrow\qquad Y(y)&=K_2y^{-c}
+\end{align*}
+Die zweite Gleichung wurde mit Hilfe von Separation gel"ost.
+Die Anfangsbedingung f"ur $x=0$ kann offenbar erf"ullt werden,
+wenn $c=-2$, dann ist die L"osung gefundene Teill"osung
+\[
+u(x,y)=Ke^{-2x}y^2,
+\]
+die Anfangsbedinung f"ur $x$ ist aber nur dann erf"ullt, wenn
+\[
+u(0,y_0)=Ky_0^2=g(y_0)\quad\Rightarrow\quad K=1,
+\]
+also ist die endg"ultige L"osung wie bei der ersten L"osung
+\[
+u(x,y)=e^{-2x}y^2
+\]
+\end{loesung}
+
+}{ }

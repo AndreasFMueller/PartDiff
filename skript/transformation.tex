@@ -1,0 +1,641 @@
+%
+% c03-transformation.tex
+%
+% (c) 2008 Prof Dr Andreas Mueller, Hochschule Rapperswil
+% $Id: c03-transformation.tex,v 1.4 2008/10/31 08:04:16 afm Exp $
+%
+\chapter{Transformation}
+\lhead{Transformation}
+Bei der L"osung gew"ohnlicher linearer Differentialgleichungen lieferte die
+Laplacetransformation eine hervorragende Methode, mit der sehr
+viele Anfangswertprobleme gel"ost werden konnten.
+In diesem Kapitel wird gezeigt, wie diese Methode wie auch
+Fouriertransformation oder Fourierreihen 
+f"ur lineare partielle Differentialgleichungen nutzbar gemacht
+werden k"onnen.
+
+\section{Einf"uhrungsbeispiel}
+\subsection{Wellengleichung f"ur die schwingende Saite}
+\rhead{Schwingende Saite}
+Zur Einf"uhrung betrachten wir erneut das Beispiel der
+schwingenden Saite mit der Gleichung
+$$\partial_t^2u=\partial_x^2u.$$
+Durch einen Separationsansatz hatten wir dieses Problem
+darauf zur"uckgef"uhrt, Gleichungen $X''=-k^2X$ und $T''=-a^2k^2T$
+zu l"osen.
+Dabei haben wir die harmonischen Funktionen wieder gefunden,
+mit Hilfe der Fouriertheorie ist sodann die Bestimmung einer L"osung
+gelungen.
+
+Andererseits k"onnten wir auch mit der Fouriertheorie beginnen und
+verwenden, dass sich eine Funktion auf dem Interval $[0,\pi]$
+durch Spiegelung zu einer periodischen Funktion auf $[-\pi,0]$
+erweitern l"asst. Indem wir zu jedem Zeitpunkt $t$ eine Fourieranalyse
+durchf"uhren, l"asst sich die Funktion $x\mapsto u(t,x)$ als
+Fourierreihe 
+$$
+u(t,x)=\frac{a_0(t)}2+\sum_{k=1}^\infty a_k(t)\cos kx+b_k(t)\sin kx
+$$
+mit zeitabh"angigen Koeffizienten schreiben.
+Setzen wir diesen Ansatz in die Differentialgleichung ein, ergibt sich
+\begin{align*}
+\partial_t^2u(t,x)&=\frac{a_0''(t)}2
++\sum_{k=1}^\infty a_k''(t)\cos kx+b_k''(t)\sin kx\\
+\partial_x^2u(t,x)&=
+-\sum_{k=1}^\infty a_k(t)k^2\cos kx+b_k(t)k^2\sin kx
+\end{align*}
+Wenn diese Funktionen gleich sein sollen, muss
+$$
+\frac{a_0''(t)}2
++\sum_{k=1}^\infty (a_k''(t)+k^2a_k(t))\cos kx+(b_k''(t)+k^2b_k(t))\sin kx=0
+$$
+gelten. Nach der Fourier-Theorie ist dies nur m"oglich, wenn die
+Fourier-Koeffizienten alle verschwinden:
+\begin{align*}
+a_0''(t)&=0\\
+a_k''(t)&=-k^2a_k(t)\\
+b_k''(t)&=-k^2b_k(t)
+\end{align*}
+mit $k>0$.
+Wir haben also durch "Ubergang zu Fourierkoeffizienten ein System
+von gew"ohnlichen Differentialgleichungen f"ur die Fourier-Koeffizienten
+gefunden. Die L"osungen sind wohl bekannt:
+\begin{align*}
+a_0(t)&=m_0t+c_0\\
+a_k(t)&=A^a_k\cos kt+B^a_k\sin kt\\
+b_k(t)&=A^b_k\cos kt+B^b_k\sin kt\\
+\end{align*}
+Dies entspricht den L"osungen, die wir bereits im vorangegangenen
+Kapitel gefunden haben.
+
+\subsection{Anfangsbedingungen}
+Die Differentialgleichungen f"ur die Koeffizienten $a_k(t)$ und $b_k(t)$
+k"onnen erst dann vollst"andig gel"ost werden, wenn Anfangs oder Randbedingungen
+gegeben sind. Sie also zus"atzlich zur Wellengleichung die Anfangsbedingung
+\begin{align*}
+u(0,x)&=f(x)\\
+\frac{\partial u}{\partial t}&=g(x)
+\end{align*}
+gegeben. auch die Funktionen $f$ und $g$ k"onnen duch eine Fourierreihe
+dargestellt werden, werden wir schreiben
+\begin{align*}
+f(x)&=\frac{a_0^f}2+\sum_{k=1}^\infty a_k^f\cos kx+b_k^f\sin kx\\
+g(x)&=\frac{a_0^g}2+\sum_{k=1}^\infty a_k^g\cos kx+b_k^g\sin kx
+\end{align*}
+Zusammen mit dem Ansatz f"ur $u(t,x)$ als Fourierreihe finden wir jetzt
+die Bedingungen f"ur $t=0$
+\begin{align*}
+\frac{a_0(0)}2+\sum_{k=1}^\infty a_k(0)\cos kx +b_k(0)\sin kx
+&=
+\frac{a_0^f}2+\sum_{k=1}^\infty a_k^f\cos kx+b_k^f\sin kx\\
+\\
+\frac{a_0'(0)}2+\sum_{k=1}^\infty a_k'(0)\cos kx+b_k'(0)\sin kx
+&=
+\frac{a_0^g}2+\sum_{k=1}^\infty a_k^g\cos kx+b_k^g\sin kx
+\end{align*}
+Koeffizientenvergleich liefert jetzt die Anfangsbedingungen f"ur die
+Funktionen $a_k$ und $b_k$:
+\begin{align*}
+a_k(0)&=a_k^f&b_k(0)&=b_k^f\\
+a_k'(0)&=a_k^g&b_k'(0)&=b_k^g\\
+\end{align*}
+Zusammen mit den fr"uher gefundenen L"osungen gilt also
+\begin{align*}
+c_0&=a_0^f&&&A_k^a&=a_k^f&&&&&A_k^b&=b_k^f\\
+m_0&=a_0^g&&&kB_k^a&=a_k^g&\Rightarrow B_k^a&=\frac1ka_k^g&&&kB_k^b&=b_k^g&\Rightarrow B_k^b&=\frac1kb_k^g
+\end{align*}
+Die vollst"andige L"osung ist damit
+\begin{align*}
+u(t,x)=\frac{a_0^gt+a_0^f}2
++\sum_{k=1}^\infty
+\biggl(a_k^f\cos kt+\frac1ka_k^g\sin kt\biggr)\cos kx
++
+\biggl(b_k^f\cos kt+\frac1kb_k^g\sin kt\biggr)\sin kx.
+\end{align*}
+
+\subsection{Inhomogene Wellengleichung}
+Das Verf"ahren l"asst sich auch die inhomogene Wellengleichung
+$$
+\partial_t^2u-\partial_x^2u=f
+$$
+verallgemeinern. Die Funktion $f(t,x)$ l"asst sich nat"urlich ebenso wie
+$u$ als Fourierreihe entwickeln:
+$$
+f(t,x)=\frac{a_0^f(t)}2+\sum_{k=1}^\infty a_k^f(t)\cos kx+b_k^f(t)\sin kx.
+$$
+Setzt man dies zusammen mit der Entwicklung f"ur $u(t,x)$ in die
+Differentialgleichung ein, findet man die Gleichungen
+\begin{align*}
+a''_k(t)+k^2a_k(t)&=a_k^f(t)\\
+b''_k(t)+k^2b_k(t)&=b_k^f(t),
+\end{align*}
+also ein System von gew"ohnlichen inhomogenen linearen Differentialgleichungen.
+
+\subsection{Lehren aus dem Einf"uhrungsbeispiel}
+Durch die Transformation auf die Fourier-Koeffizienten verschwindet die
+Ableitung nach $x$,  stattdessen bleibt nur noch eine gew"ohnliche
+Differentialgleichung, die zweifache Ableitung nach $x$ wurde zur
+algebraischen Operation der Multiplikation mit $-k^2$. Diese Transformation
+war m"oglich, weil der $x$-Definitionsbereich ein Interval war.
+F"ur andere Definitionsbereiche wird die Fourier-Transformation nicht
+geeignet sein.
+
+\section{Laplace-Transformation Crash-Course}
+F"ur $[0,\infty[$ als Definitionsbereich ist die Laplace-Transformation
+die geeignete Transformation. Dieser Abschnitt enth"alt einen Kurzabriss
+der wesentlichen Ideen der Theorie der Laplace-Transformation.
+F"ur uns wesentlich ist dabei, dass die Transformation die Ableitungen
+in algebraische Operationen umwandelt. Eine algebraische Gleichung ist
+einfacher zu l"osen, die R"ucktransformation liefert daraus die L"osung.
+
+\subsection{Definition}
+\begin{definition}
+Die Laplace-Transformierte ${\cal L}f$ einer Funktion
+$f\colon[0,\infty[\to\mathbb R$ ist die Funktion
+$$
+({\cal L}f)(s)=\int_0^\infty f(t)e^{-st}\,dt.
+$$
+\end{definition}
+Offenbar ist ${\cal L}f$ f"ur beliebige beschr"ankte Funktionen $f$ definiert.
+
+\subsection{Beispiele}
+Zwei einfache Beispiel sollen das Rechnen mit der Laplace-Transformation
+illustrieren.
+
+Sei $f(t)=c$ eine konstante Funktion. Die Laplace-Transformation
+$$
+({\cal L}f)(s)
+=
+\int_0^\infty ce^{-st}\,dt
+=
+\left[
+-\frac{c}{s}e^{-st}
+\right]_0^\infty=\frac{c}{s}.
+$$
+
+Sei jetzt $f(t)=e^{-kt}$, die Laplace-Transformation ist
+$$
+({\cal L}f)(s)=\int_0^\infty e^{-kt}e^{-st}\,dt
+=\int_0^{\infty}e^{-(s+k)t}\,dt
+=
+\left[
+- \frac1{s+k}e^{-(s+k)t}
+\right]_0^\infty
+=\frac1{s+k}.
+$$
+
+Wir berechnen jetzt die Laplace-Transformierte einer Ableitung, also
+$({\cal L}f')(s)$:
+\begin{align*}
+({\cal L}f')(s)
+&=
+\int_0^\infty f'(t)e^{-st}\,dt
+\\
+&=
+\left[f(t)e^{-ts}\right]_0^\infty
++
+\int_0^\infty sf(t)e^{-st}\,dt
+\\
+&=
+-f(0)+s\int_0^\infty f(t)e^{-st}\,dt
+\\
+&=s({\cal L}f)(s)-f(0).
+\end{align*}
+Wie versprochen wandelt die Laplace-Transformation die Ableitung
+ein eine algebraische Operation um.
+
+\subsection{L"osung einer gew"ohnlichen Differentialgleichung}
+Wir l"osen die Differentialgleichung
+$$
+\dot x(t)+px(t)=f(t)
+$$
+mit der Anfangsbedingung $x(0)=0$.
+Die Laplace-Transformation der Differentialgleichung ist
+$$
+s({\cal L}x)(s)-x(0)+p({\cal L}x)(s)=({\cal L}f)(s).
+$$
+Zu bestimmen ist $x$, diese Gleichung ist eine algebraische Gleichung
+f"ur ${\cal L}x$, die man auch nach ${\cal L}x$ aufl"osen kann:
+$$
+({\cal L}x)(s)
+=
+\frac{({\cal L}f)(s)}{s+p}
+$$
+Um zu zeigen, wie mit dieser Methode die vollst"andige L"osung gefunden
+werden kann, f"uhren wir die R"ucktransformation f"ur $f(t)=q$ durch.
+Zun"achst ist in diesem Fall
+$$
+({\cal L}f)(s)=\frac{q}{s}
+$$
+und damit 
+$$
+({\cal L}x)(s)
+=
+\frac{q}{s(s+p)}=\frac{q}{p}\frac{1}{s}-\frac{q}{p}\frac{1}{s+p}
+$$
+Beide Termen auf der rechten Seite k"onnen mit den Beispielen im vorangegangenen
+Abschnitt r"ucktransformiert werden:
+$$
+x(t)=\frac{q}{p}-\frac{q}{p}e^{-pt}=\frac{q}{p}(1-e^{-pt}).
+$$
+
+\subsection{L"osung einer partiellen Differentialgleichung}
+Dieses Verfahren funktioniert auch f"ur partielle Differentialgleichungen.
+Als Beispiel l"osen wir die quaslineare Differentialgleichung
+$$
+\frac{\partial u}{\partial t}+x\frac{\partial u}{\partial x}=x
+$$
+$u$ ist definiert f"ur $t\ge0$, $x\ge 0$ und wir verlangen die Randbedingungen
+\begin{align*}
+u(x,0)&=0\qquad x>0\\
+u(0,t)&=0\qquad t>0\\
+\end{align*}
+Die Laplacetransformation der Differentialgleichung ist
+$$
+s({\cal L}u)(s,x)-u(0,x)+x\frac{\partial}{\partial x}({\cal L}u)(s,x)=\frac{x}{s},
+$$
+sie hat die Ableitung nach der Zeit zum Verschwinden gebracht. F"ur jedes
+$s$ kann man dies als eine gew"ohnliche Differentialgleichung f"ur die
+Funktion $x\mapsto ({\cal L}u)(s,x)$ mit der Anfangsbedingung
+$({\cal L}u)(s,0)=0$ betrachten.
+Die L"osung mit den Standardmethoden 
+ergibt
+$$
+({\cal L}u)(s,x)=\frac{x}{s(s+1)}=\frac{x}{s}-\frac{x}{s+1}.
+$$
+Beide Terme k"onnen r"ucktransformiert werden, die L"osung ist
+$$
+u(t,x)=x-xe^{-t}=x(1-e^{-t}).
+$$
+Wir berechnen zur Kontrolle die Ableitungen
+\begin{align*}
+\frac{\partial u}{\partial t}
+&=
+xe^{-t}
+\\
+\frac{\partial u}{\partial x}
+&=
+1-e^{-t},
+\end{align*}
+damit 
+$$
+xe^{-t}+x(1-e^{-t})=x,
+$$
+die Differentialgleichung ist also erf"ullt, und wegen
+\begin{align*}
+u(x,0)
+&=
+0
+\\
+u(0,t)
+&=
+0
+\end{align*}
+sind auch die Randbedingungen erf"ullt.
+
+\section{W"armeleitung auf einem Ring}
+\rhead{W"armeleitung}
+Wir betrachten jetzt die W"armeleitungsgleichung auf einem Ring
+mit gegebenen Anfangswerten. Die Temperaturverteilung auf dem
+Ring beschreiben wir als eine periodische Funktion auf dem Interval
+$[-\pi,\pi]$. Gesucht ist daher eine L"osung der W"armelteitungsgleichung
+mit den Anfangsbedingungen
+\begin{align*}
+\partial_t u(t,x)&=\partial_x^2 u(t,x) &&\forall(t,x)\in\mathbb R\times[-\pi,\pi]\\
+u(0,x)&=f(x)&& \forall x\in[-\pi,\pi]\\
+\end{align*}
+
+\subsection{Fouriertransformation auf dem Interval}
+Wie im einf"uhrenden Beispiel gehen wir jetzt zu Fourierkoeffizienten
+"uber.
+Der Einfachheit halber verwenden wir komplexe Fourierkoeffizienten
+$$c_k=\hat f(k)=\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx}f(x)\,dx$$
+Wenden wir die Transformation auf die urspr"ungliche Differentialgleichung
+an, erhalten wir
+\begin{align}
+\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx}\partial_t u(t,x)\,dx
+&=\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx}\partial_x^2 u(t,x)\,dx
+\notag
+\\
+\partial_t\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx} u(t,x)\,dx
+&=
+\frac1{2\pi}
+\left[
+e^{-ikx}\partial_x u(t,x)
+\right]_{-\pi}^{\pi}
++
+ik\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx}\partial_x u(t,x)\,dx
+\notag
+\\
+&=
+ik\frac1{2\pi}
+\left[
+e^{-ikx}u(t,x)
+\right]_{-\pi}^{\pi}
+-
+k^2\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx} u(t,x)\,dx
+\notag
+\\
+&=
+-
+k^2\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx} u(t,x)\,dx
+\notag
+\\
+\partial_t\hat u(t,k)&=-k^2 \hat u(t,k)
+\label{fouriertransformiert}
+\end{align}
+Aus der partiellen Differentialgleichung ist ein System von gew"ohnlichen
+Differentialgleichungen f"ur $t\ge 0$ geworden.
+
+\subsection{Laplacetransformation}
+Durch Laplace-Transformation der Gleichung (\ref{fouriertransformiert})
+erhalten wir die Gleichung
+\begin{align*}
+\int_0^{\infty} \partial_t \hat u(t,k)e^{-st}\,dt
+&=
+-k^2\int_0^{\infty}\hat u(t,k)e^{-st}\,dt
+\\
+\left[\hat u(t,k)e^{-st}\right]_0^{\infty}
++
+s\int_0^{\infty}\hat u(t,k)e^{-st}\,dt
+&=
+-k^2{\cal L}\hat u(s,k)
+\\
+\hat u(0,k)-s{\cal L}\hat u(s,k)&=k^2{\cal L}\hat u(s,k).
+\\
+{\cal L}\hat u(s,k)&=\frac{\hat u(0,k)}{s+k^2}
+\end{align*}
+
+\subsection{R"ucktransformation}
+Um die allgemeine L"osung der Differentialgleichung zu finden,
+muss man jetzt R"ucktransformieren zun"achst nach Laplace:
+\begin{align*}
+\hat u(t,k)&={\cal L}^{-1}\left(\frac1{s+k^2}\right)\hat u(0,k)
+\\
+&=e^{-k^2t}\hat u(0,k)
+\end{align*}
+und dann auch noch nach Fourier, also durch Bilden der Fourierreihe
+\begin{align*}
+u(t,x)&=\sum_{k\in\mathbb Z}e^{-k^2t}\hat f(0,k)e^{ikx}
+\\
+&=\sum_{k\in\mathbb Z}\hat f(0,k)e^{ikx-k^2t}
+\end{align*}
+
+\section{Diffusion}
+\rhead{Diffusion}
+Wir betrachten jetzt die Diffusionsgleichung auf der Halbebene
+$(t,x)\in[0,\infty)\times \mathbb R$
+$$\partial_tu-\partial_x^2u=f(t,x)$$
+mit den Anfangsbedingungen
+$$u(0,x)=g(x)\quad \forall x\in\mathbb R.$$
+Wir wenden jetzt die jeweils an den Definitionsbereich angepasste
+Transformation durch.
+\subsection{Fouriertransformation}
+Die Fouriertransformation f"ur eine Funktion $g(x)$ von $x$ ist
+$$\hat g(k)=\frac1{\sqrt{2\pi}}\int_{\mathbb R}g(x)e^{-ikx}\,dx.$$
+Die Fouriertransformation macht aus den gegebenen Gleichungen
+\begin{align*}
+\partial_t \hat u(t,k)+k^2\hat u(t,k)&=\hat f(t,k)\\
+\hat u(0,k)&=\hat g(k)
+\end{align*}
+\subsection{Laplace-Transformation}
+In $t$-Richtung wenden wir eine Laplace-Transformation an
+$$
+\hat u(0,k)-(s-k^2){\cal L}\hat u(s,k)={\cal L}\hat f(s,k)
+$$
+Diese Gleichung kann nach ${\cal L}\hat u(s,k)$ aufl"osen:
+$$
+{\cal L}\hat u(s,k)=\frac{\hat u(0,k)-{\cal L}\hat f(s,k)}{s-k^2}
+$$
+\subsection{L"osung des Anfangswertproblems}
+Durch R"ucktransformation k"onnen jetzt auch die L"osungen wieder
+gewonnen werden.
+\begin{align*}
+\hat u(t,k)&={\cal L}^{-1}
+\frac{\hat u(0,k)-{\cal L}\hat f(s,k)}{s-k^2}
+\\
+u(t,x)&={\cal F}^{-1}{\cal L}^{-1}
+\left(\frac{\hat u(0,k)-{\cal L}\hat f(s,k)}{s-k^2}\right)(t,x)
+\end{align*}
+
+\section{Transformation bei beliebigen Gebieten}
+Mit Hilfe von Integraltransformationen k"onnen partielle
+Differentialgleichungen  gel"ost werden, wenn die Transformation
+an das Definitionsgebiet angepasst ist:
+\begin{center}
+\begin{tabular}{cl}
+Definitionsgebiet&Transformation\\
+\hline
+$[0,\infty)$&Laplacetransformation\\
+$\mathbb R$&Fouriertransformation\\
+$[-\pi,\pi]$&Fourierreihen
+\end{tabular}
+\end{center}
+Die Separationsmethode zeigt uns aber auch, wie dieses 
+Verfahren verallgemeinert werden kann. Die W"armeleitungsgleichung
+soll auf einem Gebiet $G\subset \mathbb R^n$ gel"ost werden, d.~h.~es
+soll eine L"osung der Differentialgleichung
+$$\partial_t u(t,x)=\Delta u(t,x)$$
+gefunden werden f"ur $(t,x)\in [0,\infty)\times G$ mit der Anfangsbedingung
+$$u(0,x)=u_0(x) \quad x\in G$$
+und der Randbedingung
+$$au(t,x)+b\partial_nu(t,x)=0\quad (t,x)\in[0,\infty)\times \partial G$$
+gefunden werden. Kapitel \ref{chapter-separation} suggeriert, dass
+es eine Familie von Funktionen $u_k(x)$ gibt, die der Gleichung
+$$\Delta u_k=\lambda_k u_k$$
+und der Randbedingung gen"ugen, und mit denen sich die 
+Anfangsbedingung als Reihe schreiben l"asst:
+$$u_0(x)=\sum_{k=1}^\infty a_ku_k(x).$$
+Dann kann man die L"osung der W"armeleitungsgleichung sofort
+hinschreiben:
+$$u(t,x)=\sum_{k=1}e^{-\lambda_kt}u_k(x)$$
+Die Funktionen spielen die Rolle von $e^{ikx}$ in der Fouriertheorie.
+
+Die moderne Mathematik kennt eine allgemeine Theorie der harmonischen
+Analyse auf sogenannten Lie-Gruppen, welche die Fourier- und 
+Laplace-Theorie verallgemeinert und vereinheitlicht, und welche
+weitere Gebiete zu behandeln erlaubt. Zum Beispiel erm"oglicht
+die Entwicklung von Funktionen auf einer ($n$-dimensionalen)
+Kugel mit sogenannten Kugelfunktionen die Idee der Fourierreihen
+auf einem Interval auf h"oherdimensionale Gebiete zu verallgemeinern.
+
+\chapter{Partielle Differentialgleichungen zweiter Ordnung\label{chapter-2ordnung}}
+\lhead{Lineare PDGL 2. Ordnung}
+Lineare Differentialgleichungen zweiter Ordnung haben die Form
+\begin{equation}
+\sum_{i,j=1}^na_{ij}\partial_i\partial_j u+\sum_{i=1}^nb_i\partial_i u+cu=f.
+\label{operator2ordnung}
+\end{equation}
+Alle Musterbeispiele im Kapitel \ref{chapter-beispiele} passen auf dieses 
+Beispiel. Trotz der oberfl"achlichen Gemeinsamkeit zeigen die L"osungen
+der Beispielgleichungen grunds"atzlich verschiedenes Verhalten.
+\begin{itemize}
+\item Die Wellengleichung hat L"osungen, die sich mit endlicher
+Ausbreitungsgeschwindigkeit im Definitionsgebiet ausbreiten. Eine "Anderung
+der Anfangsbedingung macht sich erst nach einer gewissen Zeit in
+entfernten Teilen des Gebietes bemerkbar.
+\item "Anderungen der Randbedingungen der W"armeleitungsgleichung wirken
+sich sofort auf die Werte der L"osung zu sp"aterer Zeit aus und breiten
+sich mit unendlicher Geschwindigkeit durch das Gebiet aus, sie haben jedoch
+keine Auswirkungen auf die Vergangenheit.
+\item "Andert man die Randbedingung der Poisson-Gleichung $\Delta \varphi=f$,
+"andert sich die L"osung sofort und "uberall im Gebiet.
+\end{itemize}
+In diesem Kapitel sollen partielle Differentialgleichungen zweiter Ordnung
+nach diesem Schema klassiert werden.
+
+\section{Typen von Differentialgleichungen zweiter Ordnung}
+\rhead{Klassifikation}
+Zun"achst betrachten wir nur die zweiten Ableitungen in (\ref{operator2ordnung}).
+F"ur eine zweimal stetig differenzierbare Funktion $u$ sind die zweiten
+Ableitungen unabh"angig von der Reihenfolge, also
+$\partial_i\partial_ju=\partial_j\partial_iu$.
+Durch Zusammenfassen von Termen mit vertauschten Indizes $i,j$ kann 
+erreichen, dass $a_{ij}=a_{ji}$ ist.
+Die Matrix $(a_{ij})$ ist also symmetrisch.
+
+\begin{definition}Ist $L$ ein linearer Differentialoperator zweiter Ordnung
+$$Lu=\sum_{i,j=1}^na_{ij}\partial_i\partial_ju,$$
+dann heisst die symmetrische Matrix
+$(a_{ij})$ das Symbol des Operators.
+\end{definition}
+
+Eine Koordinatentransformation
+$$x_i=\sum_{j}t_{ij}x_j'$$
+transformiert die Ableitungen nach der Kettenregel
+$$\frac{\partial}{\partial x'_i}u(x)=\sum_{j=1}^nt_{ij}\frac{\partial}{\partial x_j}u(x).$$
+Wir w"ahlen f"ur die Transformation eine Drehung, weil dann die
+inverse Matrix durch die transponierte Matrix gegeben ist, also
+\begin{align*}
+x'_j&=\sum_{i=1}^nx_it_{ij}.
+\\
+\sum_{i=1}^nt_{ij}\frac{\partial}{\partial x'_i}u&=\frac{\partial}{\partial x_j}u
+\end{align*}
+Damit kann man auch den Differentialoperator $L$ in den Ableitungen nach $x'_i$
+schreiben:
+\begin{align*}
+Lu&=\sum_{i,j=1}^na_{ij}\frac{\partial^2}{\partial x_i\partial x_j}u
+\\
+&=\sum_{i,j,k,l=1}^n a_{ij}
+t_{ki}\frac{\partial}{\partial x_k'}
+t_{lj}\frac{\partial}{\partial x_l'}u
+\\
+&=\sum_{i,j,k,l=1}^n
+t_{ki}a_{ij}t_{lj}\frac{\partial}{\partial x_k'}
+\frac{\partial}{\partial x_l'}u
+\end{align*}
+Wer lesen daraus ab, dass das Symbol $A$ des Operators $L$ in den Koordinaten
+$x_i$ durch die Koordinatentransformation auf die Koordinaten $x_j'$ 
+mit der Matrix $T=(t_{ij})$ transformiert wird durch
+$$A'=TAT^*.$$
+In der linearen Algebra lernt man, dass man zu einer symmetrischen
+Matrix $A$ immer eine Drehmatrix $T$ finden kann, so dass
+$A'=TAT^*$ Diagonalform hat, wobei die Diagonalelemente die
+Eigenwerte der Eigenvektoren sind.
+$$
+TAT^*
+=
+\begin{pmatrix}\lambda_1&\dots&0\\
+\vdots&\ddots&\vdots\\
+0&\dots&\lambda_n
+\end{pmatrix}
+$$
+Man kann also durch geeignete Wahl des Koordinatensystems mindestens in
+einem Punkt einen Differentialoperator zweiter Ordnung immer in die
+Form
+$$\sum_{i=1}\lambda_i\frac{\partial^2}{\partial x_i^2}u$$
+bringen.
+
+Durch eine Streckung der Koordinatenachse $x_i$ um $\sqrt{|\lambda_i|}$
+kann man ausserdem erreichen, dass der Differentialoperator die
+Form
+$$\sum_{i=1}\varepsilon_i\frac{\partial^2}{\partial x_i^2}u$$
+erh"alt, wobei die Zahlen $\varepsilon_i$ die Werte, $1$, $-1$ oder $0$
+haben k"onnen.
+
+Differentialoperatoren zweiter Ordnung werden also charakterisiert durch
+die Vorzeichen der Eigenwerte des Symbols. Wir bezeichnen die Anzahl
+der positiven Eigenwerte mit $P$, die Anzahl der negativen Eigenwerte
+mit $N$, und die Anzahl der verschwindenden Eigenwerte mit $Z$.
+Die Beispiele des Kapitels \ref{chapter-beispiele} k"onnen wie
+folgt kategorisiert werden:
+\begin{center}
+\begin{tabular}{l|ccc}
+Differentialoperator&P&N&Z
+\\
+\hline
+Laplace&
+$n$&$0$&$0$
+\\
+Wellengleichung&
+$n-1$&$1$&$0$
+\\
+W"armeleitung&
+$n-1$&$0$&$1$
+\end{tabular}
+\end{center}
+Daraus leiten wir die folgende Klassifikation ab:
+
+\begin{definition} Die Differentialgleichung 
+(\ref{operator2ordnung})
+mit den Kennzahlen $P$, $N$ und $Z$ heissen
+\begin{center}
+\begin{tabular}{lcl}
+hyperbolisch&falls&$Z=0$ und $P=1$ oder $P=n-1$\\
+parabolisch&falls&$Z>0$\\
+elliptisch&falls&$Z=0$ und $P=n$ oder $P=0$\\
+ultrahyperbolisch&falls&$Z=0$ und $1<P<n-1$
+\end{tabular}
+\end{center}
+\end{definition}
+Insbesondere sind die Gleichungen des Kapitels \ref{chapter-beispiele}
+Beispiele f"ur diese Typen von partiellen Differentialgleichungen
+wie folgt:
+\begin{itemize}
+\item {\bf elliptisch:} Potential
+\item {\bf hyperbolisch:} Wellengleichung, linearisierte "Uberschallstr"omung
+\item {\bf parabolisch:} W"armeleitung, Diffusion
+\end{itemize}
+
+\section{Kanonische Form}
+\rhead{Kanonische Form}
+F"ur lineare PDGL mit konstanten Koeffizienten, f"ur die also die Gr"ossen
+$a_{ij}$ nicht von den Koordinaten abh"angen, kann man durch eine Drehung
+des Koordinatensystems immer erreichen, dass die Koeffizentenmatrix diagonal
+ist mit Diagonalelementen aus $\{0,\pm1\}$. Es stellt sich die Frage, ob
+dies wohl auch bei partiellen Differentialgleichungen mit allgemeinen
+Koeffizienten m"oglich ist.
+
+In zwei Dimensionen l"asst sich ein geeignetes Koordinatensystem mit folgender
+Idee konstruieren. 
+In jedem Punkt $(x,y)$ gibt es zwei Vektoren $\vec e_+$ und
+$\vec e_-$, welche Eigenvektoren zum gr"osseren bzw.~kleineren Eigenvektor
+der Matrix $A$ sind. Solange die Eigenwerte verschieden sind, lassen sich
+die Vektorfelder $\vec e_+$ und $\vec e_-$ auf stetige Weise konstruieren.
+Die Vektoren stehen in jedem Punkt senkrecht aufeinander.
+
+Nun kann man zu jedem Vektorfeld eine Schar von L"osungskurven
+konstruieren. Jede Schar h"angt von einem Parameter ab, wir nennen die
+beiden Parameter $\xi$ und $\eta$. Ein Punkt in der Ebene kann mit
+den Koordinaten $\xi$ und $\eta$ beschrieben werden.
+In diesen Koordinaten hat die Matrix $A$ Diagonalform.
+
+In drei Dimensionen l"asst sich diese Idee nicht mehr durchf"uhren,
+die Felder der Eigenvektoren m"ussen hier zus"atzliche Bedingungen
+erf"ullen.
+
+Da man aber in der N"ahe eines Punktes immer erreichen kann, dass $A$ diagonal
+ist, ist dort die Differentialgleichung n"aherungsweise diagonal.
+Wenn wir vor allem an den allgemeinen Eigenschaften einer L"osung interessiert
+sind, gen"ugt es also
+also f"ur alle Eigenschaften, die sich auf das Verhalten der L"osung im kleinen
+beziehen, die Standarddifferentialgleichungen des folgenden Katalogs
+zu studieren:
+\begin{align*}
+\Delta u&=0\\
+\partial_tu&=k\Delta u\\
+\partial_t^2u&=a^2\Delta u\\
+\end{align*}
+was wir in dieser Reihenfolge in den folgenden drei Kapiteln tun
+werden.
+

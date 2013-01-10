@@ -1,0 +1,202 @@
+L"osen Sie die Differentialgleichung
+\[
+x^2\frac{\partial u}{\partial x}+y^2\frac{\partial u}{\partial y}=0
+\]
+auf dem Gebiet $\Omega=\{(x,y)\,|\,\text{$ x< 0$ und $-1\le y<0$}\}$ mit der Randbedingung
+\[
+u(x,-1)=\frac1x,\quad x<0.
+\]
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+Dies ist eine quasilineare partielle Differentialgleichung
+erster Ordnung, die mit Hilfe von Charakteristiken gel"ost werden
+kann. Das Differentialgleichungssytem f"ur die Charakteristiken ist
+\begin{align*}
+\dot x&=x^2\\
+\dot y&=y^2\\
+\dot u&=0
+\end{align*}
+Die ersten beiden Differentialgleichungen sind von der selben Art, diese
+gew"ohnliche Differentialgleichung l"asst sich leicht mit dem Separation l"osen:
+\begin{align*}
+\frac{dx}{dt}&=x^2
+&\Rightarrow&
+&\int\frac{dx}{x^2}&=\int dt
+&\Rightarrow&
+&-\frac1x&=t+C
+&\Rightarrow&
+&x(t)&=-\frac1{t+C_1}
+\\
+\frac{dy}{dt}&=y^2
+&&
+&&
+&\Rightarrow&
+&&
+&&
+&y(t)&=-\frac1{t+C_2}
+\end{align*}
+Charakteristiken sind im Grundriss also Kurven der Form
+\[
+\begin{pmatrix}x(t)\\y(t)\end{pmatrix}
+=-\begin{pmatrix}\frac1{t+C_1}\\\frac1{t+C_2}\end{pmatrix}.
+\]
+Wir suchen Kurven, die f"ur $t=0$ durch einen Punkt $(x_0,-1)$ gehen, wobei
+$x_0$ negativ ist. Dazu m"ussen wir $C_1$ und $C_2$ so w"ahlen,
+\begin{align*}
+x(0)&=x_0&&\Rightarrow&C_1&=-\frac1{x_0}&&\Rightarrow&x(t)&=-\frac1{t-\frac1{x_0}}=\frac{x_0}{1-tx_0}\\
+y(0)&=-1&&\Rightarrow&C_2&=1&&\Rightarrow&y(t)&=-\frac1{t+1}
+\end{align*}
+Zu einem Punkt $(x,y)$ mit $x<0$ und $-1\le y<0$ suchen wir jetzt den Ausgangspunkt
+der zugeh"origen Charakteristik, also das passende $x_0$. F"ur ein
+passendes $t$ muss gelten:
+\begin{align*}
+x&=-\frac{1}{t-\frac1{x_0}},\\
+y&=-\frac{1}{1+t}.
+\end{align*}
+Daraus leitet man
+\[
+t=-1-\frac1{y}
+\]
+ab.
+Setzen wir dies in der Gleichung f"ur $x$ ein, finden wir
+\begin{align*}
+x&=-\frac{1}{-1-\frac1y-\frac1{x_0}},\\
+\frac1x&=1+\frac1y+\frac1{x_0},\\
+x_0&=\frac{1}{\frac1x-\frac1y-1}.
+\end{align*}
+
+Die Gleichung $\dot u=0$ bedeutet, dass der Funktionswert von $u$ sich
+entlang einer Charakteristik nicht "andert.
+Der Funktionswert an der Stelle $(x,y)$ ist
+also gleich gross wie der Funktionswert an der Stelle $(x_0,-1)$. Wegen der
+Randbedingung $u(x_0,-1)=\frac1{x_0}$ folgt
+\[
+u(x,y)=\frac1{x_0}=\frac1x-\frac1y-1.
+\]
+{\bf Kontrolle:}
+Tats"achlich kann man durch Einsetzen von $(x_0,-1)$ sofort nachpr"ufen,
+dass $u$ die Randbedingung erf"ullt:
+\[
+u(x_0,-1)=\frac1{x_0}-\frac1{-1}-1=\frac1{x_0}.
+\]
+Aber auch die Differentialgleichung ist erf"ullt:
+\[
+\left.
+\begin{aligned}
+\frac{\partial u}{\partial x}&=-\frac1{x^2}\\
+\frac{\partial u}{\partial y}&=\frac1{y^2}\\
+\end{aligned}
+\right\}
+\quad\Rightarrow\quad
+x^2\frac{\partial u}{\partial x}+y^2\frac{\partial u}{\partial y}
+=
+-x^2\frac1{x^2}+y^2\frac1{y^2}
+=
+0,
+\]
+die Funktion ist also tats"achlich eine L"osung.
+
+\medskip
+
+Alternativ kann man diese Aufgabe auch mit Hilfe eines Separationsansatzes
+l"osen. Allerdings verlangt dieses L"osung Hilfsmittel, die im Bachelor-Studium
+normalerweise nicht behandelt werden. Sie ist daher f"ur Studenten dieses
+Kurses nicht wirklich durchf"uhrbar. Trotzdem ist unten ein Bewertungsschema
+angegben, auch wenn die letzten zwei Punkte praktisch unerreichbar waren.
+
+\medskip
+
+Wir setzen den Separationsansatz $u(x,y)=X(x)Y(y)$ in die
+Differentialgleichung ein:
+\[
+x^2X'(x)Y(y)+y^2Y'(y)Y(y)=0.
+\]
+Bringt man alle Terme mit $x$ auf die linke Seite, und alle Terme
+mit $y$ auf die rechte, bekommt man
+\[
+x^2\frac{X'(x)}{X(x)}=- y^2\frac{Y'(y)}{Y(y)}.
+\]
+Da die linke Seite nur von $x$, die rechte aber nur von $y$ abh"angt,
+m"ussen beide Seiten konstant sein, wir nenne die Konstante $\mu$.
+So entstehen die beiden Differentialgleichungen
+\begin{align*}
+x^2\frac{X'(x)}{X(x)}&=\mu
+&
+\Rightarrow\;
+\frac{d}{dx}\log X(x)&=\frac{\mu}{x^2}
+&
+\Rightarrow\;
+\log X(x)&=-\frac{\mu}{x}
+&
+\Rightarrow\;
+X(x)&=Ae^{-\frac{\mu}{x}}
+\\
+y^2\frac{Y'(y)}{Y(y)}&=-\mu
+&
+\Rightarrow\;
+\frac{d}{dy}\log Y(y)&=-\frac{\mu}{y^2}
+&
+\Rightarrow\;
+\log Y(y)&=\frac{\mu}{y}
+&
+\Rightarrow\;
+Y(y)&=Be^{\frac{\mu}{y}},
+\end{align*}
+und damit die Teill"osungen
+\[
+u_\mu(x,y)=e^{\mu\bigl(-\frac1x+\frac1y\bigr)}.
+\]
+Aus diesen Teill"osungen muss jetzt die L"osung so linear kombiniert
+werden, dass die Anfangsbedingung erf"ullt wird. Die Linearkombination
+wird in diesem Fall ein Integral:
+\[
+u(x,y)=\int_{\mathbb R}C(\mu)
+e^{\mu\bigl(-\frac1x+\frac1y\bigr)}\,d\mu,
+\]
+die Funktion $C(\mu)$ ist noch zu bestimmen.
+Insbesondere muss gelten
+\[
+u(x,-1)
+=
+\frac1x
+=
+\int_{\mathbb R}C(\mu)e^{\mu\bigl(-\frac1x-1)}\,d\mu
+=
+\int_{\mathbb R}C(\mu)e^{-\mu\bigl(\frac1x+1)}\,d\mu
+\]
+Schreiben wir $\frac1x+1=s$ und $t=\mu$ wird die Bedingung
+zu
+\[
+\int_{\mathbb R}C(t)e^{-ts}\,dt=s-1.
+\]
+Das Integral links ist die zweiseitige Laplace-Transformation
+(im Bachelor-Studium lernt man normalerweise nur die einseitige
+Laplace-Transformation kennen). Die Terme rechts haben bekannte
+zweiseitige Laplace-Transformationen:
+\begin{align*}
+\int_{\mathbb R}-\delta(t)e^{-st}\,dt&=-1\\
+\int_{\mathbb R}-\delta'(t)e^{-st}\,dt&=s
+\end{align*}
+Man muss also $C(t)=-\delta'(t)-\delta(t)$ verwenden, daraus bekommt
+man jetzt die Funktion $u(x,y)$ durch Integration mit den Eigenschaften
+von $\delta(t)$ und $\delta'(t)$:
+\begin{align*}
+u(x,y)
+&=
+\int_{\mathbb R}
+(-\delta'(\mu)-\delta(\mu))
+e^{-\mu\bigl(\frac1x-\frac1y\bigr)}\,d\mu
+\\
+&=
+-\left.\frac{\partial}{\partial \mu}
+e^{-\mu\bigl(\frac1x-\frac1y\bigr)}\right|_{\mu=0}
+-
+\left.e^{-\mu\bigl(\frac1x-\frac1y\bigr)}\right|_{\mu=0}
+\\
+&=
+\frac1x-\frac1y-1,
+\end{align*}
+also das gleiche Resultat wie vorhin.
+\end{loesung}
+}{}

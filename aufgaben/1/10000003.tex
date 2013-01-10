@@ -1,0 +1,45 @@
+Ein Balken wird an den beiden Enden bei $x=\pm l$ von einem Thermostat
+auf verschiedenen Temperaturen $T_\pm$ gehalten. Nach einiger Zeit
+hat sich ein station"arer Zustand eingestellt, also eine Temperaturverteilung
+$T(t,x)$, die gar nicht von $t$ abh"angt. Wie sieht diese Temperaturverteilung
+aus?
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+Die Temperaturverteilung muss die W"armeleitungsgleichung erf"ullen,
+\[
+\frac{\partial}{\partial t}T(t,x)=
+a^2\frac{\partial^2}{\partial x^2}T(t,x)
+\]
+aber auch die Bedingung
+\[
+\frac{\partial}{\partial t}T(t,x)=0.
+\]
+$T(t,x)$ ist also nur eine Funktion $T(x)$, welche die Differentialgleichung
+\[
+a^2T''(x)=0
+\]
+erf"ullt. Diese Gleichung hat die allgemeine L"osungen
+\[
+T(x)=Ax+B,
+\]
+die Konstanten $A$ und $B$ m"ussen so gew"ahlt werden, dass
+die Randbedingungen erf"ullt sind:
+\[
+T(-l)=T_-\qquad T(l)=T_+
+\]
+was uns auf das Gleichungssystem
+\begin{align*}
+Al+B&=T_+\\
+-Al+B&=T_-
+\end{align*}
+f"uhrt.
+Summe und Differenz der beiden Gleichungen liefert
+\begin{align*}
+B&=\frac{T_++T_-}{2}
+\\
+A&=\frac{T_+-T_-}{2l}
+\end{align*}
+\end{loesung}
+}{}
+

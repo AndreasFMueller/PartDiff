@@ -1,0 +1,133 @@
+Betrachten Sie die Differentialgleichung
+\[
+y^2\frac{\partial^2 u}{\partial x^2}
++4y\frac{\partial^2u}{\partial x\partial y}
++\frac{\partial^2 u}{\partial y^2}=0
+\]
+auf dem Gebiet
+\[
+\Omega = \{ (x,y)\,|\, y >0\}.
+\]
+\begin{teilaufgaben}
+\item Zeigen Sie, dass die Differentialgleichung hyperbolisch ist.
+\item Stellen Sie die Gleichung der Charakteristiken auf.
+\item Die Differentialgleichung der Charakteristiken ist eine
+gew"ohnliche Differentialgleichung erster Ordnung f"ur zwei unbekannte
+Funktionen $x(s)$ und $y(s)$, faktorisieren Sie sie mit zwei Faktoren
+der Form
+\[
+(\dot x(s)-ry(s)\dot y(s))\cdot (\dot x(s)-qy(s)\dot y(s)).
+\]
+Bestimmen
+sie die Werte von $r$ und $q$.
+\item
+Finden Sie die Gleichung der Charakteristiken durch
+L"osung der Differentialgleichungen
+\begin{align*}
+\dot x(s) - ry(s)\dot y(s)&=0\qquad\text{und}\\
+\dot x(s) - qy(s)\dot y(s)&=0,
+\end{align*}
+verwenden Sie dabei
+$\frac{d}{ds}(y(s)^2)=2y(s)\dot y(s)$.
+\end{teilaufgaben}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Die Determinante der Symbolmatrix $A$ ist
+\[
+A=\begin{pmatrix}
+y^2&2y\\
+2y&1
+\end{pmatrix}
+\quad\Rightarrow\quad
+\det (A)=y^2-4y^2=-3y^2<0 \quad\text{in $\Omega$},
+\]
+also ist die Gleichung hyperbolisch.
+\item
+Aus den Koeffizienten der Symbolmatrix findet man die Gleichung
+der Charakteristiken
+\[
+y(s)^2\dot y(s)^2-4y(s)x(s)\dot y(s)+\dot x(s)^2=0.
+\]
+\item
+Der Faktorisierungsansatz liefert
+\begin{align*}
+0&=(\dot x(s)-ry(s)\dot y(s))(\dot x(s)-qy(s)\dot y(s))
+\\
+&=\dot x(s)^2-(r+q)\dot x(s) y(s)\dot y(s)-rqy(s)^2\dot y(s)^2
+\end{align*}
+Die Zahlen $r$ und $q$ m"ussen also die Gleichungen
+\begin{align*}
+r+q&=-4\\
+rq&=1
+\end{align*}
+erf"ullen. Setzt man $q=1/r$ in die erste Gleichung ein, bekommt man
+\begin{align*}
+r+\frac1r&=-4\\
+r^2+4r+1&=0
+\end{align*}
+Diese quadratische Gleichung hat die L"osungen
+\[
+r
+=
+-2\pm\sqrt{4-1}
+=
+\begin{cases}
+\sqrt{3}-2\\
+-\sqrt{3}-2
+\end{cases}
+\]
+\item
+Die gew"ohnliche Differentialgleichung ist
+\[
+\dot x(s)=ry(s)\dot y(s)=\frac{r}{2}\frac{d}{ds}(y(s)^2)
+\]
+Integriert man nach $s$ bekommt man
+\[
+x(s) + C=\frac{r}{2}y(s)^2.
+\]
+Wegen $y(s)>0$ gilt
+\[
+y = \sqrt{\frac{2}{r}(x+C)}.
+\]
+Die Charakteristiken erf"ullen also Gleichungen der Form
+\[
+\frac{r}2y^2-x-C=0,
+\]
+dies sind Parabeln.
+\end{teilaufgaben}
+Es wurde zwar nicht verlangt, die Charakteristiken durch einen
+bestimmten Punkt $(x_0,y_0)$ zu berechnen, hier trotzdem die
+L"osung. Die Charakteristik zu den Faktorn mit $r$ bzw. $q$ haben
+die Konstanten $C_r$ und $C_q$ nach
+\[
+C_r=\frac{r}{2}y_0^2-x_0
+\qquad
+\text{bzw.}
+\qquad
+C_q=\frac{q}{2}y_0^2-x_0.
+\]
+Damit werden die Charakteristiken durch $(x_0,y_0)$:
+\begin{align*}
+y&=\sqrt{
+\frac2r(x+C_r)
+}
+=
+\sqrt{
+\frac2r(x+
+\frac{r}{2}y_0^2-x
+)
+}
+=\sqrt{y_0^2+\frac2r(x-x_0)}
+\qquad\text{bzw.}
+\\
+y&
+=\sqrt{y_0^2+\frac2q(x-x_0)}
+\end{align*}
+\end{loesung}
+}{
+}
+
+

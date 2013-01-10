@@ -1,0 +1,97 @@
+Die L"osung einer Differentialgleichung ist erst bestimmt, wenn
+die Randbedingungen vollst"andig festgelegt sind. In dieser Aufgabe
+studieren Sie, wie sich die L"osungen "andern, wenn man die Randbedingungen
+"andert. Gegeben ist die gew"ohnliche Differentialgleichung
+\[
+y''(x)=1.
+\]
+L"osen Sie die Gleichung im Interval $[0,1]$
+unter den folgenden Randbedingungen:
+\begin{teilaufgaben}
+\item $y(0)=0, y(1)=1$
+\item $y(0)=0, y'(1)=-1$
+\item $y'(0)=0, y(1)=1$
+\item $y'(0)=1, y'(1)=-1$
+\end{teilaufgaben}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+Zun"achst finden wir die allgemeine L"osung dieser Gleichung.
+Dazu muss die L"osung der homogenen Gleichung gefunden werden,
+also von $y''=0$. Lineare Funktionen erf"ullen diese Gleichung.
+Die allgemeine L"osung der homogenen Gleichung ist also
+\[
+y_h(x)=Ax+B.
+\]
+Jetzt wird noch eine partikul"are L"osung der inhomogenen
+Gleichung ben"otigt, ein solche ist aber einfach zu
+erraten:
+\[
+y_p(x)=\frac12x^2\Rightarrow y_p'(x)=x\Rightarrow y_p''(x)=1.
+\]
+Die allgemeine L"osung der Differentialgleichung ist also
+\[
+y(x)=\frac12x^2+Ax+B, \text{\quad mit\quad} y'(x)=x+A
+\]
+Die Funktionswerte und Ableitungen am linken und rechten
+Rand des Intervals sind
+\begin{center}
+\begin{tabular}{|c|cc|}
+\hline
+&0&1\\
+\hline
+$y$&$B$&$\frac12 +A+B$\\
+$y'$&$A$&$A+1$\\
+\hline
+\end{tabular}
+\end{center}
+Mit diesen Resultaten ist es jetzt leicht, die Teilaufgaben anzupacken:
+\begin{teilaufgaben}
+%\item Wir erhalten die Bedingungen
+%\begin{align*}
+%B&=1\\
+%A&=1
+%\end{align*}
+%also die L"osung $y(x)=\frac12x^2+x+1.$
+\item Wir erhalten die Bedingungen
+\begin{align*}
+B&=0\\
+\frac12+A+B&=1
+\end{align*}
+woraus wir sofort $B=0$ und $A=\frac12$ ablesen, also
+\[
+y(x)=\frac12x(x+1).
+\]
+Die Korrektheit dieser L"osung kann durch Einsetzen sofort
+verifiziert werden.
+\item In diesem Fall lauten die Bedingungen
+\begin{align*}
+B&=0\\
+A+1&=-1\\
+\end{align*}
+woraus $B=0$ und $A=-2$ folgt, also
+\[
+y(x)=\frac12x^2-2x.
+\]
+\item
+Bedingungen:
+\begin{align*}
+A&=0\\
+\frac12+A+B&=1
+\end{align*}
+was $A=0$ und $B=\frac12$ zur Folge hat, also
+\[
+y(x)=\frac12(x^2+1).
+\]
+\item In diesem Fall werden die Bedingungen
+\begin{align*}
+A&=1\\
+A+1&=-1
+\end{align*}
+Bildet man die Differenz dieser beiden Gleichungen
+erh"alt man $-1=2$, was offensichtlich falsch ist. Diese
+Randbedingungen lassen sich also nicht erf"ullen.
+\end{teilaufgaben}
+\end{loesung}
+}{}
+

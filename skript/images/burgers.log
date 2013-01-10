@@ -1,0 +1,23 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=mptopdf 2011.10.29)  10 JAN 2013 15:13
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**\relax burgers.6
+ (./burgers.6{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map})
+[1] 
+Here is how much of TeX's memory you used:
+ 56 strings out of 496724
+ 491 string characters out of 3201533
+ 4016082 words of memory out of 7501321
+ 1700 multiletter control sequences out of 15000+200000
+ 3548 words of font info for 4 fonts, out of 3000000 for 9000
+ 0 hyphenation exceptions out of 8191
+ 10i,3n,7p,115b,254s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/
+public/txfonts/rtxr.pfb></usr/share/texmf/fonts/type1/urw/times/utmr8a.pfb></us
+r/share/texmf/fonts/type1/urw/times/utmri8a.pfb>
+Output written on burgers.pdf (1 page, 16850 bytes).
+PDF statistics:
+ 21 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 7 words of extra memory for PDF output out of 10000 (max. 10000000)
+

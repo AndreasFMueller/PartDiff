@@ -1,0 +1,428 @@
+%
+% c05-parabolisch.tex
+%
+% (c) 2008 Prof Dr Andreas Mueller, Hochschule Rapperswil
+% $Id: c05-parabolisch.tex,v 1.3 2008/10/31 08:04:16 afm Exp $
+%
+\chapter{Parabolische Differentialgleichungen\label{chapter-parabolisch}}
+\index{Differentialgleichung!partielle!parabolische}
+\lhead{Parabolische PDGL}
+\rhead{}
+Vorangegangen Kapitel waren wir in der Lage, mit Hilfe der Greenschen
+Funktion eine L"osung eines elliptischen Randwertproblems zu finden.
+Dieser L"osungsweg hing ab Maxmimumprinzip.
+Es garantierte die Eindeutigkeit einer
+L"osung und machte damit die Konstruktion der Greenschen Funktion
+erst m"oglich.
+
+F"ur parabolische Differentialgleichung ist ein analoges Vorgehen
+m"oglich, wobei aber immer der Zeitkoordinate (oder der Richtung
+des Eigenvektors mit Eigenwert $0$ der Koeffzientenmatrix)
+eine besondere Bedeutung zukommt.
+Dies wird in den ersten drei
+Abschnitten ohne Beweise  oder tiefer gehende Analyse zusammengefasst.
+
+Im Unterschied zu den elliptischen
+Gleichungen kann man die W"armeleitunsggleichung aber auch
+als eine ``Zeitentwicklungsgleichung'' verstehen, so wie die
+gew"ohnliche Differentialgleichung $\dot x=f(x,t)$
+f"ur den Zustandsvektor $x$ die Zeitentwicklung in einem endlichdimensionalen
+System beschreibt. Der Definitionsbereich der W"armeleitungsgleichung
+ist ja typischerweise von der Form $\Omega\times[0,\infty[$, wobei
+$\Omega$ ein Raumgebiet ist.
+Die L"osung der W"armeleitungsgleichung ist eine zeitabh"angige Funktion
+auf $\Omega$, was zum Beispiel durch einen Separationsansatz
+ausgedr"uckt werden kann. Es stellt sich dann heraus, dass die L"osungen
+des elliptischen Problems auf $\Omega$ dazu verwendet werden k"onnen,
+die W"armeleitungsgleichung zu l"osen.
+
+\section{Problemstellung}
+\rhead{Problemstellung}
+Sei $\Omega$ ein Gebiet in $\mathbb R^n$. Der Operator 
+$$\partial_t-\kappa\Delta$$
+ist ein parabolischer Operator auf $\mathbb R_+\times \Omega$.
+Eine L"osung des W"armeleitungsproblems ist eine Funktion
+$u\colon\mathbb R_+\times\Omega\to\mathbb R,$
+welche folgende Bedingungen erf"ullt
+\begin{align*}
+\partial_tu(t,x)-\kappa\Delta u(t,x)&=f(t,x)&&(t,x)\in\mathbb R_+\times\Omega
+\\
+u(0,x)&=u_0(x)&&x\in\Omega
+\\
+\alpha u+\beta\frac{\partial u}{\partial n}&=g(t, x)&&x\in\partial\Omega, t>0
+\end{align*}
+Falls das Gebiet $\Omega$ unbeschr"ankt ist, zum Beispiel $\Omega=\mathbb R^n$,
+wird es notwendig sein, zus"atzliche Bedingungen f"ur das Verhalten
+der L"osung f"ur $t\to\infty$ hinzuzuf"ugen, damit die L"osungen weiterhin
+wohlbestimmt sind.
+
+\section{Maximum-Minimum-Prinzip}
+\rhead{Maximum-Prinzip}
+In der Theorie der elliptischen PDGL war die Mittelwerteigenschaft
+der Ausgangspunkt f"ur den Beweis des Maximumpronzips. Obwohl
+diese Eigenschaft bei den 
+L"osungen der W"armeleitungsgleichung nicht mehr erf"ullst ist,
+gilt f"ur sie ein Maximum-Minimum-Prinzip.
+\begin{satz}[Maximum-Minimum-Prinzip f"ur die W"armeleitungsgleichung]
+Sei $\Omega$ ein beschr"anktes Gebiet und
+$u$ eine Funktion auf $[0,T]\times\Omega$.
+Weiter sei
+\begin{align*}
+M_{\partial \Omega}&:=\max\{u(t,x)\,|\,x\in\partial\Omega, t\in[0,T]\}
+&
+m_{\partial \Omega}&:=\min\{u(t,x)\,|\,x\in\partial\Omega, t\in[0,T]\}
+\\
+M_0&:=
+\max\{u(0,x)\,|\,x\in\Omega\}
+&
+m_0&:=
+\min\{u(0,x)\,|\,x\in\Omega\}
+\\
+M&:=\max\{M_0,M_{\partial\Omega}\}
+&
+m&:=\min\{M_0,M_{\partial\Omega}\}
+\end{align*}
+Falls $u$ die homogene
+W"armeleitungsgleichung erf"ullt, also $\partial_tu-\kappa\Delta u=0$,
+gilt
+$$m\le u(t,x)\le M\quad\forall(t,x)\in[0,T]\times\bar\Omega.$$
+\end{satz}
+Wie bei den elliptischen partiellen Differentialgleichungen folgt, dass
+die das homogene Anfangs- und Randwert-Problem der W"armeleitungsgleichung
+nur eine L"osung hat.
+
+\section{Partikul"are L"osung}
+\rhead{Partikul"are L"osung}
+Um das anfangs des Kapitels gestellt Problem zu l"osen, kann man jetzt
+gleich vorgehen wie im Fall elliptischer Randwertprobleme. Zun"achst
+braucht man singul"are L"osungen, also L"osungen, welche die
+W"armeleitungsgleichung mit einer $\delta$-Funktion als rechte Seite
+l"osen.
+Man kann durch etwas m"uhsame Rechnung nachpr"ufen, dass f"ur $0<\tau<t$
+der Ausdruck
+$$
+\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)
+$$
+die W"armeleitungsgleichung erf"ullt. Daraus l"asst sich
+dann die Funktion
+\begin{equation}
+K(t-\tau, x-\xi)
+=
+\vartheta(t-\tau)
+\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)
+\label{parabolischsingulaer}
+\end{equation}
+konstruieren, welche die gew"unschten Eigenschaften hat:
+
+\begin{satz}
+Die Funktion $K$ erf"ullt die W"armeleitungsgleichung
+\begin{align*}
+\partial_tK-\kappa\Delta_xK&=0&&(\tau, \xi)\ne(t,x)
+\\
+\lim_{t\to\tau^+}K(t-\tau, x-\xi)&=\delta(x-\xi).
+\end{align*}
+Bez"uglich der Koordinaten $(\tau,\xi)$ gilt
+\begin{align*}
+-\partial_{\tau} K-\kappa\Delta_{\xi}K&=0\qquad(\tau,\xi)\ne(t,x)
+\\
+\lim_{\tau\to t^-}K(t-\tau, x-\xi)&=\delta(x-\xi)
+\end{align*}
+\end{satz}
+
+Eine partikul"are L"osung des Problems kann wieder mit Hilfe eines Integrals
+gefunden werden:
+\begin{align*}
+u(t,x)
+&=
+\int_\Omega\int_0^\infty
+K(t-\tau,x-\xi)f(\tau,\xi)
+\,d\tau\,d\xi
+\\
+&=
+\int_\Omega\int_0^\infty
+\vartheta(t-\tau)\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)
+f(\tau,\xi)
+\,d\tau\,d\xi
+\\
+&=
+\int_\Omega\int_0^t
+\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)
+f(\tau,\xi)
+\,d\tau\,d\xi
+\end{align*}
+Setzt man dies in die W"armeleitungsgleichung ein, ergibt sich
+\begin{align*}
+(\partial_t-\kappa\Delta)u
+&=
+\int_\Omega\int_0^t
+(\partial_t-\kappa\Delta)\biggl[
+\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)\biggr]
+f(\tau,\xi)
+\,d\tau\,d\xi
+\\
+&\quad+
+\lim_{\tau\to t-}
+\int_\Omega
+\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)
+f(t,\xi)
+\,d\xi
+\end{align*}
+Das erste Integral verschwindet, weil der Ausdruck in der eckigen Klammer
+f"ur alle $0<\tau<t$ die W"armeleitungsgleichung erf"ullt, also von
+$\partial_t-\kappa\Delta$ zu $0$ gemacht wird.
+Der Teil des Integranden vor $f(t,\xi)$ im zweiten Integral ist eine
+Approximation der $\delta$-Funktion an der Stelle $x$, also ist der Grenzwert
+$f(t,x)$. Insgesamt ist also
+$$(\partial_t-\kappa\Delta)u=f,$$
+wie behauptet.
+
+\section{Greensche Funktion}
+\rhead{Greensche Funktion}
+Wir wollen jetzt die singul"aren L"osungen $K$ zu einer L"osung des Problems
+mit homogenen Randbedingungen erweitern.
+Wie beim Laplace-Problem suchen wir jetzt eine Funktion $J(t,x,\tau,\xi)$,
+welche wie $K$ die Differentialgleichungen erf"ullt, also
+\begin{align*}
+\partial_t J-\kappa\Delta_xJ&=0
+&
+-\partial_\tau J-\kappa\Delta_\xi J&=0
+&t>\tau
+\\
+J&=0&J&=0&t<\tau
+\end{align*}
+und ausserdem die Randbedingung 
+\begin{align*}
+J(t,x,\tau,\xi)&=-K(t,x,\tau,\xi)&&x\in\partial\Omega
+\end{align*}
+Falls dieses Problem immer eine L"osung hat, nennen wir die
+Summe
+$$G(t,x,\tau,\xi)=K(t,x,\tau,\xi)+J(t,x,\tau,\xi)$$
+wieder die Greensche Funktion f"ur das W"armeleitungsproblem
+mit Dirichlet-Rand\-bedingungen. Und ebenfalls analog wie bei elliptischen
+partiellen Differentialgleichungen kann man eine L"osungsformel
+angeben
+\begin{align*}
+u(t,x)&=
+\int_0^t\int_{\Omega}G(t,x,\tau,\xi)f(\tau,\xi)\,d\xi\,d\tau
+\\
+&\quad+\int_{\Omega}G(t,x,0,\xi)u_0(\xi)\,d\xi
+\\
+&\quad +\kappa\int_0^t\int_{\partial \Omega}
+G(t,x,\tau,\xi)\operatorname{grad}_\xi u
+-u\operatorname{grad}_\xi G(t,x,\tau,\xi)\cdot dn\,d\tau
+\end{align*}
+
+Selbstverst"andlich kann die Theorie wie bei elliptischen Gleichungen
+auch f"ur Neumann-Randbedingungen verfeinert werden.
+
+\section{Kausalit"at}
+\rhead{Kausalit"at}
+Die singul"are L"osung $K$ zeigt, dass eine "Anderung von $f$ an der Stelle
+$(t_0,x_0)$ sich genau auf alle Funktionswerte der L"osung $u(t,x)$ f"ur
+$t>t_0$ auswirkt. Eine St"orung zur Zeit $t_0$ breitet sich also sofort
+"uber das ganze Gebiet $\Omega$ aus.
+
+\section{Eigenfunktionen und L"osungen der W"armeleitungsgleichung}
+\rhead{Eigenfunktionen}
+Im vorangegangenen Kapitel haben wir das Problem
+\begin{align*}
+\Delta u&=f&&\text{in $\Omega$}\\
+u&=g&&\text{auf $\partial\Omega$}
+\end{align*}
+studiert und dabei festgestellt, dass es "ahnlich wie bei Matrixgleichungen
+$Ax=b$ eine Art Inverse gibt, welche durch die Greensche Funktion
+bereitgestellt wird. Sogar formal war die L"osung analog einer Matrixgleichung,
+die Rolle der Matrix mit zwei Indizes "ubernahm eine Funktion mit zwei
+Variablen, statt einer Summe war ein Integral zu bilden.
+
+F"ur eine parabolische PDGL tritt die Zeitentwicklung hinzu. In
+ein Matrixproblem "ubersetzt geht es darum, einen zeitlich
+ver"anderlichen Vektor $x(t)$ zu finden, dessen Ableitung mit einer
+Matrixgleichung $\dot x=Ax$ berechnet werden kann. Wir versuchen daher,
+die L"osung dieser Art von Matrix-Differentialgleichung auf das
+W"armeleitungsproblem anzuwenden.
+
+\subsection{Systeme gew"ohnlicher DGL erster Ordnung}
+Das einer homogenen parabolischen linearen PDGL "aquivalente Problem
+ist ein homogenes System
+von linearen gew"ohnlichen Differentialgleichungen f"ur eine vektorwertige Funktion
+$t\mapsto x(t)\in\mathbb R^n$.
+Ein solches System ist gegeben durch eine Matrix $A$ und die Gleichung
+$$\frac{d}{dt}x(t)=Ax(t).$$
+H"atte die Matrix $A$ Diagonalform, k"onnte die allgemeine L"osung 
+sofort angegeben werden:
+$$A=\begin{pmatrix}
+\lambda_1&\dots&0\\
+\vdots&\ddots&\vdots\\
+0&\dots&\lambda_n
+\end{pmatrix}
+\qquad\Rightarrow\qquad
+x(t)=\begin{pmatrix}
+x_1(0)e^{\lambda_1t}
+\\
+\vdots
+\\
+x_n(0)e^{\lambda_nt}
+\end{pmatrix}.$$
+Unter gewissen Voraussetzungen an die Matrix $A$ kann man $n$
+orthonormierte Eigenvektoren
+$e_1,\dots,e_n$ finden. Nimmt man einen solchen Vektor als
+Anfangsbedingung, ist die L"osung $e_ie^{\lambda_it}$. Schreibt man die
+Anfangsbedingung in den Eigenvektoren, z.~B.
+$$
+x(0)=\sum_{i=1}^n(e_i \cdot x(0))e_i,
+$$
+kann man die L"osung der Differentialgleichung sofort hinschreiben:
+\begin{equation}
+x(t)=\sum_{i=1}^n
+e^{\lambda_i t}
+(e_i\cdot x(0))e_i
+.
+\label{development}
+\end{equation}
+Tats"achlich ergibt Einsetzen in die beiden Seiten der Differentialgleichung
+\begin{align*}
+\frac{d}{dt}x(t)&=\sum_{i=1}^n\lambda_ie^{\lambda_i t}(e_i\cdot x(0))e_i
+\\
+Ax(t)
+&=\sum_{i=1}e^{\lambda_it}(e_i\cdot x(0))Ae_i
+=\sum_{i=1}e^{\lambda_it}(e_i\cdot x(0))\lambda_i e_i
+\end{align*}
+Damit haben wir die L"osungen des homogenen Differentialgleichungssystems
+gefunden.
+
+\subsection{Variation der Konstanten}
+Das Verfahren der Variation der Konstanten erlaubt, eine inhomogene
+Differentialgleichung erster Ordnung zu l"osen, also
+$$\frac{d}{dt}x(t)-Ax(t)=f(t),$$
+wobei $f$ eine vektorwertige Funktion ist.
+Die allgemeine L"osung der homogenen Gleichung war
+$$\sum_{i=0}^nc_ie^{\lambda_i t}e_i,$$
+wobei $c_i=(e_i\cdot x(0))$ war.
+Das Verfahren der Variation der Konstanten schreibt vor, die Konstanten
+$c_i$ durch Funktionen $c_i(t)$ zu ersetzen,
+$$
+x(t)=\sum_{i=1}^nc_i(t)e^{\lambda_it}e_i,
+$$
+und in die Differentialgleichung
+einzusetzen, also
+\begin{align*}
+\sum_{i=1}^n\dot c_i(t)e^{\lambda_it}e_i
++
+\sum_{i=1}^n\lambda_i c_i(t)e^{\lambda_it}e_i
+-\sum_{i=1}^n\lambda_i c_i(t)e^{\lambda_it}e_i
+&=
+f(t)
+\\
+\sum_{i=1}^n\dot c_i(t)e^{\lambda_it}e_i
+&=
+f(t)
+\end{align*}
+Bildet man das Skalarprodukt mit $e_i$, ergibt sich 
+$$\dot c_i(t)e^{\lambda_i t}=(e_i\cdot f(t)).$$
+Wir k"urzen die rechte Seite mit $f_i(t)=e_i\cdot f(t)$ ab.
+Dann ist
+$$c_i(t)=c_i(0)+\int_0^te^{-\lambda_i \tau}f_i(\tau)\,d\tau$$
+und f"ur die L"osung
+\begin{align*}
+x(t)&=
+\sum_{i=1}^n
+(e_i\cdot x(0))e_i+
+\sum_{i=1}^ne^{\lambda_i t}\int_0^te^{-\lambda_i \tau}(e_i\cdot f(\tau))e_i\,d\tau
+\\
+&=
+x(0)
++
+\int_0^t
+\biggl(
+\sum_{i=1}^n
+e^{\lambda_i(t- \tau)}(e_i\cdot f(\tau))\biggr)e_i\,d\tau
+\end{align*}
+Man kann dies durch Einsetzen nachpr"ufen:
+\begin{align*}
+\frac{d}{dt}x(t)
+&=
+\sum_{i=1}^n\left.e^{-\lambda_i (t-\tau)}(e_i\cdot f(\tau))e_i \right|_{\tau=t}
+\\
+&=
+\sum_{i=1}^n(e_i\cdot f(t))e_i=f(t)
+\end{align*}
+
+\subsection{Eigenwerte und Eigenvektoren}
+Ist das Gebiet $\Omega$ beschr"ankt mit nicht zu ``kompliziertem'' Rand,
+kann man f"ur zeigen, dass eine Folge $u_i(x)$
+von Eigenfunktionen zu jedem Eigenwert $\lambda_i$ existiert,
+die das Dirichlet-Problem mit homogenen
+Randbedingungen l"ost, also
+$$\Delta u_i=\lambda_iu_i,\qquad u_{i|\partial\Omega} = 0.$$
+Ausserdem kann man diese L"osungen so skalieren, dass sie ``Betrag'' 1 haben:
+$$\int_{\Omega}|u_i(\xi)|^2\,d\xi=1$$
+und ausserdem orthogonal aufeinander stehen:
+$$\int_{\Omega}u_i(\xi)u_j(\xi)\,d\xi=0\qquad\forall i\ne j.$$
+
+Verwendet man $u_i$ als ein Faktor in einem Separationsansatz f"ur
+die parabolische
+Gleichung
+$$\partial_tu=\kappa\Delta u,$$
+erh"alt man f"ur die Gleichung
+\begin{align*}
+\partial_t (T(t)u_i(t))-\kappa\Delta(T(t)u_i(t))&=0
+\\
+T'(t)u_i(t)-\kappa T(t)\Delta u_i(t)&=0
+\\
+T'(t)u_i(t)-\kappa T(t)\lambda_i u_i(t)&=0
+\\
+\frac{T'(t)}{T(t)}&=\kappa\lambda_i
+\\
+\Rightarrow\qquad T(t)=Ce^{\kappa\lambda_it}
+\end{align*}
+F"ur solche Anfangsbedingungen kann also die L"osung sofort angegeben
+werden.
+\subsection{Die inhomogene Gleichung}
+Das Verfahren der Variation der Konstanten kann auch f"ur partielle
+Differentialgleichungen durchgef"uhrt werden. Wir setzen die L"osung
+an als
+$$u(t,x)=\sum_{i=0}^\infty c_i(t) e^{\kappa\lambda_i t}u_i(x)$$
+Einsetzen in die Differentialgleichung ergibt
+\begin{align*}
+\sum_{i=0}^\infty \dot c_i(t)e^{\kappa\lambda_it}u_i(x)
++\kappa\sum_{i=0}^\infty c_i(t)\kappa\lambda_i e^{\lambda_it}u_i(x)
+-\kappa\sum_{i=0}^\infty c_i(t)e^{\kappa\lambda_it}\lambda_iu_i(x)
+&=f(x)
+\\
+\sum_{i=0}^\infty \dot c_i(t)e^{\kappa\lambda_it}u_i(x)
+&=f(t,x)
+\end{align*}
+Skalarprodukt mit $u_i$ ergibt
+\begin{align*}
+\dot c_i(t)&= e^{-\kappa\lambda_it}\int_{\Omega}u_i(\xi)f(t,\xi)\,d\xi
+\\
+c_i(t)&=c_i(0)+\int_0^te^{-\kappa\lambda_i\tau}\int_{\Omega}u_i(\xi)f(\tau,\xi)\,d\xi\,d\tau
+\end{align*}
+und f"ur die partikul"are L"osung
+\begin{align*}
+u(t,x)&=
+\sum_{i=0}^\infty
+u_i(x)
+\int_0^t
+e^{\kappa\lambda_i(t-\tau)}\int_{\Omega}u_i(\xi)f(\tau,\xi)\,d\xi\,d\tau
+\end{align*}
+Die Greensche Funktion f"ur das W"armeleitungsproblem mit
+Dirichlet-Randbedinungen kann also auch als
+$$G(t,x,\tau,\xi)
+=
+\sum_{i=0}^\infty
+e^{\kappa\lambda_i (t-\tau)}
+u_i(x)
+u_i(\xi)
+$$
+geschrieben werden. Die L"osung des parabolischen Problems ist damit
+auf die L"osung des elliptischen Eigenwertproblems reduziert worden.
+
+

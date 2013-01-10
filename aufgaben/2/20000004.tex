@@ -1,0 +1,54 @@
+Bestimmen Sie von den folgenden Differentialgleichungen die Ordnung
+und geben Sie an ob Sie linear oder quasilinear sind.
+\begin{teilaufgaben}
+\item $\displaystyle \left(\frac{\partial u}{\partial x}\right)^2+\left(\frac{\partial u}{\partial y}\right)^2=0$
+\item $\displaystyle
+\left(\frac{\partial}{\partial x}\right)^2u+\left(\frac{\partial}{\partial y}\right)^2u=0$
+\item $\displaystyle
+\left(\frac{\partial}{\partial x}+\frac{\partial}{\partial y}\right)u=0
+$
+\item $\displaystyle
+u\left(\frac{\partial}{\partial x}+\frac{\partial}{\partial y}\right)u=0
+$
+\item $\displaystyle
+\partial_1\partial_2\partial_3\dots\partial_n u=0
+$
+\item $\displaystyle
+\partial_1u\partial_2u\partial_3\dots u\partial_n u=0
+$
+\item $\displaystyle
+(\partial_1u)(\partial_2u)(\partial_3u)\dots (\partial_n u)=0
+$
+\item $\displaystyle
+\left(\frac{\partial}{\partial x}+\frac{\partial}{\partial y}\right)u^2=0
+$
+\end{teilaufgaben}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+Eine PDGL ist quasilinear, wenn die Ableitungen linear vorkommen.
+In der Teilaufgabe h) sieht man dies erst nach Anwendung der Produktregel:
+\[
+\left(\frac{\partial}{\partial x}+\frac{\partial}{\partial y}\right)u^2
+=
+2u\frac{\partial u}{\partial x}+2u\frac{\partial u}{\partial y}=0.
+\]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Gleichung&Ordnung&linear&quasilinear\\
+\hline
+a)&1&nein&nein\\
+b)&2&ja&ja\\
+c)&1&ja&ja\\
+d)&1&nein&ja\\
+e)&$n$&ja&ja\\
+f)&$n$&nein&nein\\
+g)&1&nein&nein\\
+h)&1&nein&ja\\
+\hline
+\end{tabular}
+\end{center}
+\end{loesung}
+}{}
+

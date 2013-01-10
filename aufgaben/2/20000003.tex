@@ -1,0 +1,29 @@
+Bestimmen Sie den Rand der folgenden Gebiete
+\begin{teilaufgaben}
+\item
+$\Omega=\{(x,y)\in\mathbb R^2\,|\, x^2+y^2<25\}$.
+\item
+$\Omega=\{(x,y)\in\mathbb R^2\,|\, |x|+|y|=1\}$.
+\end{teilaufgaben}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+$\Omega$ ist die Kreisscheibe mit Radius $5$, der Rand ist die Menge
+\[
+\partial\Omega=\{(x,y)\in\mathbb R^2\,|\, x^2+y^2=25\},
+\]
+als ein Kreis mit Radius $5$.
+\item
+Da $|x|=|-x|$ und $|y|=|-y|$ muss $\Omega$ symmetrisch bez"uglich
+Spiegelungen an der $x$- und $y$-Achse sein. Es gen"ugt daher,
+den Teil im ersten Quadranten zu bestimmen.  Ein Punkt $(x,y)$
+im ersten Quadranten ist genau dann in $\Omega$, wenn $x+y<1$ ist,
+also $y<1-x$. Es geh"oren also alle Punkte ``unter'' der Geraden
+$y=1-x$ dazu. $\Omega$ besteht also aus den Punkten des
+Quadrates mit den Ecken $(1,0)$, $(0,1)$, $(-1,0)$ und $(0,-1)$,
+und der Rand $\partial\Omega$ ist der Rand dieses Quadrates.
+\end{teilaufgaben}
+\end{loesung}
+}{}

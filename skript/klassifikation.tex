@@ -1,0 +1,962 @@
+%
+% c01b-einteilung.tex
+% 
+%
+% (c) 2008 Prof Dr Andreas Mueller
+%
+\chapter{Begriffe und Klassifikation}
+Partielle Differentialgleichungen sind Gleichungen f"ur eine
+unbekannte Funktion mehrere Variablen, die Werte der Funktion
+mit ihren partiellen Ableitungen verkn"upft.
+In diesem Kapitel schreiben wir f"ur die gesuchte Funktion immer
+$u(x_1,\dots,x_n)$, die Variablen sind $x_1,\dots,x_n$.
+Wir schreiben daf"ur auch
+\[
+u\colon \mathbb R^n\to\mathbb R:(x_1,\dots,x_n)\mapsto u(x_1,\dots,x_n).
+\]
+Zu kl"aren ist folgendes:
+\begin{compactenum}
+\item Was genau ist eine partielle Differentialgleichung?
+\item Wo ist sie definiert?
+\item Wie sind Anfangs- und Randbedingungen zu formulieren?
+\item Welche Arten von partiellen Differentialgleichungen gibt es?
+\end{compactenum}
+Wir schreiben oft auch kompakter $x=(x_1,\dots,x_n)$ f"ur die Punkte
+aus $\mathbb R^n$.
+
+\section{Differentialgleichungen}
+Eine partielle Differentialgleichung verkn"upft die funkionswerte
+$u(x_1,\dots,x_n)$ mit den Werten der partiellen Ableitungen
+\begin{equation}
+\frac{\partial u}{\partial x_1},
+\frac{\partial u}{\partial x_2},
+\dots,
+\frac{\partial u}{\partial x_n},
+\frac{\partial^2 u}{\partial x_1^2},
+\frac{\partial^2 u}{\partial x_1\partial x_2},\dots,
+\frac{\partial^2 u}{\partial x_1\partial x_n},\dots,
+\frac{\partial^2 u}{\partial x_n^2},
+\frac{\partial^3 u}{\partial x_1^3},\dots,
+\frac{\partial^3 u}{\partial x_{i_1}\partial x_{i_2}\partial x_{i_3}},\dots
+\label{ableitungen}
+\end{equation}
+W"ahrend es bei einer Funktion von einer Variablen nur eine Ableitung
+jeder Ordnung gibt, hat eine Funktion von $n$ Variablen $n^k$ Ableitungen
+der Ordnung $k$.
+
+Eine Differntialgleichung liegt vor, wenn bekannt ist, wie verschiedenen
+Ableitungen miteinander verkn"upft werden m"ussen.
+Die Wellengleichung hatte zum Beispiel die Form
+\begin{equation}
+\frac{\partial^2 u}{\partial x_1^2}
+-
+c^2\frac{\partial^2 u}{\partial x_2^2},
+\label{wellengleichung-tform}
+\end{equation}
+es werden also nur die beiden zweiten Ableitungen miteinander
+\[
+\frac{\partial^2 u}{\partial x_1^2}
+\qquad
+\text{und}
+\qquad
+\frac{\partial^2 u}{\partial x_2^2}
+\]
+miteinnander vernk"upft, die anderen Ableitungen der Liste
+(\ref{ableitungen}) kommen gar nicht vor.
+Schreiben wir
+\[
+F(t_{11}, t_{22}) = t_{11} -c^2t_{22},
+\]
+dann bekommt die Wellengleichung (\ref{wellengleichung-tform})
+die Form
+\[
+F\biggl(
+\frac{\partial^2 u}{\partial x_1^2},
+\frac{\partial^2 u}{\partial x_2^2}
+\biggr)=0.
+\]
+Die Funktion $F$ k"onnte allerdings noch beliebig viel komplizierter
+ausfallen.
+Sie k"onnte zum Beispiel auch noch von den Variablen $x_1,\dots,x_n$,
+den Funktionswerten $u(x_1,\dots,x_n)$ und von weiteren Ableitungen
+abh"angen.
+Und die Abh"angigkeit von den Ableitungen k"onnte komplizierter sein,
+nicht nur linear wie in diesem Beispiel.
+
+Allgemein ist eine partielle Differentialgleichung gegeben
+durch eine Funktion
+\[
+F(x_1,\dots,x_n,u,\dots\text{Variablen f"ur partielle Ableitungen von $u$}\dots).
+\]
+Die Differentialgleichung
+entsteht dadurch, dass man die unbekannte Funktion
+und ihre partiellen Ableitungen in die Funktion $F$ einsetzt und
+gleich $0$ setzt:
+\[
+F\biggl(x_1,\dots,x_n,u(x_1,\dots,x_n),\dots,
+\frac{\partial^k u}{\partial x_{i_1}\partial x_{i_2}\dots \partial x_{i_k}},\dots\biggr)=0.
+\]
+Oft verwendete Bezeichnungen f"ur die Variablen f"ur die Ableitungen sind
+$p_i$ f"ur die ersten Ableitungen und $t_{ij}$ f"ur die zweiten Ableitungen.
+
+
+\subsection{Ordnung}
+\index{Ordnung}
+\index{Differntialgleichung!gew\"ohnliche}
+Wie bei gew"ohnlichen Differentialgleichungen ist die Ordnung
+die h"ochste Ableitung der unbekannten Funktion, die in der
+Differentialgleichung vorkommt. Wir wollen dies etwas ausf"uhrlicher
+diskutieren f"ur partielle Differentialgleichungen f"ur eine Funktion
+$u$ in den Variablen $u(x_1,\dots,x_n)$.
+
+\subsubsection{Partielle Differentialgleichung erster Ordnung}
+In einer PDGL erster Ordnung kommen nur erste Ableitungen der
+unbekannten Funktion vor.
+Sie l"asst sich also in der Form 
+\[
+F\biggl(x_1,\dots,x_n, u, \frac{\partial u}{\partial x_1},\dots,\frac{\partial u}{\partial x_n}\biggr)=0
+\]
+schreiben. Eine PDGL erster Ordnung ist also gleichbedeutend mit einer
+Funktion 
+$F(x_1,\dots,x_n,u,p_1,\dots,p_n),$
+durch die Substitution
+\[
+p_i\to \frac{\partial u}{\partial x_i}
+\]
+wird daraus die Differentialgleichung.
+
+Bei PDGL erster Ordnung in zwei Variablen schreibt man auch
+$F(x,y,u,p,q)$, ersetzt also
+\[
+p\to\frac{\partial u}{\partial x},
+\qquad
+q\to\frac{\partial u}{\partial y}.
+\]
+
+\subsubsection{Partielle Differentialgleichung zweiter Ordnung}
+Wie das erste Kapitel gezeigt hat, sind die PDGL zweiter Ordnung bei weitem
+die wichtigsten. Eine solche PDGL enth"alt neben den ersten Ableitungen
+auch alle zweiten Ableitungen. Da die L"osungsfunktion stetig differenzierbar
+sein wird, h"angen die gemischten Ableitungen nicht von der Reihenfolge
+ab, also
+\[
+\frac{\partial^2 u}{\partial x_i\partial x_j}
+=
+\frac{\partial^2 u}{\partial x_j\partial x_i}
+\quad\forall i,j
+\]
+Die Differentialgleichung hat die Form
+\[
+F\biggl(x_1,\dots,x_n,u,
+\frac{\partial u}{\partial x_1},\dots,\frac{\partial u}{\partial x_n},
+\frac{\partial^2 u}{\partial x_1^2},\dots,\frac{\partial^2 u}{\partial x_n^2}\biggr)
+\]
+mit einer Funktion
+\[
+F(x_1,\dots,x_n,u,p_1,\dots,p_n,t_{11},t_{12},\dots,t_{n,n-1},t_{nn})
+\]
+in den Variablen $x_i$, $u$, $p_i$ und $t_{ij}$. Mit der Substitution
+\[
+p_i\to \frac{\partial u}{\partial x_i}
+,\quad
+t_{ij}\to \frac{\partial^2 u}{\partial x_i\partial x_j}
+\]
+wird daraus die Differentialgleichungen.
+
+Die im ersten Kapitel diskutierten Differentialgleichungen entsprechen den folgenden 
+Funktionen
+\begin{align*}
+F(t_{11},\dots,t_{nn})&=t_{11}-a^2(t_{22}+\dots+t_{nn})&&\text{Wellengleichung}
+\\
+F(p_1,t_{22},\dots,t_{nn})&=p_1-a^2(t_{22}+\dots+t_{nn})&&\text{W"armeleitung}
+\\
+F(t_{11},\dots,t_{nn})&=t_{11}+\dots+t_{nn}&&\text{Poisson-Problem}
+\end{align*}
+
+\subsection{*Multiindizes und h"ohere partielle Ableitungen}
+Im vorangegangenen Abschnitt wurden gemischte partielle Ableitungen
+nach verschiedenen unabh"angigen Variablen ben"otigt. Die Notation
+\[
+\frac{\partial^k u}{\partial x_{i_1}\partial x_{i_2}\dots\partial x_{i_k}}
+\]
+wirkt etwas schwerf"allig. In dem Formelzeichen steckt ja eigentlich
+nur die Information, dass nach den Variablen abgeleitet werden
+soll, die die Nummern $i_1,\dots,i_k$ haben, und dabei kommt es
+nicht einmal auf deren Reihenfolge an, nur die Anzahl Ableitungen
+f"ur jede Variable ist wesentlich.
+\begin{definition}
+Wir nennen ${\bf k}=(k_1,\dots,k_n)$ einen Multiindex der L"ange $n$.
+Der Grad des Multiindex ist $|{\bf k}|=k_1+\dots+k_n$.
+\end{definition}
+Mit Multiindizes kann man Terme, die in der mehrdimensionalen
+Analysis oft vorkommen, deutlich kompakter schreiben:
+\begin{align*}
+x^{\mathbf k}&=x_1^{k_1}x_2^{k_2}\dots x_n^{k_n}\\
+\partial_{\mathbf k}u
+&=\frac{\partial^{k_1}}{\partial x_1^{k_1}}\dots
+\frac{\partial^{k_n}}{\partial x_n^{k_n}}u
+=\frac{\partial^{|{\mathbf k}|}}{\partial x_1^{k_1}\dots\partial x_n^{k_n}}u
+=D^{\mathbf k}u=D_1^{k_1}D_2^{k_2}\dots D_n^{k_n}u
+\end{align*}
+Nat"urlich kann man Multiindizes auch dazu verwenden, andere 
+Objekte zu indizieren. Zum Beispiel kann man eine mehrfache Potenzreihe
+jetzt so schreiben:
+\[
+f(x_1,\dots,x_n)=\sum_{\mathbf k}a_{\mathbf k}x^{\mathbf k},
+\]
+wobei die $a_{\mathbf k}\in\mathbb R$ die Koeffizienten der Potenzreihe sind.
+
+Eine partielle Differentialgleichung $m$-ter Ordnung mit $n$ unabh"angigen 
+Variable ist jetzt eine Funktion
+\begin{align*}
+F&\colon \mathbb R^n\times \mathbb R^{\{{\mathbf k}|\,|{\mathbf k}|\le m\}} \to \mathbb R
+\\
+&\colon(x_1,\dots,x_n,u, \dots)\mapsto F(x_1,\dots,x_n,u,\dots)
+\end{align*}
+Die Funktion hat ausser den Argumenten $x_1,\dots,x_n$ Argumente,
+die mit den Multiindizes angeschrieben sind. Der kleinste Multiindex
+ist $(0,\dots,0)$, er steht f"ur die Funktion $u$. In das Argument mit
+dem Multiindex ${\mathbf k}$ muss die Ableitung von $u$ nach diesem
+Multiindex eingesetzt werden. Die ersten Multiindizes sind
+\[
+(1,0,\dots,0), (0,1,\dots,0),\dots, (0,\dots, 0,1),
+\]
+die zugeh"origen Ableitungen sind die
+ersten partiellen Ableitungen:
+\[
+F(x_1,\dots,x_n,u,\partial_1 u,\dots,\partial_2 u,\dots)=0.
+\]
+
+\subsection{Umwandlung in ein System niedrigerer Ordnung}
+Wie bei gew"ohnlichen Differentialgleichungen kann man auch eine
+partielle Differentialgleichung h"oherer Ordnung in ein System
+von partiellen Differentialgleichungen niedrigerer Ordnung
+umwandeln.
+
+Bei einer gew"ohnlichen Differentialgleichung 
+\[
+F(x,y,y',y'',\dots,y^{(n)})=0
+\]
+erreicht man dies, indem man statt nur einer Funktion $y$ einen
+Vektor von Funktionen $y_0,\dots,y_{n-1}$ sucht, mit den Gleichungen
+\begin{align*}
+\frac{dy_0}{dx}&=y_1\\
+\frac{dy_1}{dx}&=y_2\\
+&\vdots\\
+\frac{dy_{n-2}}{dx}&=y_{n-1}\\
+F\biggl(x,y_0,y_1,y_2,\dots,\frac{dy_{n-1}}{dx}\biggr)&=0
+\end{align*}
+Setzt man in diesen Gleichungen $y_0=y$, findet man nacheinander
+$y_k=y^{(k)}$, und aus der letzten Gleichung wieder
+$F(x,y,y',y'',\dots,y^{(n)})=0$. Aus der Differentialgleichung $n$-ter
+Ordnung ist eine System von $n$ Differentialgleichungen erster Ordnung
+geworden.
+
+Sei jetzt eine partielle Differentialgleichung zweiter Ordnung mit
+zwei unabh"angigen Variablen $x$ und $y$ gegeben, also eine 
+Gleichung der Form
+\[
+F\biggl(x,y,u,\frac{\partial u}{\partial x},\frac{\partial u}{\partial y},
+\frac{\partial^2 u}{\partial x^2},\frac{\partial^2 u}{\partial x\partial y},
+\frac{\partial^2u}{\partial y^2}\biggr)=0.
+\]
+Nach dem Muster der gew"ohnlichen Differentialgleichung brauchen wir
+jetzt neue Funktionen, die f"ur die Ableitungen stehen, also zum
+Beispiel $p(x,y)$ und $q(x,y)$. Wir m"ussen ausdr"ucken, dass diese
+Funktionen Ableitungen von $u$ sind, das liefert uns zwei neue
+partielle Differentialgleichungen
+\[
+p=\frac{\partial u}{\partial x},\qquad q=\frac{\partial u}{\partial y}.
+\]
+Auch die zweiten Ableitungen k"onnen wir damit ausdr"ucken:
+\begin{align*}
+\frac{\partial^2 u}{\partial x^2}&=\frac{\partial p}{\partial x}\\
+\frac{\partial^2 u}{\partial x\partial y}&=\frac{\partial p}{\partial y}=\frac{\partial q}{\partial x}\\
+\frac{\partial^2 u}{\partial y^2}&=\frac{\partial q}{\partial y}
+\end{align*}
+Die urspr"ungliche Differentialgleichung allein reicht jetzt
+nat"urlich nicht mehr, wir haben jetzt ein Differentialgleichungssystem
+erster Ordnung
+\begin{align*}
+F\biggl(x,y,u,p,q,\frac{\partial p}{\partial x},\frac{\partial p}{\partial y},\frac{\partial q}{\partial y}\biggr)&=0\\
+p&=\frac{\partial u}{\partial x}\\
+q&=\frac{\partial u}{\partial y}\\
+\frac{\partial p}{\partial y}&=\frac{\partial q}{\partial x}
+\end{align*}
+Wir haben also ein partielle Differentialgleichung zweiter Ordnung auf
+ein System von partiellen Differentialgleichungen erster Ordnung f"ur
+drei unbekannte Funktionen reduziert.
+
+\subsection{*Umwandlung einer Gleichung beliebiger Ordnung}
+Sei jetzt eine partielle Differentialgleichung $m$-ter Ordnung
+gegeben. Sie hat die Gestalt
+\[
+F\bigl(
+x_1,\dots,x_n, u, \frac{\partial u}{\partial x_1},\dots,\frac{\partial u}{\partial x_n},\frac{\partial^2u}{\partial x_1^2},\frac{\partial^2 u}{\partial x_1\partial x_2},\dots,\frac{\partial^2u}{\partial x_n^2},\dots
+\bigr)=0
+\]
+wobei als Argumente Ableitungen mit Multiindizes ${\mathbf k}$ mit
+$|{\mathbf k}|\le m$ vorkommen. Daraus kann man jetzt ein System von
+partiellen Differentialgleichungen machen, indem man f"ur jeden
+Multiindex $|{\mathbf k}|$ mit $|{\mathbf k}|\le m$ eine zus"atzliche
+Funktion $p_{\mathbf k}$ einf"uhren. In die Funktion k"onnen wir
+dann statt der Ableitungen von $u$ die Funktionen $p_{\mathbf k}$
+einsetzen.
+\[
+F\bigl(
+x_1,\dots,x_n, u, p_1,\dots,p_n,p_{(2,0,\dots)},p_{(1,1,\dots)},
+\dots,p_{(0,\dots,0,2)},\dots, \frac{\partial p_{\mathbf k}}{\partial x_i})
+\bigr)=0,
+\]
+wobei nur Ableitungen erster Ordnung vorkommen, also nur Ableitungsterme
+mit $|{\mathbf k}|\le m$.
+Dazu kommt aber eine ganze Menge von neuen Gleichungen,
+welche sagen, dass die die $p_{\mathbf k}$ eigentlich Ableitungen sind:
+\[
+\frac{\partial}{\partial x_i}p_{\mathbf k}=p_{{\mathbf k} + (0,\dots,1,\dots,0)}\quad\forall i\;\forall{\mathbf k}(|{\mathbf k}|<m),
+\]
+wobei die $1$ an der $i$-ten Stelle steht. Dazu kommen Gleichungen
+die besagen, dass die gemischten Ableitungen vertauscht werden k"onnen.
+Sei ${\mathbf k}$ ein Multiindex, und sei ${\mathbf k}'$ ein Multiindex,
+aus dem ${\mathbf k}$ entsteht, wenn man an der Stelle $i$ eins addiert.
+Ebenso sei ${\mathbf k}''$ ein Multiindex, aus dem ${\mathbf k}$ entsteht,
+wenn man an der Stellen $j$ eins addiert. F"ur jede solche Konstellation
+erh"alt man eine zus"atzliche Gleichung:
+\[
+\frac{\partial}{\partial x_i}p_{{\mathbf k}'}=\frac{\partial}{\partial x_j}p_{{\mathbf k}''},
+\]
+denn beide Terme stehen ja eigentlich f"ur $\partial_{\mathbf k}u$.
+ 
+\section{Gebiete}
+Bei gew"ohnlichen Differentialgleichungen ist eine
+Funktion von nur einer Variablen gesucht, das Definitionsgebiet ist
+daher immer ein Interval ist.
+Eine L"osung ist dann festgelegt durch die Differentialgleichung
+und bestimmte Werte an einem (Anfangswerte) oder beiden (Randwertproblem)
+Enden des Definitionsgebietes.
+
+Bei partiellen Differentialgleichungen kommen fast
+beliebige Teilmengen des $\mathbb R^n$ als Definitionsbereich
+in Frage. Und die einfache Unterscheidung zwischen Randwertproblem
+und Anfangswertproblem wird ebenfalls verwischt, es ist nur klar,
+dass wahrscheinlich auf Teilend es Randes des Definitionsgebietes
+Werte der Funktion und eventuell gewisser Ableitungen
+vorgegeben werden m"ussen, um die L"osungen der Differentialgleichung
+eindeutig festzulegen.
+
+Die partiellen Ableitungen einer Funktion $u$
+in einem Punkt $(x_1,\dots,x_n)$ 
+sind nur dann sinnvoll definiert, wenn die Funktion in einer 
+kleinen Umgebung von $(x_1,\dots x_n)$ ausgewertet werden kann.
+Es muss ja f"ur die partielle Ableitung nach $x_i$ der Grenzwert
+\[
+\frac{\partial u}{\partial x_i}=
+\lim_{\Delta x_i\to 0}\frac{u(x_1,\dots,x_i+\Delta x_i, \dots ,x_n)-u(x_1,\dots,x_n)}{\Delta x_i}
+\]
+bestimmt werden k"onnen.
+
+\begin{definition}
+Ein Gebiet $\Omega\subset \mathbb R^n$ ist eine offene Teilmenge
+von $\mathbb R^n$. Mit jedem Punkt $(x_1,\dots,x_n)\in\Omega$ ist
+auch ein kleiner Ball
+\[
+B(x, r)=\{x'\in\mathbb R^n\,|\,|x-x'|<r\}.
+\]
+in $\Omega$ enthalten, wenn nur $r$ klein genug aber $r>0$ gew"ahlt wird:
+$B(x,r)\subset\Omega$.
+\end{definition}
+
+\begin{beispiel}
+Die Menge 
+\[
+\Omega_1=\{ (x,y)\in\mathbb R^2\,|\, 0 < x < 1, 0<y<1\}
+\]
+ist ein Gebiet. Ein Punkt $(x,y)\in\Omega_1$ kann nicht auf dem
+Rand liegen. Ist $r$ der kleinste der Werte $x$, $y$, $1-x$ und $1-y$,
+dann ist auch die Kreisscheibe $B(x,r)\subset\Omega_1$.
+\end{beispiel}
+
+\begin{beispiel}
+Die Menge 
+\[
+\Omega_2 = \{ (x,y)\in\mathbb R^2\,|\, x\ge 0\}.
+\]
+ist {\it kein} Gebiet. $\Omega_2$ ist die rechte Halbebene in $\mathbb R^2$.
+$\Omega_2$ enth"alt auch die Punkte $(0,y)$. Jeder Ball um einen
+Punkt der Form $(0,y)$ enth"alt auch Punkte mit negativer
+$x$-Koordinate, also Punkte, die nicht zu $\Omega_2$ geh"oren.
+Somit kann ein Ball um $(0,y)$ nicht in $\Omega_2$ enthalten sein.
+\end{beispiel}
+
+Der Unterschied zwischen den beiden Mengen $\Omega_1$ und $\Omega_2$
+ist offenbar, dass $\Omega_2$ offenbar auch Teile des Randes
+enth"alt. Der Rand einer Menge besteht aus den Punkten, in deren
+Umgebung sich immer Punkte der Menge wie auch Punkte ausserhalb
+der Menge finden. Der Rand der Menge $\Omega_1$ ist leer, der Rand
+der Menge $\Omega_2$ ist die $y$-Achse. Gebiete sind also Mengen,
+die ihren Rand nicht enthalten. F"ur den Rand einer Menge $M$
+schreibt man auch $\partial M$.
+
+\begin{beispiel}
+\[
+\partial \Omega_1=\emptyset,\qquad\partial \Omega_2=\{(0,y)\,|y\in\mathbb R\}.
+\]
+\end{beispiel}
+
+\begin{definition}
+Ist $M\subset\mathbb R^n$ eine beliebige Teilmenge von $\mathbb R^n$,
+dann bezeichnet man mit $\o \Omega$ das Innere, also die Punkte,
+f"ur die auch noch eine Umgebung in $\Omega$ enthalten ist. Mit
+$\bar\Omega=\Omega\cup\partial\Omega$ bezeichnet.
+\end{definition}
+
+\section{Anfangs- und Randbedingungen}
+\rhead{Anfangs- und Randbedingungen}
+Wie bei gew"ohnlichen Differentialgleichungen reicht auch bei
+partiellen Differentialgleichungen die Gleichung alleine nicht
+zur Bestimmung der L"osung.
+\subsection{Anfangs- und Randwerte bei gew"ohnlichen Differentialgleichungen}
+Bei gew"ohnlichen Differentialgleichungen
+m"ussen zus"atzlich Anfangs- oder Randwerte spezifiziert werden.
+Um die L"osung der Differentialgleichung
+\[
+y''+p(x)y'+q(x)y=0
+\]
+auf dem Interval $[0,1]$
+festzulegen, braucht man insgesamt zwei Bedingungen, zum Beispiel
+\begin{itemize}
+\item die Werte von $y(0)$ und $y'(0)$
+\item die Werte von $y(0)$ und $y(1)$
+\item Zwei lineare Gleichungen der Form
+\begin{align*}
+\alpha_0y(0)+\beta_0y'(0)&=\gamma_0\\
+\alpha_1y(1)+\beta_1y'(1)&=\gamma_1.
+\end{align*}
+%wobei die Koeffizientenmatrix auf der linken Seite regul"ar sein muss.
+\end{itemize}
+
+\subsection{Randwerte f"ur partielle Differentialgleichungen}
+Bei einer partiellen Differentialgleichung ist die Spezifikation
+der Randwerte ungleich komplizierter.
+Zun"achst ist nicht einmal klar, welcher Teil des Randes
+"uberhaupt herangezogen werden muss. Im Prinzip k"onnen Randwerte
+auf jeder beliebigen Teilmenge des Randes spezifiziert werden.
+
+Ausserdem k"onnen nicht nur Werte der unbekannten Funktion, sondern auch
+partielle Ableitungen derselben vorgegben werden. Allerdings sind 
+diese nicht beliebig. Betrachten Wir dazu die rechte Halbebene
+\[
+\Omega=\{(x,y)\in\mathbb R^2\,|\,x>0\}.
+\]
+Sei $u(x,y)$ eine Funktion, die in $\bar\Omega$ definiert ist.
+Sind die Werte von $u$ entlang des Randes $\partial\Omega$ vorgegeben,
+dann sind offenbar auch alle Ableitungen in Richtungen tangential
+an den Rand vorgeben:
+\[
+\text{
+$u(0,y)$ bekannt
+}\qquad\Rightarrow\qquad
+\text{$\frac{\partial u}{\partial y}$ bekannt.}
+\]
+Man kann also sinnvollerweise nur noch die Ableitungen
+in Richtungen senkrecht auf den Rand vorgeben.
+
+Betrachten wir jetzt den allgemeine Fall: sei die Funktion $u$
+in einem Punkt $x=(x_1,\dots,x_k)\in\mathbb R^k$ des Randes
+eines Gebietes $\Omega\subset\mathbb R^k$ definiert.
+Wir nehmen an, dass der Rand in der Umgebung des Punktes $x$
+eine wohldefinierte Tangentialebene mit der Normalen $\vec n$ hat.
+Da die Werte von $u$ entlang des Randes bekannt sind, sind 
+auch die Richtungsableitungen von $u$ in Richtungen $\vec v$
+senkrecht auf $\vec n$ bekannt, man berechnet sie mit dem
+Gradienten:
+\[
+D_{\vec v}u(x_1,\dots,x_k)=\vec v\cdot\operatorname{grad}u.
+\]
+Nur die Richtungsableitung in Richtung der Normalen 
+ist noch nicht festgelegt.
+Wir schreiben f"ur die Ableitung in Richtung $\vec n$
+\[
+\frac{\partial u}{\partial\vec n}=\frac{\partial u}{\partial n}
+=\vec n\cdot\operatorname{grad}u.
+\]
+
+\begin{beispiel}
+Sei $\Omega=\{(x,y)\in\mathbb R^2\,|\,x^2+y^2<1\}$ die Einheitskreisscheibe.
+Man findet die Normalableitung der Funktion $u(x,y)=x^3y$ in jedem
+Punkt des Einheitskreises.
+
+Die nach aussen gereichtete Normale im Punkt $(x,y)$ ist
+\[
+\vec n=\begin{pmatrix}x\\y\end{pmatrix}.
+\]
+Die Normalableitung einer Funktion $u(x,y)$ ist dann
+\[
+\frac{\partial u}{\partial n}=
+x\frac{\partial u}{\partial x}
++
+y\frac{\partial u}{\partial y}.
+\]
+Oder f"ur die spezielle Funktion $u(x,y)=x^3y$:
+\[
+\frac{\partial u}{\partial n}
+=
+x\cdot 3x^2y+y\cdot x^3=
+4x^3y.
+\]
+\end{beispiel}
+
+\begin{beispiel}
+Man bestimme die Normalableitung der Funktion $x^2-y^2$ auf dem Rand
+des Gebietes $\Omega=\{(x,y)\in\mathbb R^2\,|\,y+x>0\}$.
+
+Das Gebiet wird durch die Gerade $y=-x$ berandet, welche als Normale
+den Vektor 
+\[
+\vec n=\begin{pmatrix}1\\1\end{pmatrix}
+\]
+hat. Die Richtungsableitung von $u$ im Punkt $(x,y)$ in Richtung $\vec n$
+ist
+\[
+D_{\vec n}u(x,y)=\vec n\cdot\operatorname{grad}u
+=\begin{pmatrix}1\\1\end{pmatrix}\cdot\begin{pmatrix}2x\\-2y\end{pmatrix}
+=2x-2y
+\]
+In einem Punkt $(x,-x)$ des Randes ist die Normalableitung also
+\[
+\frac{\partial u}{\partial n}
+=
+2x+2x=4x.
+\]
+\end{beispiel}
+
+\subsection{Spezielle Randwertvorgaben}
+\subsubsection{Das Cauchy-Problem}
+Der Rand dieses Gebietes
+besteht nicht mehr nur aus einzelnen Punkten wie im eindimensionalen
+Fall, sondern aus Kurven oder Fl"achen. Um zu verstehen, wie die
+Randbedingungen entlang dieser Kurven oder Fl"achen formuliert
+werden k"onnen, betrachten
+wir das sogenannte Cauchy-Problem f"ur eine Funktion $u(x,y)$ von
+zwei Variablen. Wir suchen eine L"osung, welche wir durch Angabe
+von Randwerten auf f"ur $x=0$ ($y$-Achse) festlegen m"ochten.
+
+Nat"urlich l"asst sich das Cauchy-Problem auch f"ur PDGL mit mehr
+als zwei Variablen formulieren. In diesem Fall wird eine Funktion
+$u(x_1,\dots,x_n)$ gesucht, welche f"ur $x_1=0$ vorgegebene Werte
+\[
+u(0,x_2,\dots,x_n)=g(x_2,\dots,x_n)
+\]
+annimmt.
+In diesem Fall sind die Werte von $u$ auf einer Koordinaten(hyper)ebene
+vorgegeben worden.
+
+Das allgmeine Cauchy-Problem in zwei Dimensionen legt die Werte der
+unbekannten Funktion auf einer
+Kurve im Definitionsgebiet fest und fragt danach, ob eine L"osung existiert, und
+ob sie eindeutig bestimmt ist.
+Das allgemeine Cauchy-Problem in beleibig vielen Dimensionen legt die
+Werte der unbekannten Funktion auf einer Hyperfl"ache im Definitionsgebiet
+fest und frag danach, ob eine L"osung existeirt,
+und ob sie eindeutigt bestimmt ist.
+
+\subsubsection{Partielle Differentialgleichungen erster Ordnung}
+Eine gew"ohnliche Differentialgleichungen erster Ordnung ben"otigt
+nur einen einzigen Anfangswert.
+In Analogie dazu werden in unserem Beispielproblem 
+die Werte von $u$ entlang der $y$-Achse erforderlich sein.
+Wir nehmen daher an, dass die Bedingung
+\[
+u(0,y)=g(y)
+\]
+die L"osung $u$ festlegt.
+
+Wir nehmen an, dass die Funktion $g$ stetig differenziertbar ist.
+Dann ist
+\[
+\frac{\partial u}{\partial y}(0, y)=g'(y),
+\]
+die partielle Ableitung nach $y$ von $u$ ist also entlang der
+Geraden $x=0$ auch schon festgelegt. 
+
+Eine Differentialgleichung erster Ordnung legt eine Beziehung
+der Form
+\[
+F(x,y,u(x,y), \partial_x u, \partial_y u)=0
+\]
+zwischen der Funktion und ihren partiellen Ableitungen fest.
+Zwar gilt dies im Allgemeinen nur im inneren des Definitionsbereiches,
+doch
+unter g"unstigen Voraussetzungen wird die Funktion $F(x,y,u,p,q)$
+nach $p$ aufl"osbar sein, und zwar sogar auf dem Rand, also f"ur
+$x\to 0$. Gibt es eine L"osung $u(x,y)$ des Cauchy-Problems, dann
+ist 
+\begin{align*}
+0&=
+F(x,y,u(x,y), \partial_x u(x,y), \partial_y u(x,y)
+\\
+\Rightarrow
+0&=
+\lim_{x\to 0}
+F(x,y,u(x,y), \partial_x u(x,y), \partial_y u(x,y)\\
+&=F(0,y,u(x,y),\partial_x u(0,y), \partial_y u(0,y))
+\\
+&=
+F(0,y,g(y),\partial_x u(0,y), g'(y))
+\end{align*}
+Da wir von der Funktion $F$ angenommen haben, dass sie sich
+nach $p$ aufl"osen l"asst, ist also $\partial_x u(0,y)$ durch
+die Anfangsbedingungen und die Gleichung ebenfalls festgelegt.
+
+Das Cauchy-Problem f"ur eine Differentialgleichung erster Ordnung
+muss als nur Anfangswerte entlang einer Geraden vorgeben, Ableitungen
+sind nicht n"otig, da sie durch die Funktionswerte und die Gleichung
+bereits festgelegt sind.
+
+Statt der Werte entlang der $y$-Achse k"onnten wir auch nur den
+Wert in einem Punkt sowie die Ableitungen
+in diese Richtung vorgeben, zum Beispiel in der Form
+\begin{align*}
+u(0,0)&=u_0\\
+\frac{\partial u}{\partial y}(0,y)&=h(y).
+\end{align*}
+Dies liefert jedoch nichts neues, denn die Funktion $g(y)=u(0,y)$
+wird durch die gew"ohnliche Differentialgleichung
+\[
+g'(y)=\frac{\partial u}{\partial y}(0,y)=h(y)
+\]
+f"ur die unbekannte Funktion $g(y)$
+mit der Anfangsbedinung $g(0)=u_0$ bestimmt.
+Indem man diese Gleichung l"ost, f"uhrt man Anfangsbedingungen
+mit Ableitungen entlang der $y$-Achse auf gew"ohnliche
+Anfangswerte zur"uck.
+
+\subsubsection{Partielle Differentialgleichungen zweiter Ordnung}
+F"ur eine gew"ohnliche Differentialgleichung zweiter Ordnung m"ussen
+zus"atzliche Anfangsbedingungen spezifiziert werden, typischerweise
+die erste Ableitung.
+
+F"ur eine partielle Differentialgleichung zweiter
+Ordnung wird man entsprechend zu den Anfangswerten $g(y)$ die Werte
+der ersten Ableitungen hinzunehmen wollen.
+Wie wir im vorangegangenen Abschnitt gesehen haben, sind die partiellen
+Ableitungen in $y$-Richtung durch die Anfangsbedingung $g(y)$ bereits
+festgelegt. Nur die erste Ableitung in $x$-Richtung kann noch
+vorgegeben werden. Die Anfangsbedingung kann also so formuliert
+werden:
+\begin{align*}
+&\text{Dirichlet-Randbedingung:}&
+u(0,y)&=g(y)&\\
+&\text{Neumann-Randbedingung:}&
+\frac{\partial u}{\partial x}(0,y)&=h(y)
+\end{align*}
+
+\subsubsection{Beliebige Anfangskurve}
+Im allgemeinen Fall sind die Randwerte nicht auf einer Koordinatenachse
+vorgegeben. Es gibt sogar F"alle, wo dies gar nicht m"oglich ist,
+ein Beispiel wird in \ref{unloesbar} gezeigt.
+Die Festlegung von Werten entlang der der $y$-Achse entspricht
+der Forderung, dass die L"osungsfl"ache durche eine bestimmte Kurve
+verlaufen muss, die als Parameterdarstellung $y\mapsto (0,y,g(y))$
+hat. Die Verallgemeinerung das allgemeine Cauchy-Problem:
+
+\begin{problem}[Cauchy-Problem] Sei $\gamma$ eine Kurve im Raum und
+$F(x,y,u,\partial_xu,\partial_yu)=0$ eine PDGL. Eine Funktion $u(x,y)$
+heisst eine L"osung des Cauchy-Problems mit Anfangskurve $\gamma$, wenn
+$\gamma$ im Graphen von $u$ enthalten ist.
+\end{problem}
+
+Durch die Wahl eines geeigneten Koordinatensystems kann aber immer
+erreicht werden, dass in der Umgebung eines einzelnen Randpunktes
+dieses Situation vorliegt.
+Die Richtung der $x$-Achse ist dann die Normale auf die Randkurve oder
+Randfl"ache.
+Die Ableitung entlang der $x$-Achse ist daher eigentlich eine Ableitung
+in Normalenrichtung, wir schreiben daf"ur
+\[
+\frac{\partial u}{\partial n}
+\]
+und nennen sie die Normalableitung.
+Bei der eben beschriebenen Wahl des Koordinatensystems kann man
+die Normalableitung mit Hilfe der Formel
+\[
+\frac{\partial u}{\partial n}
+=\frac{\partial u}{\partial x}
+\]
+berechnen.
+
+Ist $n$ der Normalenvektor auf die Kurve (oder Fl"ache f"ur $n=3$), auf
+der die Randwerte vorgegeben sind, dann kann die Normalableitung mit 
+Hilfe der Richtungsableitung berechnet werden, es ist
+\[
+\frac{\partial u}{\partial n}=D_nu = n\cdot \operatorname{grad} u.
+\]
+
+\subsection{Allgemeines Randwertproblem}
+Bei partiellen Differentialgleichungen hat der Definitionsbereich einen
+weit gr"osseren Einfluss auf die L"osung als bei gew"ohnlichen
+Differentialgleichungen. Das in den voranstehenden Abschnitten
+diskutierte Cauchy-Problem erlaubt zun"achst zu beurteilen, welche
+Art von Randbedingungen sinnvoll ist. 
+So haben Wir gesehen, dass Randwerte in folgenden Formen vorgegeben
+werden k"onnen: 
+\begin{itemize}
+\item Als Werte entlang des Randes des Definitionsgebietes der
+Differentialgleichung, also in der Form
+\[
+u(x)=g(x)\quad \forall x\in\partial G\subset \mathbb R^n.
+\]
+Diese Randbedingungen heissen Dirichlet-Randbedingungen.
+\item Als Werte der Normalableitung auf dem
+Rand, geschrieben
+\[
+\frac{\partial u}{\partial n}(x)=h(x)\quad\forall x\in\partial G\subset \mathbb R^n.
+\]
+Dieser Randbedingungen heissen Neumann-Randbedingungen.
+\item Als Kombination von Funktionswerten und Ableitungen: es ist
+m"oglich, auf verschiedenen Teilen des Randes Randwerte oder Normalableitungen
+vorzugeben, es ist aber auch m"oglich, eine Linearkombination
+von Randwerten und Normalableitungen vorzugeben.
+\end{itemize}
+Dies gen"ugt jedoch noch nicht, zu entscheiden, ob durch diese
+Bedingungen die L"osungen eindeutig festgelegt sind.
+Dazu ist ein vertieftere Theorie n"otig. W"ahrend bei den gew"ohnlichen
+Differentialgieichungen eine relativ einfache Methode (Picard-Iteration)
+unter relativ milden Voraussetzungen zu beweisen  erlaubt, dass
+gew"ohnliche Differentialgleichungen zu gegebenen Anfangswerten eine
+eindeutig bestimmte L"osung haben, wenigstens f"ur eine gewisses Zeitinterval,
+ist dieser Beweis f"ur partielle Differentialgleichungen ungleich schwieriger.
+F"ur gewisse Typen von partiellen Differentialgleichungen ist dies jedoch
+m"oglich, einige davon werden in den kommenden Kapiteln behandelt.
+
+\section{L"osung einer partiellen Differentialgleichung}
+Zur L"osung einer partiellen Differentialgleichung m"ussen also
+drei Dinge vorgeben sein
+\begin{enumerate}
+\item Eine Differentialgleichung
+\item Ein Gebiet $\Omega$
+\item Randwertvorgaben auf einem Teil des Randes $\partial\Omega$.
+\end{enumerate}
+\begin{definition}
+Eine L"osung dieses Problems ist eine Funktion $u$, welche
+auf $\bar\Omega$ (nicht nur auf $\Omega$!) definiert ist,
+im Gebiet $\Omega$ so oft differenzierbar ist wie n"otig, damit
+sie sinnvoll in die Differentialgleichung eingesetzt werden kann,
+und ausserdem die Randwertbedingungen erf"ullt.
+\end{definition}
+
+Das Problem heisst ``gut gestellt'', wenn die gew"ahlten Vorgaben
+die L"osung eindeutig bestimmen.
+Es ist die Aufgabe der Theorie zu kl"aren, ob ein Problem
+gut gestellt ist, denn erst dann kann man von einem numerischen
+Verfahren eine sinnvolle Antwort erwarten.
+
+\section{Spezielle Typen von partiellen Differentialgleichungen}
+\rhead{Spezielle PDGL}
+F"ur einige spezielle Typen von Differentialgleichungen werden wir
+die Frage nach Existenz und Eindeutigkeit einer L"osung beantworten
+k"onnen, und manchmal sogar eine explizite L"osung angeben k"onnen.
+Dazu geh"oren die linearen und die quasilinearen partiellen
+Differentialgleichungen, die in diesem Abschnitt beschrieben werden.
+
+\subsection{Lineare partielle Differentialgleichungen}
+Die bisher vorgestellten Differentialgleichungen sind also alle lineare
+Ausdr"ucke in den ersten und zweiten Ableitungen, man k"onnte sie in der
+Form
+\begin{align*}
+\sum_{i,j=1}^n a_{ij}(x)\frac{\partial}{\partial x_i} \frac{\partial}{\partial x_j}\psi(x)
++\sum_{i=1}^na_i(x)\frac{\partial}{\partial x_i}\psi(x)&=f(x)
+\\
+\sum_{i,j=1}^n a_{ij}(x)\partial_i \partial_j\psi(x)
++\sum_{i=1}^na_i(x)\partial_i\psi(x)&=f(x)
+\end{align*}
+Die Gleichung heisst homogen, wenn $f=0$ ist.
+
+Damit diese Probleme "uberhaupt eine L"osung haben, m"ussen noch 
+Randbedingungen hinzugef"ugt werden.
+Auch diese lassen sich in der Form linearer Gleichungen zwischen den 
+den Funktionswerten und den Normalableitungen von $\psi$ auf dem Rand des
+Gebietes gegeben:
+\begin{align*}
+a\psi(x)+
+b\frac{\partial}{\partial n}\psi(x)
+&=g(x)\quad\forall x\in\gamma\\
+a\psi(x)+b\partial_n\psi(x)&=g(x)\quad\forall x\in\gamma
+\end{align*}
+Die Randbedingungen heissen homogen, wenn $g=0$ ist.
+
+Sind $\psi_1$ und $\psi_2$ zwei L"osungen der homogenen Gleichungen und der
+homogenen Randbedingungen, dann ist auch $\alpha_1\psi_1+\alpha_2\psi_2$
+L"osungen der homogenen Gleichung under homogenen Randbedingungen:
+\begin{align*}
+&\sum_{i,j=1}^n a_{ij}(x)\partial_i \partial_j
+(\alpha_1\psi_1(x)+\alpha_2\psi_2(x))
++\sum_{i=1}^na_i(x)\partial_i
+(\alpha_1\psi_1(x)+\alpha_2\psi_2(x))
+\\
+\alpha_1
+&\sum_{i,j=1}^n a_{ij}(x)\partial_i \partial_j
+\psi_1(x)
++
+\alpha_1
+\sum_{i=1}^na_i(x)\partial_i
+\psi_1(x)
+\\
++
+\alpha_2
+&\sum_{i,j=1}^n a_{ij}(x)\partial_i \partial_j
+\psi_2(x)
++
+\alpha_2
+\sum_{i=1}^na_i(x)\partial_i
+\psi_2(x))
+=0
+\end{align*}
+oder f"ur die Randbedingung
+\begin{align*}
+a(\alpha_1\psi_1(x) +\alpha_2\psi_2(x))
+\;+&b\partial_n
+(\alpha_1\psi_1(x) +\alpha_2\psi_2(x))\\
+=\alpha_1(a\psi_1(x)
+\;+&b\partial_n
+\psi_1(x))\\
++\;\alpha_2(a\psi_2(x)
+\;+&b\partial_n
+\psi_2(x))
+=0\quad\forall x\in\gamma
+\end{align*}
+Die L"osungen einer homogenen partiellen Differentialgleichung
+bilden also einen Vektorraum. Insbesondere lassen sich beliebige
+L"osungen der inhomogenen Differentialgleichung dadurch finden, dass
+man eine partikul"are L"osung $\psi_p$ der homogenen Differentialgleichung
+findet, und dazu eine beliebige L"osung der homogenen Differentialgleichung
+$\psi_h$ hinzuaddiert.
+
+\subsection{Quasilineare partielle Differentialgleichungen erster Ordnung}
+Einen interessanten Spezialfall bilden die quasilinearen PDGL erster
+Ordnung. Sie sind nicht unbedingt linear, aber die partiellen
+Ableitungen erster Ordnung kommen nur linear vor. Die Funktion
+$
+F(x,y,u,p,q)
+$
+ist also linear in $p$ und $q$. Die Variablen $x$ und $y$ sowie die
+gesuchte Funktion k"onnen daher nur in den Koeffizienten der
+Variablen $p$ und $q$ vorkommen, $F$ muss von der Form
+\[
+F(x,y,u,p,q)=a(x,y,u)p+b(x,y,u)q+c(x,y,u)
+\]
+sein. Eine Quasilineare Differentialgleichung in zwei Variablen
+hat also die Form
+\[
+a(x,y,u(x,y))\frac{\partial u}{\partial x}+b(x,y,u(x,y))\frac{\partial u}{\partial y}
+=c(x,y,u(x,y)).
+\]
+F"ur mehr Variablen $x_1,\dots,x_n$ gilt analog, dass eine quasilineare
+Differentialgleichung die Form
+\[
+a_1(x_1,\dots,x_n,u)\frac{\partial u}{\partial x_1}
++
+a_2(x_1,\dots,x_n,u)\frac{\partial u}{\partial x_2}
++\dots
++
+a_n(x_1,\dots,x_n,u)\frac{\partial u}{\partial x_n}
+=c(x_1,\dots,x_n,u)
+\]
+hat.
+
+Nat"urlich lassen sich auch quasilineare partielle Differentialgleichungen
+h"oherer Ordnung definieren, in einer solchen Differentialgleichung
+kommen zwar h"oheren partielle Ableitungen vor, aber immer nur linear,
+man kann sie also immer in der Form schreiben:
+\[
+\sum_{\bf k} a_{\bf k}(x,y,u)\partial_{\bf k} u(x,y) = 0,
+\]
+worin die Funktionen $a_{\bf k}(x,y,u)$ nur f"ur endlich viele
+Multiindizes ${\bf k}$ von $0$ verschieden sind.
+
+\subsection{Nichtlineare Gleichungen}
+Die bisher vorgestellten Beispiele von partiellen Differentialgleichungen
+sind alle linear. Viele Gleichungen der Physik sind jedoch
+nicht linear.  Ber"uhmtestes Beispiel sind die Gleichungen, die
+die Str"omung eines Gases beschreiben. Bereits Leonhard Euler hat 
+f"ur die Str"omung eines idealen Gases ein System von partiellen
+Differentialgleichungen gefunden f"ur die Dichte $\varrho$, den Druck
+\index{Dichte}
+\index{Druck}
+$p$ und die Str"omungsgeschwindigkeit $\vec v$, alle drei Funktionen
+\index{Stromungsgeschwindigkeit@Str\"omungsgeschwindigkeit}
+von allen drei Raumkoordinaten und der Zeit. Die wichtigste davon
+ist die Eulersche Gleichung:
+\index{Eulersche Gleichung}
+\begin{align*}
+\frac{\partial \vec v}{\partial t}
++(\vec v\cdot \nabla)\vec v
+=-\frac1{\varrho}\operatorname{grad}p
+\\
+\frac{\partial v_i}{\partial t}
++\sum_{j=1}^3v_j\frac{\partial v_i}{\partial x_j}
+=
+-\frac1{\varrho}\frac{\partial p}{\partial x_i}
+\end{align*}
+Diese Gleichung kann nicht linear sein, weil im zweiten Term
+Produkte von $v_j$ mit Ableitungen von $v_i$ vorkommen.
+Ber"ucksichtigt man auch noch die Z"ahigkeit, wird die Gleichung
+noch komplizierter:
+\[
+\varrho\left(
+\frac{\partial\vec v}{\partial t}
++
+(\vec v\cdot\nabla)\vec v
+\right)
+=
+-\operatorname{grad}p+\eta\Delta \vec v+\left(\zeta+\frac{\eta}3\right)
+\operatorname{grad}\operatorname{div}\vec v
+\]
+
+In einer Dimension bleibt von dieser Gleichung nur noch eine Komponente
+$u(t,x)$ "ubrig, f"ur die eine Gleichung der ungef"ahren Form
+\[
+\frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}
+=\eta\frac{\partial^2u}{\partial x^2}
+\]
+gelten muss (wir haben den Druckgradienten vernachl"assigt und
+$\varrho = 1$ angenommen). Diese Gleichung wurde von
+Johannes Martinus Burgers ausgiebig studiert, und heisst
+daher Gleichung von Burgers.
+Eine L"osung des Anfangswertproblems der Gleichung von Burgers kann 
+in expliziter Form gefunden werden, wir beschreiben diese in Kapitel
+\ref{chapter-nichtlinear}.
+
+
+\section{Anhang: Zusammenstellung der verwendeten Notation}
+\rhead{Notation}
+Die traditionelle Schreibweise der partiellen Ableitungen ist nicht sehr platzsparend,
+daher verwenden wir im folgenden auch die gleichbedeutenden Schreibweisen
+\begin{align*}
+\frac{\partial f(x,y)}{\partial x}
+&=\frac{\partial}{\partial x}f(x,y)
+=\partial_x f(x,y)\\
+\frac{\partial f}{\partial x_i}(x,y)
+&=\partial_{x_i}f(x,y)=\partial_if(x,y)
+\end{align*}
+Ausserdem schreiben wir die die Ableitungen auch in Operatorschreibweise:
+\begin{align*}
+\frac{\partial}{\partial x}
+&=
+\partial_x\\
+\frac{\partial}{\partial x_i}
+&=
+\partial_{x_i}
+=\partial_i
+\end{align*}
+In dieser Notation lassen sich die bekannten Operatoren wie folgt schreiben:
+\begin{align*}
+\Delta &=\partial_x^2+\partial_y^2+\dots=\sum_{i=0}^n\partial_i^2\\
+\operatorname{grad}&=\nabla=\begin{pmatrix}\partial_1\\\vdots\\\partial_n\end{pmatrix}
+\end{align*}
+Die Normalableitung, die in Randbedingungen f"ur partielle Differentialgleichungen
+eine besondere Rolle spielt, wird 
+\[
+\frac{\partial u}{\partial n}=\partial_nu
+\]
+geschrieben.

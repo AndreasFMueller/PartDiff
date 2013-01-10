@@ -1,0 +1,170 @@
+Betrachten Sie das Cauchy-Problem f"ur die Differentialgleichung
+\[
+y\frac{\partial u}{\partial x}+x\frac{\partial u}{\partial y}=0
+\]
+und die Anfangsbedingung $u(0,y)=y^2$.
+\begin{teilaufgaben}
+\item Bestimmen Sie die Charakteristiken.
+\item Welcher Teil der $x$-$y$-Ebene wird von Charakteristiken "uberdeckt,
+die von der $y$-Achse ausgehen?
+\item L"osen Sie das Cauchy-Problem. "Uberpr"ufen sie die L"osung durch
+Einsetzen in die Differentialgleichung.
+\item Betrachten Sie die Funktion
+\[
+v(x,y)=\begin{cases}
+u(x,y)&\qquad |y|\ge |x|\\
+(x^2-y^2)^2&\qquad |x|<|y|
+\end{cases}
+\]
+Rechnen Sie nach, dass diese Funktion ebenfalls die Differentialgleichung
+erf"ullt
+die aber offenbar von $u(x,y)$ verschieden ist (zum Beispiel ist
+$u(1,0)=-1$ und $v(1,0)=1$). Ist sie eine L"osung?
+\end{teilaufgaben}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Die Integralkurven des Vektorfeldes
+\[
+\begin{pmatrix}
+y\\x\\0
+\end{pmatrix}
+\]
+sind L"osungen des Differentialgleichungssystems
+\begin{align*}
+\dot x(t)&=y(t)\\
+\dot y(t)&=x(t)\\
+\dot z(t)&=0
+\end{align*}
+Aus der letzten Gleichung schliesst man $z(t)=z(0)$. Leitet man die erste
+Gleichung ab und setzt die zweite Gleichung ein, erh"alt man die
+die Differentialgleichung
+\[
+\ddot x(t)=x(t)
+\]
+mit den L"osungen $x(t)=a\cosh t$ und $x(t)=b\sinh t$. Da wir Kurven
+suchen, die auf der $y$-Achse im Punkt $(0,y_0)$ beginnen, muss
+\[
+\begin{pmatrix}
+x(t)\\y(t)
+\end{pmatrix}
+=
+y_0
+\begin{pmatrix}
+\sinh t\\
+\cosh t
+\end{pmatrix}
+\]
+sein.
+\item
+Die L"osungskurven sind Hyperbeln mit den Asymptoten $y=\pm x$, die
+Charaketerisitiken k"onnen die Asymptoten nicht "uberschreiten, es wird
+also nur der Bereich $\{(x,y)|\;|x|<|y|\}$ der $x$-$y$-Ebene "uberdeckt.
+\item
+Die L"osungsfl"ache wird von den Charakteristiken erzeugt, ist also
+\[
+(t,y_0)
+\mapsto
+\begin{pmatrix}
+y_0\sinh t\\
+y_0\cosh t\\
+y_0^2
+\end{pmatrix}.
+\]
+Zu einem gegebenen Punkt $(x,y)$ kann man den Parameter $y_0$ wie folgt
+finden:
+\[
+y^2-x^2=y_0^2(\cosh^2t-\sinh^2t)=y_0^2,
+\]
+Die Differenz ist also gerade der gesuchte Funktionswert, somit
+\[
+u(x,y)=y^2-x^2.
+\]
+Tats"achlich kann man durch Ableiten nachrechnen
+\begin{align*}
+\frac{\partial u}{\partial x}&=-2x\\
+\frac{\partial u}{\partial y}&=2y\\
+\Rightarrow
+y\frac{\partial u}{\partial x}+x\frac{\partial u}{\partial y}&=-2xy+2xy=0,
+\end{align*}
+Die Differentialgleichung ist also erf"ullt.
+\item
+Die Ableitungen f"ur $|x|>|y|$ sind
+\begin{align*}
+\frac{\partial v}{\partial x}
+&=2(x^2-y^2)2x\\
+\frac{\partial v}{\partial x}
+&=2(x^2-y^2)(-2y)
+\end{align*}
+Daraus bekommen wir
+\[
+y\frac{\partial v}{\partial x}
++
+x \frac{\partial v}{\partial x}
+=
+4xy(x^2-y^2)
+-4xy(x^2-y^2)=0,
+\]
+$v$ erf"ullt also die Differentialgleichung.
+Trotzdem ist es keine
+L"osung, denn die Ableitungen passen an der Nahtstelle nicht zusammen.
+Auf der Geraden $x=y$ gilt n"amlich:
+\begin{align*}
+\frac{\partial}{\partial x}(y^2-x^2)&=-2x\\
+\frac{\partial}{\partial x}(x^2-y^2)^2&=2(x^2-y^2)2x=0
+\end{align*}
+f"ur $x>0$ sind die Ableitungen also verschieden.
+\end{teilaufgaben}
+
+Man kann f"ur diese Differentialgleichung f"ur geeignete Anfangsbedingungen
+verschiedene L"osungen konstruieren. Seien $f$ und $g$ irgendwelche
+differenzierbaren Funktionen mit $f(0)=g(0)$ und $f'(0)=g'(0)=0$,
+und betrachten wir die Funktion
+\[
+u(x,y)=\begin{cases}
+f(y^2-x^2)&\qquad |y|\ge|x|\\
+g(x^2-y^2)&\qquad |x|\le|y|
+\end{cases}
+\]
+An der Nahtstelle passen die Werte zusammen, wenn $|x|=|y|$ ist $x^2-y^2$,
+d.~h.~$f(y^2-x^2)=f(0)=g(0)=g(x^2-y^2)$, es spielt also keine Rolle, welche
+der Definitionen man w"ahlt.
+Auch die Ableitungen passen zusammen:
+\begin{align*}
+\frac{\partial}{\partial x}f(y^2-x^2)&=-2xf'(y^2-x^2)=-2xf'(0)=0
+\\
+\frac{\partial}{\partial x}g(x^2-y^2)&=2xg'(y^2-x^2)=2xg'(0)=0
+\\
+\frac{\partial}{\partial y}f(y^2-x^2)&=2yf'(y^2-x^2)=2yf'(0)=0
+\\
+\frac{\partial}{\partial y}g(x^2-y^2)&=-2yg'(y^2-x^2)=-2yg'(0)=0
+\end{align*}
+Die Funktion $u$ ist also stetig differenzierbar.
+Eingesetzt in die Differentialgleichung ergibt sich
+\[
+y\partial_xu+x\partial_yu
+=
+\begin{cases}
+-yf'(y^2-x^2)2x+xf'(y^2-x^2)2y=0&\qquad |y|>|x|\\
+yg'(x^2-y^2)2x-xg'(x^2-y^2)2y=0&\qquad |y|<|x|
+\end{cases}
+\]
+Sie ist also eine L"osung. Sie erf"ullt die Anfangsbedingung
+$u(0,y)=f(y^2)$, f"ur jede beliebige Funktion $g$. Das Cauchyproblem
+ist also nicht eindeutig l"osbar.
+
+Ursache daf"ur ist nat"urlich, dass man von der $y$-Achse aus mit
+Charakteristiken nur den Bereich $|y|\ge |x|$ erreichen kann.
+Die L"osung mit Charakteristiken kann die Unterschiedlichen L"osungen
+im Bereich $|y|<|x|$ gar nicht ``sehen''.
+Die Funktion $u$ erf"ullt entlang der $x$-Achse eine Anfangsbedingung
+der Form $u(x,0)=g(x^2)$, diese Werte beeinflussen die L"osung aber
+nur im Bereich $|y|<|x|$. Sofern die L"osungen an der Nahtstelle
+zusammenpassen, was durch $f'(0)=g'(0)=0$ sichergestellt wird,
+kann man also die L"osung unendlich viele L"osungen dieses Cauchy-Problems
+finden.
+\end{loesung}
+}{}
+
