@@ -20,6 +20,7 @@
 \usepackage{txfonts}
 \usepackage[all]{xy}
 \usepackage{paralist}
+\usepackage{hyperref}
 \makeindex
 \begin{document}
 \pagestyle{fancy}
@@ -49,7 +50,11 @@ Andreas M"uller
 Hochschule f"ur Technik, Rapperswil, 2008-2013
 \end{center}
 \end{titlepage}
-
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    linkcolor=blue
+}
 \tableofcontents
 \newtheorem{satz}{Satz}[chapter]
 \newtheorem{problem}[satz]{Problem}

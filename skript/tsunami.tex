@@ -150,14 +150,17 @@ die gew"unschte Trennung der Variablen:
 Die linke Seite ist nur von $t$ abh"angig, die rechte nur von $\vartheta$,
 diese Gleichung kann also nur erf"ullt sein, wenn beide seiten konstant
 sind.  Wir erhalten also zwei Gleichungen
-\begin{align*}
-T''(t)&=mT(t)\\
+\begin{align}
+T''(t)&=mT(t)
+\label{tsunami:zeitabh}
+\\
 \frac1{\sin\vartheta}
 \frac{d}{d\vartheta}
 \sin\vartheta
 \frac{d}{d\vartheta}\Theta(\vartheta)
 &=m\Theta(\vartheta).
-\end{align*}
+\label{tsunami:winkelabh}
+\end{align}
 Es ist jetzt also zu ermitteln, f"ur welche Werte von $m$ die beiden
 Gleichungen L"osungen haben. Dann k"onnen f"ur diese Werte von $m$ 
 L"osungen der partiellen Differentialgleichung zusammengebaut werden,
@@ -165,24 +168,26 @@ mit denen sich dann beliebige L"osungen durch "Uberlangerungen
 erf"ullen lassen m"ussen.
 
 \subsection{Zeitabh"angigkeit}
-Die Zeitabh"angigkeit ist eine gew"ohnliche Schwingungsdifferentialgleichung.
+Die Zeitabh"angigkeit (\ref{tsunami:zeitabh}) ist eine gew"ohnliche
+Schwingungsdifferentialgleichung.
 Die L"osungen sollten Schwingungscharakter haben, was nur zutrifft, wenn
 $m<0$ ist. Die allgemeine L"osung ist dann
-$$
+\[
 T_m(t)=a_m\cos\sqrt{-m}t+b_m\sin\sqrt{-m}t
-$$
+\]
 
 \subsection{Winkelabh"angigkeit}
-Die Differentialgleichung f"ur $\Theta$ ist in dieser Form
-etwas unhandlich. Daher ersetzen wir $\Theta(\vartheta)$ durch eine
+Die Differentialgleichung (\ref{tsunami:winkelabh}) f"ur $\Theta$
+ist in dieser Form etwas unhandlich.
+Daher ersetzen wir $\Theta(\vartheta)$ durch eine
 Funktion $y(x)$ mit Hilfe der Substitution $x=\cos\vartheta$.
 Die Ableitung nach $\vartheta$ kann mit Hilfe der Kettenregel
 in eine Ableitung nach $x$ umgewandelt werden:
-$$
+\[
 \frac{d}{d\vartheta}\Theta(\vartheta)
 =\frac{dy(x)}{dx}\frac{dx}{d\vartheta}
 =-\sin\vartheta \frac{d}{dx} y(x)
-$$
+\]
 Setzt man dies in die Differentialgleichung ein, wird sie zu
 \begin{align*}
 \frac1{\sin\vartheta}

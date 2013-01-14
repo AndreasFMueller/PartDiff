@@ -3,7 +3,7 @@
 %
 % (c) 2008 Prof Dr Andreas Mueller
 %
-\chapter{Geometrie PDGLen erster Ordnung\label{chapter-geometrie}}
+\chapter{Geometrie der partiellen Differentialgleichungen erster Ordnung\label{chapter-geometrie}}
 Bei gew"ohnlichen Differentialgleichungen kann man sich ein grobes
 Bild des Verlaufs der L"osungen dadurch verschaffen, dass man
 die von der Differentialgleichung vorgegeben Steigung der L"osungskurve
@@ -11,80 +11,338 @@ in jedem Punkt als Richtungsfeld aufzeichnet. Ein geometrisches
 Bild erlaubt den L"osungsverlauf abzusch"atzen. Die L"osung einer
 partiellen Differentialgleichung ist eine Funktion von mehreren Variablen,
 bei zwei Variablen k"onnen wir den Graphen dieser Funktion als Fl"ache
-"uber dier $x$-$y$-Ebene visualisieren. Wie l"asst sich der Begriff der
+"uber der $x$-$y$-Ebene visualisieren. Wie l"asst sich der Begriff der
 Steigung "ubersetzen?
 
 \section{Kurven auf der L"osungsfl"ache}
 \rhead{Kurven auf der L"osungsfl"ache}
-\subsection{Allgmeine PDGL erster Ordnung}
-Als Beispiel betrachten wir die folgende partielle Differentialgleichung
-erster Ordnung f"ur die Funktion $u(x,y)$
-$$
-F\biggl(x,y,u(x,y),\frac{\partial u}{\partial x},\frac{\partial u}{\partial y}\biggr)=0.
-$$
-Diese Gleichung beschreibt einen impliziten Zusammenhang zwischen
-dem Ort im $x$-$y$-$u$-Koordinatensystem und den beiden Steigungen
-$\partial_xu$ und $\partial_yu$.
+Die L"osungsfl"ache ist unausweichlich ein zweidimensionales
+Objekt, dem nur mit partiellen Ableitungen beizukommen ist.
+Die einzige M"oglichkeit, das Problem auf eine gew"ohnliche
+Differntialgleichung zu reduzieren besteht darin, die L"osungsfl"ache
+``kurvenweise'' zu finden, sie also also eine Schar von Kurven
+zu betrachten.
 
-Ein Anfangswertproblem, bei dem die Anfangswerte f"ur $x=0$ als
-Funktion $g(y)$ festgelegt sind, $u(0,y)=g(y)$, legt auch die
-partiellen Ableitungen $\partial_y u(0,y)=g'(y)$ fest.  Die partielle
-Differentialgleichung schr"ankt damit ein, welche m"oglichen Ableitungen
-$\partial_xu(0,y)$ m"oglich sein. Oft wird dies nicht eindeutig sein,
-die Steigung in $x$-Richtung kann also verschiedene Werte annehmen,
-es kann verschiedene L"osungsfunktionen geben. "Ahnlich wie bei der
-L"osung gew"ohnlicher Differentialgleichungen ist zu jedem Wert
-aus der bereits bekannten partiellen Ableitung $\partial_yu(x,y)$
-die Steigung $\partial_xu(x,y)$ bestimmt, es ist somit plausibel, dass
-sich die L"osung "ahnlich wie bei der L"osung gew"ohnlicher Differentialgleichungen
-entwickeln l"asst. In voller Allgmeinheit ist dies nicht ganz einfach,
-und f"ur unsere Zwecke auch nicht notwendig, denn alle wesentlichen
-Eigenschaften lassen sich an dem einfacheren Fall der quasilinearen
-PDGL auch beobachten.
+\subsubsection{L"osungsfl"ache als Kurvenschar}
+Der Graph der Funktion $u(x,y)$ kann auf zwei Arten als Schar von
+Kurven betrachtet werden. Einerseits als durch die Werte $y$
+parametrisierte Schar von Kurven $x\mapsto u(x,y)$, andererseits
+also durch Werte $x$ parametrisierte Schar von Kurven $y\mapsto u(x,y)$.
+Allerdings k"onnte auch jede andere Parametrisierung der Fl"ache
+zu so einer Zerlegung Anlass geben. Die Parametrisierung
+\begin{equation}
+(s,t)\mapsto \vec x(s,t)
+=
+\begin{pmatrix}x(s,t)\\y(s,t)\\z(s,t)\end{pmatrix}
+\label{quasilinear:kurvenschar}
+\end{equation}
+liefert die durch $s$ parametrisierte Schar $t\mapsto \vec x(s,t)$
+von Kurven und die durch $t$ parametrisierte Schar $s\mapsto\vec x(s,t)$.
 
-\subsection{Quasilineare PDGL erster Ordnung}
-F"ur eine quasilineare PDGL erster Ordnung
-$$
+Umgekehrt beschreibt eine Schar von Kurven eine Fl"ache, die sich
+in vielen F"allen wieder als Funktion $u(x,y)$ schreiben lassen wird.
+Man muss dazu nur f"ur jeden Punkt $(x,y)$ die Gleichungen
+\begin{align*}
+x(s(x,y),t(x,y))&=x\\
+y(s(x,y),t(x,y))&=y
+\end{align*}
+l"osen.
+Die so bestimmten Funktionen $s(x,y)$ und $t(x,y)$ setzt man dann in
+die Funktion $z(x,y)$ ein, und erh"alt die
+L"osungsfunktion
+\[
+u(x,y)=z(s(x,y), t(x,y)).
+\]
+Das Ziel ist also, eine Schar (\ref{quasilinear:kurvenschar})
+von Kurven zu finden, die alle auf der L"osungsfl"ache liegen.
+
+\begin{beispiel}
+Die Parametrisierung
+\[
+(\vartheta,\varphi)\mapsto
+\begin{pmatrix}
+\sin\vartheta\cos\varphi\\
+\sin\vartheta\sin\varphi\\
+\cos\vartheta
+\end{pmatrix}
+\]
+beschreibt f"ur $0\le \vartheta\le \frac{\pi}2$
+und $0\le\varphi\le 2\pi$ eine Halbkugel.
+
+Die Kurvenscharen
+\[
+\vartheta\mapsto
+\begin{pmatrix}
+\sin\vartheta\cos\varphi\\
+\sin\vartheta\sin\varphi\\
+\cos\vartheta
+\end{pmatrix}
+\qquad
+\text{und}
+\qquad
+\varphi\mapsto
+\begin{pmatrix}
+\sin\vartheta\cos\varphi\\
+\sin\vartheta\sin\varphi\\
+\cos\vartheta
+\end{pmatrix}
+\]
+sind die durch $\varphi$, die geographische L"ange, parametrisierten
+L"angen- und die durch $\vartheta$, die geographische Breite
+parametrisierten Breitenkreise auf der Kugeloberfl"ache.
+
+Die Gleichungen
+\begin{align*}
+x&=\sin\vartheta\cos\varphi\\
+y&=\sin\vartheta\sin\varphi\\
+\end{align*}
+lassen sich mindestens f"ur $x\ne 0$ durch
+\begin{align*}
+\tan\varphi&=\frac{y}{x}\\
+\sin\vartheta &=\sqrt{x^2+y^2}
+\end{align*}
+aufl"osen. Dies reicht bereits, um die Funktion $u(x,y)$
+auszudr"ucken:
+\[
+u=\cos\vartheta=\sqrt{1-\sin^2\vartheta}=\sqrt{1-x^2-y^2}.
+\]
+\end{beispiel}
+
+\subsubsection{Erster Parameter: Cauchy-Anfangswerte}
+Wir wollen f"ur partielle Differentialgleichungen erster Ordnung
+das Cauchy-Problem l"osen.
+Das bedeutet, dass eine Anfangskurve bereits vorgegeben ist.
+Es gibt also eine Kurve
+\begin{equation}
+s\mapsto\vec x_0(s)=\begin{pmatrix}
+x_0(s)\\
+y_0(s)\\
+z_0(s)
+\end{pmatrix},
+\label{quasilinear:anfangskurve}
+\end{equation}
+und die gesuchte L"osungsfunktion $u(x,y)$ muss f"ur jedes $s$ die
+Bedingung
+\[
+u(x_0(s), y_0(x))=z_0(s)
+\]
+erf"ullen.
+Man muss diese Kurve jetzt also erweitern zu einer Kurvenschar
+der Form (\ref{quasilinear:kurvenschar}).
+F"ur $t=0$ muss die Anfangskurve entstehen:
+\[
+\vec x(s,0)=x_0(s).
+\]
+Jede Scharkurve $t\mapsto \vec x(s,t)$ ist also eine Kurve
+mit Anfangspunkt $x_0(s)$.
+Es liegt nahe, solche Scharkurven als L"osungen von gew"ohnlichen
+Differentialgleichungen zu finden.
+
+\subsection{Quasilineare partielle Differentialgleichung erster Ordnung}
+Wir betrachten in diesem Abschnitt eine quaslineare partielle 
+Differentialgleichung
+\begin{equation}
 a\frac{\partial u}{\partial x}
 +
 b\frac{\partial u}{\partial y}
 =
-c
-$$
-kann man immer dann, wenn mindestens einer der Koeffizienten
-$a(x,y,u)$ und $b(x,y,u)$ von $0$ verschieden ist, die Gleichung
-nach einer der partiellen Ableitungen aufl"osen. Die eine partielle
-Ableitung legt also die andere fest. Am Anfang ist die eine partielle
-Ableitung durch die Anfangswerte festgelegt, also steht auch schon fest,
-mit welcher Normalableitung sich die L"osung weiter entwickeln wird.
-Wir erwarten daher, dass sich quasilineare PDGL besonders leicht
-l"osen lassen.
+c.
+\label{quasilinear:equation}
+\end{equation}
+Wir wollen zeigen, dass f"ur diese Art von Differentialgleichungen
+das Cauchy-Problem meistens l"osbar ist, und wollen verstehen,
+unter welchen Bedingungen es nicht l"osbar ist.
 
-Die L"osung wird durch die folgende Beobachtung vereinfacht.
-Die PDGL kann auch als Vektorgleichung geschrieben werden:
-$$\begin{pmatrix}a\\b\\c\end{pmatrix}
+\subsubsection{Gew"ohliche Differentialgleichung erster Ordnung}
+Wir errinnern uns zun"achst an die L"osung der gew"ohnlichen
+Differentialgleichungen erster Ordnung.
+Eine solche legt die Ableitung $y'$ in Abh"angigkeit von 
+$(x,y)$ durch eine Funktion $f(xy,y)$ fest: 
+\[
+y'=f(x,y).
+\]
+Gesucht ist dann eine Kurve $y(x)$, welche
+in jedem Punkt $x$ die Steigung $y'(x)=f(x,y(x))$.
+Geometrisch legt die Funktion $f(x,y)$ ein Richtungsfeld fest,
+der Graph der L"osung ist eine Kurve, deren Tangente in jedem
+Punkt mit dem Richtungsfeld zusammenf"allt.
+
+Um eine L"osungskurve zu finden, kann man wie folgt vorgehen.
+Die Anfgangswerte  $y(0)=y_0$ legen einen Punkt fest.
+Die Differentialgleichung liefert jetzt die Steigung in
+diesem Punkt: $y'(0)=f(0,y(0))$.
+In erster N"aherung ist daher
+\begin{equation}
+y(h)=y(0)+f(0,y(0))\cdot h.
+\label{quasilinear:euler}
+\end{equation}
+Mit $y(h)$ k"onnen wir das Verfahren wiederholen, und durch
+wiederholte Anwendung von (\ref{quasilinear:euler})
+nacheinander $y(2h)$, $y(3h)$,\dots bestimmen.
+Nat"urlich ist dies nur ein N"aherungsverfahren, das "ubrigens
+von Euler erdacht worden ist. Macht man $h$ sehr klein, wird
+die Approximation der wahren L"osung immer besser.
+
+\subsubsection{L"osbarkeit}
+Wenn mindestens einer der Koeffizienten
+$a(x,y,u)$ und $b(x,y,u)$ in (\ref{quasilinear:equation})
+von $0$ verschieden ist, die Gleichung
+nach einer der partiellen Ableitungen aufl"osen.
+Die eine partielle Ableitung legt also die andere fest.
+Durch die Anfangswerte ist die eine partielle auf der
+Anfangskurve bereits festgelegt, also steht auch schon fest,
+die andere Ableitung ist daher auch bekannt. 
+
+Wir sind also in einer "ahnlichen Situation wie bei gew"ohnlichen
+Differentialgleichungen erster Ordnung: Wenn wir die 
+Anfangskurve zum Beispiel f"ur $x=0$ kennen, also Werte
+$u(0,y)$ bereits kennen, dann kennen wir
+auch die Ableitungen, und k"onnen damit die L"osung
+$y\mapsto u(h, y)$ f"ur ein kleines $h>0$ berechnen. Dies legt aber
+wiederum die Ableitungen fest, so dass wir noch einen Schritt 
+weiter zu $y\mapsto u(2h,y)$ gehen k"onnen sollten.
+Indem wir so immer weiter schreiten, bekommen wir die ganze
+L"osungsfunktion $u(x,y)$.
+
+Wir erwarten daher, dass eine quasilineare partielle Differentialgleichung
+nicht schwieriger zu l"osen ist, als eine gew"ohnliche Differentialgleichung
+erster Ordnung.
+
+\subsubsection{Vektorschreibweise der Differentialgleichung}
+Die L"osung wird durch die folgende geometrische "Uberlegung vereinfacht.
+Wir stellen dazu die gesuchte L"osungsfunktion $u(x,y)$ als Graph
+in einem dreidimensionalen Koordinatensystem $x,y,u$ dar.
+Die partielle Differentialgleichung (\ref{quasilinear:equation})
+kann auch als Vektorgleichung
+\begin{equation}
+\begin{pmatrix}a\\b\\c\end{pmatrix}
 \cdot
 \begin{pmatrix}
 \frac{\partial u}{\partial x}\\
 \frac{\partial u}{\partial y}\\
 -1
-\end{pmatrix}=0.
-$$
-Der zweite Vektor ist die Normale auf den Graphen der Funktion
-$z=u(x,y)$, die Gleichung sagt also, dass diese Normale senkrecht
-auf dem Vektor $(a,b,c)$ steht. Insbesondere ist $(a,b,c)$ auf
-jeden Fall tangential an die Fl"ache.
+\end{pmatrix}
+=0.
+\label{quasilinear:vektorform}
+\end{equation}
+geschrieben werden, wie man sich durch Ausmultiplizieren "uberzeugen
+kann.
+Den linken Vektor bezeichnen wir mit
+\[
+\vec v=\begin{pmatrix}
+a(x,y,u)\\
+b(x,y,u)\\
+c(x,y,u)
+\end{pmatrix}.
+\]
+Der rechte Vektor
+\[
+\vec n=
+\begin{pmatrix}
+\frac{\partial u}{\partial x}\\
+\frac{\partial u}{\partial y}\\
+-1
+\end{pmatrix}
+\]
+ist eine Normale auf den Graphen der Funktion
+$z=u(x,y)$. Man kann sich von dieser Tatsache zum Beispiel so 
+"uberzeugen: Die Tangentialvektoren in Achsrichtung sind
+\[
+\vec t_x
+=
+\begin{pmatrix}1\\\frac{\partial u}{\partial x}\\0\end{pmatrix}
+\qquad
+\text{und}
+\qquad
+\vec t_y
+=
+\begin{pmatrix}1\\0\\\frac{\partial u}{\partial y}\end{pmatrix}
+\]
+Das Skalarprodukt von $\vec n$ mit den Vektoren $\vec t_x$ und $\vec t_y$
+ist:
+\[
+\vec n\cdot\vec t_x
+=
+\begin{pmatrix}
+\frac{\partial u}{\partial x}\\
+\frac{\partial u}{\partial y}\\
+-1
+\end{pmatrix}
+\cdot
+\begin{pmatrix}1\\\frac{\partial u}{\partial x}\\0\end{pmatrix}
+=0
+\qquad
+\text{und}
+\qquad
+\vec n\cdot\vec t_y
+=
+\begin{pmatrix}
+\frac{\partial u}{\partial x}\\
+\frac{\partial u}{\partial y}\\
+-1
+\end{pmatrix}
+\cdot
+\begin{pmatrix}1\\0\\\frac{\partial u}{\partial y}\end{pmatrix}
+=0.
+\]
+Die Gleichung (\ref{quasilinear:vektorform}) sagt also,
+dass diese Normale senkrecht auf dem Vektor $\vec v$ steht.
+Ein Vektor, der auf der Normalen $\vec n$ senkrecht steht,
+ist seinerseits tangential an die L"osungsfl"ache.
 
-Somit haben wir ein Vektorfeld gewonnen, welches in jedem Punkt tangential
-an die gesuchte Fl"ache verl"auft. Ist ein Punkt der Fl"ache bekannt,
-kann man davon ausgehend eine L"osungskurve des Vektorfeldes konstruieren,
-die die Fl"ache nicht verl"asst. Diese Kurven heissen Charakteristiken der PDGL.
+Die Vektoren
+\[
+(x,y,u)\mapsto
+\begin{pmatrix}
+a(x,y,u)\\b(x,y,u)\\c(x,y,u)
+\end{pmatrix}
+\]
+bilden somit ein Vektorfeld, welches in jedem Punkt tangential
+an die gesuchte Fl"ache verl"auft.
 
-Damit l"asst sich das Cauchy-Problem l"osen. Die Vorgabe einer Anfangsbedingung
-legt ja genau ein Menge von Punkten fest, durch die die L"osungsfl"ache
-verlaufen soll. Von jedem Punkt der Anfangsbedingung aus kann man also
-eine L"osungskurve des Vektorfeldes konstruieren, diese Schar von L"osungskurven
-bildet dann die gesuchte L"osungsfl"ache.
+\subsubsection{Charakteristiken}
+Statt direkt die L"osungsfl"ache zu suchen, k"onnen wir das Vektorfeld
+$\vec v$ dazu verwenden, einzelne Kurven in der L"osungsfl"ache
+zu bestimmen.
+Ist ein Punkt der Fl"ache bekannt,
+kann man davon ausgehend eine L"osungskurve des Vektorfeldes konstruieren.
+Dazu muss man die gew"ohnliche Differentialgleichung
+\begin{equation}
+\frac{d}{dt}\begin{pmatrix}x(t)\\y(t)\\z(t)\end{pmatrix}
+=
+\begin{pmatrix}
+a(x(t),y(t),u(t))\\b(x(t),y(t),u(t))\\c(x(t),y(t),u(t))
+\end{pmatrix}
+\label{quasilinear:charakteristik}
+\end{equation}
+l"osen.
+Eine L"osungskurve von (\ref{quasilinear:charakteristik}) ist in jedem
+Punkt tangential an die L"osungsfl"ache, sie verl"asst die Fl"ache also
+nicht.
+
+\begin{definition}
+\label{def:quasiliniear:charakteristik}
+\index{Charakteristik!einer quasilinearen partiellen
+Differentialgleichung erster Ordnung}
+Die L"osungskurven der gew"ohnlichen Differentialgleichung
+(\ref{quasilinear:charakteristik}) heissen Charakteristiken
+der partiellen Differentialgleichung (\ref{quasilinear:equation}).
+\end{definition}
+
+\subsubsection{L"osung des Cauchy-Problems}
+Damit l"asst sich das Cauchy-Problem l"osen.
+Nach dem bisher gesagten ist dazu wie folgt vorzugehen:
+\begin{enumerate}
+\item
+F"ur jedes $s$ ist die Differentialgleichung der Charakteristiken
+(\ref{quasilinear:charakteristik}) zu l"osen und eine 
+L"osungskurve $t\mapsto \vec x(s,t)$ zu finden, die
+die Anfangsbedingung $\vec x(s,0)=\vec x_0(s)$ erf"ullt.
+\item 
+Aus den Gleichungen (\ref{quasilinear:kurvenschar}) f"ur die
+Kurvenschar m"ussen die Parameter $s$ und $t$ eliminiert werden,
+sie muss in die Form $z=u(x,y)$ umgeformt werden.
+\end{enumerate}
 
 Sind die Koeffizienten der Differentialgleichung differenzierbare Funktionen,
 dann ist das Vektorfeld differenzierbar.
@@ -93,81 +351,145 @@ dann besagen die allgemeinen S"atze "uber die Abh"angigkeit der L"osung einer
 gew"ohnlichen Differentialgleichung von den Anfangsbedingungen, dass die so
 konstruierte L"osungsfl"ache differenzierbar ist.
 
-Insgesamt haben wir damit das Problem der L"osung der PDGL auf das Problem 
+Insgesamt haben wir damit das Problem der L"osung der partielle Differentialgleichungen auf das Problem 
 zur"uckgef"uhrt, beliebige L"osungskurven eines Vektorfeldes, also auf
 eine gew"ohnliche Differentialgleichung zur"uckgef"uhrt.
 
 
-\section{Beispiele}
-\subsection{Konstante Koeffizienten\label{konstantekoeff}}
+\subsubsection{Welche Anfangskurven sind nicht geeignet?}
+Damit das eben skizzierte L"osungsverfahren funktioniert, 
+darf die Anfangskurve keine Charakteristik sein.
+Andernfalls erh"alt man ja durch Berechnung der von einem Punkt
+der Anfangskurve ausgehenden Charakteristik nur wieder die
+Anfangskurve, es entsteht gar keine Fl"ache.
+
+Damit liefern uns die Charakteristiken nicht nur ein Verfahren
+zur L"osung einer partiellen Differentialgleichung erster Ordnung,
+sondern auch ein Verfahren um zu entscheiden, wo Anfangswerte
+vorgegeben werden m"ussen.
+
+Sei die partielle Differentialgleichung auf dem Gebiet $\Omega$
+definiert.
+Eine Charakteristik ausgehend von einem Randpunkt mit vorgegebenem
+Randwert wird sich zun"achst durch das Gebiet bewegen, kann dieses
+aber in einem anderen Punkt auch wieder verlassen. Der Wert der
+L"osungsfunktion in diesem zweiten Randwert ist offenbar durch die
+Vorgabe des ersten Randwertes bereits festgelegt.
+Eine andere Vorgabe w"urde verhindern, dass das Problem "uberhaupt
+eine L"osung hat.
+
+Randwerte m"ussen also auf einer Teilmenge $M\subset\partial \Omega$
+festgelegt werden so, dass jede Charakteristik nur einen Punkt der
+Menge $M$ trifft.
+
+\subsection{Beispiele}
+In diesem Abschnitt rechnen wir ein paar Beispiel f"ur das eben
+skizzierte L"osungsverfahren durch.
+\subsubsection{Konstante Koeffizienten\label{konstantekoeff}}
 Wir betrachten die Differentialgleichung
-$$
+\[
 \frac{\partial u}{\partial x}+2\frac{\partial u}{\partial y}=3
-$$
+\]
 mit der Anfangsbedingung $u(0,y)=\sin y$ und m"ochten eine L"osung f"ur
 $x>0$ finden.
 
-Das konstante Vektorfeld $\begin{pmatrix}1&2&3\end{pmatrix}^t$ hat die
-L"osungskurven
-$$
-t\mapsto\begin{pmatrix}x_0\\y_0\\z_0\end{pmatrix}+t\begin{pmatrix}1\\2\\3\end{pmatrix}
-$$
-Der Anfangspunkt $(0,y_0,\sin y_0)$ entwickelt sich also mit der Zeit zu
-$$
-\begin{pmatrix}0\\y_0\\\sin y_0\end{pmatrix}+t\begin{pmatrix}1\\2\\3\end{pmatrix}
+Die Anfangskurve mit Parameter $s$ hat die Form
+\[
+\vec x_0(s)
 =
 \begin{pmatrix}
-t\\
-y_0+2t\\
-\sin y_0+3t
+0\\s\\\sin s
 \end{pmatrix}.
-$$
-Diese Kurvenschar beschreibt die L"osungsfl"ache, wir m"ochten daraus aber
-wieder die L"osung in der vertrauteren Form $u(x,y)$ gewinnen. Wir m"ussen
-also herausfinden, welcher Anfangspunkt $(0,y_0)$ auf der $y$-Achse sich
-zu $(x,y)$ entwickeln wird. Dazu muss man $t$ und $y_0$ so finden, dass
-$$
+\]
+Wir m"ussen also eine Kurvenschar finden, die von dieser Anfangskurve
+ausgeht.
+
+Die Differentialgleichung der Charakteristiken ist
+\[
+\frac{d}{dt}\begin{pmatrix}x(t)\\y(t)\\z(t)\end{pmatrix}
+=
+\begin{pmatrix}1\\2\\3\end{pmatrix},
+\]
+sie hat die L"osungskurven
+\[
+t\mapsto\begin{pmatrix}x_0\\y_0\\z_0\end{pmatrix}+t\begin{pmatrix}1\\2\\3\end{pmatrix}
+\]
+Der Anfangspunkt $(0,s,\sin s)$ entwickelt sich also mit der Zeit zu
+\[
 \begin{pmatrix}
-t\\
-y_0+2t
+x(s,t)\\
+y(s,t)\\
+z(s,t)
 \end{pmatrix}
 =
+\begin{pmatrix}0\\s\\\sin s\end{pmatrix}+t\begin{pmatrix}1\\2\\3\end{pmatrix}
+=
 \begin{pmatrix}
-x\\y
-\end{pmatrix}
-\quad
-\Rightarrow
-\quad
-t=x\text{ und } y_0+2t=y \Rightarrow y_0=y-2x
-$$
-Da jetzt $y_0$ und $t$ durch $x$ und $y$ ausgedr"uckt sind, k"onnen wir
-$u(x,y)$ durch Einsetzen berechnen:
-$$
-u(x,y)=\sin y_0+3t=\sin(y-2x)+3x.
-$$
+t\\
+s+2t\\
+\sin s+3t
+\end{pmatrix}.
+\]
+Diese Kurvenschar beschreibt die L"osungsfl"ache, wir m"ochten daraus aber
+wieder die L"osung in der vertrauteren Form $u(x,y)$ gewinnen.
+Dazu m"ussen die Variablen $s$ und $t$ aus den Gleichungen
+\begin{align*}
+x&=t\\
+y&=s+2t\\
+z&=\sin s+3t
+\end{align*}
+eliminiert werden.
+Aus der ersten Gleichung folgt, dass $t$ einfach durch $x$ ersetzt werden
+kann.
+Aus der zweigen Gleichung folgt dann, dass $s=y-2x$.
+Setzt man dies in der dritten Gleichung ein, erh"alt man $z=\sin(y-2x)+3t$.
+Die L"osung der Differentialgleichung ist also
+\[
+u(x,y)=\sin(y-2x)+3x.
+\]
+Durch Einsetzen in die Differentialgleichung und die Randbedingung
+kann man sich davon "uberzeugen, dass dies tats"achlich eine L"osung
+ist:
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=-2\cos(y-2x)+3
+\\
+\frac{\partial u}{\partial y}
+&=\cos (y-2x)
+\\
+\Rightarrow\qquad
+\frac{\partial u}{\partial x}
++2
+\frac{\partial u}{\partial y}
+&=
+-2\cos(y-2x)+3
++2\cos(y-2x)=3
+\\
+u(0,y_0)&=\sin y_0.
+\end{align*}
 
-\subsection{Kreisf"ormige Charakteristiken}
+\subsubsection{Kreisf"ormige Charakteristiken}
 Wir l"osen die Differentialgleichung
-$$
+\[
 y\frac{\partial u}{\partial x}-x\frac{\partial u}{\partial y}=0
-$$
+\]
 Gem"ass der Methode der Charakteristiken m"ussen wir die L"osungskurven
 des Vektorfeldes
-$$
+\[
 \begin{pmatrix}
 y\\-x\\0
 \end{pmatrix}
-$$
+\]
 finden. Da die $z$-Komponente verschwindet, sind die $z$-Komponenten
 der L"osungskurven konstant, wir ignorieren sie daher in der nachstehenden
 Rechnung.
 
 L"osungen f"ur das Vektorfeld 
-$$
+\[
 \begin{pmatrix}
 y\\-x
 \end{pmatrix}
-$$
+\]
 in der Ebene sind Funktionen $x(t)$ und $y(t)$, welche die Gleichungen
 \begin{align*}
 \dot x(t)&=y(t)\\
@@ -175,12 +497,12 @@ in der Ebene sind Funktionen $x(t)$ und $y(t)$, welche die Gleichungen
 \end{align*}
 erf"ullen. Leitet man die erste Gleichung ab, und setzt die zweite
 darin ein, erh"alt man die Differentialgleichung zweiter Ordnung
-$$
+\[
 \ddot x(t)=-x(t)
-$$
+\]
 mit den bekannten L"osungen $a\cos t$ und $a \sin t$. Da die L"osungskurve
 zur Zeit $t=0$ auf der $y$-Achse beginnen soll, muss sie in Vektorschreibweise
-$$
+\[
 \begin{pmatrix}
 x(t)\\y(t)
 \end{pmatrix}
@@ -188,7 +510,7 @@ x(t)\\y(t)
 \sin t\\
 \cos t
 \end{pmatrix}
-$$
+\]
 sein, die Kurven sind also Kreise mit Radius $y_0$ um den Nullpunkt. Offenbar
 k"onnen wir jeden Punkt der Ebene von einem Punkt in der Halbgeraden
 $\{(0,y_0)|y_0 <0\}$ aus erreichen, die Anfangsbedingung muss also nur f"ur
@@ -197,9 +519,9 @@ $y_0<0$ spezifiziert werden.
 Die L"osung zur Anfangsbedingung $g(y)$ kann jetzt wie folgt bestimmt werden.
 Zu einem Punkt $(x,y)$ m"ussen $y_0$ und $t$ gefunden werden, davon brauchen wir
 jedoch nur den Betrag, also $y_0=-\sqrt{x^2+y^2}$. Die L"osung ist also
-$$
+\[
 u(x,y)=g(-\sqrt{x^2+y^2}).
-$$
+\]
 
 Aus diesem Beispiel k"onnen wir mehrere Lehren ziehen: 
 \begin{enumerate}
@@ -207,25 +529,25 @@ Aus diesem Beispiel k"onnen wir mehrere Lehren ziehen:
 kann man der Differentialgleichung in unmittelbarer N"ahe der $y$-Achse nicht
 ansehen, erst der Verlauf der Charakterisitiken im Grossen erm"oglicht
 diese Erkenntnis. Dieses Ph"anomen wird durch den ``zus"atzlichen Platz''
-erm"oglicht, den der zweidimensionale Definitionsbereich der PDGL gegen"uber dem
+erm"oglicht, den der zweidimensionale Definitionsbereich der partielle Differentialgleichung gegen"uber dem
 eindimensionalen Definitionsbereich der gew"ohnlichen DGL bietet.
 \item Der Punkt $(0,0)$ hat spezielle Eigenschaften: wenn die L"osung stetig
 sein soll, muss $g(0)=\lim_{y\to 0-} g(y)$ sein. Damit die L"osung differenzierbar
 wird, muss aber zus"atzlich $g'(x)=0$ sein.
 \end{enumerate}
 
-\subsection{Ein nicht l"osbares Anfangswertproblem\label{unloesbar}}
+\subsubsection{Ein nicht l"osbares Anfangswertproblem\label{unloesbar}}
 Die Differentialgleichung
-$$
+\[
 x\frac{\partial u}{\partial x}
 +
 y\frac{\partial u}{\partial y}
 =0
-$$
+\]
 soll zu den Anfangsbedingungen $u(0,y)=\sin y$ gel"ost werden.
 Dazu berechnen wir wieder zuerst die Charakteristiken (ohne die 
 $z$-Komponente, die wieder konstant ist)
-$$
+\[
 \frac{d}{dt}
 \begin{pmatrix}
 x(t)\\y(t)
@@ -243,14 +565,14 @@ x(t)\\y(t)
 \dot y(t)&=y(t)
 \end{aligned}
 \right.
-$$
+\]
 Die L"osungskurven sind Strahlen durch den Ursprung:
-$$
+\[
 \begin{pmatrix}
 x(t)\\y(t)
 \end{pmatrix}
 =\begin{pmatrix}x_0\\y_0\end{pmatrix}e^t
-$$
+\]
 Um die L"osung zu konstruieren, m"ussen wir jetzt zu einem Punkt
 $(x,y)$ den Anfangspunkt der zugeh"origen Charakteristik auf der $y$-Achse
 finden. Da alle Charakteristiken durch den Nullpunkt gehen, ist dies 
@@ -262,64 +584,38 @@ Anfangskurven ungeeignet. Nur wenn die Anfangsbedingung auf einer Kurve
 festgelegt wird, die transversal, also nirgends tangential, zu den
 Charakteristiken verl"auft, kann das Anfangswertproblem gel"ost werden.
 
-\section{Allgemeines Verfahren}
-Eine Differentialgleichung der Form
-$$
-a(x,y,u)\frac{\partial u}{\partial x}+b(x,y,u)\frac{\partial u}{\partial z}=c(x,y,u)
-$$
-mit Anfangswerten auf einer Kurve $\gamma$ wird wie folgt gel"ost.
+\subsection{Allgmeine partielle Differentialgleichungen erster Ordnung}
+Als Beispiel betrachten wir die folgende partielle Differentialgleichung
+erster Ordnung f"ur die Funktion $u(x,y)$
+\begin{equation}
+F\biggl(
+x,y,u(x,y),\frac{\partial u}{\partial x},\frac{\partial u}{\partial y}
+\biggr)=0.
+\end{equation}
+Diese Gleichung beschreibt einen impliziten Zusammenhang zwischen
+dem Ort im $x$-$y$-$u$-Koordinatensystem und den beiden Steigungen
+$\partial_xu$ und $\partial_yu$.
 
-Zu jedem Punkt der Kurve $\gamma$ wird die von diesem Punkt ausgehende
-Integralkurve des Vektorfeldes
-$$
-\begin{pmatrix}
-a(x,y,z)\\
-b(x,y,z)\\
-c(x,y,z)\\
-\end{pmatrix}
-$$
-ermittelt. Die Integralkurve ist L"osung der Differentialgleichung
+Ein Anfangswertproblem, bei dem die Anfangswerte f"ur $x=0$ als
+Funktion $g(y)$ festgelegt sind, also
 \[
-\frac{d}{dt}
-\begin{pmatrix}x(t)\\y(t)\\z(t)\end{pmatrix}
-=
-\begin{pmatrix}
-a(x(t),y(t),z(t))\\
-b(x(t),y(t),z(t))\\
-c(x(t),y(t),z(t))
-\end{pmatrix},
-\qquad
-\text{Anfangsbedingung:}\;
-\begin{pmatrix}x(0)\\y(0)\\z(0)\end{pmatrix}
-=\gamma(s),
+u(0,y)=g(y),
 \]
-zu jedem Wert des Kurvenparameters $s$ gibt es so eine Kurve.
-Die von dieser Kurvenschar gebildete Fl"ache ist die L"osungsfl"ache
-der Differentialgleichung.
+legt auch die
+partiellen Ableitungen $\partial_y u(0,y)=g'(y)$ fest.  Die partielle
+Differentialgleichung schr"ankt damit ein, welche m"oglichen Ableitungen
+$\partial_xu(0,y)$ m"oglich sein. Oft wird dies nicht eindeutig sein,
+die Steigung in $x$-Richtung kann also verschiedene Werte annehmen,
+es kann verschiedene L"osungsfunktionen geben. "Ahnlich wie bei der
+L"osung gew"ohnlicher Differentialgleichungen ist zu jedem Wert
+aus der bereits bekannten partiellen Ableitung $\partial_yu(x,y)$
+die Steigung $\partial_xu(x,y)$ bestimmt, es ist somit plausibel, dass
+sich die L"osung "ahnlich wie bei der L"osung gew"ohnlicher Differentialgleichungen
+entwickeln l"asst. In voller Allgmeinheit ist dies nicht ganz einfach,
+und f"ur unsere Zwecke auch nicht notwendig, denn alle wesentlichen
+Eigenschaften lassen sich an dem einfacheren Fall der quasilinearen
+partielle Differentialgleichung auch beobachten.
 
-Die L"osungskurven h"angen nat"urlich von $s$ ab, wir k"onnen die
-Kurvenschar also auch in der Form
-$$
-\begin{pmatrix}
-x(t,s)\\
-y(t,s)\\
-z(t,s)
-\end{pmatrix}
-$$
-schreiben.
-Um die L"osung in der Form $u(x,y)$ anzugeben, muss also die Funktion
-$$
-(t,s)\mapsto (x(t,s),y(t,s))
-$$
-invertiert werden, wir m"ussen zu einem Punkt $(x,y)$ die Parameterwerte
-f"ur $s$ (welche Kurve) und $t$ (wo auf der Kurve) ermitteln, um dann
-mit Hilfe von $z(t,s)$ den Funktionswert an der Stelle $(x,y)$
-angeben zu k"onnen.
-Ist $(x,y)\to (t(x,y),s(x,y))$ die Umkehrabbildung, dann
-ist die L"osung der PDGL:
-$$
-u(x,y)=z(t(x,y),s(x,y)).
-$$
 
 \section{Entstehung von Singularit"aten}
 Die L"osung einer partiellen Differentialgleichung h"angt entscheidend
@@ -334,20 +630,20 @@ Als Beispiel betrachten wir die nichtlineare Gleichung
 \label{wellenichtlinear}
 \end{equation}
 mit der Anfangsbedingung 
-$$
+\[
 u(0,x_0)=g(x_0)=e^{-4(x_0-\frac12)^2}.
-$$
+\]
 Nach der Methode der Charakterisitiken brauchen wir eine L"osungskurve
 des Vektorfeldes
-$$
+\[
 \begin{pmatrix}
 1\\
 u\\
 0
 \end{pmatrix}
-$$
+\]
 durch den Punkt $(0,x_0, z_0)$, also eine L"osung des Differentialgleichungssystems
-$$
+\[
 \left.
 \begin{aligned}
 \frac{d}{d\tau} t(\tau)&=1\\
@@ -367,17 +663,17 @@ z(\tau)&=z(0)\\
 x(\tau)&=z(0)\tau +x(0)
 \end{aligned}
 \right.
-$$
+\]
 Der Parameter $\tau$ hat also die Bedeutung von $t$.
 Die L"osungsfl"ache ist somit
-$$
+\[
 (t,x_0)\mapsto
 \begin{pmatrix}
 t\\
 g(x_0)t+x_0\\
 g(x_0)
 \end{pmatrix}.
-$$
+\]
 Die Charakteristiken in der $x$-$y$-Ebene sind Geraden mit einer
 Steigung, die von $g(x_0)$ abh"angt. Je gr"osser $g(x_0)$ ist, desto
 ``schneller'' bewegt sich die Integralkurve nach ``rechts''. Grosse
@@ -385,9 +681,9 @@ Werte der Anfangsbedingung k"onnen also die kleinen Wert "uberholen,
 dabei entsteht eine Singularit"at.
 
 Zur Zeit $t$ hat die L"osungsfunktion die Parameterdarstellung
-$$
+\[
 x_0\mapsto (g(x_0)t+x_0,g(x_0))
-$$
+\]
 die Graphen in Abbildung~\ref{g} zeigen, wie sich die L"osungskurve
 mit zunehmender Zeit entwickelt.
 Es ist offensichtlich, dass f"ur gen"ugend grosse Zeit $t$ die
@@ -396,7 +692,7 @@ L"osungsfl"ache nicht mehr als Graph einer Funktion $u(t,x)$ derstellbar ist.
 \begin{center}
 \includegraphics[width=\hsize]{graphics/welle}
 \end{center}
-\caption{L"osung der Differentialgleichung \ref{wellenichtlinear} mit
+\caption{L"osung der Differentialgleichung (\ref{wellenichtlinear}) mit
 entstehender Singularit"at\label{g}}
 \end{figure}
 
