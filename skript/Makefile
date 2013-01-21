@@ -17,7 +17,7 @@ TEXFILES = skript.tex a-begin.tex a-einleitung.tex \
 	beispiele.tex klassifikation.tex geometrie.tex \
 	separation.tex tsunami.tex transformation.tex \
 	elliptisch.tex parabolisch.tex hyperbolisch.tex \
-	nichtlinear.tex
+	nichtlinear.tex jacobi.tex
 
 skript: skript.pdf
 
