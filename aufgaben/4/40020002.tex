@@ -1,0 +1,154 @@
+Wenden Sie die Hamilton-Jacobi-Theorie auf das
+zweidimensionalen Federpendel in Polarkoordinaten mit der Hamilton-Funktion 
+\[
+H(r,\varphi,p_r, L)=\frac1{2m}p_r^2+\frac1{2mr^2}L^2+Kr^2
+\]
+an.  $L$ ist der Drehimpuls, $mr^2$ das Tr"agheitsmoment
+der Punktmasse.
+F"uhren Sie die Separation der Hamilton-Jacobi-Differentialgleichung,
+und l"osen Sie sie, soweit m"oglich.
+
+\begin{hinweis}
+Versuchen Sie nicht, die auftretenden Integrale auszurechnen, dies
+ist nur unter Verwendung sogenannter elliptischer Integrale m"oglich. 
+\end{hinweis}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+Die Hamilton-Jacobi Differentialgleichung f"ur die Funktion
+$S(t,r,\varphi)$ lautet in diesem Fall
+\begin{equation}
+\frac1{2m}\biggl(\frac{\partial S}{\partial r}\biggr)^2
++\frac1{2mr^2}\biggl(\frac{\partial S}{\partial \varphi}\biggr)^2
++Kr^2
+=
+\frac{\partial S}{\partial t}
+\label{40020002:hjdgl}
+\end{equation}
+Wir verwenden den Separationsansatz
+\[
+S(t,r,\varphi)=S_1(t)+S_2(r)+S_3(\varphi)
+\]
+und erhalten nach Einsetzen in die Differentialgleichung
+\begin{align*}
+\frac1{2m}S_2'(r)^2+\frac1{2mr^2}S_3'(\varphi)^2 + Kr^2&=S_1'(t).
+\end{align*}
+Es folgt wieder sofort, dass $S_1(t)=P_1t$.
+Die Separation von $r$ und $\varphi$ ergibt dann
+\[
+\frac1{2m}S_3'(\varphi)^2=r^2\biggl(P_1-\frac1{2m}S_2'(r)^2-Kr^2\biggr)
+\]
+Die linke Seite h"angt nur von $\varphi$ ab, die rechte nur von $r$,
+also sind beide konstant, wir nennen die Konstante $P_2$ und finden
+\[
+S_3(\varphi)
+=
+\sqrt{2mP_2}\varphi.
+\]
+Der zweite Term in (\ref{40020002:hjdgl}) ist die Rotationsenergie,
+mit $P_2$ ausgedr"uckt wir sie
+\[
+\frac1{2mr^2}{L^2}
+=
+\frac1{2mr^2}\biggl(\frac{\partial S}{\partial \varphi}\biggr)^2
+=
+\frac1{2mr^2}S_3'(\varphi)^2=\frac1{r^2}P_2
+\qquad\Rightarrow\qquad
+P_2=\frac{L^2}{2m},
+\]
+bis auf einen konstanten Faktor ist $P_2$ also die bekannte Erhaltungsgr"osse
+des Drehimpulses.
+
+F"ur $S_3(r)$ findet man jetzt den Ausdruck
+\[
+S_2'(r)^2=2m\biggl(P_1-\frac1{r^2}P_2-Kr^2\biggr),
+\]
+oder
+\begin{equation}
+S_2(r)
+=
+\sqrt{2m}\int\sqrt{P_1-\frac1{r^2}P_2-Kr^2}\,dr
+=
+\sqrt{2m}
+\int
+\frac1r
+\sqrt{P_1r^2-P_2-Kr^4}\,dr.
+\label{40020002:integral}
+\end{equation}
+Leider ist dieses Integral nicht elementar auswertbar, wir stecken also
+in einer Sackgasse.
+\end{loesung}
+}{}
+
+Immerhin kann man sich "uberlegen, unter welchen Voraussetzung das
+Integral
+(\ref{40020002:integral})
+"uberhaupt sinnvoll ist. Der Radikand muss positiv sein, also
+\begin{equation}
+P_1r^2-P_2-Kr^4\ge 0.
+\label{40020002:bedingung}
+\end{equation}
+Andererseits wird der Integrand f"ur grosse $r$ wegen $K>0$ auf
+jeden Fall negativ.  Die Bedingung (\ref{40020002:bedingung})
+legt also fest, in welchem Bereich $r$ varieren kann. Die Nullstellen
+des quadratischen Polynoms sind
+\[
+r_\pm=\frac{1}{2K}\left(P_1\pm\sqrt{P_1^2-4P_2K}\right).
+\]
+Eine L"osung ist nur m"oglich, wenn
+\[
+P_1^2-4P_2K\ge 0
+\]
+ist.
+Falls $P_1^2=4P_2K$ ist "uberhaupt keine Variation m"oglich, es muss
+sich also eine Kreisbahn ergeben. F"ur eine Kreisbahn mit Radius $r$ 
+und und Kreisfrequenz $\omega$ ist der Drehimpuls $L=mr^2\omega$.
+Setzen wir dies in die Kreisbahnbedingung ein, folgt
+"uber $P_1$ und $P_2$ wissen, folgt
+\begin{align*}
+P_1^2&=4P_2K
+=
+4\frac{L^2}{2m}K
+=
+4\frac{m^2r^4\omega^2}{2m}K
+=
+4 \frac{mr^2\omega^2}{2}  \cdot Kr^2
+=
+4 E_{\text{kin}}\cdot E_{\text{pot}}
+\end{align*}
+Andererseits wissen wir auch, dass $P_1=E_{\text{kin}}+E_{\text{pot}}$,
+also auch
+\begin{align*}
+P_1^2&=
+E_{\text{kin}}^2
++ 2 
+E_{\text{kin}}
+E_{\text{pot}}
++
+E_{\text{pot}}^2
+\\
+0&=
+E_{\text{kin}}^2
+- 2 
+E_{\text{kin}}
+E_{\text{pot}}
++
+E_{\text{pot}}^2
+=
+(E_{\text{kin}}
+-
+E_{\text{pot}})^2
+\\
+\Rightarrow\qquad
+E_{\text{kin}}
+&=
+E_{\text{pot}}
+\\
+\frac12mr^2\omega^2&=Kr^2
+\\
+\omega&=\sqrt{\frac{2K}{m}}
+\end{align*}
+Da auf der Kreisbahn die kinetische und die potentielle Energie
+gleich gross sind, ist die Gesamtenergie einer Kreisbahn mit Radius
+$r$ immer $Kr^2$.
+

@@ -236,6 +236,59 @@ dieser Vorlesung, wir wollen aber mit zwei Beispielen zeigen,
 dass dieser Formulismus funktioniert und die L"osung der
 Bewegungsdifferentialgleichungen des Systems erm"oglicht.
 
+\subsection{Energieerhaltung}
+Ein Spezialfall ist von besonderer Bedeutung. In einem abgeschlossenen
+System ist die Energie erhalten, die Hamilton-Funktion $H$, die ja
+die Energie darstellt, kann also nicht von der Zeit abh"angen.
+Verwenden wir einen Separationsansatz der Form 
+\[
+S(t,x_i)=S_0(t)+S_1(x_1)+\dots+S_n(x_n),
+\]
+wird die Hamilton-Jacobi-Differentialgleichung zu
+\[
+S_0'(t)=H(S_1'(x_1),\dots, S_n'(x_n)).
+\]
+Die linke Seite h"angt nur von $t$ ab, auf der rechten Seite
+kommt $t$ aber gar nicht vor, die Variablen $t$ und $x_i$ sind
+separiert, beide Seiten der Gleichung m"ussen konstant sein.
+Wir nennen die Konstante $P_1$, sie ist der Wert der Hamilton-Funktion,
+also die Gesamtenergie.
+Damit steht auch schon fest, dass die gesuchte Funktion $S(t, x_i)$
+die Form
+\[
+S(t,x_i)=P_1t + \bar S(x_i)
+\]
+haben muss, wobei $\bar S(x_i)$ die Zeit $t$ nicht enthalten kann.
+F"ur die Koordinaten $Q_i$ gilt daher
+\begin{align*}
+Q_1&=\frac{\partial S}{\partial P_1}=t+\frac{\partial \bar S(x_i)}{\partial P_1},
+\\
+Q_i&=\frac{\partial \bar S}{\partial P_i},\qquad i>1
+\end{align*}
+Die Gleichungen f"ur $Q_i$ mit $i>1$ enthalten die Zeit nicht, sie
+beschreiben also ausschliesslich die Form der Bahn in Abh"angigkeit
+von den Parameter $Q_1,\dots,Q_n,P_1,\dots,P_n$. Die erste
+Gleichung ist die einzige, die Zeit enth"alt. In ihrem zweiten
+Term kommt die Zeit ebenfalls nicht vor, sondern nur die Ortskoordinaten.
+Die Ortskoordinaten h"angen daher nur von
+\[
+t-Q_1,Q_2,\dots,Q_n, P_1,\dots,P_n
+\]
+ab. Statt der Form (\ref{jacobi:aufgabekurve}) gibt es also sogar eine
+L"osung der Form
+\[
+x_i(t)=x_i(t-Q_1,Q_2, \dots,Q_n,P_1,\dots,P_n).
+\]
+
+F"ur eine Punktmasse in drei Dimensionen k"onnen wir also schliessen, 
+dass es immer eine Beschreibung der Bahn mit sechs Parametern
+$Q_1,Q_2,Q_3,P_1,P_2,P_3$ gibt, wobei der Parameter $Q_1$ die Bedeutung
+hat, dass ein ganz bestimmter, geometrisch ausgezeichneter Bahnpunkt
+zu dieser Zeit durchlaufen wird.
+Bei der Beschreibung von Planetenbahnen dieser Punkt typischerweise
+das Perihel, der Sonnenn"achste Punkt, oder bei Satelliten entsprechend
+das Perig"aum, der erdn"achste Punkt.
+
 \subsection{Beispiele}
 \subsubsection{Bewegung ohne "ausseren Krafeinfluss in zwei Dimensionen}
 \index{Bewegung ohne Krafteinfluss}
@@ -453,5 +506,5 @@ zu
 mgy + P_2=P_1.
 \]
 Da $P_2$ die kinetische Energie der Horizontalbewegung ist, und $mgy$
-die potentielle Energie, ist $P_1$ die Gesamtenergie.
+die potentielle Energie, ist $P_1$ wie erwartet die Gesamtenergie.
 

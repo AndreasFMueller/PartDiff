@@ -11,12 +11,16 @@ PPPP = Laufnummer der Aufgabe
 
 Kapitelnummern
 
-C  Kapitel
-1  Grundlagen
-2  Sprachen
-3  Regulaere Sprachen
-4  Stackautomaten und kontextfreie Sprachen
-5  Turing Maschinen
-6  Entscheidbarkeit
-7  Komplexitaetstheorie
-8  Turing-Vollstaendigkeit
+C    Kapitel
+1    Einführende Beispiele
+2    Begriffe und Klassifikation
+3    Geometrie der partiellen Differentialgleichungen 1. Ordnung
+4    Separation der Variablen
+ 000 Separationsmethode
+ 002 Hamilton-Jacobi Theorie
+5    Transformation
+6    Partielle Differentialgleichungen 2. Ordnung
+7    Elliptische Differentialgleichungen
+8    Parabolische Differentialgleichungen
+9    Hyperbolische Differentialgleichungen
+10   Nichtlineare Differentialgleichungen
