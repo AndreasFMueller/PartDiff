@@ -1,0 +1,74 @@
+Stellen Sie die Lagrange-Charpits-Gleichungen f"ur die
+die partielle Differentialgleichung
+\[
+4u\frac{\partial u}{\partial x}=\biggl(\frac{\partial u}{\partial y}\biggr)^2,
+\]
+auf. L"osen Sie sie soweit m"oglich.
+% Randwerte: $u=1$ auf $x+2y=2$
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+Wir verwenden die Methode der Charakteristiken, dazu brauchen wir die
+Funktion $F$ der Differentialgleichung:
+\[
+F(x,y,u,p,q)=4up-q^2.
+\]
+Die Ableitungen davon sind
+\begin{align*}
+\partial_x F&=0\\
+\partial_y F&=0\\
+\partial_u F&=4p\\
+\partial_p F&=4u\\
+\partial_q F&=-2q
+\end{align*}
+Die Lagrange-Charpit-Gleichungen werden damit zu
+\begin{align*}
+x'&=\partial_pF=4u\\
+y'&=\partial_qF=-2q\\
+u'&=p\partial_pF+q\partial_qF=4up-2q^2\\
+p'&=-\partial_xF-p\partial_uF=-4p^2\\
+q'&=-\partial_yF-q\partial_uF=-4pq
+\end{align*}
+
+Die vierte Differentialgleichung l"asst sich durch Separation integrieren:
+\begin{align*}
+\int \frac{dp}{p^2}=-\frac1{p}&=-4s+p_0
+\end{align*}
+oder 
+\[
+p=\frac1{4s-p_0}.
+\]
+Wenn aber $p$ bekannt ist, dann liefert die Differentialgleichung
+f"ur $q$:
+\begin{align*}
+q'&=-4pq
+\\
+\int \frac{q'}{q}\,ds&=-\int 4p\,ds=\int\frac{-4}{p_0-4s}\,ds
+\\
+\log(q)&=-\log(p_0-4s) + C\\
+q&=\frac{q_0}{p_0-4s}=-q_0p
+\end{align*}
+Da jetzt $q$ bekannt ist, kann auch $y$ bestimmt werden
+\begin{align*}
+y'&=-2q=\frac{2q_0}{p_0-4s}\\
+y&= \frac{q_0}2\log(p_0-4s)+y_0
+\end{align*}
+Mit $p$ und $q$ kann man jetzt die Differentialgleichung f"ur
+$u$ vereinfachen:
+\begin{align*}
+u'-4pu=2q^2
+\end{align*}
+ist eine inhomogene lineare Differntialgleichung erster Ordnung,
+f"ur die es ein Standardverfahren gibt, Variation der Konstanten:
+Die allgemeine L"osung ist
+\[
+u(s)=\frac{q_0^3}{4(p_0-4s)} + u_0(4s-p_0).
+\]
+Mit der ersten Differentialgleichung l"asst sich jetzt auch $x$
+bestimmen:
+\[
+x=\int 4u\,ds=
+\frac{1}{2} u_0 (p_0-4 s)^2-\frac{1}{4} q_0^3 \log(p_0-4 s).
+\]
+\end{loesung}
+}{}

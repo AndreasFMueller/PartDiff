@@ -1,0 +1,123 @@
+L"osen Sie die Eikonal-Gleichung
+\begin{equation}
+\biggl( \frac{\partial u}{\partial x} \biggr)^2
++
+\biggl( \frac{\partial u}{\partial x} \biggr)^2
+=
+y
+\label{4000008:eikonal}
+\end{equation}
+Im Gebiet $\Omega=\{(x,y)\,|\, y > 0\}$.
+Finden Sie eine L"osung, deren Gradient im Punkt $(0,1)$ parallel
+zur $x$-Achse ist.
+Die L"osung beschreibt wie in Aufgabe~\ref{4000007} die
+Phase einer Wellenfront, die auf der $y$-Achse beginnt.
+Berechnen Sie die Orthogonaltrajektorien, also die Strahlrichtung.
+
+\begin{hinweis}
+Dies ist ein einfaches Modell f"ur die Lichtreflektion in einer
+heissen Luftschicht unmittelbar "uber dem von der Sonne aufgeheizten
+Boden. Die Hitze reduziert die optische Dichte.
+\end{hinweis}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+Die Differentialgleichung  l"asst sich mit einem Separationsansatz
+$u(x,y)=X(x)+Y(y)$
+l"osen:
+\[
+X'(x)^2+Y'(y)^2=y
+\qquad
+\Rightarrow
+\qquad
+X'(x)^2=y-Y'(y)^2
+\]
+Die linke Seite h"angt nur von $x$ ab, die rechte nur von $y$, also
+sind beide konstant.
+Wir nennen die gemeinsame Konstante, die offensichtlich positiv sein
+muss $a^2$.
+
+F"ur $X(x)$ finden wir dann
+\[
+X'(x)^2=a^2
+\qquad\Rightarrow\qquad
+X(x)=ax
+\]
+und f"ur $Y(y)$
+\[
+Y'(x)^2=y-a^2
+\qquad\Rightarrow\qquad
+Y(y)=\int \sqrt{y-a^2}\,dy=\frac23(y-a^2)^{\frac32}
+\]
+Die L"osung ist also
+\[
+u(x,y)=ax + \frac23(y-a^2)^{\frac32}.
+\]
+
+Der Gradient dieser L"osung ist
+\[
+\operatorname{grad}u(x,y)=\begin{pmatrix}a\\y-a^2\end{pmatrix}
+\]
+Es wurde verlangt, dass im Punkt $(0,1)$ der Gradient parallel zur
+$x$-Achse sein soll, also die $y$-Komponenten verschwindet. Daraus
+folgt $0=y-a^2=1-a^2$, also $a=1$.
+
+Die Orthogonaltrajektorien sind die Integralkurven des Gradienten,
+wir suchen also Funktionen $x(s)$ und $y(s)$ mit der Eigenschaft
+\begin{align*}
+\frac{dx}{ds}&=1\\
+\frac{dy}{ds}&=y-1
+\end{align*}
+Diese beiden Differentialgleichungen sind entkoppelt, sie k"onnen
+separat gel"ost werden. Die erste f"ur $x(s)$ ist trivial:
+\[
+x(s)=s + x_0,
+\]
+wobei $x_0$ eine Integrationskonstante ist.
+Die zweite ist inhomogen. Die homogene Gleichung $y'=y$ hat die
+L"osung $y(s)=Ce^s$, also kann man eine partikul"are L"osung
+der inhomogene durch Variation
+der Konstanten, also mit dem Ansatz $y(s)=C(s)e^s$ finden.
+Einsetzen in die Differentialgleichung ergibt
+\begin{align*}
+y'(s)=C'(s)e^s+C(s)e^s&=C(s)e^s+1
+\\
+\Rightarrow\qquad
+C'(s)e^s&=1\\
+C'(s)&=e^{-s}\\
+C(s&)=-e^{-s}
+\end{align*}
+Damit ist die allgemeine L"osung der Differentialgleichung f"ur $y(s)$
+\[
+y(s)=(y_0+1)e^s-1,
+\]
+wobei wir die Integrationskonstante so gew"ahlt haben, dass $y(s)=y_0$.
+
+Der L"osung $u$ der Eikonalgleichung entspricht also eine Schar
+von
+vom Punkt $(x_0,y_0)$ ausgehenden
+Lichtstrahlen, die
+durch
+\begin{align*}
+x(s)&=s+x_0\\
+y(s)&=(y_0+1)e^s-1
+\end{align*}
+beschrieben werden. F"ur $x_0=0$, also Lichtstrahlen, die von der
+$y$-Achse ausgehen, finden wir also
+\begin{equation}
+\left.
+\begin{aligned}
+x(s)&=s\\
+y(s)&=(y_0+1)e^s-1
+\end{aligned}
+\right\}
+\qquad\Rightarrow\qquad
+y(x)=(y_0+1)e^x-1
+\end{equation}
+Der Lichtstrahl, der horizontal durch den Punkt $(0,1)$ verl"auft,
+kr"ummt sich also exponentiell in $y$-Richtung.
+Dies ist das bekannte Ph"anomen der Lichtspiegelung in einer
+heisser Luftschicht.
+\end{loesung}
+}{}
+

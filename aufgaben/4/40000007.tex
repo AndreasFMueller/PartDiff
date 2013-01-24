@@ -1,0 +1,100 @@
+In der geometrischen Optik spielt die sogenannte Eikonal-Gleichung
+\begin{equation}
+\biggl( \frac{\partial u}{\partial x}\biggr)^2
++
+\biggl( \frac{\partial u}{\partial y}\biggr)^2
+=
+n(x,y)^2
+\label{40000007:eikonal}
+\end{equation}
+eine wichtige Rolle.
+Eine L"osung $u(x,y)$ beschreibt die
+Ausbreitung einer Welle in einem Medium mit der optischen
+Dichte  $n(x,y)$, dabei sind Kurven gleicher Werte von $u(x,y)$
+die Kurven gleicher Phase, entsprechen also den Wellenfronten.
+Insbesondere steht der Gradient von $u$ immer senkrecht auf
+der Wellenfront, zeigt also in Richtung der Lichtausbreitung.
+
+L"osen Sie die Gleichung
+(\ref{40000007:eikonal}) mit Hilfe eines Separationsansatzes
+f"ur 
+\[
+n(x,y)=
+\begin{cases}n_1&\qquad x< 0\\
+n_2&\qquad x>0.
+\end{cases}
+\]
+Berechnen Sie die Winkel $\alpha_1$ und $\alpha_2$ der Gradienten
+Ihrer L"osung f"ur $x<0$ und $x>0$. Bestimmen Sie 
+$\sin\alpha_1/\sin\alpha_2$.
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+In unserem Fall h"angt $n$ nicht von $y$ ab, ist also eigentlich
+nur eine Funktion $n(x,y)=n(x)$ von $x$.
+Wir verwenden den Separationsansatz
+\[
+u(x,y)=X(x) + Y(y).
+\]
+Einsetzen in die Differentialgleichung
+(\ref{40000007:eikonal}) ergibt in separierter Form
+\[
+n(x)^2-X'(x)^2=Y'(y)^2.
+\]
+Die linke Seite h"angt nur von $x$ ab, die rechte nur von $y$,
+also m"ussen beide konstant sein.
+Wir nennen die gemeinsame Konstante, die offenbar positiv sein
+muss, $\lambda^2$.
+F"ur $Y(y)$ finden wir die Differentialgleichung
+\[
+Y'(y)=\lambda \qquad\Rightarrow\qquad Y(y)=\lambda y.
+\]
+F"ur $X(x)$ ergibt sich dagegen
+\[
+X'(x)=\sqrt{n(x)^2-\lambda^2}.
+\]
+Jetzt m"ussen wir die F"alle $x<0$ und $x>0$ unterscheiden.
+In jedem dieser F"alle ist $n(x)$ konstant, es gilt dort
+also
+\[
+X'(x)=\sqrt{n_i^2-\lambda^2}
+\qquad
+\Rightarrow
+\qquad
+X(x)=x\sqrt{n_i^2-\lambda^2}.
+\]
+Die L"osung ist also
+\[
+u(x,y)=\lambda y + x\sqrt{n_i^2-\lambda^2}
+\]
+wobei f"ur $x<0$ der Wert $n_1$ f"ur $n_i$ zu nehmen ist.
+
+Der Gradient ist
+\[
+\operatorname{grad}u(x,y)
+=
+\begin{pmatrix}
+\lambda\\
+\sqrt{n_i^2-\lambda^2}
+\end{pmatrix}
+\]
+F"ur den Winkel zwischen $x$-Achse und Strahlrichtung gilt
+\[
+\tan\alpha_i
+=
+\frac{\lambda}{\sqrt{n_i^2-\lambda^2}}
+=
+\frac1{\sqrt{\frac{n_i^2}{\lambda^2}-1}}.
+\]
+Das ist gleichbedeutend mit
+\[
+\sin\alpha_i=\frac{\lambda}{n_i}.
+\]
+Daraus folgt jetzt
+\[
+\frac{ \sin\alpha_1}{\sin\alpha_2}=\frac{n_2}{n_1},
+\]
+dies ist das Brechungsgesetz von Snellius.
+\end{loesung}
+}{}
+
