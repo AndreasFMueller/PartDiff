@@ -1,5 +1,5 @@
 %
-% c07-nichtlinear.tex
+% nichtlinear.tex
 %
 % (c) 2008 Prof Dr Andreas Mueller, Hochschule Rapperswil 
 % $Id: c07-nichtlinear.tex,v 1.3 2008/10/31 08:04:16 afm Exp $
@@ -32,9 +32,9 @@ Die Eulersche Gleichung
 dr"uckt das Newtonsche Gesetz f"ur eine Fl"ussigkeit der Dichte $\varrho$ aus,
 welche sich mit Geschwindigkeit $\vec v$ bewegt.
 Zusammen mit der Kontinuit"atsgleichung
-$$
+\[
 \frac{\partial\varrho}{\partial t}+\operatorname{div}(\varrho \vec v)=0
-$$
+\]
 ergeben sich vier Gleichungen f"ur die f"unf unbekannten Funktionen
 $\vec v$ (drei Komponenten) und $\varrho$ und $p$. F"ur eine vollst"andige
 L"osung des Problems sind also noch weitere Gleichungen notwendig, auf die
@@ -42,11 +42,17 @@ wir jedoch nicht eingehen wollen.
 
 Als Gleichung f"ur $\vec v$ ist (\ref{euler}) nicht linear wegen des Termes
 $(\vec v\cdot \nabla)\vec v$. Ausgeschrieben ist seine $i$-Komponente
-$$\biggl(\sum_{k=1}^3v_k\partial_k\biggr)v_i.$$
+\[
+\biggl(\sum_{k=1}^3v_k\partial_k\biggr)v_i.
+\]
 In nur einer Dimension wird die Gleichung zu
-$$\partial_tv+v\partial_xv=-\frac1\varrho\operatorname{grad}p$$
+\[
+\partial_tv+v\partial_xv=-\frac1\varrho\operatorname{grad}p
+\]
 Ist $v$ eine L"osung der homogenen Gleichung, also
-$$\partial_t v+v\partial_x v=0,$$
+\[
+\partial_t v+v\partial_x v=0,
+\]
 dann erf"ullt $\lambda v$ die Differentialgleichung nicht mehr. W"urde
 $\lambda v$ die Differentialgleichung erf"ullen, wurde folgen
 \begin{align*}
@@ -66,23 +72,28 @@ konstante Str"omung.
 \subsection{Navier-Stokes Gleichung}
 Die wohl ber"uhmteste nichtlineare partielle Differentialgleichung ist
 die Navier-Stokes Gleichung, welche ein str"omendes z"ahes Medium beschreibt.
-$$\varrho\biggl(
+\[
+\varrho\biggl(
 \frac{\partial \vec v}{\partial t}+(\vec v\operatorname \nabla)\vec v
 \biggr)
 =
 -\operatorname{grad}p
 +\eta\Delta \vec v+\biggl(\zeta+\frac{\eta}3\biggr)\operatorname{grad}\operatorname{div}\vec v
-$$
+\]
 Auch diese Gleichung f"ur $\vec v$ ist wegen des Ausdrucks $(\vec v\cdot\nabla)\vec v$
 nicht linear.
 
 \subsection{Gleichung von Burgers}
 In einer Dimension  wird die Navier-Stokes Gleichung f"ur eine inkompressibles
 Medium zu
-$$\varrho(\partial_t v+v\partial_x v)-a\partial_x^2v=0$$
+\[
+\varrho(\partial_t v+v\partial_x v)-a\partial_x^2v=0
+\]
 ($a$ ist ein Ausdruck in $\zeta$ und $\eta$).
 Durch die Substitution
-$$u(t,x)=v(t,-x)$$
+\[
+u(t,x)=v(t,-x)
+\]
 erh"alt man daraus 
 \begin{align*}
 \partial_tu(t,x)&=\partial_tv(t,-x)\\
@@ -94,24 +105,28 @@ erh"alt man daraus
 \varrho(\partial_tu(t,x)-u\partial_x(t,x))-a\partial_x^2u
 \end{align*}
 F"ur $\varrho=1$ und $a=1$ wird die Gleichung zu
-$$\partial_tu=u\partial_xu+\partial_x^2u,$$
+\[
+\partial_tu=u\partial_xu+\partial_x^2u,
+\]
 in dieser Form heisst sie die Gleichung von Burgers,
 und wird weiter unten im Abschnitt
 \ref{burgers} genauer studiert.
 
 Aus der Euler Gleichung l"asst sich analog die Burgers Gleichung
 f"ur die ideale Fl"ussigkeit ableiten:
-$$
+\[
 \frac{\partial}{\partial t}u+\frac{\partial}{\partial x}\left(\frac{u^2}2\right)
 =0
-$$
+\]
 Wir verwenden diese in Abschnitt \ref{burgersunstetig} um zu illustrieren,
 wie nichtlineare Gleichungen spontan Unstetigkeiten entwickeln k"onnen.
 
 \subsection{Korteweg-deVries Gleichung}
 Die Wellenausbreitung in einem Kanal kann mit einer PDGL beschrieben werden,
 welche "aquivalent ist zu
-$$\partial_tu+6u\partial_xu+\partial_x^3u=0.$$
+\[
+\partial_tu+6u\partial_xu+\partial_x^3u=0.
+\]
 Wegen des Terms $u\partial_xu$ ist auch diese Gleichung nicht linear.
 Sie ist ber"uhmt f"ur die sogenannten Solitonen, Wellen, die "uber
 lange Zeit ihre Form erhalten.
@@ -143,7 +158,9 @@ dass sie auch die Randbedingungen erf"ullen.
 \rhead{Burgers Gleichung}
 Als Beispiel einer nichtlinearen Gleichung betrachten wir die Gleichung
 von Burgers in der Form
-$$\partial_t u=\partial_x^2u+u\partial_xu$$
+\[
+\partial_t u=\partial_x^2u+u\partial_xu
+\]
 und zeigen ein paar M"oglichkeiten, wie solche Gleichungen
 gel"ost werden k"onnen.
 
@@ -153,26 +170,30 @@ L"osungen einer partiellen Differentialgleichung zu ergr"unden.
 
 Sie $u(t,x)$ eine L"osung der Burgers Gleichung. Dann sind auch
 zeitlich und "ortlich verschobenen Kopien
-$$w(t,x)=u(t+C_4, x+C_3)$$
+\[
+w(t,x)=u(t+C_4, x+C_3)
+\]
 der Funktion $u$ L"osungen.
 Streckt man hingegen die $x$-Achse mit dem Faktor $C_1$, ersetzt
 also $x$ durch $C_1x$, dann
 muss man auch die $t$-Achse entsprechend korrigieren, also $t$
 durch $C_1^2t$ ersetzen. Setzt man
-$$
+\[
 w(t,x)=u(C_1^2t,C_1x)
-$$
+\]
 in die Burgers Gleichung ergibt
-$$
+\[
 C_1^2\partial_t w(t,x)=C_1^2\partial_xw(t,x)+C_1w\partial_xw(t,x)
-$$
+\]
 was offenbar die Gleichung nicht l"ost. Erst die Funktion $C_1w(t,x)$
 erf"ullt die Gleichung, denn damit wird die Differentialgleichung zu
-$$
+\[
 C_1^3\partial_t w(t,x)=C_1^3\partial_xw(t,x)+C_1^3w\partial_xw(t,x)
-$$
+\]
 Aus einer zeitabh"angigen Verschiebung von $u$ in der Form
-$$w(t,x)=u(t,x+C_2t)$$
+\[
+w(t,x)=u(t,x+C_2t)
+\]
 kann ebenfalls eine L"osung gewonnen werden:
 \begin{align*}
 \partial_t w(t,x)&=\partial_t u(t,x+C_2t)+C_2\partial_x u(t,x+C_2t)
@@ -182,19 +203,23 @@ kann ebenfalls eine L"osung gewonnen werden:
 \partial_x^2 w(t,x)&=\partial_x^2 u(t,x+C_2t)
 \end{align*}
 eingesetzt in die Differentialgleichung ergibt die Gleichung
-$$
+\[
 \partial_t u(t,x+C_2t)+C_2\partial u(t,x+C_2t)
 =
 u(t,x+C_2t)\partial_xu(t,x+C_2t)
 +
 \partial_x^2 u(t,x+C_2t)
-$$
+\]
 die jedoch wegen des zweiten Terms auf der linken Seite nicht erf"ullt
 sein kann. Addiert man aber zu $w$ noch die Konstante $C_2$, ergibt sich
 aus dem nichtlinearen Term auf der rechten Seite zus"atzlich
-$$C_2\partial_xu(t,x+C_2t),$$
+\[
+C_2\partial_xu(t,x+C_2t),
+\]
 so dass also
-$$w(t,x)=u(t,x+C_2t)+C_2$$
+\[
+w(t,x)=u(t,x+C_2t)+C_2
+\]
 eine L"osung der Burgers Gleichung ist.
 
 \subsection{Station"are L"osung}
@@ -203,9 +228,9 @@ eine L"osung, die nicht von der Zeit abh"angt, also
 $u(t,x)=u(x)$.
 Eine station"are L"osung muss die gew"ohnliche
 Differentialgleichung
-$$
+\[
 u''(x)+u(x)u'(x)=0
-$$
+\]
 erf"ullen. Der zweite Term ist bis auf einen Faktor die Ableitung
 des Quadrates $u(x)^2$. Durch die Substitution $u(x)=y(x/2)$ kann man
 die Differentialgleichung in die Form
@@ -216,16 +241,18 @@ y''(x)+2y(x)y'(x)&=0&\Rightarrow&\qquad y''(x)+\frac{d}{dx}(y(x)^2)=0
 \end{align*}
 bringen.
 Dies ist die Ableitung der Gleichung
-$$y'(x)+y^2(x)=B,$$
+\[
+y'(x)+y^2(x)=B,
+\]
 die mit Separation gel"ost werden kann:
 \begin{align*}
 \frac{dy}{dx}&=B-y^2\\
 \int\frac{dy}{B-y^2}&=x+A
 \end{align*}
 F"ur $B>0$  findet man das Integral in Formelsammlungen als
-$$
+\[
 \frac1{\sqrt{B}}\operatorname{ar}\tanh \frac{y}{\sqrt{B}}=x+A
-$$
+\]
 Nach $y$ aufgel"ost findet man also
 \begin{align*}
 y(x)&=\sqrt{B}\tanh(\sqrt{B}(x+A))
@@ -237,15 +264,17 @@ u(x)&=
 \end{align*}
 Da die genauen Werte der Integrationskonstanten bedeutungslos sind, k"onnen
 wir die L"osung auch als
-$$u(x)= 2A \tanh (Ax+B) $$
+\[
+u(x)= 2A \tanh (Ax+B) 
+\]
 schreiben.
 
 Mit Hilfe der Koordinatentransformation findet man jetzt weitere L"osungen
 der Gleichung
-$$
+\[
 u(t,x)=
 2A \tanh (A(x+\lambda t)+B) +\lambda.
-$$
+\]
 
 \subsection{Spezielle L"osungen}
 Aus der physikalischen Motivation f"ur die Gleichung lassen sich auch
@@ -253,7 +282,9 @@ einige spezielle L"osungen ableiten.
 Nimmt die Geschwindigkeit linear zu, dann bleibt dies "uber die Zeit auch
 so, aber die Steigung der Geschwindigkeitszunahme wird sich "andern.
 Die Funktion
-$$u(t,x)=\frac{A-x}{B+t}$$
+\[
+u(t,x)=\frac{A-x}{B+t}
+\]
 sollte daher
 eine L"osung sein. Tats"achlich findet man durch Einsetzen
 \begin{align*}
@@ -269,6 +300,264 @@ u(t,x)
 Da die zweiten Ableitungen nach $x$ verschwinden,
 zeigen die erste und letzte Gleichung, dass die Burgers-Gleichung
 erf"ullt ist.
+
+\section{Charakteristiken bei nichtlinearen PDGL erster Ordnung}
+Im Kapitel~\ref{chapter-geometrie} war die Idee erfolgreich, die L"osung,
+die man sich als Fl"ache im Raum mit den Koordinaten $(x,y,u)$
+vorstellen konnte, aus Kurven zusammenzusetzen, die sich auf der
+Fl"ache befinden. Das hat vor allem deshalb funktioniert, weil es
+einfach war, einen Vektor zu finden, der tangential an die Fl"ache
+war. Im wesentlichen war die quasilineare Differentialgleichung ein
+Skalarprodukt mit der Fl"achennormalen als einem Faktor, so dass
+der andere Faktor eine Tangente sein musste.
+Bei nichtlinearen Gleichungen kann man die Idee ebenfalls
+anwenden, doch ist es etwas aufwendiger, die Bedingungen zu
+formulieren.
+
+\subsection{Lagrange-Charpit Gleichungen}
+\index{Lagrange}
+\index{Charpit}
+\index{Lagrange-Charpit Gleichungen}
+Gegeben sei eine nichtlineare Differentialgleichung von zwei
+Variablen $x$ und $y$, die wir in der Form
+\[
+F(x,y,u,p,q)=0
+\]
+schreiben, wobei $p$ und $q$ wieder f"ur die partiellen Ableitungen
+von $u$ nach $x$ bzw.~$y$ stehen.
+
+Wir suchen Kurven auf der L"osungsfl"ache, wir verwenden $s$ als
+Kurvenparameter.
+Nehmen wir weiter an, wir h"atten bereits eine L"osungsfunktion $u(x,y)$.
+Weil es jetzt keinen
+einfachen linearen Zusammenhang zwischen den ersten Ableitungen
+mehr gibt, wie im quasilinearen Fall, m"ussen wir allgemeiner
+auch $p(s)$ und $p(s)$ mitschleppen, wir suchen also f"unf
+Funktionen
+\begin{equation}
+x(s),\;
+y(s),\; 
+u(s),\; 
+p(s),\; 
+\text{und}\;
+q(s),
+\label{nichtlinear:kurve}
+\end{equation}
+so dass die Kurve $(x(s),y(s),z(s))$ auf der L"osungsfl"ache
+verl"auft und ausserdem die partiellen Ableitungen 
+von $u(x,y)$ mit den Werten von $p$ und $q$ "ubereinstimmen.
+Es muss also gelten
+\begin{align*}
+\frac{\partial u}{\partial x}(x(s), y(s))&=p(s)\\
+\frac{\partial u}{\partial y}(x(s), y(s))&=q(s)
+\end{align*}
+Setzt man die Funktionen (\ref{nichtlinear:kurve}) in die Funktion
+$F$ ein, ist die Gleichung immer erf"ullt. Als muss auch die Ableitung
+verschwinden:
+\begin{align}
+0
+&=
+\frac{d}{ds}F(x(s),y(s),u(s),p(s),q(s))=0
+\notag
+\\
+&=
+\frac{\partial F}{\partial x}x'(s)
++
+\frac{\partial F}{\partial y}y'(s)
++
+\frac{\partial F}{\partial u}u'(s)
++
+\frac{\partial F}{\partial p}p'(s)
++
+\frac{\partial F}{\partial q}q'(s)
+\label{nichtlinear:totale}
+\end{align}
+Die Ableitung der Bedingung, dass die Kurve in der Fl"ache bleiben muss,
+liefert eine weitere Gleichung f"ur die unbekannten Funktionen:
+\begin{align}
+\frac{d}{ds}u(x(s),y(s))&=\frac{d}{ds}u(s)
+\notag
+\\
+\frac{\partial u}{\partial x}x'(s)
++
+\frac{\partial u}{\partial y}y'(s)
+&=
+u'(s)
+\notag
+\\
+p(s)x'(s)+q(s)y'(s)
+&=
+u'(s).
+\label{nichtlinear:flaeche}
+\end{align}
+%Schliesslich muss auch gelten, dass die gemischten zweiten Ableitungen
+%nicht von der Reihenfolge der Ableitungen abh"angen:
+%\[
+%\frac{\partial^2u}{\partial x\partial y}
+%=
+%\frac{\partial^2u}{\partial y\partial x}.
+%\]
+Insgesamt hat man jetzt also die Gleichungen
+\begin{equation}
+\begin{pmatrix}
+\partial_x F+p\partial_uF& \partial_y F+q\partial_uF&0&\partial_pF&\partial_qF\\
+p&q&-1&0&0
+\end{pmatrix}
+\begin{pmatrix}
+x'(s)\\
+y'(s)\\
+u'(s)\\
+p'(s)\\
+q'(s)
+\end{pmatrix}=0.
+\label{nichtlinear:gleichungen}
+\end{equation}
+Sowenig wie die Wahl der Tangenten bei den quasilinearen partiellen
+Differentialgleichungen eindeutig war, kann man erwarten dass im
+allgemeinen nichtlinearen Fall ein Richtungsvektor eindeutig zu
+bestimmen ist. Aber der Vektor 
+\[
+\begin{pmatrix}
+\partial_pF\\
+\partial_qF\\
+p\partial_pF+q\partial_qF\\
+-\partial_xF-p\partial_uF\\
+-\partial_yF-q\partial_uF
+\end{pmatrix}
+\]
+l"ost das Gleichungssystem (\ref{nichtlinear:gleichungen}).
+Man kann also versuchen, die Kurve als L"osungskurve des
+Differentialgleichungssystems
+\begin{align*}
+x'(s)
+&=
+\partial_pF
+\\
+y'(s)
+&=
+\partial_qF
+\\
+u'(s)
+&=
+p\partial_pF+q\partial_qF
+\\
+p'(s)
+&=
+-\partial_xF-p\partial_uF
+\\
+q'(s)
+&=
+-\partial_yF-q\partial_uF
+\end{align*}
+Diese Kurven heissen die Charakteristiken der nichtlinearen
+Differentialgleichung.
+Sie k"onnen auf die genau gleiche Art zur L"osung der Gleichung
+verwendet werden wie im quasilinearen Fall.
+
+\subsection{Beispiel: Eikonal-Gleichung}
+Als Beispiel betrachten wir die Eikonal-Gleichung 
+\[
+\biggl(\frac{\partial u}{\partial x}\biggr)^2
++
+\biggl(\frac{\partial u}{\partial y}\biggr)^2
+=
+n(x,y)^2.
+\]
+Sie spielt in der Optik eine wichtige Rolle, sie beschreibt die
+Phase einer Welle, die sich in einem Medium mit Brechungsindex $n(x,y)$
+ausbreitet. Wir wollen die Gleichung im Gebiet $\Omega=\{(x,y)\,|\,y>0\}$
+l"osen mit der Randbedingung $u(0,y)=0$. Weiter unten werden wir auch 
+die Funktion $n(x,y)$ noch weiter einschr"anken.
+
+\subsubsection{Differentialgleichungen der Charakteristiken}
+Die Funktion $F$ ist offenbar
+\[
+F(x,y,u,p,q)=p^2+q^2-n(x,y)^2
+\]
+Die partiellen Ableitungen sind
+\begin{align*}
+\partial_xF&=-2n(x,y)\partial_x n(x,y)\\
+\partial_yF&=-2n(x,y)\partial_y n(x,y)\\
+\partial_uF&=0\\
+\partial_pF&=2p\\
+\partial_qF&=2q.
+\end{align*}
+Wir spezialisieren jetzt auf den Fall $n(x,y)=y$, dann wird das 
+Differentialgleichungssystem f"ur die Charakteristiken
+\begin{align*}
+x'&=\partial_pF=2p\\
+y'&=\partial_qF=2q\\
+u'&=p\partial_pF+q\partial_qF=2p^2+2q^2\\
+p'&=-\partial_xF-p\partial_uF=0\\
+q'&=-\partial_yF-q\partial_uF=2y
+\end{align*}
+Wir suchen eine Familie von Kurven, welche f"ur $s=0$ jeweils
+im Punkt $(0,y_0,0)$ beginnen.
+Ausserdem muss auch $\partial_yu(0,y_0)=q(0,y_0)=0$ gelten.
+
+\subsubsection{L"osung der Charakteristikengleichung}
+Aus der Gleichung f"ur $p'$ folgt, dass $p$ entlang einer Charakteristik
+konstant ist, $p=p_0$. Aus der Gleichung f"ur $x'$ folgt, dann
+dass $x=p_0s+p_1$ ist. Weil aber $x(0)=0$ sein muss, folgt $p_1=0$.
+Offenbar spielt es auch keine Rolle, welchen Wert wir f"ur $p_0$
+w"ahlen, eine andere Wahl "andert nur die Geschwindigkeit, mit der
+die Charakteristik durchlaufen wird. Wir setzen also $s=x$.
+
+Die beiden Funktionen sind "uber die zweite und f"unfte Gleichung
+aneinander gekoppelt, leitet man die zweite einmal ab und setzt die
+f"unfte ein, erh"alt man die Gleichung
+\[
+y''=4y.
+\]
+Diese hat die bekannten L"osungen $\cosh 2s$ und $\sinh 2s$.
+Mit geeigneten Konstanten $A$ und $B$ ist die allgemeine
+L"osung also
+\[
+y(x)=A\cosh 2x + B\sinh 2x.
+\]
+Da $y(0)=y_0$ gelten muss, folgt $A=y_0$. Durch Ableiten finden wir
+$y'(x)=2q(x)=2y_0\sinh 2x + 2B\cosh 2x$, also ist $q(x)=y_0\sinh 2x+B\cosh 2x$. 
+Weil aber f"ur $x=0$ gelten muss $q(0)=0$, ist $B=0$.
+Somit haben wir die Funktionen $y$ und $q$ vollst"andig bestimmt:
+\begin{align}
+y(x)&=y_0\cosh 2x,
+\label{nichtlinear:y}
+\\
+q(x)&=y_0\sinh 2x.\notag
+\end{align}
+
+Jetzt bleibt nur noch $u$ zu bestimmen, wozu wir die dritte Gleichung
+verwenden:
+\begin{align}
+u'&=2p^2+2q^2=
+2 + 2y_0^2\cosh^22x
+\notag
+\\
+\Rightarrow\qquad
+u&=\int
+2 + 2y_0^2\cosh^22x
+\,dx
+\notag
+\\
+&=2x +2y_0^2\biggl(\frac18\sinh 4x+\frac12x\biggr)
+\label{nichtlinear:l2}
+\end{align}
+Quadriert man (\ref{nichtlinear:y}), erh"alt man
+\begin{align*}
+y^2
+&=
+y_0^2\biggl(\frac12\cosh 4x+\frac12\biggr)
+\\
+y_0^2&=\frac{2y^2}{\cosh4x + 1}.
+\end{align*}
+Dies kann man in (\ref{nichtlinear:l2}) einsetzen, was die L"osung
+liefert:
+\begin{equation}
+u(x,y)
+=
+2x+\frac{y^2(\sinh4x+4x)}{4(\cosh4x+1)}
+\label{nichtlinear:loesung}
+\end{equation}
 
 \section{Linearisierung}
 \rhead{Linearisierung}
@@ -301,10 +590,10 @@ f"ur $v(x,y)$ aufstellen.
 
 Wir setzen den Ansatz (\ref{linearisierungansatz}) in die Gleichung
 ein, und erhalten
-$$
+\[
 F(x,y,u(x,y)+av(x,y),\partial_xu(x,y)+a\partial_xv(x,y),
 \partial_yu(x,y)+a\partial_yv(x,y))=0
-$$
+\]
 F"ur $a=0$ ist die Gleichung erf"ullt, wir suchen ein $v$ so dass die Gleichung
 f"ur kleine $a$ n"aherungsweise auch erf"ullt ist. Dies erreichen wir,
 indem wir nach $a$ ableiten:
@@ -394,14 +683,17 @@ gefunden werden k"onnen.
 \subsection{Linearisierung von PDGL zweiter Ordnung}
 Eine PDGL zweiter Ordnung ist gegeben durch eine Funktion von neun
 Variablen
-$$F(x,y,u,p,q,r,s,t),$$
+\[
+F(x,y,u,p,q,r,s,t),
+\]
 in die man die Funktionswerte und die Ableitungen einsetzt:
-$$
+\[
 F(x,y,u(x,y), \partial_xu(x,y),\partial_yu(x,y),
 \partial_x^2u(x,y),
 \partial_x\partial_yu(x,y),
 \partial_y^2u(x,y))
-=0$$
+=0
+\]
 Um die linearisierte PDGL zu finden, geht man wieder von einer
 L"osung $u(x,y)$ aus, und sucht eine ``Nachbarl"osung'' in der
 Form $u(x,y)+av(x,y)$. Diesen Ansatz setzt man in die 
@@ -480,9 +772,13 @@ Wir wenden das Linearisierungsverfahren auf die Gleichung von Burgers an.
 Wir schreiben sie zur leichteren "Ubertragbarkeit der Formeln
 mit $x$ und $y$ als unabh"angige Variablen anstellen von $x$ und $t$,
 wir suche also L"osungen der Differentialgleichung
-$$\partial_yu-u\partial_xu-\partial_x^2u=0$$
+\[
+\partial_yu-u\partial_xu-\partial_x^2u=0
+\]
 Die Funktion $F$ ist in diesem Fall
-$$F(x,y,u,p,q,r,s,t)=q-r-up.$$
+\[
+F(x,y,u,p,q,r,s,t)=q-r-up.
+\]
 Die Linearisierungsformeln sagen, dass wir die Ableitungen von $F$ nach
 den Variablen verwenden m"ussen als Koeffizienten der Ableitungen,
 f"ur die die Variablen stehen.  Dabei m"ussen wir in die partiellen Ableitungen
@@ -512,26 +808,28 @@ u(x,y)\cdot\partial_xv(x,y)
 eine parabolische PDGL. In den urspr"unglichen Koordinaten und der
 "ublichen Reihenfolge der Ableitungen geschrieben
 lautet sie
-$$
+\[
 -\partial_x^2v(t,x)
 +\partial_tv(t,x)
 + u(t,x)\cdot\partial_xv(t,x)
 +\partial_xu(t,x)\cdot v(t,x)
 =0,
-$$
+\]
 
 \subsubsection{Konstante Geschwindigkeit}
 Die konstante Funktion $u(t,x)=c$ ist eine L"osung der nichtlinearen
 Gleichung. Die linearisierte Gleichung wird damit zu
-$$
+\[
 \partial_tv
 -\partial_x^2v
 -c\partial_xv=0.
-$$
+\]
 Leider ist diese Gleichung auch noch nicht direkt in einer Form,
 in der wir sie l"osen k"onnen. Schreiben wir die gesuchte Funktion
 in der Form
-$$v(t,x)=w(t,x+ct)$$
+\[
+v(t,x)=w(t,x+ct)
+\]
 und bezeichnen die partiellen Ableitungen von $w$ nach der ersten
 und zweiten Variablen mit $\partial_1w$ bzw.~$\partial_2w$, dann
 erhalten wir zun"achst die partiellen Ableitungen von $v$
@@ -561,7 +859,9 @@ Die Funktion $w$ ist also eine L"osung der W"armeleitungsgleichung.
 
 \subsubsection{L"osungen der linearisierten Gleichung}
 Die W"armeleitungsgleichung hat die Standardl"osungen
-$$w(t,x)=\frac1{\sqrt{t}}e^{-\frac{(x-\xi)^2}{4t}},$$
+\[
+w(t,x)=\frac1{\sqrt{t}}e^{-\frac{(x-\xi)^2}{4t}},
+\]
 die man durch Nachrechnen unmittelbar best"atigen kann:
 \begin{align*}
 \partial_t w(t,x)
@@ -594,7 +894,9 @@ e^{-\frac{x^2}{4t}}
 \end{align*}
 Als L"osungen der linearisierten Gleichung kommen also Funktionen der
 Form
-$$v(t,x)=\frac1{\sqrt{t}}e^{-\frac{(x-\xi+ct)^2}{4t}}$$
+\[
+v(t,x)=\frac1{\sqrt{t}}e^{-\frac{(x-\xi+ct)^2}{4t}}
+\]
 oder "Uberlagerungen derselben in Frage.
 
 \subsubsection{Stabilit"at der Str"omung}
@@ -619,7 +921,9 @@ Zeit immer schw"acher werden.
 \subsubsection{Ansteigende Geschwindigkeit}
 Wir untersuchen diese Gleichung noch f"ur den Fall der bereits 
 fr"uher untersuchten speziellen L"osung 
-$$u(t,x)=\frac{A-x}{B+t}$$
+\[
+u(t,x)=\frac{A-x}{B+t}
+\]
 explizit aufschreiben. Dazu ben"otigen wir die partielle Ableitung
 nach $x$, die wir ebenfalls bereits fr"uher berechnet haben:
 \begin{align*}
@@ -652,16 +956,18 @@ Fl"ussigkeit\label{burgersanfang}}
 \end{figure}
 In diesem Abschnitt m"ochten wir die Burgers Gleichung f"ur die ideale
 Fl"ussigkeit
-$$\frac{\partial}{\partial t}u+\frac{\partial}{\partial x}\left(\frac{u^2}2\right)=0$$
+\[
+\frac{\partial}{\partial t}u+\frac{\partial}{\partial x}\left(\frac{u^2}2\right)=0
+\]
 auf dem Interval $x\in[0,1]$ und f"ur $t>0$
 mit der Anfangsbedingung
-$$
+\[
 u(0,x)=\begin{cases}
 0\qquad&\text{$x<\frac14$ oder $x>\frac34$}\\
 x-\frac14\qquad&\frac14\le x\le \frac12\\
 \frac34-x\qquad&\frac12\le x\le \frac34
 \end{cases}
-$$
+\]
 l"osen (siehe Abbildung \ref{burgersanfang}).
 
 \begin{figure}
@@ -672,13 +978,17 @@ l"osen (siehe Abbildung \ref{burgersanfang}).
 die ideale Fl"ussigkeit\label{burgersniveau}}
 \end{figure}
 Die Differentialgleichung ist von erster Ordnung, in der Form
-$$\partial_tu+u\partial_xu=0$$
+\[
+\partial_tu+u\partial_xu=0
+\]
 haben wir die zugeh"orige geometrische Theorie in Abschnitt
 \ref{pdgl1ordnung} besprochen. Dort wurde darauf hingewiesen,
 dass der Vektor 
-$$\begin{pmatrix}
+\[
+\begin{pmatrix}
 1\\u\\0
-\end{pmatrix}$$
+\end{pmatrix}
+\]
 immer an die Fl"ache $u=u(t,x)$ tangential ist. Die L"osungsfl"ache
 entsteht dadurch, dass die Anfangsbedingung mit Hilfe dieses Vektors
 verschoben wird. 
@@ -713,7 +1023,9 @@ Das Maximum wird sich entlang der Charakteristiken zum Punkt
 $(1,\frac34,\frac14)$ entwicklen. Der Funktionswert $u(0,x)$ im Punkt $(0,x)$
 f"ur $x\in[\frac14,\frac12]$ ist derselbe wie im Punkt $(1,x+u(0,x))$.
 Der Funktionsgraph $x\mapsto u(1,x)$ hat also die Parameterdarstellung
-$$[{\textstyle\frac14},{\textstyle\frac12}]\to\mathbb R\colon s\mapsto (s+u(0,s),u(0,s))$$
+\[
+[{\textstyle\frac14},{\textstyle\frac12}]\to\mathbb R\colon s\mapsto (s+u(0,s),u(0,s))
+\]
 Diese ist jedenfalls eine glatte Funktion. Andererseits komprimieren
 die Charakteristiken das Interval $[\frac12,\frac34]$ auf
 den Punkt $(1,\frac34)$ so dass bei $x=\frac34$ wieder ein Sprung entsteht.
