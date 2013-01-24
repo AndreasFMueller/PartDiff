@@ -1,0 +1,40 @@
+Zeigen Sie, dass die partielle Differentialgleichung
+\[
+\partial_x\partial_y u=0
+\]
+auf dem Gebiet $\Omega=\mathbb R^2$ hyperbolisch ist.
+Wie verlaufen die Charakteristiken?
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+Die Koeffizientematrix ist
+\[
+A=\begin{pmatrix}0&\frac12\\\frac12&0\end{pmatrix},
+\]
+$A$ hat das charakteristische Polynom
+$\lambda^2-\frac14=(\lambda-\frac12)(\lambda+\frac12)$ mit den Nullstellen
+$\pm\frac12$. Dies zeigt, dass die Gleichung hyperbolisch ist.
+
+Die Differentialgleichung der Charakteristiken ist
+\[
+\dot x\dot y=0,
+\]
+also $\dot x=0$ oder $\dot y=0$. Somit sind die charakteristiken Kurven
+Geraden parallel zu den Koordinatenachsen.
+
+Alternativ k"onnen die Charakteristiken wie folgt gefunden werden.
+Die Richtungen der Charakteristiken sind diejenigen Vektoren $v$, die
+den Ausdruck $v^tAv$ zu Null machen. Schreibt man
+\[
+v=\begin{pmatrix}v_1\\v_2\end{pmatrix},
+\]
+m"ussen die Komponenten von $v$ die Gleichung
+\[
+v^tAv=v_1v_2=0
+\]
+erf"ullen, d.~h.~$v_1=0$ oder $v_2=0$. Die Charaketeristiken sind daher
+Geraden parallel zu den Koordinaten-Achsen.
+\end{loesung}
+}{}
+
+

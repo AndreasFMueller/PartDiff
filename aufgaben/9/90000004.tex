@@ -1,0 +1,74 @@
+Finden Sie alle L"osungen der Wellengleichung
+\[
+\partial_t^2u-a^2\partial_x^2u=0
+\]
+in der Halbebene $x>0$ mit Anfangswerten
+\[
+u(0,x)=0,\quad x>0
+\]
+und Randwerten
+\[
+u(t,0)=\sin t,\quad t\in\mathbb R.
+\]
+
+\begin{hinweis}
+Es gibt unendlich viele L"osungen.
+\end{hinweis}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+In der Vorlesung wurde die d'Alembert L"osung der Wellengleichung
+gezeigt. Die allgemeine L"osung der Wellengleichung
+\[
+u(t,x)
+=
+u_+(x+at)+u_-(x-at),
+\]
+die Funktionen $u_+$ und $u_-$ sind noch zu bestimmen. Es ist klar,
+dass diese Funktionen links und rechts von $0$ v"ollig verschieden sein
+k"onnen.
+
+Die Funktion $u_+(x+at)$ beschreibt eine nach links laufende
+Welle. Der Teil der Funktion f"ur negative Argumente kann
+die L"osung im Bereich $x>0$ nie
+beeinflussen, wir k"onnen also $u_+(x)=0$ setzen f"ur $x<0$.
+
+Die Anfangsbedingung f"ur $t=0$ sagt uns, dass
+\[
+u_+(x)+u_-(x)=0
+\]
+sein muss f"ur $x>0$. Wir k"onnen also zum Beispiel
+\[
+u_+(x)=\begin{cases}u_0(x)&\qquad x\ge 0\\
+0&\qquad x<0
+\end{cases}
+\]
+setzen, wobei $u_0$ eine beliebige Funktion ist. Die Funktion $u_-$ muss
+dann passend dazu wie folgt definiert werden:
+\[
+u_-(x)=\begin{cases}
+-u_0(x)&\qquad x\ge 0\\
+?&\qquad x<0
+\end{cases}
+\]
+Der noch fehlende Teil der Funktion $u_-$ muss jetzt so definiert werden,
+dass auch die zweite Randbedingung erf"ullt ist, diese lautet
+\[
+u_+(at)+u_-(-at)=\sin t.
+\]
+Schreiben wir $at=x$, oder $t=\frac{x}{a}$, dann liefert diese Bedingung
+f"ur positive $t$ genau den fehlenden Teil der Definition von $u_-$:
+\[
+u_-(-x)=-u_+(x)+\sin \frac{x}{a}.
+\]
+oder
+\[
+u_-(x)=\begin{cases}
+-u_0(x)&\qquad x\ge 0\\
+-u_0(-x)-\sin{\displaystyle\frac{x}{a}}&\qquad x<0
+\end{cases}
+\]
+
+\end{loesung}
+}{}
+

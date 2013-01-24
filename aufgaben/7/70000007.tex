@@ -1,0 +1,123 @@
+Welche der folgenden Funktionen ist nicht harmonisch?
+\begin{teilaufgaben}
+\item $u_a(x,y)=\sqrt{e^{(x^8+y^8)^{1291}}}$
+\item $u_b(x,y)=x^4-6x^2y^2+y^4$
+\item $u_c(x,y)=\sqrt{x+\sqrt{x^2+y^2}}$
+\end{teilaufgaben}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+\begin{teilaufgaben}
+\item $u_a$ kann nicht harmonisch sein, denn sie hat
+ein absolutes Minimum in $(0,0)$. Eine in ganz $\mathbb R^2$ definierte
+harmonische Funktion kann kein Minimum haben.
+\item $u_b$ ist harmonisch:
+\begin{align*}
+\frac{\partial u_b}{\partial x}
+&= 4x^3-12xy^2\\
+\frac{\partial^2 u_b}{\partial x^2}
+&= 12x^2-12y^2\\
+\frac{\partial u_b}{\partial y}
+&= -12x^2y+4y^3\\
+\frac{\partial^2 u_b}{\partial y^2}
+&= -12x^2+12y^2
+\\
+\Delta u_b&=
+ 12x^2-12y^2
+ -12x^2+12y^2
+=0
+\end{align*}
+\item $u_c$ ist harmonisch. Zur Abk"urzung schreiben wir
+$r^2=x^2+y^2$ und $r=\sqrt{x^2 + y^2}$. Die folgenden
+Ableitungen werden n"utzlich sein
+\begin{align*}
+\frac{\partial r}{\partial x}&=\frac{x}{r}
+\\
+\frac{\partial }{\partial x}\frac{x}{r}
+&=
+\frac{r-x\frac{\partial}{\partial x}r}{r^2}
+=\frac{r^2-x^2}{r^3}
+\end{align*}
+Die Funktion $u_c$ ist $u=\sqrt{x+r}$, ihre Ableitungen nach $x$ sind
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
+\frac{1+\frac{x}r}{2u}
+=\frac1{2u}\biggl(1+\frac{x}r\biggr)
+\\
+\frac{\partial^2u}{\partial x^2}
+&=
+\frac1{2u^2}\biggl(
+\biggl(
+\frac{\partial }{\partial x}\frac{x}r
+\biggr)u
+-\biggl(1+\frac{x}{r}\biggr)\frac{\partial u}{\partial x}\biggr)
+\\
+&=
+\frac1{2u}
+\biggl(
+\frac{\partial }{\partial x}\frac{x}r
+\biggr)
+-
+\frac1{4u^3}
+\biggl(1+\frac{x}{r}\biggr)^2
+\\
+&=
+\frac1{2u}\frac{r^2-x^2}{r^3}
+-
+\frac1{4u^3}
+\frac{(x+r)^2}{r^2}
+\end{align*}
+Die Ableitungen nach $y$ sind
+\begin{align*}
+\frac{\partial u}{\partial y}
+&=
+\frac{\frac{y}r}{2u}
+=
+\frac1{2u}\frac{y}r
+\\
+\frac{\partial^2 u}{\partial y^2}
+&=
+\frac1{2u^2}\biggl(
+u\frac{\partial}{\partial y}\frac{y}{r}
+-\frac{y}{r}\frac{\partial u}{\partial y}
+\biggr)
+\\
+&=
+\frac1{2u}\frac{\partial }{\partial y}\frac{y}r
+-\frac1{4u^3}\biggl(\frac{y}{r}\biggr)^2
+\\
+&=
+\frac1{2u}\frac{r^2-y^2}{r^3}
+-\frac1{4u^3}\biggl(\frac{y}{r}\biggr)^2
+\end{align*}
+Und damit ist $\Delta u$
+\begin{align*}
+\Delta u&=
+\frac1{2u}
+\frac{2r^2-x^2-y^2}{r^3}
+-\frac1{4u^3}
+\frac{(x+r)^2}{r^2}
+-\frac1{4u^3}\biggl(\frac{y}{r}\biggr)^2
+\\
+&=
+\frac1{2ur}
+-\frac{x^2+2rx+r^2+y^2}{4u^3r^2}
+\\
+&=
+\frac1{2ur}
+-\frac{2r^2+2rx}{4u^3r^2}
+\\
+&=
+\frac1{2ur}
+-\frac{r+x}{2u^3r}
+\\
+&=
+\frac1{2ur}
+-\frac{1}{2ur}=0
+\end{align*}
+Die Funktion $u_c$ ist der Realteil der komplexen Wurzelfunktion.
+\end{teilaufgaben}
+\end{loesung}
+}{}
+

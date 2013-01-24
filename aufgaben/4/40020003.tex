@@ -1,0 +1,129 @@
+Die Hamilton-Funktion f"ur ein Federpendel mit Masse $m$ und Federkonstante $k$
+ist
+\[
+H=\frac1{2m}p^2+\frac{k}2x^2.
+\]
+Der erste Term ist die kinetische Energie ($p=mv\;\Rightarrow\;p^2/2m=\frac12mv^2$),
+der zweite die in der Feder gespeicherte potentielle Energie.
+Die Hamilton-Jacobi-Theorie erm"oglicht,
+die f"ur dieses Problem optimalen Koordinaten $Q$, $P$ zu finden.
+\begin{teilaufgaben}
+\item Stellen Sie die Hamilton-Jacobi-Differentialgleichung auf ({\it Hinweis:}
+Konsultieren Sie die Pr"asentation ``Separation'')
+\item F"uhren Sie die Separation f"ur die Hamilton-Jacobi-Differentialgleichung
+durch. ({\it Hinweis:} Verwenden Sie einen Summen-Ansatz)
+\item L"osen Sie die gew"ohnlichen Differentialgleichungen.
+({\it Hinweis:} rechnen Sie
+die ``komplizierten'' Integrale noch nicht aus, sie werden sp"ater wieder
+abgeleitet, und sind dann einfacher auszuwerten.)
+\item Finden Sie die neue Koordinate $Q$, l"osen Sie sie nach $t$
+auf. ({\it Hinweis:} Pr"asentation)
+\item Versuchen Sie, die verallgemeinerten Koordinaten $Q$ und $P$ physikalisch
+zu interpretieren.
+\end{teilaufgaben}
+Mit dieser Beschreibung des Federpendels k"onnte in einem n"achsten, jedoch f"ur
+diese Vorlesung nicht relevanten Schritt der Einfluss einer Nichtlinearit"at
+der Feder auf Frequenz und Schwingungsform mit Hilfe der St"orungstheorie
+berechnet werden.
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+\begin{teilaufgaben}
+\item Gesucht wird eine Funktion $S(x,P,t)$, aus der sich sp"ater die
+Koordinaten berechnen lassen:
+\begin{align*}
+p&=\frac{\partial S}{\partial x} & Q=\frac{\partial S}{\partial P}.
+\end{align*}
+Sie erf"ullt die Differentialgleichung
+\begin{equation}
+\frac1{2m}\biggl(\frac{\partial S}{\partial x}\biggr)^2+\frac{k}2x^2
++\frac{\partial S}{\partial t}=0
+\label{40020003:hjdgl}
+\end{equation}
+\item
+Wir verwenden einen Separationsansatz $S=S_1(x)+S_2(t)$, denn $x$ und $t$
+sind die einzigen Variablen, nach denen in (\ref{40020003:hjdgl})
+abgeleitet wird.
+Setzt man diesen Ansatz in die Differentialgleichung (\ref{40020003:hjdgl}) ein, bekommt man
+\begin{align*}
+\frac1{2m}\biggl(\frac{dS_1(x)}{dx}\biggr)^2+\frac{k}2x^2+\frac{dS_2(t)}{dt}&=0
+\\
+\frac1{2m}\biggl(\frac{dS_1(x)}{dx}\biggr)^2+\frac{k}2x^2&=-\frac{dS_2(t)}{dt}
+\end{align*}
+Die linke Seite h"angt nur von $x$ ab, die rechte nur von $t$, beide m"ussen
+daher konstant sein. Wir bezeichnen diese Konstante mit $P$ und erhalten
+die separierten gew"ohnlichen Differentialgleichungen:
+\begin{align*}
+-\frac{dS_2(t)}{dt}&=P&
+&\Rightarrow&
+S_2(t)&=-Pt\\
+\frac{dS_1(x)}{dx}&=\sqrt{m(2P-kx^2)}&
+&\Rightarrow&
+S_1(x)&=\int\sqrt{m(2P-kx^2)}\,dx
+%\\
+%&&&&&=
+%\frac12x\sqrt{P-mkx^2}+\frac{P}{2\sqrt{km}}\operatorname{arc}\tan
+%\biggl(
+%\frac{x\sqrt{km}}{\sqrt{P-kmx^2}}
+%\biggr)
+\end{align*}
+\item
+Jetzt kann man durch Ableiten nach $P$ die neuen Koordinaten finden:
+\begin{align*}
+Q=\frac{\partial S}{\partial P}
+&=\frac{\partial S_1(x)}{\partial P}+\frac{\partial S_2(t)}{\partial P}
+\notag
+\\
+&=\frac{\partial}{\partial P}\int\sqrt{m(2P-kx^2)}\,dx+\frac{\partial}{\partial P}(-Pt)
+\notag
+\\
+&=\int \frac{m}{\sqrt{m(2P-kx^2)}} \,dx-t
+\label{40020003:integral}
+\\
+&=\sqrt{\frac{m}{k}}\operatorname{arc}\tan\frac{\sqrt{k}\,x}{\sqrt{2P-kx^2}} -t
+\notag
+\end{align*}
+Das Integral (\ref{40020003:integral}) entnimmt man einer Formelsammlung oder
+berechnet es mit Hilfe eines Computer-Algebra-Systems.
+\item
+Dies kann man jetzt nach $x$ aufl"osen, wobei wir zur Vereinfachung der
+Formeln $y=\sqrt{k/2P}\,x$ schreiben:
+\begin{align*}
+\tan\biggl(\sqrt{\frac{k}{m}}(t+Q)\biggr)
+%&
+=\frac{\sqrt{k}x}{\sqrt{2P-kx^2}}
+%\\
+%&
+=\frac{\sqrt{\frac{k}{2P}}x}{\sqrt{1-\frac{k}{2P}x^2}}
+%\\
+%&
+=\frac{y}{1-y^2}
+\end{align*}
+Nun gilt aber, wie man zum Beispiel in der Trigonometrie-Formelsammlung auf der
+Wikipedia findet:
+\[
+\tan \varphi=\frac{\sin \varphi}{\sqrt{1-\sin^2 \varphi}},
+\]
+wobei in unserem Fall $\varphi=\sqrt{\frac{k}{m}}(t+Q)$.
+Also folgt $y=\sin \varphi$ oder
+\[
+\sqrt{\frac{k}{2P}}\,x
+=\sin\biggl( \sqrt{\frac{k}{m}}(t+Q)\biggr)
+\quad\Rightarrow\quad
+x=\sqrt{\frac{2P}{k}}\sin\biggl( \sqrt{\frac{k}{m}}(t+Q)\biggr)
+\]
+Die Auslenkung folgt also einer Sinusschwingung mit Kreisfrequenz $\sqrt{k/m}$.
+\item
+Jetzt kann man die Bedeutung der Koordinaten $Q$ und $P$ wieder interpretieren.
+$Q$ ist die Nulldurchgangszeit. Der Koeffizient der Sinus-Funktion ist 
+die maximale Auslenkung $x_{\text{max}}$, also ist
+\[
+x_{\text{max}}=\sqrt{\frac{2P}{k}}
+\qquad\Rightarrow\qquad
+P=\frac12kx_{\text{max}}^2,
+\]
+$P$ hat also die Bedeutung der Energie.
+\end{teilaufgaben}
+\end{loesung}
+}{}
+

@@ -1,0 +1,63 @@
+Betrachten Sie die Differentialgleichung
+\[
+y\partial_x^2u+\partial_y^2u=0
+\]
+Wo ist sie elliptisch bzw.~hyperbolisch?
+
+Berechnen Sie die charakteristischen Kurven der Differentialgleichung
+im Gebiet $\Omega=\{(x,y)\in\mathbb R^2|y<0\}$.
+Finden Sie die Charakteristiken, die durch den Punkt
+$(1,-1)$ gehen.
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+Die Differentialgleichung hat das Symbol
+\[
+A=\begin{pmatrix}y&0\\0&1\end{pmatrix}
+\]
+mit Eigenwerten $y$ und $1$, sie ist also im Gebiet $\{(x,y)\,|\,y>0\}$
+elliptisch und in $\{(x,y)\,|\,y<0\}$ hyperbolisch.
+
+Die Richtung $v$ der charakteristischen Kurven erf"ullt,
+$v^tAv=0$, also $yv_1^2-v_2^2=0$. W"ahlt man eine
+Parameterdarstellung $s\mapsto(x(s),y(s))$ f"ur die
+charakteristischen Kurven, ist die Tangentialrichtung
+$v=(x'(s),y'(s))$,
+sie erf"ullen also
+die Differentialgleichungen
+\[
+y(y')^2=-(x')^2
+\]
+oder
+\begin{align*}
+\frac{dy}{dx}&=\frac{y'}{x'}=\pm\frac1{\sqrt{-y}}.
+\\
+\int\sqrt{-y}\,dy&=\pm\int \,dx+C
+\end{align*}
+mit den L"osungen
+\begin{align*}
+-\frac23(-y)^{\frac32}&=\pm x+C
+\\
+y&=-\biggl(\frac32(\pm x+C)\biggr)^{\frac23}
+\end{align*}
+F"ur die L"osungskurven, die durch den Punkt $(1,-1)$ gehen,
+muss die Konstante $C$ geeignet bestimmt werden:
+\begin{align*}
+-\frac231^{\frac32}&=(\pm1+C)\\
+C&=\mp 1-\frac23
+=\begin{cases}
+-\frac53\\
+\frac13
+\end{cases}
+\end{align*}
+\begin{figure}
+\begin{center}
+\includeagraphics[width=\hsize]{7}
+\end{center}
+\caption{Charakteristiken durch $(1,-1)$ der PDGL $y\partial_x^2u+\partial_y^2u=0$
+\label{90000006:char}}
+\end{figure}
+Die Graphen der Charaketeristiken sind in Abbildung \ref{90000006:char} dargestellt.
+\end{loesung}
+}{}
+

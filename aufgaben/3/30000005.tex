@@ -1,0 +1,117 @@
+L"osen sie die Differentialgleichungen
+\[
+\sqrt{x}\partial_x u+\sqrt{y}\partial_yu=1
+\]
+im Gebiet $\Omega=\{(x,y)\,|\, x,y>0\}$
+mit der Anfangsbedingungen
+\begin{align*}
+u(x,0)&=\sin x\\
+u(0,y)&=-\sin y
+\end{align*}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+Es liegt eine quasilineare Differentialgleichung vor, die wir mit
+Charakteristiken l"osen k"onnen. Dazu m"ussen die gew"ohnlichen
+Differentialgleichungen
+\begin{align*}
+\dot x &=\sqrt{x} \\
+\dot y &=\sqrt{y} \\
+\dot u &=1
+\end{align*}
+gel"ost werden. Die letzte ist die einfachste, $u(t)=u_0 + t$. Dabei
+ist $u_0$ der Wert, der am Anfangspunkt der Charakteristik, also
+im Punkt $(x_0,0)$ angenommen wird, $u_0=\sin x_0$.
+
+Die Differentialgleichung $\dot x=\sqrt{x}$ kann mit Separation
+gel"ost werden:
+\begin{align*}
+\frac{dx}{dt}&=\sqrt{x}\\
+\int\frac{dx}{\sqrt{x}}&=\int\,dt\\
+2\sqrt{x}&=t+C_1
+\end{align*}
+und analog
+\[
+2\sqrt{y}=t+C_2
+\]
+Die Konstanten $C_1$ und $C_2$ w"ahlen eine Charakteristik aus,
+die bei $(C_1,C_2)$ beginnt.
+F"ur die L"osung der partiellen Differentialgleichung brauchen wir
+jetzt Charakterstiken, die von $(0,y_0)$  ausgehen und solche, die
+von $(x_0,0)$ ausgehen.
+
+Im ersten Fall bekommen wir
+\begin{align*}
+2\sqrt{x}&=t\\
+2\sqrt{y}&=t+2\sqrt{y_0}\\
+u&=-\sin y_0 + t
+\end{align*}
+und m"ussen zu einem Punkt $(x,y)$ das zugeh"orige $t$ und $y_0$
+finden.
+Aus $t=2\sqrt{x}$ findet man $\sqrt{y_0}=\sqrt{y}-\sqrt{x}$, dies
+ist nat"urlich nur m"oglich, wenn $y>x$. F"ur $u$ findet man dann
+\[
+u(x,y)=-\sin y_0+2\sqrt{x}=-\sin(\sqrt{y}-\sqrt{x})^2 +2\sqrt{x}.
+\]
+Im zweiten Fall bekommen wir
+\begin{align*}
+2\sqrt{x}&=t+2\sqrt{x_0}\\
+2\sqrt{y}&=t\\
+u&=\sin x_0+t
+\end{align*}
+und analog zum ersten Fall bekommt man $\sqrt{x_0}=\sqrt{x}-\sqrt{y}$
+und
+\[
+u(x,y)=\sin(\sqrt{x}-\sqrt{y})^2+2\sqrt{y}
+\]
+wobei diese Formel nur f"ur $y\le x$ gilt. Insgesamt bekommt man also
+\[
+u(x,y)=
+\begin{cases}
+-\sin(\sqrt{y}-\sqrt{x})^2 +
+2\sqrt{x}&\qquad y \ge x\\
+\sin(\sqrt{y}-\sqrt{x})^2 +
+2\sqrt{y}&\qquad x \ge y
+\end{cases}
+\]
+Insbesondere stellt man fest, dass die L"osung auf der Winkelhalbierenden
+nicht differenzierbar sein kann.
+
+Kontrolle:
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
++\begin{cases}
+2\cos(\sqrt{y}-\sqrt{x})^2(\sqrt{y}-\sqrt{x})\frac1{2\sqrt{x}}
++\frac1{\sqrt{x}}&\qquad y> x\\
+-2\cos(\sqrt{y}-\sqrt{x})^2(\sqrt{y}-\sqrt{x})\frac1{2\sqrt{x}}
+&\qquad x> y
+\end{cases}
+\\
+\frac{\partial u}{\partial x}
+&=
++\begin{cases}
+-2\cos(\sqrt{y}-\sqrt{x})^2(\sqrt{y}-\sqrt{x})\frac1{2\sqrt{y}}
+&\qquad y> x\\
+2\cos(\sqrt{y}-\sqrt{x})^2(\sqrt{y}-\sqrt{x})\frac1{2\sqrt{y}}
++\frac1{\sqrt{y}}&\qquad x> y\\
+\end{cases}
+\\
+\sqrt{x}
+\frac{\partial u}{\partial x}
++
+\sqrt{y}
+\frac{\partial u}{\partial x}
+&=
+\begin{cases}
+\sqrt{x}\frac1{\sqrt{x}}=1&\qquad y> x\\
+\sqrt{y}\frac1{\sqrt{y}}=1&\qquad x> y\\
+\end{cases}
+\end{align*}
+Die Differentialgleichung ist also "uberall erf"ullt. Die L"osung ist
+zwar nicht differentierbar entlang der
+Winkelhalbierenden. Der Graph von $u$ ist aber trotzdem eine
+glatte Fl"ache.
+\end{loesung}
+}{}
+

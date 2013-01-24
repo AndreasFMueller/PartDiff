@@ -1,0 +1,14 @@
+assume(K > 0)$
+assume(m > 0)$
+assume(P2 > 0)$
+assume(P1 - P2 > 0)$
+S1: sqrt(2 * m * P1) * t;
+S2: sqrt(m * K) * integrate( sqrt((P2/K)-x^2), x);
+tex(S2);
+S3: sqrt(m * K) * integrate( sqrt((P1-P2)/K - y^2), y);
+tex(S3);
+S: S1 + S2 + S3;
+Q1: diff(S, P1);
+tex(Q1);
+Q2: diff(S, P2);
+tex(Q2);

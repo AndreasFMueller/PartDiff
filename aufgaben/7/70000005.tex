@@ -1,0 +1,51 @@
+Bei der numerischen L"osung des Poissonproblems auf dem Kreisgebiet
+mit den Randbedingungen
+\[
+u= x^{\frac13}+y^{\frac13}\qquad \text{f"ur $x^2+y^2=1$}
+\]
+ergab sich der Wert $u(\frac12,\frac13)=1.7820$.  Kann das sein?
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+Der maximale Wert von
+$f(x,y)= x^{\frac13}+y^{\frac13}$
+wird dort erreicht, wo $x$ und $y$
+gleich gross sind, wie man zum Beispiel mit der Methode der
+Lagrange-Multiplikatoren erkennen kann. Der Wert an dieser Stelle
+ist
+\[
+u\biggl(
+\pm\frac{\sqrt{2}}2
+,
+\pm\frac{\sqrt{2}}2
+\biggr)
+=\begin{cases}
+0
+&\qquad\text{verschiedene Vorzeichen}\\
+\pm 2\cdot 2^{-\frac16}=\pm1.781797\dots
+&\qquad\text{gleiche Vorzeichen}
+\end{cases}
+\]
+Der Wert im Punkt $(\frac12,\frac13)$ ist also gr"osser als
+der gr"osste Randwert, was dem Maximum-Prinzip widerspricht.
+
+Zur Methode der Lagrange-Multiplikatoren: man sucht das Maximum der
+Funktion $f$ unter der Nebenbedingung $g(x,y)=x^2+y^2=1$.
+Dazu ist $\lambda$ zu finden so dass
+$\operatorname{grad}f=\lambda\operatorname{grad}g$
+gilt:
+\begin{align*}
+\frac13x^{-\frac23}&=\lambda 2x\\
+\frac13y^{-\frac23}&=\lambda 2y\\
+\end{align*}
+L"ost man beide Gleichungen nach $x$ und $y$ auf, ergibt sich
+\begin{align*}
+x&=(6\lambda)^{-\frac35}\\
+y&=(6\lambda)^{-\frac35}
+\end{align*}
+Ausserdem sind die Punkte $(0,\pm 1)$ und $(\pm 1,0)$ weitere
+Kandidaten f"ur die Extremstellen, die Funktionswerte von $f$ sind dort
+aber $\pm 1$.
+\end{loesung}
+}{}
+

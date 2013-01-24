@@ -1,0 +1,130 @@
+L"osen Sie die Wellengleichung
+\[
+\frac{\partial^2 u}{\partial t^2}=\frac{\partial^2 u}{\partial x^2}
+\]
+f"ur eine zwischen $x=0$ und $x=\pi$ gespannte Saite,
+die zur Zeit $t=0$ in Ruhelage ist, aber die Geschwindigkeit
+\[
+\frac{\partial u}{\partial t}(0, x)
+=
+\sin^3 x=\frac34\sin x-\frac14\sin 3x
+\]
+hat.
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+Die {\bf Separation} der Wellengleichung in $u(t,x)=T(t)X(x)$ ergibt die
+zwei Gleichungen
+\[
+X''(x)=-\mu X(x)\qquad\text{und}\qquad T''(t)=-\mu T(t),
+\]
+welche als L"osungen die Funktionen
+\begin{align*}
+X(x)&=\sin\sqrt{\mu}x & T(t)=\sin\sqrt{\mu}t\\
+X(x)&=\cos\sqrt{\mu}x & T(t)=\cos\sqrt{\mu}t
+\end{align*}
+haben, wobei $\mu$ eine positive Zahl sein muss.
+
+Die Randbedingungen f"ur $x=0$ und $x=\pi$ k"onnen allerdings nur
+f"ur die Funktionen $\sin\sqrt{\mu}x$ erf"ullt werden, und auch nur dann,
+wenn $\sqrt{\mu}$ eine ganze Zahl ist. Die allgmeine L"osung der Gleichung
+hat daher die Form
+\[
+u(t,x)
+=
+\sum_{n=1}^\infty a_n\sin nx \sin nt+\sum_{n=1}^\infty b_n\sin nx\cos nt
+\]
+Darin m"ussen die Koeffizienten $a_n$ und $b_n$ mit Hilfe der 
+Anfangsbedingung zur Zeit $t=0$ bestimmt werden. Man hat
+\begin{align*}
+u(0,x)&=
+\sum_{n=1}^\infty b_n\sin nx
+\\
+&=0\quad\Rightarrow\quad b_n=0
+\\
+\frac{\partial u}{\partial t}(0,x)
+&=
+\sum_{n=1}^\infty a_nn\sin nx
+\\
+&=
+\sin^3 x=\frac34\sin x-\frac14\sin 3x
+\end{align*}
+Daraus folgt durch Vergleich der Koeffizienten
+\begin{align*}
+a_1&=\frac34\\
+a_3&=-\frac{1}{12}\\
+a_k&=0\qquad\text{f"ur $k\ne 1,3$}
+\end{align*}
+Damit ist die L"osung der Differentialgleichung
+\[
+u(t,x)
+= \frac34\sin x \sin t -\frac1{12}\sin 3x \sin 3t.
+\]
+
+Alternativ wollen wir jetzt auch noch die L"osung mit der
+{\bf Transformationsmethode} darstellen. Die Fourier-Transformation
+von Funktionen auf dem Interval $[0,\pi]$, die am Rande
+des Intervals verschwinden, ist die Entwicklung in eine Fourier-Sinus-Reihe,
+also die Transformation 
+\[u(t,x) \mapsto \hat u(t, k)= C\int_0^{\pi} u(t,x)\sin kx\, dx\]
+mit einer geeigneten Normierungskonstanten $C$, die im vorliegenden
+Fall allerdings unwichtig ist (weil die Berechnung der Fourierreihe
+im Hinweis bereits durchgef"uhrt ist).
+
+Die Transformation der Differentialgleichung 
+\begin{equation}
+\frac{\partial^2}{\partial t^2}\hat u(t,k)
+=-k^2\hat u(t,k)
+\label{gleichungfueruk}
+\end{equation}
+Die Fouriertransformation der Anfangsbedingung ist
+\begin{align}
+\hat u(0,k)&=0\label{40000004:anfbedu}\\
+\frac{\partial}{\partial t}\hat u(0,k)&=
+\begin{cases}
+\frac34&\qquad k= 1\\
+-\frac14&\qquad k= 3\\
+0&\qquad \text{sonst}
+\end{cases}
+\label{40000004:anfbedudot}
+\end{align}
+Die Gleichung
+(\ref{gleichungfueruk})
+ist eine gew"ohnliche Differentialgleichung f"ur jeden
+einzelnen Fourierkoeffizienten, mit allgemeiner L"osung
+\[
+\hat u(t,k)=A_k\cos kt+B_k\sin kt
+\]
+Darin sind die Koeffizienten $A_k$ und $B_k$ aus den Anfangsbedingungen
+(\ref{40000004:anfbedu}) und (\ref{40000004:anfbedudot}) zu bestimmen:
+\begin{align*}
+\hat u(0,k)&=A_k=0\\
+\partial_t \hat u(0,k)&=kB_k=
+\begin{cases}
+\frac34&\qquad k= 1\\
+-\frac14&\qquad k= 3\\
+0&\qquad \text{sonst}
+\end{cases}
+\end{align*}
+Insbesondere gilt
+\[
+B_1=\frac23,\qquad B_3=-\frac1{12}
+\]
+Damit sind die zeitabh"angigen Fourierkoeffizienten $\hat u(t,k)$ bestimmt:
+\[
+\hat u(t,k)=
+\begin{cases}
+\frac34\sin t &\qquad k= 1\\
+-\frac1{12}\sin 3t&\qquad k= 3\\
+0&\qquad \text{sonst}
+\end{cases}
+\]
+Summiert man die Fourier-Reihe, ergibt sich
+\[
+u(t,x)=\sum_{k>0}\hat u(t,k) \sin kx
+= \frac34\sin x \sin t -\frac1{12}\sin 3x \sin 3t.
+\]
+\end{loesung}
+}{}
+
+

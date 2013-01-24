@@ -1,0 +1,130 @@
+L"osen sie die partielle Differentialgleichung
+\[
+\frac{\partial^2}{\partial x^2}u+\frac{\partial^2}{\partial y^2}u
++2\frac{\partial }{\partial y}u+u=0
+\]
+auf dem Gebiet $0\le x\le \pi$, $y\ge 0$ mit den Randbedingungen
+\[
+u(0,y)=u(\pi,y)=0
+\quad
+\quad
+u(x,0)=\sin x,\quad \frac{\partial }{\partial n}u(x,0)=\sin 3x
+\]
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+Ein Separationsansatz $u(x,y)=X(x)Y(y)$ liefert
+\begin{align*}
+X''(x)Y(y)+X(x)Y''(y)+2X(x)Y'(y)+X(x)Y(y)&=0
+\\
+\frac{Y''(y)+2Y'(y)+Y(y)}{Y(y)}
+&=
+-\frac{X''(x)}{X(x)}
+\end{align*}
+Daraus folgen die beiden gew"ohnlichen Differentialgleichungen
+\begin{align*}
+X''(x)&=-\lambda X(x)\\
+Y''(y)+2Y'(y)+(1-\lambda)Y(y)&=0
+\end{align*}
+Die erste Gleichung hat f"ur positives $\lambda$ die L"osungen
+$\sin\sqrt{\lambda}x$, diese erf"ullen die Randbedingung f"ur $x=0$
+und $x=\pi$ aber nur, wenn $\sqrt{\lambda}$ eine Ganzzahl ist, also
+$\lambda=n^2$. F"ur negatives $\lambda$ gibt es keine L"osung,
+die die Randbedingungen respektiert. Daher wird die zweite Gleichung
+\[
+Y''(y)+2Y'(y)+(1-n^2)Y(y)=0
+\]
+Dies ist eine lineare Differentialgleichung mit konstanten
+Koeffizienten, die mit dem "ublichen Verfahren gel"ost werden
+kann. Das charakteristische Polynom ist
+\[
+\omega^2+2\omega+(1-n^2)=0,
+\]
+es hat die Nullstellen
+\[
+\omega_{\pm}=-1\pm{\sqrt{1-(1-n^2)}}=-1\pm n.
+\]
+Die allgmeine L"osung lautet also
+\[
+u_n(x,y)=(a_{n,+}e^{(-1+n)y}+a_{n,-}e^{(-1-n)y})\sin nx.
+\]
+Die Exponentialfaktoren lassen sich aber eleganter
+mit den hyperbolischen Funktionen ausdr"ucken:
+\[
+u_n(x,y)=(a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx.
+\]
+Tats"achlich kann man nachrechen, dass diese Funktionen
+tats"achlich L"osungen sind. Die Ableitungen sind
+\begin{align*}
+\frac{\partial}{\partial x}u_n(x,y)
+&=
+n (a_n\cosh ny+b_n\sinh ny)e^{-y}\cos nx
+\\
+\frac{\partial^2}{\partial x^2}u_n(x,y)
+&=
+-n^2 (a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx
+\\
+\frac{\partial}{\partial y}u_n(x,y)
+&=
+-(a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx
++
+n(a_n\sinh ny+b_n\cosh ny)e^{-y}\sin nx
+\\
+\frac{\partial^2}{\partial y^2}u_n(x,y)
+&=
+(a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx
+-2n(a_n\sinh ny+b_n\cosh ny)e^{-y}\sin nx
+\\
+&\qquad
++n^2(a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx
+\\
+\end{align*}
+Setzt man diese in die Differentialgleichung
+ein, ergibt sich
+\begin{align*}
+-n^2 (a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx&\\
++(a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx&\\
+-2n(a_n\sinh ny+b_n\cosh ny)e^{-y}\sin nx&\\
++n^2(a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx&\\
++2(
+-(a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx&\\
++
+n(a_n\sinh ny+b_n\cosh ny)e^{-y}\sin nx
+)&\\
++
+(a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx
+&=0
+\end{align*}
+In dieser Form ist die Anfangsbedingung etwas "ubersichtlicher
+zu erf"ullen, weil  $\sinh n0=0$ und $\cosh n0=1$. Die Normalableitung
+am Rand $y=0$ ist die Ableitung in Richtung $y$, also
+\begin{align*}
+u_n(x,0)&=a_n\sin nx
+\\
+\frac{\partial}{\partial n}u_n(x,0)&=(-a_n+nb_n)\sin nx
+\end{align*}
+Man kann also zun"achst aus den Werten f"ur $y=0$ das $a_n$
+ermitteln, und dann mit Hilfe der Normalableitungen f"ur $y=0$
+daraus die $b_n$.
+
+Im vorliegenden Fall ist $a_1=1$ der einzige $a$-Koeffizient,
+der nicht verschwindet. Andererseits braucht man zur Erf"ullung
+der Bedingung an die Ableitung den Fall $n=3$. Es folgt
+\begin{align*}
+a_1&=1&&\\
+-a_1+1\cdot b_1&=0&\Rightarrow\quad b_1&=1\\
+a_3&=0&&\\
+-a_3+3b_3&=1&\Rightarrow\quad b_3&=\frac13
+\end{align*}
+Offenbar ist die gesuchte L"osung also
+\[
+u(x,y)=e^{-y}(\sin x \cosh y +
+\sin x\sinh y
++
+\frac13\sin 3x \sinh 3y),
+\]
+wie man auch durch Nachrechnen zum Beispiel mit einem Computeralgebrasystem
+"uberpr"ufen kann.
+\end{loesung}
+}{}
+

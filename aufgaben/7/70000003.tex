@@ -1,0 +1,69 @@
+Sind die folgenden Funktionen harmonisch?
+\begin{teilaufgaben}
+\item $f(x,y)=x^3-3xy^2$
+\item $g_+(x,y)=x^2+y^2$, $g_-(x,y)=x^2-y^2$, $g_0(x,y)=xy$
+\item $h(r,\varphi)=\log r$
+\item $i(x,y)=e^x\cos y$
+\end{teilaufgaben}
+
+\begin{hinweis}
+Der Laplace-Operator in Polarkoordinaten ist
+\[
+\Delta =
+\frac1r\frac{\partial}{\partial r}r\frac{\partial}{\partial r}
++
+\frac1{r^2}\frac{\partial^2}{\partial\varphi^2}
+\]
+\end{hinweis}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+\[
+\Delta f
+=
+3\cdot 2x-3\cdot 2x=0
+\]
+also ist $f$ harmonisch.
+\item
+\begin{align*}
+\Delta g_-
+&=
+2+2\ne 0
+\\
+\Delta g_+
+&=
+2-2=0
+\\
+\Delta g_0
+&=
+0
+\end{align*}
+Also sind $g_-$ und $g_0$ harmonisch, $g_+$ hingegen nicht.
+\item
+\begin{align*}
+\Delta h&=
+\frac1r\frac{\partial}{\partial r}r\frac{\partial h}{\partial r}
++
+\frac1{r^2}\frac{\partial^2 h}{\partial\varphi^2}
+\\
+&=
+\sin\varphi\frac1r\frac{\partial}{\partial r}r\frac{\partial \log r}{\partial r}
+\\
+&=
+\frac1r\frac{\partial}{\partial r}r\frac1r
+\\
+&=0
+\\
+\end{align*}
+also ist $h$ harmonisch.
+\item
+\[
+\Delta i=e^x\cos y-e^x\cos y=0,
+\]
+also ist $i(x,y)$ harmonisch.
+\end{teilaufgaben}
+\end{loesung}
+}{}
+

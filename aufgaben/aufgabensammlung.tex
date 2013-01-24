@@ -28,6 +28,7 @@
 \usepackage{algorithmic}
 \usepackage{makeidx}
 \usepackage{paralist}
+\usepackage{hyperref}
 \makeindex
 \begin{document}
 \pagestyle{fancy}
@@ -56,6 +57,11 @@ Andreas M"uller
 Hochschule f"ur Technik, Rapperswil, 2008-2013
 \end{center}
 \end{titlepage}
+\hypersetup{
+	colorlinks=true,
+	linktoc=all,
+	linkcolor=blue
+}
 \rhead{Inhaltsverzeichnis}
 \tableofcontents
 \newenvironment{beispiel}[1][Beispiel]{%
@@ -68,22 +74,39 @@ Hochschule f"ur Technik, Rapperswil, 2008-2013
 \aufgabetoplevel{./}
 
 \chapter{Einf"uhrende  Beispiele}
+\rhead{Einf"uhrende Beispiele}
 \input 1.tex
 \chapter{Begriffe und Klassifikation}
+\rhead{Begriffe und Klassifikation}
 \input 2.tex
 \chapter{Geometrie der partiellen Differentialgleichungen erster Ordnung}
+\rhead{PDGL erster Ordnung}
 \input 3.tex
-\chapter{Separation der Variablen}
+\chapter{Separation der Variablen\label{chapter:separation}}
+\rhead{Separation}
 \input 4.tex
 \chapter{Transformationsmethode}
-%\input 5.tex
+\rhead{Transformation}
+Viele Aufgaben aus dem Kapitel~\label{chapter:separation}
+k"onnen auch mit der Transformationsmethode gel"ost werden.
+In den meisten F"allen wurde das bereits in den Musterl"osungen in
+Kapitel~\label{chapter:separation} durchgef"uhrt.
+\bigskip
+
+\input 5.tex
 \chapter{Partielle Differentialgleichungen zweiter Ordnung}
-%\input 6.tex
+\rhead{PDGL zweiter Ordnung}
+\input 6.tex
 \chapter{Elliptische partielle Differentialgleichungen}
+\rhead{Elliptische PDGL}
 \input 7.tex
 \chapter{Parabolische partielle Differentialgleichungen}
+\rhead{Parabolische PDGL}
 \input 8.tex
 \chapter{Hyperbolische partielle Differentialgleichungen}
+\rhead{Hyperbolische PDGL}
 \input 9.tex
+\chapter{Nichtlineare partielle Differentialgleichungen}
+\rhead{Nichtlineare PDGL}
 
 \end{document}

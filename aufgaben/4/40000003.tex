@@ -1,0 +1,227 @@
+Betrachten Sie die Differentialgleichung
+\[
+\frac{\partial^2}{\partial x\partial y}u=0
+\]
+definiert in ganz $\mathbb R^2$.
+\begin{teilaufgaben}
+\item
+Finden sie die allgemeinen L"osungen der Gleichung
+mit Hilfe eines Separationsansatzes.
+\item
+Bestimmen Sie eine L"osung in der rechten Halbebene
+\[
+H=\{(x,y)\,|\, x\ge 0\},
+\]
+die ausserdem die Randbedingung
+\[
+u(0,y)=e^{-y^2}
+\]
+erf"ullt. Ist sie eindeutig?
+\item
+"Uberpr"ufen Sie Ihre L"osung durch Einsetzen.
+\item
+Finden Sie alle L"osungen die ausserdem die Bedingung
+\begin{equation}
+u(t,t)=\sin t
+\label{40000003:rb}
+\end{equation}
+erf"ullen. Hier geben wir Werte der L"osung auf einer Geraden
+mitten durch das Gebiet vor, also nicht unbedingt in der Form,
+wie wir das bisher bei PDGL gemacht haben. Man kann sich aber
+auch das Gebiet aus zwei Halbebenen
+\begin{align*}
+H_1&=\{(x,y)\,|\,x\le y\}&&\text{links der $45^\circ$-Geraden}
+\\
+H_2&=\{(x,y)\,|\,x\ge y\}&&\text{rechts der $45^\circ$-Geraden}
+\end{align*}
+zusammengesetzt denken, wir suchen in jedem dieser Teilgebiete eine
+L"osung mit Randbedingung (\ref{40000003:rb}).
+\label{40000003:halbebenen}
+\item
+Wird die L"osung in der vorangegangenen Teilaufgabe eindeutig, wenn sie
+zus"atzlich
+\[
+\frac{\partial u}{\partial x}(t,t)=\frac{\partial u}{\partial y}(t,t)
+\]
+verlangen?
+\item
+Finden Sie eine L"osung der Diffentialgleichung, die
+die Bedingung
+\begin{align*}
+u(t,t)&=f(t)\\
+\frac{\partial}{\partial n}&u(t,t)=g(t)
+\end{align*}
+erf"ullt. ({\it Hinweis:} Bemerkung zur Teilaufgaben d))
+\item
+Wenden Sie eine Drehung des Koordinatensystems um $45^\circ$
+auf die Differentialgleichung an, und zeigen Sie,
+dass sie in die Wellengleichung "ubergeht.
+\end{teilaufgaben}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Wir setzen die L"osung $u(x,y)$ in der Form
+\[
+u(x,y)=X(x)Y(y)
+\]
+an und setzen in die Differentialgleichung ein:
+\[
+\frac{\partial^2}{\partial x\partial y}u(x,y)
+=
+\frac{\partial}{\partial x}X(x)Y'(y)
+=
+X'(x)Y'(y)=0
+\]
+Dies bedeutet, dass jeweils eine der Funktionen
+konstant ist, die andere jedoch beliebig.
+Somit ist jede Funktion, die nur von einer Variablen
+abh"angig ist, eine L"osung, die allgemeine L"osung
+ist
+\[
+u(x,y)=f(x)+g(y).
+\]
+\item
+Die Anfangsbedingung besagt, dass $Y(y)$ f"ur die gesuchte
+L"osung nicht konstant sein kann, also muss in diesem Fall
+$X(x)$ konstant sein. Wir k"onnen $X(x)=1$ w"ahlen.
+
+Es bleibt jetzt noch $Y(y)$ so zu bestimmen, dass die Anfangsbedingung
+erf"ullt ist. Wegen $u(0,y)=Y(y)=e^{-y^2}$ folgt
+\[
+u(x,y)=e^{-y^2}.
+\]
+\item
+Die gefundene L"osung h"angt nicht von $x$ ab. Beim Einsetzen
+in die Differentialgleichung muss eine partielle Ableitung nach
+$x$ gebildet werden, die nat"urlich verschwinden muss. Damit ist
+die Differentialgleichung erf"ullt.
+\item
+Eine L"osung ist von der Form
+$f(x)+g(y),$
+d.~h.~die Anfangsbedingung ist $f(t)+g(t)=\sin t$ oder $g(t)=\sin t-f(t)$.
+Folglich ist jede Funktion
+\[
+u(x,y)=f(x)+\sin y-f(y)
+\]
+eine L"osung, die auch die Anfangsbedingung erf"ullt.
+\item
+Die Ableitungen der allgemeinen L"osung sind
+\[
+\left.
+\begin{aligned}
+\frac{\partial u}{\partial x}
+&=
+f'(x)
+\\
+\frac{\partial u}{\partial y}
+&=
+-f'(y)+\cos y
+\end{aligned}
+\quad
+\right\}
+\quad
+\Rightarrow
+\quad
+2f'(t)=\cos t
+\Rightarrow f(t)=\frac12\sin t
+\]
+Damit ist die L"osung eindeutig bestimmt:
+\[
+u(x,y)=\frac12\sin x+\sin y-\frac12\sin y=\frac12(\sin x+\sin y).
+\]
+\item
+Die Ableitung senkrecht auf der Geraden $y=x$ ist die Richtungsableitung
+in Richtung $(1,-1)$, also
+\[
+\frac{\partial}{\partial x}u(t,t)-\frac{\partial}{\partial y}u(t,t)=g(t)
+\]
+Wir wissen bereits, dass $u$ die Summe von Funktionen sein muss, die
+nur von jeweils einer Variablen abh"angen, also
+$u(x,y)=X(x)+Y(y)$. setzt man dies in die Anfangsbedingungen
+ein, erh"alt man
+\begin{align*}
+X(t)+Y(t)&=f(t)\\
+X'(t)-Y'(t)&=g(t)
+\end{align*}
+Ist $G(t)$ eine Stammfunktion von $g$, folgt daraus
+\begin{align*}
+X(t)+Y(t)&=f(t)\\
+X(t)-Y(t)&=G(t) + C
+\end{align*}
+Die L"osung dieses linearen Gleichungssystems ergibt
+\[
+X(t)=\frac12(f(t)+G(t)+C),\qquad 
+Y(t)=\frac12(f(t)-G(t)-C).
+\]
+Daraus l"asst sich jetzt auch die L"osung gewinnen:
+\begin{align*}
+u(x,y)&=X(x)+Y(y)
+\\
+&=
+\frac12(f(x)+G(x)+C)
++
+\frac12(f(y)-G(y)-C)
+\\
+&=
+\frac12(f(x)+f(y))+\frac12(G(x)+G(y)).
+\end{align*}
+Die L"osung ist also wieder eindeutig bestimmt.
+\item
+Bei einer Drehung des Koordinatensystems um $45^\circ$ gehen
+$x$ und $y$ in $\xi=\frac{\sqrt{2}}2(x+y)$ und $\eta=\frac{\sqrt{2}}2(x-y)$
+"uber. Umgekehrt lassen sich auch die Koordinaten $x$ und $y$ durch
+die neuen Koordinaten $\xi$ und $\eta$ ausdr"ucken:
+\[
+x=\frac{\sqrt{2}}2(\xi-\eta),\qquad y=\frac{\sqrt{2}}2(\xi+\eta).
+\]
+Damit kann die L"osung $u$ jetzt auch in den Koordinaten $(\xi,\eta)$
+geschrieben werden. Die Ableitungen nach $x$ und $y$
+einer Funktion von $\xi$
+und $\eta$ sind
+\begin{align*}
+\frac{\partial}{\partial x}u(\xi,\eta)
+&=
+\frac{\partial u}{\partial \xi}\frac{\partial \xi}{\partial x}
++
+\frac{\partial u}{\partial \eta}\frac{\partial \eta}{\partial x}
+=
+\frac{\sqrt{2}}2\frac{\partial u}{\partial\xi}
++\frac{\sqrt{2}}2\frac{\partial u}{\partial\eta}
+=
+\frac{\sqrt{2}}2\left(\frac{\partial}{\partial \xi}+\frac{\partial}{\partial\eta}\right)u
+\\
+\frac{\partial}{\partial y}u(\xi,\eta)
+&=
+\frac{\partial u}{\partial \xi}\frac{\partial \xi}{\partial y}
++
+\frac{\partial u}{\partial \eta}\frac{\partial \eta}{\partial y}
+=
+\frac{\sqrt{2}}2\frac{\partial u}{\partial\xi}
+-\frac{\sqrt{2}}2\frac{\partial u}{\partial\eta}
+=
+\frac{\sqrt{2}}2\left(\frac{\partial}{\partial \xi}-\frac{\partial}{\partial\eta}\right)u
+\end{align*}
+Wendet man beide Ableitungen hintereinander an, wie es die
+Differentialgleichung verlangt, erh"alt man
+\begin{align*}
+0=\frac{\partial^2}{\partial x\partial y}u
+&=
+\frac{\sqrt{2}}2
+\left(\frac{\partial}{\partial \xi}+\frac{\partial}{\partial\eta}\right)
+\frac{\sqrt{2}}2
+\left(\frac{\partial}{\partial \xi}-\frac{\partial}{\partial\eta}\right)u
+\\
+&=
+\frac12
+\left(
+\frac{\partial^2}{\partial x^2}-\frac{\partial^2}{\partial y^2}
+\right)u
+\end{align*}
+Dies ist bis auf den Faktor $\frac12$, der ohnehin kein Rolle spielt,
+die Wellengleichung.
+\end{teilaufgaben}
+\end{loesung}
+}{}
+
