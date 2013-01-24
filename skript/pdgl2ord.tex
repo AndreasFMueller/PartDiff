@@ -1,0 +1,192 @@
+\chapter{Partielle Differentialgleichungen zweiter Ordnung\label{chapter-2ordnung}}
+\lhead{Lineare PDGL 2. Ordnung}
+Lineare Differentialgleichungen zweiter Ordnung haben die Form
+\begin{equation}
+\sum_{i,j=1}^na_{ij}\partial_i\partial_j u+\sum_{i=1}^nb_i\partial_i u+cu=f.
+\label{operator2ordnung}
+\end{equation}
+Alle Musterbeispiele im Kapitel \ref{chapter-beispiele} passen auf dieses 
+Beispiel. Trotz der oberfl"achlichen Gemeinsamkeit zeigen die L"osungen
+der Beispielgleichungen grunds"atzlich verschiedenes Verhalten.
+\begin{itemize}
+\item Die Wellengleichung hat L"osungen, die sich mit endlicher
+Ausbreitungsgeschwindigkeit im Definitionsgebiet ausbreiten. Eine "Anderung
+der Anfangsbedingung macht sich erst nach einer gewissen Zeit in
+entfernten Teilen des Gebietes bemerkbar.
+\item "Anderungen der Randbedingungen der W"armeleitungsgleichung wirken
+sich sofort auf die Werte der L"osung zu sp"aterer Zeit aus und breiten
+sich mit unendlicher Geschwindigkeit durch das Gebiet aus, sie haben jedoch
+keine Auswirkungen auf die Vergangenheit.
+\item "Andert man die Randbedingung der Poisson-Gleichung $\Delta \varphi=f$,
+"andert sich die L"osung sofort und "uberall im Gebiet.
+\end{itemize}
+In diesem Kapitel sollen partielle Differentialgleichungen zweiter Ordnung
+nach diesem Schema klassiert werden.
+
+\section{Typen von Differentialgleichungen zweiter Ordnung}
+\rhead{Klassifikation}
+Zun"achst betrachten wir nur die zweiten Ableitungen in (\ref{operator2ordnung}).
+F"ur eine zweimal stetig differenzierbare Funktion $u$ sind die zweiten
+Ableitungen unabh"angig von der Reihenfolge, also
+$\partial_i\partial_ju=\partial_j\partial_iu$.
+Durch Zusammenfassen von Termen mit vertauschten Indizes $i,j$ kann 
+erreichen, dass $a_{ij}=a_{ji}$ ist.
+Die Matrix $(a_{ij})$ ist also symmetrisch.
+
+\begin{definition}Ist $L$ ein linearer Differentialoperator zweiter Ordnung
+\[
+Lu=\sum_{i,j=1}^na_{ij}\partial_i\partial_ju,
+\]
+dann heisst die symmetrische Matrix
+$(a_{ij})$ das Symbol des Operators.
+\end{definition}
+
+Eine Koordinatentransformation
+\[
+x_i=\sum_{j}t_{ij}x_j'
+\]
+transformiert die Ableitungen nach der Kettenregel
+\[
+\frac{\partial}{\partial x'_i}u(x)=\sum_{j=1}^nt_{ij}\frac{\partial}{\partial x_j}u(x).
+\]
+Wir w"ahlen f"ur die Transformation eine Drehung, weil dann die
+inverse Matrix durch die transponierte Matrix gegeben ist, also
+\begin{align*}
+x'_j&=\sum_{i=1}^nx_it_{ij}.
+\\
+\sum_{i=1}^nt_{ij}\frac{\partial}{\partial x'_i}u&=\frac{\partial}{\partial x_j}u
+\end{align*}
+Damit kann man auch den Differentialoperator $L$ in den Ableitungen nach $x'_i$
+schreiben:
+\begin{align*}
+Lu&=\sum_{i,j=1}^na_{ij}\frac{\partial^2}{\partial x_i\partial x_j}u
+\\
+&=\sum_{i,j,k,l=1}^n a_{ij}
+t_{ki}\frac{\partial}{\partial x_k'}
+t_{lj}\frac{\partial}{\partial x_l'}u
+\\
+&=\sum_{i,j,k,l=1}^n
+t_{ki}a_{ij}t_{lj}\frac{\partial}{\partial x_k'}
+\frac{\partial}{\partial x_l'}u
+\end{align*}
+Wer lesen daraus ab, dass das Symbol $A$ des Operators $L$ in den Koordinaten
+$x_i$ durch die Koordinatentransformation auf die Koordinaten $x_j'$ 
+mit der Matrix $T=(t_{ij})$ transformiert wird durch
+\[
+A'=TAT^*.
+\]
+In der linearen Algebra lernt man, dass man zu einer symmetrischen
+Matrix $A$ immer eine Drehmatrix $T$ finden kann, so dass
+$A'=TAT^*$ Diagonalform hat, wobei die Diagonalelemente die
+Eigenwerte der Eigenvektoren sind.
+\[
+TAT^*
+=
+\begin{pmatrix}\lambda_1&\dots&0\\
+\vdots&\ddots&\vdots\\
+0&\dots&\lambda_n
+\end{pmatrix}
+\]
+Man kann also durch geeignete Wahl des Koordinatensystems mindestens in
+einem Punkt einen Differentialoperator zweiter Ordnung immer in die
+Form
+\[
+\sum_{i=1}\lambda_i\frac{\partial^2}{\partial x_i^2}u
+\]
+bringen.
+
+Durch eine Streckung der Koordinatenachse $x_i$ um $\sqrt{|\lambda_i|}$
+kann man ausserdem erreichen, dass der Differentialoperator die
+Form
+\[
+\sum_{i=1}\varepsilon_i\frac{\partial^2}{\partial x_i^2}u
+\]
+erh"alt, wobei die Zahlen $\varepsilon_i$ die Werte, $1$, $-1$ oder $0$
+haben k"onnen.
+
+Differentialoperatoren zweiter Ordnung werden also charakterisiert durch
+die Vorzeichen der Eigenwerte des Symbols. Wir bezeichnen die Anzahl
+der positiven Eigenwerte mit $P$, die Anzahl der negativen Eigenwerte
+mit $N$, und die Anzahl der verschwindenden Eigenwerte mit $Z$.
+Die Beispiele des Kapitels \ref{chapter-beispiele} k"onnen wie
+folgt kategorisiert werden:
+\begin{center}
+\begin{tabular}{l|ccc}
+Differentialoperator&P&N&Z
+\\
+\hline
+Laplace&
+$n$&$0$&$0$
+\\
+Wellengleichung&
+$n-1$&$1$&$0$
+\\
+W"armeleitung&
+$n-1$&$0$&$1$
+\end{tabular}
+\end{center}
+Daraus leiten wir die folgende Klassifikation ab:
+
+\begin{definition} Die Differentialgleichung 
+(\ref{operator2ordnung})
+mit den Kennzahlen $P$, $N$ und $Z$ heissen
+\begin{center}
+\begin{tabular}{lcl}
+hyperbolisch&falls&$Z=0$ und $P=1$ oder $P=n-1$\\
+parabolisch&falls&$Z>0$\\
+elliptisch&falls&$Z=0$ und $P=n$ oder $P=0$\\
+ultrahyperbolisch&falls&$Z=0$ und $1<P<n-1$
+\end{tabular}
+\end{center}
+\end{definition}
+Insbesondere sind die Gleichungen des Kapitels \ref{chapter-beispiele}
+Beispiele f"ur diese Typen von partiellen Differentialgleichungen
+wie folgt:
+\begin{itemize}
+\item {\bf elliptisch:} Potential
+\item {\bf hyperbolisch:} Wellengleichung, linearisierte "Uberschallstr"omung
+\item {\bf parabolisch:} W"armeleitung, Diffusion
+\end{itemize}
+
+\section{Kanonische Form}
+\rhead{Kanonische Form}
+F"ur lineare PDGL mit konstanten Koeffizienten, f"ur die also die Gr"ossen
+$a_{ij}$ nicht von den Koordinaten abh"angen, kann man durch eine Drehung
+des Koordinatensystems immer erreichen, dass die Koeffizentenmatrix diagonal
+ist mit Diagonalelementen aus $\{0,\pm1\}$. Es stellt sich die Frage, ob
+dies wohl auch bei partiellen Differentialgleichungen mit allgemeinen
+Koeffizienten m"oglich ist.
+
+In zwei Dimensionen l"asst sich ein geeignetes Koordinatensystem mit folgender
+Idee konstruieren. 
+In jedem Punkt $(x,y)$ gibt es zwei Vektoren $\vec e_+$ und
+$\vec e_-$, welche Eigenvektoren zum gr"osseren bzw.~kleineren Eigenvektor
+der Matrix $A$ sind. Solange die Eigenwerte verschieden sind, lassen sich
+die Vektorfelder $\vec e_+$ und $\vec e_-$ auf stetige Weise konstruieren.
+Die Vektoren stehen in jedem Punkt senkrecht aufeinander.
+
+Nun kann man zu jedem Vektorfeld eine Schar von L"osungskurven
+konstruieren. Jede Schar h"angt von einem Parameter ab, wir nennen die
+beiden Parameter $\xi$ und $\eta$. Ein Punkt in der Ebene kann mit
+den Koordinaten $\xi$ und $\eta$ beschrieben werden.
+In diesen Koordinaten hat die Matrix $A$ Diagonalform.
+
+In drei Dimensionen l"asst sich diese Idee nicht mehr durchf"uhren,
+die Felder der Eigenvektoren m"ussen hier zus"atzliche Bedingungen
+erf"ullen.
+
+Da man aber in der N"ahe eines Punktes immer erreichen kann, dass $A$ diagonal
+ist, ist dort die Differentialgleichung n"aherungsweise diagonal.
+Wenn wir vor allem an den allgemeinen Eigenschaften einer L"osung interessiert
+sind, gen"ugt es also
+also f"ur alle Eigenschaften, die sich auf das Verhalten der L"osung im kleinen
+beziehen, die Standarddifferentialgleichungen des folgenden Katalogs
+zu studieren:
+\begin{align*}
+\Delta u&=0\\
+\partial_tu&=k\Delta u\\
+\partial_t^2u&=a^2\Delta u\\
+\end{align*}
+was wir in dieser Reihenfolge in den folgenden drei Kapiteln tun
+werden.
+
