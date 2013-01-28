@@ -25,13 +25,19 @@
 \def\swallow#1{
 %nothing
 }
-\newenvironment{loesung}{%
+\NewEnviron{loesung}{%
 \begin{proof}[L"osung]%
 \renewcommand{\qedsymbol}{$\bigcirc$}
-}{\end{proof}}
-\def\keineloesungen{%
-\renewenvironment{loesung}{\swallow\begingroup}{\endgroup}%
+\BODY
+\end{proof}}
+\NewEnviron{diskussion}{
+\BODY
 }
+\def\keineloesungen{%
+\RenewEnviron{loesung}{\relax}
+\RenewEnviron{diskussion}{\relax}
+}
+
 % Hinweis
 \newenvironment{hinweis}{%
 \renewcommand{\qedsymbol}{}
@@ -54,6 +60,7 @@
 \marginpar{\raggedright\tiny #2}%
 \expandafter\def\csname aufgabepath\endcsname{\inputpath/#1/#2/}%
 \expandafter\input{\inputpath#1/#2.tex}
+\bigskip
 }
 \renewcommand\theproblemcounter{\thechapter.\arabic{problemcounter}}
 % oft benutzte Macros

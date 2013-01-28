@@ -6,7 +6,6 @@ H(x,y,p_x,p_y)=\frac1{2m}(p_x^2+p_y^2)+K(x^2 + y^2)
 an. Stellen Sie die Hamilton-Jacobi-Differentialgleichung auf
 und L"osen Sie sie mit Hilfe eines Separationsansatzes.
 
-\ifthenelse{\boolean{loesungen}}{
 \begin{loesung}
 Das ``Kochrezept'' der Hamilton-Jacobi-Theorie besagt, dass eine
 Funktion $S(t, x, y)$ gesucht werden muss, die L"osung
@@ -95,8 +94,8 @@ S_3(y)
 \end{align*}
 Die gesuchte L"osungsfunktion ist dann die Summe dieser drei Terme.
 \end{loesung}
-}{}
 
+\begin{diskussion}
 Die Berechnung der neuen Koordinaten $Q_1$ und $Q_2$ ist in diesem
 Fall ziemlich kompliziert. Man kann sich aber mindestens "uberlegen,
 dass wegen der Terme mit $\arcsin$ wohl periodische L"osungen zu
@@ -107,4 +106,4 @@ ist eine freie Computer-Algebra-Software, die von
 http://maxima.sourceforge.net heruntergeladen werden kann}-Programm
 einfach durchgef"uhrt werden:
 \verbatimainput{federpendel.maxima}
-
+\end{diskussion}
