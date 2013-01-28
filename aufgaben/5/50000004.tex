@@ -1,0 +1,82 @@
+L"osen Sie die Wellengleichung
+\[
+\frac{\partial^2 u}{\partial t^2}=\frac{\partial^2 u}{\partial x^2}
+\]
+f"ur eine zwischen $x=0$ und $x=\pi$ gespannte Saite,
+die zur Zeit $t=0$ in Ruhelage ist, aber die Geschwindigkeit
+\[
+\frac{\partial u}{\partial t}(0, x)
+=
+\sin^3 x=\frac34\sin x-\frac14\sin 3x
+\]
+hat.
+
+\begin{hinweis}
+Eine L"osung mit Separation dieser Aufgabe ist in \ref{40000004}
+dargestellt.
+\end{hinweis}
+
+\begin{loesung}
+Die Fourier-Transformation
+von Funktionen auf dem Interval $[0,\pi]$, die am Rande
+des Intervals verschwinden, ist die Entwicklung in eine Fourier-Sinus-Reihe,
+also die Transformation 
+\[u(t,x) \mapsto \hat u(t, k)= C\int_0^{\pi} u(t,x)\sin kx\, dx\]
+mit einer geeigneten Normierungskonstanten $C$, die im vorliegenden
+Fall allerdings unwichtig ist (weil die Berechnung der Fourierreihe
+im Hinweis bereits durchgef"uhrt ist).
+
+Die Transformation der Differentialgleichung 
+\begin{equation}
+\frac{\partial^2}{\partial t^2}\hat u(t,k)
+=-k^2\hat u(t,k)
+\label{gleichungfueruk}
+\end{equation}
+Die Fouriertransformation der Anfangsbedingung ist
+\begin{align}
+\hat u(0,k)&=0\label{40000004:anfbedu}\\
+\frac{\partial}{\partial t}\hat u(0,k)&=
+\begin{cases}
+\frac34&\qquad k= 1\\
+-\frac14&\qquad k= 3\\
+0&\qquad \text{sonst}
+\end{cases}
+\label{40000004:anfbedudot}
+\end{align}
+Die Gleichung
+(\ref{gleichungfueruk})
+ist eine gew"ohnliche Differentialgleichung f"ur jeden
+einzelnen Fourierkoeffizienten, mit allgemeiner L"osung
+\[
+\hat u(t,k)=A_k\cos kt+B_k\sin kt
+\]
+Darin sind die Koeffizienten $A_k$ und $B_k$ aus den Anfangsbedingungen
+(\ref{40000004:anfbedu}) und (\ref{40000004:anfbedudot}) zu bestimmen:
+\begin{align*}
+\hat u(0,k)&=A_k=0\\
+\partial_t \hat u(0,k)&=kB_k=
+\begin{cases}
+\frac34&\qquad k= 1\\
+-\frac14&\qquad k= 3\\
+0&\qquad \text{sonst}
+\end{cases}
+\end{align*}
+Insbesondere gilt
+\[
+B_1=\frac23,\qquad B_3=-\frac1{12}
+\]
+Damit sind die zeitabh"angigen Fourierkoeffizienten $\hat u(t,k)$ bestimmt:
+\[
+\hat u(t,k)=
+\begin{cases}
+\frac34\sin t &\qquad k= 1\\
+-\frac1{12}\sin 3t&\qquad k= 3\\
+0&\qquad \text{sonst}
+\end{cases}
+\]
+Summiert man die Fourier-Reihe, ergibt sich
+\[
+u(t,x)=\sum_{k>0}\hat u(t,k) \sin kx
+= \frac34\sin x \sin t -\frac1{12}\sin 3x \sin 3t.
+\]
+\end{loesung}

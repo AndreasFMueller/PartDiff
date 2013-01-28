@@ -11,7 +11,8 @@ W"armeleitungsgleichung
 \]
 f"ur diesen Fall.
 
-{\it Hinweis:} Verwenden sie f"ur die
+\begin{hinweis}
+Verwenden sie f"ur die
 ``Dreiecksfunktion''
 \[
 d(x)
@@ -27,6 +28,12 @@ verwendende Fourier-Reihe
 \[
 d(x)=\sum_{n=0}^\infty \frac{8(-1)^n}{\pi^2(2n+1)^2}\sin (2n+1)x
 \]
+\end{hinweis}
+
+\begin{hinweis}
+Eine L"osung dieser Aufgabe mit der Transformationsmethode ist als
+Aufgabe \ref{50000005} dargestellt.
+\end{hinweis}
 
 \begin{loesung}
 Wir kontrollieren zun"achst die angegebenen Fourierkoeffizienten.
@@ -61,7 +68,7 @@ b_k=b_{2n+1}=\frac{(-1)^n8}{\pi^2(2n+1)^2},
 \]
 wie behauptet.
 
-Jetzt kann man die Differentialgleichung mit dem {\bf Separationsansatz}
+Jetzt kann man die Differentialgleichung mit dem Separationsansatz
 l"osen. Dazu setzt man $u(t,x)=T(t)X(x)$ an und setzt dies in die
 Differentialgleichung ein:
 \[
@@ -131,51 +138,12 @@ Die L"osung der W"armeleitungsgleichung ist also
 u(t,x)=
 \sum_{n=0}^\infty \frac{8(-1)^n}{\pi^2(2n+1)^2}e^{-(2n+1)^2t}\sin(2n+1)x
 \]
-
-Die L"osung mit der {\bf Transformationsmethode}
-verwendet Fourier-Transformation
-entlang der $x$-Achse und Laplace-Transformation entlang der Zeit-Achse.
-Wir schreiben $\hat u(t,k)$ f"ur die Fourier-Transformation und ${\cal L} u$
-f"ur die Laplace-Transformation.
-
-Die Anfangsbedingungen sind ungerade, so dass auch die L"osung der
-Differntialgleichung f"ur alle Zeiten ungerade sein wird. Die
-Randbedingung sagen ausserdem, dass
-$\partial_xu(t,-\frac{\pi}2)=\partial_xu(t,\frac{\pi}2)=0$ gilt.
-Dies bedeutet, dass man die Funktion durch Spiegelung an
-$-\frac{\pi}2$ bzw.~$\frac{\pi}2$ zu einer $2\pi$-periodischen
-Funktion auf ganz $\mathbb R$ fortsetzen kann. Insbesondere l"asst
-sich $u(t,x)$ mit einer Sinusreihe entwickeln. Seien $\hat u(t,k)$
-die Fourier-Sinus-Koeffizienten. Damit haben wir als Differentialgleichung
-der $\hat u(t,k)$
-\[
-\partial_t\hat u(t,k)=-k^2\hat u(t,k)
-\]
-Diese Gleichung kann man jetzt nach Laplace transformieren:
-\begin{align*}
-s{\cal L}\hat u(s,k) - \hat u(0,k)&=-k^2 {\cal L}\hat u(s,k)\\
-(s+k^2){\cal L}\hat u(s,k)&=\hat u(0,k)\\
-{\cal L}\hat u(s,k)&=\frac{\hat u(0,k)}{s+k^2}
-\end{align*}
-R"ucktransformation ergibt:
-\[
-\hat u(t,k)=\hat u(0,k) e^{-k^2t}
-\]
-Jetzt sind nur noch die Fourierkoeffizienten zu bestimmen, die kann
-man aber dem Hinweis entnehmen:
-\[
-\hat u(0,2n+1)=
-\frac{8(-1)^n}{\pi^2(2n+1)^2}
-\]
-und damit die endg"ultige L"osung durch Summieren der Fourierreihen bekommen:
-\[
-u(t,x)=
-\sum_{n=0}^\infty \frac{8(-1)^n}{\pi^2(2n+1)^2}e^{-(2n+1)^2t}\sin(2n+1)x
-\]
+Eine graphische Darstellung der L"osung ist in Abbildung~\ref{40000005:bild}
+zu finden.
 \begin{figure}
 \begin{center}
 \includeagraphics[width=\hsize]{a3.pdf}
 \end{center}
-\caption{L"osung der W"armeleitungsgleichung}
+\caption{L"osung der W"armeleitungsgleichung\label{40000005:bild}}
 \end{figure}
 \end{loesung}

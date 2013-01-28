@@ -1,0 +1,76 @@
+F"uhren Sie die Differentialgleichung
+\[
+\frac1{1-x^2}\frac{\partial^2 u}{\partial x^2}
+-
+\frac{\partial^2 u}{\partial t^2}=0
+\]
+auf dem Gebiet
+\[
+\Omega=\{(x,t)\,|\, x\in (-1,1), t>0\}
+\]
+mit Anfangsbedingungen
+\begin{align*}
+u(t,-1)&=u(t,1)=0&t&>0\\
+u(0,x)&=1-x^2&x&\in[-1,1]\\
+\frac{\partial}{\partial t}u(0,x)&=0&x&\in[-1,1]\\
+\end{align*}
+mit Hilfe einer Laplace-Transformation der Variablen $t$ in eine
+gew"ohnliche Differentialgleichung "uber.
+
+\begin{loesung}
+Die Laplacetransformierte ist
+\[
+{\cal L}u(s,x)=\int_0^{\infty}e^{-ts}u(t,x)\,dt
+\]
+Die zweite Ableitung transformiert sich wie folgt mit Hilfe
+partieller Integration
+\begin{align*}
+\int_0^\infty \frac{\partial^2u}{\partial t^2}e^{-st}\,dt
+&=
+\left[
+\frac{\partial u}{\partial t}e^{-st}
+\right]_0^\infty
+-\int_0^\infty
+\frac{\partial u}{\partial t}\frac{\partial e^{-st}}{\partial t}
+\,dt
+\\
+&=
+\left[
+\frac{\partial u}{\partial t}e^{-st}
+\right]_0^\infty
++s\int_0^\infty
+\frac{\partial u}{\partial t}e^{-st}
+\,dt
+\\
+&=
+-\frac{\partial u}{\partial t}(0,x)
++s\left[
+ue^{-st}
+\right]_0^\infty
+-s\int_0^\infty u\frac{\partial e^{-st}}{\partial t}\,dt
+\\
+&=
+-\frac{\partial u}{\partial t}(0,x)
+-s
+u(0,x)
++s^2\int_0^\infty u e^{-st}\,dt
+\\
+&=
+-\frac{\partial u}{\partial t}(0,x)
+-su(0,x)+s^2{\cal L}u(s,x)
+\end{align*}
+Der Term mit der ersten Ableitung f"allt nach Voraussetzung weg.
+Die Differentialgleichung f"ur ${\cal L}u$ wird dann
+\begin{align*}
+\frac1{1-x^2}\frac{\partial^2}{\partial x^2}{\cal L}u
++s(1-x^2)+s^2{\cal L}u(s,x)
+&=0
+\\
+\frac1{1-x^2}\frac{\partial^2}{\partial x^2}{\cal L}u
++s^2{\cal L}u(s,x)
+&=-s(1-x^2)
+\end{align*}
+Dies ist f"ur jeden Wert von $s$ eine gew"ohnliche Differentialgleichung
+f"ur ${\cal L}u$ in der unabh"angigen Variablen $x$.
+Aus der Randbedingung folgt ausserdem ${\cal L}u(s,\pm 1)=0$.
+\end{loesung}

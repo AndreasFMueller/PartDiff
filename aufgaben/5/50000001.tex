@@ -1,0 +1,74 @@
+L"osen Sie die W"armeleitungsgleichung
+\[
+\partial_t u=\kappa\partial_x^2u
+\]
+f"ur $t>0$ und $x>0$ mit den Rand- und Anfangsbedingungen
+\begin{align*}
+u(t,0)&=c,\\
+u(0,x)&=0.
+\end{align*}
+
+\begin{loesung}
+Die Bedingung $t>0$ zeigt an, dass die Laplace-Transformation
+der Variablen $t$ in die Variable $s$ zum Erfolg f"uhren k"onnte.
+Wir schreiben $\cal L$ f"ur die Laplace-Transformation von $s$.
+Die transformierte Differentialgleichung ist
+\[
+s{\cal L}u(s, x)-u(0,x)=\kappa \partial_x^2{\cal L}u(s,x).
+\]
+Setzt man die Anfangsbedingung $u(0,x)=0$ ein, wird daraus
+\[
+s{\cal L}u(s, x)=\kappa \partial_x^2{\cal L}u(s,x),
+\]
+also eine mit $s$ parametrisierte Familie von gew"ohnlichen
+Differentialgleichung der Funktion $x\mapsto {\cal L}u(s,x)$.
+Etwas umgestellt ist sie "aquivalent zu
+\[
+\partial_x^2{\cal L}u(s,x)
+=
+\frac{s}{\kappa}{\cal L}u(s, x),
+\]
+mit den L"osungen
+\[
+{\cal L}u(s,x)=\begin{cases}
+C_1(s)e^{\sqrt{\frac{s}{\kappa}}x}\\
+C_2(s)e^{-\sqrt{\frac{s}{\kappa}}x}
+\end{cases}
+\]
+Da die physikalisch sinnvollen L"osungen der W"armeleitungsgleichung
+beschr"ankt sein m"ussen, kommt nur die zweite L"osung in Frage.
+
+Die Randbedingung muss ebenfalls transformiert werden:
+\[
+{\cal L}u(s,0)=\frac{c}{s},
+\]
+dies ist die Anfangsbedingung f"ur die Differentialgleichung,
+\[
+{\cal L}u(s,0)=C_2(s)=\frac{c}{s}.
+\]
+Somit ist die Laplace-Transformierte der gesuchten L"osung
+\[
+{\cal L}u(s,x)=\frac{c}{s}e^{-\sqrt{\frac{s}{\kappa}}x}
+\]
+Diese Funktion muss jetzt zur"uck transformiert werden.
+Dazu schreiben wir die rechte Seite zun"achst noch um:
+\[
+{\cal L}u(s,x)=c\cdot \frac{1}{s}e^{-k\sqrt{s}}
+\]
+mit $k=x/\sqrt{\kappa}$.
+Aus der
+Tabelle der Laplace-Transformationen entnimmt man, dass die
+R"ucktransformierte
+\[
+u(t,x)
+=
+c \operatorname{erfc}\biggl(
+\frac{k}{2\sqrt{t}}
+\biggr)
+=
+c \operatorname{erfc}\biggl(
+\frac{x}{2\sqrt{\kappa t}}
+\biggr)
+\]
+ist.
+\end{loesung}

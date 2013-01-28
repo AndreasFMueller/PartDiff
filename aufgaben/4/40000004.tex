@@ -11,8 +11,13 @@ die zur Zeit $t=0$ in Ruhelage ist, aber die Geschwindigkeit
 \]
 hat.
 
+\begin{hinweis}
+Diese Aufgabe kann auch mit der Transformationsmethode gel"ost werden,
+siehe dazu die Aufgabe \ref{50000004}.
+\end{hinweis}
+
 \begin{loesung}
-Die {\bf Separation} der Wellengleichung in $u(t,x)=T(t)X(x)$ ergibt die
+Die Separation der Wellengleichung in $u(t,x)=T(t)X(x)$ ergibt die
 zwei Gleichungen
 \[
 X''(x)=-\mu X(x)\qquad\text{und}\qquad T''(t)=-\mu T(t),
@@ -57,70 +62,6 @@ a_k&=0\qquad\text{f"ur $k\ne 1,3$}
 Damit ist die L"osung der Differentialgleichung
 \[
 u(t,x)
-= \frac34\sin x \sin t -\frac1{12}\sin 3x \sin 3t.
-\]
-
-Alternativ wollen wir jetzt auch noch die L"osung mit der
-{\bf Transformationsmethode} darstellen. Die Fourier-Transformation
-von Funktionen auf dem Interval $[0,\pi]$, die am Rande
-des Intervals verschwinden, ist die Entwicklung in eine Fourier-Sinus-Reihe,
-also die Transformation 
-\[u(t,x) \mapsto \hat u(t, k)= C\int_0^{\pi} u(t,x)\sin kx\, dx\]
-mit einer geeigneten Normierungskonstanten $C$, die im vorliegenden
-Fall allerdings unwichtig ist (weil die Berechnung der Fourierreihe
-im Hinweis bereits durchgef"uhrt ist).
-
-Die Transformation der Differentialgleichung 
-\begin{equation}
-\frac{\partial^2}{\partial t^2}\hat u(t,k)
-=-k^2\hat u(t,k)
-\label{gleichungfueruk}
-\end{equation}
-Die Fouriertransformation der Anfangsbedingung ist
-\begin{align}
-\hat u(0,k)&=0\label{40000004:anfbedu}\\
-\frac{\partial}{\partial t}\hat u(0,k)&=
-\begin{cases}
-\frac34&\qquad k= 1\\
--\frac14&\qquad k= 3\\
-0&\qquad \text{sonst}
-\end{cases}
-\label{40000004:anfbedudot}
-\end{align}
-Die Gleichung
-(\ref{gleichungfueruk})
-ist eine gew"ohnliche Differentialgleichung f"ur jeden
-einzelnen Fourierkoeffizienten, mit allgemeiner L"osung
-\[
-\hat u(t,k)=A_k\cos kt+B_k\sin kt
-\]
-Darin sind die Koeffizienten $A_k$ und $B_k$ aus den Anfangsbedingungen
-(\ref{40000004:anfbedu}) und (\ref{40000004:anfbedudot}) zu bestimmen:
-\begin{align*}
-\hat u(0,k)&=A_k=0\\
-\partial_t \hat u(0,k)&=kB_k=
-\begin{cases}
-\frac34&\qquad k= 1\\
--\frac14&\qquad k= 3\\
-0&\qquad \text{sonst}
-\end{cases}
-\end{align*}
-Insbesondere gilt
-\[
-B_1=\frac23,\qquad B_3=-\frac1{12}
-\]
-Damit sind die zeitabh"angigen Fourierkoeffizienten $\hat u(t,k)$ bestimmt:
-\[
-\hat u(t,k)=
-\begin{cases}
-\frac34\sin t &\qquad k= 1\\
--\frac1{12}\sin 3t&\qquad k= 3\\
-0&\qquad \text{sonst}
-\end{cases}
-\]
-Summiert man die Fourier-Reihe, ergibt sich
-\[
-u(t,x)=\sum_{k>0}\hat u(t,k) \sin kx
 = \frac34\sin x \sin t -\frac1{12}\sin 3x \sin 3t.
 \]
 \end{loesung}

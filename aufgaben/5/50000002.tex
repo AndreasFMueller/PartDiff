@@ -1,0 +1,120 @@
+Finden Sie eine im ganzen Definitionsgebiet 
+$G=\mathbb R\times [0,\infty[$
+beschr"ankte L"osung
+des Poisson-Problems
+\begin{align*}
+\Delta u&=0,&(x,y)&\in G
+\\
+u(x,0)&=f(x)&x&\in\mathbb R=\partial G.
+%\partial_yu(x,0)&=g(x)&x&\in\mathbb R.
+\end{align*}
+Berechnen sie die L"osung explizit, wenn die Funktion $f$ eine
+$\delta$-Funktion im Punkt $0$ ist. Verwenden Sie dazu die 
+Fourier-Transformation entlang der $x$-Achse.
+
+\begin{loesung}
+Durch Fourier-Transformation in der Variablen $x$ wird die Gleichung
+zu
+\begin{align*}
+-k^2\hat u(k,y)+\frac{\partial^2\hat u}{\partial y^2}(k,y)&=0\\
+\frac{\partial^2\hat u}{\partial y^2}(k,y)&= k^2\hat u(k,y)
+\end{align*}
+Diese mit $k$ parametrisierte Familie gew"ohnlicher Differentialgleichung
+f"ur die Funktion
+$y\mapsto \hat u(k,y)$ hat als L"osung
+\[
+\hat u(k,y)=\begin{cases}
+e^{-|k|y}\\
+e^{|k|y}
+\end{cases}
+\]
+Die zweite L"osung ist nicht beschr"ankt, kann als f"ur die L"osung
+des Problems nicht verwendet werden. F"ur $\hat u(k,y)$ kommt also
+nur die erste L"osung in Frage, die noch mit einer von $k$ abh"angigen
+Konstanten multipliziert werden muss:
+\begin{equation}
+\hat u(k,y)=g(k)e^{-|k|y}.
+\label{50000002:anf}
+\end{equation}
+
+Um die Anfangsbedingung $u(x,0)=f(x)$ zu erf"ullen, berechnen wir
+die Fourier-Transformierte und erhalten $\hat u(k,0)=\hat f(k)$.
+Setze man $y=0$ in (\ref{50000002:anf}) ein, erh"alt man
+\[
+\hat u(k,0)=g(k)=\hat f(k),
+\]
+also ist 
+\[
+\hat u(k,y)=\hat f(k)e^{-|k|y}.
+\]
+Um die L"osung zu finden, ist davon wieder die R"ucktransformierte
+zu berechnen. Auf der rechten Seite steht das Produkt von zwei
+Fouriertransformierten, n"amlich von $f$ und von der Funktion
+\[
+x\mapsto \frac{2y}{x^2+y^2}
+\]
+also ist die R"ucktransformierte die Faltung dieser beiden
+Funktionen
+\[
+u(x,y)=\int_{-\infty}^\infty 
+f(\xi) 
+\frac{2y}{(x-\xi)^2+y^2}
+\,d\xi
+=
+2y\int_{-\infty}^\infty\frac{f(\xi)}{(x-\xi)^2+y^2}\,d\xi.
+\]
+
+F"ur eine $\delta$-Funktion an der Stelle $0$ ist das Integral der
+Wert des Integranden an der Stelle $\xi=0$, also
+\[
+u(x,y)=2y\frac{1}{x^2+y^2}=\frac{2y}{x^2+y^2}
+\]
+
+Man k"onnte auch versuchen, die L"osung mit der Laplace-Transformation
+zu berechnen. Die Transformation der Differentialgleichung ergibt
+\begin{align*}
+({\cal L}\partial_x^2u)(x,s)
++
+s^2({\cal L}u)(x, s)-u(x,0)-s\partial_xu(x,0)
+&=0\\
+\partial_x^2({\cal L}u)(x,s)+s^2({\cal L}u)(x, s)-u(x,0)-s\partial_xu(x,0)=0
+\end{align*}
+Die Anfangsbedingung liefert $u(x,0)=f(x)$, also
+\[
+\partial_x^2({\cal L}u)(x,s)+s^2({\cal L}u)(x, s)-f(x)-s\partial_xu(x,0)=0
+\]
+Dies ist eine Differentialgleichung zweiter Ordnung f"ur jedes $s$, schreiben
+wir $({\cal L}u)=y_s(x)$, und zur Abk"urzung $g(x)=\partial_xu(x,0)$,
+lautet sie
+\begin{align*}
+v_s''(x)+s^2v_s(x)-f(x)-sg(x)&=0,\\
+v_s''(x)+s^2v_s(x)&=f(x)+sg(x)
+\end{align*}
+Damit wir diese Gleichung l"osen k"onnen, brauchen wir eine
+Anfangsbedingung, eine solche liegt uns jedoch nicht vor, weil
+das Gebiet in $x$-Richtung in beide Richtungen unendlich ausgedehnt
+ist.
+Bestenfalls k"onnen wir also eine Funktion $h(s)$ als Anfangsbedingung
+zu verwenden. Wir m"ussen also die Gleichung
+\[
+v''(x)-a^2v(x)=w(x)
+\]
+mit $a>0$
+l"osen k"onnen. Eine L"osung der homogenen Gleichung ist
+\[
+v(x)=A\cosh ax+B\sinh(-ax).
+\]
+
+Variation der Konstanten ergibt die Gleichung
+\begin{align*}
+A''(x)e^{ax}+aA(x)e^{ax}+a^2A(x)e^{ax}
++
+B''(x)e^{-bx}-aB(x)e^{-ax}+b^2B(x)e^{-ax}
+-a^2A(x)e^{ax}-b^2B(x)e^{-ax}&=w(x)
+\\
+(A''(x)+aA'(x))e^{ax}
++
+(B''(x)-aB'(x))e^{-ax}
+&=w(x)
+\end{align*}
+\end{loesung}
