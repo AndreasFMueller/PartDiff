@@ -23,27 +23,41 @@ $u(1,0)=-1$ und $v(1,0)=1$). Ist sie eine L"osung?
 \end{teilaufgaben}
 
 \begin{loesung}
+Die Anfangsbedingung in dieser Aufgabe ist auf der $y$-Achse vorgegeben.
+Zur Vermeidung von Verwechslungen bezeichnen wir die $y$-Werte auf
+der $y$-Achse wieder mit $y_0$, "ahnlich wie in Aufgabe \ref{30000001}.
+Die Methode der Charakteristiken wird also Funktionen $x(y_0,t)$,
+$y(y_0,t)$ und $u(y_0,t)$ derart, dass die Differentialgleichungen
+\begin{equation}
+\begin{aligned}
+\dot x(y_0, t)&=y\\
+\dot y(y_0, t)&=x\\
+\dot u(y_0, t)&=0
+\end{aligned}
+\label{30000002:chareq}
+\end{equation}
+erf"ullt sind mit den Anfangsbedingungen 
+\begin{align*}
+x(y_0, 0)&=0\\
+y(y_0, 0)&=y_0\\
+u(y_0, 0)&=f(y_0)
+\end{align*}
+wobei $f(y_0)$ die Anfangsfunktion entlang der $y$-Achse ist.
 \begin{teilaufgaben}
 \item
-Die Integralkurven des Vektorfeldes
-\[
-\begin{pmatrix}
-y\\x\\0
-\end{pmatrix}
-\]
-sind L"osungen des Differentialgleichungssystems
-\begin{align*}
-\dot x(t)&=y(t)\\
-\dot y(t)&=x(t)\\
-\dot z(t)&=0
-\end{align*}
-Aus der letzten Gleichung schliesst man $z(t)=z(0)$. Leitet man die erste
+Aus der Gleichung (\ref{30000002:chareq}) kann man ablesen,
+dass alle Charakteristiken parallel zur $x$-$y$-Ebene verlaufen.
+Man kann also, um die Frage zu beantworten, nur die Differentialgleichungen
+f"ur die beiden Funktionen $x$ und $y$ l"osen.
+
+Leitet man die erste
 Gleichung ab und setzt die zweite Gleichung ein, erh"alt man die
 die Differentialgleichung
 \[
 \ddot x(t)=x(t)
 \]
-mit den L"osungen $x(t)=a\cosh t$ und $x(t)=b\sinh t$. Da wir Kurven
+mit den L"osungen $x(t)=a\cosh t$ und $x(t)=b\sinh t$.
+Da wir Kurven
 suchen, die auf der $y$-Achse im Punkt $(0,y_0)$ beginnen, muss
 \[
 \begin{pmatrix}
@@ -57,27 +71,26 @@ y_0
 \end{pmatrix}
 \]
 sein.
+Diese Funktionen erf"ullen die Gleichung $y^2-x^2=y_0^2$, sie stellen
+also Hyperbeln durch die Punkte $(0,y_0)$ dar.
 \item
 Die L"osungskurven sind Hyperbeln mit den Asymptoten $y=\pm x$, die
 Charaketerisitiken k"onnen die Asymptoten nicht "uberschreiten, es wird
 also nur der Bereich $\{(x,y)|\;|x|<|y|\}$ der $x$-$y$-Ebene "uberdeckt.
 \item
-Die L"osungsfl"ache wird von den Charakteristiken erzeugt, ist also
+Die Gleichung f"ur $u$ liefert $u(y_0, t)=y_0^2$.
+Nach dem zweiten Schritt in der Methode der Charakteristiken
+m"ussen wir jetzt $t$ und $y_0$ aus den Gleichungen
+\begin{align*}
+x&=y_0\sinh t\\
+y&=y_0\cosh t\\
+u&=y_0^2
+\end{align*}
+eliminieren. F"ur die hyperbolischen Funktionen gilt
 \[
-(t,y_0)
-\mapsto
-\begin{pmatrix}
-y_0\sinh t\\
-y_0\cosh t\\
-y_0^2
-\end{pmatrix}.
+y^2-x^2=y_0^2(\cosh^2t-\sinh^2t)=y_0^2.
 \]
-Zu einem gegebenen Punkt $(x,y)$ kann man den Parameter $y_0$ wie folgt
-finden:
-\[
-y^2-x^2=y_0^2(\cosh^2t-\sinh^2t)=y_0^2,
-\]
-Die Differenz ist also gerade der gesuchte Funktionswert, somit
+Setzen wir dies in der dritten Gleichung ein, erhalten wir
 \[
 u(x,y)=y^2-x^2.
 \]

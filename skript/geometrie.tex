@@ -154,7 +154,7 @@ das Cauchy-Problem meistens l"osbar ist, und wollen verstehen,
 unter welchen Bedingungen es nicht l"osbar ist.
 
 \subsubsection{Gew"ohliche Differentialgleichung erster Ordnung}
-Wir errinnern uns zun"achst an die L"osung der gew"ohnlichen
+Wir erinnern uns zun"achst an die L"osung der gew"ohnlichen
 Differentialgleichungen erster Ordnung.
 Eine solche legt die Ableitung $y'$ in Abh"angigkeit von 
 $(x,y)$ durch eine Funktion $f(xy,y)$ fest: 
@@ -182,12 +182,30 @@ nacheinander $y(2h)$, $y(3h)$,\dots bestimmen.
 Nat"urlich ist dies nur ein N"aherungsverfahren, das "ubrigens
 von Euler erdacht worden ist. Macht man $h$ sehr klein, wird
 die Approximation der wahren L"osung immer besser.
+Aber es macht plausibel, warum eine gew"ohnliche Differentialgleichung
+erster Ordnung genau eine Anfangsbedingung braucht.
 
 \subsubsection{L"osbarkeit}
-Wenn mindestens einer der Koeffizienten
-$a(x,y,u)$ und $b(x,y,u)$ in (\ref{quasilinear:equation})
-von $0$ verschieden ist, die Gleichung
-nach einer der partiellen Ableitungen aufl"osen.
+Wir versuchen jetzt, diese "Uberlegung auf die L"osbarkeit einer
+Differentialgleichung der Form (\ref{quasilinear:equation}) zu 
+"ubertragen. Wir haben jetzt nat"urlich zwei partielle Ableitungen, die
+durch die Gleichung (\ref{quasilinear:equation}) auch nicht
+eindeutig bestimmt sind. Als lineare Gleichung f"ur die partiellen
+Ableitungen betrachtet, hat (\ref{quasilinear:equation}) unendlich 
+viele L"osungen.
+
+Dies ist allerdings nicht so schlimm: denn wir m"ochten ja das Cauchy-Problem
+l"osen: vorgegeben sind die Werte der Funktion entlang einer Kurve.
+Wir haben also auch unendlich viele ``Anfangswerte''.
+Zur Vereinfachung der Diskussion nehmen wir zun"achst an, dass die
+Funktionswerte f"ur $x=0$ vorgeben sind.
+Damit sind aber nicht nur die Funktionswerte $u(0,y)$ bekannt, sondern
+auch die partiellen Ableitungen $\partial_yu(0,y)$.
+
+Wenn der Koeffizient $a(x,y,u)$ von 
+in (\ref{quasilinear:equation})
+von $0$ verschieden ist, kann man die Gleichung
+nach $\partial_xu$ aufl"osen.
 Die eine partielle Ableitung legt also die andere fest.
 Durch die Anfangswerte ist die eine partielle auf der
 Anfangskurve bereits festgelegt, also steht auch schon fest,
@@ -290,14 +308,25 @@ dass diese Normale senkrecht auf dem Vektor $\vec v$ steht.
 Ein Vektor, der auf der Normalen $\vec n$ senkrecht steht,
 ist seinerseits tangential an die L"osungsfl"ache.
 
+Das Argument funktionert aber f"ur jede beliebige L"osungsfl"ache:
+die Normale ist immer senkrecht auf dem Vektor $\vec n$.
+Die von der Differentialgleichung erlaubten Normalenrichtungen sind
+L"osungen einer lineare Gleichung, liegen also alle in einer Ebene,
+und $\vec n$ muss die Normale dieser Ebene sein.
+
+Das bedeutet zum Beispiel auch, dass die Schnittkurve von
+zwei L"osungsfl"achen immer $\vec n$ als Tangente haben muss.
+Kurven, die in jedem Punkt die Richtung $\vec n$ haben, sind
+als von ganz besonderer Bedeutung.
 Die Vektoren
 \[
 (x,y,u)\mapsto
+\vec n=
 \begin{pmatrix}
 a(x,y,u)\\b(x,y,u)\\c(x,y,u)
 \end{pmatrix}
 \]
-bilden somit ein Vektorfeld, welches in jedem Punkt tangential
+bilden ein Vektorfeld, welches in jedem Punkt tangential
 an die gesuchte Fl"ache verl"auft.
 
 \subsubsection{Charakteristiken}
@@ -584,7 +613,7 @@ Anfangskurven ungeeignet. Nur wenn die Anfangsbedingung auf einer Kurve
 festgelegt wird, die transversal, also nirgends tangential, zu den
 Charakteristiken verl"auft, kann das Anfangswertproblem gel"ost werden.
 
-\subsection{Allgmeine partielle Differentialgleichungen erster Ordnung}
+\subsection{Allgemeine partielle Differentialgleichungen erster Ordnung}
 Als Beispiel betrachten wir die folgende partielle Differentialgleichung
 erster Ordnung f"ur die Funktion $u(x,y)$
 \begin{equation}

@@ -45,21 +45,29 @@ Im ersten Fall bekommen wir
 2\sqrt{y}&=t+2\sqrt{y_0}\\
 u&=-\sin y_0 + t
 \end{align*}
-und m"ussen zu einem Punkt $(x,y)$ das zugeh"orige $t$ und $y_0$
-finden.
-Aus $t=2\sqrt{x}$ findet man $\sqrt{y_0}=\sqrt{y}-\sqrt{x}$, dies
-ist nat"urlich nur m"oglich, wenn $y>x$. F"ur $u$ findet man dann
+und m"ussen daraus die Variablen $t$ und $y_0$ eliminieren.
+Die Differenz der beiden ersten Gleichungen liefert
 \[
-u(x,y)=-\sin y_0+2\sqrt{x}=-\sin(\sqrt{y}-\sqrt{x})^2 +2\sqrt{x}.
+2\sqrt{y_0}=2\sqrt{y}-2\sqrt{x}
+\qquad\Rightarrow\qquad
+y_0
+=
+(\sqrt{y}-\sqrt{x})^2.
 \]
+Setzen wir dies und die erste Gleichung die Gleichung f"ur $u$ ein,
+bekommen wir als L"osung
+\[
+u=-\sin
+(\sqrt{y}-\sqrt{x})^2+2\sqrt{x}.
+\]
+
 Im zweiten Fall bekommen wir
 \begin{align*}
 2\sqrt{x}&=t+2\sqrt{x_0}\\
 2\sqrt{y}&=t\\
 u&=\sin x_0+t
 \end{align*}
-und analog zum ersten Fall bekommt man $\sqrt{x_0}=\sqrt{x}-\sqrt{y}$
-und
+und mit analogen Umformungen
 \[
 u(x,y)=\sin(\sqrt{x}-\sqrt{y})^2+2\sqrt{y}
 \]

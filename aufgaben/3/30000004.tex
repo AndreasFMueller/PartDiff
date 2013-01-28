@@ -10,7 +10,10 @@ u(0,y)=g(y)=y^2.
 \begin{loesung}
 Dies ist eine quasilineare partielle Differentialgleichung
 erster Ordnung, die mit Hilfe von Charakteristiken gel"ost werden
-kann. Das Differentialgleichungssytem f"ur die  Charaketersistiken ist
+kann.
+Die Anfangskurve ist entlang der $y$-Achse vorgegeben, wir bezeichnen
+die zugeh"origen $y$-Werte mit $y_0$.
+Das Differentialgleichungssytem f"ur die  Charaketersistiken ist
 \[
 \left.
 \begin{aligned}
@@ -20,46 +23,29 @@ kann. Das Differentialgleichungssytem f"ur die  Charaketersistiken ist
 \end{aligned}
 \right\}\quad\Rightarrow\quad
 \begin{aligned}
-x(t)&=t+C\\
-y(t)&=y_0e^t\\
-u(t)&=u_0
+x(y_0,t)&=t+C\\
+y(y_0,t)&=De^t\\
+u(y_0,t)&=u_0
 \end{aligned}
 \]
-Wir k"onnen $C=0$ w"ahlen, also $x=t$, und erhalten damit die
-Charakteristiken in expliziter Form $y(x)=y_0e^x$ und $u(x)=u_0$.
-
-Jetzt muss $u$ als Funktion von $x$ und $y$ ermittelt werden.
-Durch den Punkt $(x,y)$ in der Ebene f"uhrt eine Charakteristik,
-die im Punkt $(0,y_0)$ begonnen hat, wegen $y(x)=y_0e^x$ ist
-$y_0=ye^{-x}$. F"ur $u$ gilt jetzt
-\[
-u(x,y)=u(0,y_0)=g(y_0)=g(ye^{-x})=y^2e^{-2x}=y^2e^{-2x}.
-\]
-Zur Kontrolle setzen wir diese Funktion in die urspr"ungliche
-Differentialgleichung ein:
+Die Anfangsbedingungen verlangen, dass
 \begin{align*}
-\frac{\partial u}{\partial x}
-&=
--2y^2e^{-2x}
-\\
-\frac{\partial u}{\partial y}
-&=
-2ye^{-2x}
-\\
-\frac{\partial u}{\partial x}
-+y
-\frac{\partial u}{\partial y}
-&=
--2y^2e^{-x}
-+2y^2e^{-x}
-=0,
+x(y_0,0)&=0&\Rightarrow&&C&=0\\
+y(y_0,0)&=y_0&\Rightarrow&&D&=y_0\\
+u(y_0,0)&=y_0^2&\Rightarrow&&u_0&=y_0^2
 \end{align*}
-die Funktion $u$ erf"ullt also die Differentialgleichung. Sie erf"ullt
-aber auch die Randbedingung, denn
+Jetzt m"ussen wir die Variablen $y_0$ und $t$ aus den Gleichungen
+\begin{align*}
+x&=t\\
+y&=y_0e^t\\
+u&=y_0^2
+\end{align*}
+eliminieren. Setzt man die erste und die letzte Gleichung in die
+quadrierte zweite ein, erh"alt man
 \[
-u(0,y_0)=y_0^2e^0=y_0^2=g(y_0).
+y^2=ue^{2x}\qquad\Rightarrow\quad u=y^2e^{-2x}.
 \]
-Damit ist $u(x,y)=y^2e^{-2x}$ die L"osung der gegebenen Differentialgleichung.
+
 Alternative L"osung mit einem Separationsansatz: Man kann die DGL auch
 mit einem Separationsansatz l"osen. Dazu schreibt man $u(x,y)=X(x)Y(y)$
 und setzt in die Differentialgleichung ein:

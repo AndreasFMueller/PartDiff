@@ -10,12 +10,22 @@ u(x,-1)=\frac1x,\quad x<0.
 \begin{loesung}
 Dies ist eine quasilineare partielle Differentialgleichung
 erster Ordnung, die mit Hilfe von Charakteristiken gel"ost werden
-kann. Das Differentialgleichungssytem f"ur die Charakteristiken ist
+kann.
+Die Anfangswerte sind auf den Punkten $(x_0,-1)$ vorgegeben.
+Das Differentialgleichungssytem f"ur die Charakteristiken ist
 \begin{align*}
 \dot x&=x^2\\
 \dot y&=y^2\\
 \dot u&=0
 \end{align*}
+Die Funktionen $x$, $y$ und $u$ m"ussen die Anfangsbedingungen
+\begin{align*}
+x(x_0,t)&=x_0\\
+y(x_0,t)&=-1\\
+u(x_0,t)&=\frac1{x_0}
+\end{align*}
+erf"ullen.
+
 Die ersten beiden Differentialgleichungen sind von der selben Art, diese
 gew"ohnliche Differentialgleichung l"asst sich leicht mit dem Separation l"osen:
 \begin{align*}
@@ -35,44 +45,31 @@ gew"ohnliche Differentialgleichung l"asst sich leicht mit dem Separation l"osen:
 &&
 &y(t)&=-\frac1{t+C_2}
 \end{align*}
-Charakteristiken sind im Grundriss also Kurven der Form
-\[
-\begin{pmatrix}x(t)\\y(t)\end{pmatrix}
-=-\begin{pmatrix}\frac1{t+C_1}\\\frac1{t+C_2}\end{pmatrix}.
-\]
-Wir suchen Kurven, die f"ur $t=0$ durch einen Punkt $(x_0,-1)$ gehen, wobei
-$x_0$ negativ ist. Dazu m"ussen wir $C_1$ und $C_2$ so w"ahlen,
+Die Anfangsbedingungen verlangen
 \begin{align*}
-x(0)&=x_0&&\Rightarrow&C_1&=-\frac1{x_0}&&\Rightarrow&x(t)&=-\frac1{t-\frac1{x_0}}=\frac{x_0}{1-tx_0}\\
-y(0)&=-1&&\Rightarrow&C_2&=1&&\Rightarrow&y(t)&=-\frac1{t+1}
+x(x_0,0)&=x_0&&\Rightarrow&C_1&=-\frac1{x_0}&&\Rightarrow&x(t)&=-\frac1{t-\frac1{x_0}}=\frac{x_0}{1-tx_0}\\
+y(x_0,0)&=-1&&\Rightarrow&C_2&=1&&\Rightarrow&y(t)&=-\frac1{t+1}
 \end{align*}
-Zu einem Punkt $(x,y)$ mit $x<0$ und $-1\le y<0$ suchen wir jetzt den Ausgangspunkt
-der zugeh"origen Charakteristik, also das passende $x_0$. F"ur ein
-passendes $t$ muss gelten:
+Nach dem zweiten Schritt der Charakteristiken-Methode m"ussen wir jetzt
+$x_0$ und $t$ aus den Gleichungen
 \begin{align*}
 x&=-\frac{1}{t-\frac1{x_0}},\\
-y&=-\frac{1}{1+t}.
+y&=-\frac{1}{1+t},\\
+u&=\frac1{x_0}.
 \end{align*}
-Daraus leitet man
+eliminieren.
+Die zweite Gleichung liefert
 \[
-t=-1-\frac1{y}
+t=-1-\frac1{y}.
 \]
-ab.
-Setzen wir dies in der Gleichung f"ur $x$ ein, finden wir
+Setzen wir dies und die dritte Gleichung in der Gleichung f"ur $x$ ein,
+finden wir
 \begin{align*}
-x&=-\frac{1}{-1-\frac1y-\frac1{x_0}},\\
-\frac1x&=1+\frac1y+\frac1{x_0},\\
-x_0&=\frac{1}{\frac1x-\frac1y-1}.
+x&=-\frac{1}{-1-\frac1y-u},\\
+\frac1x&=1+\frac1y+u,\\
+u(x,y)&=-1+\frac1x-\frac1y.
 \end{align*}
 
-Die Gleichung $\dot u=0$ bedeutet, dass der Funktionswert von $u$ sich
-entlang einer Charakteristik nicht "andert.
-Der Funktionswert an der Stelle $(x,y)$ ist
-also gleich gross wie der Funktionswert an der Stelle $(x_0,-1)$. Wegen der
-Randbedingung $u(x_0,-1)=\frac1{x_0}$ folgt
-\[
-u(x,y)=\frac1{x_0}=\frac1x-\frac1y-1.
-\]
 {\bf Kontrolle:}
 Tats"achlich kann man durch Einsetzen von $(x_0,-1)$ sofort nachpr"ufen,
 dass $u$ die Randbedingung erf"ullt:
