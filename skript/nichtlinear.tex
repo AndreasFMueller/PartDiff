@@ -309,15 +309,42 @@ Fl"ache befinden. Das hat vor allem deshalb funktioniert, weil es
 einfach war, einen Vektor zu finden, der tangential an die Fl"ache
 war. Im wesentlichen war die quasilineare Differentialgleichung ein
 Skalarprodukt mit der Fl"achennormalen als einem Faktor, so dass
-der andere Faktor eine Tangente sein musste.
-Bei nichtlinearen Gleichungen kann man die Idee ebenfalls
-anwenden, doch ist es etwas aufwendiger, die Bedingungen zu
-formulieren.
+der andere Faktor eine Tangente sein musste. Da alle m"oglichen
+normalen in einer Ebene lagen, gab es nur eine einzige gemeinsme
+Tangente, welche wir f"ur die Differentialgleichung der
+Charakteristiken verwenden konnten.
 
-\subsection{Lagrange-Charpit Gleichungen}
-\index{Lagrange}
-\index{Charpit}
-\index{Lagrange-Charpit Gleichungen}
+Im nichtlinearen Fall funktioniert dies nicht mehr so einfach.
+Die m"oglichen Normalen liegen nicht mehr alle in einer Ebene,
+weil die Beziehung zwischen den partiellen Ableitungen nicht
+mehr linear ist. Es gibt also auch nicht mehr nur eine einzige
+Tangente, die Wahl der geeigneten Tangente h"angt jetzt auch
+von den Werten der partiellen Ableitungen in einem Punkt ab.
+Es gen"ugt also nicht mehr nach einer Kurve
+\[
+s\mapsto
+\begin{pmatrix}
+x(s)\\
+y(s)\\
+u(s)
+\end{pmatrix}
+\]
+zu finden, stattdessen m"ussen wir eine Kurve 
+\[
+s\mapsto
+\begin{pmatrix}
+x(s)\\
+y(s)\\
+u(s)\\
+p(s)\\
+q(s)
+\end{pmatrix}.
+\]
+suchen, wobei $p$ und $q$ wieder f"ur die partiellen Ableitungen
+steht. Ziel ist jetzt also, ein System von Differentialgleichungen
+f"ur diese f"unf Funktionen zu finden.
+
+\subsection{Cauchy-Methode im nichtlinearen Fall}
 Gegeben sei eine nichtlineare Differentialgleichung von zwei
 Variablen $x$ und $y$, die wir in der Form
 \[
