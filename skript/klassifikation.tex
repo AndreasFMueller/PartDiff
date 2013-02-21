@@ -24,7 +24,7 @@ Zu kl"aren ist folgendes:
 Wir schreiben oft auch kompakter $x=(x_1,\dots,x_n)$ f"ur die Punkte
 aus $\mathbb R^n$.
 
-\section{Differentialgleichungen}
+\section{Differentialgleichungen\label{klassifikation:differentialgleichungen}}
 Eine partielle Differentialgleichung verkn"upft die funkionswerte
 $u(x_1,\dots,x_n)$ mit den Werten der partiellen Ableitungen
 \begin{equation}
@@ -100,7 +100,7 @@ Oft verwendete Bezeichnungen f"ur die Variablen f"ur die Ableitungen sind
 $p_i$ f"ur die ersten Ableitungen und $t_{ij}$ f"ur die zweiten Ableitungen.
 
 
-\subsection{Ordnung}
+\subsection{Ordnung\label{klassifikation:ordnung}}
 \index{Ordnung}
 \index{Differntialgleichung!gew\"ohnliche}
 Wie bei gew"ohnlichen Differentialgleichungen ist die Ordnung
@@ -173,7 +173,7 @@ F(p_1,t_{22},\dots,t_{nn})&=p_1-a^2(t_{22}+\dots+t_{nn})&&\text{W"armeleitung}
 F(t_{11},\dots,t_{nn})&=t_{11}+\dots+t_{nn}&&\text{Poisson-Problem}
 \end{align*}
 
-\subsection{*Multiindizes und h"ohere partielle Ableitungen}
+\subsection{*Multiindizes und h"ohere partielle Ableitungen\label{klassifikation:multiindizes}}
 Im vorangegangenen Abschnitt wurden gemischte partielle Ableitungen
 nach verschiedenen unabh"angigen Variablen ben"otigt. Die Notation
 \[
@@ -227,7 +227,7 @@ ersten partiellen Ableitungen:
 F(x_1,\dots,x_n,u,\partial_1 u,\dots,\partial_2 u,\dots)=0.
 \]
 
-\subsection{Umwandlung in ein System niedrigerer Ordnung}
+\subsection{Umwandlung in ein System niedrigerer Ordnung\label{klassifikation:umwandlung}}
 Wie bei gew"ohnlichen Differentialgleichungen kann man auch eine
 partielle Differentialgleichung h"oherer Ordnung in ein System
 von partiellen Differentialgleichungen niedrigerer Ordnung
@@ -287,7 +287,7 @@ Wir haben also ein partielle Differentialgleichung zweiter Ordnung auf
 ein System von partiellen Differentialgleichungen erster Ordnung f"ur
 drei unbekannte Funktionen reduziert.
 
-\subsection{*Umwandlung einer Gleichung beliebiger Ordnung}
+\subsection{*Umwandlung einer Gleichung beliebiger Ordnung\label{klassifikation:beliebigeordnung}}
 Sei jetzt eine partielle Differentialgleichung $m$-ter Ordnung
 gegeben. Sie hat die Gestalt
 \[
@@ -327,7 +327,7 @@ erh"alt man eine zus"atzliche Gleichung:
 \]
 denn beide Terme stehen ja eigentlich f"ur $\partial_{\mathbf k}u$.
  
-\section{Gebiete}
+\section{Gebiete\label{klassifikation:gebiete}}
 Bei gew"ohnlichen Differentialgleichungen ist eine
 Funktion von nur einer Variablen gesucht, das Definitionsgebiet ist
 daher immer ein Interval ist.
@@ -410,12 +410,12 @@ f"ur die auch noch eine Umgebung in $\Omega$ enthalten ist. Mit
 $\bar\Omega=\Omega\cup\partial\Omega$ bezeichnet.
 \end{definition}
 
-\section{Anfangs- und Randbedingungen}
+\section{Anfangs- und Randbedingungen\label{klassifikation:randbedingungen}}
 \rhead{Anfangs- und Randbedingungen}
 Wie bei gew"ohnlichen Differentialgleichungen reicht auch bei
 partiellen Differentialgleichungen die Gleichung alleine nicht
 zur Bestimmung der L"osung.
-\subsection{Anfangs- und Randwerte bei gew"ohnlichen Differentialgleichungen}
+\subsection{Anfangs- und Randwerte bei gew"ohnlichen Differentialgleichungen\label{klassifkation:anfangswerte-ode}}
 Bei gew"ohnlichen Differentialgleichungen
 m"ussen zus"atzlich Anfangs- oder Randwerte spezifiziert werden.
 Um die L"osung der Differentialgleichung
@@ -435,7 +435,7 @@ festzulegen, braucht man insgesamt zwei Bedingungen, zum Beispiel
 %wobei die Koeffizientenmatrix auf der linken Seite regul"ar sein muss.
 \end{itemize}
 
-\subsection{Randwerte f"ur partielle Differentialgleichungen}
+\subsection{Randwerte f"ur partielle Differentialgleichungen\label{klassifikation:randwerte-pde}}
 Bei einer partiellen Differentialgleichung ist die Spezifikation
 der Randwerte ungleich komplizierter.
 Zun"achst ist nicht einmal klar, welcher Teil des Randes
@@ -530,8 +530,8 @@ In einem Punkt $(x,-x)$ des Randes ist die Normalableitung also
 \]
 \end{beispiel}
 
-\subsection{Spezielle Randwertvorgaben}
-\subsubsection{Das Cauchy-Problem}
+\subsection{Spezielle Randwertvorgaben\label{klassifikation:randwerte-speziell}}
+\subsubsection{Das Cauchy-Problem\label{klassifikation:cauchy-problem}}
 Der Rand dieses Gebietes
 besteht nicht mehr nur aus einzelnen Punkten wie im eindimensionalen
 Fall, sondern aus Kurven oder Fl"achen. Um zu verstehen, wie die
@@ -644,12 +644,15 @@ Ableitungen in $y$-Richtung durch die Anfangsbedingung $g(y)$ bereits
 festgelegt. Nur die erste Ableitung in $x$-Richtung kann noch
 vorgegeben werden. Die Anfangsbedingung kann also so formuliert
 werden:
-\begin{align*}
+\begin{align}
 &\text{Dirichlet-Randbedingung:}&
-u(0,y)&=g(y)&\\
+u(0,y)&=g(y)&
+\label{klassifikation:dirichlet-randbedingung}
+\\
 &\text{Neumann-Randbedingung:}&
 \frac{\partial u}{\partial x}(0,y)&=h(y)
-\end{align*}
+\label{klassifikation:neumann-randbedingung}
+\end{align}
 
 \subsubsection{Beliebige Anfangskurve}
 Im allgemeinen Fall sind die Randwerte nicht auf einer Koordinatenachse
@@ -692,7 +695,7 @@ Hilfe der Richtungsableitung berechnet werden, es ist
 \frac{\partial u}{\partial n}=D_nu = n\cdot \operatorname{grad} u.
 \]
 
-\subsection{Allgemeines Randwertproblem}
+\subsection{Allgemeines Randwertproblem\label{klassifikation:allgemeines-randwertproblem}}
 Bei partiellen Differentialgleichungen hat der Definitionsbereich einen
 weit gr"osseren Einfluss auf die L"osung als bei gew"ohnlichen
 Differentialgleichungen. Das in den voranstehenden Abschnitten
@@ -729,7 +732,7 @@ ist dieser Beweis f"ur partielle Differentialgleichungen ungleich schwieriger.
 F"ur gewisse Typen von partiellen Differentialgleichungen ist dies jedoch
 m"oglich, einige davon werden in den kommenden Kapiteln behandelt.
 
-\section{L"osung einer partiellen Differentialgleichung}
+\section{L"osung einer partiellen Differentialgleichung\label{klassifikation:loesung}}
 Zur L"osung einer partiellen Differentialgleichung m"ussen also
 drei Dinge vorgeben sein
 \begin{enumerate}
@@ -742,6 +745,7 @@ Eine L"osung dieses Problems ist eine Funktion $u$, welche
 auf $\bar\Omega$ (nicht nur auf $\Omega$!) definiert ist,
 im Gebiet $\Omega$ so oft differenzierbar ist wie n"otig, damit
 sie sinnvoll in die Differentialgleichung eingesetzt werden kann,
+in $\Omega$ die Differentialgleichung erf"ullt,
 und ausserdem die Randwertbedingungen erf"ullt.
 \end{definition}
 
@@ -751,7 +755,7 @@ Es ist die Aufgabe der Theorie zu kl"aren, ob ein Problem
 gut gestellt ist, denn erst dann kann man von einem numerischen
 Verfahren eine sinnvolle Antwort erwarten.
 
-\section{Spezielle Typen von partiellen Differentialgleichungen}
+\section{Spezielle Typen von partiellen Differentialgleichungen\label{klassifikation:spezielletypen}}
 \rhead{Spezielle PDGL}
 F"ur einige spezielle Typen von Differentialgleichungen werden wir
 die Frage nach Existenz und Eindeutigkeit einer L"osung beantworten
@@ -759,7 +763,7 @@ k"onnen, und manchmal sogar eine explizite L"osung angeben k"onnen.
 Dazu geh"oren die linearen und die quasilinearen partiellen
 Differentialgleichungen, die in diesem Abschnitt beschrieben werden.
 
-\subsection{Lineare partielle Differentialgleichungen}
+\subsection{Lineare partielle Differentialgleichungen\label{klassifikation:linear}}
 Die bisher vorgestellten Differentialgleichungen sind also alle lineare
 Ausdr"ucke in den ersten und zweiten Ableitungen, man k"onnte sie in der
 Form
@@ -832,7 +836,7 @@ man eine partikul"are L"osung $\psi_p$ der homogenen Differentialgleichung
 findet, und dazu eine beliebige L"osung der homogenen Differentialgleichung
 $\psi_h$ hinzuaddiert.
 
-\subsection{Quasilineare partielle Differentialgleichungen erster Ordnung}
+\subsection{Quasilineare partielle Differentialgleichungen erster Ordnung\label{klassifikation:quasilinear}}
 Einen interessanten Spezialfall bilden die quasilinearen PDGL erster
 Ordnung. Sie sind nicht unbedingt linear, aber die partiellen
 Ableitungen erster Ordnung kommen nur linear vor. Die Funktion
@@ -874,7 +878,7 @@ man kann sie also immer in der Form schreiben:
 worin die Funktionen $a_{\bf k}(x,y,u)$ nur f"ur endlich viele
 Multiindizes ${\bf k}$ von $0$ verschieden sind.
 
-\subsection{Nichtlineare Gleichungen}
+\subsection{Nichtlineare Gleichungen\label{klassifikation:nichtlinear}}
 Die bisher vorgestellten Beispiele von partiellen Differentialgleichungen
 sind alle linear. Viele Gleichungen der Physik sind jedoch
 nicht linear.  Ber"uhmtestes Beispiel sind die Gleichungen, die
@@ -960,3 +964,50 @@ eine besondere Rolle spielt, wird
 \frac{\partial u}{\partial n}=\partial_nu
 \]
 geschrieben.
+
+\section{Zusammenfassung: Das Wichtigste in K"urze}
+\begin{enumerate}
+\item Eine Differentialgleichung ist eine Funktion
+der Koordinaten, der gesuchten Funktion und ihrere partiellen Ableitungen
+(\ref{klassifikation:differentialgleichungen}).
+\item Die Ordnung ist die h"ochste in der Differentialgleichung vorkommende
+Ableitung (\ref{klassifikation:ordnung}).
+\item In zwei Dimensionen kann eine Differentialgleichung erster Ordnung
+immer durch eine Funktion $F(x,y,u,p,q)$ beschrieben werden. Die
+Differentialgleichung entsteht durch ersetzen von $p$ und $q$ durch
+die partiellen Ableitungen von $u$:
+\[
+F\biggl(
+x,y, u,
+\frac{\partial u}{\partial x},
+\frac{\partial u}{\partial y}
+\biggr)=0.
+\]
+\item Eine partielle Differentialgleichung kann immer auf ein System
+von partiellen Differentialgleichungen erster Ordnung reduziert werden
+(\ref{klassifikation:umwandlung}).
+\item Bei lineare Differentialgleichungen ist die Funktion $F$ linear
+in der gesuchten Funktion und den partiellen Ableitungen
+(\label{klassifikation:linear}). In zwei
+Dimensionen ist $F(x,y,u,p,q)$ linear in $u$, $p$ und $q$.
+\item Eine Quasilineare Differentialgleichung ist linear in den
+partiellen Ableitungen der gesuchten Funktion, aber nicht unbedingt
+in der Funktion selbst (\ref{klassifikation:quasilinear}).
+\item Das Gebiet $\Omega$, auf dem die Differentialgleichung definiert
+ist, hat einen entscheidenden Einfluss auf die L"osungen (\ref{klassifikation:gebiete}).
+\item Die L"osung ist erst eindeutig bestimmt, wenn geeignete Randbedingungen
+vorgegeben sind (\ref{klassifikation:randbedingungen}). 
+\item Bei partiellen Differentialgleichungen erster Ordnung sind typischerweise
+Randwert f"ur einen Teil des Randes vorzugeben.
+\item Bei partiellen Differentialgleichungen zweiter Ordnung sind
+Randwert (Dirichlet-Randbedingungen,
+(\ref{klassifikation:dirichlet-randbedingung}))
+und/oder die Normalableitung
+(Neumann-Randbedingung (\ref{klassifikation:neumann-randbedingung})
+vorzugeben.
+\item Eine L"osung einer partiellen Differentialgleichung ist eine
+Funktion, die auf dem abgeschlossenen Gebiet definiert ist, im Inneren
+des Gebietes die Differentialgleichung und auf dem Rand
+die vorgegebenen Randwert erf"ullt (\ref{klassifikation:loesung}).
+
+\end{enumerate}
