@@ -19,7 +19,7 @@ und Randbedingungen.
 \end{enumerate}
 
 \rhead{Wellengleichung}
-\section{Wellengleichung}
+\section{Wellengleichung\label{beispiele:wellengleichung}}
 \index{Wellengleichung}
 In der einfachsten Form beschreibt diese Gleichung die Schwingungen der
 Saite einer Gitarre oder eines Klaviers, oder der Lufts"aule eines
@@ -41,7 +41,7 @@ Wasseroberfl"ache.
 \index{Welle!elektromagnetisch}
 \index{Wasserwellen}
 
-\subsection{Die Differentialgleichung der schwingenden Saite}
+\subsection{Die Differentialgleichung der schwingenden Saite\label{beispiele:schingende-saite}}
 \index{Saite}
 Eine d"unne Saite mit der linearen Massedichte $\mu$ sei zwischen den
 Punkten $x=0$ und $x=l$ eingespannt. An den Enden der Saite wirkt eine
@@ -104,7 +104,7 @@ Der Koeffizient $\frac{F}{\mu}$ hat die Dimension einer Geschwindigkeit im
 Quadrat, es handelt sich um die Ausbreitungsgeschwindigkeit der Wellen entlang
 der Saite.
 
-\subsection{Die Differentialgleichung einer Orgelpfeife}
+\subsection{Die Differentialgleichung einer Orgelpfeife\label{beispiele:orgelpfeife}}
 \index{Orgelpfeife}
 \index{Luftdruck}
 Grunds"atzlich ist die Analyse der schwingenden Saite auch auf
@@ -141,7 +141,7 @@ Insgesamt erkennen wir, dass m"ogliche Randbedingungen f"ur dieses Problem
 beliebig aus einer Bedingung an den Wert am Rand und einer Bedingung
 an die Ableitung am Rand kombiniert werden kann.
 
-\subsection{Wellengleichung in zwei und drei Dimensionen}
+\subsection{Wellengleichung in zwei und drei Dimensionen\label{beispiele:wellengleichung2d}}
 Analog zur Differentialgleichung einer schwingenden Saite kann
 man auch die Differentialgleichung einer am Rand eingespannten Membran
 ableiten.
@@ -191,7 +191,7 @@ und f"ur Zeitpunkte $t\ge 0$.
 Der Anfangszustand ist eine Funktion $f(x,y,z)$,
 definiert auf $G$.
 
-\subsection{Der Laplace-Operator}
+\subsection{Der Laplace-Operator\label{beispiele:laplaceoperator}}
 In allen bisher diskutierten Problemen tritt der Laplace-Operator
 \[
 \Delta
@@ -217,7 +217,7 @@ eng mit der Geometrie des Raumes verkn"pft ist.
 \section{Poisson-Problem}
 \rhead{Poisson-Problem}
 
-\subsection{Minimalfl"achen}
+\subsection{Minimalfl"achen\label{beispiele:minimalflaechen}}
 Welche Form nimmt eine Seifenhaut ein, die am Rande $\gamma$ eines
 zweidimensionalen Gebietes $G$ auf die H"ohe $f(x,y)$ mit $(x,y)\in \gamma$
 angehoben wird? Wir beschreiben die Seifenhaut durch eine Funktion
@@ -238,7 +238,7 @@ Dieses einfache Argument ist auf den ersten Blick einleuchtend, br"auchte
 aber eine noch etwas genauere Rechtfertigung. Darauf wollen wir allerdings
 verzichten.
 
-\subsection{Elektrisches Potential}
+\subsection{Elektrisches Potential\label{beispiele:elektrischespotential}}
 In der Elektrizit"atslehre wird gezeigt, dass das elektrostatische Feld 
 ein Gradientenfeld ist. Der Gradient des Potentials $\varphi$  ist das
 elektrische Feld:
@@ -258,7 +258,7 @@ Als Modell f"ur ein Potential ist die Gummihaut daher eine bessere
 N"aherung, als auf den ersten Blick scheinen mag.
 
 \rhead{W"armeleitungsgleichung}
-\section{W"armeleitungsgleichung}
+\section{W"armeleitungsgleichung\label{beispiele:waermeleitung}}
 \index{Warmeleitungsgleichung@W\"armeleitungslgleichung}
 Die W"armeleitungsgleichung ist der Prototyp einer parabolischen partiellen
 \index{Differentialgleichung!partielle!parabolische}
@@ -319,7 +319,7 @@ Vorgabe der Steigung an den Stellen $x=0$ und $x=l$ bedeutet physikalisch,
 dass man den W"armefluss in oder aus dem Stab an dessen Enden vorgibt.
 
 \rhead{"Uberschallstr"omung}
-\section{"Uberschallstr"omung}
+\section{"Uberschallstr"omung \label{beispiele:ueberschall}}
 Im Jahre 1928 habilitierte sich Jakob Ackeret an der ETH mit einer
 Schrift mit dem Titel ``"Uber Luft-Kr"afte bei sehr grossen
 Geschwindigkeiten insbesondere bei ebenen Str"omungen''. Darin
@@ -351,7 +351,7 @@ Schallgeschwindigkeit vom umstr"omten K"orper wegtransportieren
 (Abbildung~\ref{ueberschall2d}).
 
 \rhead{Balkengleichung}
-\section{Balkengleichung}
+\section{Balkengleichung\label{beispiele:balkengleichung}}
 \index{Balken}
 \index{Balkengleichung}
 \index{Biegung}
@@ -400,7 +400,7 @@ EI\frac{\partial^4}{\partial^4x}w(t,x)
 F"ur die Bewegung eines Balkens gilt also eine partielle Differentialgleichung.
 
 \rhead{Plattengleichung}
-\section{Plattengleichung}
+\section{Plattengleichung\label{beispiele:plattengleichung}}
 \index{Plattengleichung}
 Noch etwas komplizierter ist die Berechnung einer Platte. Im Gegensatz
 zu einer Membran versuchen die Spannungen, die bei der Verbiegung der
@@ -425,3 +425,13 @@ w(x,y)
 wobei $D$ eine Materialkonstante ist und $p(x,y)$ der Druck, der
 an der Stelle $(x,y)$ auf die Platte dr"uckt.
 
+\section{Zusammenfassung: Das Wichtigste in K"urze\label{beispiele:zusammenfassung}}
+\begin{enumerate}
+\item In der Physik treten partielle Differentialgleichungen meistens
+bei der Beschreibung von Feldern auf: Wellen (\ref{beispiele:wellengleichung},
+Druck (\ref{beispiele:orgelpfeife}),
+Temperatur (\ref{beispiele:waermeleitung}),
+Geschwindigkeit (\ref{beispiele:ueberschall}), Potential,
+elektrisches Feld (\ref{beispiele:elektrischespotential}), \dots
+\item Sehr h"aufig tritt dabei der Laplace-Operator auf (\ref{beispiele:laplaceoperator}).
+\end{enumerate}
