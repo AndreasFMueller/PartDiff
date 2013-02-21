@@ -10,6 +10,11 @@ then
 	exit 1
 fi
 dir="${1}"
+if [ ! -d "${dir}" ]
+then
+	echo "% no problem directory ${dir}"
+	exit 0
+fi
 cd ${dir}
 ls *.tex | awk '{
 	file = substr($1, 1, length($1) - 4)
