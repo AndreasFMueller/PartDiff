@@ -405,9 +405,9 @@ schreibt man auch $\partial M$.
 
 \begin{definition}
 Ist $M\subset\mathbb R^n$ eine beliebige Teilmenge von $\mathbb R^n$,
-dann bezeichnet man mit $\o \Omega$ das Innere, also die Punkte,
-f"ur die auch noch eine Umgebung in $\Omega$ enthalten ist. Mit
-$\bar\Omega=\Omega\cup\partial\Omega$ bezeichnet.
+dann bezeichnet man mit $\mathring M$ das Innere, also die Punkte,
+f"ur die auch noch eine Umgebung in $M$ enthalten ist. Mit
+$\bar M=M\cup\partial M$ bezeichnet.
 \end{definition}
 
 \section{Anfangs- und Randbedingungen\label{klassifikation:randbedingungen}}
@@ -422,7 +422,7 @@ Um die L"osung der Differentialgleichung
 \[
 y''+p(x)y'+q(x)y=0
 \]
-auf dem Interval $[0,1]$
+auf dem Intervall $[0,1]$
 festzulegen, braucht man insgesamt zwei Bedingungen, zum Beispiel
 \begin{itemize}
 \item die Werte von $y(0)$ und $y'(0)$
@@ -435,9 +435,80 @@ festzulegen, braucht man insgesamt zwei Bedingungen, zum Beispiel
 %wobei die Koeffizientenmatrix auf der linken Seite regul"ar sein muss.
 \end{itemize}
 
+\begin{beispiel}
+Selbst in dem einfachen Beispiel einer linearen Differentialgleichunge
+zweiter Ordnung ist nicht jede beliebige Kombination von Randwertvorgaben
+m"oglich. Die Gleichung
+\[
+y''=0
+\]
+bedeutet zum Beispiel, dass die Funktion $y$ keine Kr"ummung hat, sie
+ist also linear, $y=Ax+B$. Insbesondere muss die Steigung am rechten
+Rand des Intervals gleich gross sein wie am linken Rand. Versucht man
+also die Randwerte der Ableitungen als
+\[
+y'(0)=0\qquad y'(1)=1,
+\]
+erh"alt man ein unl"osbares Problem, die Randwerte sind widerspr"uchlich.
+\end{beispiel}
+
 \subsection{Randwerte f"ur partielle Differentialgleichungen\label{klassifikation:randwerte-pde}}
 Bei einer partiellen Differentialgleichung ist die Spezifikation
 der Randwerte ungleich komplizierter.
+\subsubsection{Randwerte f"ur die Saite}
+Um ein Gef"uhl zu entwickeln, betrachten wir die n"otigen
+Randwertvorgaben f"ur die schwingende Saite.
+\begin{figure}
+\begin{center}
+\includegraphics{images/randwerte-1.pdf}
+\end{center}
+\caption{Randwerte f"ur die Wellengleichung der schwingenden Saite.
+Das Gebiet ist hellrot eingezeichnet, sein Rand tiefrot, mit den 
+notwendigen Randwerten entlang des Randes\label{klassifikation:randwertesaite}}
+\end{figure}
+In Abbildung \ref{klassifikation:randwertesaite} ist das Gebiet f"ur
+die Saitengleichung hellrot gezeichnet. Randwerte k"onnen auf dem
+linken und/oder rechten Rand vorgegeben werden und/oder auf dem
+Intervall $[0,l]$ der $x$-Achse.
+
+Aus der Theorie der gew"ohnlichen Differentialgleichungen wissen wir,
+dass f"ur eine Differentialgleichung zweiter Ordnung zwei Randwertvorgaben
+gemacht werden m"ussen.
+Man kann die Funktionswerte an jedem Ende des
+Intervals angeben, oder man kann an einem Ende den Funktionswert
+sowie die erste Ableitung angeben.
+
+Genau dies wird bei der Saitengleichung gemacht. Vernachl"assigt man
+die $t$-Abh"angigkeit, sieht man nur noch eine Differentialgleichung
+zweiter Ordnung in $x$ und die Gleichungen 
+\[
+u(0,t)=0\qquad u(l,t)=0
+\]
+geben die Randwerte f"ur diese Differentialgleichung vor.
+Schaut man dagegen nur die $t$-Abh"angigkeit an,
+sieht man eine Differentialgleichung
+in der Variablen $t$ auf der positiven reellen Achse, es bleibt also
+nichts anderes "ubrig, als Anfangswert und Anfangsableitung (nach $t$)
+vorzugeben.
+
+Im Prinzip gibt es mehrere erste Ableitungen, die vorzugeben versuchen 
+k"onnten. Wenn aber die Randwerte 
+$ u(x,0)=f(x)$
+bekannt sind, dann sind auch die partiellen Ableitungen nach $x$ bereits
+bekannt:
+\[
+\frac{\partial u}{\partial x}u(x,0)=f'(x).
+\]
+Man kann also h"ochstens noch die Ableitung senkrecht dazu,
+in $t$-Richtung vorgeben.
+
+Es stellt sich heraus, dass mit diesen Vorgaben das Problem eindeutig
+l"osbar ist.
+Leider ist es im Allgemeinen deutlich schwieriger, welche Randwertvorgaben
+n"otig sind, um die L"osung eindeutig zu bestimmen, oder auch nur
+widerspruchsfreie Randwertvorgaben zu machen.
+
+\subsubsection{Allgemeine Diskussion}
 Zun"achst ist nicht einmal klar, welcher Teil des Randes
 "uberhaupt herangezogen werden muss. Im Prinzip k"onnen Randwerte
 auf jeder beliebigen Teilmenge des Randes spezifiziert werden.

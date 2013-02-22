@@ -4,13 +4,21 @@
 # (c) 2012 Prof Dr Andreas Mueller, Hochschule Rapperswil
 # $Id$
 #
-timestamp:	saite burgers
+timestamp:	saite burgers randwerte
 	touch timestamp
 
-
+RANDWERTEFILES = randwerte-1.pdf
 SAITEFILES = saite-1.pdf
 BURGERSFILES = burgers-1.pdf burgers-2.pdf burgers-3.pdf burgers-4.pdf \
 	burgers-5.pdf burgers-6.pdf
+
+randwerte:	$(RANDWERTEFILES)
+$(RANDWERTEFILES):	randwerte.mp
+	TEX=latex mpost randwerte.mp
+	for f in randwerte.*; \
+	do \
+		mptopdf $${f}; \
+	done
 
 saite:	$(SAITEFILES)
 $(SAITEFILES):  saite.mp
