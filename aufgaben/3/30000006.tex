@@ -1,0 +1,88 @@
+Betrachten Sie die partielle Differentialgleichung
+\[
+\frac{\partial u}{\partial x}
++x
+\frac{\partial u}{\partial y}
+=
+\sin u
+\]
+auf dem Einheitsquadrat $\Omega=[0,1]^2=\{(x,y)\,|\, 0<x,y<1\}$.
+Welche der folgenden Randwertvorgaben f"uhrt zu einem gut gestellten
+Problem?
+\begin{teilaufgaben}
+\item
+Randwerte auf $\{(x,0)\,|\,x\in [0,1]$ und $\{(0,y)\,|\,y\in[0,1]\}$
+\item
+Randwerte auf $\{(x,1)\,|\,x\in [0,1]$ und $\{(1,y)\,|\,y\in[0,1]\}$
+\item
+Randwerte auf $\partial\Omega$
+\item
+Randwerte auf $\{(x,1)\,|\,x\in [0,1]$ und $\{(0,y)\,|\,y\in[0,1]\}$
+\item
+Randwerte auf
+$\{(x,0)\,|\,x\in [0,1]\}$,
+$\{(x,1)\,|\,x\in [0,1]\}$ und 
+$\{(0,y)\,|\,y\in[0,\frac12)\}$
+\end{teilaufgaben}
+
+\begin{loesung}
+Die Gleichung ist nichtlinear, aber quasilinear.
+Die Charakteristiken geben dar"uber Auskunft, wo Randwerte vorgegeben
+werden m"ussen.
+Die Gleichung der Charakteristiken ist 
+\begin{equation}
+\frac{d}{dt}\begin{pmatrix}x\\y\\u\end{pmatrix}
+=
+\begin{pmatrix}
+1\\x\\\sin u
+\end{pmatrix}
+\qquad
+\Rightarrow
+\qquad
+\begin{aligned}
+\dot x &= 1\\
+\dot y &= x\\
+\dot u &=\sin u
+\end{aligned}
+\end{equation}
+Die erste Gleichung hat als L"osung
+\[
+x(t) = t+x_0.
+\]
+Daraus bekommt man als L"osung der zweiten Gleichung
+\[
+y(t) = \frac12 t^2+x_0t+y_0.
+\]
+Mit $t=x-x_0$ kann man die Variable $t$ eliminieren, und
+bekommt
+\[
+y=\frac12(x-x_0)^2+x_0(x-x_0)+y_0=\frac12x^2 + y_0-\frac12x_0^2.
+\]
+Die Projektionen der Charakteristiken in die $x$-$y$-Ebene sind also
+Parabeln der Form $y=\frac12x^2+c$.
+
+Die Randbedingungen m"ussen also auf einer Teilmenge $R\subset \partial\Omega$
+vorgegeben werden so, dass die Projektionen der Charakterstiken, die das
+Gebiet ber"uhren, mit $R$ genau einen Punkt gemeinsam haben. 
+\begin{teilaufgaben}
+\item Der linke und untere Rand schneidet jede Parabel genau einmal. 
+Jede Parabel, die das Gebiet ber"uhrt, trifft den linken oder unteren
+Rand. Damit ist das Problem gut gestellt.
+\item Wohl gestellt, analog zu a)
+\item Jede Parabel schneidet den Rand zweimal, die Randwerte k"onnen nicht
+beliebig vorgegeben werden, da sie sich widersprechen k"onnen.
+\item Die Parabeln unterhalb von $y=\frac12x^2$ schneiden den Rand
+nicht, im Teilgebiet $\{(x,y)\,|\, y<\frac12x^2\}$ ist die L"osung also
+nicht eindeutig bestimmt.
+\item Die Bedinung ist erf"ullt, allerdings ist nicht sichergestellt,
+dass die Teile der L"osung, die durch die Randwerte auf dem oberen 
+Rand bestimmt werden, mit der L"osung zusammenpassen, die durch
+die Randwerte auf dem unteren Rand und dem Interval $[0,1)$ auf
+der $y$-Achse betimmt ist. Dazu muss zus"atzlich der Grenzwert
+der Randwerte im Punkt $(0,\frac12)$ mit dem Randwert in $(1,1)$
+"ubereinstimmen, und ausserdem muss eine Bedingung f"ur die Ableitungen
+gelten, damit die L"osung entlang der Charakteristik $y=\frac12(x^2+1)$
+differenzierbar wird. M"oglicherweise erh"alt man also nur eine
+schwache L"osung.
+\end{teilaufgaben}
+\end{loesung}
