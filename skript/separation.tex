@@ -131,6 +131,82 @@ einzelnen Teildifferentialgleichungen das Problem, sondern der letzte
 Schritt. In den folgenden Abschnitten zeigen wir an Beispielen, wie
 dies m"oglich ist.
 
+\section{Separation f"ur lineare partielle Differentialgleichungen}
+Die Grundidee des Seoparationsverfahrens liefert eine Familie von Funktionen,
+von ein paar Integrationskonstanten abh"angen. Vorgegeben sind auf dem
+Rand aber beliebige Funktionen, es ist im Allgemeinen nicht m"oglich,
+durch richtige Wahl von wenigen Parametern beliebige Funktionen zu erhalten.
+Des Separationsverfahren in der bisherigen Form kann also ein
+beliebiges Randwertproblem noch nicht l"osen.
+
+Nehmen wir an, es m"usse die Differentialgleichung $Lu=f$ auf dem
+Gebiet $\Omega$ mit Randwerte $g(x)$ f"ur $x\in\partial \Omega$
+gel"ost werden.
+Wir haben nur dann eine Chance, aus den bisherigen Resultaten eine 
+vollst"andige L"osung des Problems zu erhalten, wenn wir in der
+Lage sind, solche Teill"osungen zu einer vollst"andigen L"osung
+zu kombinieren. Dazu sind aber im allgemeinen zus"atzliche
+Bedingungen an die Differentialgleichung n"otig. Linearit"at der
+Differentialgleichung ist, was wir hier verwenden wollen:
+
+\begin{satz}Sind $u_1$ und $u_2$ L"osungen einer homogenen linearen partiellen
+Differentialgleichung, dann sind auch $u_1+u_2$ und $\lambda u_1$ f"ur
+$\lambda\in\mathbb R$ L"osungen
+\end{satz}
+
+\begin{proof}[Beweis]
+Die Differentialgleichung
+\[
+F(x_1,\dots,x_2,u,\frac{\partial u}{\partial x_1},\dots)=0
+\]
+ist linear in $u$ und den Ableitungen, man darf also Summen und Vielfache
+in $u$ und den Ableitungen aus der Funktion herausziehen:
+\begin{align*}
+F(x_1,\dots,x_2,u_1+u_2,\frac{\partial u_1}{\partial x_1}+\frac{\partial u_2}{\partial x_1},\dots)
+&=
+F(x_1,\dots,x_2,u_1,\frac{\partial u_1}{\partial x_1},\dots)
+\\
+&+
+F(x_1,\dots,x_2,u_2,\frac{\partial u_2}{\partial x_1},\dots)=0
+\\
+F(x_1,\dots,x_2,\lambda u_1,\frac{\partial \lambda u_1}{\partial x_1},\dots)
+&=
+\lambda
+F(x_1,\dots,x_2,u_1,\frac{\partial u_1}{\partial x_1},\dots)
+=0
+\end{align*}
+Die Linearkombinationen von $u_1$ und $u_2$ sind also auch L"osungen.
+\end{proof}
+
+Um die Differentialgleichung zu l"osen, kann man also versuchen, mit
+dem bisherigen Separationsverfahren m"oglichst viele L"osungen zu
+$u_1$, $u_2$, $u_3,\dots$ zu finden, und diese dann zu einer Gesamtl"osung
+zu kombinieren
+\[
+u(x)=\sum_{i=1}^\infty a_ku_k
+\]
+mit geeigneten Koeffizienten $a_k$, die so zu w"ahlen sind, dass die
+Randbedingungen erf"ullt sind.
+
+Inhomogene lineare partielle Differentialgleichungen k"ann man mit diesem
+Verfahren ebenfalls l"osen. Dazu findet man zun"achst eine partikul"are
+L"osung $u_p$, welche die inhomogenen Differentialgleichung l"ost, ohne
+allerdings korrekte Randwerte zu liefern.
+Das urspr"ungliche Separationsverfahren kann hierbei hilfreich sein.
+Dann verwendet man das skizzierte Verfahren f"ur homogene lineare
+partielle Differentialgleichungen f"ur modifizierte Randwerte $g-u_p$ auf
+$\partial\Omega$ um eine L"osung der homogenen Gleichung $u_h$ zu finden.
+Die Summe $u=u_p+u_h$ ist dann eine L"osung der inhomogenen Gleichung
+mit Randwerten $u_p + (g-u_p)=g$, also ein L"osung des urspr"unglichen
+Problems.
+
+Die Bestimmung der Koeffizienten $a_k$ f"ur die gefundene Familie
+von Teill"osungen f"uhrt oft auf die Fourier-Theorie, oder allgemeiner
+auf orthogonale Funktionenfamilien. Solche Teill"osungen haben oft eine
+unmittelbare physikalische Bedeutung, zum Beispiel treten sie auf als
+Schingungsmoden (in der Mechanik oder Elektrotechnik) oder als
+Elektronenzust"ande in der Quantenmechanik.
+
 \section{Schwingende rechteckige Membran}
 \rhead{Rechteckige Membran}
 \index{Membran!rechteckig}
