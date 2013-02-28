@@ -4,13 +4,14 @@
 # (c) 2012 Prof Dr Andreas Mueller, Hochschule Rapperswil
 # $Id$
 #
-timestamp:	saite burgers randwerte
+timestamp:	saite burgers randwerte ode
 	touch timestamp
 
 RANDWERTEFILES = randwerte-1.pdf
 SAITEFILES = saite-1.pdf
 BURGERSFILES = burgers-1.pdf burgers-2.pdf burgers-3.pdf burgers-4.pdf \
 	burgers-5.pdf burgers-6.pdf
+ODEFILES = ode-1.pdf
 
 randwerte:	$(RANDWERTEFILES)
 $(RANDWERTEFILES):	randwerte.mp
@@ -33,3 +34,7 @@ $(BURGERSFILES):	burgers.mp
 		mptopdf burgers.$${i}; \
 	done
 
+ode: $(ODEFILES)
+$(ODEFILES):	ode.mp
+	TEX=latex mpost ode.mp
+	mptopdf ode.1

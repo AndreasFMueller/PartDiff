@@ -1,0 +1,7 @@
+Dieses Verzeichnis enthaelt den Povray Sourcecode fuer einige 3D-Graphiken
+aus dem Skript. Die Render-Zeit fuer die Graphiken ist sehr lang (ueber
+24 Stunden), so dass es in den meisten Faellen nicht sinnvoll ist, die
+Graphiken neu zu rendern. Daher sind die im Skript verwendeten, von Hand
+nachbearbeiteten Bilder ebenfalls im git Repository eingecheckt.
+
+

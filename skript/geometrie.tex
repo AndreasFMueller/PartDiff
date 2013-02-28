@@ -4,15 +4,27 @@
 % (c) 2008 Prof Dr Andreas Mueller
 %
 \chapter{Geometrie der partiellen Differentialgleichungen erster Ordnung\label{chapter-geometrie}}
+\lhead{Geometrie der L"osungen}
+\begin{figure}
+\begin{center}
+\includegraphics[width=\hsize]{images/ode-1.pdf}
+\end{center}
+\caption{Richtungsfeld der gew"ohnlichen Differntialgleichung
+$y'=-\frac16y+e^{-\frac{x}6}\cos x$ \label{geometrie:ode}}
+\end{figure}
 Bei gew"ohnlichen Differentialgleichungen kann man sich ein grobes
 Bild des Verlaufs der L"osungen dadurch verschaffen, dass man
 die von der Differentialgleichung vorgegeben Steigung der L"osungskurve
-in jedem Punkt als Richtungsfeld aufzeichnet. Ein geometrisches
-Bild erlaubt den L"osungsverlauf abzusch"atzen. Die L"osung einer
+in jedem Punkt als Richtungsfeld aufzeichnet (Abbildung~\ref{geometrie:ode}).
+Die gesuchte L"osung hat als Graphen eine Kurve, die in jedem Ihrer Punkte eine
+Tangente hat, die mit dem gegebenen Richtungsfeld "ubereinstimmt.
+
+Die L"osung einer
 partiellen Differentialgleichung ist eine Funktion von mehreren Variablen,
 bei zwei Variablen k"onnen wir den Graphen dieser Funktion als Fl"ache
 "uber der $x$-$y$-Ebene visualisieren. Wie l"asst sich der Begriff der
 Steigung "ubersetzen?
+
 
 \section{Kurven auf der L"osungsfl"ache}
 \rhead{Kurven auf der L"osungsfl"ache}
@@ -109,9 +121,18 @@ u=\cos\vartheta=\sqrt{1-\sin^2\vartheta}=\sqrt{1-x^2-y^2}.
 \end{beispiel}
 
 \subsubsection{Erster Parameter: Cauchy-Anfangswerte}
+\begin{figure}
+\begin{center}
+\includegraphics[width=\hsize]{3d/cauchy.jpg}
+\end{center}
+\caption{Cauchy-Anfangskurve f"ur eine partielle Differentialgleichung
+($y$-Achse nach rechts)
+\label{geometrie:cauchy-anfangskurve}}
+\end{figure}
 Wir wollen f"ur partielle Differentialgleichungen erster Ordnung
 das Cauchy-Problem l"osen.
-Das bedeutet, dass eine Anfangskurve bereits vorgegeben ist.
+Das bedeutet, dass eine Anfangskurve bereits vorgegeben ist
+(Abbildung~\ref{geometrie:cauchy-anfangskurve}).
 Es gibt also eine Kurve
 \begin{equation}
 s\mapsto\vec x_0(s)=\begin{pmatrix}
@@ -124,7 +145,7 @@ z_0(s)
 und die gesuchte L"osungsfunktion $u(x,y)$ muss f"ur jedes $s$ die
 Bedingung
 \[
-u(x_0(s), y_0(x))=z_0(s)
+u(x_0(s), y_0(s))=z_0(s)
 \]
 erf"ullen.
 Man muss diese Kurve jetzt also erweitern zu einer Kurvenschar
@@ -303,16 +324,40 @@ ist:
 \begin{pmatrix}1\\0\\\frac{\partial u}{\partial y}\end{pmatrix}
 =0.
 \]
+\begin{figure}
+\begin{center}
+\includegraphics[width=\hsize]{3d/normals.jpg}
+\end{center}
+\caption{Die Normalen der L"osungsfl"ache einer quasilinearen
+partiellen Differentialgleichung erster Ordnung sind alle Senkrecht
+auf dem Vektor $\vec v$ (rot, linkes Bild). Die Tangentialebenen an
+die L"osungsfl"ache haben daher eine gemeinsame Gerade mit Richtung $\vec v$.
+\label{geometrie:normals}}
+\end{figure}%
 Die Gleichung (\ref{quasilinear:vektorform}) sagt also,
 dass diese Normale senkrecht auf dem Vektor $\vec v$ steht.
-Ein Vektor, der auf der Normalen $\vec n$ senkrecht steht,
-ist seinerseits tangential an die L"osungsfl"ache.
+Gesucht ist also eine Fl"ache, deren Normale senkrecht auf dem
+Vektor $\vec v$ steht. Die m"oglichen Tangentialebenen von L"osungen
+haben also die Gerade mit Richtung $\vec v$ gemeinsam
+(Abbildung~\ref{geometrie:normals}).
+Sie bilden ein B"uschel von Ebenen.
 
-Das Argument funktionert aber f"ur jede beliebige L"osungsfl"ache:
-die Normale ist immer senkrecht auf dem Vektor $\vec n$.
-Die von der Differentialgleichung erlaubten Normalenrichtungen sind
-L"osungen einer lineare Gleichung, liegen also alle in einer Ebene,
-und $\vec n$ muss die Normale dieser Ebene sein.
+Wir verstehen jetzt, wie wir das Bild, das wir uns von den gew"ohnlichen
+Differentialgleichungen gemacht haben, f"ur partielle Differentialgleichungen
+modifizieren m"ussen. Die Differentialgleichung gibt in jedem Punkt
+des Raumes ein B"uschel von Ebenen vor, welche als Tangentialebenen der
+L"osungsfl"ache in Frage kommen. Die Richtung der Anfangskurve w"ahlt aus
+diesem B"uschel ein Tangentialebene aus, die Tangentialebene in einem 
+Punkt der Anfangskurve muss die Tangente der Anfangskurve enthalten
+\begin{figure}
+\begin{center}
+\includegraphics[width=\hsize]{3d/planes.jpg}
+\end{center}
+\caption{Feld von Ebenenb"uscheln, definiert durch eine quasilineare
+partielle Differentialgleichung erster Ordnung
+\label{geometrie:ebenenbueschelfeld}}
+\end{figure}
+(Abbildung~\ref{geometrie:ebenenbueschelfeld}).
 
 Das bedeutet zum Beispiel auch, dass die Schnittkurve von
 zwei L"osungsfl"achen immer $\vec n$ als Tangente haben muss.
@@ -321,7 +366,7 @@ als von ganz besonderer Bedeutung.
 Die Vektoren
 \[
 (x,y,u)\mapsto
-\vec n=
+\vec v=
 \begin{pmatrix}
 a(x,y,u)\\b(x,y,u)\\c(x,y,u)
 \end{pmatrix}
@@ -333,6 +378,17 @@ an die gesuchte Fl"ache verl"auft.
 Statt direkt die L"osungsfl"ache zu suchen, k"onnen wir das Vektorfeld
 $\vec v$ dazu verwenden, einzelne Kurven in der L"osungsfl"ache
 zu bestimmen.
+\begin{figure}
+\begin{center}
+\includegraphics[width=\hsize]{3d/chrpl.jpg}
+\end{center}
+\begin{center}
+\includegraphics[width=\hsize]{3d/chr.jpg}
+\end{center}
+\caption{Charakteristiken einer quasilinearen partiellen Differentialgleichung
+erster Ordnung, mit eingezeichneten Ebenenb"uscheln (oben) und nur die
+Charakteristiken (unten)\label{geometrie:charekeristiken-mit-buescheln}}
+\end{figure}
 Ist ein Punkt der Fl"ache bekannt,
 kann man davon ausgehend eine L"osungskurve des Vektorfeldes konstruieren.
 Dazu muss man die gew"ohnliche Differentialgleichung
@@ -359,8 +415,21 @@ der partiellen Differentialgleichung (\ref{quasilinear:equation}).
 \end{definition}
 
 \subsubsection{L"osung des Cauchy-Problems}
-Damit l"asst sich das Cauchy-Problem l"osen.
-Nach dem bisher gesagten ist dazu wie folgt vorzugehen:
+\begin{figure}
+\begin{center}
+\includegraphics[width=\hsize]{3d/sol.jpg}
+\end{center}
+\caption{L"osung einer quasilinearen partiellen Differentialgleichung
+erster Ordnung: die L"osungsfl"ache wird von Charakteristiken (rot) gebildet,
+sie ist parametrisiert durch den Parameter der Anfangskurve (gr"un) und den
+Kurvenparamter entlang der Charakteristik.
+\label{geometrie:loesung-mit-charakteristiken}}
+\end{figure}
+Das Cauchy-Problem l"asst sich jetzt mit Hilfe von Charakteristiken
+l"osen. Die L"osungsfl"ache besteht aus Charakteristiken, die auch
+die Anfangskurve schneiden
+(Abbildung~\ref{geometrie:loesung-mit-charakteristiken}).
+Um die L"osung zu berechnen, ist also wie folgt vorzugehen:
 \begin{enumerate}
 \item
 F"ur jedes $s$ ist die Differentialgleichung der Charakteristiken
