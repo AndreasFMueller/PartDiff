@@ -7,7 +7,7 @@
 timestamp:	saite burgers randwerte ode
 	touch timestamp
 
-RANDWERTEFILES = randwerte-1.pdf
+RANDWERTEFILES = randwerte-1.pdf randwerte-2.pdf randwerte-3.pdf randwerte-4.pdf
 SAITEFILES = saite-1.pdf
 BURGERSFILES = burgers-1.pdf burgers-2.pdf burgers-3.pdf burgers-4.pdf \
 	burgers-5.pdf burgers-6.pdf

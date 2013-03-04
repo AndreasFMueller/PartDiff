@@ -9,7 +9,7 @@
 \begin{center}
 \includegraphics[width=\hsize]{images/ode-1.pdf}
 \end{center}
-\caption{Richtungsfeld der gew"ohnlichen Differntialgleichung
+\caption{Richtungsfeld der gew"ohnlichen Differentialgleichung
 $y'=-\frac16y+e^{-\frac{x}6}\cos x$ \label{geometrie:ode}}
 \end{figure}
 Bei gew"ohnlichen Differentialgleichungen kann man sich ein grobes
@@ -295,7 +295,7 @@ $z=u(x,y)$. Man kann sich von dieser Tatsache zum Beispiel so
 \qquad
 \vec t_y
 =
-\begin{pmatrix}1\\0\\\frac{\partial u}{\partial y}\end{pmatrix}
+\begin{pmatrix}0\\1\\\frac{\partial u}{\partial y}\end{pmatrix}
 \]
 Das Skalarprodukt von $\vec n$ mit den Vektoren $\vec t_x$ und $\vec t_y$
 ist:
@@ -308,7 +308,7 @@ ist:
 -1
 \end{pmatrix}
 \cdot
-\begin{pmatrix}1\\\frac{\partial u}{\partial x}\\0\end{pmatrix}
+\begin{pmatrix}1\\0\\\frac{\partial u}{\partial x}\end{pmatrix}
 =0
 \qquad
 \text{und}
@@ -321,7 +321,7 @@ ist:
 -1
 \end{pmatrix}
 \cdot
-\begin{pmatrix}1\\0\\\frac{\partial u}{\partial y}\end{pmatrix}
+\begin{pmatrix}0\\1\\\frac{\partial u}{\partial y}\end{pmatrix}
 =0.
 \]
 \begin{figure}
@@ -820,3 +820,110 @@ schneiden.
 Das Gebiet $\{(x,y)\in\mathbb R^2\,|\, x >0\}$  aus \ref{konstantekoeff}
 hat die $x$-Achse als Rand, und diese schneidet jeder Gerade mit Steigung
 $2$ genau einmal.
+
+Interessanter wird die Diskussion jedoch f"ur das Gebiet
+$\Omega=\{(x,y)\,|\,0<x,y<1\}$. Die Abbildungen \ref{geometrie:charrand1}
+bis \ref{geometrie:charrand3} zeigen verschiedene M"oglichkeiten:
+\begin{enumerate}
+\item
+In Abbildung~\ref{geometrie:charrand1} sind Randwerte auf dem linken
+und rechten Rand vorgegeben. Offenbar reichen diese Randwerte nicht, um
+die Funktionswerte "uberall im Gebiet eindeutig zu bestimmen, es bleibt
+ein Teilgebiet, in dem die L"osungsfunktion nicht festgelegt ist.
+\item
+In Abbildung~\ref{geometrie:charrand2}
+sind die Randwerte am oberen und unteren Rand vorgegeben.
+In diesem Fall sind die Randwerte "uberbestimmt, eine L"osung ist
+nur m"oglich, wenn die Werte auf der linken H"alfte des unteren
+Randes mit den Werten auf der rechten H"alfte des oberen Randes
+kompatibel sind.
+\item
+In Abbildung~\ref{geometrie:charrand3}
+sind die Randewerte am linken und unteren Rand vorgegeben.
+Damit ist die Funktion eindeutig bestimmt, trotzdem
+muss damit noch nicht eine L"osung der Differentialgleichung
+gefunden sein.
+Es ist n"amlich nicht unbedingt garantiert, dass die zusammengestetze
+Funktion 
+auf der von $(0,0)$ ausgehenden Charakteristik differenzierbar ist.
+\end{enumerate}
+
+\begin{figure}
+\begin{center}
+\includegraphics{images/randwerte-2.pdf}
+\end{center}
+\caption{Randwerte am linken und rechten Rand vorgegeben: im hellgr"unen
+Bereich sind die Funktionswerte nicht bestimmt \label{geometrie:charrand1}}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics{images/randwerte-3.pdf}
+\end{center}
+\caption{Randwerte am unteren und oberen Rand vorgegeben: im hellgr"unen
+Bereich sind die Funktionswerte "uberbestimmt \label{geometrie:charrand2}}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics{images/randwerte-4.pdf}
+\end{center}
+\caption{Randwerte am linken und unteren Rand vorgegeben: die Funktion
+ist zwar eindeutig bestimmt, aber die Differenzierbarkeit auf auf
+der von $(0,0)$ ausgehenden Charakteristik (hellgr"un) ist nicht garantiert.
+\label{geometrie:charrand3}}
+\end{figure}
+
+Als Illustration f"ur den letzten Fall betrachte man die Randwertvorgabe
+\begin{align*}
+u(x_0,0)&=0,\\
+u(0,y_0)&=y_0.
+\end{align*}
+Jedes Randst"uck legt die L"osung in einem Teil des Einheitsquadrates
+fest, die man durch Anwendung der Methode der Charakteristiken erhalten
+kann. Die vom unteren Rand ausgehenden Charakteristiken sind
+\[
+\left.
+\begin{aligned}
+x&=x_0+t\\
+y&=2t\\
+u&=3t
+\end{aligned}
+\right\}
+\qquad\Rightarrow\qquad
+\left\{
+\begin{aligned}
+t&=\frac12y\\
+u&=\frac32y
+\end{aligned}
+\right.
+\]
+Die vom linken Rand ausgehenden Charakteristiken sind 
+\[
+\left.
+\begin{aligned}
+x&=t\\
+y&=y_0+2t\\
+u&=y_0+3t
+\end{aligned}
+\right\}
+\qquad\Rightarrow\qquad
+\left\{
+\begin{aligned}
+y_0&=y-2x\\
+u&=y+x
+\end{aligned}
+\right.
+\]
+Die L"osungsfunktion ist also
+\[
+u(x,y)=\begin{cases}
+\frac32y&\qquad y>2x\\
+x+y&\qquad y<2x
+\end{cases}
+\]
+F"ur $y=2x$ stimmen die beiden Terme zwar "uberein, die L"osungsfunktion
+ist also sicher in ganz $\Omega$ stetig.
+Aber die
+Funktion $x\mapsto u(x,y)$ ist hat Steigung $1$ f"ur $y>2x$ und
+Steigung 0 f"ur $y<2x$, ist also f"ur $y=2x$ nicht differenzierbar.
