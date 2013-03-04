@@ -31,7 +31,10 @@
 \BODY
 \end{proof}}
 \NewEnviron{diskussion}{
+\begin{proof}[Diskussion]
+\renewcommand{\qedsymbol}{}
 \BODY
+\end{proof}
 }
 \def\keineloesungen{%
 \RenewEnviron{loesung}{\relax}
