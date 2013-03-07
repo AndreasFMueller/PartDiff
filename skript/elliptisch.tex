@@ -27,7 +27,7 @@ skizziert werden.
 
 \subsection{Gebiete}
 Als Spezialf"alle betrachten wir zun"achst
-die Kugeln oder B"alle \marginpar{\tiny B"alle in $\mathbb R^n$}, f"ur die 
+die Kugeln oder B"alle\marginpar{\tiny B"alle in $\mathbb R^n$}, f"ur die 
 \index{Kugel}
 \index{Ball}
 wir folgende Bezeichnungen einf"uhren.
@@ -562,6 +562,28 @@ Der wesentliche Teil ist also die Funktion
 \end{equation}
 
 \subsection{Greensche Funktion}
+\begin{figure}
+\begin{center}
+\includegraphics[width=\hsize]{3d/green.jpg}
+\end{center}
+\caption{Darstellung der Greenschen Funktion $G(x,\xi)$
+f"ur das Problem $u''=f$ auf
+dem Interval $[0,1]$ als Fl"ache "uber dem Quadrat $(x,\xi)\in[0,1]^2$.
+F"ur jeden Wert von $\xi$ ist die partielle Funktion $x\mapsto G(x\xi)$
+eine L"osung der Differentialgleichung $u''=\delta_\xi$ zu den Randbedingungen
+$u(0)=u(1)=0$.
+\label{elliptisch:green3dflaeche}}
+\end{figure}
+\begin{figure}
+\begin{center}
+\includegraphics{images/green-1.pdf}
+\end{center}
+\caption{Partielle Funktionen $x\mapsto G(x,\xi)$ der Greensche Funktion
+des Problems $u''=\delta_\xi$ mit Randbedingungen $u(0)=u(1)=0$ f"ur
+verschiedene Werte von $\xi$.
+\label{elliptisch:green1schar}}
+\end{figure}
+
 Die bis jetzt gefundenen Formeln f"ur die L"osung $u(x)$
 in Form eines Doppelintegrals haben noch
 nicht die gew"unschte Form eines einfachen Integrals.
@@ -589,6 +611,13 @@ finden.
 
 Der eindimensionale Fall zeigt also, dass man man zu dem Operator $D^2u=f$
 mit der Funktion $G$ eine Inverse konstruieren kann.
+
+Die Abbildungen \ref{elliptisch:green3dflaeche} und
+\ref{elliptisch:green1schar} zeigen die Greensche Funktion $G(x,\xi)$.
+Die Partiellen Funktionen $x\mapsto G(x,\xi)$ sind jeweils L"osungen
+des Problems $u''=\delta_\xi$ mit Randwerten $u(0)=u(1)=0$.
+In den Abbildungen sind die partiellen Funktionen f"ur eine Anzahl
+von Werten $\xi$ hervorgehoben.
 
 \section{Der allgemeine Fall}
 Wir m"ochten jetzt den allgemeinen Fall des Problems

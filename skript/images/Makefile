@@ -12,6 +12,7 @@ SAITEFILES = saite-1.pdf
 BURGERSFILES = burgers-1.pdf burgers-2.pdf burgers-3.pdf burgers-4.pdf \
 	burgers-5.pdf burgers-6.pdf
 ODEFILES = ode-1.pdf
+GREENFILES = green-1.pdf
 
 randwerte:	$(RANDWERTEFILES)
 $(RANDWERTEFILES):	randwerte.mp
@@ -38,3 +39,8 @@ ode: $(ODEFILES)
 $(ODEFILES):	ode.mp
 	TEX=latex mpost ode.mp
 	mptopdf ode.1
+
+green: $(ODEFILES)
+$(ODEFILES):	green.mp
+	TEX=latex mpost green.mp
+	mptopdf green.1
