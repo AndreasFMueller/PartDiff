@@ -13,7 +13,7 @@ formeln.pdf:	formeln.tex
 burgers:	burgers.c
 	gcc -g -Wall -O -o burgers burgers.c
 
-TEXFILES = skript.tex a-begin.tex a-einleitung.tex \
+TEXFILES = skript.tex a-einleitung.tex \
 	beispiele.tex klassifikation.tex geometrie.tex \
 	separation.tex tsunami.tex transformation.tex \
 	elliptisch.tex parabolisch.tex hyperbolisch.tex \

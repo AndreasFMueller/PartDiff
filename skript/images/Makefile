@@ -40,7 +40,7 @@ $(ODEFILES):	ode.mp
 	TEX=latex mpost ode.mp
 	mptopdf ode.1
 
-green: $(ODEFILES)
-$(ODEFILES):	green.mp
+green: $(GREENFILES)
+$(GREENFILES):	green.mp
 	TEX=latex mpost green.mp
 	mptopdf green.1
