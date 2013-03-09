@@ -579,7 +579,7 @@ $u(0)=u(1)=0$.
 \includegraphics{images/green-1.pdf}
 \end{center}
 \caption{Partielle Funktionen $x\mapsto G(x,\xi)$ der Greensche Funktion
-des Problems $u''=\delta_\xi$ mit Randbedingungen $u(0)=u(1)=0$ f"ur
+des Problems $u''=f$ mit Randbedingungen $u(0)=u(1)=0$ f"ur
 verschiedene Werte von $\xi$.
 \label{elliptisch:green1schar}}
 \end{figure}
@@ -619,6 +619,39 @@ des Problems $u''=\delta_\xi$ mit Randwerten $u(0)=u(1)=0$.
 In den Abbildungen sind die partiellen Funktionen f"ur eine Anzahl
 von Werten $\xi$ hervorgehoben.
 
+\begin{beispiel}
+Die Differentialgleichung
+\[
+y''=\cos 3\pi x.
+\]
+hat die L"osung
+\[
+y(x)=\frac1{9\pi^2}(\cos 3\pi x + 2x - 1),
+\]
+die man auch mit der Greenschen Funktion berechnen kann:
+\[
+y(x)=\int_0^1 G(x,\xi)\cos 3\pi\xi\,d\xi.
+\]
+In Abbildung
+\ref{elliptisch:green-beispiele}
+ist $f(x)=\cos 3\pi x$ durch eine Summe von einigen $\delta$-Distribution
+approximiert worden (blau).
+Die zugeh"orige L"osung ist jeweils rot eingezeichnet, sie hat
+Knicke bei den $\delta$-Funktionen. 
+Bei gr"osser werdender Zahl von $\delta$-Funktionen unterscheidet sich
+das Integral $\int G(x,\xi)f(\xi)\,d\xi$ kaum mehr von der L"osung.
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.7\hsize]{graphics/green-1.pdf}\\
+\includegraphics[width=0.7\hsize]{graphics/green-324.pdf}\\
+\includegraphics[width=0.7\hsize]{graphics/green-1082.pdf}
+\end{center}
+\caption{L"osung (rot) von $y''=f$ f"ur die Approximation der Funktion $f$
+durch eine Summe von $\delta$-Distributionen (blau).
+\label{elliptisch:green-beispiele}}
+\end{figure}
+\end{beispiel}
+
 \section{Der allgemeine Fall}
 Wir m"ochten jetzt den allgemeinen Fall des Problems
 \begin{align*}
@@ -631,6 +664,7 @@ wir eine partikul"are L"osung $G(x,\xi)$ f"ur eine spezielle rechte Seite,
 n"amlich eine Delta-Funktion im Punkt $\xi$.  Hat man eine
 solche, kann man auch die L"osung f"ur ein beliebiges $f$ mit
 Hilfe eines Integrals finden.
+
 
 \subsection{Eine partikul"are L"osung}
 \rhead{Partikul"are L"osung}

@@ -16,7 +16,7 @@ z2 = (0,-75);
 
 for xi = 0.025 step 0.05 until 1:
 	pickup pencircle scaled 0.5pt;
-	draw z0--(300*(xi,xi * (xi - 1)))--z1 withcolor (1,0.9,0.9);
+	draw z0--(300*(xi,xi * (xi - 1)))--z1 withcolor (1,0.5,0.5);
 	pickup pencircle scaled 2pt;
 	draw 300*(xi,xi * (xi - 1)) withcolor (1,0.9,0.9);
 endfor;
