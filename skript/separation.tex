@@ -89,7 +89,7 @@ einen Wert ein, ver"andert sich die rechte Seite nicht mehr,
 die linke Seite muss also f"ur alle $x$ den gleichen Wert geben.
 L"asst man jetzt wieder das $y$ varieren, muss sich auch auf der rechten
 Seite immer der gleiche Wert geben. Wir nennen den gemeinsamen Wert
-dieser Variablen $k$, und bekommen zwei gew"ohnliche Differentialgleichungen
+$k$, und bekommen zwei gew"ohnliche Differentialgleichungen
 f"ur $X(x)$ und $Y(y)$:
 \begin{align}
 \frac{X'(x)}{x}&=k
@@ -327,7 +327,7 @@ Zeitabh"angigkeitsgleichung in Frage.
 \index{Separation}
 F"ur das Eigenwertproblem k"onnen wir erneut den Separationsansatz
 \[
-\varphi(x,y)=X(x)\cdot Y(x)
+\varphi(x,y)=X(x)\cdot Y(y)
 \]
 versuchen.
 Einsetzen in die Differentialgleichung ergibt
@@ -404,7 +404,7 @@ der Fourierreihen berechnet werden.
 \index{Kreisscheibe}
 In diesem Abschnitt betrachten wir eine Kreisscheibe
 \[
-G=\{(x,y)\in\mathbb R^2|x^2+y^2\le R\}
+G=\{(x,y)\in\mathbb R^2|x^2+y^2 < R\}
 \]
 mit Radius $R$ als Definitionsbereich. Da sich dieses Gebiet durch
 eine Streckung um den Faktor $\frac1R$ immer auf einen Einheitskreis
@@ -680,7 +680,7 @@ in Polarkoordinaten:
 +\frac{\partial^2u}{\partial\varphi^2}\frac1{r^2}
 \\
 &=
-\left(\frac1r\frac{\partial}{\partial r}r\frac{\partial}{\partial r}u+\frac1{r^2}\frac{\partial^2}{\partial \varphi^2}\right)u
+\left(\frac1r\frac{\partial}{\partial r}r\frac{\partial}{\partial r}+\frac1{r^2}\frac{\partial^2}{\partial \varphi^2}\right)u
 \end{align*}
 Darstellungen des Laplace-Operators in weiteren Koordinatensystemen k"onnen
 in jeder einigermassen vollst"andigen Formelsammlung gefunden werden.
