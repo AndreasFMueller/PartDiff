@@ -1,0 +1,107 @@
+Gegeben ist die Differentialgleichung
+\[
+\frac{\partial u}{\partial x}+\frac{\partial u}{\partial t}=1
+\]
+auf dem Gebiet $G=\{ (x,t)\,|\,t>0\}$ mit Anfangsbedingung
+\[
+u(x,0)=g(x).
+\]
+\begin{teilaufgaben}
+\item
+Wandeln Sie die partielle Differentialgleichung mit Hilfe der
+Laplace-Transformation f"ur die Variable $t$ in eine Familie
+gew"ohnlicher Differentialgleichungen um.
+\item
+L"osen Sie die partielle Differentialgleichung mit Hilfe der Charakteristiken.
+\item 
+Bestimmen Sie die Laplace-Transformation der in b) gefunden L"osung, und
+pr"ufen Sie nach, ob sie eine L"osung der in a) gefunden Familie von
+gew"ohnlichen Differentialgleichungen ist.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Anwendung der Laplace-Transformation auf die Variable $t$ der
+Differentialgleichung gibt die Differentialgleichung
+\[
+\frac{\partial}{\partial x}{\cal L}u(x,s)
++s{\cal L}u(x,s)-u(x,0)=\frac1s.
+\]
+Die rechte Seite ist die Laplace-Transformierte der Konstanten
+$1$, also
+\[
+\int_0^\infty e^{-st}\,dt
+=
+\left[
+-\frac1s e^{-st}
+\right]_0^\infty=\frac1s.
+\]
+Schreibt man $y_s(x)={\cal L}u(x,s)$, dann hat man
+f"ur jedes $s$  die Differentialgleichung
+\[
+y'_s(x)+sy_s(x)-g(x)=\frac1s
+\]
+zu l"osen.
+\item
+Die Charakteristiken haben die Differentialgleichung
+\[
+\frac{d}{d\tau}\begin{pmatrix}
+x\\t\\u
+\end{pmatrix}
+=\begin{pmatrix}
+1\\1\\1
+\end{pmatrix}.
+\]
+mit den L"osungen
+\begin{align*}
+x&=\tau + x_0\\
+t&=\tau + t_0\\
+u&=\tau + u_0
+\end{align*}
+Anwendung der Randbedingungen liefert nacheinander
+\begin{align*}
+t&=\tau\\
+x&=t+x_0
+&\Rightarrow&x_0=x-t\\
+u&=t+g(x_0)=t+g(x-t).
+\end{align*}
+Durch Einsetzen in die Differentialgleichung kann man "uberpr"ufen,
+dass $u(x,t)=t+g(x-t)$ tats"achlich eine L"osung ist:
+\[
+\frac{\partial u}{\partial x}+\frac{\partial u}{\partial t}
+=
+g'(x-t)+1-g'(x-t)=1.
+\]
+\item
+Die Laplace-Transformierte der Funktion $t\mapsto t+g(x-t)$ ist
+\[
+y_s(x)=\int_0^\infty (t+g(x-t))e^{-st}\,dt.
+\]
+Um diese Funktion in die Differentialgleichung einsetzen zu k"onnen,
+braucht man die Ableitung
+\begin{align*}
+y'_s(x)=\int_0^\infty g'(x-t)e^{-st}\,dt
+&=\left[-g(x-t)e^{-st}\right]_0^\infty
+-\int_0^\infty sg(x-t)e^{-st}\,dt
+\\
+&=g(x)-s\int_0^\infty g(x-t) e^{-st}\,dt
+\end{align*}
+Setzt man dies in die Differntialgleichung ein, erh"alt man
+\begin{align*}
+y'_s(x)+sy_s(x)-g(x)&=g(x)-s\int_0^\infty g(x-t)e^{-st}\,dt
+\\
+&\qquad
++s\int_0^\infty (t+g(x-t)) e^{-st}\,dt-g(x)
+\\
+&=s\int_0^\infty te^{-st}\,dt
+\\
+&=s\left[-\frac{t}{s}e^{-st}\right]_0^\infty
++s\int_0^\infty\frac{1}{s}e^{-st}\,dt
+\\
+&=\left[-\frac1s e^{-st}\right]_0^\infty
+=\frac1s,
+\end{align*}
+die Differentialgleichung ist also erf"ullt.
+\end{teilaufgaben}
+\end{loesung}
