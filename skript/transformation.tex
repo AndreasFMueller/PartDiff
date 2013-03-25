@@ -161,9 +161,10 @@ $f\colon[0,\infty[\to\mathbb R$ ist die Funktion
 Offenbar ist ${\cal L}f$ f"ur beliebige beschr"ankte Funktionen $f$ definiert.
 
 \subsection{Beispiele}
-Zwei einfache Beispiel sollen das Rechnen mit der Laplace-Transformation
+Drei Beispiele sollen das Rechnen mit der Laplace-Transformation
 illustrieren.
-
+\begin{enumerate}
+\item
 Sei $f(t)=c$ eine konstante Funktion. Die Laplace-Transformation
 \[
 ({\cal L}f)(s)
@@ -175,6 +176,7 @@ Sei $f(t)=c$ eine konstante Funktion. Die Laplace-Transformation
 \right]_0^\infty=\frac{c}{s}.
 \]
 
+\item
 Sei jetzt $f(t)=e^{-kt}$, die Laplace-Transformation ist
 \[
 ({\cal L}f)(s)=\int_0^\infty e^{-kt}e^{-st}\,dt
@@ -186,6 +188,7 @@ Sei jetzt $f(t)=e^{-kt}$, die Laplace-Transformation ist
 =\frac1{s+k}.
 \]
 
+\item
 Wir berechnen jetzt die Laplace-Transformierte einer Ableitung, also
 $({\cal L}f')(s)$:
 \begin{align*}
@@ -205,6 +208,7 @@ $({\cal L}f')(s)$:
 \end{align*}
 Wie versprochen wandelt die Laplace-Transformation die Ableitung
 ein eine algebraische Operation um.
+\end{enumerate}
 
 \subsection{L"osung einer gew"ohnlichen Differentialgleichung}
 Wir l"osen die Differentialgleichung
@@ -372,7 +376,7 @@ s\int_0^{\infty}\hat u(t,k)e^{-st}\,dt
 
 \subsection{R"ucktransformation}
 Um die allgemeine L"osung der Differentialgleichung zu finden,
-muss man jetzt R"ucktransformieren zun"achst nach Laplace:
+muss man jetzt r"ucktransformieren, zun"achst nach Laplace:
 \begin{align*}
 \hat u(t,k)&={\cal L}^{-1}\left(\frac1{s+k^2}\right)\hat u(0,k)
 \\
@@ -380,9 +384,9 @@ muss man jetzt R"ucktransformieren zun"achst nach Laplace:
 \end{align*}
 und dann auch noch nach Fourier, also durch Bilden der Fourierreihe
 \begin{align*}
-u(t,x)&=\sum_{k\in\mathbb Z}e^{-k^2t}\hat f(0,k)e^{ikx}
+u(t,x)&=\sum_{k\in\mathbb Z}e^{-k^2t}\hat u(0,k)e^{ikx}
 \\
-&=\sum_{k\in\mathbb Z}\hat f(0,k)e^{ikx-k^2t}
+&=\sum_{k\in\mathbb Z}\hat u(0,k)e^{ikx-k^2t}
 \end{align*}
 
 \section{Diffusion}
@@ -481,3 +485,16 @@ die Entwicklung von Funktionen auf einer ($n$-dimensionalen)
 Kugel mit sogenannten Kugelfunktionen die Idee der Fourierreihen
 auf einem Interval auf h"oherdimensionale Gebiete zu verallgemeinern.
 
+\section{Zusammenfassung: das Wichtigste in K"urze}
+\begin{enumerate}
+\item Der "Ubergang von Funktionen zu Fourierreihen verwandelt
+eine partielle Differentialgleichung in eine Famile gew"ohnlicher
+Differentialgleichung f"ur die einzelnen Fourier-Koeffizienten.
+\item Integraltransformationen k"onnen ein partielle Differentialgleichung
+in eine Familie partieller Differentialgleichungen mit weniger Variablen
+oder sogar gew"ohnlicher Differentialgleichungen verwandeln.
+\item Integraltransformationen und die R"ucktransformationen k"onnen
+Formeln f"ur die L"osungen gewisser partieller Differentialgleichungen
+liefern, und damit die Frage beantworten, f"ur welche Randwertvorgaben
+die Gleichungen gut gestellt sind.
+\end{enumerate}

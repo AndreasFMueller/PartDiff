@@ -51,23 +51,23 @@ ue^{-st}
 \\
 &=
 -\frac{\partial u}{\partial t}(0,x)
--s
+-s\,
 u(0,x)
 +s^2\int_0^\infty u e^{-st}\,dt
 \\
 &=
 -\frac{\partial u}{\partial t}(0,x)
--su(0,x)+s^2{\cal L}u(s,x)
+-s\,u(0,x)+s^2{\cal L}u(s,x)
 \end{align*}
 Der Term mit der ersten Ableitung f"allt nach Voraussetzung weg.
 Die Differentialgleichung f"ur ${\cal L}u$ wird dann
 \begin{align*}
 \frac1{1-x^2}\frac{\partial^2}{\partial x^2}{\cal L}u
-+s(1-x^2)+s^2{\cal L}u(s,x)
++s(1-x^2)-s^2{\cal L}u(s,x)
 &=0
 \\
 \frac1{1-x^2}\frac{\partial^2}{\partial x^2}{\cal L}u
-+s^2{\cal L}u(s,x)
+-s^2{\cal L}u(s,x)
 &=-s(1-x^2)
 \end{align*}
 Dies ist f"ur jeden Wert von $s$ eine gew"ohnliche Differentialgleichung

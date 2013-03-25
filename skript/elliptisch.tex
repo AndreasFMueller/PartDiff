@@ -19,102 +19,10 @@ die L"osung des Randwertproblems eine Formel aufstellen l"asst.
 In den bisherigen Kapiteln waren die Differentialgleichungen auf sehr
 speziellen Gebieten definiert gewesen, zum Beispiel Rechtecken, Kreissscheiben,
 unendlichen Streifen, Halbebenen oder auf ganz $\mathbb R^n$. 
-Die Anwendungen verlangen aber, dass partielle Differentialgleichungen
-auf fast beliebigen Gebieten gel"ost werden k"onnen, daher muss
-zun"achst gekl"art werden, was unter einem Gebiet verstanden werden
-soll. Danach kann das Problem genau formuliert und eine L"osungsstrategie
-skizziert werden.
-
-\subsection{Gebiete}
-Als Spezialf"alle betrachten wir zun"achst
-die Kugeln oder B"alle\marginpar{\tiny B"alle in $\mathbb R^n$}, f"ur die 
-\index{Kugel}
-\index{Ball}
-wir folgende Bezeichnungen einf"uhren.
-Der Ball um den Punkt $x_0\in\mathbb R^n$ mit Radius $r$ ist die Menge
-\[
-B_r^n(x_0)=\{x\in\mathbb R^n\,|\,|x-x_0|<r\}
-\]
-der Punkte $x\in\mathbb R$, die nicht weiter als $r$ von $x_0$ entfernt
-sind.
-Abk"urzend schreiben wir $B_r^n(0)=B_r^n$ und $B_1^n(x_0)=B^n(x_0)$.
-Der Ball $B_r^n(x_0)$ enth"alt die Kugeloberfl"ache nicht,
-wir schreiben
-\[
-\bar B_r^n(x_0)=\{x\in\mathbb R^n\,|\,|x-x_0|\le r\}
-\]
-f"ur den abgeschlossen Ball.
-
-Die Oberfl"ache des Balles ist eine $(n-1)$-dimensionale
-Fl"ache,
-\marginpar{\tiny $n-1$-dimensionale Sph"aren in $\mathbb R^n$}
-die wir mit
-\[
-S_r^{n-1}(x_0)=\{x\in\mathbb R^n\,|\,|x-x_0|=r\},
-\]
-wir lassen wie bei den B"allen den Radius weg, wenn die
-Einheitskugel gemeint ist, oder den Mittelpunkt, wenn eine
-Kugel um den Nullpunkt gemeint ist.
-
-In diesem Kapitel ist $\Omega\subset\mathbb R^n$ ein Gebiet im
-\marginpar{\tiny Gebiete sind offene Teilmengen $\Omega\subset\mathbb R^n$}
-$n$-dimensionalen Raum, also eine offene Teilmenge von $\mathbb R^n$.
-Mit jedem Punkt
-$x_0\in\Omega$ ist also auch eine kleine Umgebung des Punktes $x_0$
-darin enthalten,  es gibt also ein $\varepsilon$ mit
-\[
-B^n_{\varepsilon}(x_0)\subset\Omega.
-\]
-Auf $\Omega$ interessiert uns in diesem Kapitel als prototypisches
-Beispiel f"ur einen elliptischen Operator der Laplace Operator
-\index{Laplace Operator}
-\[
-\Delta=\frac{\partial^2}{\partial x_1^2}+\dots+\frac{\partial^2}{\partial x_n^2}.
-\]
-Da zur Definition der Ableitungen einer Funktion $u(x)$ Differenzen $u(x)-u(x_0)$
-f"ur $x$ in einer kleinen Umgebung von $x_0$ untersucht werden m"ussen,
-kann eine Gleichung wie
-\[
-\Delta u=f
-\]
-\marginpar{\tiny Ableitungen sind nur auf offenen Mengen sinnvoll definiert}
-"uberhaupt nur auf einer offenen Menge sinnvoll formuliert werden.
-
-Die L"osungen elliptischer Differentialgleichungen sind erst nach
-Vorgabe von Randwerten bestimmt.
-Der Abschluss $\bar\Omega$ von $\Omega$ 
-ist die Menge der Punkte $x\in\mathbb R^n$, die als Grenzwerte von
-Folgen in $\Omega$ erreicht werden k"onnen. 
-Der Rand $\partial \Omega$ besteht aus den Punkten des Abschlusses, die
-\marginpar{\tiny Rand $\partial \Omega$ eines Gebietes}
-nicht schon in $\Omega$ drin sind,
-also $\partial \Omega=\bar\Omega\setminus\Omega$.
-
-Da die Gleichung $\Delta u=f$ nur auf dem Gebiet $\Omega$ definiert ist, 
-hat es a priori keinen Sinn, von Werten der Funktion auf dem Rand zu sprechen.
-Da aber alle Punkte des Randes als Grenzwerte von Folgen in $\Omega$ erreicht
-werden k"onnen, kann man $u(x)$ f"ur einen Randpunkt $x\in\partial\Omega$
-mit Hilfe einer gegen $x$ konvergierenden Folge $x_n\in\Omega$ definieren, indem
-\[
-u(x)=\lim_{n\to\infty}u(x_n)
-\]
-setzt. Sofern diese Grenzwerte immer existieren und nicht von der Wahl der
-Folge abh"angen, kann man die Funktion auf $\bar\Omega$ ausdehnen,
-in diesem Sinne ist auch die Einschr"ankung $u_{|\partial \Omega}$ zu 
-verstehen.
-
-"Aquivalent k"onnte man die Familie uns interessierender Funktionen
-auch so formulieren: wir suchen stetige Funktionen $u\colon\bar\Omega\to\mathbb R$,
-die auf $\Omega$ differenzierbar sind.
-
-\index{Neumann-Randbedingungen}
-Um Neumann-Randbedingungen formulieren zu k"onnen, welche
-\marginpar{\tiny F"ur Neumann-Randbedingen muss der Rand gen"ugend glatt sein}
-ja etwas "uber die Ableitung in Normalenrichtung auf den Rand
-aussagen, muss der Rand einigermassen glatt sein, dass 
-"uberhaupt eine wohldefinierte Normalenrichtung gefunden werden kann.
-In unseren Beispielen wird der Rand bis auf wenige Ausnahmepunkte
-eine glatte Fl"ache oder sein.
+Die Anwendungen verlangen aber, dass elliptische partielle
+Differentialgleichungen, auf fast beliebigen Gebieten gel"ost werden k"onnen.
+Insbesondere wollen wir erstehen, unter welchen Bedingungen eine
+L"osung existiert und eindeutig bestimmt ist.
 
 \subsection{Laplace-Gleichung}
 \index{Laplace-Gleichung}
@@ -276,6 +184,7 @@ zwei verschiedene L"osungen kann es also nicht geben.
 \end{proof}
 
 {\small
+\subsubsection{Ein Beweis des Maximum-Prinzips}
 Im Folgenden wollen wir wie versprochen einen vollst"andigen Beweis f"ur das
 Maximumprinzip angeben. Der wesentliche Punkt in der Beweisidee
 war, dass $Lu=0$, wir aber bei einem Maximum (inkorrekterweise)
@@ -852,7 +761,7 @@ u(x)=\int_{\Omega}G(x,\xi)f(\xi)\,d\mu(\xi)+\int_{\partial\Omega}g(\xi)\operator
 wie behauptet.
 \end{proof}
 
-\section{Anwendungsbeispiel}
+\subsection{Anwendungsbeispiel}
 \rhead{Anwendungsbeispiel}
 \begin{figure}
 \begin{center}
@@ -907,13 +816,20 @@ u(x)=\sigma(x,x_0)+h(x)
 ist eine L"osung. Die L"osung und die zugeh"origen Niveaulinien
 sind in den Abbildungen \ref{neilloesung} und \ref{neilcontour} dargestellt.
 
-\section{Mittelwerteigenschaft}
+\section{Mittelwerteigenschaft harmonischer Funktionen}
 \rhead{Mittelwerteigenschaft}
+Harmonische Funktionen haben eine Eigenschaft, die "uber das Maximumprinzip
+f"ur elliptische Operatoren hinausgeht.
+Das Maximumprinzip sagt, dass die Werte der L"osung einer homogenen
+elliptischen partiellen Differentialgleichung zwischen den
+Extremwerten auf dem Rand liegen.
+Die Mittelwerteigenschaft sagt dar"uber hinaus, dass die Funktionswerte
+(geeignete) Mittelwerte der Randwerte sind.
+
 \subsection{Mittelwerteigenschaft}
-Harmonische Funktionen haben die Eigenschaft, dass sich der Funktionswert
-in einem Punkt
-als Mittelwert der Funktionswerte auf einer Kugel um den gegebenen Punkt
-berechnen lassen.
+In diesem Abschnitt wollen wir illustrieren, dass
+Werte von harmonischen Funktionen in einem Punkt
+Mittelwerte der Funktionswerte auf einer Kugel um den gegebenen Punkt sind.
 
 \begin{satz}[Mittelwerteigenschaft]
 Sei $u$ eine harmonische Funktion im Gebiet $\Omega$ und $x_0\in\Omega$.
@@ -1095,5 +1011,26 @@ gel"ost werden.
 Die Funktionen $G$ und $K$ erm"oglichen also, die Operatoren $L$ und $B$
 zu invertieren.
 
+\section{Zusammenfassung: das Wichtigste in K"urze}
+\begin{enumerate}
+\item Die Differentialgleichung $\Delta u=f$ ist der prototypische
+elliptische partielle Differentialgleichung.
+\item L"osungen homogener elliptischer partieller Differentialgleichungen,
+insbesondere auch von $\Delta u=0$, erf"ullen das Maximumprinzip:
+Maximum und Minimum von $u$ liegen auf dem Rand des Gebietes.
+\item Die L"osung einer elliptischen Differentialgleichung auf einem
+beschr"ankten Gebiet mit Randwertvorgaben entlang des gesamten Randes
+ist eindeutig.
+\item Eine gut gestellte elliptische partielle Differentialgleichung hat
+eine Greensche Funktion, d.~h.~eine L"osung der Differentialgleichung
+$\Delta G(x,\xi)=\delta_\xi$ f"ur jeden Punkt $\xi\in\Omega$.
+\item Mit Hilfe der Greenschen Funktion l"asst sich die L"osung
+der Differentialgleichung mittels eines Integrals "uber das Gebiet
+berechnen.
+\item Harmonische Funktionen sind L"osungen der Gleichung $\Delta u=0$.
+\item Harmonische Funktionen haben die Mittelwerteigenschaft: Funktionswerte
+in einem Punkt sind Mittelwerte der Funktionswerte auf einer Kugel
+um den Punkt.
+\end{enumerate}
 
 
