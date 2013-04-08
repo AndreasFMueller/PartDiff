@@ -142,8 +142,9 @@ Wir f"uhren den Beweis mit Hilfe eines Widerspruchs. Wir nehmen
 an, $u$ nehme in einem inneren Punkt $x$ des Gebietes $\Omega$ ein
 Maximum an.
 
-Wir d"urfen annehmen, dass die Matrix $a_{ij}$ diagonal ist.
-Da $L$ elliptisch ist, dass die Diagonalelement $a_{ii}=\lambda_i$
+Wir d"urfen annehmen, dass die Matrix $a_{ij}$ diagonal ist,
+und dass,
+da $L$ elliptisch ist, die Diagonalelement $a_{ii}=\lambda_i$
 alle positiv sind. Da das Maximum in $x$ angenommen wird, muss
 mindestens eine zweite Ableitungen negativ sein:
 \[
@@ -208,19 +209,23 @@ dann nimmt $u$ sein Maximum auf dem Rand an.
 \end{satz}
 
 \begin{proof}[Beweis]
-Wir betrachten die Funktion $e^{\varepsilon}=u-\varepsilon e^{\lambda x_1}$.
+Wir d"urfen wie in der bereits oben skizzierten Beweisidee annehmen,
+dass im betrachteten Punkt $x$ die Koeffizientenmatrix $(a_{ij})$
+diagonal ist und alle $a_{11}$ positiv sind.
+
+Wir betrachten die Funktion $u_{\varepsilon}=u-\varepsilon e^{\lambda x_1}$.
 Es gilt
 \begin{align*}
-Lu^{\varepsilon}&=Lu-\varepsilon L(e^{\lambda x_1})\\
+Lu_{\varepsilon}&=Lu-\varepsilon L(e^{\lambda x_1})\\
 &=Lu-\varepsilon(a_{11}\lambda^2+b_1\lambda)e^{\lambda x_1}
 \end{align*}
 Da $a_{11}>0$ gilt, wird das quadratische Polynom $a_{11}\lambda^2+b_1\lambda$
 f"ur gen"ugend grosses $\lambda$ positiv, und damit 
 \[
-Lu^{\varepsilon}= Lu-\varepsilon(a_{11}\lambda^2+b_1\lambda)e^{\lambda x_1}<0
+Lu_{\varepsilon}= Lu-\varepsilon(a_{11}\lambda^2+b_1\lambda)e^{\lambda x_1}<0
 \]
 f"ur jedes beliebige $\varepsilon$. Nach Satz \ref{maximumgt} wird das Maximum
-von $u^\varepsilon$ also auf dem Rand angenommen.
+von $u_\varepsilon$ also auf dem Rand angenommen.
 Im Grenz"ubergang $\varepsilon\to 0$ ist $u^\varepsilon\to u$, also
 muss auch $u$ das Maximum auf dem Rand annehmen.
 \end{proof}
@@ -262,7 +267,7 @@ Man kann sich vorstellen, dass durch Diskretisation aus der
 Differentialgleichung $u''=f$ auf dem Interval $[a,b]$ ein lineares Gleichungssystem
 $Au=f$ entsteht. Die Komponenten der Vektoren $u$ und $f$ sind dabei
 Werte von $u$ und $f$ an ausgew"ahlten Punkten. Und es ist nicht
-abwegig, dass es eine Inverse Matrix $G$ geben k"onnte, mit der man
+abwegig, dass es eine inverse Matrix $G$ geben k"onnte, mit der man
 die L"osung $u=Gf$ finden k"onnte.
 
 Das Matrizenprodukt ist
