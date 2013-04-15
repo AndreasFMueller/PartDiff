@@ -48,34 +48,34 @@ also ist die Gleichung hyperbolisch.
 Aus den Koeffizienten der Symbolmatrix findet man die Gleichung
 der Charakteristiken
 \[
-y(s)^2\dot y(s)^2-4y(s)x(s)\dot y(s)+\dot x(s)^2=0.
+y(s)^2\dot y(s)^2-4y(s)\dot x(s)\dot y(s)+\dot x(s)^2=0.
 \]
 \item
 Der Faktorisierungsansatz liefert
 \begin{align*}
 0&=(\dot x(s)-ry(s)\dot y(s))(\dot x(s)-qy(s)\dot y(s))
 \\
-&=\dot x(s)^2-(r+q)\dot x(s) y(s)\dot y(s)-rqy(s)^2\dot y(s)^2
+&=\dot x(s)^2-(r+q)\dot x(s) y(s)\dot y(s)+rqy(s)^2\dot y(s)^2
 \end{align*}
 Die Zahlen $r$ und $q$ m"ussen also die Gleichungen
 \begin{align*}
-r+q&=-4\\
+r+q&=4\\
 rq&=1
 \end{align*}
 erf"ullen. Setzt man $q=1/r$ in die erste Gleichung ein, bekommt man
 \begin{align*}
-r+\frac1r&=-4\\
-r^2+4r+1&=0
+r+\frac1r&=4\\
+r^2-4r+1&=0
 \end{align*}
 Diese quadratische Gleichung hat die L"osungen
 \[
 r
 =
--2\pm\sqrt{4-1}
+2\pm\sqrt{4-1}
 =
 \begin{cases}
-\sqrt{3}-2\\
--\sqrt{3}-2
+\sqrt{3}+2\\
+-\sqrt{3}+2
 \end{cases}
 \]
 \item
