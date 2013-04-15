@@ -27,6 +27,58 @@ Wellenl"osungen demonstriert. Diese geben Anlass zu einer Untersuchung,
 zu welcher Art von Anfangsbedingung die Wellengleichung "uberhaupt
 l"osbar ist. Dies f"uhrt uns dann auf den Begriff der Charakteristiken.
 
+\section{Separation}
+Oft wird die Wellengleichung auf ein Gebiet der Form
+$\Omega = G\times(0,\infty)$ angewandt, also ein 
+festes Raumgebiet $G$.
+Eine Pauke "andert zum Beispiel die Form des Felles w"ahrend des
+Spielens nicht. In diesen F"allen ist ein Separationsansatz m"oglich.
+Die hyperbolische partielle Differentialgleichung 
+\[
+\frac1{a^2}\frac{\partial^2 u}{\partial t^2}=\Delta u
+\]
+kann mit dem Ansatz $u(x,t)=\varphi(x)\cdot T(t)$ in zwei
+Differentialgleichungen zerlegt werden:
+\begin{gather*}
+\begin{aligned}
+\frac1{a^2}T''(t)\varphi(x)&=T(t)\Delta \varphi(x)\\
+\frac1{a^2}\frac{T''(t)}{T(t)}&=\frac{\Delta\varphi(x)}{\varphi(x)}=\lambda\\
+\end{aligned}
+\\
+\Rightarrow\qquad
+T''(t)=\lambda a^2T(t)\qquad\text{und}\qquad\Delta \varphi=\lambda\varphi.
+\end{gather*}
+Die Differentialgleichung f"ur $T$ ist eine Schwingungsdifferentialgleichung
+und stellt damit bez"uglich Existenz und Eindeutigkeit der L"osung
+kein grosses Problem dar. Wenn $T(0)$ und $T'(0)$ bekannt sind, dann
+k"onnen wir die L"osung f"ur beliebiges $t$ angeben.
+
+Die zweite Gleichung $\Delta \varphi-\lambda\varphi=0$ ist eine
+elliptische partielle Differentialgleichung, "uber welche wir
+in Kapitel~\ref{chapter-elliptisch} einiges an Theorie entwickelt haben.
+Zum Beispiel wurde dort gesagt, dass elliptische Probleme auf
+zusammenh"angenden und beschr"ankten Gebieten eine eindeutige
+L"osung haben, wenn man die Randwerte entlang des gesamten Randes
+kennt.
+
+Wir k"onnen daraus schliessen, dass das hyperbolische Problem eine
+L"osung hat, wenn wir $u(x,0)$ und $\partial_tu(x,0)$ f"ur
+$x\in G$ kennen, und ausserdem die Werte $u(x,t)$ f"ur $x\in\partial G$.
+Dies passt zu der am Paukenfell gewonnenen Intuition: dessen Schwingung
+ist bekannt, wenn Anfangsauslenkung und -geschwindigkeit bekannt sind,
+und ausserdem die Randwerte des Felles w"ahrend der ganzen Zeit
+bekannt sind.
+
+Dieses Verfahren versagt aber in F"allen, wo sich das Gebiet ver"andert,
+zum Beispiel bei der Expansion eines Gases.
+Die langsame Expansion zum Beispiel in einer Posaune, deren ``Gebiet''
+sich ja w"ahrend des Spielens dauernd ver"andert, scheint dabei kein
+Problem zu sein, jedenfalls kann ein Posaunist auch schwierige Passagen
+ohne Studium der Wellengleichung meistern.
+Was passiert aber, wenn der
+Kolben, der eine Expansionsgef"ass verschliesst, mit einer Geschwindigkeit
+gr"osser als die Schallgeschwindigkeit bewegt wird? 
+
 \section{Wellengleichung in einer Dimension}
 \rhead{Eindimensionale Wellengleichung}
 Die Wellengleichung in der Ebene ist
@@ -206,14 +258,14 @@ Der Graph der L"osungsfunktion ist ein Fl"ache, eine sogenante
 Integralfl"ache der Differentialgleichung. Die Anfangsbedingung
 definiert eine Kurve $x\mapsto(x,0,u_0(x))$, die Integralfl"ache muss
 durch diese Kurve gehen.
-Durch die zwei Ableitungen ist zudem in jedem Punkt der Kurve ein Tangentialebene
-an die Integralfl"ache vorgegeben.
+Durch die zwei Ableitungen ist zudem in jedem Punkt der Kurve
+eine Tangentialebene an die Integralfl"ache vorgegeben.
 
 Wie das Beispiel zeigt, ist die L"osungsfl"ache durch Vorgabe einer Kurve und
 und der Tangentialebenen in jedem Punkt der Kurve bestimmt ist.
 Etwas allgemeiner besteht das Cauchy-Problem darin, eine Integralfl"ache
 zu finden, die durch eine beliebige Kurve geht, und ausserdem in jedem Punkt
-der Kurve eine bestimmte Tangentialeben hat. Diese Vorgaben nennt man
+der Kurve eine bestimmte Tangentialebene hat. Diese Vorgaben nennt man
 einen ``Streifen''.
 
 Eine partielle Differentialgleichung f"ur eine Funktion $u(t,x,y)$
@@ -432,9 +484,6 @@ Die Charakteristiken der Wellengleichung
 \[
 \partial_t^2-a^2\partial_x^2u=0
 \]
-%%% CHANGE
-\marginpar{\tiny In diesem Abschnitt waren im urspr"unglich
-publizierten Skript die Rollen von $x'$ und $t'$ vertauscht.}
 sind Kurven $s\mapsto(t(s),x(s))$, die die Gleichung
 \begin{align*}
 \left(
