@@ -1,0 +1,49 @@
+In der Ebene ist ein kartesisches Koordinatensystem vorgegeben. 
+
+\vspace{2mm}
+
+Das Dreieck $\Omega$ besitzt die Eckpunkte
+\[
+(0,0), \ \ (4,0), \ \ (0,4).
+\]
+
+Die reelle Funktion $u(x,y)$ ist auf dem Dreieck $\Omega$ definiert. 
+
+\vspace{2mm}
+
+Sie erf"ullt im Innern von $\Omega$ die Laplacesche Differentialgleichung 
+\[
+\Delta u(x,y) = 0
+\]
+und auf dem Rand von $\Omega$ die Dirichletschen Randbedingungen 
+\[
+u(x,y) = \left\{ \begin{array}{ccc} 4 - x & \mbox{falls} & y = 0
+\\ 4 - y & \mbox{falls} & x = 0  \\ 0  & \mbox{sonst} & \end{array} \right.       .
+\]
+
+Gesucht ist eine Approximation der Werte von $u$ in den zwei Punkten
+von $\Omega$ 
+\[
+(2,1), \ \ (1,2).
+\]
+Benutzen Sie hierzu Finite Volumina nach Voronoi.
+
+\begin{loesung}
+Mit
+\[
+A = \left[\begin{array}{rr} -10 & 2  \\ 2 & -10  \end{array}\right] \ \ \mbox{und} \ \
+  \underline{b} =  \left(\begin{array}{r} -8 \\ -8 \end{array}\right)
+\]
+gilt  
+\[
+A \cdot \underline{\tilde u} = \underline{b}
+\]
+Hierbei ist
+\[
+\underline{\tilde u} \approx (u(2,1), u(1,2)).
+\]
+Es folgt 
+\[
+\underline{\tilde u} = (1,1).
+\]
+\end{loesung}

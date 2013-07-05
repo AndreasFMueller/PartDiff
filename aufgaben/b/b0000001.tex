@@ -1,0 +1,40 @@
+Die reelle Funktion $u(x,y)$ ist auf dem Rechteck 
+\[
+\Omega = [-4, 4] \times [-1,1]
+\]
+definiert. Sie erf"ullt im Innern von $\Omega$ die
+Poissonsche Differentialgleichung 
+\[
+- \Delta u(x,y) = 34 - 2 \cdot x^2 - 2 \cdot y^2
+\]
+und auf dem Rand von $\Omega$ die Dirichletsche Bedingung 
+\[
+u(x,y) = 0.
+\]
+Gesucht ist eine Approximation der Werte von $u$ in den drei Punkten
+von $\Omega$ 
+\[
+(-2,0), \ \  (0,0), \ \ (2,0).
+\]
+Benutzen Sie hierzu die F"unfpunktestern Diskretisierungsmethode mit
+geeigneten Schrittweiten. 
+ 
+\begin{loesung}
+Mit 
+\[
+B = \mbox{tridiag}_3(-1,10,-1)
+\]
+gilt 
+\[
+B \cdot \underline{\tilde u} = \underline{b}.
+\]
+Hierbei sind 
+\[
+\underline{b} = (104, 136, 104) \ \ \mbox{und} \ \ \ \underline{\tilde u} \approx
+(u(-2,0), u(0,0), u(2,0)).
+\]
+Es folgt 
+\[
+\underline{\tilde u} = (12, 16, 12).
+\]
+\end{loesung}

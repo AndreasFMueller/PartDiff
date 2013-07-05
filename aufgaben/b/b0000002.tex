@@ -1,0 +1,34 @@
+Die reelle Funktion $u(x,t)$ ist auf der Halbebene 
+\[
+\Omega = (-\infty, \infty) \times [0,\infty)
+\]
+definiert. Sie erf"ullt im Innern von $\Omega$ die Transportgleichung
+\[
+3 \cdot u_{x}(x,t) + 2 \cdot u_{t}(x,t) = 0
+\]
+und auf dem Rand von $\Omega$ die Bedingung 
+\[
+u(x,0) = \sqrt{|x|}.
+\]
+Gesucht ist eine Approximation des Wertes von $u$ im Punkt $(0,1)$.
+Benutzen Sie hierzu ein geeignetes Finite-Differenzen-Verfahren
+mit Schrittweiten
+\[
+\Delta x = 1 \ \ \mbox{und} \ \  \Delta t = 1/3.
+\]
+Das Verfahren soll (theoretisch) konvergent sein.
+
+\begin{loesung}
+Mit  
+\[
+\tilde u_{i,j} = u(i \cdot \Delta x, j \cdot \Delta t)
+\]
+gilt 
+\[
+\tilde u_{i,j+1} = \frac{\tilde u_{i,j} + \tilde u_{i-1,j}}{2}
+\]
+Es folgt 
+\[
+\tilde u_{0,3} \approx 1.1218.
+\]
+\end{loesung}

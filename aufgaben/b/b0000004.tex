@@ -1,0 +1,42 @@
+Die reelle Funktion $u(x)$ ist auf dem Intervall
+\[
+\Omega = [0, 1]
+\]
+definiert. Sie erf"ullt im Innern von $\Omega$ die Differentialgleichung 
+\[
+u''(x) + 8 = 0
+\]
+und auf dem Rand von $\Omega$ die Randbedingungen 
+\[
+u(0) = 1, \ \ u(1) = 2.
+\]
+Gesucht ist eine Approximationsfunktion $\tilde u(x)$ f"ur $u(x)$
+in den Knotenpunkten.
+
+\vspace{2mm}
+
+Benutzen Sie Finite Elemente. Benutzen Sie die Maschen
+\[
+[0,0.5], \ \ [0.5, 0.75], \ \ [0.75, 1]
+\]
+und lineare Formfunktionen.
+
+\begin{loesung}
+Mit
+\[
+A = \left[\begin{array}{rr} 6 & -4  \\ -4 & 8  \end{array}\right] \ \ \mbox{und} \ \
+  \underline{b} =  \left(\begin{array}{r} 5 \\ 10 \end{array}\right)
+\]
+gilt  
+\[
+A \cdot \underline{\tilde u} = \underline{b}
+\]
+Hierbei ist
+\[
+\underline{\tilde u} \approx (u(1/2), u(3/4)).
+\]
+Es folgt 
+\[
+\underline{\tilde u} = (5/2,5/2).
+\]
+\end{loesung}
