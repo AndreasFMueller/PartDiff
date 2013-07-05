@@ -36,9 +36,16 @@
 \BODY
 \end{proof}
 }
+\NewEnviron{bewertung}{\relax}
 \def\keineloesungen{%
 \RenewEnviron{loesung}{\relax}
 \RenewEnviron{diskussion}{\relax}
+}
+\def\bewertungen{
+\RenewEnviron{bewertung}{\begin{proof}[Bewertung]
+\renewcommand{\qedsymbol}{}
+\BODY
+\end{proof}}
 }
 
 % Hinweis

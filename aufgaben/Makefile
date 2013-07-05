@@ -7,7 +7,7 @@
 all:	aufgabensammlung.pdf
 
 TEXFILES = aufgabensammlung.tex uebungen.tex \
-	1.tex 2.tex 3.tex 4.tex 5.tex 6.tex 7.tex 8.tex 9.tex a.tex
+	1.tex 2.tex 3.tex 4.tex 5.tex 6.tex 7.tex 8.tex 9.tex a.tex b.tex
 
 aufgabensammlung.pdf:	$(TEXFILES) aufgabensammlung.ind
 	pdflatex aufgabensammlung.tex uebungen.tex
@@ -50,8 +50,11 @@ clean:
 a.tex:	dirs buildchapter.sh a/*.tex
 	./buildchapter.sh a > a.tex
 
+b.tex:	dirs buildchapter.sh b/*.tex
+	./buildchapter.sh b > b.tex
+
 dirs:
-	for dir in 1 2 3 4 5 6 7 8 9 a; \
+	for dir in 1 2 3 4 5 6 7 8 9 a b; \
 	do \
 		if [ ! -d $${dir} ]; then mkdir $${dir}; fi; \
 	done
