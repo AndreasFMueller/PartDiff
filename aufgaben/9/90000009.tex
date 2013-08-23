@@ -1,0 +1,86 @@
+XXX
+Die Differentialgleichung
+\[
+\frac{\partial^2 u}{\partial x^2}-y^2\frac{\partial^2u}{\partial y^2}=0
+\]
+soll im Gebiet
+\[
+\Omega=\{(x,y)\,|\,x>0,\;y>0\}
+\]
+gel"ost werden.
+In einer ersten Phase sollen nur die Werte $u(a,y)$ f"ur ein festes 
+$a > 0$ und $y$-Werte mit $0<y<b$ berechnet werden.
+Es sind die Randwerte
+\[
+u(0,y)=g(y)=e^{y^2}\sin y
+\]
+vorgegeben. Die Amplitude w"achst f"ur wachsendes $y$ sehr stark an,
+was die numerische Berechnung erschwert.
+
+Der mit der Implementation betraute Programmierer beobachtet bei seinen
+Tests, dass es auf die Funktionswerte von $g(y)$ f"ur grosse
+$y$ nicht ankommt und fragt Sie deshalb, ob es m"oglich w"are, zur
+Vereinfachung der Berechnung die Anfangswerte f"ur $y>c$ durch
+$0$ zu ersetzen, und wie gross $c$ sein m"usste. Was antworten Sie?
+
+\begin{loesung}
+Die partielle Differentialgleichung hat die Symbolmatrix
+\[
+A=
+\begin{pmatrix}
+1&0\\0&-y^2
+\end{pmatrix}
+\]
+mit der Determinanten
+\[
+\det(A)=-y^2,
+\]
+die in ganz $\Omega$ negativ ist.
+Die Differentialgleichung ist also hyperbolisch.
+
+F"ur hyperbolische partielle Differentialgleichung kann mit Hilfe der
+Charakteristiken entschieden werden, ob ein Randwert Einfluss auf einen
+Funktionswert hat. Wir stellen daher zun"achst die Differentialgleichung
+der Charakteristiken auf:
+\[
+\dot y^2-y^2\dot x^2=(\dot y+y\dot x)(\dot y-y\dot x)=0
+\]
+Die Charakteristiken sind daher L"osungen jeweils einer der beiden
+Differentialgleichungen
+\begin{align*}
+\dot y-y\dot x&=0&&\Rightarrow&\dot y&=y\dot x\\
+\dot y+y\dot x&=0&&\Rightarrow&\dot y&=-y\dot x
+\end{align*}
+Diese Differentialgleichung kann durch direktes Integrieren
+gel"ost werden:
+\begin{align*}
+\frac1y\frac{dy}{dt}&=\pm\frac{dx}{dt}\\
+\int \frac1y\frac{dy}{dt}\,dt&=\pm\int \frac{dx}{dt}\,dt\\
+\log |y|&= \pm x + C
+\end{align*}
+Daraus kann man ablesen, dass die Charakteristiken die Kurven 
+$y=y_0e^{\pm x}$ sind.
+
+Mit der Kenntnis der Charakteristiken l"asst sich jetzt auch die 
+Frage beantworten, ob die Randwerte jenseits von $y=c$ einen Einfluss
+auf die L"osungswerte $u(a,y)$ mit $0<y<b$ haben. Der Randwert
+bei $y_0$ kann die Funktionswerte zwischen $y_0e^a$ und $y_0e^{-a}$
+beinflussen. Wenn also sichergestellt ist, dass $y_0e^{-a} > b$
+oder $y_0e^{-a} < -b$, dann kann der Randwert die genannten Funktionswerte
+nicht beinflussen. Das bedeutet, dass 
+\[
+y_0e^{-a}>b
+\qquad\Rightarrow\qquad
+y_0>be^a
+\]
+sein muss, also muss man $c=be^a$ w"ahlen.
+\end{loesung}
+
+\begin{bewertung}
+Symbolmatrix ({\bf S}) 1 Punkt,
+Differentialgleichung ist hyperbolisch ({\bf H}) 1 Punkt,
+Differentialgleichung der Charakteristiken ({\bf X}) 1 Punkt,
+L"osung der Differentialgleichung ({\bf L}) 1 Punkt,
+Bedingung f"ur $y_0$-Werte ({\bf B}) 1 Punkt,
+Bestimmung von $c$ ({\bf C}) 1 Punkt.
+\end{bewertung}
