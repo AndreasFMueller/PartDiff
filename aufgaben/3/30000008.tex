@@ -1,7 +1,96 @@
-XXX
+Auf dem Gebiet $\Omega = \{ (x,y)\,|\, x^2+y^2 < 1\}$ ist die
+partielle Differentialgleichung 
+\begin{equation}
+x\frac{\partial u}{\partial x}+x^2\frac{\partial u}{\partial y}=0
+\label{30000008:dgl}
+\end{equation}
+gegeben. Uns interessiert aber nicht die L"osung (daher sind auch keine
+Randbedingungen vorgegeben), sondern die Frage der eindeutigen L"osbarkeit.
+\begin{teilaufgaben}
+\item
+Ist die Differentialgleichung eindeutig l"osbar, wenn man Randwerte f"ur
+alle Randpunkte $(x_0,y_0)$ des Gebietes vorgibt, f"ur die $x_0<0$ ist?
+\item
+Ist die Differentialgleichung eindeutig l"osbar, wenn man Randwerte f"ur
+alle Randpunkte $(x_0,y_0)$ des Gebietes vorgibt, f"ur die $y_0<0$ ist?
+\end{teilaufgaben}
 
 \begin{loesung}
+Dies ist eine quasilineare partielle Differentialgleichung, die mit dem
+Verfahren der Charakteristiken gel"ost werden kann.
+Das Gebiet ist die Einheitskreisscheibe, Randwerte sind in a) vorgegeben
+auf der linken H"alfte des Einheitskreises, in b) auf der unteren H"alfte.
+
+Ob die Gleichung durch Vorgabe der Randwerte auf dem linken oder unteren Rand
+eindeutig gel"ost werden kann, kann genau dann bejaht werden, wenn die 
+von den vorgegebenen Randpunkten
+ausgehenden Charakteristiken das ganze Gebiet $\Omega$ "uberdecken.
+
+Die Differentialgleichungen f"ur die Charakteristiken durch den Punkt
+$(x_0,y_0,u_0)$ und ihre L"osungen sind
+\begin{align*}
+\dot x&=x&&\Rightarrow&x(t)&=x_0e^t,\\
+\dot y&=x^2&&\Rightarrow&y(t)&=\frac12x^2+y_0-\frac12x_0^2,\\
+\dot u&=0&&\Rightarrow&u(t)&=u_0.
+\end{align*}
+Die zweite Differentialgleichung wird gel"ost, indem man auf der rechten
+Seite die L"osung der ersten Gleichung einsetzt:
+\[
+\dot y=x_0^2e^{2t}
+\quad\Rightarrow\quad
+y(t)
+=y_0 + \int_0^tx_0^2e^{2\tau}\,d\tau
+=y_0 + \left[\frac12x_0^2e^{2\tau}\right]_0^t
+=y_0 + \frac12x_0^2e^{2t}-\frac12x_0^2.
+=y_0 + \frac12x^2-\frac12x_0^2.
+\]
+Die Charakteristiken sind also Parabeln mit Scheitelpunkt auf der
+$y$-Achse.
+\begin{figure}
+\begin{center}
+\includeagraphics[width=0.6\hsize]{domain-1.pdf}
+\end{center}
+\caption{Charakteristiken (rot) im Gebiet $\Omega$ der Differentialgleichung
+(\ref{30000008:dgl}).\label{30000008:domain}}
+\end{figure}
+Die Abbildung~\ref{30000008:domain} zeigt die L"osungskurven.
+
+Die Charakteristiken schneiden den rechten und linken Rand mindestens ein mal.
+Insbesondere kann in b) also die L"osung nicht eindeutig bestimmt sein, denn
+die obere H"alfte des Einheitskreises wird "uberdeckt von
+Charakteristiken, die den unteren Rand des Kreises nicht schneiden,
+ohne Vorgabe von Randwerten auf dem oberen Rand des Kreises ist die
+L"osung der Differentialgleichung dort nicht bestimmt.
+
+F"ur a) k"onnte einzig beim Punkt $(0,-1)$ ein Problem auftreten.
+Die Charakteristik durch den
+Punkt $(0,-1)$ darf den linken Rand nicht schneiden, da sonst die 
+nahe bei $(0,-1)$ vorgegebenen Randwerte anderen Randwerten widersprechen
+k"onnten.
+
+Die Parabel durch den Punkt $(0,-1)$ hat die Gleichung $y=-1+\frac12x^2$.
+Es muss also untersucht werden, ob f"ur $x\ne 0$
+\[
+-\sqrt{1-x^2} > -1+\frac12x^2
+\]
+ist. Das Quadrat der rechten Seite ist
+\[
+(-1+\frac12x^2)^2=1-x^2 +\frac14x^4 > 1-x^2=\bigl(-\sqrt{1-x^2}\bigr)^2,
+\]
+(Achtung: beim Quadrieren einer Ungleichung von negativen Gr"ossen "andert das
+Ungleichheitszeichen)
+insbesondere kann die Charakterstik durch $(0,-1)$ den Einheitskreis
+in keinem anderen Punkt schneiden.
+Die Randwerte auf dem linken Rand des Einheitskreises
+bestimmen die L"osung der Differentialgleichung eindeutig.
 \end{loesung}
 
 \begin{bewertung}
+Quasilineare PDGL ({\bf Q}) 1 Punkt,
+Differentialgleichungen der Charakteristiken ({\bf D}) 1 Punkt,
+L"osung der Differentialgleichungen f"ur $x(t)$ ({\bf X})
+und $y(t)$ ({\bf Y}) je 1 Punkt,
+Verwendung der Charakteristikenmethode zur Beurteilung, ob die
+vorgegebenen Randwerte ausreichend sind in a) ({\bf A}) 1 Punkt,
+Begr"undung, warum die Randwerte in b) nicht ausreichen ({\bf B}) 1 Punkt.
 \end{bewertung}

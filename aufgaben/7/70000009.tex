@@ -1,7 +1,65 @@
-XXX
+Die partielle Differentialgleichung
+\[
+\frac{\partial^2 u}{\partial x^2}
++
+2e^{-x}
+\frac{\partial^2 u}{\partial x\partial y}
++
+\frac{\partial^2 u}{\partial y^2}
+=
+0
+\]
+soll im Gebiet $\Omega=\{(x,y)\,|\, 0<x<2, 0<y<2\}$ gel"ost werden.
+Auf dem Rand von $\Omega$ soll $u$ die folgenden Werte annehmen:
+\begin{align*}
+      &    &\quad u(x,2)&=\sqrt{2-x}&\quad       &        &\text{f"ur $0\le x\le 2$}\\
+u(0,y)&=\sqrt{y}&\quad       &        &\quad u(2,y)&=\sqrt{2-y}&\text{f"ur $0\le y\le 2$}\\
+      &    &\quad u(x,0)&=\sqrt{x}    &\quad       &        &\text{f"ur $0\le x\le 2$}
+\end{align*}
+Bei der numerischen Berechnung wird ein Wert $u(0.1,0.9)=1.42$ gefunden.
+Kann das sein?
+
+\begin{hinweis}
+Versuchen Sie nicht, die partielle Differentialgleichung zu l"osen.
+\end{hinweis}
 
 \begin{loesung}
+Eine Aussage "uber die Gr"osse der Funktionswerte der L"osung in
+einzelnen Punkten des Gebietes l"asst sich f"ur elliptische
+partielle Differentialgleichungen machen, da f"ur diese das Maximumprinzip
+gilt.
+
+Wir pr"ufen daher zun"achst, ob eine elliptische partielle
+Differentialgleichung vorliegt. Dazu ben"otigen wir die Symbolmatrix,
+die in diesem Fall
+\[
+A=\begin{pmatrix}
+1&e^{-x}\\
+e^{-x}&1
+\end{pmatrix}
+\]
+ist. Die Determinante ist
+\[
+\det(A)=1-e^{-2x}>0
+\]
+wegen
+$e^{-2x}<1$
+f"ur $x>0$, die beiden Eigenwerte von $A$ haben also das gleiche Vorzeichen,
+die Differentialgleichung ist elliptisch.
+
+Die gr"ossten Randwerte findet man bei $(0,2)$ und $(2,0)$, nach dem
+Maximumprinzip
+k"onnen auch die Funktionswerte der L"osung diese Werte nicht "ubersteigen.
+Die L"osung kann also nirgends gr"osser sein als
+$u(0,2)=u(2,0)=\sqrt{2}=1.4142\dots$.
+Insbesondere ist $u(0.1,0.9)=1.42>\sqrt{2}$ nicht m"oglich.
 \end{loesung}
 
 \begin{bewertung}
+Symbolmatrix ({\bf S}) 1 Punkt,
+Determinante ({\bf D}) 1 Punkt,
+Vorzeichen der Eigenwerte ({\bf V}) 1 Punkt,
+Klassifikation als elliptische PDGL ({\bf E}) 1 Punkt,
+Maximumprinzip ({\bf M}) 1 Punkt,
+Widerspruch zum Maximumprinzip ({\bf W}) 1 Punkt.
 \end{bewertung}

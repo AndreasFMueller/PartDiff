@@ -1,7 +1,97 @@
-XXX
+Die Differentialgleichung
+\begin{equation}
+\frac{\partial^2 u}{\partial x^2}
+-
+y\frac{\partial^2 u}{\partial y^2}
+=
+0
+\label{90000009:dgl}
+\end{equation}
+soll im Gebiet
+\[
+\Omega = \{(x,y) \,|\, x > 0, y > 0\}
+\]
+gel"ost werden.
+Am linken Rand soll die L"osung die Randbedingung
+\[
+u(0, y)=\sin e^{y^2},\quad y>0
+\]
+erf"ullen.
+Da diese Funktion f"ur grosse Argumente sehr rasch oszilliert,
+ist die numerische L"osung nicht ganz einfach.
+F"ur eine erste Diskussion der L"osung w"are es jedoch ausreichend,
+wenn man die Werte $u(1,y)$ f"ur $0<y<1$ bestimmen k"onnte.
+Es wird behauptet, man k"onne diese Werte auch bestimmen,
+wenn die Randwerte $u(0,y)=0$
+gesetzt werden f"ur gen"ugend grosse $y>a$. Wie gross muss $a$
+sein, damit diese Aussage stimmt?
 
 \begin{loesung}
+Die partielle Differentialgleichung hat die Symbolmatrix
+\[
+A=\begin{pmatrix}
+1&0\\
+0&-y
+\end{pmatrix}
+\]
+mit der Determinanten
+\[
+\det(A) = -y,
+\]
+die im ganzen Gebiet $\Omega$ negativ ist. Die Differentialgleichung ist
+also hyperbolisch.
+
+F"ur hyperbolische partielle Differentialgleichungen kann mit Hilfe der
+Charakteristiken entschieden werden, ob ein Randwert Einfluss auf einen
+Funktionswert hat. Wir stellen daher zun"achst die Differentialgleichung
+der Charakteristiken auf:
+\begin{align*}
+\dot y^2-y\dot x^2&=0\\
+\biggl(\frac{\dot y}{\dot x}\biggr)^2&=y\\
+y'&=\pm\sqrt{y}.
+\end{align*}
+Diese gew"ohnliche Differentialgleichung kann mit der Separationsmethode
+gel"ost werden:
+\begin{align*}
+\int\frac{dy}{\sqrt{y}}
+=\int y^{-\frac12}\,dy
+=2y^{\frac12}
+&=\pm\int dx
+=\pm x+C\\
+\Rightarrow\qquad
+y&=\biggl(\frac12 x + C\biggr)^2
+\end{align*}
+Die Charakteristiken sind also Parabeln, die die $x$-Achse ber"uhren,
+siehe Abbildung~\ref{90000009:domain}.
+\begin{figure}
+\begin{center}
+\includeagraphics[width=0.6\hsize]{domain-1.pdf}
+\end{center}
+\caption{Charakteristiken (rot) der Differentialgleichung (\ref{90000009:dgl}).
+Die hervorgehobenen Charakteristiken durch den Punkt $(1,1)$ bestimmen,
+welche Intervalle von Anfangspunkten auf der $y$-Achse die Werte 
+$u(1,y)$ der L"osung f"ur $0<y<1$ beeinflussen k"onnen.
+\label{90000009:domain}}
+\end{figure}
+
+Die Frage kann also beantwortet werden, indem man die Charakteristik
+findet, welche durch den Punkt $(0,a)$ und $(1,1)$ geht:
+\begin{align*}
+1&=\biggl(\frac12\cdot 1^2 + C\biggr)^2&&\Rightarrow& \pm1&=\frac12 + C&&\Rightarrow& C&=\begin{cases}\frac12&\\-\frac32\end{cases}\\
+a&=\biggl(\frac12\cdot 0 + C\biggr)^2=C^2&&           &     &            &&\Rightarrow& a&=\begin{cases}\frac14&\\\frac94&\end{cases}
+\end{align*}
+Der Wert $a=\frac14$ geh"ort zur Charakteristik, die im Punkt $(-1,0)$
+die $x$-Achse ber"uhrt, der Wert $a=\frac94$ geh"ort zur Charakterstik,
+die in $(3,0)$ ber"uhrt.
+Kein Randwert mit $y>a=\frac94$ kann je einen Funktionswert $u(1,y)$ mit $0<y<1$
+beeinflussen.
 \end{loesung}
 
 \begin{bewertung}
+Symbolmatrix ({\bf S}) 1 Punkt,
+Differentialgleichung ist hyperbolisch ({\bf H}) 1 Punkt,
+Differentialgleichung der Charakteristiken ({\bf X}) 1 Punkt,
+L"osung der Differentialgleichung ({\bf L}) 1 Punkt,
+Bedingung f"ur Charakteristik druch Punkt $(1,1)$ ({\bf B}) 1 Punkt,
+Bestimmung von $a$ ({\bf A}) 1 Punkt.
 \end{bewertung}
