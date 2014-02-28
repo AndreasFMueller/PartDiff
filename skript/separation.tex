@@ -33,6 +33,56 @@ u(x,t)=X(x)\cdot\sin\omega t\quad\text{oder}\quad X(x)\cdot\cos\omega t.
 ist. Ziel dieses Kapitels ist, diese Idee zu einem L"osungsverfahren
 weiterzuentwickeln und auf einige Differentialgleichungen anzuwenden.
 
+\section{Separation der Variablen f"ur gew"ohnliche Differentialgleichungen}
+Die Differentialgleichung 
+\begin{equation}
+y'-xy=0
+\label{separation:ode}
+\end{equation}
+kann mit Separation der Variablen gel"ost werden:
+\begin{align*}
+\frac{dy}{dx}&=xy\\
+\frac1y\,dy&=x\,dx\\
+\int\frac1y\,dy&=\int x\,dx\\
+\log|y|&=\frac12x^2+C\\
+y&=y_0e^{\frac12x^2}
+\end{align*}
+Das Verfahren beruht auf der Prinzip, auf jeder Seite der Gleichung
+nur eine Variable zu haben.
+Dabei zerlegt man sogar die Ableitung $dy/dx$, was man ja eigentlich
+gar nicht darf.
+Die Separation f"uhrt die L"osung der Differentialgleichung auf die
+Berechnung zweier Integrale zur"uck, also eigentlich auf die
+L"osung einer besonders einfachen Differentialgleichung der Form $y'=f(x)$
+mit L"osung $y(x)=\int f(x)\,dx$.
+Diese Form der L"osung sagt uns auch genau, was wir an Anfangsbedingungen
+brauchen.
+Ist $y_0$ der Wert der L"osung an der Stelle $x_0$, dann liefert
+das Integral die L"osungsfunktion
+\[
+y(x)=\int_{x_0}^xf(\xi)\,d\xi + y_0.
+\]
+
+So einfach wird es f"ur partielle Differentialgleichungen nicht sein.
+Insbesondere f"ur die an sich schon etwas ``anr"uchige'' Operationen,
+den Differentialquotienten $dy/dx$ auseinanderzureissen gibt es keinerlei
+Entsprechung bei partiellen Ableitungen.
+Unter geeigneten Voraussetzungen an das Gebiet und die Differentialgleichung
+ist es aber immer noch denkbar, dass man die Variablen trennen kann,
+also 
+\[
+\text{Funktionen/Ableitungen nur mit $x$} = \text{Funktionen/Ableitungen nur mit $y$}
+\]
+Da die linke Seite nur von $x$ abh"angt, die rechte aber nur von $y$, m"ussen
+beide Seiten konstant sein, die partielle Differentialgleichung zerf"allt
+in eine linke {\em gew"ohnliche} Differentialgleichung f"ur eine Funktion von
+$x$ und eine rechte {\em gew"ohnliche} Differentialgleichung f"ur $y$.
+
+Da wir "uber gew"ohnliche Differntialgleichungen Bescheid wissen, sollte
+es uns so m"oglich sein, eine partielle Differentialgleichung zu l"osen
+und herzuleiten, welche Art von Randwerten vorgegeben werden m"ussen, damit
+die Differentialgleichung eindeutig l"osbar ist.
+
 \section{Idee des Verfahrens}
 Oft hat man aus dem Anwendungsgebiet, aus dem eine partielle
 Differentialgleichung stammt, Hinweise darauf, wie die L"osungsfunktion
