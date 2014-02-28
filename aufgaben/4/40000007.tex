@@ -14,9 +14,11 @@ Dichte  $n(x,y)$, dabei sind Kurven gleicher Werte von $u(x,y)$
 die Kurven gleicher Phase, entsprechen also den Wellenfronten.
 Insbesondere steht der Gradient von $u$ immer senkrecht auf
 der Wellenfront, zeigt also in Richtung der Lichtausbreitung.
-
+\begin{teilaufgaben}
+\item
 L"osen Sie die Gleichung
 (\ref{40000007:eikonal}) mit Hilfe eines Separationsansatzes
+der Form $u(x,y)=X(x) + Y(y)$
 f"ur 
 \[
 n(x,y)=
@@ -24,13 +26,17 @@ n(x,y)=
 n_2&\qquad x>0.
 \end{cases}
 \]
-Berechnen Sie die Winkel $\alpha_1$ und $\alpha_2$ der Gradienten
-Ihrer L"osung f"ur $x<0$ und $x>0$. Bestimmen Sie 
+\item
+Berechnen Sie die Winkel $\alpha_1$ und $\alpha_2$ zwischen den Gradienten
+Ihrer L"osung und der $x$-Achse f"ur $x<0$ und $x>0$. Bestimmen Sie 
 $\sin\alpha_1/\sin\alpha_2$.
+\end{teilaufgaben}
 
 \begin{loesung}
 In unserem Fall h"angt $n$ nicht von $y$ ab, ist also eigentlich
 nur eine Funktion $n(x,y)=n(x)$ von $x$.
+\begin{teilaufgaben}
+\item
 Wir verwenden den Separationsansatz
 \[
 u(x,y)=X(x) + Y(y).
@@ -67,7 +73,7 @@ Die L"osung ist also
 u(x,y)=\lambda y + x\sqrt{n_i^2-\lambda^2}
 \]
 wobei f"ur $x<0$ der Wert $n_1$ f"ur $n_i$ zu nehmen ist.
-
+\item
 Der Gradient ist
 \[
 \operatorname{grad}u(x,y)
@@ -77,7 +83,7 @@ Der Gradient ist
 \lambda
 \end{pmatrix}
 \]
-F"ur den Winkel zwischen $x$-Achse und Strahlrichtung gilt
+F"ur den Winkel zwischen $x$-Achse und Gradient gilt
 \[
 \tan\alpha_i
 =
@@ -94,4 +100,14 @@ Daraus folgt jetzt
 \frac{ \sin\alpha_1}{\sin\alpha_2}=\frac{n_2}{n_1},
 \]
 dies ist das Brechungsgesetz von Snellius.
+\end{teilaufgaben}
 \end{loesung}
+
+\begin{diskussion}
+Die L"osung $u(x,y)$ der Eikonalgleichung ist die Phase einer Welle
+$A(x,y)e^{iu(x,y)}$ in einer N"aherung f"ur sehr kleine Wellenl"ange.
+Die Eikonalgleichung kann aus den elektromagnetischen Feldgleichungen
+abgleitet werden.
+In diese N"aherung sind Beugungseffekte nicht beobachtbar, und das
+Brechungsgesetzt gilt exakt.
+\end{diskussion}
