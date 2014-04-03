@@ -4,7 +4,7 @@
 # (c) 2012 Prof Dr Andreas Mueller, Hochschule Rapperswil
 # $Id$
 #
-timestamp:	saite burgers randwerte ode green
+timestamp:	saite burgers randwerte ode green char
 	touch timestamp
 
 RANDWERTEFILES = randwerte-1.pdf randwerte-2.pdf randwerte-3.pdf randwerte-4.pdf
@@ -13,6 +13,7 @@ BURGERSFILES = burgers-1.pdf burgers-2.pdf burgers-3.pdf burgers-4.pdf \
 	burgers-5.pdf burgers-6.pdf
 ODEFILES = ode-1.pdf
 GREENFILES = green-1.pdf
+CHARFILES = char-1.pdf char-2.pdf char-3.pdf
 
 randwerte:	$(RANDWERTEFILES)
 $(RANDWERTEFILES):	randwerte.mp
@@ -44,3 +45,11 @@ green: $(GREENFILES)
 $(GREENFILES):	green.mp
 	TEX=latex mpost green.mp
 	mptopdf green.1
+
+char:	$(CHARFILES)
+$(CHARFILES):	char.mp
+	TEX=latex mpost char.mp
+	mptopdf char.1
+	mptopdf char.2
+	mptopdf char.3
+	
