@@ -1,0 +1,153 @@
+Auf dem Gebiet $\Omega=\{(x,t)\,|\, x>0,t > 0\}$
+ist die Differentialgleichung
+\begin{equation}
+\frac{\partial u}{\partial x}+x\frac{\partial u}{\partial t}=t
+\label{50000007:gleichung}
+\end{equation}
+gegeben. Die L"osung soll die Randbedingungen
+\[
+u(0,t)=e^t
+\qquad
+\text{und}
+\qquad
+u(x,0)=g(x)
+\]
+erf"ullen.
+\begin{teilaufgaben}
+\item Verwenden Sie die Laplace-Transformation nach $t$,
+um (\ref{50000007:gleichung}) in eine Familie gew"ohnlicher
+Differentialgleichungen zu verwandeln.
+\item
+Ist die Funktion $u(x,t)$ durch die Randbedingungen eindeutig bestimmt?
+\item
+L"osen Sie die in a) gefundene gew"ohnliche Differentialgleichung f"ur den Fall
+$g(x)=0$, soweit dies in geschlossener Form\footnote{In geschlossener Form
+l"osen heisst, dass man eine Formel f"ur die L"osung angeben kann, die 
+nur die wohlbekannten Funktionen verwendet, und in der keine nicht
+ausgerechneten Integrale mehr stehen.
+} m"oglich ist.
+\end{teilaufgaben}
+
+\begin{hinweis}
+Anfangsbedingungen nicht vergessen!
+\end{hinweis}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Die Laplace-Transformation von (\ref{50000007:gleichung}) ergibt
+\begin{align}
+\frac{\partial}{\partial x}{\cal L}u(x,s)
++x\bigl(u(x,0)+s{\cal L}u(x,s)\bigr)&=\frac1{s^2}
+\notag
+\\
+\frac{\partial}{\partial x}{\cal L}u(x,s)
++xs{\cal L}u(x,s)&=\frac1{s^2}-xg(x)
+\label{50000007:transformiert}
+\end{align}
+Darin haben wir die Laplace-Transformierte von $t$ verwendet:
+\begin{align*}
+\int_0^\infty e^{-st}t\,dt
+&=
+\left[
+-\frac1{s} e^{-st}t
+\right]_0^\infty
++\frac1s\int_0^\infty e^{-st}\,dt
+=\frac1s\left[
+-\frac1se^{-st}
+\right]_0^\infty=\frac1{s^2}.
+\end{align*}
+Schreibt man $y_s(x)={\cal L}u(x,s)$, wird deutlich,
+dass (\ref{50000007:transformiert}) eine mit $s$ parametrisierte
+Familie von gew"ohnlichen, linearen, inhomogenen Differentialgleichungen
+\begin{equation}
+y_s'(x)+xsy_s(x)=\frac1{s^2}-xg(x)
+\label{50000007:family}
+\end{equation}
+erster Ordnung ist.
+
+Die Anfangsbedingung f"ur die Funktion $y_s(x)$ an der Stelle $x=0$
+muss aus $u(0,t)=e^t$ ermittelt werden.
+Die Laplace-Transformierte von $e^t$ ist
+\begin{align*}
+\int_0^\infty e^{-st}e^t\,dt
+&=
+\int_0^\infty e^{t(1-s)}\,dt
+=\left[\frac1{1-s}e^{t(1-s)}\right]_0^\infty=\frac1{s-1}.
+\end{align*}
+Es muss also gelten
+\[
+y_s(0)=\frac1{s-1}.
+\]
+\item
+Aus der Theorie der linearen partiellen Differentialgleichungen weiss man,
+dass $y_s(x)$ f"ur alle $x$ existiert und eindeutig bestimmt ist. 
+Daher wird auch $u(x,t)$ eindeutig bestimmt sein.
+
+Man kann auch mit Hilfe von Charakteristiken zu diesem Schluss kommen, 
+(\ref{50000007:gleichung}) ist n"amlich auch eine quasilineare partielle
+Differentialgleichung erster Ordnung.
+Das Differentialgleichungssystem f"ur die Charakteristiken mit Parameter $p$
+ist
+\begin{align*}
+\dot x&=1&&\Rightarrow&x(p)&=p+x_0\\
+\dot t&=x&&\Rightarrow&t(p)&=\frac12p^2+x_0p+t_0\\
+\dot u&=t&&\Rightarrow&u(p)&=\frac16p^3+\frac12x_0p^2+t_0p+u_0
+\end{align*}
+Mit $p=x-x_0$ aus der ersten Gleichung findet man
+\[
+t(x)=\frac12(x-x_0)^2+x_0(x-x_0)+t_0=\frac12(x^2-x_0^2)+t_0.
+\]
+Man muss sich jetzt "uberlegen, ob mit solchen Charakteristiken
+jeder beliebige Punkt des Gebietes "uberdeckt werden kann.
+Ausgehend von Punkten auf der $x$-Achse, d.~h.~mit $t_0=0$
+erreicht man alle Punkte in $\{(x,t)\,|\, t\le \frac12x^2\}$.
+Ausgehend von Punkten auf der $t$-Achse, d.~h.~mit $x_0=0$
+erreicht man alle Punkte in $\{(x,t)\,|\, t\ge \frac12x^2\}$.
+Dies kann man zum Beispiel auch aus der Darstellung
+der Charakteristiken in Abbildung~\ref{50000007:bild}
+ablesen.
+\begin{figure}
+\begin{center}
+\includeagraphics[width=0.6\hsize]{domain-1.pdf}
+\end{center}
+\caption{Charakteristiken der partiellen
+Differentialgleichung~(\ref{50000007:gleichung})
+\label{50000007:bild}}
+\end{figure}
+\item
+Die homogene Differentialgleichung zu (\ref{50000007:family}) l"asst sich
+mit Separation l"osen:
+\begin{align*}
+y_s'  + xsy_s&=0
+\\
+\int\frac{dy_s}{y_s}&=-\int xs\,dx
+\\
+y_s&=C_se^{-\frac12sx^2}
+\end{align*}
+Die L"osung der inhomogenen Gleichung kann jetzt durch Verwendung der
+Methode der Variation der Konstanten gefunden werden, was auf die
+Gleichung 
+\[
+C'_s(x)e^{-\frac12sx^2}=\frac1{s^2}
+\]
+f"uhrt.
+Das Integral 
+\[
+\int_0^x\frac1{s^2}e^{\frac12sx^2}\,dx
+=\frac1{s^2}
+\int_0^xe^{\frac12sx^2}\,dx
+\]
+kann jedoch nicht in geschlossener Form ausgewertet werden, so dass der
+Versuch der analytischen L"osung an dieser Stelle abgebrochen werden muss.
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+Laplace-Transformation von $t$ ({\bf T}) 1 Punkt,
+Transformation der Gleichung ({\bf G}) 1 Punkt,
+Laplace-Transformation der Anfangsbedingung ({\bf A}) 1 Punkt,
+Eindeutigkeit in Teilaufgabe b) ({\bf E}) 1 Punkt,
+Separation der homogenen Differentialgleichung ({\bf S}) 1 Punkt,
+L"osung der homogenen Gleichung ({\bf L}) 1 Punkt.
+\end{bewertung}
