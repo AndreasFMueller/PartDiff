@@ -1,0 +1,82 @@
+Auf dem Gebiet $\Omega=\{(x,y)\,|\, x>1, y>1\}$ soll die partielle
+Differentialgleichung
+\begin{equation}
+\frac{\partial^2 u}{\partial x^2}-2\kappa xy\frac{\partial^2 u}{\partial x\partial y}=0
+\label{90000010:gleichung}
+\end{equation}
+gel"ost werden mit Randbedingungen f"ur $x=1$, also auf dem linken Rand von
+$\Omega$. Der Parameter $\kappa$ ist positiv.
+Hat eine "Anderung der Randbedingungen f"ur $x=1$ und $y<2$ einen
+Einfluss auf die L"osung im Quadrat $\{(x,y)\,|\, 2<x<3,2<y<3\}$?
+
+\begin{loesung}
+Die Symbolmatrix dieser linearen partiellen Differentialgleichung zweiter
+Ordnung ist
+\[
+A=\begin{pmatrix}
+1&-\kappa xy\\
+-\kappa xy&0
+\end{pmatrix}
+\qquad
+\Rightarrow
+\qquad
+\det(A)=-\kappa^2x^2y^2<0
+\]
+in $\Omega$, es handelt sich also um eine hyperbolische partielle
+Differentialgleichung, bei der mit Hilfe der Charakteristiken entschieden
+werden kann, ob die beschriebene "Anderung der Randbedingungen eine 
+Auswirkung auf die L"osung im Quadrat $(2,3)^2$ hat.
+
+Die Differentialgleichung der Charakteristiken ist
+\begin{align*}
+1\cdot \dot y^2 +2\kappa xy\cdot \dot x \dot y&=0,\\
+\Rightarrow\qquad
+\dot y(\dot y+2\kappa xy\,\dot x)&=0.
+\end{align*}
+Das Produkt verschwindet, wenn einer der Faktoren verschwindet, wir erhalten
+also die zwei Differentialgleichungen
+\begin{align*}
+\dot y &= 0
+&
+&\text{oder}
+&
+\dot y&=-2\kappa xy\dot x.
+\end{align*}
+Die Gleichung $\dot y=0$ hat als L"osung horizontale Geraden, sie sind
+in Abbildung~\ref{90000010:bild} gr"un eingezeichnet.
+
+Die zweite Differentialgleichung kann mit Hilfe von $y'=\dot y/\dot x$ 
+vereinfacht und dann mit Separation gel"ost werden:
+\begin{align*}
+y'&=-2\kappa xy\\
+\int \frac{dy}y&=\int -2\kappa x\,dx\\
+\log y&=-\kappa x^2+K\\
+y(x)&=Ce^{-\kappa x^2}
+\end{align*}
+Die Funktionen $Ce^{-\kappa x^2}$ sind monoton fallend, sie sind in
+Abbildung~\ref{90000010:bild} rot eingezeichnet.
+Insbesondere trifft
+keine Charakteristik, die in Punkten $(1,y)$ mit $y<2$ beginnt das
+Quadrat $(2,3)^2$.
+\begin{figure}
+\begin{center}
+\includeagraphics[width=0.6\hsize]{domain-1.pdf}
+\end{center}
+\caption{Charakteristiken f"ur die hyperbolische partielle
+Differentialgleichung (\ref{90000010:gleichung}) f"ur den Parameterwert
+$\kappa =0.3$, das Quadrat $(2,3)^2$, in dem sich die L"osung nicht
+"andern soll, ist blau hervorgehoben.
+\label{90000010:bild}}
+\end{figure}
+\end{loesung}
+
+\begin{bewertung}
+Symbolmatrix ({\bf A}) 1 Punkt,
+hyperbolische partielle Differentialgleichung ({\bf H}) 1 Punkt,
+Differentialgleichung der Charakteristiken ({\bf D}) 1 Punkt,
+Zwei L"osungsscharen f"ur die Charakteristiken ({\bf L}) 2 Punkte,
+Einfluss auf L"osung ({\bf E}) 1 Punkt.
+\end{bewertung}
+
+
+
