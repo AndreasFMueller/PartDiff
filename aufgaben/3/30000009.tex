@@ -1,0 +1,134 @@
+Auf dem Gebiet $\Omega=\{(x,y)\;|\;0<x<1,1<y<2\}$ ist die partielle Differentialgleichung
+\begin{equation}
+y\frac{\partial u}{\partial x}+\frac1y\,\frac{\partial u}{\partial y}=0
+\label{30000009:gleichung}
+\end{equation}
+gegeben.
+\begin{teilaufgaben}
+\item Finden Sie eine L"osung, die die Randbedingung
+\[
+u(x,1)=x
+\]
+erf"ullt.
+\item Ist die L"osung durch diese Randbedingung eindeutig festgelegt?
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Das Differentialgleichungssystem f"ur die Charakteristiken ist
+\begin{align}
+\dot x &= y\label{30000009:1}\\
+\dot y &= \frac1y\label{30000009:2}\\
+\dot u &= 0\label{30000009:3}
+\end{align}
+Zur Bestimmung der L"osung der Differentialgleichung
+mit den gegebenen Randbedingungen
+suchen wir L"osungskurven, die in Randpunkten beginnen, und verwenden
+die Konvention, den Anfangspunkt einer solchen Kurve mit $(x_0,y_0,u_0)$
+zu bezeichnen. Auf Grund der Randbedingungen ist $y_0=1$ und $u_0=u(x_0)$.
+
+Die Gleichung (\ref{30000009:3}) ist einfach zu l"osen: $u(t)=u_0$.
+Aus der Gleichung (\ref{30000009:2}) wird
+\begin{align*}
+y\dot y&=1\\
+\int y\,dy&=\int dt\\
+\frac12y^2&=t+C\\
+y(t)&=\sqrt{2t+C}=\sqrt{2t+y_0^2}=\sqrt{2t+1}
+\end{align*}
+Daraus kann man jetzt auch $x(t)$ bestimmen:
+\[
+x(t)= \int_0^ty(\tau)\,d\tau
+=\int_0^t\sqrt{2t+1}\,d\tau + x_0
+=\frac13(2t+1)^{\frac{3}{2}}-\frac13+x_0
+\]
+Wir m"ussen jetzt also ausgehend von dem Gleichungssystem
+\begin{align}
+x&=\frac13(2t+1)^{\frac32}-\frac13+x_0\label{30000009:4}\\
+y&=\sqrt{2t+1}\label{30000009:5}\\
+u&=u(x_0)=x_0\label{30000009:6}
+\end{align}
+$u$ durch $x$ und $y$ ausdr"ucken. Dazu ersetzen wir zuerst in 
+(\ref{30000009:4}) mit Hilfe von (\ref{30000009:5}) den Klammerausdruck
+durch $y$:
+\begin{equation}
+x=\frac13y^3-\frac13+x_0\qquad\Rightarrow\qquad x_0=x-\frac13y^3+\frac13.
+\label{30000009:char}
+\end{equation}
+Aus Gleichung (\ref{30000009:6}) ergibt sich dann
+\[
+u(x,y)=x-\frac13y^3+\frac13.
+\]
+Wir kontrollieren dieses Resultat durch Nachrechnen:
+\[
+\left.
+\begin{aligned}
+\frac{\partial u}{\partial x}
+&=
+1
+\\
+\frac{\partial u}{\partial y}
+&=
+-y^2
+\end{aligned}
+\qquad
+\right\}
+\qquad
+\Rightarrow
+\qquad
+y\,\frac{\partial u}{\partial x}
++\frac1y\,\frac{\partial u}{\partial y}
+=
+y\cdot 1-\frac1y\cdot y^2=0,
+\]
+die Funktion $u$ ist also tats"achlich eine L"osung der partiellen
+Differentialgleichung. Auf dem Rand gilt:
+\[
+u(x,1)=\frac13\cdot1^3-\frac13+x=x,
+\]
+also ist auch die Randbedingung erf"ullt.
+\item
+Die Charakteristiken erf"ullen die Gleichung (\ref{30000009:char}), die
+man auch nach $y$ aufl"osen kann:
+\[
+y=\root3\of{3(x-x_0)+1}
+\]
+Die vom unteren Teil des Randes ausgehenden Charakteristiken "uberdecken
+nicht das ganze Gebiet, wie man der Abbildung \ref{30000009:charakteristiken}
+entnehmen kann. Das Teilgebiet 
+\[
+\Omega_1=\{(x,y)\;|\; 0<x<1, \root3\of{3x+1} < y < 2\}
+\]
+wird nicht "uberdeckt, dort ist die Funktion also durch die Randbedingung
+nicht festgelegt.
+\end{teilaufgaben}
+\begin{figure}
+\begin{center}
+\includeagraphics[width=0.4\hsize]{domain-1.pdf}
+\end{center}
+\caption{Charakteristiken der Differentialgleichung (\ref{30000009:gleichung})
+\label{30000009:charakteristiken}}
+\end{figure}
+\end{loesung}
+
+\begin{bewertung}
+Quasilineare PDGL ({\bf Q}) 1 Punkt,
+Differentialgleichungen der Charakteristiken ({\bf D}) 1 Punkt,
+L"osung der Differentialgleichungen f"ur $x(t)$ ({\bf X})
+und $y(t)$ ({\bf Y}) je 1 Punkt,
+L"osung der partiellen Differentialgleichung ({\bf U}) 1 Punkt,
+Verwendung der Charakteristikenmethode zur Beurteilung ob
+vorgegebenen Randwerte die L"osung eindeutig bestimmen ({\bf B}) 1 Punkt.
+\end{bewertung}
+
+\begin{diskussion}
+Man kann nat"urlich aus der Berechnung der Charakteristiken die L"osung
+auch f"ur allgemeinere Randbedingungen der Form $u(x,1)=g(x)$ bekommen.
+Statt der Gleichung (\ref{30000009:6}) ist dann
+$u(x_0)=g(x_0)$ zu verwenden, und man erh"alt als L"osung
+\[
+u(x,y)=g\biggl(
+x- \frac13y^3+\frac13
+\biggr).
+\]
+\end{diskussion}
