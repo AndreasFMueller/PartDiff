@@ -1,0 +1,108 @@
+Auf dem Gebiet $\Omega=\{(x,y)\;|\;0<x<\pi,y>1\}$
+ist die partielle Differentialgleichung
+\begin{equation}
+\frac{\partial^2 u}{\partial x^2}-y\frac{\partial u}{\partial y}=0
+\label{40000011:gleichung}
+\end{equation}
+gegeben. Finden Sie eine L"osung von (\ref{40000011:gleichung}), die den
+Randbedingungen
+\begin{align*}
+\frac{\partial}{\partial x}u(0,y)=
+\frac{\partial}{\partial x}u(\pi,y)&=0&y&> 1\\
+u(x,1)&=\cos2x&0&<x<\pi
+\end{align*}
+gen"ugt.
+
+\begin{loesung}
+Wir l"osen die partielle Differentialgleichung mit Hilfe eines 
+Separationsansatzes $u(x,y)=X(x)\cdot Y(y)$.
+Einsetzen in (\ref{40000011:gleichung}) und Separieren ergibt
+\begin{align*}
+X''(x)Y(y)-yX(x)Y'(y)&=0\\
+\frac{X''(x)}{X(x)}&=y\frac{Y'(y)}{Y(y)}.
+\end{align*}
+Da die linke Seite nur von $x$, die rechte nur von $y$ abh"angt, m"ussen
+beide Seiten konstant sein, wir nennen die gemeinsame Konstante $-\mu^2$,
+was sich als praktisch erweisen wird.
+
+Die Teilgleichung
+\[
+\frac{X''(x)}{X(x)}=-\mu^2
+\qquad
+\Leftrightarrow
+\qquad
+X''(x)=-\mu^2X(x)
+\]
+ist eine Schwingungsdifferentialgleichung, sie hat $\sin\mu x$ und $\cos\mu x$
+als L"osungen. Ausserdem m"ussen aber auch die homogenen Randbedingungen
+erf"ullt sein. Die L"osung $\sin\mu x$ hat am linken Rand die Ableitung $\mu$,
+die die homogene Randbedingung nicht erf"ullt, es bleibt nur $\cos\mu x$.
+Seine Ableitung am rechten Rand muss ebenfalls verschwinden:
+\[
+-\mu\sin\mu \pi=0
+\qquad
+\Rightarrow
+\qquad
+\mu\in\mathbb N.
+\]
+
+Damit k"onnen wir jetzt auch die Gleichung f"ur $Y$ vereinfachen
+\[
+y\, \frac{Y'(y)}{Y(y)}=-\mu^2
+\qquad
+\Leftrightarrow
+\qquad
+\frac{dY}{dy}=-\mu^2\frac{Y}{y}
+\]
+und mit Separation l"osen
+\begin{align*}
+\int\frac{dY}{Y}&=-\mu^2\int\frac{dy}y\\
+\log Y&=-\mu^2\log y+K\\
+Y(y)&=Cy^{-\mu^2}.
+\end{align*}
+Jetzt k"onnen wir die L"osung der Differentialgleichung als Linearkombination
+der gefundenen Teill"osungen ansetzen:
+\[
+u(x,y)=\sum_{n=0}^\infty a_ny^{-n^2}\cos nx.
+\]
+Es bleibt jetzt nur noch, mit der verbleibenden Randbedingung die Koeffizienten
+$a_n$ zu bestimmen. Einsetzen der Randbedingung ergibt:
+\[
+u(x,1)=\sum_{n=0}^\infty a_n\cos nx=\cos 2x,
+\]
+woraus man mit Koeffizientenvergleich ablesen kann,
+dass $a_2=1$ und alle anderen Koeffizienten verschwinden.
+Die gesuchte L"osung ist also
+\[
+u(x,y)=y^{-4}\cos 2x.
+\]
+Wir kontrollieren dieses Resultat durch Einsetzen:
+\[
+\left.
+\begin{aligned}
+\frac{\partial u}{\partial x}&=-2y^{-4}\sin 2x
+\\
+\frac{\partial^2 u}{\partial x^2}&=-4y^{-4}\cos 2x
+\\
+\frac{\partial u}{\partial y}&=-4y^{-5}\cos 2x
+\end{aligned}\qquad
+\right\}
+\qquad
+\Rightarrow
+\qquad
+\frac{\partial^2u}{\partial x^2}-y\frac{\partial u}{\partial y}=
+-4y^4\cos 2x-y(-4y^{-5}\cos 2x)=0,
+\]
+die Randbedingungen sind offensichtlich auch erf"ullt.
+\end{loesung}
+
+\begin{bewertung}
+Separationsansatz ({\bf A}) 1 Punkt,
+Separation  ({\bf S}) 1 Punkt,
+Wahl einer Konstanten ({\bf K}) 1 Punkt,
+L"osung der Teilgleichungen ({\bf L}) 1 Punkt,
+Einsetzen der Randwerte ({\bf R}) 1 Punkt,
+Koeffizientenvergleich und L"osung ({\bf K}) 1 Punkt.
+\end{bewertung}
+
+

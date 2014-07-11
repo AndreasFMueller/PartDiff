@@ -1,0 +1,35 @@
+Die reelle Funktion $u(x)$ ist auf dem Intervall
+\[
+\Omega = [0, 1]
+\]
+definiert. Sie erf"ullt im Innern von $\Omega$ die Differentialgleichung
+\[
+- u''(x) = 2
+\]
+und auf dem Rand von $\Omega$ die Randbedingungen
+\[
+u(0) = 0, \ \ u(1) = 0.
+\]
+Gesucht ist eine Approximationsfunktion $\tilde u(x)$ f"ur $u(x)$.
+
+Benutzen Sie das Verfahren von Gauss. Benutzen Sie die Masche $[0,1]$
+und den Approximationsansatz
+\[
+v(x) = a \cdot (x - x^2).
+\]
+
+
+\begin{loesung}
+Mit
+\[
+Q = \int_0^1 (-2)^2 \ dx = 4 \ \ \ \ \mbox{und}  \ \ \ \ q = \int_0^1 2 \cdot (-2) \  dx = -4,
+\]
+gilt
+\[
+4 \cdot a - 4 = 0  \ \ \ \ \mbox{und somit }  \ \ \ \ a = 1.
+\]
+Es folgt
+\[
+\tilde u(x) = x - x^2.
+\]
+\end{loesung}

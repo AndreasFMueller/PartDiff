@@ -1,0 +1,38 @@
+Die reelle Funktion $u(x)$ ist auf dem Intervall
+\[
+\Omega = [0, 1]
+\]
+definiert. Sie erf"ullt im Innern von $\Omega$ die Differentialgleichung 
+\[
+- u''(x) = x
+\]
+und auf dem Rand von $\Omega$ die Randbedingungen 
+\[
+u(0) = 0, \qquad u(1) = 0.
+\]
+Gesucht ist eine Approximationsfunktion $\tilde u(x)$ f"ur $u(x)$.
+
+\vspace{2mm}
+
+Benutzen Sie Finite Elemente. Benutzen Sie die Masche $[0,1]$ und quadratische Formfunktionen.
+
+\begin{loesung}
+
+Mit
+\[
+R = 16/3 \qquad \text{und}  \qquad a = \tilde u(1/2), 
+\]
+sowie
+\[
+r = \int_0^1 x \cdot 4 \cdot (x - x^2) \ dx = 1/3,
+\]
+gilt  
+\[
+R \cdot a = r  \qquad \text{und somit }  \qquad a = 1/16.
+\]
+Es folgt 
+\[
+\tilde u(x) = 1/4 \cdot (x - x^2).
+\]
+\end{loesung}
+

@@ -1,0 +1,52 @@
+In der Ebene ist ein kartesisches Koordinatensystem vorgegeben.
+
+Das Gebiet $\Omega$ wird durch das Polygon mit Eckpunkten (in Reihenfolge)
+\[
+(0,0), \ \ (6,0), \ \ (6,2), \ \ (4,2),  \ \ (4,4),  \ \ (0,4), \ \  (0,0)
+\]
+berandet. Die reelle Funktion $u(x,y)$ ist auf $\Omega$ definiert.
+Sie erf"ullt im Innern von $\Omega$ die Differentialgleichung
+\[
+\Delta u(x,y) = 0
+\]
+und auf dem Rand von $\Omega$ die Bedingungen
+\[
+u(x,y) = 0 \ \ \ \mbox{falls} \ \ \ y \neq 0.
+\]
+Weiter sind folgende Werte von $u$ bekannt:
+\[
+u(1,0) = u(3,0) = u(5,0) = 1.
+\]
+
+\vspace{1mm}
+
+Gesucht ist eine Approximation der Werte von $u$ in den f\"unf Punkten
+von $\Omega$
+\[
+(1,1), \ \  (3,1), \ \ (5,1), \ \  (1,3), \ \ (3,3).
+\]
+Benutzen Sie hierzu geeignete Finite Volumina.
+
+
+\begin{loesung}
+Mit
+\[
+\tilde u_1 = \tilde u(1,1), \ \tilde u_2 = \tilde u(3,1), \ \tilde u_3 = \tilde u(5,1), \ \tilde u_4 = \tilde u(1,3), \ \tilde u_5 = \tilde u(3,3),
+\]
+sowie
+\[
+A = \left[\begin{array}{rrrrr} 
+6 & -1 & 0 & -1 & 0 \\
+-1 & 5 & -1 & 0 & -1 \\
+0 & -1 & 7 & 0 & 0 \\ 
+-1 & 0 & 0 & 6 & -1 \\
+0 & -1 & 0 & -1 & 6 \\
+ \end{array}\right] \ \ \mbox{und} \ \
+\underline{b} =  \left(\begin{array}{r} 2 \\ 2 \\ 2 \\ 0 \\ 0 \end{array}\right)
+\]
+gilt $A \cdot \underline{\tilde u} = \underline{b}.$
+Es folgt
+\[
+\underline{\tilde u} = (0.4465, 0.5858, 0.3694, 0.0933, 0.1132).
+\]
+\end{loesung}
