@@ -27,7 +27,7 @@ L"osung existiert und eindeutig bestimmt ist.
 \subsection{Laplace-Gleichung}
 \index{Laplace-Gleichung}
 Als Beispiel f"ur die Eigenschaften der L"osungen
-\marginpar{\tiny Formulierung des Beispielproblems}
+%\marginpar{\tiny Formulierung des Beispielproblems}
 elliptischer linearer partieller Differentialgleichungen
 betrachten wir in diesem Kapitel die Laplace-Gleichung
 auf einem Gebiet $\Omega\subset\mathbb R^n$
@@ -58,7 +58,7 @@ Diskussion betrachten wir in diesem Abschnitt nur die
 Dirichlet-Randbedingungen (\ref{dirichletrandbedingung}).
 
 Aus der allgemeinen Theorie linearer partieller Differentialgleichungen
-\marginpar{\tiny Allgemeine L"osungsstrategie}
+%\marginpar{\tiny Allgemeine L"osungsstrategie}
 kann man ableiten, dass wir f"ur
 die L"osung des gestellten Problems wie folgt vorgehen m"ussen
 \begin{enumerate}
@@ -324,8 +324,8 @@ u(0)=a,\quad u(1)=b.
 Ziel ist, die Funktion $G$ zu finden.
 
 Die L"osung dieses Problems wird in der Theorie der gew"ohnlichen
-\marginpar{\tiny L"osung des gew"ohnlichen Randwertproblems als Leitlinie
-f"ur den mehrdimensionalen Fall}
+%\marginpar{\tiny L"osung des gew"ohnlichen Randwertproblems als Leitlinie
+%f"ur den mehrdimensionalen Fall}
 Differential\-gleichungen behandelt, wir wollen hier die allgemeine
 L"osung jedoch so darstellen, dass sie als Leitlinie f"ur die
 Entwicklung einer L"osung f"ur das mehrdimensionale Problem dienen
@@ -600,7 +600,7 @@ u(x)=\sigma(x,y)
 \]
 die Funktion $\sigma$ muss also eine harmonische Funktion in 
 $\mathbb R^n\setminus\{y\}$ sein.
-\marginpar{\tiny singul"are L"osungen der Laplace-Gleichung}
+%\marginpar{\tiny singul"are L"osungen der Laplace-Gleichung}
 Man findet,\footnote{Man kann
 diese L"osungen mit folgendem Argument finden. Zun"achst darf die L"osung
 nur von der Entfernung $|x-\xi|$ abh"angen, so dass wir ohne
@@ -675,7 +675,7 @@ ist. Dann ist $\sigma(x,\xi)+h(x,\xi)$ eine Funktion, die auf dem
 Rand $\partial\Omega$ immer verschwindet. Die mittels
 (\ref{singulaereloesunglaplace}) gefundene L"osung $u(x)$
 verschwindet ebenfalls auf dem Rand.
-\marginpar{\tiny Greensche Funktion f"ur das Dirichletproblem auf $\Omega$}
+%\marginpar{\tiny Greensche Funktion f"ur das Dirichletproblem auf $\Omega$}
 Wir bezeichnen $\sigma+h$ f"ur diese spezielle Wahl von $h$ mit
 \[
 G(x,\xi)=\sigma(x,\xi)+h(x,\xi)
@@ -707,7 +707,7 @@ unser Problem:
 \begin{satz}[L"osung des Dirichlet-Problems]
 \label{dirichletloesung}
 Ist $G$ die Greensche Funktion f"ur das Dirichlet-Problem auf dem
-\marginpar{\tiny Greensche Funktion l"ost das Dirichlet-Problem}
+%\marginpar{\tiny Greensche Funktion l"ost das Dirichlet-Problem}
 Gebiet $\Omega$, dann ist
 \[
 u(x)=\int_{\Omega}G(x,\xi)f(\xi)\,d\mu(\xi)+\int_{\partial\Omega}g(\xi)\operatorname{grad}_\xi G(x,\xi)\cdot dn
@@ -838,7 +838,7 @@ Mittelwerte der Funktionswerte auf einer Kugel um den gegebenen Punkt sind.
 
 \begin{satz}[Mittelwerteigenschaft]
 Sei $u$ eine harmonische Funktion im Gebiet $\Omega$ und $x_0\in\Omega$.
-\marginpar{\tiny Mittelwerteigenschaft harmonischer Funktionen}
+%\marginpar{\tiny Mittelwerteigenschaft harmonischer Funktionen}
 Sei $r$ so klein, dass die Kugel mit Radius $r$ um den Punkt $x_0$
 ebenfalls in $\Omega$ enthalten ist. Dann gilt
 \[
@@ -886,7 +886,7 @@ auf einem Ball zu l"osen:
 \begin{satz}[Poisson-Formel]
 \index{Poisson-Formel}
 Sei $g$ eine stetige Funktion auf dem Rand der $n$-dimensio\-nalen
-\marginpar{\tiny Poisson-Formel}
+%\marginpar{\tiny Poisson-Formel}
 Einheitskugel, dann ist
 \[
 u(x)=\begin{cases}
@@ -902,7 +902,7 @@ eine harmonische Funktion mit Randwerten $u_{|S_1^{n-1}}=g$.
 \rhead{Maximumprinzip}
 \index{Maximumprinzip}
 \begin{satz}[Maximumprinzip]Ist die Funktion $u$ auf dem Gebiet
-\marginpar{\tiny Maximumprinzip f"ur harmonische Funktionen}
+%\marginpar{\tiny Maximumprinzip f"ur harmonische Funktionen}
 $\Omega$ harmonisch, und nimmt sie in einem inneren Punkt $x\in\Omega$
 ein Maximum an, dann ist $u$ konstant.
 \end{satz}
@@ -940,7 +940,7 @@ von $u$ muss auf der ganzen Kugel identisch sein.
 \end{proof}
 
 Aus dem Maximum-Prinzip folgt auch, dass eine beliebige Funktion, die
-\marginpar{\tiny Funktionen mit Mittelwerteigenschaft sind harmonisch}
+%\marginpar{\tiny Funktionen mit Mittelwerteigenschaft sind harmonisch}
 die Mittelwerteigenschaft hat, auch harmonisch ist. Ist $u$ ein
 Funktion, die die Mittelwerteigenschaft hat, dann kann man mit der
 Poisson-Formel eine Funktion $v$ innerhalb eines Balles konstruieren,
@@ -952,7 +952,7 @@ im Inneren das Balles nicht gr"osser sein kann als auf dem Rand,
 muss $u=v$ sein. Da $v$ harmonisch ist, ist auch $u$ harmonisch.
 
 Die Analogie zum eindimensionalen Fall ist ebenfalls durchf"uhrbar.
-\marginpar{\tiny Maximumprinzip gilt auch im eindimensionalen Musterproblem}
+%\marginpar{\tiny Maximumprinzip gilt auch im eindimensionalen Musterproblem}
 Ist $u$ eine Funktion von einer Variablen mit $u''=0$, dann ist
 $u$ linear, also $u(x)=ax+b$. Hat $u(x)$ ein Maximum im Inneren
 des Definitionsbereichs, folgt $u'(x)=a=0$, also ist $u(x)=b$ konstant.
@@ -970,7 +970,7 @@ G(x,\xi)=0\quad\forall x\in\partial\Omega
 \]
 erf"ullt.
 Verwendet man stattdessen eine Greensche Funktion, welche die
-\marginpar{\tiny Greensche Funktion f"ur Neumann-Randbedingungen}
+%\marginpar{\tiny Greensche Funktion f"ur Neumann-Randbedingungen}
 Neumann-Randbedingungen
 \[
 \frac{\partial}{\partial n}G(x,\xi)=0\quad\forall x\in\partial\Omega
