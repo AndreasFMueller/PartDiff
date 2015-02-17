@@ -1,4 +1,4 @@
-% Written by metapost version 1.504
+% Written by metapost version 1.803
 begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
 string _n[];
 vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
@@ -103,5 +103,62 @@ _n5="rtxptmri";
 _s("x",_n5,1.00000,12.2341,0.0000,);
 setbounds _p to (0,-2.0523)--(16.6874,-2.0523)--
  (16.6874,6.7995)--(0,6.7995)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="rtxptmr";
+_s("0",_n1,1.00000,0.0000,0.0000,);
+setbounds _p to (0,-0.1345)--(4.9813,-0.1345)--
+ (4.9813,6.6650)--(0,6.6650)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n5="rtxptmri";
+_s("l",_n5,1.00000,0.0000,0.0000,);
+setbounds _p to (0,-0.0747)--(2.7796,-0.0747)--
+ (2.7796,6.7248)--(0,6.7248)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n4="rtxmi";
+_s(" ",_n4,1.00000,0.0000,0.0000,);
+_n1="rtxptmr";
+_s("(",_n1,1.00000,6.1469,0.0000,);
+_n5="rtxptmri";
+_s("x",_n5,1.00000,9.9626,0.0000,);
+_s(";",_n4,1.00000,14.4159,0.0000,);
+_s("t",_n5,1.00000,18.5670,0.0000,);
+_s(")",_n1,1.00000,21.5159,0.0000,);
+setbounds _p to (0,-2.0523)--(24.8335,-2.0523)--
+ (24.8335,6.6650)--(0,6.6650)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n1="rtxptmr";
+_s("0",_n1,1.00000,0.0000,0.0000,);
+setbounds _p to (0,-0.1345)--(4.9813,-0.1345)--
+ (4.9813,6.6650)--(0,6.6650)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n5="rtxptmri";
+_s("l",_n5,1.00000,0.0000,0.0000,);
+setbounds _p to (0,-0.0747)--(2.7796,-0.0747)--
+ (2.7796,6.7248)--(0,6.7248)--cycle;
 _p endgroup
 mpxbreak

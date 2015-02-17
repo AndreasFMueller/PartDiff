@@ -1,4 +1,3 @@
-beginfig(1)
 verbatimtex
 \documentclass{article}
 \usepackage{times}
@@ -8,6 +7,8 @@ verbatimtex
 \usepackage{txfonts}
 \begin{document}
 etex;
+
+beginfig(1)
 pickup pencircle scaled 0.5pt;
 draw (-140,0)--(140,0);
 draw (-140,5)--(-140,-5);
@@ -42,6 +43,34 @@ draw (40,3)--(49,13);
 draw (-40,6)--(-49,13);
 
 label.top(btex $\mu\Delta x$ etex, (0,12));
+
+endfig;
+
+beginfig(2)
+pickup pencircle scaled 0.5pt;
+draw (-140,0)--(140,0);
+draw (-140,5)--(-140,-5);
+draw (140,5)--(140,-5);
+label.llft(btex $0$ etex, (-140,0));
+label.lrt(btex $l$ etex, (140,0));
+
+pickup pencircle scaled 1pt;
+draw (-140,0)..(-40,-2)..(-20,10){dir20}..{dir340}(20,7)..(60,-4)..(140,0);
+
+label.top(btex $\psi(x, t)$ etex, (0,12));
+
+endfig;
+
+beginfig(3)
+pickup pencircle scaled 0.5pt;
+draw (-140,0)--(140,0);
+draw (-140,5)--(-140,-5);
+draw (140,5)--(140,-5);
+label.llft(btex $0$ etex, (-140,0));
+label.lrt(btex $l$ etex, (140,0));
+
+pickup pencircle scaled 1pt;
+draw (-140,0)..(-40,-2)..(-20,10){dir20}..{dir340}(20,7)..(60,-4)..(140,0);
 
 endfig;
 

@@ -8,7 +8,7 @@ timestamp:	saite burgers randwerte ode green char
 	touch timestamp
 
 RANDWERTEFILES = randwerte-1.pdf randwerte-2.pdf randwerte-3.pdf randwerte-4.pdf
-SAITEFILES = saite-1.pdf
+SAITEFILES = saite-1.pdf saite-2.pdf
 BURGERSFILES = burgers-1.pdf burgers-2.pdf burgers-3.pdf burgers-4.pdf \
 	burgers-5.pdf burgers-6.pdf
 ODEFILES = ode-1.pdf
@@ -26,7 +26,10 @@ $(RANDWERTEFILES):	randwerte.mp
 saite:	$(SAITEFILES)
 $(SAITEFILES):  saite.mp
 	TEX=latex mpost saite.mp
-	mptopdf saite.1
+	for i in 1 2 3; \
+	do \
+		mptopdf saite.$${i}; \
+	done
 
 burgers: $(BURGERSFILES)
 $(BURGERSFILES):	burgers.mp

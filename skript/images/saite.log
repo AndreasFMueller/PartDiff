@@ -1,6 +1,23 @@
-This is MetaPost, version 1.504 (kpathsea version 6.0.1)  22 FEB 2013 17:35
-**saite.mp
-(mpost.mp (/usr/share/texmf/metapost/base/plain.mp
-Preloading the plain mem file, version 1.004)) (./saite.mp [1] )
-1 output file written: saite.1
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=mptopdf 2014.3.10)  17 FEB 2015 17:44
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**\relax saite.3
+ (./saite.3{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map})
+[warning: the height is less than 1in] [1] 
+Here is how much of TeX's memory you used:
+ 67 strings out of 496721
+ 544 string characters out of 6201513
+ 4015999 words of memory out of 9001206
+ 1714 multiletter control sequences out of 15000+600000
+ 2232 words of font info for 2 fonts, out of 8000000 for 9000
+ 0 hyphenation exceptions out of 8191
+ 10i,3n,7p,113b,237s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/bas
+e/8r.enc}</usr/share/texmf/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf/f
+onts/type1/urw/times/utmri8a.pfb>
+Output written on saite.pdf (1 page, 9344 bytes).
+PDF statistics:
+ 17 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 7 words of extra memory for PDF output out of 10000 (max. 10000000)
 

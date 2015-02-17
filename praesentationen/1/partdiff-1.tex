@@ -1,0 +1,151 @@
+\documentclass{beamer}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{german}
+%\usepackage{txfonts}
+
+\mode<beamer>{%
+\usetheme[hideothersubsections,hidetitle]{Hannover}
+}
+\title[]{Partielle Differentialgleichungen}
+\date[18.~Februar 2015]{18.~Februar 2015}
+\author{Prof.~Dr.~Andreas M"uller}
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Administratives}
+\begin{enumerate}
+\item Unterrichtsunterlagen $\to$ Moodle
+\item "Ubungsbetrieb $\to$ 2h
+\item Pr"ufung
+\item Hilfsmittel $\to$ $2\times 10\times \text{A4}$, Taschenrechner
+\item Pr"ufungsvorbereitung
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Einf"uhrungsbeispiel}
+
+{\bf Aufgabe:} Stelle die Bewegungsgleichung
+einer schwingenden Saite der L"ange $l$ und der Massedichte $\mu$ auf.
+
+\medskip
+\pause
+{\bf L"osungsansatz:}
+Auslenkung $\psi(x,t)$ h"angt von Ort $x\in[0,l]$ und Zeit $t\in[0,\infty)$
+ab:
+\[
+\psi\colon [0,l]\times [0,\infty)\to \mathbb R
+\]
+\pause
+\medskip
+\includegraphics{../../skript/images/saite-2.pdf}
+\pause
+\medskip
+
+{\bf Randbedingung:}
+\[
+\psi(0,0)=\psi(l,0)=0
+\]
+\end{frame}
+
+\begin{frame}
+\frametitle{Bewegungsgleichung}
+\includegraphics{../../skript/images/saite-3.pdf}
+\vskip 6truecm
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Wellengleichung}
+\includegraphics{../../skript/images/saite-1.pdf}
+\begin{align*}
+\text{Kraft}
+=ma
+&=
+F\frac{\partial\psi}{\partial x}(x+\Delta x)-F\frac{\partial\psi}{\partial x}(x)
+\\
+\\
+\mu \Delta x \frac{\partial^2 \psi}{\partial t^2}
+&=
+F\frac{\partial\psi}{\partial x}(x+\Delta x)-F\frac{\partial\psi}{\partial x}(x)
+\\
+\\
+\frac{\partial^2 \psi}{\partial t^2}
+&=
+\frac{F}{\mu}
+\frac{\partial^2\psi}{\partial x^2},
+\qquad
+c=\sqrt{\frac{F}{m}}
+\end{align*}
+Wellengleichung mit Ausbreitungsgeschwindigkeit $c$
+\end{frame}
+
+\begin{frame}
+\frametitle{H"oheren Dimensionen}
+In drei Dimensionen:
+\[
+\frac{\partial^2\psi}{\partial t^2}=c^2
+\biggl(
+\frac{\partial^2\psi}{\partial x^2}
++
+\frac{\partial^2\psi}{\partial y^2}
++
+\frac{\partial^2\psi}{\partial z^2}
+\biggr)
+\]
+\pause
+Mit Laplace-Operator
+\[
+\Delta
+=
+\frac{\partial^2}{\partial x^2}
++
+\frac{\partial^2}{\partial y^2}
++
+\frac{\partial^2}{\partial z^2}
+\]
+\pause
+einfacher:
+\[
+\frac{\partial^2\psi}{\partial t^2}
+=
+c^2\Delta \psi.
+\]
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Elektrisches Potential}
+Potential 
+$\varphi$ 
+im Vakuum zwischen den Leitern,
+\pause
+erf"ullt die partielle Differentialgleichung
+\[
+\Delta \varphi =0
+\]
+\pause
+{\bf Randbedingung:} Potentiale der Leiter
+\end{frame}
+
+\begin{frame}
+\frametitle{W"armeleitungsgleichung}
+Temperatur $T$ h"angt von Ort und Zeit ab:
+\[
+T(x,t)
+\]
+\pause
+und erf"ullt die W"armeleitungsgleichung
+\[
+\frac{\partial T}{\partial t}=\frac{\partial^2T}{\partial x^2}
+\]
+
+\end{frame}
+
+
+\end{document}
