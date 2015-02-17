@@ -5,7 +5,7 @@
 # (c) 2010 Prof Dr Andreas Mueller, Hochschule Rapperswil
 # $Id$
 # 
-all:	skript
+all:	skript checklist
 
 formeln.pdf:	formeln.tex
 	pdflatex formeln.tex
@@ -35,3 +35,7 @@ images/timestamp:
 clean:
 	rm -f skript.aux skript.ind skript.log skript.toc
 
+checklist:	checklist.pdf
+
+checklist.pdf:	checklist.tex
+	pdflatex checklist.tex
