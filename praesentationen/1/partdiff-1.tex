@@ -144,7 +144,195 @@ und erf"ullt die W"armeleitungsgleichung
 \[
 \frac{\partial T}{\partial t}=\frac{\partial^2T}{\partial x^2}
 \]
+\end{frame}
 
+\begin{frame}
+\frametitle{Was ist eine PDGL}
+\begin{enumerate}
+\item Was ist eine Differentialgleichung?
+\[
+\phantom{
+F( x_1,\dots,x_n,u,p_1, \dots,p_n) =0,\quad p_i=\frac{\partial u}{\partial x_i}
+}
+\]
+\item Wo ist sie definiert?
+\[
+\phantom{
+\text{Gebiet $\Omega$, d.~h.~offen}
+}
+\]
+\item Randbedingungen?
+\[
+\phantom{
+\text{$u(x)=g(x)$ oder $\frac{\partial u}{\partial n}=g(x)$ auf
+$\partial\Omega$}
+}
+\]
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Was ist eine PDGL}
+\begin{enumerate}
+\item Was ist eine Differentialgleichung?
+\[
+%\phantom{
+F( x_1,\dots,x_n,u,p_1, \dots,p_n) =0,\quad p_i=\frac{\partial u}{\partial x_i}
+%}
+\]
+\item Wo ist sie definiert?
+\[
+\phantom{
+\text{Gebiet $\Omega$, d.~h.~offen}
+}
+\]
+\item Randbedingungen?
+\[
+\phantom{
+\text{$u(x)=g(x)$ oder $\frac{\partial u}{\partial n}=g(x)$ auf
+$\partial\Omega$}
+}
+\]
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Was ist eine PDGL}
+\begin{enumerate}
+\item Was ist eine Differentialgleichung?
+\[
+%\phantom{
+F( x_1,\dots,x_n,u,p_1, \dots,p_n) =0,\quad p_i=\frac{\partial u}{\partial x_i}
+%}
+\]
+\item Wo ist sie definiert?
+\[
+%\phantom{
+\text{Gebiet $\Omega$, d.~h.~offen}
+%}
+\]
+\item Randbedingungen?
+\[
+\phantom{
+\text{$u(x)=g(x)$ oder $\frac{\partial u}{\partial n}=g(x)$ auf
+$\partial\Omega$}
+}
+\]
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Was ist eine PDGL}
+\begin{enumerate}
+\item Was ist eine Differentialgleichung?
+\[
+%\phantom{
+F( x_1,\dots,x_n,u,p_1, \dots,p_n) =0,\quad p_i=\frac{\partial u}{\partial x_i}
+%}
+\]
+\item Wo ist sie definiert?
+\[
+%\phantom{
+\text{Gebiet $\Omega$, d.~h.~offen}
+%}
+\]
+\item Randbedingungen?
+\[
+%\phantom{
+\text{$u(x)=g(x)$ oder $\frac{\partial u}{\partial n}=g(x)$ auf
+$\partial\Omega$}
+%}
+\]
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{L"osung einer Differentialgleichung}
+Differenzierbare Funktion
+\[
+u\colon \bar\Omega\to\mathbb R
+\]
+\pause
+\begin{enumerate}
+\item Differentialgleichung erf"ullt:
+\[
+F\biggl(x_1,\dots,x_n,u,
+\frac{\partial u}{\partial x_1},\dots, \frac{\partial u}{\partial x_n}
+\biggr)=0\qquad\text{in $\Omega$}
+\]
+\pause
+\item Randbedingungen erf"ullt
+\[
+\text{
+$u(x)=g(x)$
+oder
+$\frac{\partial u}{\partial n}(x)=g(x)$
+auf
+$\partial\Omega$
+}
+\]
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Spezielle Randwertvorgaben}
+\begin{enumerate}
+\item {\bf Cauchy-Problem:}
+\pause
+Funktion $u(x,y)$ so, dass die Fl"ache $(x,y,u(x,y))$ eine vorgegebene
+Raumkurve enth"alt.
+\medskip
+
+\pause
+\item {\bf Normalableitung:}
+\pause
+$n$ Vektor der "ausseren Normalen auf $\partial\Omega$
+\[
+\frac{\partial u}{\partial n}(x)
+=
+\frac{d}{dt}u(x+tn)\bigg|_{t=0}
+\]
+\pause
+\item {\bf Gemischte Randwertbedingungen:}
+\pause
+\[
+\underbrace{
+\alpha(x) u(x)
+}_{\text{Dirichlet}}
++
+\underbrace{
+\beta(x)\frac{\partial u}{\partial n}
+}_{\text{Neumann}}
+= g(x) 
+\qquad
+\text{auf $\partial\Omega$}
+\]
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Spezialf"alle}
+\begin{enumerate}
+\item {\bf Lineare PDGL:}
+
+\pause
+Funktion
+\[
+F(x_1,\dots,x_n,u,p_1,\dots,p_n,t_{11},\dots,t_{nn})
+\]
+ist linear in {\color{red}$u$}, $p_1$,\dots,$p_n$,$t_{11}$,\dots,$t_{nn}$
+\pause
+\item {\bf Quasilineare PDGL:}
+
+\pause
+Funktion
+\[
+F(x_1,\dots,x_n,u,p_1,\dots,p_n,t_{11},\dots,t_{nn})
+\]
+ist linear in $p_1$,\dots,$p_n$,$t_{11}$,\dots,$t_{nn}$
+\pause
+\item {\bf Nichtlineare PDGL}
+\end{enumerate}
 \end{frame}
 
 
