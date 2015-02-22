@@ -27,7 +27,7 @@ endfor;
 
 for s = 0 step 10 until 140:
 	path p;
-	p = 
+	numeric tzero;
 endfor
 
 clip currentpicture to z0--z1--z3--z2--cycle;
