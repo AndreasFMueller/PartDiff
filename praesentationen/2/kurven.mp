@@ -25,10 +25,18 @@ for t = 0 step 5 until 40:
 	draw (mexp(-20*t),1)--(200*mexp(-20*t),200) withcolor(1,0,0);
 endfor;
 
-for s = 0 step 10 until 140:
-	path p;
+for s = 20 step 20 until 180:
 	numeric tzero;
-endfor
+	tzero = mlog(200/s);
+	path p;
+	p = (s * mexp(-tzero), s * mexp(tzero));
+	numeric	deltat;
+	deltat = tzero / 200;
+	for t = (-tzero + deltat) step deltat until tzero:
+		p := p--(s * mexp(t), s * mexp(-t));
+	endfor;
+	draw p withcolor(0,1,0);
+endfor;
 
 clip currentpicture to z0--z1--z3--z2--cycle;
 

@@ -8,6 +8,7 @@
 \usetheme[hideothersubsections,hidetitle]{Hannover}
 }
 \title[]{Partielle Differentialgleichungen}
+\subtitle{1. Sitzung}
 \date[18.~Februar 2015]{18.~Februar 2015}
 \author{Prof.~Dr.~Andreas M"uller}
 \begin{document}
@@ -170,6 +171,39 @@ $\partial\Omega$}
 \]
 \end{enumerate}
 \end{frame}
+
+\begin{frame}
+\frametitle{Ordnungsreduktion}
+\[
+F\biggl(x,y,u,
+\frac{\partial u}{\partial x},
+\frac{\partial u}{\partial y},
+\frac{\partial^2 u}{\partial x^2},
+\frac{\partial^2 u}{\partial x\partial y},
+\frac{\partial^2 u}{\partial y^2}
+\biggr)=0
+\]
+\pause
+Neue Funktionen:
+\[
+p(x,y)\qquad\text{und}\qquad q(x,y)
+\]
+\pause
+Neue Gleichungen:
+\begin{gather*}
+F(x,y,u,p,q,\frac{\partial p}{\partial x},\frac{\partial p}{\partial y},
+\frac{\partial q}{\partial y})=0
+\\
+p=\frac{\partial u}{\partial x}\qquad\text{und}\qquad
+q=\frac{\partial u}{\partial y}
+\end{gather*}
+\pause
+Zus"atzlich:
+\[
+\frac{\partial p}{\partial y}=\frac{\partial q}{\partial x}
+\]
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Was ist eine PDGL}
