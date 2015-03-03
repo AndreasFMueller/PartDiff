@@ -1,15 +1,14 @@
-F"uhren Sie die L"osung der Differentialgleichung
+F"uhren Sie die L"osung des partiellen Differentialgleichung
 \[
 x^2\frac{\partial^2 u}{\partial x^2}
 +x\frac{\partial u}{\partial x}
 +y^2\frac{\partial^2 u}{\partial y^2}
 +y\frac{\partial u}{\partial y}
-=0
+=\lambda u
 \]
 auf dem Gebiet
 $\Omega=(1,2)\times(1,2)=\{ (x,y)\in\mathbb R^2\,|\, 1<x,y<2\}$
-mit den Randbedingungen
-$u=0$ auf $\partial\Omega$
+mit den Randbedingungen $u=0$ auf $\partial\Omega$
 mit Hilfe eines Separationsansatzes auf gew"ohnliche Differentialgleichungen
 zur"uck.
 
@@ -25,20 +24,21 @@ Differentialgleichung ein:
 x^2X''(x)Y(y)
 +xX'(x)Y(y)
 +y^2X(x)Y''(y)
-+yX(x)Y'(y)=0
++yX(x)Y'(y)=\lambda X(x)Y(y)
 \]
 Division durch $X(x)Y(y)$ ergibt
 \[
 x^2\frac{X''(x)}{X(x)}
 +x\frac{X'(x)}{X(x)}
 +y^2\frac{Y''(y)}{Y(y)}
-+y\frac{Y'(y)}{Y(y)}=0
++y\frac{Y'(y)}{Y(y)}=\lambda
 \]
 Schafft man alle Terme in $y$ auf die rechte Seite, ergibt sich
 \[
 x^2\frac{X''(x)}{X(x)}
 +x\frac{X'(x)}{X(x)}
 =
+\lambda
 -y^2\frac{Y''(y)}{Y(y)}
 -y\frac{Y'(y)}{Y(y)}
 \]
@@ -53,17 +53,31 @@ x^2\frac{X''(x)}{X(x)}
 x^2X''(x)+xX'(x)-\mu X(x)&=0
 \\
 y^2\frac{Y''(y)}{Y(y)}
-+y\frac{Y'(y)}{Y(y)}&=-\mu
++y\frac{Y'(y)}{Y(y)}&=\lambda-\mu
 &\Rightarrow&
 &
-y^2Y''(y)+yY'(y)+\mu y(Y)&=0
+y^2Y''(y)+yY'(y)+(\mu-\lambda) y(Y)&=0
 \end{align*}
 mit den Randbedingungen
 \begin{align*}
 X(1)&=0&Y(1)&=0\\
-X(2)&=0&Y(2)&=0\\
+X(2)&=0&Y(2)&=0
 \end{align*}
 Die Differentialgleichungen sind "ubrigens eulersche Differentialgleichungen,
 sie k"onnen mit einer geeigneten Transformation in lineare
 Differentialgleichungen mit konstanten Koeffizienten umgeformt werden.
 \end{loesung}
+
+\begin{diskussion}
+M"oglicherweise verwirren die Randbedingungen etwas.
+Man erwartet doch bei einer gew"ohnlichen Differentialgleichung, dass
+man die L"osung durch Linearkombination so zusammenbauen muss, dass die
+Randbedingungen erf"ullt sind.
+Die dazu ben"otigten Koeffizienten findet man typischerweise mit einem
+linearen Gleichungssystem, welches f"ur die vorliegenden Randbedingungen
+nur eine eine L"osung hat: die Nulll"osung.
+Man muss sich aber daran erinnern, dass in diesem Problem noch zwei weitere
+Parameter $\lambda$ und $\mu$ vorkommen, die so gew"ahlt werden k"onnen,
+dass die Randbedingungen auch f"ur eine L"osung erf"ullt sind, die nicht
+identisch verschwindet.
+\end{diskussion}
