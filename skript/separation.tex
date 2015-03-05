@@ -280,16 +280,16 @@ welche der Differentialgleichung
 \[
 \frac1{c^2}\frac{\partial^2u}{\partial t^2}=\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}
 \]
-mit den Anfangsbedingungen
+gen"ugt mit den Anfangsbedingungen
 \begin{align*}
-u(x,y,0)&=f(x,y)\quad\forall 0\le x\le a,0\le y\le b
+u(x,y,0)&=f(x,y)\quad\forall 0\le x\le a,0\le y\le b,
 \\
 \frac{\partial}{\partial t}u(x,y,0)&=g(x,y)\quad\forall 0\le x\le a,0\le y\le b
 \end{align*}
 und den Randbedingungen
 \begin{align*}
-u(0,y,t)&=0&u(a,y,t)&=0&\forall t\ge 0,0\le y\le b\\
-u(x,0,t)&=0&u(x,b,t)&=0&\forall t\ge 0,0\le x\le a
+u(0,y,t)&=0&u(a,y,t)&=0&\forall t\ge 0,0\le y\le b,\\
+u(x,0,t)&=0&u(x,b,t)&=0&\forall t\ge 0,0\le x\le a.
 \end{align*}
 
 \subsection{Separation der Zeit}
@@ -334,8 +334,20 @@ Gleichung umformen in
 \end{equation}
 Die rechte Seite h"angt nur
 vom Ort ab, darf sich also nicht "andern, wenn man die Zeit $t$ variert.
-Als Funktion von der Zeit muss die linke Seite also eine Konstante sein,
-es gibt also ein $\lambda$ mit der Eigenschaft
+Als Funktion der Zeit muss die linke Seite eine Konstante sein,
+es gibt also ein $k$ mit der Eigenschaft
+\[
+\frac1{c^2}\frac{T''(t)}{T(t)}=k
+\qquad\Leftrightarrow\qquad
+T''(t)=k T(t).
+\]
+Diese gew"ohnliche Differentialgleichung hat L"osungen der Form 
+$e^{\pm\sqrt{k}t}$ f"ur positives $k$. F"ur negatives $k$ sind $\sin\sqrt{k}t$ 
+und $\cos\sqrt{k}t$ L"osungen.
+Aus physikalischer Sicht sind nur L"osungen mit Schwingungscharakter sinnvoll,
+wir k"onnen daher annehmen, dass $k<0$.
+Ein solches $k$ l"asst sich in der Form $k=-\lambda^2$ schreiben.
+Es gibt also ein $\lambda$ mit der Eigenschaft
 \[
 \frac1{c^2}\frac{T''(t)}{T(t)}=-\lambda^2
 \]
@@ -414,11 +426,12 @@ Die m"oglichen Werte von $\lambda$ sind also
 \lambda_{kl}^2=\left(\frac{k^2}{a^2} + \frac{l^2}{b^2}\right)\pi^2,\qquad k,l\in\mathbb Z
 \]
 Damit kann man jetzt die allgemeine L"osung des Schwingungsproblems aus den
-Teill"osungen f"ur das Eigenwertproblem
+Teill"osungen
 \[
 \varphi_{kl}(x,y)=\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y
 \]
-und den Teill"osungen f"ur das zeitabh"angige Problem
+f"ur das Eigenwertproblem
+und den Teill"osungen
 \[
 u_{kl}(x,y,t)
 =
@@ -426,7 +439,8 @@ u_{kl}(x,y,t)
 B_{kl}\sin c\lambda_{kl} t)
 \sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y
 \]
-zu einer allgemeinen L"osung zusammensetzen
+f"ur das zeitabh"angige Problem
+zu einer allgemeinen L"osung
 \begin{equation}
 u(x,y,t)=\sum_{k,l}
 (A_{kl}\cos c\lambda_{kl} t+
@@ -434,6 +448,7 @@ B_{kl}\sin c\lambda_{kl} t)
 \sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y
 \label{allgemeineloesung}
 \end{equation}
+zusammensetzen.
 
 \subsection{Anfangsbedingungen}
 \index{Anfangsbedingungen}
@@ -444,7 +459,8 @@ Die allgemeine L"osung muss jetzt auch noch die Anfangsbedingung erf"ullen:
 \sum_{k,l}B_{kl}c\lambda_{kl}
 \sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y&=g(x,y)\\
 \end{align*}
-Die Koeffizienten $A_{kl}$ und $B_{kl}$ k"onnen mit Hilfe der Theorie
+Die Koeffizienten $A_{kl}$ und $B_{kl}$ k"onnen in einfachen F"allen mit
+Koeffizientenvergleich und im Allgemeinen mit Hilfe der Theorie
 der Fourierreihen berechnet werden.
 \index{Fourierreihe}
 
@@ -736,10 +752,10 @@ Darstellungen des Laplace-Operators in weiteren Koordinatensystemen k"onnen
 in jeder einigermassen vollst"andigen Formelsammlung gefunden werden.
 
 \subsection{Separation der Ortsvariablen}
-Die L"osung des Eigenwertproblems setzen wieder wieder Produkt einer Funktion
+Die L"osung $u(r,\varphi)$ des Eigenwertproblems setzen wir wieder
+als Produkt einer Funktion
 $R(r)$
-nur von  $r$ und einer Funktion $\Phi(\varphi)$ nur von $\varphi$
-ansetzen.
+nur von  $r$ und einer Funktion $\Phi(\varphi)$ nur von $\varphi$ an.
 Mit der im vorangegangenen Abschnitt gefundenen Formel f"ur den Laplace-Operator
 in Polarkoordinaten erhalten wir jetzt die Gleichungen
 \begin{align*}
