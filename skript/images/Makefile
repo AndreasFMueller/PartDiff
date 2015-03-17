@@ -4,7 +4,7 @@
 # (c) 2012 Prof Dr Andreas Mueller, Hochschule Rapperswil
 # $Id$
 #
-timestamp:	saite burgers randwerte ode green char hypexp
+timestamp:	saite burgers randwerte ode green char hypexp hf
 	touch timestamp
 
 RANDWERTEFILES = randwerte-1.pdf randwerte-2.pdf randwerte-3.pdf randwerte-4.pdf
@@ -15,6 +15,7 @@ ODEFILES = ode-1.pdf
 GREENFILES = green-1.pdf
 CHARFILES = char-1.pdf char-2.pdf char-3.pdf
 HYPEXPFILES = hypexp-1.pdf
+HFFILES = hf-1.pdf
 
 randwerte:	$(RANDWERTEFILES)
 $(RANDWERTEFILES):	randwerte.mp
@@ -61,4 +62,9 @@ hypexp: $(HYPEXPFILES)
 $(HYPEXPFILES):	hypexp.mp
 	TEX=latex mpost hypexp.mp
 	mptopdf hypexp.1
+
+hf: $(HFFILES)
+$(HFFILES):	hf.mp
+	TEX=latex mpost hf.mp
+	mptopdf hf.1
 
