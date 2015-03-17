@@ -52,7 +52,7 @@ Wir nennen die gemeinsame Konstante, die offenbar positiv sein
 muss, $\lambda^2$.
 F"ur $Y(y)$ finden wir die Differentialgleichung
 \[
-Y'(y)=\lambda \qquad\Rightarrow\qquad Y(y)=\lambda y.
+Y'(y)=\lambda \qquad\Rightarrow\qquad Y(y)=\lambda y+ C_y.
 \]
 F"ur $X(x)$ ergibt sich dagegen
 \[
@@ -66,13 +66,20 @@ X'(x)=\sqrt{n_i^2-\lambda^2}
 \qquad
 \Rightarrow
 \qquad
-X(x)=x\sqrt{n_i^2-\lambda^2}.
+X(x)=x\sqrt{n_i^2-\lambda^2} + C_x.
 \]
 Die L"osung ist also
 \[
-u(x,y)=\lambda y + x\sqrt{n_i^2-\lambda^2}
+u(x,y)=\lambda y + x\sqrt{n_i^2-\lambda^2} + C
 \]
 wobei f"ur $x<0$ der Wert $n_1$ f"ur $n_i$ zu nehmen ist.
+Die Konstanten $C_x$ und $C_y$ haben wir in eine Konstante $C$
+zusammengefasst\footnote{Diese Konstaten ist weder f"ur die Anwendung noch
+f"ur das im n"achsten Schritt angestrebte Ziel notwendig. In der Anwendung
+bedeutet $u$ die Phase einer Welle, eine additive Konstante ist also nichts
+anderes als eine Phasenverschiebung der Welle um den selben Betrag
+im ganzen Gebiet. Im n"achsten Schritt wird der Gradient von $u$ untersucht,
+wodurch die Konstante $C$ erst recht wegf"allt.}.
 \item
 Der Gradient ist
 \[
