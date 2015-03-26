@@ -15,6 +15,11 @@
 \begin{document}
 
 \begin{frame}
+\section{Transformation}
+\titlepage
+\end{frame}
+
+\begin{frame}
 \frametitle{Differentialgleichung}
 
 Wellengleichung:
@@ -22,38 +27,33 @@ Wellengleichung:
 \frac{1}{c^2}
 \frac{\partial^2 u}{\partial t^2}
 =
-\frac{\partial^2 u}{\partial x^2},
+\frac{{\color{red}\partial^2} u}{{\color{red}\partial x^2}},
 \]
 Gebiet:
 \[
-\Omega = (0,2\pi)\times \mathbb R^+\to \mathbb R
+\Omega = \mathbb R^+ \times {\color{red}(0,2\pi)} \to \mathbb R
 \]
 Randbedingungen:
 \begin{align*}
-u(t,    0)&= 0&u(0,x)&=f(x)\\
-u(t, 2\pi)&= 0&\frac{\partial}{\partial t}u(0,x)&=g(x)
+u(t,    0)&= 0&u(0,{\color{red}x})&=f({\color{red}x})\\
+u(t, 2\pi)&= 0&\frac{\partial}{\partial t}u(0,{\color{red}x})&=g({\color{red}x})
 \end{align*}
 Fourierkoeffizienten von $f$ und $g$: $b_k^{(f)}$ und $b^{(g)}_k$
 
 \end{frame}
 
 \begin{frame}
-\section{Transformation}
-\titlepage
-\end{frame}
-
-\begin{frame}
 \frametitle{Funktion von $x$ und $t$}
 
-$u$ eine Funktion von $x$ und $t$:
-\[
-u\colon (0,2\pi)\times \mathbb R^+\to \mathbb R
-\]
+%$u$ eine Funktion von $x$ und $t$:
+%\[
+%u\colon (0,2\pi)\times \mathbb R^+\to \mathbb R
+%\]
 Fourierkoeffizienten h"angen von $t$ ab:
 \[
-u(x,t)=\frac{a_0(t)}2+\sum_{k=1}^\infty (a_k(t)\cos kx+b_k(t)\sin kx)
+u(t,x)=\frac{a_0(t)}2+\sum_{k=1}^\infty \bigl(a_k(t)\cos kx+b_k(t)\sin kx\bigr)
 \]
-Fourier-Transformation
+Fourier-Transformation:
 \[
 {\cal F}\colon
 u\mapsto
@@ -76,7 +76,7 @@ a_k=0\;\forall k > 0
 \]
 Differentialgleichung:
 \begin{align*}
-\frac{1}{c^2}\ddot b_k(t)&= -k^2b_k(t)
+\frac{1}{c^2}\ddot b_k(t)&= {\color{red}-k^2}b_k(t)
 \end{align*}
 Anfangsbedingung:
 \begin{align*}
@@ -91,11 +91,11 @@ b_k(0)&= b_k^{(f)}& \dot b_k(0)&=b_k^{(g)}
 {\bf Lineare} Transformation $\cal T$ mit folgenden Eigenschaften
 
 \begin{align*}
-u(x,y)&&&\mapsto &&{\cal T}u(k,y)
+u({\color{red}x},y)&&&\mapsto &&{\cal T}u(k,y)
 \\
 \frac{\partial u}{\partial y}&&&\mapsto&&\frac{\partial{\cal T}u}{\partial y}(k,y)
 \\
-\frac{\partial u}{\partial x}&&&\mapsto&&\text{algebraischer Ausdruck mit $\displaystyle {\cal T}(k,y)$}
+\frac{{\color{red}\partial} u}{\color{red}\partial x}&&&\mapsto&&\text{{\color{red}algebraischer Ausdruck} mit $\displaystyle {\cal T}u(k,y)$}
 \\
 \text{PDGL}&&&\mapsto&&\text{gew"ohnliche DGL f"ur $y\mapsto {\cal T}u(k,y)$}
 \\
@@ -103,7 +103,7 @@ u(x,y)&&&\mapsto &&{\cal T}u(k,y)
 \\
 \text{L"osung:}&&&   &&{\cal T}^{-1}({\cal T}u)(x,y)
 \end{align*}
-D.~h.~$x$-Ableitung wird in eine algebraische Operation transformiert
+D.~h.~{\color{red}$x$-Ableitung} wird in eine {\color{red}algebraische Operation} transformiert
 
 \end{frame}
 
@@ -143,6 +143,8 @@ e^{at}&\frac{1\mathstrut}{s-a\mathstrut}\\
 +s\underbrace{\int_0^\infty f(t)e^{-st}\,dt}_{\textstyle({\cal L}f)(s)}
 \end{align*}
 
+\pause
+
 \begin{center}
 \begin{tabular}{>{$}l<{$}>{$\displaystyle}l<{$}}
 f(t)&({\cal L}f)(s)\mathstrut\\
@@ -164,10 +166,119 @@ Ziel erreicht:
 \begin{frame}
 \frametitle{R"ucktransformation}
 \begin{enumerate}
-\item Linearit"at von ${\cal L}$
+\item ${\cal L}$ linear $\Rightarrow$ ${\cal L}^{-1}$ linear
 \item Tabelle der Laplace-Transformierten
 \item Partialbruchzerlegung
 \end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Transformationsmethode}
+\begin{enumerate}[<+->]
+\item PDGL transformieren
+\begin{align*}
+\frac{{\color{red}\partial} u}{\color{red}\partial t}&=\frac{\partial^2 u}{\partial x^2}&
+&\mapsto&
+{\color{red}s} ({\cal L}u)(s,x){\color{red}-u(0,x)}&=\frac{\partial^2 ({\cal L}u)(s,x)}{\partial x^2}
+\end{align*}
+\item Randwerte einsetzen
+\[
+{\color{red}s}({\cal L}u)(s,x)-f(x)=\frac{\partial^2 ({\cal L}u)(s,x)}{\partial x^2}
+\]
+%\item Randwerte f"ur $x\mapsto ({\cal L}u)(s,x)$ 
+\item  F"ur jedes $s$ gew"ohnliche DGL in $x$ l"osen mit
+Randbedingungen f"ur $({\cal L})(s,x)$:
+\begin{align*}
+u(t,-l)&=g(t)&&\mapsto&({\cal L}u)(s,-l)&=({\cal L}g)(s)\\
+u(t,l)&=h(t)&&\mapsto&({\cal L}u)(s,l)&=({\cal L}h)(s)
+\end{align*}
+\item Aufl"osen nach $({\cal L}u)(s,x)$
+\item R"ucktransformation
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\section{Klassifikation}
+\frametitle{Symbol}
+Zu jedem Differentialoperator 2. Ordnung gibt es eine Symbol-Matrix
+\begin{align*}
+a\frac{\partial^2}{\partial x^2}
++2b\frac{\partial^2}{\partial x\,\partial y}
++c\frac{\partial^2}{\partial y^2}
+&\mapsto
+\begin{pmatrix}
+a&b\\
+b&c
+\end{pmatrix}
+\\
+\sum_{i,j=1}^na_{ij}\frac{\partial^2}{\partial x_i\,\partial x_j}
+&\mapsto
+A=
+\begin{pmatrix}
+a_{11}&\dots &a_{1n}\\
+\vdots&\ddots&\vdots\\
+a_{n1}&\dots &a_{nn}
+\end{pmatrix}
+\end{align*}
+$A$ ist symmetrisch
+\end{frame}
+
+\begin{frame}
+\frametitle{Eigenwerte}
+$A$ symmetrisch $\Rightarrow$ $A$ ist diagonalisierbar
+\[
+A\sim
+\begin{pmatrix}
+\lambda_1&         &      &         \\
+         &\lambda_2&      &         \\
+         &         &\ddots&         \\
+         &         &      &\lambda_n
+\end{pmatrix}
+\]
+Interessant sind die Vorzeichen der $\lambda_i$:
+\begin{center}
+\begin{tabular}{lc}\\
+Eigenwerte&Anzahl\\
+\hline
+positiv&$P$\\
+negativ&$N$\\
+$0$    &$Z$\\
+\hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Klassifikation}
+
+\begin{center}
+\begin{tabular}{llll}
+Klasse&Bedingung&Beispiel&Anwendung\\
+\hline
+elliptisch &$\begin{aligned}P&=n\mathstrut\end{aligned}$
+	&$\displaystyle \Delta u=f                                $
+		&Potential\\
+&	&	&Eigenwertproblem\\
+\hline
+parabolisch&%$P=n-1, Z=1$
+$\begin{aligned}P&=n-1\mathstrut\\Z&=1\mathstrut\end{aligned}$
+	&$\displaystyle \frac{\partial u}{\partial t}=\Delta u    $
+		&W"armeleitung\\
+\hline
+hyperbolisch&%$P=n-1, N=1$
+$\begin{aligned}P&=n-1\mathstrut\\N&=1\mathstrut\end{aligned}$
+	&$\displaystyle \frac{\partial^2 u}{\partial t^2}=\Delta u$
+		&Wellen\\
+\hline
+\end{tabular}
+\end{center}
+
+Klasse verr"at:
+\begin{itemize}
+\item Charakter der L"osung: Schwingungen, exponentielles Abklingen
+\item Welches L"osungsverfahren geeignet ist
+\end{itemize}
+
 \end{frame}
 
 \end{document}
