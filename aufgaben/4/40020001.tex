@@ -29,7 +29,10 @@ Wir erhalten
 Darin ist die Variable $t$ bereits separiert, sie kommt alleine auf
 der rechten Seite vor. Also m"ussen beide Seiten der Gleichung konstant
 sein, wir nennen die Konstante $P_1$. Es folgt dann, dass 
-$S_3(t)=P_1t.$
+$S_3(t)=P_1t$.
+Genau genommen fehlt hier noch eine Integrationskonstante, da wir aber
+von $S$ ohnehin nur die Ableitungen brauchen, kommte es auf eine solche
+Konstante nicht an.
 
 Trennen wir in der verbleibenden linken Seite die Variablen $x$ und $y$,
 erhalten wir
@@ -43,7 +46,7 @@ Wieder m"ussen beide Seiten konstant sein, wir nennen die Konstanten $P_2$
 und erhalten die Differentialgleichungen
 \begin{align*}
 S_2'(x)&=\sqrt{2mP_2-2mKx^2}=\sqrt{2mK}\sqrt{\frac{P_2}{K}-x^2}\\
-S_3'(y)&=\sqrt{2m(P_1-P_2)-2mKy^2}=\sqrt{mK}\sqrt{\frac{P_1-P_2}{K}-y^2}
+S_3'(y)&=\sqrt{2m(P_1-P_2)-2mKy^2}=\sqrt{2mK}\sqrt{\frac{P_1-P_2}{K}-y^2}
 \end{align*}
 Die L"osung findet man durch Integration, in beiden F"allen muss ein 
 Integral der Form
@@ -68,9 +71,9 @@ S_2(x)
 % \right)\,{\it P_2}}\over{2\,K}}\right)
 %\\
 &=
-\frac{x\sqrt{m}}2\sqrt{P_2-Kx^2}
+\frac{x\sqrt{2m}}2\sqrt{P_2-Kx^2}
 +
-\frac{P_2}{2}\sqrt{\frac{m}{K}}\arcsin x\sqrt{\frac{K}{P_2}}
+\frac{P_2}{2}\sqrt{\frac{2m}{K}}\arcsin x\sqrt{\frac{K}{P_2}}
 \\
 S_3(y)
 %&=
@@ -88,9 +91,9 @@ S_3(y)
 %\biggr)
 %\\
 &=
-\frac{y\sqrt{m}}2\sqrt{P_1-P_2-Ky^2}
+\frac{y\sqrt{2m}}2\sqrt{P_1-P_2-Ky^2}
 +
-\frac{P_1-P_2}2 \sqrt{\frac{m}{K}}\arcsin y\sqrt{\frac{K}{P_1-P_2}}
+\frac{P_1-P_2}2 \sqrt{\frac{2m}{K}}\arcsin y\sqrt{\frac{K}{P_1-P_2}}
 \end{align*}
 Die gesuchte L"osungsfunktion ist dann die Summe dieser drei Terme.
 \end{loesung}

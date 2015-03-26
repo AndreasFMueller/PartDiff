@@ -328,18 +328,21 @@ an, erhalten wir
 \partial_t\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx} u(t,x)\,dx
 &=
 \frac1{2\pi}
+\underbrace{
 \left[
 e^{-ikx}\partial_x u(t,x)
-\right]_{-\pi}^{\pi}
+\right]_{-\pi}^{\pi}}_{=0}
 +
 ik\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx}\partial_x u(t,x)\,dx
 \notag
 \\
 &=
+0 + 
 ik\frac1{2\pi}
+\underbrace{
 \left[
 e^{-ikx}u(t,x)
-\right]_{-\pi}^{\pi}
+\right]_{-\pi}^{\pi}}_{=0}
 -
 k^2\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx} u(t,x)\,dx
 \notag
