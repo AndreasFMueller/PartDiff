@@ -64,11 +64,12 @@ u_{|\partial \Omega}=g\qquad\text{auf $\partial\Omega$}
 \]
 \pause
 Allgemeine L"osung:
-\[
-u=u_h+u_i\qquad\Delta u_h=0,\quad \Delta u_i=f
-\]
+\begin{align*}
+u&=u_h+u_p&&\text{mit}&             \Delta u_h&=0,&             \Delta u_p&=f\\
+ &        &&          &{u_h}_{|\partial\Omega}&=0,&{u_p}_{|\partial\Omega}&=g
+\end{align*}
 \begin{enumerate}
-\item L"osung existiert $\Leftrightarrow \exists u_i$  
+\item L"osung existiert $\Leftrightarrow \exists u_p$  
 \item Eindeutigkeit der L"osung: $u_h=0$
 \end{enumerate}
 \end{frame}
@@ -96,12 +97,29 @@ L"osung des Randwertproblems eindeutig, falls sie existiert.
 \end{frame}
 
 \begin{frame}
+\frametitle{Mittelwerteigenschaft}
+
+\begin{theorem}
+Ist $u$ eine harmonische Funktion im Gebiet $\Omega$, dann hat $u$ die
+Mittelwerteigenschaft:
+\[
+u(x)= \int_{S_r(x)}u(\xi)\,d\xi,
+\]
+wobei $S_r(x)$ eine Kugel mit Radius $r$ um den Punkt $x$ ist, die ganz
+in $\Omega$ enthalten ist.
+\end{theorem}
+
+{\bf Achtung:} Gilt nur f"ur den gew"ohnlichen Laplace-Operator
+
+\end{frame}
+
+\begin{frame}
 \frametitle{Greensche Funktion}
 {\bf Problem:}
 \begin{align*}
-y''(x)&=f(x) \qquad\text{f"ur $x \in (a,b)$}\\
+y''(x)&=f(x) \qquad\text{f"ur $x \in (0,1)$}\\
 y(0)&=a\\
-y(b)&=b
+y(1)&=b
 \end{align*}
 {\bf Idee:} Gibt es einen inversen Operator der zweiten Ableitung?
 \pause
@@ -111,13 +129,82 @@ y = \Delta^{-1}f,
 \qquad
 y(x)=\int_0^1 K(x,\xi)f(\xi)\,d\xi
 \]
-
-{\bf L"osung:}
+\pause
+{\bf L"osung:} der sog.~Greenschen Funktion $G$:
 \[
-y(x)=\int_0^1 G(x,\xi)f(\xi)\,d\xi + a(1-x) + bx
+y(x)=\underbrace{\int_0^1 G(x,\xi)f(\xi)\,d\xi}_{u_p}
++
+\underbrace{a(1-x) + bx}_{u_h}
 \]
-$G$ heisst Greensche Funktion
 \end{frame}
+
+\begin{frame}
+\frametitle{Greensche Funktion}
+\begin{align*}
+G(x,\xi)
+&=
+\begin{cases}
+(x-\xi) + x(1-\xi) = \xi(x - 1)&\qquad x\ge \xi\\
+x(\xi-1)&\qquad x<\xi
+\end{cases}
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Greensche Funktion}
+\includegraphics[width=\hsize]{../../skript/images/green-1.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{Greensche Funktion}
+\includegraphics[width=\hsize]{../../skript/3d/green.jpg}
+\end{frame}
+
+\begin{frame}
+\frametitle{Greensche Funktion}
+\includegraphics[width=\hsize]{../../skript/graphics/green-1.pdf}
+\end{frame}
+
+\begin{frame}
+\frametitle{Greensche Funktion}
+\includegraphics[width=\hsize]{../../skript/graphics/green-324.pdf}
+\end{frame}
+
+\begin{frame}
+\frametitle{Greensche Funktion}
+\includegraphics[width=\hsize]{../../skript/graphics/green-1082.pdf}
+\end{frame}
+
+\begin{frame}
+\frametitle{Greensche Funktion}
+Alternative Konstruktion der Greenschen Funktion
+\begin{enumerate}[<+->]
+\item Einheits-``Knick'':
+\[
+\sigma(x,\xi)=\frac12|x-\xi|\qquad\text{erf"ullt}\qquad \Delta\sigma(x,\xi)=\delta(x-\xi)
+\]
+\item harmonische Funktion $h(x,\xi)$ mit gleichen Randwerten:
+\[
+h(x,\xi)=(1-x)\sigma(0,\xi) + x\sigma(1,\xi)
+\]
+\item Greensche Funktion:
+\[
+G(x,\xi) = \sigma(x,\xi) - h(x,\xi)
+\]
+\end{enumerate}
+\pause
+Vorteile:
+\begin{itemize}[<+->]
+\item
+$\sigma(x,\xi)$ gibt es in jeder Dimension
+\item
+Man muss ``nur'' das Problem l"osen
+\[
+\Delta h = 0, \qquad h_{|\partial\Omega}=\sigma
+\]
+\end{itemize}
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Greensche Funktion}
@@ -130,12 +217,14 @@ $G$ heisst Greensche Funktion
 {\bf Idee:} Gibt es einen inversen Operator des Laplace-Operators?
 \bigskip
 
+\pause
 {\bf Erwartete Form:} Integraloperator
 \[
 u(x)=\int_\Omega K(x,\xi)f(\xi)\,d\xi
 \]
-\bigskip
+\medskip
 
+\pause
 {\bf L"osung:}
 \[
 u(x)
@@ -150,7 +239,7 @@ u(x)
 \begin{frame}
 \frametitle{Greensche Funktion}
 
-\begin{enumerate}
+\begin{enumerate}[<+->]
 \item
 Es gibt eine L"osung $\sigma(x,\xi)$
 \[
@@ -166,13 +255,12 @@ Es gibt eine Funktion
 \[
 G(x,\xi) = \sigma(x,\xi)-h(x,\xi),
 \]
-die L"osung des Randwertproblems
+die L"osung des folgenden Randwertproblems ist:
 \[
 \Delta_x G(x,\xi) = \delta(x-\xi)\quad\text{in $\Omega$},
 \qquad
 G(x,\xi)=0\quad\text{f"ur $x\in\partial\Omega$}
 \]
-ist
 \end{enumerate}
 \end{frame}
 
