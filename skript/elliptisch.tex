@@ -589,18 +589,31 @@ Das eindimensionale Musterproblem suggeriert, dass es eine
 Funktion $\sigma(x,\xi)$ gibt, mit welcher eine partikul"are L"osung
 der Laplace-Gleichung mittels des Integrals
 \begin{equation}
-u(x)=\int_\Omega \sigma(x,\xi)  f(\xi)\,d\xi
+u_p(x)=\int_\Omega \sigma(x,\xi)  f(\xi)\,d\xi
 \label{singulaereloesunglaplace}
 \end{equation}
-gefunden werden kann. Die Funktion $\sigma$ h"angt nicht von $\Omega$
-ab, sondern nur von der Dimension $n$. W"ahlt man f"ur $f$ eine
-$\delta$-Funktion im Punkt $y$, folgt
+gefunden werden kann.
+Diese partikul"are L"osung muss die Randbedingungen nicht erf"ullen,
+sondern nur die Gleichung $\Delta u=f$.
+
+Die Funktion $\sigma$ h"angt, da sie auf die Randbedingungen nicht 
+R"ucksicht nehmen muss, nicht von $\Omega$ ab, sondern nur von der
+Dimension $n$.
+W"ahlt man f"ur $f$ eine $\delta$-Funktion im Punkt $y$, folgt
 \[
-u(x)=\sigma(x,y)
+u(x)
+=
+\int_\Omega \sigma(x,\xi)\delta(\xi - y)\,d\xi
+=
+\sigma(x,y).
 \]
-die Funktion $\sigma$ muss also eine harmonische Funktion in 
+Die Funktion $x\mapsto \sigma(x,y)$ erf"ullt also die Gleichung
+$\Delta \sigma(x,y)=0$ f"ur alle Punkte von ${\mathbb R}^n\setminus\{y\}$.
+Die Funktion $\sigma$ muss also eine harmonische Funktion in 
 $\mathbb R^n\setminus\{y\}$ sein.
-%\marginpar{\tiny singul"are L"osungen der Laplace-Gleichung}
+
+Die Bestimmung der Funktionen $\sigma(x,y)$ ist etwas m"uhsam, und wir
+geben hier nur das Resultat an.
 Man findet,\footnote{Man kann
 diese L"osungen mit folgendem Argument finden. Zun"achst darf die L"osung
 nur von der Entfernung $|x-\xi|$ abh"angen, so dass wir ohne
