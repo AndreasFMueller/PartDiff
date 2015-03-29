@@ -4,7 +4,7 @@
 # (c) 2012 Prof Dr Andreas Mueller, Hochschule Rapperswil
 # $Id$
 #
-timestamp:	saite burgers randwerte ode green char hypexp hf
+timestamp:	saite burgers randwerte ode green char hypexp hf kausal
 	touch timestamp
 
 RANDWERTEFILES = randwerte-1.pdf randwerte-2.pdf randwerte-3.pdf randwerte-4.pdf
@@ -16,6 +16,7 @@ GREENFILES = green-1.pdf
 CHARFILES = char-1.pdf char-2.pdf char-3.pdf
 HYPEXPFILES = hypexp-1.pdf
 HFFILES = hf-1.pdf
+KAUSALFILES = kausal-1.pdf kausal-2.pdf kausal-3.pdf kausal-4.pdf
 
 randwerte:	$(RANDWERTEFILES)
 $(RANDWERTEFILES):	randwerte.mp
@@ -68,3 +69,10 @@ $(HFFILES):	hf.mp
 	TEX=latex mpost hf.mp
 	mptopdf hf.1
 
+kausal:	$(KAUSALFILES)
+$(KAUSALFILES):	kausal.mp
+	TEX=latex mpost kausal.mp
+	for f in kausal.*; \
+	do \
+		mptopdf $${f}; \
+	done

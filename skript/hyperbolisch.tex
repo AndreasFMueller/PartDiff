@@ -865,6 +865,13 @@ gilt.
 \end{definition}
 
 \subsection{Charakteristische Fl"achen der Wellengleichung}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\hsize]{graphics/shock}
+\end{center}
+\caption{Schockwelle eines "Uberschallfluzeugs als Beispiel einer
+charakteristischen Fl"ache von $\partial_t^2u-a^2\Delta u=0$.\label{ueberschallkegel}}
+\end{figure}
 Wir bestimmen die charakteristischen Fl"achen der
 Wellengleichung
 \[
@@ -917,13 +924,75 @@ Diese charakteristische Fl"ache beschreibt die Fortpflanzung einer
 ebenen Welle.
 \end{enumerate}
 
+
+\section{Welche Randwerte beeinflussen die L"osung in einem Punkt?}
 \begin{figure}
-\begin{center}
-\includegraphics[width=0.8\hsize]{graphics/shock}
-\end{center}
-\caption{Schockwelle eines "Uberschallfluzeugs als Beispiel einer
-charakteristischen Fl"ache von $\partial_t^2u-a^2\Delta u=0$.\label{ueberschallkegel}}
+\centering
+\includegraphics{images/kausal-1.pdf}\qquad\qquad%
+\includegraphics{images/kausal-2.pdf}
+\caption{Randwerte und Punkte des Gebietes, die Einfluss auf einen
+Funktionswert der L"osung haben.
+Bei einer elliptischen Differentialgleichung $\Delta u=f$
+(links)
+h"angt jeder Funktionswert von jedem Randwert und von jedem Wert der
+Funktion $f$ ab.
+Die L"osung einer quasilinearen partiellen Differentialgleichung  (rechts)
+im Punkt $x$ h"angt vom Randwert im Anfangspunkt $x_0$ einer Charaketeristik
+ab, die durch $x$ verl"auft.
+\label{einflussmenge1}}
 \end{figure}
+\begin{figure}
+\centering
+\includegraphics{images/kausal-3.pdf}\qquad\qquad%
+\includegraphics{images/kausal-4.pdf}
+\caption{Randwerte und Punkte des Gebietes, die Einfluss auf einen
+Funktionswert der L"osung haben.
+Die L"osung einer parabolischen partiellen Differentialgleichung
+zur Zeit $t$ h"angt von allen Werten $t'<t$ ab.
+Bei einer hyperbolischen partiellen Differentialgleichung beinflussen 
+nur die Funktionswerte innerhalb eines vom Punkt $x$ ausgehenden Kegels
+von Charakteristiken den Wert der L"osung im Punkt $x$.
+\label{einflussmenge2}}
+\end{figure}
+Mit der entwickelten Theorie ist es jetzt m"oglich, einen Antwort auf die
+Frage zu geben, welche Punkte auf dem Rand oder auch im Inneren des Gebietes
+einen Einfluss auf die L"osung einer partiellen Differentialgleichung
+der Form $Lu=f$ haben.
+
+Im Kapitel~\ref{chapter-elliptisch} haben wir f"ur die L"osung einer
+elliptischen partiellen Differentialgleichung eine Formel angegeben,
+die $u(x)$ aus allen Randwerten $g$ und der Funktion $f$ in allen 
+inneren Punkten berechnet:
+\[
+u(x)
+=
+\int_\omega G(x,\xi)f(\xi)\,d\xi
++
+\int_{\partial\Omega} \operatorname{grad}_xG(x,\xi)g(\xi)\,d\xi.
+\]
+Eine "Anderung von $g$ in irgend einem Punkt des Randes wird im allgemeinen
+Die L"osung $u(x)$ ver"andern, ebenso eine beliebige "Anderung von $f$
+(Abbildung~\ref{einflussmenge1}, links).
+
+Im Gegensatz dazu wurde im Kapitel~\ref{chapter-geometrie} gezeigt, 
+dass die L"osung einer quasilinearen partiellen Differentialgleichung
+erster Ordnung im Punkt $x$ nur vom Wert der Anfangsbedingung im Anfangspunkt
+derjenigen Charakteristik abh"angt, die durch $x$ verl"auft
+(Abbildung~\ref{einflussmenge1}, rechts).
+
+Die L"osung einer parabolischen partiellen Differentialgleichungen 
+kann ebenfalls mit Hilfe einer Greenschen Funktion ausgedr"uckt werden.
+Die Formel~(\ref{green-parabolisch}) zeigt, dass die Werte $u(t,x)$
+im Allgemeinen von allen Randwerten $g(t',\xi)$ und $f(t',\xi)$
+mit $t'<t$ abh"angt (Abbildung~\ref{einflussmenge2}, links).
+
+Die Charakteristischen Fl"achen (Kurven) beantworten die entsprechende
+Frage f"ur eine hyperbolische partielle Differentialgleichung.
+Die charakteristischen Fl"achen (Kurven), die durch den Punkte $x$ verlaufen,
+definieren einen Kegel.
+Der Wert $u(x)$ der L"osung im Punkt $x$ h"angt ab von den
+Funktionswerten von $f$ und Randwerte in diesem Kegel
+(Abbildung~\ref{einflussmenge2}, rechts).
 
 \section{Zusammenfassung: das Wichtigste in K"urze}
 \begin{enumerate}

@@ -220,16 +220,19 @@ wieder die Greensche Funktion f"ur das W"armeleitungsproblem
 mit Dirichlet-Rand\-bedingungen. Und ebenfalls analog wie bei elliptischen
 partiellen Differentialgleichungen kann man eine L"osungsformel
 angeben
-\begin{align*}
+\begin{align}
 u(t,x)&=
 \int_0^t\int_{\Omega}G(t,x,\tau,\xi)f(\tau,\xi)\,d\xi\,d\tau
+\notag
 \\
 &\quad+\int_{\Omega}G(t,x,0,\xi)u_0(\xi)\,d\xi
+\notag
 \\
 &\quad +\kappa\int_0^t\int_{\partial \Omega}
 G(t,x,\tau,\xi)\operatorname{grad}_\xi u
 -u\operatorname{grad}_\xi G(t,x,\tau,\xi)\cdot dn\,d\tau
-\end{align*}
+\label{green-parabolisch}
+\end{align}
 
 Selbstverst"andlich kann die Theorie wie bei elliptischen Gleichungen
 auch f"ur Neumann-Randbedingungen verfeinert werden.
