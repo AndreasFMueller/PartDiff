@@ -121,15 +121,45 @@ Randwerten am Anfang der Charakteristik durch $x$ ab.
 \end{frame}
 
 \begin{frame}
+\frametitle{Hyperbolische PDGL}
+
+\begin{itemize}[<+->]
+\item
+Wellengleichung
+\item
+endliche Ausbreitungsgeschwindigkeit
+\item
+Jeder Randwert hat ein durch die Ausbreitungsgeschwindigkeit
+definiertes Einflussgebiet
+\end{itemize}
+
+\bigskip
+
+{\bf Aufgabe:}
+Finde die Einflussgebiete f"ur eine beliebige hyperbolische PDGL
+
+\end{frame}
+
+\begin{frame}
 \frametitle{Charakteristiken}
 
+Anfangskurven f"ur das Cauchy-Problem:
+\[
+t\mapsto \left\{\begin{aligned}
+x(t)\\
+y(t)\\
+u(t)
+\end{aligned}\right.
+\]
+
 \begin{definition}
-Kurven, die nicht als Anfangskurven f"ur ein Cauchy-Problem geeignet sind.
+Charakteristiken sind Kurven, die nicht als Anfangskurven f"ur ein
+Cauchy-Problem geeignet sind.
 \end{definition}
 
 \bigskip
 
-Hauptresultat:
+{\bf Hauptresultat:}
 \medskip
 
 \begin{theorem}
@@ -139,12 +169,124 @@ Die L"osungsfl"achen wird von Charakteristiken erzeugt.
 \end{frame}
 
 \begin{frame}
+\frametitle{Hyperbolische PDGL}
+Partielle Differentialgleichung zweiter Ordnung
+\[
+Lu
+=
+a\frac{\partial^2 u}{\partial x^2}
++
+2b \frac{\partial^2 u}{\partial x\,\partial y}
++
+c\frac{\partial^2 u}{\partial y^2}
++
+d\frac{\partial u}{\partial x}
++
+e\frac{\partial u}{\partial y}
++
+fu=g
+\]
+mit
+\[
+\left|\begin{matrix}
+a&b\\b&c
+\end{matrix}\right|
+=ac-b^2 < 0
+\quad\Leftrightarrow\quad
+\text{$L$ hyperbolisch}
+\]
+im Gebiet $\Omega$.
+\end{frame}
+
+\begin{frame}
 \frametitle{Streifen}
 
+Anfangsdaten f"ur eine PDGL 2.~Ordnung:
+\[
+t\mapsto
+\left\{
+\begin{aligned}
+x(t)\\
+y(t)\\
+u(t)\\
+p(t)\\
+q(t)
+\end{aligned}
+\right.
+\]
+
 \begin{definition}
-Drei Funktionen $u(s)$, $p(s)$ und $q(s)$, wobei $p$ und $q$ die Bedeutung
-der Steigung $\partial u/\partial x$ bzw.~$\partial u/\partial y$ haben.
+Cauchy-Problem f"ur die PDGL $Lu = g$: finde Funktion $u(x,y)$ mit $Lu=g$ so,
+dass
+\begin{align*}
+u(x(t),y(t))&=u(t), &\frac{\partial u}{\partial x}(x(t),y(t))&=p(t)\\
+            &       &\frac{\partial u}{\partial y}(x(t),y(t))&=q(t)
+\end{align*}
 \end{definition}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Charakteristiken}
+
+Streifen und PDGL m"ussen zusammen die zweiten Ableitungen festlegen.
+\begin{align*}
+p(t)&=\frac{\partial u}{\partial x}(x(t), y(t))
+&
+\dot p(t)
+&={\color{red} \frac{\partial^2 u}{\partial x^2}}\dot x(t)
++
+{\color{red}\frac{\partial^2u}{\partial x\partial y}}\dot y(t)
+\\
+q(t)&=\frac{\partial u}{\partial y}(x(t), y(t))
+&
+\dot q(t)
+&=
+{\color{red}\frac{\partial^2 u}{\partial y\partial x}}\dot x(t)
++
+{\color{red}\frac{\partial^2u}{\partial y^2}}\dot y(t)
+\\
+&&g(x(t),y(t))&=Lu (x(t),y(t))
+\end{align*}
+3 lineare Gleichungen f"ur drei 2.~Ableitungen
+$\Rightarrow$
+Bedingung f"ur Charakteristik:
+\[
+a\,\dot y(t)^2-2b\,\dot x(t)\,\dot y(t)+c\,\dot x(t)^2=0
+\]
+\end{frame}
+
+\begin{frame}
+\frametitle{Charakteristische Streifen}
+Streifen so, dass
+\begin{enumerate}
+\item
+$x(t), y(t), u(t)$ eine Charakteristik bilden.
+\item
+Es gibt unendliche viele L"osungen f"ur die zweiten Ableitungen entlang
+dieser Charakteristik
+\end{enumerate}
+
+Zusatzbedingungen:
+\begin{gather*}
+a\dot p(t)\dot y(t)
+-
+h \dot x(t) \dot y(t)
++
+c \dot x(t)\dot q(t)=0
+\\
+\text{mit\;}
+h=g-dp(t)-eq(t)-fu(x(t),y(t))
+\end{gather*}
+
+\bigskip
+
+{\bf Hauptresultat:}
+\medskip
+
+\begin{theorem}
+Die L"osungsfl"ache wird "uberdeckt von charakteristischen Streifen.
+\end{theorem}
 
 \end{frame}
 
@@ -152,6 +294,20 @@ der Steigung $\partial u/\partial x$ bzw.~$\partial u/\partial y$ haben.
 \frametitle{Hyperbolische PDGL}
 \begin{center}
 \includegraphics{../../skript/images/kausal-4.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{"Uberschallstr"omung}
+\begin{center}
+\includegraphics[width=\hsize]{../../skript/graphics/i-5-1.jpg}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mach-Kegel}
+\begin{center}
+\includegraphics[width=0.8\hsize]{../../skript/graphics/shock.png}
 \end{center}
 \end{frame}
 
