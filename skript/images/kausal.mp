@@ -137,7 +137,7 @@ draw z0--z1--z2--z3;
 
 z4 = (-1 * u,3 * u);
 
-fill (-4 * u,3 * u)--z1--z2--(4 * u,3 * u)--cycle withcolor (1,0.9,0.9);
+fill (-4 * u,3 * u)--z1--z2--(4 * u,3 * u)--cycle withcolor (1,0.95,0.95);
 
 pickup pencircle scaled 0.5pt;
 drawarrow (0,-5)--(0,9.5 * u);
@@ -186,11 +186,12 @@ draw z0--z1--z2--z3;
 
 z4 = (-2.5 * u,4 * u);
 
+fill (-4 * u, 2.5 * u)--z1--(1.5 * u,0)--z4--cycle withcolor (1.0,0.95,0.95);
+
 pickup pencircle scaled 0.5pt;
 drawarrow (0,-5)--(0,9.5 * u);
 label.rt(btex $t$ etex, (0,9.5 * u));
 
-fill (-4 * u, 2.5 * u)--z1--(1.5 * u,0)--z4--cycle withcolor (1.0,0.95,0.95);
 
 pickup pencircle scaled 1.5pt;
 draw (-4 * u, 2.5 * u)--z1--(1.5 * u,0) withcolor red;

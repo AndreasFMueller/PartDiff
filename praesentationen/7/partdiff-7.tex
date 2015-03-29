@@ -1,0 +1,158 @@
+%\documentclass[handout]{beamer}
+\documentclass{beamer}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{german}
+%\usepackage{txfonts}
+
+\mode<beamer>{%
+\usetheme[hideothersubsections,hidetitle]{Hannover}
+}
+\title[]{Partielle Differentialgleichungen}
+\subtitle{7. Sitzung: Hyperbolische PDGL}
+\date[1.~April 2015]{1.~April 2015}
+\author{Prof.~Dr.~Andreas M"uller}
+\begin{document}
+
+\begin{frame}
+\section{Hyperbolische PDGL}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Klassifikation}
+
+\begin{center}
+\begin{tabular}{llll}
+Klasse&Bedingung&Beispiel&Anwendung\\
+\hline
+elliptisch &$\begin{aligned}P&=n\mathstrut\end{aligned}$
+	&$\displaystyle \Delta u=f                                $
+		&Potential\\
+&	&	&Eigenwertproblem\\
+\hline
+parabolisch&%$P=n-1, Z=1$
+$\begin{aligned}P&=n-1\mathstrut\\Z&=1\mathstrut\end{aligned}$
+	&$\displaystyle \frac{\partial u}{\partial t}=\Delta u    $
+		&W"armeleitung\\
+\hline
+hyperbolisch&%$P=n-1, N=1$
+$\begin{aligned}P&=n-1\mathstrut\\N&=1\mathstrut\end{aligned}$
+	&$\displaystyle \frac{\partial^2 u}{\partial t^2}=\Delta u$
+		&Wellen\\
+\hline
+\end{tabular}
+\end{center}
+
+Klasse verr"at:
+\begin{itemize}
+\item Charakter der L"osung: Schwingungen, exponentielles Abklingen
+\item Welches L"osungsverfahren geeignet ist
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Maximumprinzip}
+\begin{definition}
+$u\colon\Omega\to\mathbb R$ heisst harmonisch wenn $\Delta u=0$.
+\end{definition}
+
+\begin{theorem}
+Wenn $\Omega$ beschr"ankt und zusammenh"anged ist, dann nimmt eine
+harmonische Funktion ihr Maximum und Minimum auf dem Rand $\partial\Omega$ an.
+\end{theorem}
+
+\begin{theorem}
+Wenn $\Omega$ beschr"ankt und zusammenh"angend ist, dann ist die 
+L"osung des Randwertproblems eindeutig, falls sie existiert.
+\end{theorem}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Greensche Funktion}
+{\bf Problem:}
+\[
+\Delta u=f\quad\text{in $\Omega$},\qquad u_{|\partial\Omega}=g
+\]
+\bigskip
+
+{\bf L"osung:}
+\[
+u(x)
+=
+\int_{\Omega} G(x,\xi)f(\xi)\,d\xi
++
+\int_{\partial\Omega}  \operatorname{grad}_\xi G(x,\xi) g(\xi)\,d\xi.
+\]
+\bigskip
+\pause
+
+{\bf Konsequenz:} Alle Randwerte haben Einfluss auf $u(x)$.
+
+\bigskip
+\pause
+
+{\bf Kontrast:} Quasilineare PDGL 1. Ordnung: $u(x)$ h"angt nur von den
+Randwerten am Anfang der Charakteristik durch $x$ ab.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Elliptische PDGL}
+\begin{center}
+\includegraphics{../../skript/images/kausal-1.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Quasilineare PDGL 1. Ordnung}
+\begin{center}
+\includegraphics{../../skript/images/kausal-2.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Parabolische PDGL}
+\begin{center}
+\includegraphics{../../skript/images/kausal-3.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Charakteristiken}
+
+\begin{definition}
+Kurven, die nicht als Anfangskurven f"ur ein Cauchy-Problem geeignet sind.
+\end{definition}
+
+\bigskip
+
+Hauptresultat:
+\medskip
+
+\begin{theorem}
+Die L"osungsfl"achen wird von Charakteristiken erzeugt.
+\end{theorem}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Streifen}
+
+\begin{definition}
+Drei Funktionen $u(s)$, $p(s)$ und $q(s)$, wobei $p$ und $q$ die Bedeutung
+der Steigung $\partial u/\partial x$ bzw.~$\partial u/\partial y$ haben.
+\end{definition}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Hyperbolische PDGL}
+\begin{center}
+\includegraphics{../../skript/images/kausal-4.pdf}
+\end{center}
+\end{frame}
+
+\end{document}
