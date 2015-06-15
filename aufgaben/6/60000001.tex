@@ -1,0 +1,81 @@
+Teilen sie die folgenden partiellen Differentialgleichungen
+in elliptische, parabolische und hyperbolische ein und markieren
+Sie auch diejenigen, die nicht in dieses Klassifikationsschema passen.
+\begin{teilaufgaben}
+\item $\partial_x\partial_y\partial_z u=0$
+\item $\partial_x^2u=\partial_y^2u$
+\item $\partial_x^2u+4\partial_x\partial_yu+\partial_y^2u=0$
+\item $\partial_x^2u-4\partial_x\partial_yu+\partial_y^2u=0$
+\item $\partial_x^2u-\partial_x\partial_yu+\partial_y^2u=0$
+\item $\Delta u=\kappa\partial_t^2u$, wobei $\kappa\in \mathbb R$ ist.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item Dies ist eine PDGL dritter Ordnung, passt also nicht ins
+Klassifikationsschema.
+\item Dies ist die PDGL
+\[
+\frac{\partial^2u}{\partial x^2}-\frac{\partial^2 u}{\partial y^2}=0,
+\]
+die Koeffizientenmatrix der zweiten Ableitungen ist also
+\[
+\begin{pmatrix}
+1&0\\0&-1
+\end{pmatrix}
+\]
+welche zwei Eigenwerte mit verschiedenen Vorzeichen hat, diese Gleichung
+ist also hyperbolisch.
+\item Die Koeffizientenmatrix ist
+\[
+A=\begin{pmatrix}
+1&2\\2&1
+\end{pmatrix}.
+\]
+Die Eigenwerte k"onnen mit Hilfe der charakteristischen Gleichung
+gefunden werden:
+\begin{align*}
+\det(A-\lambda E)
+&=
+\left|\begin{matrix} 1-\lambda&2\\2&1-\lambda\end{matrix}\right|
+\\
+&=(1-\lambda)^2-4\\
+&=\lambda^2-2\lambda-3=0
+\end{align*}
+welche die Nullstellen $\lambda_1=3$ und $\lambda_2=-1$ hat.
+Insbesondere ist die Gleichung also hyperbolisch.
+\item
+In diesem Fall ist das charakteristische Polynom das selbe wie in
+der vorangegangenen Teilaufgabe, also ist auch diese Differentialgleichung
+hyperbolisch.
+\item Die Koeffizientenmatrix
+\[
+\begin{pmatrix}
+1&-\frac12\\
+-\frac12&1
+\end{pmatrix}
+\]
+hat das charakteristische Polynom
+\[
+(1-\lambda)^2-\frac14=\lambda^2-2\lambda-\frac34
+\]
+mit den Nullstellen $\lambda_1=\frac32$ und $\lambda_2=\frac12$,
+diese Gleichung ist also elliptisch.
+\item
+Bringt man alle Terme auf eine Seite, wird daraus die Differentialgleichung
+\[
+\partial_1^2u+\dots\partial_n^2u-\kappa\partial_t^2u=0
+\]
+mit der Koeffizientenmatrix
+\[
+\begin{pmatrix}
+1&0&\dots&0\\
+0&1&\dots&0\\
+\vdots&\vdots&\ddots&\vdots\\
+0&0&\dots&-\kappa\\
+\end{pmatrix}
+\]
+also hyperbolisch f"ur $\kappa > 0$ und elliptisch f"ur $\kappa < 0$.
+F"ur $\kappa=0$ ist die Gleichung parabolisch.
+\end{teilaufgaben}
+\end{loesung}
