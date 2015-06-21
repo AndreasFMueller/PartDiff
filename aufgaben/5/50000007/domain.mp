@@ -60,7 +60,7 @@ drawarrow (-10,0)--(210,0);
 drawarrow (0,-10)--(0,210);
 
 label.urt(btex $x$ etex, (210,0));
-label.ulft(btex $y$ etex, (0,210));
+label.ulft(btex $t$ etex, (0,210));
 
 label.llft(btex $0$ etex, (0,0));
 
