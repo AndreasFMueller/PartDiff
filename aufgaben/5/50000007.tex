@@ -38,11 +38,11 @@ Anfangsbedingungen nicht vergessen!
 Die Laplace-Transformation von (\ref{50000007:gleichung}) ergibt
 \begin{align}
 \frac{\partial}{\partial x}{\cal L}u(x,s)
-+x\bigl(u(x,0)+s{\cal L}u(x,s)\bigr)&=\frac1{s^2}
++x\bigl(-u(x,0)+s{\cal L}u(x,s)\bigr)&=\frac1{s^2}
 \notag
 \\
 \frac{\partial}{\partial x}{\cal L}u(x,s)
-+xs{\cal L}u(x,s)&=\frac1{s^2}-xg(x)
++xs{\cal L}u(x,s)&=\frac1{s^2}+xg(x)
 \label{50000007:transformiert}
 \end{align}
 Darin haben wir die Laplace-Transformierte von $t$ verwendet:
@@ -112,8 +112,16 @@ ablesen.
 \includeagraphics[width=0.6\hsize]{domain-1.pdf}
 \end{center}
 \caption{Charakteristiken der partiellen
-Differentialgleichung~(\ref{50000007:gleichung})
+Differentialgleichung~(\ref{50000007:gleichung}).
+Die fett ausgezogene Charakteristik trennt die Einflussgebiet der
+Randbedingungen auf der $x$- und $t$-Achse.
 \label{50000007:bild}}
+\end{figure}
+\begin{figure}
+\centering
+\includeagraphics[width=0.5\hsize]{loes.jpg}
+\caption{L"osunsgfl"ache der Differentialgleichung~(\ref{50000007:gleichung}).
+\label{50000007:loesungsflaeche}}
 \end{figure}
 \item
 Die homogene Differentialgleichung zu (\ref{50000007:family}) l"asst sich
