@@ -1,0 +1,56 @@
+Die reelle Funktion $u(x,y)$ ist auf dem Quadrat
+\[
+\Omega = [0, 1] \times [0,1]
+\]
+definiert.
+Sie erf"ullt im Innern von $\Omega$ die Poissongleichung
+\[
+\Delta u(x,y) = 2
+\]
+und auf dem Rand von $\Omega$ die Bedingungen
+\[
+u(x,y) = x^2.
+\]
+
+Gesucht ist eine Approximation der Werte von $u$ in den vier Punkten von
+$\Omega$
+\[
+(1/3,1/3), \ \  (2/3,1/3), \ \ (1/3,2/3), \ \  (2/3,2/3).
+\]
+Benutzen Sie hierzu Finite Volumina nach Voronoi.  
+
+\begin{hinweis}
+Sei $\Gamma$ ein Gebiet in $\Omega$.
+Dann gilt
+\[
+\int_{\partial \Gamma} \operatorname{grad} u(x,y) \,d\vec n
+=
+\int_{\Gamma} \Delta u(x,y) \,dx\,dy
+=
+\int_{\Gamma} 2 \,dx\, dy.
+\]
+\end{hinweis}
+
+
+\begin{loesung}
+Mit 
+\[
+\tilde u_1 = \tilde u(1/3,1/3),
+\ \tilde u_2 = \tilde u(2/3,1/3),
+\ \tilde u_3 = \tilde u(1/3,2/3),
+\ \tilde u_4 = \tilde u(1/3,2/3),
+\]
+sowie 
+\[
+A = \left[\begin{array}{rrrr} 
+-4 & 1  & 1 & 0 \\
+ 1 & -4 & 0 & 1 \\
+ 1 & 0 & -4 & 1 \\ 
+ 0 & 1 & 1  & -4 \end{array}\right]
+\quad\text{und}\quad
+\underline{b} =  \left(\begin{array}{r} 2/9 \\ -10/9 \\ 2/9 \\ -10/9 \end{array}\right)
+\]
+gilt $A \cdot \underline{\tilde u} = \underline{b}.$
+Es folgt $\underline{\tilde u} = (1/18, 7/18, 1/18, 7/18).$
+\end{loesung}
+

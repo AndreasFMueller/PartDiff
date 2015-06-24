@@ -1,0 +1,30 @@
+Bestimmen Sie die Knotenwerte einer Approximationsl"osung $\tilde u(x)$
+des Randwertproblems
+\[
+x^2 \cdot u''(x) - 2 \cdot x \cdot u'(x) + 3 \cdot u(x) = x^2, \ \ \ x \in\, ]0,1[
+\]
+mit
+\[
+u(0) = 0 \ \ \ \text{und} \ \ \ u(1) = 1.
+\]
+Benutzen Sie hierzu zentrale Finite Differenzen mit Schrittweite $\Delta x = 1/4$. 
+
+\begin{loesung}
+Mit 
+\[
+\tilde u_1 = \tilde u(1/4), \ \tilde u_2 = \tilde u(1/2), \ \tilde u_3 = \tilde u(3/4),
+\]
+sowie 
+\[
+A = \left[\begin{array}{rrr} 
+1 & 0 & 0 \\
+6 & -5 & 2 \\
+0 & 12 & -15 \end{array}\right] \ \ \text{und} \ \
+\underline{b} =  \left(\begin{array}{c} 1/16 \\ 1/4 \\ -87/16 \end{array}\right)
+\]
+gilt
+$A \cdot \underline{\tilde u} = \underline{b}$.
+Es folgt $\underline{\tilde u} = (1/16, 1/4, 9/16)$.
+\end{loesung}
+
+

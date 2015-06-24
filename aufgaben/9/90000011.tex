@@ -1,0 +1,119 @@
+Auf dem Gebiet $\Omega=\{(x,y)\,|\, x>0, y>0\}$ soll die partielle
+Differentialgleichung
+\begin{equation}
+\frac{\partial^2 u}{\partial x^2}-\frac1{y^2}\frac{\partial^2 u}{\partial y^2} 
++
+\frac1{y^3}\frac{\partial u}{\partial y}=0
+\label{90000011:gleichung}
+\end{equation}
+gel"ost werden mit Randwertvorgaben f"ur $x=0$, also auf dem linken Rand von
+$\Omega$.
+Hat eine "Anderung der Randbedingungen f"ur $x=0$ und $2 < y<3$ einen
+Einfluss auf den Wert der L"osung in den Punkten
+$P_1=(1,1)$,
+$P_2=(1.5,3.5)$ und
+$P_3=(3,3.85)$?
+
+\begin{hinweis}
+\[
+y\dot y=\frac{d}{dt}\bigl(
+{\textstyle \frac12}y^2
+\bigr)
+\]
+\end{hinweis}
+
+\begin{loesung}
+Die Symbolmatrix dieser linearen partiellen Differentialgleichung zweiter
+Ordnung ist
+\[
+A=\begin{pmatrix}
+1&0\\
+0&-\frac1{y^2}
+\end{pmatrix}
+\qquad
+\Rightarrow
+\qquad
+\det(A)=-\frac1{y^2}<0
+\]
+in $\Omega$, es handelt sich also um eine hyperbolische partielle
+Differentialgleichung, bei der mit Hilfe der Charakteristiken entschieden
+werden kann, ob die beschriebene "Anderung der Randbedingungen eine 
+Auswirkung auf die L"osung im Quadrat $(2,3)^2$ hat.
+\begin{figure}
+\begin{center}
+\includeagraphics[]{domain-1.pdf}
+\end{center}
+\caption{Charakteristiken f"ur die hyperbolische partielle
+Differentialgleichung (\ref{90000011:gleichung}).
+Blau hervorgehoben das Gebiet, in dem sich der Wert der L"osungsfunktion
+"andern wird, wenn die Anfangswerte f"ur $x=0$ und $2<y<3$ sich "andern.
+\label{90000011:bild}}
+\end{figure}
+
+Die Differentialgleichung der Charakteristiken ist
+\begin{align*}
+\dot y^2-\frac{1}{y^2}\dot x^2&=0,\\
+\Rightarrow\qquad
+\biggl(\dot y-\frac1y\dot x\biggr)\biggl(\dot y +\frac1y\dot x\biggr)=0.
+\end{align*}
+Das Produkt verschwindet, wenn einer der Faktoren verschwindet, wir erhalten
+also die zwei Differentialgleichungen
+\begin{align*}
+\dot y&=\pm \frac1y \dot x
+\end{align*}
+oder
+\begin{align*}
+y\dot y&=\pm \dot x
+\\
+\frac{d}{dt}\biggl(\frac12y^2\biggr)&=\pm\frac{d}{dt} x
+\end{align*}
+mit den L"osungen
+\[
+\frac12y^2=\pm x + C
+\]
+oder aufgel"ost nach $y$
+\begin{equation}
+y=\sqrt{D\pm 2x}.
+\end{equation}
+Die Charakteristiken durch den Punkt $(x_0,y_0)$ haben daher die Gleichungen
+\[
+y_\pm=\sqrt{y_0^2\pm 2(x-x_0)}.
+\]
+Eine "Anderung der Randbedingung f"ur $x=0$ und $2<y<3$ wirkt sich 
+in dem blau eingezeichneten Gebiet in Abbildung~\ref{90000011:bild} aus.
+Es ist also zu entscheiden, ob die genannten Punkte im Inneren dieses
+Gebietes liegen. Die obere Begrenzung des Gebietes ist die
+Kurve
+\[
+y_{\text{oben}} = \sqrt{9+2x},
+\]
+die untere ist
+\[
+y_{\text{unten}} = \sqrt{4-2x}.
+\]
+Einsetzen der Koordinaten der Punkte liefert
+\begin{center}
+\begin{tabular}{|c|c|ccccc|}
+\hline
+Punkt&$x$&$y_{\text{unten}}$&               &$y$ &              & $y_{\text{oben}}$\\
+\hline
+$P_1$&1  &$\sqrt{3}  $      &$\color{red}>$ & 1  &     $<$      & $\sqrt{11}=3.31$ \\
+$P_2$&1.5&$\sqrt{2.5}$      &               &3.5 &$\color{red}>$& $\sqrt{12}=3.46$ \\
+$P_3$&3  &                  &               &3.85&     $<$      & $\sqrt{15}=3.87$ \\
+\hline
+\end{tabular}
+\end{center}
+Daraus kann man ablesen, dass die Punkte $P_1$ und $P_2$ nicht im Einflussbereich
+der Randbedingungs"anderung liegen, der Punkt $P_3$ aber schon.
+\end{loesung}
+
+\begin{bewertung}
+Symbolmatrix ({\bf A}) 1 Punkt,
+hyperbolische partielle Differentialgleichung ({\bf H}) 1 Punkt,
+Differentialgleichung der Charakteristiken ({\bf D}) 1 Punkt,
+Zwei L"osungsscharen f"ur die Charakteristiken ({\bf L}) 2 Punkte,
+Einfluss auf L"osung ({\bf E}) 1 Punkt.
+\end{bewertung}
+
+
+
