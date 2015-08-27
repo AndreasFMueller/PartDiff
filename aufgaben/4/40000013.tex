@@ -1,40 +1,48 @@
-Auf dem Gebiet $\Omega=\{(x,y)\;|\;0<x,0 < y, 1 < x^2+y^2< 4\}$
+Auf dem Gebiet 
+\[
+\Omega = \{(x,y)\,|\, 0<x, 0 < y < x\cdot \tan 60^\circ, 1 < x^2 +y^2 < 4\}
+\]
 ist die partielle Differentialgleichung
 \begin{equation}
-\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}=\lambda u
-\label{40000012:gleichung}
+\frac{\partial^2u}{\partial x^2}
++
+\frac{\partial^2u}{\partial y^2}
+=
+\lambda u
+\label{40000013:equation}
 \end{equation}
 gegeben.
 \begin{teilaufgaben}
 \item
-F"uhren Sie Separation in Polarkoordinaten durch.
+F"uhren Sie Separation in Polarkoordinaten $(r,\varphi)$ durch
 \item
-Finden Sie f"ur $\lambda=0$ eine L"osung von
-(\ref{40000012:gleichung}), die den Randbedingungen
+Finden Sie f"ur $\lambda=0$ eine L"osung von (\ref{40000013:equation}), die
+den Randbedingungen
 \begin{align*}
-u(x,0)&= 0&u(x,y)&=\sin 2\varphi \qquad \text{f"ur $x^2+y^2=1$ oder $4$}\\
-u(0,y)&= 0&      &
+u(x,0)&=0&u(x,y)=\sin3\varphi\qquad \text{f"ur $x^2+y^2=1$ oder $4$}\\
+u(x,x\cdot \tan 60^\circ)&=0
 \end{align*}
-gen"ugt.
-Darin ist $\varphi$ der Polarwinkel, es gilt $\tan\varphi=\frac{y}{x}$.
+gen"ugt
 \item
-Wo sind die Maxima der in Teilaufgabe b) gefundenen Funktion $u(x,y)$?
+Wo sind die Maxima der in b) gefundenen Funktion $u(x,y)$?
 \end{teilaufgaben}
 
 \begin{hinweis}
-Suchen Sie Radialfunktionen $R(r)$ in der Form $R(r)=r^{\alpha}$.
+Suchen Sie Radialfunktionen $R(r)$ in der Form $R(r)=r^\alpha$.
 \end{hinweis}
 
 \begin{loesung}
+Das Gebiet ist ein $60^\circ$-Ausschnitt aus einem Kreisring.
+
 \begin{figure}
 \centering
 \includeagraphics[]{domain-1.pdf}
 \caption{Definitionsgebiet $\Omega$ der Differentialgleichung
-(\ref{40000012:gleichung})
-\label{40000012:gebiet}
+(\ref{40000013:equation})
+\label{40000013:gebiet}
 }
 \end{figure}
-Das Gebiet ist in Abbildung~\ref{40000012:gebiet} dargestellt.
+Das Gebiet ist in Abbildung~\ref{40000013:gebiet} dargestellt.
 Wir arbeiten in Polarkoordinaten, da l"asst sich der Laplace-Operator als
 \[
 \Delta u
@@ -73,19 +81,20 @@ m"ussen beide Seiten konstant sein und wir
 erhalten die zwei Gleichungen
 \begin{align}
 r^2R''(r)+rR'(r)-\lambda R(r)&=\phantom{-}\mu R(r)
-\label{40000012:erste}
+\label{40000013:erste}
 \\
 \Phi''(\varphi)&=-\mu\Phi(\varphi)
-\label{40000012:zweite}
+\label{40000013:zweite}
 \end{align}
 mit einer noch zu bestimmenden Konstanten $\mu$.
 \item
 Die Funktionen $\Phi(\varphi)$ m"ussen die Randbedingungen
 \[
-\Phi(0)=\Phi({\textstyle\frac{\pi}2})=0
+\Phi(0)=\Phi({\textstyle\frac{\pi}3})=0
 \]
 erf"ullen.
-Die Randbedingungen auf den $x$- und $y$-Achsen verlangen, dass f"ur $\Phi$
+Die Randbedingungen auf der $x$-Achse und der $60^\circ$-Geraden verlangen,
+dass f"ur $\Phi$
 oszillierende L"osungen verwendet werden m"ussen, was nur m"oglich ist,
 wenn $\mu>0$ ist. Wir setzen daher $\mu=m^2$. Damit bekommen wir f"ur die
 $\Phi(\varphi)$
@@ -93,11 +102,11 @@ $\Phi(\varphi)$
 \Phi(\varphi)=\begin{cases}\sin m\varphi,\\\cos m\varphi.\end{cases}
 \]
 Die Kosinus-L"osung erf"ullt die Randbedingung auf der $x$-Achse nicht,
-und die Sinus-L"osung erf"ullt die Randbedingung auf der $y$-Achse nur,
-wenn $m=2k$ mit $k\in\mathbb Z$ ist.
+und die Sinus-L"osung erf"ullt die Randbedingung auf der $60^\circ$-Geraden nur,
+wenn $m=3k$ mit $k\in\mathbb Z$ ist.
 Wir haben also die Teill"osungen
 \[
-\Phi_k(\varphi)=\sin 2k\varphi, \quad\varphi\in[0,{\textstyle \frac{\pi}2}]
+\Phi_k(\varphi)=\sin 3k\varphi, \quad\varphi\in[0,{\textstyle \frac{\pi}3}]
 \]
 gefunden.
 
@@ -109,52 +118,66 @@ auf den kreisf"ormigen Teilen des Randes nur die L"osung $k=1$ ben"otigt wird.
 \centering
 \includeagraphics[width=0.8\hsize]{loes.jpg}
 \caption{3D-Darstellung der L"osungsfunktion
-\label{40000012:3d}}
+\label{40000013:3d}}
 \end{figure}
 Aufgrund des Hinweises versuchen wir die Radialfunktion in der Form
-$R(r)=r^\alpha$, und setzen dies in (\ref{40000012:erste}) ein:
+$R(r)=r^\alpha$, und setzen dies in (\ref{40000013:erste}) ein:
 \begin{align*}
-r^2\alpha(\alpha-1)r^{\alpha-2}+r\alpha r^{\alpha-1}&=4k^2r^{\alpha}
+r^2\alpha(\alpha-1)r^{\alpha-2}+r\alpha r^{\alpha-1}&=9k^2r^{\alpha}
 \\
-(\alpha(\alpha-1)+\alpha -4k^2)r^{\alpha}&=0
+(\alpha(\alpha-1)+\alpha -9k^2)r^{\alpha}&=0
 \\
-(\alpha^2 -4k^2)r^{\alpha}&=0
+(\alpha^2 -9k^2)r^{\alpha}&=0
 \\
-\alpha^2&=4k^2
+\alpha^2&=9k^2
 \\
-\alpha&=\pm2k
+\alpha&=\pm3k
 \end{align*}
 Wir wissen bereits, dass nur der Fall $k=1$ ben"otigt wird, und suchen
 daher Koeffizienten $A$ und $B$ derart, dass
 \[
-Ar^2+Br^{-2}=1\qquad \text{f"ur $r=1,2$.}
+Ar^3+Br^{-3}=1\qquad \text{f"ur $r=1,2$.}
 \]
 Dies f"uhrt auf das Gleichungssystem
 \[
 \begin{linsys}{3}
  A&+&       B&=&1\\
-4A&+&\frac14B&=&1
+8A&+&\frac18B&=&1
 \end{linsys}
 \]
 mit den L"osungen
 \[
-A=\frac15,\qquad B=\frac45.
+A=\frac19,\qquad B=\frac89.
 \]
 Die gesuchte L"osung der Differentialgleichung ist also
-\[
-u(r,\varphi)=\biggl(\frac15r^2+\frac45r^{-2}\biggr)\sin 2\varphi.
-\]
-Die Abbildung~\ref{40000012:3d} zeigt eine 3D-Darstellung der L"osungsfunktion.
-Der folgende Maxima-Code verifiziert, dass dies die korrekte L"osung ist.
-\verbatimainput{check.maxima}
+\begin{equation}
+u(r,\varphi)=\biggl(\frac19r^3+\frac89r^{-3}\biggr)\sin 3\varphi.
+\label{40000013:solution}
+\end{equation}
+Die Abbildung~\ref{40000013:3d} zeigt eine 3D-Darstellung der L"osungsfunktion.
 \item
 Die Funktion $u$ ist wegen $\lambda=0$ eine harmonische Funktion, ihre
 Maxima und Minima sind daher auf dem Rand.
 Es reicht daher, die Randbedingungen zu konsultieren, wir finden die
-Maxima in den Punkten
+Maxima in den Punkten mit Polarwinkel $30^\circ$, wo die Sinus-Funktion
+in (\ref{40000013:solution}) den Wert $1$ annimmt.
+Dies sind die Punkte
 \[
-\biggl(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}2\biggr),\qquad
-(\sqrt{2},\sqrt{2}).
+(\cos 30^\circ, \sin 30^\circ)=\biggl(
+\frac{\sqrt{3}}{2}
+,
+\frac12
+\biggr),\qquad
+\text{und}\qquad
+(
+2\cos 30^\circ
+,
+2\sin 30^\circ
+)=(
+\sqrt{3}
+,
+1
+).
 \]
 \end{teilaufgaben}
 \end{loesung}
