@@ -1,0 +1,130 @@
+Auf dem Gebiet $\Omega = \{(x,y)\,|\, x>0,y>0\}$ soll die partielle
+Differentialgleichung
+\begin{equation}
+\frac1{x^2}\frac{\partial^2u}{\partial x^2}
+-\frac{\partial^2 u}{\partial y^2}+\frac1{y^3}\frac{\partial u}{\partial y}=0
+\label{90000012:equation}
+\end{equation}
+gel"ost werden mit Randwertvorgaben f"ur $y=0$, also am unteren Rand von
+$\Omega$.
+Hat eine "Anderung der Randbedingungen f"ur $y=0$ und $2<x<3$ einen Einfluss
+auf den Wert der L"osung in den Punkten 
+$P_1=(1,1)$, $P_2=(3.5,1.5)$ und $P_3(3.85,3)$.
+
+\begin{hinweis}
+\[
+x\dot x=\frac{d}{dt}\bigl(
+{\textstyle \frac12}x^2
+\bigr)
+\]
+\end{hinweis}
+
+\begin{loesung}
+Die Symbolmatrix dieser linearen partiellen Differentialgleichung zweiter
+Ordnung ist
+\[
+A=\begin{pmatrix}
+\frac1{x^2}&0\\0&-1
+\end{pmatrix}
+\qquad
+\Rightarrow
+\qquad
+\det(A)=-\frac1{x^2}<0,
+\]
+in $\Omega$, es handelt sich also um eine hyperbolische partielle 
+Differentialgleichung, bei der mit Hilfe der Charakteristiken
+entschieden werden kann, ob die beschriebene "Anderung der Randbedingungen
+einen Auswirkung auf die L"osung in den Punkten $P_i$ hat.
+
+Die Differentialgleichung der Charakteristiken ist
+\begin{align*}
+\frac1{x^2}\dot y^2-\dot x^2&=0
+\\
+\biggl(\frac1x \dot y-\dot x\biggr)
+\biggl(\frac1x \dot y+\dot x\biggr)
+&=0.
+\end{align*}
+Das Produkt verschwindet, wenn einer der Faktoren verschwindet, wir erhalten
+also die zwei Differentialgleichungen
+\[
+\frac1x\dot y=\pm\dot x
+\qquad
+\Rightarrow
+\qquad
+\dot y=\pm x\dot x
+\]
+Nach dem Hinweis ist dies gleichbedeutend mit
+\[
+\frac{d}{dt}y
+=
+\pm
+\frac{d}{dt}
+\biggl(
+\frac12
+x^2
+\biggr),
+\]
+woraus durch Integration 
+\[
+y=\pm\frac12x^2+C
+\]
+wird.
+Die Charakteristiken sind also nach oben oder unten ge"offnete Parabeln,
+die die $y$-Achse im Punkt $y=C$ schneiden.
+
+Das von einer "Anderung der Anfangsbedingungen betroffene Gebiet wird
+also begrenzt durch Parabeln, die durch die Punkte $(2,0)$ und $(3,0)$
+verlaufen.
+Nach links begrenzt wird das Gebiet also durch die nach unten ge"offnete
+Parabel
+\[
+y_{\text{links}}=-\frac12x^2+2,
+\]
+und nach rechts durch die nach oben ge"offnete Parabel
+\[
+y_{\text{rechts}}=\frac12x^2-\frac{9}{2}.
+\]
+Ein Punkt ist in diesem Gebiet, wenn seine $y$-Koordinate
+gr"osser sind als die $y$-Werte beider Begrenzungen.
+Einsetzen der Koordinaten der Punkte ergibt
+\begin{center}
+\begin{tabular}{
+|>{$}c<{$}|>{$}c<{$}|
+>{$}c<{$}|
+%>{$}c<{$}
+>{$}c<{$}
+%>{$}c<{$}
+>{$}c<{$}|}
+\hline
+\text{Punkt}&x&y&y_{\text{links}}&y_{\text{rechts}}\\
+\hline
+P_1&1   & 1   & \color{red}1.5      &   -4 \\
+P_2&3.5 & 1.5 & -4.125   &  \color{red}  1.625 \\
+P_3&3.85& 3   &-5.41125 &    2.91125\\
+\hline
+\end{tabular}
+\end{center}
+(Werte der Begrenzungsfunktion, die die Bedinung verletzen, sind rot
+hervorgehoben).
+Nur der Punkt $P_3$ ist im Gebiet, $P_1$ und $P_2$ liegen knapp ausserhalb,
+wie auch die Abbildung~\ref{90000012:char} zeigt.
+\begin{figure}
+\centering
+\includeagraphics[]{domain-1.pdf}
+\caption{Charakteristiken der hyperbolischen partiellen Differentialgleichung
+(\ref{90000012:equation}) und Einflussgebiet einer "Anderung
+der Randbedingungen.
+\label{90000012:char}}
+\end{figure}
+\end{loesung}
+
+\begin{bewertung}
+Symbolmatrix ({\bf A}) 1 Punkt,
+hyperbolische partielle Differentialgleichung ({\bf H}) 1 Punkt,
+Differentialgleichung der Charakteristiken ({\bf D}) 1 Punkt,
+Zwei L"osungsscharen f"ur die Charakteristiken ({\bf L}) 2 Punkte,
+Einfluss auf L"osung ({\bf E}) 1 Punkt.
+\end{bewertung}
+
+
+
