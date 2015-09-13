@@ -2,43 +2,47 @@ Auf dem Gebiet $\Omega=\{(x,t)\,|\, x>1,t > 0\}$
 ist die Differentialgleichung
 \begin{equation}
 x\frac{\partial u}{\partial x}+\frac{\partial u}{\partial t}=0
-\label{50000008:gleichung}
+\label{50000010:gleichung}
 \end{equation}
 gegeben. Die L"osung soll die Randbedingungen
 \[
-u(1,t)=1-\cos at
+u(1,t)=1-J_0(t)
 \qquad
 \text{und}
 \qquad
 u(x,0)=0
 \]
-erf"ullen ($a > 0$).
+erf"ullen.
+Dabei ist $J_0(t)$ eine sogenannte Bessel-Funktion, von der man nur
+die Laplace-Transformation kennt:
+\[
+{\cal L}J_0(s)=\frac1{\sqrt{s^2+1}}
+\]
+Sie sieht ein bisschen aus wie $\sin(t)/t$, aber die genaue Kenntnis der
+Funktion ist f"ur die L"osung der Aufgabe nicht erforderlich.
 \begin{teilaufgaben}
 \item Verwenden Sie die Laplace-Transformation nach $t$,
-um (\ref{50000008:gleichung}) in eine Familie gew"ohnlicher
+um (\ref{50000010:gleichung}) in eine Familie gew"ohnlicher
 Differentialgleichungen zu verwandeln.
 \item 
-Ist die L"osung der Differentialgleichung~(\ref{50000008:gleichung}) durch
+Ist die L"osung der Differentialgleichung~(\ref{50000010:gleichung}) durch
 die Randbedingungen eindeutig festgelegt?
 \item
 L"osen Sie die in a) gefundene gew"ohnliche Differentialgleichung,
-soweit dies in geschlossener Form\footnote{In geschlossener Form
+soweit dies in geschlossener Form m"oglich ist.
+In geschlossener Form
 l"osen heisst, dass man eine Formel f"ur die L"osung angeben kann, die 
 nur die wohlbekannten Funktionen verwendet, und in der keine nicht
 ausgerechneten Integrale mehr stehen.
-} m"oglich ist.
 \end{teilaufgaben}
 
 \begin{hinweis}
-Die Laplacetransformierte der Funktion $t\mapsto\cos at$ ist
-\[
-s\mapsto
-\frac{s}{s^2+a^2}.
-\]
 Anfangsbedingungen nicht vergessen!
 \end{hinweis}
 
 \begin{loesung}
+Der Graph der Besselfunktion $J_0$ ist in Abbildung~\ref{50000010:besselj0}
+dargestellt.
 \begin{teilaufgaben}
 \item
 Die Laplacetransformation nach der Variablen $t$
@@ -46,7 +50,7 @@ ergibt f"ur die Differentialgleichung
 \[
 x\frac{\partial{\cal L}u(x,s)}{\partial x}
 -
-u(x,0)+{\cal L}u(x,s)=0.
+u(x,0)+s{\cal L}u(x,s)=0.
 \]
 Dank der Randbedingung $u(x,0)=0$ wird die Differentialgleichung
 homogen:
@@ -56,12 +60,12 @@ x\frac{\partial{\cal L}u(x,s)}{\partial x}
 s{\cal L}u(x,s)=0.
 \]
 Die Anfangsbedingung f"ur ${\cal L}u(x,s)$ f"ur $x=1$ ist die
-Laplacetransformierte der Kosinusfunktion
+Laplacetransformierte von $1-J_0(t)$, also
 \[
-{\cal L}u(1,s)=\frac1s-\frac{s}{s^2+a^2} = \frac{a^2}{s(s^2+a^2)}.
+{\cal L}u(1,s)=\frac1s-\frac{1}{\sqrt{s^2+1}}.
 \]
-In der letzten Form erkennt man auch, dass die Laplacetransformierte
-f"ur alle $s$ positiv ist.
+Weil $\sqrt{s^2+1}>\sqrt{s^2}=s$ ist, kann man folgern, dass
+die Laplacetransformierte ${\cal L}u(1,s)$ f"ur alle $s$ negativ ist.
 \item
 Die Theorie der gew"ohnlichen Differentialgleichungen garantiert, dass
 die Funktionen ${\cal L}u(x,s)$ eindeutig festgelegt sind, damit folgt
@@ -71,7 +75,7 @@ Schreiben wir $y_s(x)={\cal L}u(x,s)$ erhalten wir die Differentialgleichung
 in etwas "ubersichtlicherer Form
 \begin{equation}
 xy_s'(x)+sy_s(x)=0.
-\label{50000008:sdgl}
+\label{50000010:sdgl}
 \end{equation}
 Diese gew"ohnliche Differentialgleichung kann mit Separation der
 Variablen gel"ost werden:
@@ -86,14 +90,12 @@ y_s(x)&=Cx^{-s}.
 \end{align*}
 Die Anfangsbedingung f"ur $x=1$ liefert
 \begin{equation}
-y_s(1)=C=\frac{s}{s^2+a^2}
+y_s(1)=C=\frac1s-\frac{1}{\sqrt{s^2 + 1}}
 \qquad\Rightarrow\qquad
 y_s(x)
 =
-\biggl(\frac1s-\frac{s}{s^2+a^2}\biggr)x^{-s}
-=
-\frac{a^2}{s(s^2+a^2)}x^{-s}.
-\label{50000008:loesung}
+\biggl(\frac1s-\frac{1}{\sqrt{s^2+1}}\biggr)x^{-s}.
+\label{50000010:loesung}
 \end{equation}
 Die rechte Seite ist immer positiv, ansonsten w"are die oben durchgef"uhrte
 L"osung der Differentialgleichung nicht zul"assig.
@@ -101,11 +103,11 @@ L"osung der Differentialgleichung nicht zul"assig.
 \end{loesung}
 
 \begin{diskussion}
-Die R"ucktransformation von (\ref{50000008:loesung}) l"asst sich
+Die R"ucktransformation von (\ref{50000010:loesung}) l"asst sich
 ebenfalls durchf"uhren, verlangt aber vertiefte Kenntnisse der
 Laplace-Transformation, und war daher nicht verlangt.
 
-Den Faktor $x^{-s}$ auf der rechten Seite von (\ref{50000008:loesung})
+Den Faktor $x^{-s}$ auf der rechten Seite von (\ref{50000010:loesung})
 kann man auch als $e^{-s\log x}$
 schreiben, damit wird klar, dass $u(x,t)$ nur eine um $\log x$ verschobene
 Version der Funktion $u(1,t)$ ist. 
@@ -122,26 +124,32 @@ wobei $\theta(t)$ die Heaviside-Funktion
 ist. Daraus kann man ablesen, dass
 \begin{equation}
 u(x,t)=\begin{cases}
-1-\cos a(t-\log x)\qquad
+1-J_0(t-\log x)\qquad
 &t \ge \log x\\
 0
 &\text{sonst}
 \end{cases}
-\label{50000008:ruecktransformiert}
+\label{50000010:ruecktransformiert}
 \end{equation}
-die L"osung der Differentialgleichung (\ref{50000008:gleichung}) ist.
+die L"osung der Differentialgleichung (\ref{50000010:gleichung}) ist.
+\begin{figure}
+\centering
+\includeagraphics[]{domain-2.pdf}
+\caption{Graph der Besselfunktion $J_0(t)$
+\label{50000010:besselj0}}
+\end{figure}
 \begin{figure}
 \centering
 \includeagraphics[]{domain-1.pdf}
-\caption{Charakteristiken der Differentialgleichung~(\ref{50000008:gleichung})
-\label{50000008:charakteristiken}}
+\caption{Charakteristiken der Differentialgleichung~(\ref{50000010:gleichung})
+\label{50000010:charakteristiken}}
 \end{figure}
 \begin{figure}
 \centering
 \includeagraphics[width=\hsize]{loes.jpg}
 \caption{3D-Darstellung der L"osungsfl"ache der
-Differentialgleichung~(\ref{50000008:gleichung}), $x$-Achse nach vorne.
-\label{50000008:loesung}}
+Differentialgleichung~(\ref{50000010:gleichung}), $x$-Achse nach rechts.
+\label{50000010:loesung}}
 \end{figure}
 
 
@@ -162,37 +170,40 @@ t(\tau)&=\tau + t_0
 &\Rightarrow&
 u(\tau)&=u_0
 \end{aligned}
-\label{50000008:chardgl}
+\label{50000010:chardgl}
 \end{equation}
 Die Randbedingungen legen die L"osung eindeutig fest, wie man aus
-Abbildung~\ref{50000008:charakteristiken} ablesen kann.
+Abbildung~\ref{50000010:charakteristiken} ablesen kann.
 
-Die Charakteristik durch den Punkt $(1,0)$, in Abildung~\ref{50000008:charakteristiken} etwas breiter eingezeichnet, spielt eine besondere Rolle.
+Die Charakteristik durch den Punkt $(1,0)$, in Abildung~\ref{50000010:charakteristiken} etwas breiter eingezeichnet, spielt eine besondere Rolle.
 Funktionswerte in Punkten oberhalb dieser Charakteristik sind durch die 
-Randbedingung $u(1,t)=1-\cos at$ festgelegt, Funktionswerte in Punkten
+Randbedingung $u(1,t)=1-J_0(t)$ festgelegt, Funktionswerte in Punkten
 unterhalb dieser Charakteristik sind $0$.
 F"ur diese Charakteristik ist $x_0=1$ und $t_0=0$, die Charakteristik
 hat daher die Gleichung $t=\log x$, wie man aus den ersten zwei Gleichungen
-von (\ref{50000008:chardgl}) ablesen kann.
+von (\ref{50000010:chardgl}) ablesen kann.
 
-Aus der zweiten Gleichung von (\ref{50000008:chardgl})
+Aus der zweiten Gleichung von (\ref{50000010:chardgl})
 liest man $\tau=t-t_0$ ab, so dass 
 $x=x_0e^{t-t_0}$ folgt.
 F"ur die Randbedingung f"ur $x=1$ folgt $x=e^{t-t_0}$
 oder $t_0=t-\log x$ und damit die L"osung 
 \[
-u(\tau)=u_0=1-\cos at_0=1-\cos a(t-\log x).
+u(\tau)=u_0=1-J_0(t_0)-1=1-J_0(t-\log x)-1.
 \]
 Da f"ur Punkte unterhalb der Charakteristik $t=\log x$ der Funktionswert $0$
-sein muss, erh"alt man wieder (\ref{50000008:ruecktransformiert}) als L"osung.
+sein muss, erh"alt man wieder (\ref{50000010:ruecktransformiert}) als L"osung.
 \end{diskussion}
 
 \begin{bewertung}
 Transformation der Gleichung ({\bf G}) 1 Punkt,
 Laplace-Transformation der Anfangsbedingung ({\bf A}) 1 Punkt,
 Eindeutigkeit in Teilaufgabe b) ({\bf E}) 1 Punkt,
-Separation der homogenen Differentialgleichung (\ref{50000008:sdgl})
+Separation der homogenen Differentialgleichung (\ref{50000010:sdgl})
 ({\bf S}) 1 Punkt,
 L"osung der homogenen Gleichung ({\bf L}) 1 Punkt,
-Einsetzen der Anfangsbedingungen (\ref{50000008:loesung}) ({\bf R}) 1 Punkt.
+Einsetzen der Anfangsbedingungen (\ref{50000010:loesung}) ({\bf R}) 1 Punkt.
 \end{bewertung}
+
+
+

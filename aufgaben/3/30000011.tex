@@ -1,0 +1,146 @@
+Auf dem Gebiet $\Omega=\{(x,y)\,|\,0<x<\frac{\pi}2,0<y<\frac{\pi}2\}$
+ist die partielle Differentialgleichung
+\begin{equation}
+\frac{\partial u}{\partial x}
++
+\frac1{\sin y}\frac{\partial u}{\partial y}
+=
+0
+\label{30000011:equation}
+\end{equation}
+gegeben.
+\begin{teilaufgaben}
+\item
+Finden Sie eine L"osung, die die Randbedingung
+\[
+u(x,0)=\sin x\qquad \text{f"ur $0<x<\frac{\pi}2$}
+\]
+erf"ullt.
+\item
+Ist die L"osung durch diese Randbedingung eindeutig festgelegt?
+\end{teilaufgaben}
+
+\begin{loesung}
+Es handelt sich um eine quasilineare partielle Differentialgleichung erster
+Ordnung, die gestellten Fragen k"onnen mit Hilfe von Charakteristiken
+beantwortet werden.
+\begin{teilaufgaben}
+\item
+Die Differentialgleichungen der Charakteristiken mit Parameter $t$ sind
+\begin{align}
+\dot x&=1
+\label{30000011:x}
+\\
+\dot y&=\frac1{\sin x}
+\label{30000011:y}
+\\
+\dot u&=0
+\label{30000011:u}
+\end{align}
+Die Gleichungen (\ref{30000011:x}) und (\ref{30000011:u}) sind durch
+Integration sofort zu l"osen:
+\begin{align*}
+x&=t+x_0\\
+u&=u_0
+\end{align*}
+Die Gleichung (\ref{30000011:y}) kann durch Separation gel"ost werden:
+\[
+\begin{aligned}
+\dot y&=\frac1{\sin y}
+&&\Rightarrow&
+\int \sin y\,dy&=-\cos y=t+y_0
+\end{aligned}
+\]
+Darin muss die Integrationskonstante $y_0$ so gew"ahlt werden,
+dass die Charakteristik f"ur $t=0$ auf der $x$-Achse beginnen soll.
+Setzen wir $y=0$ und $t=0$ ein, erhalten wir
+\[
+-\cos 0=0+y_0,
+\]
+wir m"ussen also $y_0=-1$ setzen.
+Die Randbedingung liefert ausserdem $u_0=\sin x_0$. So
+erhalten wir die Gleichungen
+\begin{align*}
+x&=t+x_0\\
+\cos y&=-t+1\\
+u&=\sin x_0.
+\end{align*}
+Aus diesen drei Gleichungen m"ussen wir nun noch $t$ und $x_0$ eliminieren.
+Indem wir die zweite Gleichung nach $t=-\cos y + 1$ aufl"osen und
+in der ersten einsetzen, k"onnen wir $t$ eliminieren und erhalten
+\[
+x=-\cos y+1+x_0.
+\]
+Dies k"onnen wir nach $x_0=x+\cos y-1$ aufl"osen und in die letzte Gleichung
+einsetzen, so wird $x_0$ eliminiert:
+\[
+u(x,y)=\sin(x+\cos y - 1).
+\]
+Zur Kontrolle berechnen wir die Ableitungen
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
+\cos(x+\cos y - 1)
+\\
+\frac{\partial u}{\partial y}
+&=
+-\cos(x+\cos y - 1)
+\sin y
+\end{align*}
+und setzen in die Differentialgleichung ein
+\[
+\frac{\partial u}{\partial x}
++
+\frac1{\sin y}\frac{\partial u}{\partial y}
+=
+\cos(x+\cos y - 1)
+-
+\frac1{\sin y}
+\cos(x+\cos y - 1)
+\sin y
+=
+0,
+\]
+die Funktion $u(x,y)$ erf"ullt also die Differentialgleichung. 
+Die Randbedingung f"ur $y=0$ ist $u(x_0,0)=\sin(x_0+\cos 0 - 1)=\sin x_0$
+ist ebenfalls erf"ullt.
+\begin{figure}
+\centering
+\includeagraphics[width=0.6\hsize]{loes.jpg}
+\caption{L"osungsfl"ache der partiellen Differentialgleichung
+(\ref{30000011:equation}).
+\label{30000011:solution}}
+\end{figure}
+Die L"osungsfl"ache ist in Abbildung~\ref{30000011:solution} dargestellt.
+\item
+Der Grundriss der Charakteristik durch den Punkt $(x_0,0)$ erf"ullt
+\[
+\begin{aligned}
+\cos y&=-(x-x_0)+1
+&&\Rightarrow&
+y&=\arccos(-x+x_0+1),
+\end{aligned}
+\]
+also gespiegelte Arcus-Kosinus-Kurven (siehe Abbildung~\ref{30000011:char}).
+Diese Kurven sind im gegebenen Gebiet $\Omega$ alle nach rechts gekr"ummt,
+der Teil des Gebietes oberhalb der Charakteristik durch $(0,0)$ wird also
+nicht "uberdeckt, die Randbedingung legt dort die L"osung nicht fest.
+\begin{figure}
+\centering
+\includeagraphics[]{domain-1.pdf}
+\caption{Charakteristiken der Differentialgleichung (\ref{30000011:equation}).
+\label{30000011:char}}
+\end{figure}
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+Quasilineare PDGL ({\bf Q}) 1 Punkt,
+Differentialgleichungen der Charakteristiken ({\bf D}) 1 Punkt,
+L"osung der Differentialgleichungen f"ur $x(t)$ ({\bf X})
+und $y(t)$ ({\bf Y}) je 1 Punkt,
+L"osung der partiellen Differentialgleichung ({\bf U}) 1 Punkt,
+Verwendung der Charakteristikenmethode zur Beurteilung ob
+vorgegebenen Randwerte die L"osung eindeutig bestimmen ({\bf B}) 1 Punkt.
+\end{bewertung}
+
