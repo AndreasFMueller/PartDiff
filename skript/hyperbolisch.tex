@@ -118,7 +118,7 @@ automatisch auch L"osungen der Wellengleichung.
 \subsection{L"osung der partiellen Differentialgleichung erster Ordnung}
 Wir m"ochten die Wellengleichung f"ur eine Anfangsbedingung der Art
 \begin{equation}
-u(x,t)=u_0(x)\qquad x\in\mathbb R
+u(x,t)=u_0(x),\qquad x\in\mathbb R
 \label{welleanfang}
 \end{equation}
 l"osen, und suchen daher zun"achst L"osungen der beiden
@@ -340,6 +340,26 @@ u(x(t),y(t))&=u(t)\\
 \end{equation}
 vorgegeben. Diese Vorgaben nennt man einen {\em Streifen}.
 
+Die Funktionen $u(t)$, $p(t)$ und $q(t)$ sind nicht ganz willk"urlich.
+Leitet man n"amlich die erste der Gleichungen (\ref{charanfangs}) nach
+$t$ ab, findet man
+\[
+\dot{u}(t)=\frac{d}{dt}u(t)
+=
+\frac{d}{dt}u(x(t),y(t))
+=
+\frac{\partial u}{\partial x}(x(t), y(t))\frac{d}{dt}x(t)
++
+\frac{\partial u}{\partial y}(x(t), y(t))\frac{d}{dt}y(t).
+\]
+Die partiellen Ableitungen sind aber ebenfalls in (\ref{charanfangs})
+vorgegeben, es muss also die Beziehung
+\begin{equation}
+\dot{u}(t)= p(t)\dot{x}(t) + q(t)\dot{y}(t)
+\label{cauchydatarestriction}
+\end{equation}
+gelten.
+
 \subsection{Charakteristiken}
 Leitet man die letzten zwei Gleichungen von (\ref{charanfangs}) nach $t$ ab,
 erh"alt man
@@ -444,10 +464,10 @@ wir w"ahlen die zweite:
 \begin{align*}
 a\dot p(t)\dot y(t)-h\dot x(t)\dot y(t)+c\dot x(t)\dot q(t)&=0
 \end{align*}
-Zusammen mit der Bedingung
-\[
-\dot u=p(t)\dot x(t)+q(t)\dot y(t)
-\]
+Zusammen mit der Bedingung~(\ref{cauchydatarestriction})
+%\[
+%\dot u=p(t)\dot x(t)+q(t)\dot y(t)
+%\]
 haben wir jetzt drei Gleichungen, welche die Gr"ossen 
 $x$, $y$, $u$, $p$ und $q$ erf"ullen m"ussen, damit die zweiten
 Ableitungen auf unendlich viele Arten bestimmt sind.
@@ -585,7 +605,7 @@ zu bestimmen.
 \subsection{Einige interessante S"atze}
 
 \begin{satz}Jede Integralfl"ache kann mit einer Schar
-charakteristischen Streifen bedeckt werden.
+charakteristischer Streifen bedeckt werden.
 \end{satz}
 
 \begin{proof}[Beweis]
@@ -609,25 +629,25 @@ dann ist $u$ eine L"osung der Differentialgleichung.
 Die charakteristischen Streifen erf"ullen die Gleichungen
 \begin{equation}
 \begin{gathered}
-a\dot y(t)^2-2b\dot x(t)\dot y(t)+c\dot x(t)^2=0
+a\dot y(t)^2-2b\dot x(t)\dot y(t)+c\dot x(t)^2=0,
 \\
-a\dot p(t)\dot y(t)-h\dot x(t)\dot y(t)+c\dot x(t)\dot q(t)=0
+a\dot p(t)\dot y(t)-h\dot x(t)\dot y(t)+c\dot x(t)\dot q(t)=0,
 \\
-\dot u(t)=p(t)\dot x(t)+q(t)\dot y(t)
+\dot u(t)=p(t)\dot x(t)+q(t)\dot y(t).
 \end{gathered}
 \label{alle}
 \end{equation}
 Nennen wir die zweiten Ableitungen von $u$ entlang einer Charakteristik
 \begin{align*}
-R&=\partial_x^2u(x(t),y(t))
+R&=\partial_x^2u(x(t),y(t)),
 \\
-S&=\partial_x\partial_yu(x(t),y(t))
+S&=\partial_x\partial_yu(x(t),y(t)),
 \\
-T&=\partial_y^2u(x(t),y(t))
+T&=\partial_y^2u(x(t),y(t)),
 \end{align*}
 k"onnen wir schreiben
 \begin{align*}
-\dot p(t)&=R(t)\dot x(t)+S(t)\dot y(t)\\
+\dot p(t)&=R(t)\dot x(t)+S(t)\dot y(t)\qquad\text{und}\\
 \dot q(t)&=S(t)\dot x(t)+T(t)\dot y(t)
 \end{align*}
 Setzen wir dies in die zweite Gleichung von (\ref{alle}) ein, erhalten wir
