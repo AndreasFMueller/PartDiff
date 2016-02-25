@@ -1,4 +1,5 @@
-#include "colors.inc"
+/*#include "colors.inc"
+*/
 
 #declare	axisthickness = 0.008;
 #declare	arrowheadlength = 0.06;
@@ -20,7 +21,7 @@ camera {
         up y * imagescale
 }
 
-light_source { <-10, 10, 10> color White }
+light_source { <-10, 10, -10> color <1,1,1> }
 sky_sphere {
         pigment {
                 color <1,1,1>
