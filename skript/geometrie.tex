@@ -803,9 +803,10 @@ genau dann vollst"andig bestimmt, wenn jede Charakteristik durch mindestens
 einen vorgegebenen Randpunkt verl"auft.
 
 F"ur die Differentialgleichung
-\[
+\begin{equation}
 \frac{\partial u}{\partial x}+2\frac{\partial u}{\partial y}=3
-\]
+\label{geometrie:knickbeispiel}
+\end{equation}
 hatten wir die Charakterisiken 
 \[
 t\mapsto\begin{pmatrix}x_0\\y_0\\z_0\end{pmatrix}+t\begin{pmatrix}1\\2\\3\end{pmatrix}
@@ -874,6 +875,16 @@ der von $(0,0)$ ausgehenden Charakteristik (hellgr"un) ist nicht garantiert.
 \label{geometrie:charrand3}}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{3d/knick.jpg}
+\caption{L"osung der Differentialgleichung~(\ref{geometrie:knickbeispiel}),
+mit Randwerten entlang des linken und unteren Randes (vergleiche
+Abbildung~\ref{geometrie:charrand3}) ist entlang einer Charakteristik
+nicht differenzierbar (vertikale Achse mit dem Faktor $0.4$ skaliert).
+\label{geometrie:knick}}
+\end{figure}
+
 Als Illustration f"ur den letzten Fall betrachte man die Randwertvorgabe
 \begin{align*}
 u(x_0,0)&=0,\\
@@ -918,10 +929,11 @@ u&=y+x
 Die L"osungsfunktion ist also
 \[
 u(x,y)=\begin{cases}
-\frac32y&\qquad y>2x\\
-x+y&\qquad y<2x
+\frac32y&\qquad y<2x\\
+x+y&\qquad y>2x,
 \end{cases}
 \]
+wie in Abbildung~\ref{geometrie:knick} dargestellt.
 F"ur $y=2x$ stimmen die beiden Terme zwar "uberein, die L"osungsfunktion
 ist also sicher in ganz $\Omega$ stetig.
 Aber die

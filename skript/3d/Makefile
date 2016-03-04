@@ -51,3 +51,10 @@ cauchy-$(w)x$(h).png:	cauchy.pov cauchy.inc
 cauchy.jpg:	cauchy-3960x2160.png
 	convert -extract 3960x1864+0+296 cauchy-3960x2160.png \
 		-scale 50% cauchy.jpg
+
+knick:	knick.jpg
+knick.png:	knick.pov
+	povray $(povrayoptions) $(dimensions) -Oknick.png knick.pov
+knick.jpg:	knick.png
+	convert -extract 2943x2028+480+60 knick.png -scale 50% knick.jpg
+	

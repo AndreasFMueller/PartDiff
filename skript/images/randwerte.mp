@@ -80,7 +80,7 @@ draw (z2 shifted (-3,0))--(z2 shifted (3,0));
 label.llft(btex $1$ etex, z1);
 label.llft(btex $0$ etex, z0);
 label.llft(btex $1$ etex, z2);
-label.urt(btex $t$ etex, z2) shifted (1,0);
+label.urt(btex $y$ etex, z2) shifted (1,0);
 label.urt(btex $x$ etex, z1) shifted(1,2);
 
 z4 = (-20, -20);
@@ -124,7 +124,7 @@ draw (z2 shifted (-3,0))--(z2 shifted (3,0));
 label.llft(btex $1$ etex, z1);
 label.llft(btex $0$ etex, z0);
 label.llft(btex $1$ etex, z2);
-label.urt(btex $t$ etex, z2) shifted (1,0);
+label.urt(btex $y$ etex, z2) shifted (1,0);
 label.urt(btex $x$ etex, z1) shifted(1,2);
 
 z4 = (-20, -20);
@@ -167,7 +167,7 @@ draw (z2 shifted (-3,0))--(z2 shifted (3,0));
 label.llft(btex $1$ etex, z1);
 label.llft(btex $0$ etex, z0);
 label.llft(btex $1$ etex, z2);
-label.urt(btex $t$ etex, z2) shifted (1,0);
+label.urt(btex $y$ etex, z2) shifted (1,0);
 label.urt(btex $x$ etex, z1) shifted(1,2);
 
 z4 = (-20, -20);
