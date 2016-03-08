@@ -12,7 +12,7 @@ povrayoptions = -A0.1 -W$(w) -H$(h)
 all:	welle.jpg
 
 welle.png:	welle.pov
-	povray $(povrayoptions) -Owelle.png welle.pov
+	../../povray $(povrayoptions) -Owelle.png welle.pov
 
 welle.jpg:	welle.png
 	convert -extract 3765x1557+156+306 welle.png -scale 50% \

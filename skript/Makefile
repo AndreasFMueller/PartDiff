@@ -21,7 +21,7 @@ TEXFILES = skript.tex a-einleitung.tex \
 
 skript: skript.pdf
 
-skript.ind:	$(TEXFILES) images/timestamp
+skript.ind:	$(TEXFILES) images/timestamp 3d/timestamp
 	cd images && make
 	touch skript.ind
 	pdflatex skript.tex
@@ -32,6 +32,9 @@ skript.pdf:	$(TEXFILES) skript.ind
 
 images/timestamp:
 	cd images; make timestamp
+
+3d/timestamp:
+	cd 3d; make timestamp
 
 clean:
 	rm -f skript.aux skript.ind skript.log skript.toc
