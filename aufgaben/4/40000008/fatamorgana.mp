@@ -26,18 +26,20 @@ vardef sqr(expr u) =
 enddef;
 
 vardef curve(expr s, a, sigma) =
-	(a * s + xo, a*a + 0.5 * sqr(s + sigma * sqrt(2*(yo - a*a))))
+	(a * s + xo, a*a + 0.25 * sqr(s + 2 * sigma * sqrt(yo - a*a)))
 enddef;
 
 numeric delta;
 delta := 0.1;
+numeric span;
+span := 3.5;
 
 def drawcurve(expr a, sigma) =
 	numeric s;
-	s := -2;
+	s := -span;
 	path p;
 	p := curve(s, a, sigma);
-	for s = -2 + delta step delta until 2 - delta/2:
+	for s = -span + delta step delta until span - delta/2:
 		p := p--curve(s, a, sigma);
 	endfor;
 	pickup pencircle scaled 1pt;
