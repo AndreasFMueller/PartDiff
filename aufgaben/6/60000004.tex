@@ -1,0 +1,113 @@
+Wenden Sie die Koordinatentransformation
+\[
+\left.
+\begin{aligned}
+\xi  &= x    \\
+\eta &= ye^x 
+\end{aligned}
+\quad
+\right\}
+\qquad\Rightarrow\qquad
+\left\{
+\quad
+\begin{aligned}
+ x &= \xi\\
+ y &= \eta e^{-\xi}
+\end{aligned}
+\right.
+\]
+auf den Operator
+\[
+\frac{\partial^2}{\partial \xi^2}+a\frac{\partial^2}{\partial \eta^2}
+\]
+an.
+Bestimmen Sie dann die Symbolmatrix des neuen Operators, und entscheiden
+Sie, ob der Operator in Abh"angikeit von $a$ elliptisch, parabolisch oder
+hyperbolisch ist.
+
+\begin{loesung}
+Zun"achst brauchen wir Darstellungen der partiellen Ableitungsoperatoren
+nach $\xi$ und $\eta$ ausgedr"uckt in den Koordinaten $x$ und $y$.
+Die Kettenregel liefert
+\begin{align*}
+\frac{\partial}{\partial \xi}
+&=
+\frac{\partial x}{\partial \xi}\frac{\partial}{\partial x}
++
+\frac{\partial y}{\partial \xi}\frac{\partial}{\partial y}
+=
+\frac{\partial}{\partial x}
+-
+y\frac{\partial}{\partial y}
+\\
+\frac{\partial}{\partial \eta}
+&=
+\frac{\partial x}{\partial \eta}\frac{\partial}{\partial x}
++
+\frac{\partial y}{\partial \eta}\frac{\partial}{\partial y}
+=
+e^{-x} \frac{\partial}{\partial y}
+\end{align*}
+Damit k"onnen wir jetzt die zweiten Ableitungen nach $\xi$ und $\eta$ 
+durch Ableitungen nach $x$ und $y$ ausdr"ucken:
+\begin{align*}
+\frac{\partial^2}{\partial\xi^2}
+&=
+\biggl(\frac{\partial}{\partial x}-y\frac{\partial}{\partial y}\biggr)
+\biggl(\frac{\partial}{\partial x}-y\frac{\partial}{\partial y}\biggr)
+=
+\frac{\partial^2}{\partial x^2} - 2y\frac{\partial^2}{\partial x\,\partial y}
++y^2\frac{\partial^2}{\partial y^2}+y\frac{\partial}{\partial y}
+\\
+\frac{\partial^2}{\partial\eta^2}
+&=
+e^{-x}\frac{\partial}{\partial y}e^{-x}\frac{\partial}{\partial y}
+=
+e^{-2x}\frac{\partial^2}{\partial y^2}
+\end{align*}
+Der zu untersuchende Operator ist jetzt also
+\begin{align*}
+\frac{\partial^2}{\partial\xi^2}
++a
+\frac{\partial^2}{\partial\eta^2}
+&=
+\frac{\partial^2}{\partial x^2} - 2y\frac{\partial^2}{\partial x\,\partial y}
++y^2\frac{\partial^2}{\partial y^2}+y\frac{\partial}{\partial y}
++ae^{-2x}\frac{\partial^2}{\partial y^2}
+\\
+&=
+\frac{\partial^2}{\partial x^2} - 2y\frac{\partial^2}{\partial x\,\partial y}
++(y^2+ae^{-2x})\frac{\partial^2}{\partial y^2}+y\frac{\partial}{\partial y}
+\end{align*}
+Zur Bestimmung des Symbols kann die erste Ableitung nach $y$ ignoriert werden,
+der verbleibende Operator hat die Symbolmatrix
+\[
+A=\begin{pmatrix}
+1&-y\\
+-y&y^2+ae^{-2x}
+\end{pmatrix}
+\]
+Determinante und Spur dieser Matrix sind
+\begin{align*}
+\det(A) &= y^2+ae^{-2x}-(-y)^2=ae^{-2x}
+\\
+\operatorname{Spur}A&=1+y^2+ae^{-2x}
+\end{align*}
+Da $e^{-2x}$ immer positiv ist, ist das Vorzeichen der Determinante bestimmt
+durch $a$.
+Wenn also $a<0$ ist, dann ist der Operator hyperbolisch, und f"ur $a>0$
+ist er elliptisch.
+Aus der Spur k"onnen wir zus"atzlich ablesen, ob die Eigenwerte positiv
+oder negativ sind.
+Sie sind positiv, wenn 
+\begin{align*}
+(1+y^2)e^{2x}+a&>0
+\\
+a &> -(1+y^2)e^{2x}.
+\end{align*}
+Falls $a < -(1+y^2)e^{2x}$, dann ist die Spur negativ, und die Eigenwerte
+sind negativ.
+\end{loesung}
+
+
+
