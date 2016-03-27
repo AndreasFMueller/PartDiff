@@ -16,6 +16,7 @@ burgers:	burgers.c
 TEXFILES = skript.tex a-einleitung.tex \
 	beispiele.tex klassifikation.tex geometrie.tex \
 	separation.tex tsunami.tex transformation.tex \
+	pdgl2ord.tex \
 	elliptisch.tex parabolisch.tex hyperbolisch.tex \
 	nichtlinear.tex jacobi.tex anhangsinh.tex
 
