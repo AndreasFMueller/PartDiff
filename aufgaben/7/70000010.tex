@@ -1,11 +1,11 @@
 In der Vorlesung wurde die Greensche Funktion f"ur das Problem
 \[
 \begin{aligned}
-\Delta u&= f & &\text{in $\Omega = [0,1]$}\\
-       u&= g & &\text{auf $\partial\Omega = \{0,1\}$}
+\Delta u&= f & &\text{in $\Omega$}\\
+       u&= g & &\text{auf $\partial\Omega$}
 \end{aligned}
 \]
-hergeleitet.
+f"ur das eindimensionale Gebiet  $\Omega=[0,1]$ hergeleitet.
 Sie lautet 
 \[
 G(x,\xi) = (x-\xi)\vartheta(x-\xi) -x(1-\xi).
@@ -48,13 +48,13 @@ Das linke Integral ist
 &=
 \int_0^x (x-\xi) e^{\xi} \,d\xi
 -
-\int_0^1 x(1-\xi) e^{\xi} \,d\xi
+\int_0^1 x(1-\xi) e^{\xi} \,d\xi.
 \end{align*}
 In diesem Ausdruck kommen die Integranden $e^\xi$ und $\xi e^\xi$ vor,
 die die folgenden Stammfunktionen haben:
 \begin{align*}
 \int e^\xi\,d\xi&=e^\xi + C\\
-\int \xi e^\xi\,d\xi&=\xi e^\xi - \int e^\xi\,d\xi = (\xi - 1)e^\xi + C
+\int \xi e^\xi\,d\xi&=\xi e^\xi - \int e^\xi\,d\xi = (\xi - 1)e^\xi + C.
 \end{align*}
 Dies kann man jetzt verwenden, um die Integrale zu berechnen:
 \begin{align*}
@@ -90,13 +90,13 @@ e^x-x-1
 -xe+2x
 \\
 &=
-e^x+x-xe-1
+e^x+x-xe-1.
 \end{align*}
 Diese Funktion erf"ullt wie zu erwarten die Randbedingungen nicht, denn
 wenn wir die Werte $x=0$ und $x=1$ einsetzen, erhalten wir
 \begin{align*}
 \int_0^1 G(0,\xi) f(\xi)\,d\xi
-&=0
+&=0\qquad\text{und}
 \\
 \int_0^1 G(1,\xi) f(\xi)\,d\xi
 &=0.
@@ -113,7 +113,7 @@ berechnen m"ussen:
 \qquad&\text{f"ur $\xi=0$}
 \\
 x
-\qquad&\text{f"ur $\xi=1$}
+\qquad&\text{f"ur $\xi=1$.}
 \end{cases}
 \end{align*}
 Setzt man dies in das zweite Integral der Formel~(\ref{70000010:green}) ein,
