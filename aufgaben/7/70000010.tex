@@ -1,0 +1,163 @@
+In der Vorlesung wurde die Greensche Funktion f"ur das Problem
+\[
+\begin{aligned}
+\Delta u&= f & &\text{in $\Omega = [0,1]$}\\
+       u&= g & &\text{auf $\partial\Omega = \{0,1\}$}
+\end{aligned}
+\]
+hergeleitet.
+Sie lautet 
+\[
+G(x,\xi) = (x-\xi)\vartheta(x-\xi) -x(1-\xi).
+\]
+Verwenden Sie die Greensche Funktion, um das Problem
+\[
+\begin{aligned}
+u''(x)& = e^x& &\text{in $[0,1]$}\\
+  u(0)& =  20& &\\
+  u(1)& =  16& &
+\end{aligned}
+\label{70000010:problem}
+\]
+zu l"osen.
+
+\begin{loesung}
+Die Greensche Funktion liefert die L"osung f"ur das
+Problem~(\ref{70000010:problem}) "uber die Formel
+\begin{equation}
+u(x)
+=
+\int_0^1 G(x,\xi) f(\xi)\,d\xi
++
+\int_{\partial[0,1]}\frac{\partial G}{\partial \xi} g(\xi)\,dn
+\label{70000010:green}
+\end{equation}
+(Satz~7.8 im Skript). 
+
+Das linke Integral ist
+\begin{align*}
+\int_0^1 G(x,\xi) f(\xi)\,d\xi
+&=
+\int_0^1 ( (x-\xi)\vartheta(x-\xi) -x(1-\xi)) e^{\xi} \,d\xi
+\\
+&=
+\int_0^1 (x-\xi)\vartheta(x-\xi) e^{\xi} \,d\xi
+-
+\int_0^1 x(1-\xi) e^{\xi} \,d\xi
+\\
+&=
+\int_0^x (x-\xi) e^{\xi} \,d\xi
+-
+\int_0^1 x(1-\xi) e^{\xi} \,d\xi
+\end{align*}
+In diesem Ausdruck kommen die Integranden $e^\xi$ und $\xi e^\xi$ vor,
+die die folgenden Stammfunktionen haben:
+\begin{align*}
+\int e^\xi\,d\xi&=e^\xi + C\\
+\int \xi e^\xi\,d\xi&=\xi e^\xi - \int e^\xi\,d\xi = (\xi - 1)e^\xi + C
+\end{align*}
+Dies kann man jetzt verwenden, um die Integrale zu berechnen:
+\begin{align*}
+\int_0^1 G(x,\xi) f(\xi)\,d\xi
+&=
+\left[
+xe^\xi -(\xi - 1)e^\xi
+\right]_0^x
+-
+x\left[
+e^\xi-(\xi - 1)e^\xi
+\right]_0^1
+\\
+&=
+\left[
+xe^x-(x-1)e^x
+-
+(x-(-1))
+\right]
+-
+x
+\left[
+e - (1-(-1))
+\right]
+\\
+&=
+e^x-x-1
+-
+x(e-2)
+\\
+&=
+e^x-x-1
+-xe+2x
+\\
+&=
+e^x+x-xe-1
+\end{align*}
+Diese Funktion erf"ullt wie zu erwarten die Randbedingungen nicht, denn
+wenn wir die Werte $x=0$ und $x=1$ einsetzen, erhalten wir
+\begin{align*}
+\int_0^1 G(0,\xi) f(\xi)\,d\xi
+&=0
+\\
+\int_0^1 G(1,\xi) f(\xi)\,d\xi
+&=0.
+\end{align*}
+Die korrekten Randbedingungen werden durch das zweite Integral in
+(\ref{70000010:green}) erf"ullt, f"ur die wir jedoch erst die
+Ableitung der Greenschen Funktion wenigstens an den Stellen $0$ und $1$
+berechnen m"ussen:
+\begin{align*}
+\frac{\partial G}{\partial\xi}
+&=(-1)\vartheta(x-\xi) - x(-1)
+=\begin{cases}
+-1+x=-(1-x)
+\qquad&\text{f"ur $\xi=0$}
+\\
+x
+\qquad&\text{f"ur $\xi=1$}
+\end{cases}
+\end{align*}
+Setzt man dies in das zweite Integral der Formel~(\ref{70000010:green}) ein,
+erh"alt man
+\begin{align*}
+\int_{\partial[0,1]}\frac{\partial G}{\partial \xi} g(\xi)\,dn
+&=
+\frac{\partial G(x,1)}{\partial\xi} g(1)
+-
+\frac{\partial G(x,0)}{\partial\xi} g(0)
+=
+xg(1) + (1-x)g(0)
+=
+(1-x)a
++
+xb.
+\end{align*}
+Das Minuszeichen im zweiten Ausdruck r"uhrt daher, dass die die Normale $n$
+nach aussen zeigen muss, bei $\xi=0$ als in die negative Richtung, $n=-1$.
+Zusammen kann man jetzt die L"osung hinschreiben:
+\[
+u(x)
+=
+e^x+x(1-e)-1
++20(1-x)+16x.
+\]
+Zur Kontrolle rechnen wir nach:
+\begin{align*}
+u'(x)
+&=
+e^x+(1-e)-20+16,
+\\
+u''(x)
+&=
+e^x,
+\\
+u(0)
+&=
+20,
+\\
+u(1)
+&=
+16,
+\end{align*}
+somit ist $u$ tats"achlich die L"osung des gestellten Problems.
+\end{loesung}
+
