@@ -31,25 +31,21 @@ Als Beispiel f"ur die Eigenschaften der L"osungen
 elliptischer linearer partieller Differentialgleichungen
 betrachten wir in diesem Kapitel die Laplace-Gleichung
 auf einem Gebiet $\Omega\subset\mathbb R^n$
-\begin{equation}
-\Delta u=f
-\label{laplaceequation}
-\end{equation}
-mit
-Dirichlet Randbedingungen
-\begin{equation}
-u_{|\partial \Omega}=g,
+\begin{align}
+\Delta u&=f &&\text{in $\Omega$}
+\label{elliptisch:laplaceequation}
+\\
+\intertext{mit Dirichlet Randbedingungen}
+u&=g && \text{auf $\partial\Omega$},
 \label{dirichletrandbedingung}
-\end{equation}
-Neumann Randbedingungen
-\[
-\frac{\partial u}{\partial n}_{|\partial \Omega}=g
-\]
-oder der gemischten Randbedingungen
-\[
-\alpha u_{|\partial \Omega}+
-\beta\frac{\partial u}{\partial n}_{|\partial \Omega}=g.
-\]
+\\
+\intertext{Neumann Randbedingungen}
+\frac{\partial u}{\partial n}&=g && \text{auf $\partial\Omega$}
+\\
+\intertext{oder der gemischten Randbedingungen}
+\alpha u + \beta\frac{\partial u}{\partial n}&=g && \text{auf $\partial\Omega$.}
+\label{elliptisch:gemischt}
+\end{align}
 Eine L"osung dieses Problems ist eine auf $\Omega$
 zweimal stetig differenzierbare
 Funktion $u$, welche stetig auf den Rand ausgedehnt werden kann,
@@ -63,18 +59,18 @@ kann man ableiten, dass wir f"ur
 die L"osung des gestellten Problems wie folgt vorgehen m"ussen
 \begin{enumerate}
 \item Zun"achst brauchen wir eine partikul"are
-L"osung $u_p$ der Laplace-Gleichung (\ref{laplaceequation}).
+L"osung $u_p$ der Laplace-Gleichung (\ref{elliptisch:laplaceequation}).
 \item Mit $u_p$ reduziert sich das Problem darauf, eine L"osung
-$u_h=u-u_p$ der homogenen Gleichung $\Delta u_h=0$
+$u_r=u-u_p$ der homogenen Gleichung $\Delta u_r=0$
 zu finden, welche die Randbedingung
 \[
-u_{|\partial\Omega}=g-{u_p}_{|\partial\Omega}
+u_r=g-u_p
 \]
 erf"ullt.
 \item
 Weitere L"osungen des Problems unterscheiden sich von dem
-bereits gefundenen Problem nur durch eine Funktion $v$, welche
-$\Delta v=0$ und $v_{|\partial\Omega}=0$ erf"ullt.
+bereits gefundenen Problem nur durch eine Funktion $u_h$, welche
+$\Delta u_h=0$ in $\Omega$ und $u_h=0$ auf $\partial\Omega$ erf"ullt.
 \end{enumerate}
 Wir werden in diesem Kapitel zeigen, dass die L"osung diese Problems
 eindeutig ist, dass also das einzige m"ogliche $v=0$ ist.
@@ -93,14 +89,16 @@ heisst harmonisch, wenn $\Delta u=0$.
 
 \section{Eindeutigkeit der L"osung}
 Wir untersuchen jetzt die Frage, ob die L"osung des 
-Dirichlet-Problems (\ref{laplaceequation}) und
+Dirichlet-Problems (\ref{elliptisch:laplaceequation}) und
 (\ref{dirichletrandbedingung}), sollte sie existieren, eindeutig ist.
 Seien also $u_1$ und $u_2$ zwei L"osungen des Problems. Die Differenz
 $u=u_1-u_2$ erf"ullt dann
-\begin{align*}
-\Delta u&=\Delta u_1-\Delta u_2=f-f=0\\
-u_{|\partial\Omega}&=u_{1|\partial\Omega}-u_{2|\partial\Omega}=g-g=0.
-\end{align*}
+\[
+\begin{aligned}
+\Delta u&=\Delta u_1-\Delta u_2=f-f=0&&\text{in $\Omega$,}\\
+u&=u_1-u_2=g-g=0&&\text{auf $\partial\Omega$.}
+\end{aligned}
+\]
 $u$ ist also eine L"osung des homogenen Problems mit homogenen
 Randbedingungen.
 
@@ -211,7 +209,7 @@ dann nimmt $u$ sein Maximum auf dem Rand an.
 \begin{proof}[Beweis]
 Wir d"urfen wie in der bereits oben skizzierten Beweisidee annehmen,
 dass im betrachteten Punkt $x$ die Koeffizientenmatrix $(a_{ij})$
-diagonal ist und alle $a_{11}$ positiv sind.
+diagonal ist und alle $a_{ii}$ positiv sind.
 
 Wir betrachten die Funktion $u_{\varepsilon}=u-\varepsilon e^{\lambda x_1}$.
 Es gilt
@@ -437,14 +435,14 @@ Das erste Integral muss mit einer Fallunterscheidung berechnet werden:
 Insgesamt finden wir also f"ur das innere
 Integral die Funktion
 \[
-h(x,\xi)=(x-\xi)\vartheta(x-\xi)-x(1-\xi).
+G(x,\xi)=(x-\xi)\vartheta(x-\xi)-x(1-\xi).
 \]
 Man kann diese Funktion auch mit Hilfe der Betragsfunktion
 schreiben.
 Die Funktion $x\mapsto h(x,\xi)$ ist an der Stelle $\xi$ nicht 
 differenzierbar, links und rechts davon ist $h$ jedoch linear
 \[
-h(x,\xi)=\begin{cases}
+G(x,\xi)=\begin{cases}
 (x-\xi)-x(1-\xi)=\xi(x-1)&\qquad x>\xi\\
 x(\xi-1)&\qquad x<\xi
 \end{cases}
@@ -452,7 +450,7 @@ x(\xi-1)&\qquad x<\xi
 Also sollte in der Form $a|x-\xi|+bx+c$ geschrieben
 werden k"onnen, nach etwas Rechnung findet man.
 \[
-h(x,\xi)={\textstyle \frac12}|x-\xi|-({\textstyle \frac12}-\xi)x-{\textstyle\frac12}\xi.
+G(x,\xi)={\textstyle \frac12}|x-\xi|-({\textstyle \frac12}-\xi)x-{\textstyle\frac12}\xi.
 \]
 Der zweite und dritte Term auf der rechten Seite bilden eine lineare
 Funktion, die zur zweiten Ableitung nichts beitr"agt. Die Ableitung
@@ -505,7 +503,13 @@ Dies kann mit der Funktion $h$ korrigiert werden.
 Die Funktion $x\mapsto h(x,\xi)=(x-\xi)\vartheta(x-\xi)$ hat die Randwerte
 $0$ und $1-\xi$, also hat die Funktion
 \[
-G(x,\xi)=(x-\xi)\vartheta(x-\xi)-x(1-\xi)
+G(x,\xi)
+=
+(x-\xi)\vartheta(x-\xi)-x(1-\xi)
+=\begin{cases}
+(x-\xi)+x(\xi-1)&\qquad x\le \xi \\
+x(\xi-1)&\qquad x<\xi
+\end{cases}
 \]
 die Randwerte $0$.
 $G$ erf"ullt
@@ -677,21 +681,24 @@ also Funktion von $x$ harmonisch ist, dann ist
 \[
 u(x)=\int_{\Omega}\sigma(x,\xi)f(\xi)\,d\xi+\int_{\Omega}h(x,\xi)f(\xi)\,d\xi
 \]
-ebenfalls eine L"osung von (\ref{laplaceequation}). Insbesondere
+ebenfalls eine L"osung von (\ref{elliptisch:laplaceequation}). Insbesondere
 k"onnten wir $h(x,\xi)$ so w"ahlen, dass
 $x\mapsto h(x,\xi)$ eine L"osung des Randwertproblems
 \begin{align*}
 \Delta_x h(x,\xi)&=0&&x\in\Omega\\
-h(x,\xi)&=-\sigma(x,\xi)&&x\in\partial\Omega
+h(x,\xi)&=\sigma(x,\xi)&&x\in\partial\Omega
 \end{align*}
-ist. Dann ist $\sigma(x,\xi)+h(x,\xi)$ eine Funktion, die auf dem
-Rand $\partial\Omega$ immer verschwindet. Die mittels
+ist.
+Die Funktion $h$ hat als die gleichen Randwerte wie $\sigma$.
+Dann ist $\sigma(x,\xi)-h(x,\xi)$ eine Funktion, die auf dem
+Rand $\partial\Omega$ immer verschwindet.
+Die mittels
 (\ref{singulaereloesunglaplace}) gefundene L"osung $u(x)$
 verschwindet ebenfalls auf dem Rand.
 %\marginpar{\tiny Greensche Funktion f"ur das Dirichletproblem auf $\Omega$}
-Wir bezeichnen $\sigma+h$ f"ur diese spezielle Wahl von $h$ mit
+Wir bezeichnen $\sigma-h$ f"ur diese spezielle Wahl von $h$ mit
 \[
-G(x,\xi)=\sigma(x,\xi)+h(x,\xi)
+G(x,\xi)=\sigma(x,\xi)-h(x,\xi)
 \]
 und nennen sie die Greensche Funktion f"ur das Dirichlet Problem.
 
@@ -725,7 +732,7 @@ Gebiet $\Omega$, dann ist
 \[
 u(x)=\int_{\Omega}G(x,\xi)f(\xi)\,d\mu(\xi)+\int_{\partial\Omega}g(\xi)\operatorname{grad}_\xi G(x,\xi)\cdot dn
 \]
-die L"osung des Dirichlet-Problems (\ref{laplaceequation}) und
+die L"osung des Dirichlet-Problems (\ref{elliptisch:laplaceequation}) und
 (\ref{dirichletrandbedingung}).
 \end{satz}
 
@@ -753,7 +760,7 @@ u\Delta v-v\Delta u=\operatorname{div}(u\operatorname{grad}v-v\operatorname{grad
 folgt.
 
 Diese Identit"aten wenden wir auf die Funktion $u(\xi)$
-und die Greensche Funktion $\xi\mapsto G(x,\xi)$ an:
+und die Greensche Funktion $\xi\mapsto v(\xi)=G(x,\xi)$ an:
 \[
 u(\xi)\Delta G(x,\xi)-G(x,\xi)\Delta u
 =
@@ -824,12 +831,12 @@ sie ist also bis auf die nicht passenden Randwerte eine L"osung.
 Eine korrekte L"osung erh"alt man daher, in dem man das Randwertproblem
 \begin{align*}
 \Delta h(x)&=0&&x\in\Omega\\
-h(x)&=-\sigma(x,x_0)&&x\in\partial\Omega
+h(x)&=\sigma(x,x_0)&&x\in\partial\Omega
 \end{align*}
 l"ost, was mit g"angigen Programmen sehr effizient m"oglich ist.
 Die Funktion 
 \[
-u(x)=\sigma(x,x_0)+h(x)
+u(x)=\sigma(x,x_0)-h(x)
 \]
 ist eine L"osung. Die L"osung und die zugeh"origen Niveaulinien
 sind in den Abbildungen \ref{neilloesung} und \ref{neilcontour} dargestellt.
@@ -1003,7 +1010,7 @@ das Problem f"ur beliebige Randwerte l"ost.
 
 \subsection{Allgemeinere Operatoren}
 Die Greensche Funktion kann unter gewissen Voraussetzungen
-von die Koeffizienten auch f"ur beliebige elliptische Operatoren
+an die Koeffizienten auch f"ur beliebige elliptische Operatoren
 \[
 Lu=\biggl(\sum_{i,j}a_{ij}\frac{\partial^2}{\partial x_i\partial x_j}
 +\sum_ib_i\frac{\partial}{\partial x_i} +c\biggr)u

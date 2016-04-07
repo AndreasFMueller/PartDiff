@@ -21,7 +21,7 @@ h = 2160
 povrayoptions = -A0.1 -W$(w) -H$(h)
 
 surface.png:	surface.pov
-	povray $(povrayoptions) -Osurface.png surface.pov
+	sh ../../povray $(povrayoptions) -Osurface.png surface.pov
 
 surface.jpg:	surface.png Makefile
 	convert -extract 3350x1960+108+189 surface.png -scale 50% \
