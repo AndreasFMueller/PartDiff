@@ -366,11 +366,11 @@ also $u(x)=(b-a)x+a=(1-x)a+xb$.
 Im vorliegenden Fall sollte $u_h$ den rechten Randwert $b-\int_0^1\int_0^\eta f(\xi)\,d\xi\,d\eta$
 annehmen, also
 \[
-u_h(x)=(1-x)a+x\left(b-\int_0^1\int_0^\eta f(\xi)\,d\xi\,d\eta\right).
+u_r(x)=(1-x)a+x\left(b-\int_0^1\int_0^\eta f(\xi)\,d\xi\,d\eta\right).
 \]
 Damit wird die vollst"andige L"osung
 \begin{align}
-u(x)&=u_p(x)+u_h(x)\notag
+u(x)&=u_p(x)+u_r(x)\notag
 \\
 &=\int_0^x\int_0^\eta f(\xi)\,d\xi\,d\eta+(1-x)a+x\left(b-\int_0^1\int_0^\eta f(\xi)\,d\xi\,d\eta\right)\notag
 \\
@@ -679,7 +679,7 @@ Formel (\ref{singulaereloesunglaplace}) eine partikul"are L"osung ergibt.
 Addiert man zu $\sigma$ eine beliebige Funktion $h(x,\xi)$, die
 also Funktion von $x$ harmonisch ist, dann ist
 \[
-u(x)=\int_{\Omega}\sigma(x,\xi)f(\xi)\,d\xi+\int_{\Omega}h(x,\xi)f(\xi)\,d\xi
+u(x)=\int_{\Omega}\sigma(x,\xi)f(\xi)\,d\xi-\int_{\Omega}h(x,\xi)f(\xi)\,d\xi
 \]
 ebenfalls eine L"osung von (\ref{elliptisch:laplaceequation}). Insbesondere
 k"onnten wir $h(x,\xi)$ so w"ahlen, dass
