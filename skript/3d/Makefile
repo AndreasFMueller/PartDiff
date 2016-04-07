@@ -23,7 +23,7 @@ dimensions = -W$(w) -H$(h)
 
 planes:	planes-$(w)x$(h).png
 planes-$(w)x$(h).png:	planes.pov cauchy.inc
-	../../povray $(povrayoptions) $(dimensions) -Oplanes-$(w)x$(h).png \
+	sh ../../povray $(povrayoptions) $(dimensions) -Oplanes-$(w)x$(h).png \
 		planes.pov
 
 planes.jpg: planes-3960x2160.png
@@ -33,7 +33,7 @@ planes.jpg: planes-3960x2160.png
 
 sol:	sol-$(w)x$(h).png
 sol-$(w)x$(h).png:	sol.pov cauchy.inc
-	../../povray $(povrayoptions) $(dimensions) -Osol-$(w)x$(h).png \
+	sh ../../povray $(povrayoptions) $(dimensions) -Osol-$(w)x$(h).png \
 		sol.pov
 
 sol.jpg:	sol-3960x2160.png
@@ -42,7 +42,7 @@ sol.jpg:	sol-3960x2160.png
 
 chr:	chr-$(w)x$(h).png
 chr-$(w)x$(h).png:	chr.pov cauchy.inc characteristics.inc
-	../../povray $(povrayoptions) $(dimensions) -Ochr-$(w)x$(h).png \
+	sh ../../povray $(povrayoptions) $(dimensions) -Ochr-$(w)x$(h).png \
 		chr.pov
 
 chr.jpg: chr-3960x2160.png
@@ -52,7 +52,7 @@ chr.jpg: chr-3960x2160.png
 
 chrpl:	chrpl-$(w)x$(h).png
 chrpl-$(w)x$(h).png:	chrpl.pov cauchy.inc characteristics.inc
-	../../povray $(povrayoptions) $(dimensions) -Ochrpl-$(w)x$(h).png \
+	sh ../../povray $(povrayoptions) $(dimensions) -Ochrpl-$(w)x$(h).png \
 		chrpl.pov
 
 chrpl.jpg:	chrpl-3960x2160.png
@@ -62,7 +62,7 @@ chrpl.jpg:	chrpl-3960x2160.png
 
 cauchy:	cauchy-$(w)x$(h).png
 cauchy-$(w)x$(h).png:	cauchy.pov cauchy.inc
-	../../povray $(povrayoptions) $(dimensions) -Ocauchy-$(w)x$(h).png \
+	sh ../../povray $(povrayoptions) $(dimensions) -Ocauchy-$(w)x$(h).png \
 		cauchy.pov
 
 cauchy.jpg:	cauchy-3960x2160.png
@@ -73,7 +73,7 @@ cauchy.jpg:	cauchy-3960x2160.png
 
 knick:	knick.jpg
 knick.png:	knick.pov
-	../../povray $(povrayoptions) $(dimensions) -Oknick.png knick.pov
+	sh ../../povray $(povrayoptions) $(dimensions) -Oknick.png knick.pov
 knick.jpg:	knick.png
 	convert -extract 2943x2028+480+60 knick.png -scale 50% \
 		-density 300 -units PixelsPerInch \
