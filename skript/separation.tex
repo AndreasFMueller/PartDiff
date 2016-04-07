@@ -47,7 +47,7 @@ kann mit Separation der Variablen gel"ost werden:
 \log|y|&=\frac12x^2+C\\
 y&=y_0e^{\frac12x^2}
 \end{align*}
-Das Verfahren beruht auf der Prinzip, auf jeder Seite der Gleichung
+Das Verfahren beruht auf dem Prinzip, auf jeder Seite der Gleichung
 nur eine Variable zu haben.
 Dabei zerlegt man sogar die Ableitung $dy/dx$, was man ja eigentlich
 gar nicht darf.
@@ -125,7 +125,7 @@ ein, erhalten wir die Gleichung
 \[
 \frac{X'(x)}{x}+\frac{Y'(y)}{y}=\frac1{y^2}
 \]
-der
+oder
 \begin{equation}
 \frac{X'(x)}{x}
 =\frac1{y^2}
@@ -138,7 +138,7 @@ die Variable $y$ nur auf der rechten. Setzt man f"ur $y$ irgend
 einen Wert ein, ver"andert sich die rechte Seite nicht mehr,
 die linke Seite muss also f"ur alle $x$ den gleichen Wert geben.
 L"asst man jetzt wieder das $y$ varieren, muss sich auch auf der rechten
-Seite immer der gleiche Wert geben. Wir nennen den gemeinsamen Wert
+Seite immer der gleiche Wert ergeben. Wir nennen den gemeinsamen Wert
 $k$, und bekommen zwei gew"ohnliche Differentialgleichungen
 f"ur $X(x)$ und $Y(y)$:
 \begin{align}
@@ -262,7 +262,7 @@ Die Bestimmung der Koeffizienten $a_k$ f"ur die gefundene Familie
 von Teill"osungen f"uhrt oft auf die Fourier-Theorie, oder allgemeiner
 auf orthogonale Funktionenfamilien. Solche Teill"osungen haben oft eine
 unmittelbare physikalische Bedeutung, zum Beispiel treten sie auf als
-Schingungsmoden (in der Mechanik oder Elektrotechnik) oder als
+Schiwngungsmoden (in der Mechanik oder Elektrotechnik) oder als
 Elektronenzust"ande in der Quantenmechanik.
 
 \section{Schwingende rechteckige Membran}
@@ -330,7 +330,7 @@ Gleichung umformen in
 \frac1{c^2}\frac{T''(t)}{T(t)}
 = \frac1{\varphi(x,y)}\left( \frac{\partial^2\varphi}{\partial x^2}
 + \frac{\partial^2\varphi}{\partial y^2} \right)
-\label{separiert}
+\label{separiertMembran}
 \end{equation}
 Die rechte Seite h"angt nur
 vom Ort ab, darf sich also nicht "andern, wenn man die Zeit $t$ variert.
@@ -364,7 +364,7 @@ A\cos c\lambda t+B\sin c\lambda t.
 
 \subsection{Reduktion auf ein Eigenwertproblem}
 \index{Eigenwertproblem}
-Die linke Seite von (\ref{separiert}) h"angt nur von der Zeit ab, darf sich
+Die linke Seite von (\ref{separiertMembran}) h"angt nur von der Zeit ab, darf sich
 also nicht "andern, wenn man $x$ oder $y$ variert. Als Funktion des Ortes
 muss die rechte Seite also ebenfalls konstant sein:
 \begin{align*}
@@ -762,7 +762,7 @@ in Polarkoordinaten erhalten wir jetzt die Gleichungen
 \Delta u=
 \biggl(R''(r) + \frac1rR'(r)\biggr)\Phi(\varphi)
 +\frac1{r^2}R(r)\Phi''(\varphi)&=-\lambda^2 R(r)\cdot\Phi(\varphi)\\
-\frac{r^2R''(r)+rR'(r)}{R(r)}+\frac{\Phi''(\varphi)}{\Phi(\varphi}
+\frac{r^2R''(r)+rR'(r)}{R(r)}+\frac{\Phi''(\varphi)}{\Phi(\varphi)}
 &=-\lambda^2 r^2
 \\
 \frac{r^2R''(r)+rR'(r)}{R(r)}+\lambda^2 r^2&=-\frac{\Phi''(\varphi)}{\Phi(\varphi)}
@@ -936,7 +936,7 @@ abh"angt, m"ussen beide Konstant sein, wir haben also die urspr"ungliche
 PDGL in zwei Differentialgleichungen zerlegt:
 \begin{equation}
 \begin{aligned}
-F(x_1, X_1,X_1',\dots, X_1^{(n)})&=0\\
+F(x_1, X_1,X_1',\dots, X_1^{(n)})&=k\\
 G(x_2,\dots,x_n,u_1,\partial_2u_1,\dots\partial_nu_n,\dots)&=k
 \end{aligned}
 \label{separiert}
@@ -948,7 +948,7 @@ eine partielle Differentialgleichung, die unter Umst"anden noch
 einmal mit dem gleichen Verfahren behandelt werden muss.
 Gesucht werden alle Konstanten,
 f"ur welche beide Gleichungen eine L"osung haben.
-\item Sind $X_1(,x_1)$ und $u_1(k,x_2,\dots,x_n)$ L"osungen der
+\item Sind $X_1(k,x_1)$ und $u_1(k,x_2,\dots,x_n)$ L"osungen der
 Gleichungen (\ref{separiert}), dann sind 
 \[
 u_k(x_1,\dots,x_n)=X_1(k,x_1)u_1(k,x_2,\dots,x_n)
@@ -969,7 +969,7 @@ $a_k$ bestimmt werden, f"ur die die Randtterme korrekt werden.
 Das Verfahren kann an zwei Stellen zusammenbrechen:
 \begin{itemize}
 \item In Schritt 3 wird vorausgesetzt, dass die Trennung in 
-Terme, die $x_1$ untehalten  und solche, die $x_1$ nicht enthalten
+Terme, die $x_1$ enthalten  und solche, die $x_1$ nicht enthalten
 m"oglich ist. Dies ist nicht automatisch der Fall, kann aber in
 vielen praktisch wichtigen F"allen durch Wahl eines geeigneten
 Koordinatensystems erreicht werden.
@@ -990,7 +990,7 @@ Die Wahl des L"osungsansatzes wird durch die Geometrie des Gebietes
 (Koordinatensystem) und die Art der Differentialgleichung bestimmt.
 \item
 F"ur lineare Differentialgleichung lassen sich aus den durch Separation
-gefundenen Teill"osungen L"osungen der urspr"unglichen Differentialgleichung
+gefundenen Teil\-l"o\-sungen L"osungen der urspr"unglichen Differentialgleichung
 linear kombinieren.
 \item
 Die zentrale Idee des Verfahrens ist, dass in einer Gleichung,
