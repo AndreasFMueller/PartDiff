@@ -437,14 +437,14 @@ Das erste Integral muss mit einer Fallunterscheidung berechnet werden:
 Insgesamt finden wir also f"ur das innere
 Integral die Funktion
 \[
-h(x,\xi)=(x-\xi)\vartheta(x-\xi)-x(1-\xi).
+G(x,\xi)=(x-\xi)\vartheta(x-\xi)-x(1-\xi).
 \]
 Man kann diese Funktion auch mit Hilfe der Betragsfunktion
 schreiben.
 Die Funktion $x\mapsto h(x,\xi)$ ist an der Stelle $\xi$ nicht 
 differenzierbar, links und rechts davon ist $h$ jedoch linear
 \[
-h(x,\xi)=\begin{cases}
+G(x,\xi)=\begin{cases}
 (x-\xi)-x(1-\xi)=\xi(x-1)&\qquad x>\xi\\
 x(\xi-1)&\qquad x<\xi
 \end{cases}
@@ -452,7 +452,7 @@ x(\xi-1)&\qquad x<\xi
 Also sollte in der Form $a|x-\xi|+bx+c$ geschrieben
 werden k"onnen, nach etwas Rechnung findet man.
 \[
-h(x,\xi)={\textstyle \frac12}|x-\xi|-({\textstyle \frac12}-\xi)x-{\textstyle\frac12}\xi.
+G(x,\xi)={\textstyle \frac12}|x-\xi|-({\textstyle \frac12}-\xi)x-{\textstyle\frac12}\xi.
 \]
 Der zweite und dritte Term auf der rechten Seite bilden eine lineare
 Funktion, die zur zweiten Ableitung nichts beitr"agt. Die Ableitung
@@ -505,7 +505,13 @@ Dies kann mit der Funktion $h$ korrigiert werden.
 Die Funktion $x\mapsto h(x,\xi)=(x-\xi)\vartheta(x-\xi)$ hat die Randwerte
 $0$ und $1-\xi$, also hat die Funktion
 \[
-G(x,\xi)=(x-\xi)\vartheta(x-\xi)-x(1-\xi)
+G(x,\xi)
+=
+(x-\xi)\vartheta(x-\xi)-x(1-\xi)
+=\begin{cases}
+(x-\xi)+x(\xi-1)&\qquad x\le \xi \\
+x(\xi-1)&\qquad x<\xi
+\end{cases}
 \]
 die Randwerte $0$.
 $G$ erf"ullt
@@ -682,16 +688,19 @@ k"onnten wir $h(x,\xi)$ so w"ahlen, dass
 $x\mapsto h(x,\xi)$ eine L"osung des Randwertproblems
 \begin{align*}
 \Delta_x h(x,\xi)&=0&&x\in\Omega\\
-h(x,\xi)&=-\sigma(x,\xi)&&x\in\partial\Omega
+h(x,\xi)&=\sigma(x,\xi)&&x\in\partial\Omega
 \end{align*}
-ist. Dann ist $\sigma(x,\xi)+h(x,\xi)$ eine Funktion, die auf dem
-Rand $\partial\Omega$ immer verschwindet. Die mittels
+ist.
+Die Funktion $h$ hat als die gleichen Randwerte wie $\sigma$.
+Dann ist $\sigma(x,\xi)-h(x,\xi)$ eine Funktion, die auf dem
+Rand $\partial\Omega$ immer verschwindet.
+Die mittels
 (\ref{singulaereloesunglaplace}) gefundene L"osung $u(x)$
 verschwindet ebenfalls auf dem Rand.
 %\marginpar{\tiny Greensche Funktion f"ur das Dirichletproblem auf $\Omega$}
-Wir bezeichnen $\sigma+h$ f"ur diese spezielle Wahl von $h$ mit
+Wir bezeichnen $\sigma-h$ f"ur diese spezielle Wahl von $h$ mit
 \[
-G(x,\xi)=\sigma(x,\xi)+h(x,\xi)
+G(x,\xi)=\sigma(x,\xi)-h(x,\xi)
 \]
 und nennen sie die Greensche Funktion f"ur das Dirichlet Problem.
 
@@ -753,7 +762,7 @@ u\Delta v-v\Delta u=\operatorname{div}(u\operatorname{grad}v-v\operatorname{grad
 folgt.
 
 Diese Identit"aten wenden wir auf die Funktion $u(\xi)$
-und die Greensche Funktion $\xi\mapsto G(x,\xi)$ an:
+und die Greensche Funktion $\xi\mapsto v(\xi)=G(x,\xi)$ an:
 \[
 u(\xi)\Delta G(x,\xi)-G(x,\xi)\Delta u
 =
@@ -824,12 +833,12 @@ sie ist also bis auf die nicht passenden Randwerte eine L"osung.
 Eine korrekte L"osung erh"alt man daher, in dem man das Randwertproblem
 \begin{align*}
 \Delta h(x)&=0&&x\in\Omega\\
-h(x)&=-\sigma(x,x_0)&&x\in\partial\Omega
+h(x)&=\sigma(x,x_0)&&x\in\partial\Omega
 \end{align*}
 l"ost, was mit g"angigen Programmen sehr effizient m"oglich ist.
 Die Funktion 
 \[
-u(x)=\sigma(x,x_0)+h(x)
+u(x)=\sigma(x,x_0)-h(x)
 \]
 ist eine L"osung. Die L"osung und die zugeh"origen Niveaulinien
 sind in den Abbildungen \ref{neilloesung} und \ref{neilcontour} dargestellt.
@@ -1003,7 +1012,7 @@ das Problem f"ur beliebige Randwerte l"ost.
 
 \subsection{Allgemeinere Operatoren}
 Die Greensche Funktion kann unter gewissen Voraussetzungen
-von die Koeffizienten auch f"ur beliebige elliptische Operatoren
+an die Koeffizienten auch f"ur beliebige elliptische Operatoren
 \[
 Lu=\biggl(\sum_{i,j}a_{ij}\frac{\partial^2}{\partial x_i\partial x_j}
 +\sum_ib_i\frac{\partial}{\partial x_i} +c\biggr)u
