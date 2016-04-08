@@ -102,7 +102,7 @@ for yzero = -40 step 20 until 180:
 	draw (-140,yzero)--(140, yzero) withcolor(0,1,0);
 endfor
 
-clip currentpicture to (-135,-20)--(135,-20)--(135,175)--(-135,175)--cycle;
+clip currentpicture to (-135,-15)--(135,-15)--(135,175)--(-135,175)--cycle;
 
 pickup pencircle scaled 1pt;
 
@@ -110,7 +110,7 @@ drawarrow z2--z1;
 drawarrow z3--z4;
 
 label.top(btex $x$ etex, z1);
-label.rt(btex $t$ etex, z4);
+label.rt(btex $y$ etex, z4);
 
 endfig;
 
