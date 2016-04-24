@@ -118,7 +118,7 @@ automatisch auch L"osungen der Wellengleichung.
 \subsection{L"osung der partiellen Differentialgleichung erster Ordnung}
 Wir m"ochten die Wellengleichung f"ur eine Anfangsbedingung der Art
 \begin{equation}
-u(x,t)=u_0(x)\qquad x\in\mathbb R
+u(x,t)=u_0(x),\qquad x\in\mathbb R
 \label{welleanfang}
 \end{equation}
 l"osen, und suchen daher zun"achst L"osungen der beiden
@@ -317,22 +317,55 @@ nach $\partial_x^2u(0,y)$ ist unbestimmt.
 \subsection{Streifen}
 Das Cauchy-Problem kann also nur dann l"osbar sein, wenn die Funktionswerte
 und die ersten partiellen Ableitungen entlang einer Kurve
-auch alle zweiten Ableitungen eindeutig bestimmen. Wir suchen also
+auch alle zweiten Ableitungen eindeutig bestimmen.
+Wir versuchen daher
 diejenigen Kurven zu bestimmen, auf denen dies nicht m"oglich ist.
-Wir gehen dazu aus von der Differentialgleichung
+Wir gehen aus von der Differentialgleichung
 \begin{equation}
-a\partial_x^2u+2b\partial_x\partial_yu+c\partial_y^2u+d\partial_xu+e\partial_yu+fu=g,
+a\frac{\partial^2 u}{\partial x^2}
++
+2b\frac{\partial^2 u}{\partial x\partial y}
++
+c\frac{\partial^2 u}{\partial y^2}
++
+d\frac{\partial u}{\partial x}
++
+e\frac{\partial u}{\partial y}
++
+fu
+=g,
 \label{charequation}
 \end{equation}
-und einer Kurve
-$t\mapsto(x(t),y(t))$. Entlang der Kurve sind die Anfangswerte
+Da wir vor allem an den zweiten Ableitungen interessiert sind, bringen
+wir alle anderen Terme auf die rechte Seite, und k"urzen die neue
+rechte Seite mit $h$ ab:
+\begin{equation}
+a\frac{\partial^2 u}{\partial x^2}
++
+2b\frac{\partial^2 u}{\partial x\partial y}
++
+c\frac{\partial^2 u}{\partial y^2}
+=
+g
+-
+d\frac{\partial u}{\partial x}
++
+e\frac{\partial u}{\partial y}
++
+fu
+=h.
+\notag
+\end{equation}
+Ausserdem betrachten wir eine Kurve
+$t\mapsto(x(t),y(t))$.
+Entlang der Kurve sind die Anfangswerte
 und die partiellen Ableitungen
 \begin{equation}
 \left.
 \begin{aligned}
 u(x(t),y(t))&=u(t)\\
-\partial_xu(x(t),y(t))&=p(t)\\
-\partial_yu(x(t),y(t))&=q(t)
+\frac{\partial u}{\partial x}(x(t),y(t)) &= p(t)\\
+\frac{\partial u}{\partial y}(x(t),y(t)) &= q(t)
 \end{aligned}
 \qquad
 \right\}
@@ -340,36 +373,80 @@ u(x(t),y(t))&=u(t)\\
 \end{equation}
 vorgegeben. Diese Vorgaben nennt man einen {\em Streifen}.
 
+Die Funktionen $u(t)$, $p(t)$ und $q(t)$ sind nicht ganz willk"urlich.
+Leitet man n"amlich die erste der Gleichungen (\ref{charanfangs}) nach
+$t$ ab, findet man
+\[
+\dot{u}(t)=\frac{d}{dt}u(t)
+=
+\frac{d}{dt}u(x(t),y(t))
+=
+\frac{\partial u}{\partial x}(x(t), y(t))\frac{d}{dt}x(t)
++
+\frac{\partial u}{\partial y}(x(t), y(t))\frac{d}{dt}y(t).
+\]
+Die partiellen Ableitungen sind aber ebenfalls in (\ref{charanfangs})
+vorgegeben, es muss also die Beziehung
+\begin{equation}
+\dot{u}(t)= p(t)\dot{x}(t) + q(t)\dot{y}(t)
+\label{cauchydatarestriction}
+\end{equation}
+gelten.
+
 \subsection{Charakteristiken}
 Leitet man die letzten zwei Gleichungen von (\ref{charanfangs}) nach $t$ ab,
 erh"alt man
-\begin{align*}
-\dot p(t)&=
-\partial_x\partial_xu(x(t),y(t))\dot x(t)
-+
-\partial_x\partial_yu(x(t),y(t))\dot y(t)
-\\
-\dot q(t)&=
-\partial_x\partial_yu(x(t),y(t))\dot x(t)
-+
-\partial_y\partial_yu(x(t),y(t))\dot y(t)
-\end{align*}
-Zusammen mit der Differentialgleichung haben wir also die folgenden
-drei Gleichungen f"ur die zweiten partiellen Ableitungen:
-\begin{align*}
-a\partial_x^2u(x(t),y(t))+2b\partial_x\partial_yu(x(t),y(t))+c\partial_y^2u(x(t),y(t))&=g-dp(t)-eq(t)-fu(x(t),y(t))\\
-\partial_x^2u(x(t),y(t))\dot x(t)
-+
-\partial_x\partial_yu(x(t),y(t))\dot y(t)
-&=
+\[
+\begin{linsys}{3}
 \dot p(t)
+&=&
+\partial_x\partial_xu(x(t),y(t))\,\dot x(t)
+&+&
+\partial_x\partial_yu(x(t),y(t))\,\dot y(t)
+& &
 \\
-\partial_x\partial_yu(x(t),y(t))\dot x(t)
-+
-\partial_y^2u(x(t),y(t))\dot y(t)
-&=
 \dot q(t)
-\end{align*}
+&=&
+& &
+\partial_x\partial_yu(x(t),y(t))\,\dot x(t)
+&+&
+\partial_y\partial_yu(x(t),y(t))\,\dot y(t)
+\end{linsys}
+\]
+Zusammen mit der Differentialgleichung haben wir also die folgenden
+drei Gleichungen f"ur die rot hervorgehobenen zweiten partiellen Ableitungen:
+\[
+\begin{linsys}{4}
+a{\color{red}\displaystyle\frac{\partial^2 u}{\partial x^2}}
+&+&
+2b{\color{red}\displaystyle\frac{\partial^2 u}{\partial x\partial y}}
+&+&
+c{\color{red}\displaystyle\frac{\partial^2 u}{\partial y^2}}
+&=&
+h(t)
+&=&
+g-dp(t)-eq(t)-fu\\
+\dot x(t)
+{\color{red}\displaystyle\frac{\partial^2 u}{\partial x^2}}
+&+&
+\dot y(t)
+{\color{red}\displaystyle\frac{\partial^2 u}{\partial x\partial y}}
+& &
+&=&
+\dot p(t)
+& &
+\\
+& &
+\dot x(t)
+{\color{red}\displaystyle\frac{\partial^2 u}{\partial x\partial y}}
+&+&
+\dot y(t)
+{\color{red}\displaystyle\frac{\partial^2 u}{\partial y^2}}
+&=&
+\dot q(t)
+& &
+\end{linsys}
+\]
 Dieses lineare Gleichungssystem f"ur die zweiten partiellen Ableitungen
 hat die Koeffizientenmatrix
 \[
@@ -444,10 +521,10 @@ wir w"ahlen die zweite:
 \begin{align*}
 a\dot p(t)\dot y(t)-h\dot x(t)\dot y(t)+c\dot x(t)\dot q(t)&=0
 \end{align*}
-Zusammen mit der Bedingung
-\[
-\dot u=p(t)\dot x(t)+q(t)\dot y(t)
-\]
+Zusammen mit der Bedingung~(\ref{cauchydatarestriction})
+%\[
+%\dot u=p(t)\dot x(t)+q(t)\dot y(t)
+%\]
 haben wir jetzt drei Gleichungen, welche die Gr"ossen 
 $x$, $y$, $u$, $p$ und $q$ erf"ullen m"ussen, damit die zweiten
 Ableitungen auf unendlich viele Arten bestimmt sind.
@@ -481,9 +558,10 @@ eindeutig, sie bilden also einen charakteristischen Streifen.
 \subsection{Beispiele}
 \subsubsection{Wellengleichung}
 Die Charakteristiken der Wellengleichung
-\[
-\partial_t^2-a^2\partial_x^2u=0
-\]
+\begin{equation}
+\partial_t^2u-a^2\partial_x^2u=0
+\label{hyperbolisch:wellengleichung}
+\end{equation}
 sind Kurven $s\mapsto(t(s),x(s))$, die die Gleichung
 \begin{align*}
 \left(
@@ -501,7 +579,8 @@ erf"ullen. Dies sind Geraden mit der Steigung $\pm a$.
 \begin{center}
 \includegraphics[width=0.8\hsize]{images/char-2.pdf}
 \end{center}
-\caption{Charakteristiken der Wellengleichung
+\caption{Charakteristiken der
+Wellengleichung~(\ref{hyperbolisch:wellengleichung})
 \label{hyp:wellen}}
 \end{figure}
 Abbildung~\ref{hyp:wellen} zeigt die Charakteristiken.
@@ -526,9 +605,10 @@ $\partial_x\partial_yu=0$.
 
 \subsubsection{Gekr"ummte Charakteristiken}
 Die partielle Differentialgleichung
-\[
+\begin{equation}
 \partial_t^2u-x^2\partial_x^2u=0
-\]
+\label{hyperbolisch:gekruemmt}
+\end{equation}
 ist f"ur $x\ne 0$ hyperbolisch.
 Ihre Charakteristiken erf"ullen die Gleichung
 \begin{align*}
@@ -550,8 +630,7 @@ Charakteristiken f"ur das negative Zeichen dagegen gr"un.
 \includegraphics[width=0.8\hsize]{images/hypexp-1.pdf}
 \end{center}
 \caption{Charakteristiken der f"ur $x\ne 0$ hyperbolischen
-partiellen Differentialgleichung
-$\partial_t^2u-x^2\partial_x^2u=0$.
+partiellen Differentialgleichung~(\ref{hyperbolisch:gekruemmt}).
 \label{hyp:exp}}
 \end{figure}
 
@@ -562,7 +641,7 @@ immer schneller wird.
 
 \subsection{Charakteristiken f"ur elliptische und parabolische PDGL}
 Die oben entwickelte Theorie der Charakteristiken kann selbstverst"andlich
-auch auf elliptische und hyperbolische PDGL angewendet werden. Die
+auch auf elliptische und hyperbolische PDGL angewendet werden.
 Im elliptischen Fall hat die Differentialgleichung der Charakteristiken
 \[
 a\dot y(t)^2-2b\dot x(t)\dot y(t)+c\dot x(t)^2=0
@@ -585,7 +664,7 @@ zu bestimmen.
 \subsection{Einige interessante S"atze}
 
 \begin{satz}Jede Integralfl"ache kann mit einer Schar
-charakteristischen Streifen bedeckt werden.
+charakteristischer Streifen bedeckt werden.
 \end{satz}
 
 \begin{proof}[Beweis]
@@ -609,25 +688,25 @@ dann ist $u$ eine L"osung der Differentialgleichung.
 Die charakteristischen Streifen erf"ullen die Gleichungen
 \begin{equation}
 \begin{gathered}
-a\dot y(t)^2-2b\dot x(t)\dot y(t)+c\dot x(t)^2=0
+a\dot y(t)^2-2b\dot x(t)\dot y(t)+c\dot x(t)^2=0,
 \\
-a\dot p(t)\dot y(t)-h\dot x(t)\dot y(t)+c\dot x(t)\dot q(t)=0
+a\dot p(t)\dot y(t)-h\dot x(t)\dot y(t)+c\dot x(t)\dot q(t)=0,
 \\
-\dot u(t)=p(t)\dot x(t)+q(t)\dot y(t)
+\dot u(t)=p(t)\dot x(t)+q(t)\dot y(t).
 \end{gathered}
 \label{alle}
 \end{equation}
 Nennen wir die zweiten Ableitungen von $u$ entlang einer Charakteristik
 \begin{align*}
-R&=\partial_x^2u(x(t),y(t))
+R&=\partial_x^2u(x(t),y(t)),
 \\
-S&=\partial_x\partial_yu(x(t),y(t))
+S&=\partial_x\partial_yu(x(t),y(t)),
 \\
-T&=\partial_y^2u(x(t),y(t))
+T&=\partial_y^2u(x(t),y(t)),
 \end{align*}
 k"onnen wir schreiben
 \begin{align*}
-\dot p(t)&=R(t)\dot x(t)+S(t)\dot y(t)\\
+\dot p(t)&=R(t)\dot x(t)+S(t)\dot y(t)\qquad\text{und}\\
 \dot q(t)&=S(t)\dot x(t)+T(t)\dot y(t)
 \end{align*}
 Setzen wir dies in die zweite Gleichung von (\ref{alle}) ein, erhalten wir
@@ -728,7 +807,7 @@ eindeutig bestimmen.
 
 \subsection{Ein Spezialfall}
 Wir betrachten wieder den Spezialfall, in dem die Anfangswerte auf der
-Ebene $x_1=0$ vorgebeben sind, also
+Ebene $x_1=0$ vorgegeben sind, also
 \begin{align*}
 u(0,x_2,x_3)&=u_0(x_2,x_3),
 \\
@@ -758,7 +837,7 @@ A
 \subsection{Der allgemeine Fall}
 Wir betrachten die Funktion $\omega(x_1,x_2,x_3)$ als die erste
 Koordinaten eines neuen Koordinatensystems. Die Koordinaten in diesem
-neuen Sytem nennen wir $\omega_1,\dots,\omega_3$, sie sind Funktionen
+neuen System nennen wir $\omega_1,\dots,\omega_3$, sie sind Funktionen
 der alten Koordinaten
 \[
 \omega_1(x_1,x_2,x_3)=\omega(x_1,x_2,x_3)

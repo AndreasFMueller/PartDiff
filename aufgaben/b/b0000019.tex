@@ -1,0 +1,36 @@
+Die reelle Funktion $u(x,y)$ ist auf dem Quadrat
+\[
+\Omega = [-1, 1] \times [-1,1]
+\]
+definiert. Sie erf"ullt im Innern von $\Omega$ die Laplacegleichung
+\[
+\Delta u(x,y) = 0
+\]
+und auf dem Rand von $\Omega$ die Bedingung
+\[
+u(x,y) = x.
+\]
+
+Gesucht ist eine Approximation der Werte von $u$ in den zwei Punkten
+von $\Omega$
+\[
+(1/2,1/2), \ \    (-1/2,-1/2).
+\]
+Benutzen Sie hierzu Finite Volumina nach Voronoi.  
+
+\begin{loesung}
+Mit 
+\[
+\tilde u_1 = \tilde u(1/2,1/2), \ \tilde u_2 = \tilde u(-1/2,-1/2),
+\]
+sowie 
+\[
+A = \left[\begin{array}{rr} 
+2 & -10   \\
+ -10 & 2 \end{array}\right] \ \ \text{und} \ \
+\underline{b} =  \left(\begin{array}{r} 6 \\ -6 \end{array}\right)
+\]
+gilt $A \cdot \underline{\tilde u} = \underline{b}.$
+Es folgt $\underline{\tilde u} = (1/2, -1/2).$
+\end{loesung}
+

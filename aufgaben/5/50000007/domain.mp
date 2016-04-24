@@ -15,10 +15,24 @@ z1 = (200, 50);
 z2 = (200,200);
 z3 = ( 50,200);
 
-fill (0,0)--(210,0)--(210,210)--(0,210)--cycle withcolor(0.9,0.9,0.9);
+
+
+path p;
+p = (0,0){right}
+for v = 5 step 5 until 220:
+	..(v, 0.5 * v * (v/100))
+endfor;
+
+%fill (0,0)--(210,0)--(210,210)--(0,210)--cycle withcolor(0.9,0.9,0.9);
+fill p--(0,210)--cycle withcolor (0.95,1,0.95);
+fill (210,0)--(reverse p)--cycle withcolor (0.95, 0.95, 1);
+
+
+pickup pencircle scaled 2pt;
+draw p withcolor (1,0,0);
+
 
 pickup pencircle scaled 1pt;
-
 for c = 0 step 25 until 210:
 	draw (c, 0){right}
 	for v = 5 step 5 until 220 - c:
@@ -46,7 +60,7 @@ drawarrow (-10,0)--(210,0);
 drawarrow (0,-10)--(0,210);
 
 label.urt(btex $x$ etex, (210,0));
-label.ulft(btex $y$ etex, (0,210));
+label.ulft(btex $t$ etex, (0,210));
 
 label.llft(btex $0$ etex, (0,0));
 

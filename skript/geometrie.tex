@@ -223,7 +223,7 @@ Funktionswerte f"ur $x=0$ vorgeben sind.
 Damit sind aber nicht nur die Funktionswerte $u(0,y)$ bekannt, sondern
 auch die partiellen Ableitungen $\partial_yu(0,y)$.
 
-Wenn der Koeffizient $a(x,y,u)$ von 
+Wenn der Koeffizient $a(x,y,u)$
 in (\ref{quasilinear:equation})
 von $0$ verschieden ist, kann man die Gleichung
 nach $\partial_xu$ aufl"osen.
@@ -691,7 +691,7 @@ x,y,u(x,y),\frac{\partial u}{\partial x},\frac{\partial u}{\partial y}
 \biggr)=0.
 \end{equation}
 Diese Gleichung beschreibt einen impliziten Zusammenhang zwischen
-dem Ort im $x$-$y$-$u$-Koordinatensystem und den beiden Steigungen
+dem Ort im $x$-$y$-$u$-Ko\-or\-di\-na\-ten\-sys\-tem und den beiden Steigungen
 $\partial_xu$ und $\partial_yu$.
 
 Ein Anfangswertproblem, bei dem die Anfangswerte f"ur $x=0$ als
@@ -702,14 +702,14 @@ u(0,y)=g(y),
 legt auch die
 partiellen Ableitungen $\partial_y u(0,y)=g'(y)$ fest.  Die partielle
 Differentialgleichung schr"ankt damit ein, welche m"oglichen Ableitungen
-$\partial_xu(0,y)$ m"oglich sein. Oft wird dies nicht eindeutig sein,
+$\partial_xu(0,y)$ m"oglich sind. Oft wird dies nicht eindeutig sein,
 die Steigung in $x$-Richtung kann also verschiedene Werte annehmen,
 es kann verschiedene L"osungsfunktionen geben. "Ahnlich wie bei der
 L"osung gew"ohnlicher Differentialgleichungen ist zu jedem Wert
 aus der bereits bekannten partiellen Ableitung $\partial_yu(x,y)$
 die Steigung $\partial_xu(x,y)$ bestimmt, es ist somit plausibel, dass
 sich die L"osung "ahnlich wie bei der L"osung gew"ohnlicher Differentialgleichungen
-entwickeln l"asst. In voller Allgmeinheit ist dies nicht ganz einfach,
+entwickeln l"asst. In voller Allgemeinheit ist dies nicht ganz einfach,
 und f"ur unsere Zwecke auch nicht notwendig, denn alle wesentlichen
 Eigenschaften lassen sich an dem einfacheren Fall der quasilinearen
 partielle Differentialgleichung auch beobachten.
@@ -788,7 +788,7 @@ Es ist offensichtlich, dass f"ur gen"ugend grosse Zeit $t$ die
 L"osungsfl"ache nicht mehr als Graph einer Funktion $u(t,x)$ derstellbar ist.
 \begin{figure}
 \begin{center}
-\includegraphics[width=\hsize]{graphics/welle}
+\includegraphics[width=\hsize]{graphics/welle.jpg}
 \end{center}
 \caption{L"osung der Differentialgleichung (\ref{wellenichtlinear}) mit
 entstehender Singularit"at\label{g}}
@@ -803,9 +803,10 @@ genau dann vollst"andig bestimmt, wenn jede Charakteristik durch mindestens
 einen vorgegebenen Randpunkt verl"auft.
 
 F"ur die Differentialgleichung
-\[
+\begin{equation}
 \frac{\partial u}{\partial x}+2\frac{\partial u}{\partial y}=3
-\]
+\label{geometrie:knickbeispiel}
+\end{equation}
 hatten wir die Charakterisiken 
 \[
 t\mapsto\begin{pmatrix}x_0\\y_0\\z_0\end{pmatrix}+t\begin{pmatrix}1\\2\\3\end{pmatrix}
@@ -818,7 +819,7 @@ werden soll, muss also jede Gerade mit Steigung $2$ h"ochstens einmal
 schneiden.
 
 Das Gebiet $\{(x,y)\in\mathbb R^2\,|\, x >0\}$  aus \ref{konstantekoeff}
-hat die $x$-Achse als Rand, und diese schneidet jeder Gerade mit Steigung
+hat die $x$-Achse als Rand, und diese schneidet jede Gerade mit Steigung
 $2$ genau einmal.
 
 Interessanter wird die Diskussion jedoch f"ur das Gebiet
@@ -869,9 +870,19 @@ Bereich sind die Funktionswerte "uberbestimmt \label{geometrie:charrand2}}
 \includegraphics{images/randwerte-4.pdf}
 \end{center}
 \caption{Randwerte am linken und unteren Rand vorgegeben: die Funktion
-ist zwar eindeutig bestimmt, aber die Differenzierbarkeit auf auf
+ist zwar eindeutig bestimmt, aber die Differenzierbarkeit auf
 der von $(0,0)$ ausgehenden Charakteristik (hellgr"un) ist nicht garantiert.
 \label{geometrie:charrand3}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{3d/knick.jpg}
+\caption{L"osung der Differentialgleichung~(\ref{geometrie:knickbeispiel}),
+mit Randwerten entlang des linken und unteren Randes (vergleiche
+Abbildung~\ref{geometrie:charrand3}) ist entlang einer Charakteristik
+nicht differenzierbar (vertikale Achse mit dem Faktor $0.4$ skaliert).
+\label{geometrie:knick}}
 \end{figure}
 
 Als Illustration f"ur den letzten Fall betrachte man die Randwertvorgabe
@@ -918,10 +929,11 @@ u&=y+x
 Die L"osungsfunktion ist also
 \[
 u(x,y)=\begin{cases}
-\frac32y&\qquad y>2x\\
-x+y&\qquad y<2x
+\frac32y&\qquad y<2x\\
+x+y&\qquad y>2x,
 \end{cases}
 \]
+wie in Abbildung~\ref{geometrie:knick} dargestellt.
 F"ur $y=2x$ stimmen die beiden Terme zwar "uberein, die L"osungsfunktion
 ist also sicher in ganz $\Omega$ stetig.
 Aber die

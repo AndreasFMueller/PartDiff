@@ -50,23 +50,23 @@ beschreibt, nachdem wir die Saite in eine bestimmte Form gebracht, und
 zur Zeit $t=0$ losgelassen haben.
 
 Offenbar k"onnen wir den momentanen Zustand der Saite mit Hilfe einer
-Funktion $\psi(x,t)$ beschreiben, welche die Auslenkung der Saite
+Funktion $u(x,t)$ beschreiben, welche die Auslenkung der Saite
 am Punkt $x$ zur Zeit $t$ angibt. Die L"osung des Problems besteht darin,
-eine Differentialgleichung f"ur die Funktion $\psi$ zu finden.
+eine Differentialgleichung f"ur die Funktion $u$ zu finden.
 
 Aus dieser Beschreibung des Problems k"onnen wir die Anfangsbedingungen zur
 Zeit $t=0$ und die Randbedingungen f"ur alle Zeiten $t\ge 0$ bereits ableiten.
 Zur Zeit $t=0$ ist die Form der Saite vorgegeben. Es gibt also eine Funktion
 $f(x)$, welche nicht von der Zeit abh"angt, und die mindestens stetig
-sein muss (weil die Saite sonst reisst). Die gesuchte L"osung $\psi$
+sein muss (weil die Saite sonst reisst). Die gesuchte L"osung $u$
 muss erf"ullen:
 \[
-\psi(x,0)=f(x).
+u(x,0)=f(x).
 \]
 Da die Saite sich an ihren Enden nicht bewegen kann, muss die Funktion
-$\psi$ dort f"ur alle Zeiten den Wert $0$ haben:
+$u$ dort f"ur alle Zeiten den Wert $0$ haben:
 \[
-\psi(0,t)=\psi(l,t)=0\quad\forall t\ge 0.
+u(0,t)=u(l,t)=0\quad\forall t\ge 0.
 \]
 
 \begin{figure}
@@ -84,21 +84,21 @@ der Seite ist nach Voraussetzung $F$, die Steigung gibt an, welcher Teil
 dieser Kraft senkrecht auf die $x$-Achse wirkt. Insgesamt wirkt auf den
 Abschnitt zwischen $x$ und $x+\Delta x$ die Kraft
 \[
-F\frac{\partial\psi}{\partial x}(x+\Delta x)-F\frac{\partial\psi}{\partial x}(x).
+F\frac{\partial u}{\partial x}(x+\Delta x)-F\frac{\partial u}{\partial x}(x).
 \]
-Mit der Beschleunigung $\frac{\partial^2\psi}{\partial t^2}$ wird die
+Mit der Beschleunigung $\frac{\partial^2u}{\partial t^2}$ wird die
 Bewegungsgleichung
 \begin{align*}
-\mu\Delta x\frac{\partial^2\psi}{\partial t^2}(x)&=
-F\frac{\partial\psi}{\partial x}(x+\Delta x)-F\frac{\partial\psi}{\partial x}(x)\\
+\mu\Delta x\frac{\partial^2u}{\partial t^2}(x)&=
+F\frac{\partial u}{\partial x}(x+\Delta x)-F\frac{\partial u}{\partial x}(x)\\
 \Rightarrow\qquad
-\frac{\mu}{F}\frac{\partial^2\psi}{\partial t^2}(x)&=
-\frac1{\Delta x}\left(\frac{\partial\psi}{\partial x}(x+\Delta x)-\frac{\partial\psi}{\partial x}(x)\right)
+\frac{\mu}{F}\frac{\partial^2u}{\partial t^2}(x)&=
+\frac1{\Delta x}\left(\frac{\partial u}{\partial x}(x+\Delta x)-\frac{\partial u}{\partial x}(x)\right)
 \end{align*}
 Geht man zum Grenzwert $\Delta x\to 0$ "uber, findet man die
 partielle Differentialgleichung
 \[
-\frac{\partial^2\psi}{\partial t^2}=\frac{F}{\mu}\frac{\partial^2\psi}{\partial x^2}.
+\frac{\partial^2u}{\partial t^2}=\frac{F}{\mu}\frac{\partial^2u}{\partial x^2}.
 \]
 Der Koeffizient $\frac{F}{\mu}$ hat die Dimension einer Geschwindigkeit im
 Quadrat, es handelt sich um die Ausbreitungsgeschwindigkeit der Wellen entlang
@@ -150,43 +150,43 @@ Sei $G$ ein Gebiet in $\mathbb R^2$, und sei $\gamma$ der Rand
 von $G$, $\gamma = \partial G$. Die Schwingungen einer entlang der Randkurve
 $\gamma$ eingespannte Membran wird beschrieben durch eine Funktion
 \[
-\psi\colon G\times \mathbb R_{t \ge 0}\to\mathbb R\colon (x,y,t)\mapsto \psi(x,y,t)
+ u \colon G\times \mathbb R_{t \ge 0}\to\mathbb R\colon (x,y,t)\mapsto  u (x,y,t)
 \]
 die die Auslenkung der Membran aus der Ruhelange angibt. Das Problem ist aber
 erst bestimmt, wenn wir die Auslenkung der Membran zur Zeit $t=0$ kennen,
 diese kann durch eine im Gebiet $G$ definierte Funktion $f(x,y)$ beschrieben
 werden.
 
-Die Funktion $\psi$
+Die Funktion $ u $
 erf"ullt die Differentialgleichung
 \[
-\frac{\partial^2\psi}{\partial t^2}
-=c^2\left(\frac{\partial^2\psi}{\partial x^2}+\frac{\partial^2\psi}{\partial y^2}\right),
+\frac{\partial^2 u }{\partial t^2}
+=c^2\left(\frac{\partial^2 u }{\partial x^2}+\frac{\partial^2 u }{\partial y^2}\right),
 \]
 die Randbedingung
 \[
-\psi(x,y,t)=0\qquad \forall (x,y)\in\gamma,t\ge 0,
+ u (x,y,t)=0\qquad \forall (x,y)\in\gamma,t\ge 0,
 \]
 und die Anfangsbedingung
 \[
-\psi(x,y,0)=f(x,y)\qquad \forall (x,y)\in G.
+ u (x,y,0)=f(x,y)\qquad \forall (x,y)\in G.
 \]
 Die Konstante $c$ ist die Ausbreitungsgeschwindigkeit der Wellen in der Membran.
 
 In drei Dimensionen lautet
 die Wellengleichung 
 \[
-\frac{\partial^2\psi}{\partial t^2}
-=c^2\left(\frac{\partial^2\psi}{\partial x^2}
-+\frac{\partial^2\psi}{\partial y^2}
-+\frac{\partial^2\psi}{\partial z^2}
+\frac{\partial^2 u }{\partial t^2}
+=c^2\left(\frac{\partial^2 u }{\partial x^2}
++\frac{\partial^2 u }{\partial y^2}
++\frac{\partial^2 u }{\partial z^2}
 \right).
 \]
 Auch f"ur dieses Problem sind weitere Angaben notwendig, damit das Problem
 wohl gestellt ist.
 Zun"achst ist ein Gebiet $G\subset \mathbb R^3$ festzulegen, welches
 eine geeignet glatte Randfl"ache hat.
-Die L"osung $\psi(x,y,z,t)$ ist definiert f"ur Punkte $(x,y,z)\in G$
+Die L"osung $ u (x,y,z,t)$ ist definiert f"ur Punkte $(x,y,z)\in G$
 und f"ur Zeitpunkte $t\ge 0$.
 Der Anfangszustand ist eine Funktion $f(x,y,z)$,
 definiert auf $G$.
@@ -221,18 +221,18 @@ eng mit der Geometrie des Raumes verkn"pft ist.
 Welche Form nimmt eine Seifenhaut ein, die am Rande $\gamma$ eines
 zweidimensionalen Gebietes $G$ auf die H"ohe $f(x,y)$ mit $(x,y)\in \gamma$
 angehoben wird? Wir beschreiben die Seifenhaut durch eine Funktion
-$\psi(x,y)$, nat"urlich muss gelten $\psi(x,y)=f(x,y)$ f"ur alle
+$ u (x,y)$, nat"urlich muss gelten $ u (x,y)=f(x,y)$ f"ur alle
 Punkte $(x,y)\in\gamma$.
 Im Gleichgewicht wird die Membran so geformt, dass die Kr"afte
 der Oberfl"achenspannung sich an jeder Stelle der Seifenhaut gegenseitig
 aufheben. Betrachtet man nur die $x$-Richtung, ist die Kraft auf die
 Seifenhaut durch die zweite Ableitung in $x$-Richtung geben.
 Diese Kraft muss durch Kraft kompensiert werden, die durch die
-zweite Ableitung von $\psi$ in $y$-Richtung hervorgerufen wird.
-Die Funktion $\psi$ muss also die Gleichung
+zweite Ableitung von $ u $ in $y$-Richtung hervorgerufen wird.
+Die Funktion $ u $ muss also die Gleichung
 \[
-\frac{\partial^2\psi}{\partial x^2}+\frac{\partial^2\psi}{\partial y^2}
-=\Delta\psi=0.
+\frac{\partial^2 u }{\partial x^2}+\frac{\partial^2 u }{\partial y^2}
+=\Delta u =0.
 \]
 Dieses einfache Argument ist auf den ersten Blick einleuchtend, br"auchte
 aber eine noch etwas genauere Rechtfertigung. Darauf wollen wir allerdings
@@ -264,7 +264,7 @@ Die W"armeleitungsgleichung ist der Prototyp einer parabolischen partiellen
 \index{Differentialgleichung!partielle!parabolische}
 Differentialgleichung. Sie kann auch verwendet werden, um Diffusionsprozesse
 zu beschreiben. L"asst man komplexe Werte der Konstanten zu, entpuppt
-sie sich als sogar als die Grundgleichung der Quantenmechanik.
+sie sich sogar als die Grundgleichung der Quantenmechanik.
 
 Wir leiten die W"armeleitungsgleichung im eindimensionalen Fall ab, und stellen
 uns dazu einen w"armleitenden d"unnen Stab der L"ange $l$ vor. Punkte

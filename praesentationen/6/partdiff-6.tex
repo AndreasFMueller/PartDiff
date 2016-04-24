@@ -10,7 +10,7 @@
 }
 \title[]{Partielle Differentialgleichungen}
 \subtitle{6. Sitzung: Elliptische PDGL}
-\date[25.~M"arz 2015]{25.~M"arz 2015}
+\date[6.~April 2016]{6.~April 2016}
 \author{Prof.~Dr.~Andreas M"uller}
 \begin{document}
 
@@ -55,36 +55,45 @@ Klasse verr"at:
 \begin{frame}
 \frametitle{Problem}
 Differentialgleichung
-\[
-\Delta u=f\qquad\text{in $\Omega$}
-\]
-Randbedingungen
-\[
-u_{|\partial \Omega}=g\qquad\text{auf $\partial\Omega$}
-\]
+\begin{alignat}{2}
+L u&=f\qquad&&\text{in $\Omega$}
+\notag
+\intertext{Randbedingungen}
+  u&=g\qquad&&\text{auf $\partial\Omega$}
+\notag
+\end{alignat}
 \pause
 Allgemeine L"osung:
 \begin{align*}
-u&=u_h+u_p&&\text{mit}&             \Delta u_h&=0,&             \Delta u_p&=f\\
- &        &&          &{u_h}_{|\partial\Omega}&=0,&{u_p}_{|\partial\Omega}&=g
+u&=u_p+u_r + u_h
+\end{align*}
+mit
+\begin{align*}
+L u_p&=  f&L u_r&=0    &L u_h&=0\\
+  u_p&=\;?&  u_r&=g-u_p&  u_h&=0
 \end{align*}
 \begin{enumerate}
-\item L"osung existiert $\Leftrightarrow \exists u_p$  
+\item L"osung existiert $\Leftrightarrow \exists u_p, u_r$  
 \item Eindeutigkeit der L"osung: $u_h=0$
 \end{enumerate}
 \end{frame}
 
 \begin{frame}
 \frametitle{Maximumprinzip}
-\begin{definition}
-$u\colon\Omega\to\mathbb R$ heisst harmonisch wenn $\Delta u=0$.
-\end{definition}
+
+Sei $L$ ein elliptischer Operator.
+
+\begin{theorem}
+Wenn $u$ im Gebiet $\Omega$ eine L"osung von $Lu=0$ ist, dann hat
+$u$ kein lokales Minimum oder Maximum im Inneren von $\Omega$.
+\end{theorem}
 
 \pause
 
 \begin{theorem}
-Wenn $\Omega$ beschr"ankt und zusammenh"anged ist, dann nimmt eine
-harmonische Funktion ihr Maximum und Minimum auf dem Rand $\partial\Omega$ an.
+Wenn $\Omega$ ein beschr"anktes und zusammenh"angendes Gebiet ist, 
+dann hat eine L"osung von $Lu=0$ ihr Maximum und Minimum auf
+dem Rand $\partial \Omega$.
 \end{theorem}
 
 \pause
@@ -103,7 +112,10 @@ L"osung des Randwertproblems eindeutig, falls sie existiert.
 Ist $u$ eine harmonische Funktion im Gebiet $\Omega$, dann hat $u$ die
 Mittelwerteigenschaft:
 \[
-u(x)= \int_{S_r(x)}u(\xi)\,d\xi,
+u(x)
+=
+\frac{1}{\operatorname{vol}(S_r(x))}
+\int_{S_r(x)}u(\xi)\,d\xi,
 \]
 wobei $S_r(x)$ eine Kugel mit Radius $r$ um den Punkt $x$ ist, die ganz
 in $\Omega$ enthalten ist.
@@ -134,7 +146,7 @@ y(x)=\int_0^1 K(x,\xi)f(\xi)\,d\xi
 \[
 y(x)=\underbrace{\int_0^1 G(x,\xi)f(\xi)\,d\xi}_{u_p}
 +
-\underbrace{a(1-x) + bx}_{u_h}
+\underbrace{a(1-x) + bx}_{u_r}
 \]
 \end{frame}
 
@@ -148,11 +160,7 @@ G(x,\xi)
 x(\xi-1)&\qquad x<\xi
 \end{cases}
 \end{align*}
-\end{frame}
-
-\begin{frame}
-\frametitle{Greensche Funktion}
-\includegraphics[width=\hsize]{../../skript/images/green-1.png}
+\includegraphics[width=\hsize]{../../skript/images/green-1.pdf}
 \end{frame}
 
 \begin{frame}
@@ -176,14 +184,14 @@ x(\xi-1)&\qquad x<\xi
 \end{frame}
 
 \begin{frame}
-\frametitle{Greensche Funktion}
+\frametitle{Greensche Funktion, $n=1$}
 Alternative Konstruktion der Greenschen Funktion
 \begin{enumerate}[<+->]
 \item Einheits-``Knick'':
 \[
 \sigma(x,\xi)=\frac12|x-\xi|\qquad\text{erf"ullt}\qquad \Delta\sigma(x,\xi)=\delta(x-\xi)
 \]
-\item harmonische Funktion $h(x,\xi)$ mit gleichen Randwerten:
+\item ``harmonische'' Funktion $h(x,\xi)$ mit gleichen Randwerten:
 \[
 h(x,\xi)=(1-x)\sigma(0,\xi) + x\sigma(1,\xi)
 \]
@@ -193,16 +201,38 @@ G(x,\xi) = \sigma(x,\xi) - h(x,\xi)
 \]
 \end{enumerate}
 \pause
-Vorteile:
-\begin{itemize}[<+->]
+Eigenschaften von $G$:
+\begin{align*}
+\Delta G(x,\xi)&=\delta(x-\xi)\\
+G(0,\xi)&=\sigma(0,\xi)-(1-0)\sigma(0,\xi)+0\cdot\sigma(1,\xi)=0\\
+G(1,\xi)&=\sigma(1,\xi)-0\cdot\sigma(1,\xi)-\sigma(1,\xi)=0
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Greensche Funktion, $n>1$}
+\begin{enumerate}[<+->]
 \item
-$\sigma(x,\xi)$ gibt es in jeder Dimension
-\item
-Man muss ``nur'' das Problem l"osen
+Einheits-``L"osung'':
 \[
-\Delta h = 0, \qquad h_{|\partial\Omega}=\sigma
+\sigma(x,\xi) = \begin{cases}
+\displaystyle\frac1{2\pi}\log|x-\xi|\quad&n=2\\
+\\
+\displaystyle-\frac1{4\pi}\frac{1}{|x-\xi|}\quad&n=3
+\end{cases}
 \]
-\end{itemize}
+und weitere f"ur $n>3$
+\item
+$h(x,\xi)$ durch L"osung des Randwertproblems
+\begin{align*}
+\Delta h(x,\xi)&= 0\quad\text{in $\Omega$},&h(x,\xi)&=\sigma(x,\xi)\quad\text{auf $\partial\Omega$}
+\end{align*}
+f"ur jedes $\xi$
+\item Greensche Funktion
+\[
+G(x,\xi)=\sigma(x,\xi)-h(x,\xi)
+\]
+\end{enumerate}
 \end{frame}
 
 
@@ -210,19 +240,18 @@ Man muss ``nur'' das Problem l"osen
 \frametitle{Greensche Funktion}
 {\bf Problem:}
 \[
-\Delta u=f\quad\text{in $\Omega$},\qquad u_{|\partial\Omega}=g
+\Delta u=f\quad\text{in $\Omega$},\qquad u=g\quad\text{auf $\partial\Omega$}
 \]
-\bigskip
+\medskip
 
 {\bf Idee:} Gibt es einen inversen Operator des Laplace-Operators?
-\bigskip
+\medskip
 
 \pause
 {\bf Erwartete Form:} Integraloperator
 \[
 u(x)=\int_\Omega K(x,\xi)f(\xi)\,d\xi
 \]
-\medskip
 
 \pause
 {\bf L"osung:}
@@ -236,32 +265,32 @@ u(x)
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Greensche Funktion}
-
-\begin{enumerate}[<+->]
-\item
-Es gibt eine L"osung $\sigma(x,\xi)$
-\[
-\Delta \sigma (x,\xi)=\delta(x-\xi)
-\]
-\item 
-Es gibt eine harmonische Funktion $h(x,\xi)$ mit
-\[
-h(x,\xi)=\sigma(x,\xi),\quad x\in\partial\Omega.
-\]
-\item
-Es gibt eine Funktion
-\[
-G(x,\xi) = \sigma(x,\xi)-h(x,\xi),
-\]
-die L"osung des folgenden Randwertproblems ist:
-\[
-\Delta_x G(x,\xi) = \delta(x-\xi)\quad\text{in $\Omega$},
-\qquad
-G(x,\xi)=0\quad\text{f"ur $x\in\partial\Omega$}
-\]
-\end{enumerate}
-\end{frame}
+%\begin{frame}
+%\frametitle{Greensche Funktion}
+%
+%\begin{enumerate}[<+->]
+%\item
+%Es gibt eine L"osung $\sigma(x,\xi)$
+%\[
+%\Delta \sigma (x,\xi)=\delta(x-\xi)
+%\]
+%\item 
+%Es gibt eine harmonische Funktion $h(x,\xi)$ mit
+%\[
+%h(x,\xi)=\sigma(x,\xi),\quad x\in\partial\Omega.
+%\]
+%\item
+%Es gibt eine Funktion
+%\[
+%G(x,\xi) = \sigma(x,\xi)-h(x,\xi),
+%\]
+%die L"osung des folgenden Randwertproblems ist:
+%\[
+%\Delta_x G(x,\xi) = \delta(x-\xi)\quad\text{in $\Omega$},
+%\qquad
+%G(x,\xi)=0\quad\text{f"ur $x\in\partial\Omega$}
+%\]
+%\end{enumerate}
+%\end{frame}
 
 \end{document}

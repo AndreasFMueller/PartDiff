@@ -12,7 +12,7 @@ TEXFILES = aufgabensammlung.tex uebungen.tex \
 aufgabensammlung.pdf:	$(TEXFILES) aufgabensammlung.ind
 	pdflatex aufgabensammlung.tex uebungen.tex
 
-aufgabensammlung.ind:	$(TEXFILES)
+aufgabensammlung.ind:	$(TEXFILES) subdirs
 	touch aufgabensammlung.ind
 	pdflatex aufgabensammlung.tex
 	makeindex aufgabensammlung.idx
@@ -58,3 +58,13 @@ dirs:
 	do \
 		if [ ! -d $${dir} ]; then mkdir $${dir}; fi; \
 	done
+
+subdirs:
+	for dir in 1 2 3 4 5 6 7 8 9 a b; \
+	do \
+		if [ -d $${dir} ]; \
+		then \
+			( cd $${dir}; make ); \
+		fi; \
+	done
+

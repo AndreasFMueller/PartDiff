@@ -1,0 +1,120 @@
+Auf dem Gebiet $\Omega=\{(x,y)\;|\;0<x<\frac{\pi}2,0<y<\frac{\pi}{2}\}$
+ist die partielle Differentialgleichung
+\begin{equation}
+\frac{1}{\cos x}\frac{\partial u}{\partial x}+\frac{\partial u}{\partial y}=0
+\label{30000010:gleichung}
+\end{equation}
+gegeben.
+\begin{teilaufgaben}
+\item Finden Sie eine L"osung, die die Randbedingung
+\[
+u(0,y)=\cos y
+\]
+erf"ullt.
+\item Ist die L"osung durch diese Randbedingung eindeutig festgelegt?
+\end{teilaufgaben}
+
+\begin{loesung}
+Es handelt sich um eine quasilineare Differentialgleichung erster Ordnung,
+die gestellten Fragen k"onnen mit Hilfe von Charakteristiken beantwortet
+werden.
+\begin{teilaufgaben}
+\item
+Die Differentialgleichungen der Charakteristiken mit Parameter $t$
+sind
+\begin{align}
+\dot x &= \frac1{\cos x}\label{30000010:1}\\
+\dot y &= 1\label{30000010:2}\\
+\dot u &= 0\label{30000010:3}
+\end{align}
+Die erste Gleichung kann mit Separation der Variablen gel"ost werden:
+\begin{align*}
+\frac{dx}{dt}&=\frac1{\cos x}
+&&\Rightarrow&
+\int \cos x\,dx&=\int\, dt
+&&\Rightarrow&
+\sin x&=t + C
+&&\Rightarrow&
+x&=\arcsin(t + C)
+\end{align*}
+Die Randwerte sind f"ur $x=0$ vorgegeben, wir parametrisieren die
+Charakteristiken daher so, dass sie f"ur $t=0$ auf der $y$-Achse
+im Punkt $(0,y_0)$ beginnen. Dazu muss $C=0$ sein.
+
+Die zweite Gleichung (\ref{30000010:2}) hat als L"osung $y=t+y_0$, und
+die dritte (\ref{30000010:3}) hat $u=u_0=\cos y_0$ als L"osung.
+Man muss also aus den Gleichungen
+\begin{align*}
+x&=\arcsin t\\
+y&=t+y_0\\
+u&=\cos y_0
+\end{align*}
+die Variablen $t$ und $y_0$ eliminieren.
+Aus der ersten Gleichung bekommt man $t=\sin x$, und damit aus der zweiten
+$y_0=y-\sin x$. Einsetzen in die dritte Gleichung liefert
+\begin{equation}
+u=\cos(y-\sin x).
+\end{equation}
+Zur Kontrolle rechnen wir nach:
+\begin{align*}
+\frac{\partial u}{\partial x}&=\sin(y-\sin x)\cos x
+\\
+\frac{\partial u}{\partial y}&=-\sin(y-\sin x)
+\\
+\frac1{\cos x}\frac{\partial u}{\partial x}+\frac{\partial u}{\partial y}
+&=
+\sin(y-\sin x)-\sin(y-\sin x)=0.
+\end{align*}
+Diese Funktion erf"ullt auch die Randbedingung
+\begin{equation*}
+u(0,y)=\cos(y-\sin 0)=\cos y.
+\end{equation*}
+Die Funktion $u(x,y)=\cos(y-\sin x)$ ist also eine L"osung der
+Differentialgleichung.
+\item
+\begin{figure}
+\centering
+\includeagraphics[width=0.45\hsize]{domain-1.pdf}
+\caption{Charakteristiken der Differentialgleichung (\ref{30000010:gleichung}),
+im blauen Teilgebiet ist die L"osung durch die Randwerte (gr"un) nicht
+festgelegt.
+\label{30000010:char}}
+\end{figure}
+\begin{figure}
+\centering
+\includeagraphics[width=0.7\hsize]{loes.jpg}
+\caption{3D-Darstellung der L"osung, soweit sie durch die Randbedingung
+eindeutig bestimmt ist. Die $y$-Achse zeigt nach vorne.
+\label{30000010:loesungsflaeche}}
+\end{figure}
+Die Eindeutigkeit kann ebenfalls mit Hilfe der Charakteristiken entschieden
+werden.
+Die Charaketeristiken in der $x$-$y$-Ebene haben die Gleichung
+\[
+y=y_0 + \sin x,
+\]
+sie sind in Abbildung~\ref{30000010:char} dargestellt.
+Man erkennt, dass die Werte im Teilgebiet $y < \sin x$ durch die
+Anfangswerte nicht festgelegt sind.
+Der durch die Randbedingungen festgelegte Teil der L"osungsfl"ache ist
+in Abbildung~\ref{30000010:loesungsflaeche} dargestellt.
+
+Ist $g\colon\mathbb R\to\mathbb R$ eine beliebige differenzierbare Funktion mit
+$g(y)=\cos y$ f"ur $y>0$, dann ist $g(y-\sin x)$ eine L"osung der
+Differentialgleichung (\ref{30000010:gleichung}), die die Randbedingung
+erf"ullt. Da die Funktion $g(y)$ f"ur $y<0$ beliebig gew"ahlt werden
+kann, gibt es beliebig viele L"osungen der Differentialgleichung,
+die die Randbedingung erf"ullen.
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+Quasilineare PDGL ({\bf Q}) 1 Punkt,
+Differentialgleichungen der Charakteristiken ({\bf D}) 1 Punkt,
+L"osung der Differentialgleichungen f"ur $x(t)$ ({\bf X})
+und $y(t)$ ({\bf Y}) je 1 Punkt,
+L"osung der partiellen Differentialgleichung ({\bf U}) 1 Punkt,
+Verwendung der Charakteristikenmethode zur Beurteilung ob
+vorgegebenen Randwerte die L"osung eindeutig bestimmen ({\bf B}) 1 Punkt.
+\end{bewertung}
+

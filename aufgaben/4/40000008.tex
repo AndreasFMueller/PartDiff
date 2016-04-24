@@ -2,7 +2,7 @@ L"osen Sie die Eikonal-Gleichung
 \begin{equation}
 \biggl( \frac{\partial u}{\partial x} \biggr)^2
 +
-\biggl( \frac{\partial u}{\partial x} \biggr)^2
+\biggl( \frac{\partial u}{\partial y} \biggr)^2
 =
 y
 \label{4000008:eikonal}
@@ -55,7 +55,7 @@ u(x,y)=ax + \frac23(y-a^2)^{\frac32}.
 
 Der Gradient dieser L"osung ist
 \[
-\operatorname{grad}u(x,y)=\begin{pmatrix}a\\y-a^2\end{pmatrix}
+\operatorname{grad}u(x,y)=\begin{pmatrix}a\\\sqrt{y-a^2}\end{pmatrix}
 \]
 Es wurde verlangt, dass im Punkt $(0,1)$ der Gradient parallel zur
 $x$-Achse sein soll, also die $y$-Komponenten verschwindet. Daraus
@@ -65,7 +65,7 @@ Die Orthogonaltrajektorien sind die Integralkurven des Gradienten,
 wir suchen also Funktionen $x(s)$ und $y(s)$ mit der Eigenschaft
 \begin{align*}
 \frac{dx}{ds}&=1\\
-\frac{dy}{ds}&=y-1
+\frac{dy}{ds}&=\sqrt{y-1}
 \end{align*}
 Diese beiden Differentialgleichungen sind entkoppelt, sie k"onnen
 separat gel"ost werden. Die erste f"ur $x(s)$ ist trivial:
@@ -73,48 +73,83 @@ separat gel"ost werden. Die erste f"ur $x(s)$ ist trivial:
 x(s)=s + x_0,
 \]
 wobei $x_0$ eine Integrationskonstante ist.
-Die zweite ist inhomogen. Die homogene Gleichung $y'=y$ hat die
-L"osung $y(s)=Ce^s$, also kann man eine partikul"are L"osung
-der inhomogene durch Variation
-der Konstanten, also mit dem Ansatz $y(s)=C(s)e^s$ finden.
-Einsetzen in die Differentialgleichung ergibt
-\begin{align*}
-y'(s)=C'(s)e^s+C(s)e^s&=C(s)e^s+1
-\\
-\Rightarrow\qquad
-C'(s)e^s&=1\\
-C'(s)&=e^{-s}\\
-C(s&)=-e^{-s}
-\end{align*}
-Damit ist die allgemeine L"osung der Differentialgleichung f"ur $y(s)$
-\[
-y(s)=(y_0+1)e^s-1,
-\]
-wobei wir die Integrationskonstante so gew"ahlt haben, dass $y(s)=y_0$.
+Da die Kurve vom Punkt $(0,1)$ ausgehen soll, muss $x_0=0$ sein.
 
-Der L"osung $u$ der Eikonalgleichung entspricht also eine Schar
-von
-vom Punkt $(x_0,y_0)$ ausgehenden
-Lichtstrahlen, die
-durch
+Die zweite ist nicht linear, sie kann aber mit Separation gel"ost
+werden:
 \begin{align*}
-x(s)&=s+x_0\\
-y(s)&=(y_0+1)e^s-1
+y'&=\sqrt{y-1}
+\\
+\int \frac{dy}{\sqrt{y-1}}&=\int ds
+\\
+2\sqrt{y-1}&=s+s_0
+\\
+y&=1+\frac14(s+s_0)^2
 \end{align*}
-beschrieben werden. F"ur $x_0=0$, also Lichtstrahlen, die von der
-$y$-Achse ausgehen, finden wir also
-\begin{equation}
-\left.
-\begin{aligned}
-x(s)&=s\\
-y(s)&=(y_0+1)e^s-1
-\end{aligned}
-\right\}
-\qquad\Rightarrow\qquad
-y(x)=(y_0+1)e^x-1
-\end{equation}
+mit der Integrationskonstanten.
+Da f"ur $s=0$ die Kurve durch den Punkt $(0,1)$ gehen soll, folgt
+wieder $s_0=0$.
+
+Die gesuchte Kurve hat daher die Parameterdarstellung
+\[
+\begin{pmatrix}
+x(s)\\y(s)
+\end{pmatrix}
+=
+\begin{pmatrix}
+s\\
+1+\frac14s^2
+\end{pmatrix}.
+\]
+Da $x=s$ gilt, kann man $y$ auch direkt durch $x$ ausdr"ucken:
+\[
+y=\frac14x^2+1.
+\]
 Der Lichtstrahl, der horizontal durch den Punkt $(0,1)$ verl"auft,
-kr"ummt sich also exponentiell in $y$-Richtung.
+kr"ummt sich also quadratisch in $y$-Richtung.
 Dies ist das bekannte Ph"anomen der Lichtspiegelung in einer
 heisser Luftschicht.
 \end{loesung}
+
+\begin{diskussion}
+\begin{figure}
+\centering
+\includeagraphics[]{fatamorgana-1.pdf}
+\caption{Lichtstrahlen durch den Punkt $(x_0,y_0)$ f"ur verschiedene
+Werte des Separationsparameters $a$.
+\label{40000008:fata}}
+\end{figure}
+Die Gleichung der Orthogonaltrajektorien l"asst sich nat"urlich noch
+allgemeiner l"osen, wir suchen die Trajektorien, die durch den Punkt
+$(x_0,y_0)$ verlaufen.
+Das Gleichungssystem f"ur die Funktionen $x(s)$ und $y(s)$ wird
+\begin{align*}
+x'&=a\\
+y'&=\sqrt{y-a^2}
+\end{align*}
+Die L"osung f"ur $x(s)$, die f"ur $s=0$ den Wert $x_0$ annimmt, ist
+\[
+x(s)=as+x_0.
+\]
+Die Gleichung f"ur $y(s)$ kann wieder mit Separation gel"ost werden,
+man findet
+\[
+y(s)=a^2+\frac14(s+s_0)^2.
+\]
+Damit $y(0)=y_0$ wird, muss 
+\[
+s_0=\pm 2\sqrt{y_0-a^2}
+\]
+gew"ahlt werden.
+Die allgemeine Form der L"osung ist dann
+\begin{align*}
+x(s)&=as+x_0
+\\
+y(s)&=a^2 + \frac14\left(s\pm2\sqrt{y_0-a^2}\right)^2
+\end{align*}
+Alle L"osungskurven sind also Parabeln durch den Punkt $(x_0,y_0)$,
+$a^2$ ist der kleinstm"ogliche Wert von $y$ ist (Abbildung~\ref{40000008:fata}).
+Der Wert $a=0$ liefert einen Lichtstrahl parallel zur $y$-Achse, f"ur $a^2=y_0$
+verl"auft der Strahl durch den Punkt $(x_0,y_0)$ horizontal.
+\end{diskussion}
+

@@ -2,10 +2,12 @@
 
 #declare	axisthickness = 0.015;
 
+/*
 #declare square = function(x) { x * x }
+*/
 
 #macro charpoint(y0, u0, xx)
-	<xx, u0 * exp(-xx), y0 + 0.5 * square(xx)>
+	<xx, u0 * exp(-xx), y0 + 0.5 * (xx * xx)>
 #end
 
 #macro surfacecharpoint(y0, xx)

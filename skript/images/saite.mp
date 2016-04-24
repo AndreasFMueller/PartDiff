@@ -31,12 +31,12 @@ pickup pencircle scaled 0.5pt;
 draw (20,7)--(40,7);
 drawarrow (20,7){dir340}--(40,-0.28);
 draw (40,7)--(40,-0.28);
-label.ulft(btex $-F\frac{\partial\psi}{\partial x}(x)$ etex, (-47,5));
+label.ulft(btex $-F\frac{\partial u}{\partial x}(x)$ etex, (-47,5));
 
 draw (-40,10)--(-20,10);
 draw (-40,2.72)--(-40,10);
 drawarrow (-20,10)--(-40,2.72);
-label.urt(btex $F\frac{\partial\psi}{\partial x}(x+\Delta x)$ etex, (47,5));
+label.urt(btex $F\frac{\partial u}{\partial x}(x+\Delta x)$ etex, (47,5));
 
 pickup pencircle scaled 0.3pt;
 draw (40,3)--(49,13);
@@ -57,7 +57,7 @@ label.lrt(btex $l$ etex, (140,0));
 pickup pencircle scaled 1pt;
 draw (-140,0)..(-40,-2)..(-20,10){dir20}..{dir340}(20,7)..(60,-4)..(140,0);
 
-label.top(btex $\psi(x, t)$ etex, (0,12));
+label.top(btex $u(x, t)$ etex, (0,12));
 
 endfig;
 

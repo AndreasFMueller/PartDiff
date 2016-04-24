@@ -1,12 +1,20 @@
+%
+% pdgl2ord.tex -- Klassifikation linearer PDGL zweiter Ordnung
+%
+% (c) 2016 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
 \chapter{Partielle Differentialgleichungen zweiter Ordnung\label{chapter-2ordnung}}
 \lhead{Lineare PDGL 2. Ordnung}
 Lineare Differentialgleichungen zweiter Ordnung haben die Form
 \begin{equation}
-\sum_{i,j=1}^na_{ij}\partial_i\partial_j u+\sum_{i=1}^nb_i\partial_i u+cu=f.
+\sum_{i,j=1}^na_{ij}\frac{\partial^2}{\partial x_i\,\partial x_j} u
++
+\sum_{i=1}^nb_i\frac{\partial}{\partial x_i} u+cu=f.
 \label{operator2ordnung}
 \end{equation}
 Alle Musterbeispiele im Kapitel \ref{chapter-beispiele} passen auf dieses 
-Beispiel. Trotz der oberfl"achlichen Gemeinsamkeit zeigen die L"osungen
+Beispiel.
+Trotz der oberfl"achlichen Gemeinsamkeit zeigen die L"osungen
 der Beispielgleichungen grunds"atzlich verschiedenes Verhalten.
 \begin{itemize}
 \item Die Wellengleichung hat L"osungen, die sich mit endlicher
@@ -20,67 +28,331 @@ keine Auswirkungen auf die Vergangenheit.
 \item "Andert man die Randbedingung der Poisson-Gleichung $\Delta \varphi=f$,
 "andert sich die L"osung sofort und "uberall im Gebiet.
 \end{itemize}
-In diesem Kapitel sollen partielle Differentialgleichungen zweiter Ordnung
-nach diesem Schema klassiert werden.
+In diesem Kapitel sollen lineare partielle Differentialgleichungen zweiter
+Ordnung klassifiziert werden, und es soll gezeigt werden, dass alle
+linearen partiellen Differentialgleichungen zweiter Ordnung im Wesentlichen
+in eine der drei eben genannten Kategorien fallen.
 
-\section{Typen von Differentialgleichungen zweiter Ordnung}
-\rhead{Klassifikation}
-Zun"achst betrachten wir nur die zweiten Ableitungen in (\ref{operator2ordnung}).
-F"ur eine zweimal stetig differenzierbare Funktion $u$ sind die zweiten
-Ableitungen unabh"angig von der Reihenfolge, also
-$\partial_i\partial_ju=\partial_j\partial_iu$.
-Durch Zusammenfassen von Termen mit vertauschten Indizes $i,j$ kann 
-erreichen, dass $a_{ij}=a_{ji}$ ist.
-Die Matrix $(a_{ij})$ ist also symmetrisch.
+\section{Standardform}
+\rhead{Standardform}
+In der Form (\ref{operator2ordnung}) wird die Differentialgleichung durch
+die Gr"ossen $(a_{ij})$, $b_i$ und $c$ bestimmt, die auch Funktionen
+der unabh"angigen Variablen $x_i$ sein k"onnen.
+Allerdings ist nicht jeder Koeffizient gleich bedeutend, schliesslich muss
+man davon ausgehen, dass eine "Anderung der Koordinaten auch die Koeffizienten
+$a_{ij}$ und $b_i$ ver"andern wird.
+In diesem Abschnitt sollen daher die unter Koordinatentransformationen
+unver"anderlichen Eigenschaften der Koeffizienten ermittelt werden,
+die f"ur eine Klassifikation verwendet werden k"onnen.
 
-\begin{definition}Ist $L$ ein linearer Differentialoperator zweiter Ordnung
-\[
-Lu=\sum_{i,j=1}^na_{ij}\partial_i\partial_ju,
-\]
-dann heisst die symmetrische Matrix
-$(a_{ij})$ das Symbol des Operators.
-\end{definition}
-
+\subsection{Lineare Transformationen der Koordinaten
+\label{lineare-transformation}}
 Eine Koordinatentransformation
 \[
 x_i=\sum_{j}t_{ij}x_j'
 \]
 transformiert die Ableitungen nach der Kettenregel
 \[
-\frac{\partial}{\partial x'_i}u(x)=\sum_{j=1}^nt_{ij}\frac{\partial}{\partial x_j}u(x).
+\frac{\partial u}{\partial x'_j}
+=
+\sum_{i=1}^n
+\frac{\partial x_i}{\partial x'_j} \frac{\partial u}{\partial x_i}
+=
+\sum_{i=1}^nt_{ij}\frac{\partial u}{\partial x_i}.
 \]
-Wir w"ahlen f"ur die Transformation eine Drehung, weil dann die
-inverse Matrix durch die transponierte Matrix gegeben ist, also
-\begin{align*}
-x'_j&=\sum_{i=1}^nx_it_{ij}.
-\\
-\sum_{i=1}^nt_{ij}\frac{\partial}{\partial x'_i}u&=\frac{\partial}{\partial x_j}u
-\end{align*}
-Damit kann man auch den Differentialoperator $L$ in den Ableitungen nach $x'_i$
-schreiben:
-\begin{align*}
-Lu&=\sum_{i,j=1}^na_{ij}\frac{\partial^2}{\partial x_i\partial x_j}u
-\\
-&=\sum_{i,j,k,l=1}^n a_{ij}
-t_{ki}\frac{\partial}{\partial x_k'}
-t_{lj}\frac{\partial}{\partial x_l'}u
-\\
-&=\sum_{i,j,k,l=1}^n
-t_{ki}a_{ij}t_{lj}\frac{\partial}{\partial x_k'}
-\frac{\partial}{\partial x_l'}u
-\end{align*}
-Wer lesen daraus ab, dass das Symbol $A$ des Operators $L$ in den Koordinaten
-$x_i$ durch die Koordinatentransformation auf die Koordinaten $x_j'$ 
-mit der Matrix $T=(t_{ij})$ transformiert wird durch
+Daraus l"asst sich bereits ableiten, wie die Koeffizienten $b_i$ in der
+Gleichung transformiert werden m"ussen.
+Wir bezeichnen die Koeffizienten der ersten Ableitungen in
+(\ref{operator2ordnung}) ausgedr"uckt in $x_i'$-Koordinaten mit
+$b_i'$.
+In beiden Koordinatensystemen muss der Term mit ersten Ableitungen gleich
+sein, es muss also
 \[
-A'=TAT^*.
+\sum_{i=1}^n b_i\frac{\partial u}{\partial x_i}
+=
+\sum_{i=1}^n b_i'\frac{\partial u}{\partial x_i'}
+=
+\sum_{i,j=1}^n b_i't_{ji}\frac{\partial u}{\partial x_j}
+=
+\sum_{j,i=1}^n b_j't_{ij}\frac{\partial u}{\partial x_i}
 \]
+gelten.
+Dies kann aber nur gelten, wenn
+\[
+b_i = \sum_{j=1}^n t_{ij}b_j'.
+\]
+Bezeichnen wir die zur Matrix $(t_{ij})$ inverse Matrix mit $(t'_{ij})$,
+dann k"onnen wir $b_i'$ durch $b_i$ 
+\[
+b_j'=\sum_{i=1}^n t'_{ji}b_i.
+\]
+Bezeichnen wir die Matrix mit Koeffizienten $t_{ij}$ als $T$ und den 
+Vektor mit Koeffizienten $b_i$ mit $b$, und analog f"ur $t_{ij}'$ und
+$b_i'$, dann k"onnen wir die Koordinatentransformation in Matrixform
+\[
+b=Tb'
+\qquad\Rightarrow\qquad
+b'=T^{-1}b=T'b
+\]
+schreiben.
+
+Analog k"onnen auch die zweiten Ableitungen behandelt werden.
+Zun"achst gilt f"ur die Ableitungen:
+\[
+\frac{\partial}{\partial x_i'}\frac{\partial}{\partial x_j'} u
+=
+\frac{\partial}{\partial x_i'}
+\sum_{k=1}^nt_{kj}\frac{\partial}{\partial x_k}u
+=
+\sum_{k,l=1}^nt_{li}t_{kj}\frac{\partial}{\partial x_l}\frac{\partial}{\partial x_k}u.
+\]
+Die transformierten Koordinaten $a'_{ij}$ m"ussen den gleichen Ausdruck
+zweiter Ordnung ergeben, es muss also
+\begin{align*}
+\sum_{i,j=1}^n
+a'_{ij}\frac{\partial}{\partial x_i'}\frac{\partial}{\partial x_j'} u
+&=
+\sum_{i,j=1}^n
+a_{ij}'
+\sum_{k,l=1}^n
+t_{li}t_{kj}\frac{\partial}{\partial x_l}\frac{\partial}{\partial x_k}u.
+=
+\sum_{k,l=1}^n
+\biggl(
+\sum_{i,j=1}^n
+a_{ij}'
+t_{li}t_{kj}
+\biggr)
+\frac{\partial}{\partial x_l}\frac{\partial}{\partial x_k}u
+\\
+&=
+\sum_{i,j=1}^n
+\underbrace{
+\biggl(
+\sum_{k,l=1}^n
+a_{lk}'
+t_{il}t_{jk}
+\biggr)}_{\textstyle a_{ij}}
+\frac{\partial}{\partial x_i}\frac{\partial}{\partial x_j}u
+\end{align*}
+gelten.
+Die Koeffizienten $a_{ij}$ m"ussen also nach der Regel
+\[
+a_{ij}=\sum_{k,l=1}^n t_{il}a_{lk}'t_{jk}
+\]
+transformiert werden, oder in Matrixform
+\[
+A=TA'T^t
+\qquad\Rightarrow\qquad
+A'=T'AT'^t.
+\]
+Diese Regeln gelten nat"urlich nur, wenn die Gr"ossen $a_{ij}$ und $b_i$
+Konstanten sind.
+Andernfalls treten zus"atzlich Terme auf, die von den Ableitungen der
+Koeffizienten herr"uhren.
+
+\subsection{Einfluss der Terme erster Ordnung
+\label{einfluss-terme-erster-ordnung}}
+Wir wollen zeigen, dass f"ur die Frage, welche Randwerte wo einen
+Einfluss auf die L"osung haben, f"ur die Koeffizienten $b_i$ nicht
+von Bedeutung sind.
+
+Bei einer gew"ohnlichen Differentialgleichung zweiter Ordnung beschreibt
+der Koeffizient der ersten Ableitung die D"ampfung, die zu exponentieller
+Abnahme der Amplitude f"uhrt.
+Indem man die L"osung mit Hilfe eines Exponentialfaktors wieder verst"arkt,
+kann man die D"ampfung zum Verschwinden bringen, und klarer machen,
+ob Schwingungsl"osungen oder exponentiell abfallende L"osungen vorliegen.
+
+Dasselbe gilt f"ur die L"osung $u(x)$ der Differentialgleichung
+(\ref{operator2ordnung}).
+Wir betrachen die Funktion
+\[
+v(x)=e^{k\cdot x} u(x),
+\qquad
+k\cdot x = \sum_{i=1}^n k_ix_i \quad(\text{Skalarprodukt})
+\]
+und suchen eine partielle Differentialgleichung, die $v$ genau dann l"ost,
+wenn $u$ die Differentialgleichung
+(\ref{operator2ordnung}) l"ost.
+
+Dazu berechnen wir die Wirkung des Differentialoperators, der nur 
+aus den zweiten Ableitungen besteht:
+\[
+M=\sum_{i,j=1}^n a_{ij}\frac{\partial^2}{\partial x_i\,\partial x_j}.
+\]
+Seine Wirkung auf der Funktion $v$ ist
+\begin{align*}
+Mv
+&=
+\sum_{i,j=1}^na_{ij}
+\frac{\partial}{\partial x_i}
+\frac{\partial}{\partial x_j} e^{k\cdot x}u
+\\
+&=
+e^{k\cdot x}
+\biggl(
+\sum_{i,j=1}^na_{ij}
+\frac{\partial^2 u}{\partial x_i\,\partial x_j}
++
+\sum_{i,j=1}^n a_{ij}k_i\frac{\partial u}{\partial x_j}
++
+\sum_{i,j=1}^n a_{ij}k_j\frac{\partial u}{\partial x_i}
++
+\sum_{i,j=1}^n a_{ij}k_ik_ju
+\biggr)
+\\
+&=
+e^{k\cdot x}
+\biggl(
+\sum_{i,j=1}^na_{ij}
+\frac{\partial^2 u}{\partial x_i\,\partial x_j}
++
+2\sum_{i,j=1}^n a_{ij}k_i\frac{\partial u}{\partial x_j}
++
+\sum_{i,j=1}^n a_{ij}k_ik_ju
+\biggr)
+\end{align*}
+Im letzten Schritt haben wir verwendet, dass wir die Laufvariablen
+in der zweiten Summe beliebig umbenennen k"onnen.
+
+Jetzt nutzen wir die M"oglichkeit, die Koeffizienten $k_i$ f"ur unsere
+Zwecke geeignet zu w"ahlen.
+Wir versuchen zu erreichen, dass der mittlere Term genau dem Term 
+der ersten Ableitungen in (\ref{operator2ordnung}) entspricht.
+Dazu muss gelten
+\begin{equation}
+b_j=2\sum_{i=1}^n a_{ij}k_i
+\label{bequation}
+\end{equation}
+Falls die Matrix $A$ der Koeffizienten $a_{ij}$ regul"ar ist, l"asst
+sich dieses lineare Gleichungssystem l"osen, es gilt
+\[
+k=
+{A^t}^{-1}
+\frac{b}2.
+\]
+Schreiben wir ausserdem
+\[
+\alpha = \sum_{i,j=1}^n a_{ij}k_ik_j,
+\]
+dann folgt, dass die Gleichung $Lu=f$ genau dann erf"ullt ist, wenn
+\begin{align}
+Mv
+&=
+e^{k\cdot x}\biggl(
+\sum_{i,j=1}^n a_{ij}\frac{\partial^2}{\partial x_i\,\partial x_j}u
++\sum_{i=1}^n b_i\frac{\partial u}{\partial x_i}+\alpha u
+\biggr)
+\\
+&=
+e^{k\cdot x}
+(L+\alpha -c)u
+=
+e^{k\cdot x}Lu + (\alpha -c)v
+\notag
+\\
+(M-(\alpha - c))v&=e^{k\cdot x}Lu=e^{k\cdot x}f.
+\label{reducedoperator}
+\end{align}
+Die Gleichung (\ref{operator2ordnung}) wird also genau dann von der
+Funktion $u$ gel"ost, wenn die Funktion $v(x)=e^{k\cdot x}u(x)$ 
+die Gleichung (\ref{reducedoperator}) l"ost.
+Auch wird die L"osung $u$ der Gleichung (\ref{operator2ordnung})
+im Punkt $x$ 
+genau dann durch eine "Anderung der Randbedingung ver"andert, 
+wenn die gleiche "Anderung der Randbedingung die L"osung $v$ 
+der Gleichung (\ref{reducedoperator}) im selben Punkt ver"andert.
+
+Zusammenfassend k"onnen wir daher sagen, dass falls die Matrix der
+Koeffizienten $a_{ij}$ regul"ar ist, oder mindestens das Gleichungssystem
+(\ref{bequation}) l"osbar ist, f"ur die Beantwortung der Anfangs
+dieses Kapitels gestellten Fragen die Terme der ersten Ableitungen
+ignoriert werden k"onnen.
+Falls $a_{ij}$ nicht regul"ar ist, dann lassen sich die Terme der
+ersten Ableitungen nicht alle wegtransformieren.
+
+\subsection{Symbolmatrix}
+Da die zweiten Ableitungen untereinandern vertauschen, also 
+\[
+\frac{\partial^2}{\partial x_i\,\partial x_j}
+=
+\frac{\partial^2}{\partial x_j\,\partial x_i},
+\]
+sind die Koeffizienten $a_{ij}$ und $a_{ji}$ voneinander abh"angig.
+Insbesondere kann man zus"atzlich verlangen, dass $a_{ij}=a_{ji}$,
+dass also die Matrix $A$ symmetrisch ist.
+
+\begin{definition}Ist $L$ ein linearer Differentialoperator zweiter Ordnung
+\[
+Lu=\sum_{i,j=1}^na_{ij}\frac{\partial u}{\partial x_i\,\partial x_j},
+\]
+dann heisst die symmetrische Matrix
+$(a_{ij})$ das Symbol des Operators.
+\end{definition}
+
+Im Abschnitt~\ref{einfluss-terme-erster-ordnung} haben wir gesehen,
+dass die Terme mit ersten Ableitungen wegtransformiert werden k"onnen,
+wenn die Gleichung 
+\[
+Ak=\frac{b}2
+\]
+l"osbar ist.
+Wenn $A$ nicht regul"ar ist, dann kann $b$ nur dann wegtransformiert werden,
+wenn $b$ im Bild der Matrix $A$ liegt.
+Vektoren senkrecht zum Bild k"onnen dagegen nicht wegtransformiert werden.
+Falls also $b\perp \operatorname{im} A$, dann ist
+\[
+b\cdot Ax=(A^tb)\cdot x\;\forall x
+\qquad\Rightarrow\qquad
+Ab=0,
+\]
+ein Vektor $b$ im Kern von $A$ kann also nicht wegtransformiert werden.
+
+\begin{beispiel}
+Als Beispiel betrachten wir den Operator 
+\[
+L
+=
+\sum_{i=2}^n\frac{\partial^2}{\partial x_i^2}
++
+\sum_{i=1}^nb_i\frac{\partial}{\partial x_i}
+\]
+mit der Symbolmatrix
+\[
+A=\begin{pmatrix}
+      0&      0& \dots&0\\
+      0&      1& \dots&0\\
+\vdots &\vdots &\ddots&\vdots\\
+      0&      0&\dots &1
+\end{pmatrix}
+\]
+Der Vektor $e_1$ ist im Kern von $A$, also l"asst sich die erste
+Ableitung nach $x_1$ nicht wegtransformieren, die einfachste
+Form, die wir f"ur diesen Operator erreichen k"onnen ist daher
+\[
+\sum_{i=2}^n\frac{\partial^2}{\partial x_i^2}
++
+\frac{\partial}{\partial x_1}.
+\]
+Dies ist der Operator, den wir f"ur die W"armeleitungsgleichung
+kennengelernt haben.
+\end{beispiel}
+
+\section{Typen von Differentialgleichungen zweiter Ordnung}
+\rhead{Klassifikation}
+Im Abschnitt~\ref{lineare-transformation} wurde gezeigt, dass die Symbolmatrix
+$A$ bei einer Koordinatentransformation mit der Matrix $T$ gem"ass
+\[
+A'=TAT^t 
+\]
+transformiert wird.
 In der linearen Algebra lernt man, dass man zu einer symmetrischen
-Matrix $A$ immer eine Drehmatrix $T$ finden kann, so dass
-$A'=TAT^*$ Diagonalform hat, wobei die Diagonalelemente die
+Matrix $A$ immer eine orthogonale Matrix $T$ finden kann, so dass
+$A'=TAT^t$ Diagonalform hat, wobei die Diagonalelemente die
 Eigenwerte der Eigenvektoren sind.
 \[
-TAT^*
+TAT^t
 =
 \begin{pmatrix}\lambda_1&\dots&0\\
 \vdots&\ddots&\vdots\\
@@ -104,8 +376,14 @@ Form
 erh"alt, wobei die Zahlen $\varepsilon_i$ die Werte, $1$, $-1$ oder $0$
 haben k"onnen.
 
+Ausserdem k"onnen wir das Vorzeichen der ganzen Differentialgleichung
+umkehren, dadurch "andert die Symbolmatrix das Vorzeichen, und die
+Vorzeichen der Eigenwerte kehren um.
+Man kann daher immer erreichen, dass die Mehrheit der nicht
+verschwindenden Eigenwerte positiv sind.
+
 Differentialoperatoren zweiter Ordnung werden also charakterisiert durch
-die Vorzeichen der Eigenwerte des Symbols. Wir bezeichnen die Anzahl
+die Vorzeichen der Eigenwerte der Symbolmatrix. Wir bezeichnen die Anzahl
 der positiven Eigenwerte mit $P$, die Anzahl der negativen Eigenwerte
 mit $N$, und die Anzahl der verschwindenden Eigenwerte mit $Z$.
 Die Beispiele des Kapitels \ref{chapter-beispiele} k"onnen wie
@@ -189,4 +467,77 @@ zu studieren:
 \end{align*}
 was wir in dieser Reihenfolge in den folgenden drei Kapiteln tun
 werden.
+
+\section{Aufteilung der L"osung}
+\rhead{Aufteilung der L"osung}
+Wir m"ochten den L"osungsraum einer linearen Differentialgleichung
+zweiter Ordnung mit dem Operator $L$ besser verstehen.
+Wir gehen daher aus von dem Problem
+\begin{equation}
+\begin{aligned}
+Lu&=f&&\qquad\text{in $\Omega$}\\
+ u&=g&&\qquad\text{auf $\partial\Omega$,}
+\end{aligned}
+\label{pdgl2ord:allg}
+\end{equation}
+und suchen eine L"osung.
+Da die Gleichung linear ist, k"onnen wir die L"osung als Linearkombination
+von Funktionen aufbauen, welche das Problem teilweise l"osen.
+
+Als erstes k"onnen wir versuchen, eine L"osung der Differentialgleichung
+ohne Ber"ucksichtigung der Randbedingungen zu l"osen.
+Nennen wir die L"osung $u_p$, dann gilt
+\begin{equation}
+Lu_p=f\qquad\text{in $\Omega$.}
+\label{pdgl2ord:up}
+\end{equation}
+"Uber die Werte von $u_p$ auf dem Rand $\partial\Omega$ von $\Omega$
+setzen wir nichts voraus.
+
+Um das urspr"ungliche Problem zu l"osen, brauchen wir also noch einen
+zweiten Summanden $u_r$. 
+Damit $u_p+u_r$ uns der L"osung des Problems n"aher bringt, muss in
+$\Omega$ immer noch die Differentialgleichung gelten:
+\[
+L(u_p+u_r)=f+Lu_r=f\qquad\Rightarrow\qquad Lu_r=0.
+\qquad\text{in $\Omega$.}
+\]
+Ausserdem wollen wir erreichen, dass die Summe die Randbedingung erf"ullt
+\[
+u_p+u_r=g\qquad\Rightarrow\qquad u_r=g-u_p\qquad\text{auf $\partial\Omega$.}
+\]
+Die Funktion $u_r$ muss also das folgende Problem l"osen:
+\begin{equation}
+\begin{aligned}
+Lu_r&=0&&\qquad\text{in $\Omega$}\\
+ u_r&=g-u_p&&\qquad\text{auf $\partial\Omega$}
+\end{aligned}
+\label{pdgl2ord:ur}
+\end{equation}
+Damit haben wir in $u_p+u_r$ eine L"osung gefunden.
+
+Es k"onnte aber immer noch sein, dass das urspr"ungliche Problem weitere
+L"osungen hat.
+Solche weiteren L"osungen m"ussen aus $u_p+u_r$ durch hinzuf"ugen eines
+weiteren Summanden $u_h$ zu bekommen sein, der aber die Differentialgleichung
+im Inneren und die Randbedingungen nicht zerst"oren darf:
+\begin{equation}
+\begin{aligned}
+L(u_p+u_r+u_h)&=f+Lu_h&&\Rightarrow&Lu_h&=0&&\text{in $\Omega$}\\
+  u_p+u_r+u_h &=g +u_h&&\Rightarrow& u_h&=0&&\text{auf $\partial\Omega$}
+\end{aligned}
+\label{pdgl2ord:uh}
+\end{equation}
+Die L"osung des Problems~(\ref{pdgl2ord:allg}) setzt sich also aus
+drei Summanden $u_p$, $u_r$ und $u_h$ zusammen:
+\begin{enumerate}
+\item $u_p$ erf"ullt die Differentialgleichung~(\ref{pdgl2ord:up}), ohne
+Ber"ucksichtigung irgendwelcher Randbedingungen.
+\item $u_r$ l"ost das homogene Problem~(\ref{pdgl2ord:ur}), die Summe
+$u_p+u_r$ l"ost das urspr"ungliche Problem.
+\item Wenn das homogene Problem~(\ref{pdgl2ord:uh}) mit homogenen
+Randbedingungen nichttriviale L"osungen hat, dann ist die L"osung
+des urspr"unglichen Problems nicht eindeutig.
+\end{enumerate}
+
 

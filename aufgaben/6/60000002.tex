@@ -1,0 +1,144 @@
+Welche der folgenden partiellen Differentialoperatoren ist
+elliptisch, hyperbolisch, parabolisch?
+\begin{teilaufgaben}
+\item \[
+\frac{\partial^2 u}{\partial x^2}
++2\frac{\partial u}{\partial x}\frac{\partial u}{\partial y}
++\frac{\partial^2u}{\partial y^2}
+\]
+\item \[
+\frac{\partial^2 u}{\partial x^2}
++\frac{\partial^2 u}{\partial x\partial z}
++\frac{\partial^2 u}{\partial z^2}
+\]
+\item \[
+2\frac{\partial^2u}{\partial^2x}
++2\frac{\partial^2u}{\partial^2y}
++2\frac{\partial^2u}{\partial^2z}
+-2\frac{\partial^2u}{\partial x\partial y}
+-2\frac{\partial^2u}{\partial y\partial z}
+\]
+\item Ein partieller Differentialoperator in den Variablen $x$ und $y$,
+so dass die Koeffizienten von $\partial_x^2$ und $\partial_y^2$
+verschiedenes Vorzeichen haben.
+\item \[
+2\frac{\partial^2u}{\partial x\partial z}
++\frac{\partial^2u}{\partial x^2}
++2\frac{\partial^2u}{\partial x\partial y}
++\frac{\partial^2u}{\partial z^2}
++2\frac{\partial^2u}{\partial y\partial z}
++\frac{\partial^2u}{\partial y^2}
+\]
+\item
+\[
+\frac{\partial^2u}{\partial x\partial y}
++\frac{\partial^2u}{\partial y\partial z}
++\frac{\partial^2u}{\partial z\partial x}
+\]
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item Dies ist kein linearer Differentialoperator, er kann also nicht
+wie gew"unscht klassifiziert werden.
+\item Die Symbolmatrix ist
+\[
+\begin{pmatrix}
+1&0&\frac12\\
+0&0&0\\
+\frac12&0&1
+\end{pmatrix}
+\]
+Das charakteristische Polynom ist die Determinante von
+\[
+\left|\,\begin{matrix}
+1-\lambda&0&\frac12\\
+0&-\lambda&0\\
+\frac12&0&1-\lambda
+\end{matrix}
+\,\right|,
+\]
+die man nach der zweiten Zeile entwickeln kann:
+\[
+-\lambda\cdot\left|\,
+\begin{matrix}1-\lambda&\frac12\\\frac12&1-\lambda\end{matrix}
+\,\right|
+=
+-\lambda\biggl((1-\lambda)^2-\frac14\biggr)
+=
+-\lambda\left(\lambda^2-2\lambda+\frac34\right)
+=
+-\lambda(\lambda-\frac12)(\lambda-\frac32).
+\]
+Die Matrix hat also zwei positive Eigenwerte und den Eigenwert $0$,
+der Operator ist also parabolisch.
+\item Die Symbolmatrix ist
+\[
+\begin{pmatrix}
+2&-1&0\\
+-1&2&-1\\
+0&-1&2
+\end{pmatrix}
+\]
+mit dem charakteristischen Polynom
+\begin{align*}
+\left|\,
+\begin{matrix}
+2-\lambda&-1&0\\
+-1&2-\lambda&-1\\
+0&-1&2-\lambda
+\end{matrix}\,\right|
+&=(2-\lambda^3)+2(2-\lambda)
+\\
+&=(2-\lambda)((2-\lambda)^2+2)
+\\
+&=(2-\lambda)(\lambda^2-4\lambda+6).
+\end{align*}
+Am konstanten Term im letzten Faktor kann man ablesen, dass
+seine zwei Nullstellen das gleiche Vorzeichen haben. Da der
+Koeffizient von $\lambda$ negativ ist, kann man ablesen, dass
+beide positiv sind. Da auch der erste Faktor eine positive
+Nullstelle hat, sind alle Nullstellen positiv, der Operator ist
+also elliptisch.
+\item Die Symbolmatrix eines solchen Differentialoperators hat die Form
+\[
+\begin{pmatrix}a&b\\b&c\end{pmatrix}
+\]
+mit Determinante $ac-b^2$. Da $a$ und $c$ verschiedene Vorzeichen
+haben, ist $ac< 0$. Da $b^2\ge 0$, ist $ac-b^2<0$, also haben
+die beiden Eigenwerte verschiedene Vorzeichen, der Differentialoperator
+ist hyperbolisch.
+\item Die Symbolmatrix ist
+\[
+\begin{pmatrix}1&1&1\\1&1&1\\1&1&1\end{pmatrix}
+\]
+Sie hat den Rang 1, also hat sie einen doppelten Eigenwert $0$,
+und f"allt damit aus dem Klassifikationsschema. Die parabolischen
+Operatoren, die als einzige verschwindende Eigenwerte haben d"urfen,
+haben h"ochstens einen.
+\item Die Symbolmatrix dieses Differentialoperators ist
+\[
+\begin{pmatrix}
+0&1&1\\
+1&0&1\\
+1&1&0\\
+\end{pmatrix}
+\]
+Das charakteristische Polynom ist
+\[
+\left|\,
+\begin{matrix}
+-\lambda&1&1\\
+1&-\lambda&1\\
+1&1&-\lambda\\
+\end{matrix}
+\,\right|
+=-\lambda^3+3\lambda+2
+\]
+F"ur $\lambda=2$ nimmt es den Wert $2$ an, also m"ussen alle Eigenwerte
+von $0$ verschieden sein. Die Spur der Matrix ist $0$, die Summe der
+Eigenwerte also auch. Daher k"onnen nicht alle Eigenwerte das gleiche
+Vorzeichen haben. Da die Determinante positiv ist, m"ussen zwei Eigenwerte
+negativ sein und einer positiv. Folglich ist der Operator hyperbolisch.
+\end{teilaufgaben}
+\end{loesung}

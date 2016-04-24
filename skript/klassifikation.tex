@@ -25,6 +25,7 @@ Zu kl"aren ist folgendes:
 Wir schreiben oft auch kompakter $x=(x_1,\dots,x_n)$ f"ur die Punkte
 aus $\mathbb R^n$.
 
+\rhead{Differentialgleichungen}
 \section{Differentialgleichungen\label{klassifikation:differentialgleichungen}}
 Eine partielle Differentialgleichung verkn"upft die Funktionswerte
 $u(x_1,\dots,x_n)$ mit den Werten der partiellen Ableitungen
@@ -45,7 +46,7 @@ W"ahrend es bei einer Funktion von einer Variablen nur eine Ableitung
 jeder Ordnung gibt, hat eine Funktion von $n$ Variablen $n^k$ Ableitungen
 der Ordnung $k$.
 
-Eine Differntialgleichung liegt vor, wenn bekannt ist, wie verschiedenen
+Eine Differentialgleichung liegt vor, wenn bekannt ist, wie verschiedenen
 Ableitungen miteinander verkn"upft werden m"ussen.
 Die Wellengleichung hatte zum Beispiel die Form
 \begin{equation}
@@ -328,10 +329,11 @@ erh"alt man eine zus"atzliche Gleichung:
 \]
 denn beide Terme stehen ja eigentlich f"ur $\partial_{\mathbf k}u$.
  
+\rhead{Gebiete}
 \section{Gebiete\label{klassifikation:gebiete}}
 Bei gew"ohnlichen Differentialgleichungen ist eine
 Funktion von nur einer Variablen gesucht, das Definitionsgebiet ist
-daher immer ein Interval ist.
+daher immer ein Intervall.
 Eine L"osung ist dann festgelegt durch die Differentialgleichung
 und bestimmte Werte an einem (Anfangswerte) oder beiden (Randwertproblem)
 Enden des Definitionsgebietes.
@@ -437,7 +439,7 @@ festzulegen, braucht man insgesamt zwei Bedingungen, zum Beispiel
 \end{itemize}
 
 \begin{beispiel}
-Selbst in dem einfachen Beispiel einer linearen Differentialgleichunge
+Selbst in dem einfachen Beispiel einer linearen Differentialgleichung
 zweiter Ordnung ist nicht jede beliebige Kombination von Randwertvorgaben
 m"oglich. Die Gleichung
 \[
@@ -796,7 +798,7 @@ von Randwerten und Normalableitungen vorzugeben.
 Dies gen"ugt jedoch noch nicht, zu entscheiden, ob durch diese
 Bedingungen die L"osungen eindeutig festgelegt sind.
 Dazu ist ein vertieftere Theorie n"otig. W"ahrend bei den gew"ohnlichen
-Differentialgieichungen eine relativ einfache Methode (Picard-Iteration)
+Differentialgleichungen eine relativ einfache Methode (Picard-Iteration)
 unter relativ milden Voraussetzungen zu beweisen  erlaubt, dass
 gew"ohnliche Differentialgleichungen zu gegebenen Anfangswerten eine
 eindeutig bestimmte L"osung haben, wenigstens f"ur eine gewisses Zeitinterval,
@@ -806,7 +808,7 @@ m"oglich, einige davon werden in den kommenden Kapiteln behandelt.
 
 \section{L"osung einer partiellen Differentialgleichung\label{klassifikation:loesung}}
 Zur L"osung einer partiellen Differentialgleichung m"ussen also
-drei Dinge vorgeben sein
+drei Dinge vorgegeben sein
 \begin{enumerate}
 \item Eine Differentialgleichung
 \item Ein Gebiet $\Omega$
@@ -851,7 +853,7 @@ Die Gleichung heisst homogen, wenn $f=0$ ist.
 Damit diese Probleme "uberhaupt eine L"osung haben, m"ussen noch 
 Randbedingungen hinzugef"ugt werden.
 Auch diese lassen sich in der Form linearer Gleichungen zwischen den 
-den Funktionswerten und den Normalableitungen von $\psi$ auf dem Rand des
+Funktionswerten und den Normalableitungen von $\psi$ auf dem Rand des
 Gebietes gegeben:
 \begin{align*}
 a\psi(x)+
@@ -870,6 +872,7 @@ L"osungen der homogenen Gleichung under homogenen Randbedingungen:
 +\sum_{i=1}^na_i(x)\partial_i
 (\alpha_1\psi_1(x)+\alpha_2\psi_2(x))
 \\
++
 \alpha_1
 &\sum_{i,j=1}^n a_{ij}(x)\partial_i \partial_j
 \psi_1(x)
@@ -885,7 +888,7 @@ L"osungen der homogenen Gleichung under homogenen Randbedingungen:
 +
 \alpha_2
 \sum_{i=1}^na_i(x)\partial_i
-\psi_2(x))
+\psi_2(x)
 =0
 \end{align*}
 oder f"ur die Randbedingung
@@ -1060,7 +1063,7 @@ von partiellen Differentialgleichungen erster Ordnung reduziert werden
 (\ref{klassifikation:umwandlung}).
 \item Bei lineare Differentialgleichungen ist die Funktion $F$ linear
 in der gesuchten Funktion und den partiellen Ableitungen
-(\label{klassifikation:linear}). In zwei
+(\ref{klassifikation:linear}). In zwei
 Dimensionen ist $F(x,y,u,p,q)$ linear in $u$, $p$ und $q$.
 \item Eine quasilineare Differentialgleichung ist linear in den
 partiellen Ableitungen der gesuchten Funktion, aber nicht unbedingt
@@ -1070,9 +1073,9 @@ ist, hat einen entscheidenden Einfluss auf die L"osungen (\ref{klassifikation:ge
 \item Die L"osung ist erst eindeutig bestimmt, wenn geeignete Randbedingungen
 vorgegeben sind (\ref{klassifikation:randbedingungen}). 
 \item Bei partiellen Differentialgleichungen erster Ordnung sind typischerweise
-Randwert f"ur einen Teil des Randes vorzugeben.
+Randwerte f"ur einen Teil des Randes vorzugeben.
 \item Bei partiellen Differentialgleichungen zweiter Ordnung sind
-Randwert (Dirichlet-Randbedingungen,
+Randwert (Dirichlet-Rand\-bedingungen,
 (\ref{klassifikation:dirichlet-randbedingung}))
 und/oder die Normalableitung
 (Neumann-Randbedingung (\ref{klassifikation:neumann-randbedingung})

@@ -9,192 +9,103 @@
 \usetheme[hideothersubsections,hidetitle]{Hannover}
 }
 \title[]{Partielle Differentialgleichungen}
-\subtitle{5. Sitzung: Transformation II, Klassifikation}
-\date[18.~M"arz 2015]{18.~M"arz 2015}
+\subtitle{5. Sitzung: lineare PDGL 2. Ordnung, Klassifikation}
+\date[23.~M"arz 2016]{23.~M"arz 2016}
 \author{Prof.~Dr.~Andreas M"uller}
 \begin{document}
 
+
 \begin{frame}
-\section{Transformation}
 \titlepage
 \end{frame}
 
-\begin{frame}
-\frametitle{Differentialgleichung}
+\section{2. Ordnung}
 
-Wellengleichung:
+\begin{frame}
+\frametitle{Linearer Differentialoperator 2. Ordnung}
+Operator:
 \[
-\frac{1}{c^2}
-\frac{\partial^2 u}{\partial t^2}
+L
 =
-\frac{{\color{red}\partial^2} u}{{\color{red}\partial x^2}},
+\sum_{i,j=1}^n a_{ij}(x)\frac{\partial^2}{\partial x_i\partial x_j}
++
+\sum_{i=1}^n b_i(x)\frac{\partial}{\partial x_i}
++
+c(x)
 \]
-Gebiet:
+Homogene Gleichung:
 \[
-\Omega = \mathbb R^+ \times {\color{red}(0,2\pi)} \to \mathbb R
+Lu=0\qquad\text{in $\Omega$}
 \]
-Randbedingungen:
-\begin{align*}
-u(t,    0)&= 0&u(0,{\color{red}x})&=f({\color{red}x})\\
-u(t, 2\pi)&= 0&\frac{\partial}{\partial t}u(0,{\color{red}x})&=g({\color{red}x})
-\end{align*}
-Fourierkoeffizienten von $f$ und $g$: $b_k^{(f)}$ und $b^{(g)}_k$
+Inhomogene Gleichung
+\[
+Lu=f\qquad\text{in $\Omega$}
+\]
+\end{frame}
+
+\begin{frame}
+\frametitle{L"osungsmenge}
+{\bf Homogene Gleichung:}
+
+\[
+{\mathbb L}
+=\{
+u\colon \Omega\to \mathbb R\,|\, Lu=f
+\}
+\]
+
+\bigskip
+
+{\bf Inhomogene Gleichung:}
+
+\[
+{\mathbb L}_h
+=\{
+u\colon \Omega\to \mathbb R\,|\, Lu=0
+\}
+\]
+
+{\bf Allgemein:}
+\[
+{\mathbb L} = u_p + {\mathbb L}_h
+=\{u_p+u_h\,|\,u_h\in\mathbb L_h\}
+\]
+$u_p$ heisst partikul"are L"osung.
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Funktion von $x$ und $t$}
+\frametitle{L"osungsalgorithmus}
+Problemstellung:
+\begin{align*}
+Lu&=f\quad\text{in $\Omega$,}
+&
+ u&=g\quad\text{auf $\partial\Omega$}
+\end{align*}
 
-%$u$ eine Funktion von $x$ und $t$:
-%\[
-%u\colon (0,2\pi)\times \mathbb R^+\to \mathbb R
-%\]
-Fourierkoeffizienten h"angen von $t$ ab:
-\[
-u(t,x)=\frac{a_0(t)}2+\sum_{k=1}^\infty \bigl(a_k(t)\cos kx+b_k(t)\sin kx\bigr)
-\]
-Fourier-Transformation:
-\[
-{\cal F}\colon
-u\mapsto
-a_0(t), a_k(t), b_k(t)
-\]
-Implizite Separation:
 \begin{enumerate}
-\item Ortsabh"angigkeit in $\cos kx$ und $\sin kx$
-\item Zeitabh"angigkeit in $a_k(t)$ und $b_k(t)$
+\item Partikul"are L"osung $u_p$ (ohne Randwerte)
+\begin{align*}
+Lu_p&=f\quad\text{in $\Omega$}
+\end{align*}
+\item
+L"osung des Randwertproblems $u_r\in\mathbb L_h$
+\begin{align*}
+Lu_r&=0    \quad\text{in $\Omega$,}&
+ u_r&=g-u_p\quad\text{auf $\partial\Omega$}
+\end{align*}
+\item
+L"osung $u_h$ mit
+\begin{align*}
+Lu_h&=0\quad\text{in $\Omega$,}
+&
+ u_h&=0\quad\text{auf $\partial\Omega$}
+\end{align*}
 \end{enumerate}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Transformation}
-Randbedingungen:
+Zusammen:
 \[
-a_0=0\qquad
-a_k=0\;\forall k > 0
+u = u_p+u_r+u_h
 \]
-Differentialgleichung:
-\begin{align*}
-\frac{1}{c^2}\ddot b_k(t)&= {\color{red}-k^2}b_k(t)
-\end{align*}
-Anfangsbedingung:
-\begin{align*}
-b_k(0)&= b_k^{(f)}& \dot b_k(0)&=b_k^{(g)}
-\end{align*}
-{\bf Gew"ohnliche} Differentialgleichungen f"ur die Fourier-Koeffizienten
-\end{frame}
-
-\begin{frame}
-\frametitle{Idee}
-
-{\bf Lineare} Transformation $\cal T$ mit folgenden Eigenschaften
-
-\begin{align*}
-u({\color{red}x},y)&&&\mapsto &&{\cal T}u(k,y)
-\\
-\frac{\partial u}{\partial y}&&&\mapsto&&\frac{\partial{\cal T}u}{\partial y}(k,y)
-\\
-\frac{{\color{red}\partial} u}{\color{red}\partial x}&&&\mapsto&&\text{{\color{red}algebraischer Ausdruck} mit $\displaystyle {\cal T}u(k,y)$}
-\\
-\text{PDGL}&&&\mapsto&&\text{gew"ohnliche DGL f"ur $y\mapsto {\cal T}u(k,y)$}
-\\
-           &&&       &&\text{algebraische Gleichung in $k$}
-\\
-\text{L"osung:}&&&   &&{\cal T}^{-1}({\cal T}u)(x,y)
-\end{align*}
-D.~h.~{\color{red}$x$-Ableitung} wird in eine {\color{red}algebraische Operation} transformiert
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Laplace-Transformation}
-\begin{definition}
-$f\colon \mathbb R^+\to\mathbb R$ hat Laplace-Transformierte
-\[
-{\cal L}f(s)=\int_0^\infty f(t)e^{-st}\,dt
-\]
-\end{definition}
-\pause
-\begin{center}
-\begin{tabular}{>{$}c<{$}>{$\displaystyle}c<{$}}
-f(t)&({\cal L}f)(s)\\
-\hline
-c&\frac{c\mathstrut}{s\mathstrut}\\
-t^n&\frac{n!\mathstrut}{s^{n+1}\mathstrut}\\
-e^{at}&\frac{1\mathstrut}{s-a\mathstrut}\\
-\sin(at)&\frac{a\mathstrut}{s^2+a^2\mathstrut}\\
-\cos(at)&\frac{s\mathstrut}{s^2+a^2\mathstrut}\\
-\hline
-\end{tabular}
-\end{center}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Ableitung}
-
-\begin{align*}
-({\cal L}f')(s)
-&=
-\int_0^\infty \underbrace{\mathstrut f'(t)}_{\textstyle\uparrow}\underbrace{\mathstrut e^{-st}}_{\textstyle\downarrow}\,dt
-=
-\underbrace{\biggl[f(t)e^{-st}\biggr]_0^\infty}_{\textstyle-f(0)}
-+s\underbrace{\int_0^\infty f(t)e^{-st}\,dt}_{\textstyle({\cal L}f)(s)}
-\end{align*}
-
-\pause
-
-\begin{center}
-\begin{tabular}{>{$}l<{$}>{$\displaystyle}l<{$}}
-f(t)&({\cal L}f)(s)\mathstrut\\
-\hline
-f'(t)&s({\cal L}f)(s)-f(0)\\
-f''(t)&s^2({\cal L}f)(s)-sf(0)-f'(0)\\
-\dots&\dots\\
-f^{(n)}(t)&s^n({\cal L}f)(s)-s^{n-1}f(0)-s^{n-2}f'(0)-\dots - f^{(n-1)}(0)\\
-\hline
-\end{tabular}
-\end{center}
-
-Ziel erreicht:
-\[
-\text{$n$-te Ableitung}\rightarrow \text{Multiplikation mit $s^n$}
-\]
-\end{frame}
-
-\begin{frame}
-\frametitle{R"ucktransformation}
-\begin{enumerate}
-\item ${\cal L}$ linear $\Rightarrow$ ${\cal L}^{-1}$ linear
-\item Tabelle der Laplace-Transformierten
-\item Partialbruchzerlegung
-\end{enumerate}
-\end{frame}
-
-\begin{frame}
-\frametitle{Transformationsmethode}
-\begin{enumerate}[<+->]
-\item PDGL transformieren
-\begin{align*}
-\frac{{\color{red}\partial} u}{\color{red}\partial t}&=\frac{\partial^2 u}{\partial x^2}&
-&\mapsto&
-{\color{red}s} ({\cal L}u)(s,x){\color{red}-u(0,x)}&=\frac{\partial^2 ({\cal L}u)(s,x)}{\partial x^2}
-\end{align*}
-\item Randwerte einsetzen
-\[
-{\color{red}s}({\cal L}u)(s,x)-f(x)=\frac{\partial^2 ({\cal L}u)(s,x)}{\partial x^2}
-\]
-%\item Randwerte f"ur $x\mapsto ({\cal L}u)(s,x)$ 
-\item  F"ur jedes $s$ gew"ohnliche DGL in $x$ l"osen mit
-Randbedingungen f"ur $({\cal L})(s,x)$:
-\begin{align*}
-u(t,-l)&=g(t)&&\mapsto&({\cal L}u)(s,-l)&=({\cal L}g)(s)\\
-u(t,l)&=h(t)&&\mapsto&({\cal L}u)(s,l)&=({\cal L}h)(s)
-\end{align*}
-\item Aufl"osen nach $({\cal L}u)(s,x)$
-\item R"ucktransformation
-\end{enumerate}
 \end{frame}
 
 \begin{frame}
@@ -279,6 +190,38 @@ Klasse verr"at:
 \item Welches L"osungsverfahren geeignet ist
 \end{itemize}
 
+\end{frame}
+
+\section{Elliptisch}
+
+\begin{frame}
+\frametitle{Elliptische Differentialgleichungen}
+Standardproblem:
+\[
+\Delta u = f
+\qquad\text{mit}\qquad
+\Delta 
+=
+\frac{\partial^2}{\partial x^2}
++
+\frac{\partial^2}{\partial y^2}
++
+\frac{\partial^2}{\partial z^2}
+\]
+hat Symbol
+\[
+A=\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix}
+\qquad
+\Rightarrow
+\;
+\text{$\Delta$ ist elliptisch}
+\]
+L"osungen des homogenen Systems:
+\[
+\Delta u=0
+\qquad\Rightarrow\;
+\text{$u$ harmonisch}
+\]
 \end{frame}
 
 \end{document}

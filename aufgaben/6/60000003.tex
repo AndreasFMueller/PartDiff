@@ -1,0 +1,48 @@
+Die Funktion $y(x)$ erf"ulle die Differentialgleichung
+\begin{equation}
+y''+\beta y' + \gamma y=0
+\label{60000003:vorgabe}
+\end{equation}
+Setzen Sie $u(x)=e^{k x}y(x)$.
+Wie m"ussen Sie $k$ und $\alpha$ w"ahlen, damit $u$ L"osung der
+Differentialgleichung
+\begin{equation}
+u''+\alpha u=0
+\label{60000003:ziel}
+\end{equation}
+ist?
+
+\begin{loesung}
+Wir berechnen die Ableitungen von $u$:
+\begin{align*}
+u'(x)&=y'(x)e^{kx}+y(x)ke^{kx}\\
+u''(x)&=y''(x)e^{kx}+2y'(x)ke^{kx}+k^2y(x)e^{kx}
+\end{align*}
+Die Differentialgleichung  (\ref{60000003:ziel}) wird damit
+zu
+\[
+0
+=
+u''(x)+\alpha u(x)
+=
+y''(x)e^{kx}+2y'(x)ke^{kx}+k^2y(x)e^{kx}
++ \alpha y(x)e^{kx}
+=
+\bigl(
+y''+2k y' +(k^2+\alpha)y
+\bigr)
+\]
+Diese Differentialgleichung ist erf"ullt wenn $2k=\beta$ und
+$k^2+\alpha=\gamma$, also muss man w"ahlen
+\[
+\begin{aligned}
+k&=\frac{\beta}2
+&
+&\text{und}&
+\alpha=\gamma-k^2=\gamma-\frac{\beta^2}4.
+\end{aligned}
+\]
+Diese L"osung zeigt, dass der lineare Term in einer gew"ohnlichen
+Differentialgleichung wegtransformiert werden kann.
+\end{loesung}
+

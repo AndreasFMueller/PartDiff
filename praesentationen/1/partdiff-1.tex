@@ -9,7 +9,7 @@
 }
 \title[]{Partielle Differentialgleichungen}
 \subtitle{1. Sitzung}
-\date[18.~Februar 2015]{18.~Februar 2015}
+\date[24.~Februar 2016]{24.~Februar 2016}
 \author{Prof.~Dr.~Andreas M"uller}
 \begin{document}
 
@@ -21,11 +21,52 @@
 \frametitle{Administratives}
 \begin{enumerate}
 \item Unterrichtsunterlagen $\to$ Moodle
-\item "Ubungsbetrieb $\to$ 2h
-\item Pr"ufung
+\item "Ubungsbetrieb $\to$ 2h, Aufgaben im Moodle
+\item Pr"ufung:
+\begin{itemize}
+\item f"ur jeden Teil 4 Aufgaben
 \item Hilfsmittel $\to$ $2\times 10\times \text{A4}$, Taschenrechner
+\end{itemize}
 \item Pr"ufungsvorbereitung
+\begin{itemize}
+\item Aufgabensammlung
+\item Moodle-Forum: Fragen und Antworten
+\item Pr"ufungen fr"uherer Jahre
+\end{itemize}
 \end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Zeitplan}
+\begin{center}
+\includegraphics{zeitplan-1.pdf}
+\end{center}
+\[
+\text{Wirkungsgrad}
+=
+\frac{1}{\text{Unterrichtszeit}}
+\int_0^{100}\text{Aufnahmef"ahigkeit}(t)\,dt
+\]
+\end{frame}
+
+\begin{frame}
+\frametitle{Zeitplan}
+\begin{center}
+\includegraphics{zeitplan-2.pdf}
+\end{center}
+\[
+\text{Wirkungsgrad}= 50\%
+\]
+\end{frame}
+
+\begin{frame}
+\frametitle{Zeitplan}
+\begin{center}
+\includegraphics{zeitplan-3.pdf}
+\end{center}
+\[
+\text{Wirkungsgrad}= \color{red}66.6\%
+\]
 \end{frame}
 
 \begin{frame}
@@ -37,10 +78,10 @@ einer schwingenden Saite der L"ange $l$ und der Massedichte $\mu$ auf.
 \medskip
 \pause
 {\bf L"osungsansatz:}
-Auslenkung $\psi(x,t)$ h"angt von Ort $x\in[0,l]$ und Zeit $t\in[0,\infty)$
+Auslenkung $ u(x,t)$ h"angt von Ort $x\in[0,l]$ und Zeit $t\in[0,\infty)$
 ab:
 \[
-\psi\colon [0,l]\times [0,\infty)\to \mathbb R
+u\colon [0,l]\times [0,\infty)\to \mathbb R
 \]
 \pause
 \medskip
@@ -50,7 +91,7 @@ ab:
 
 {\bf Randbedingung:}
 \[
-\psi(0,0)=\psi(l,0)=0
+u(0,0)= u(l,0)=0
 \]
 \end{frame}
 
@@ -68,18 +109,18 @@ ab:
 \text{Kraft}
 =ma
 &=
-F\frac{\partial\psi}{\partial x}(x+\Delta x)-F\frac{\partial\psi}{\partial x}(x)
+F\frac{\partial u}{\partial x}(x+\Delta x)-F\frac{\partial u}{\partial x}(x)
 \\
 \\
-\mu \Delta x \frac{\partial^2 \psi}{\partial t^2}
+\mu \Delta x \frac{\partial^2  u}{\partial t^2}
 &=
-F\frac{\partial\psi}{\partial x}(x+\Delta x)-F\frac{\partial\psi}{\partial x}(x)
+F\frac{\partial u}{\partial x}(x+\Delta x)-F\frac{\partial u}{\partial x}(x)
 \\
 \\
-\frac{\partial^2 \psi}{\partial t^2}
+\frac{\partial^2  u}{\partial t^2}
 &=
 \frac{F}{\mu}
-\frac{\partial^2\psi}{\partial x^2},
+\frac{\partial^2 u}{\partial x^2},
 \qquad
 c=\sqrt{\frac{F}{m}}
 \end{align*}
@@ -90,13 +131,13 @@ Wellengleichung mit Ausbreitungsgeschwindigkeit $c$
 \frametitle{H"oheren Dimensionen}
 In drei Dimensionen:
 \[
-\frac{\partial^2\psi}{\partial t^2}=c^2
+\frac{\partial^2 u}{\partial t^2}=c^2
 \biggl(
-\frac{\partial^2\psi}{\partial x^2}
+\frac{\partial^2 u}{\partial x^2}
 +
-\frac{\partial^2\psi}{\partial y^2}
+\frac{\partial^2 u}{\partial y^2}
 +
-\frac{\partial^2\psi}{\partial z^2}
+\frac{\partial^2 u}{\partial z^2}
 \biggr)
 \]
 \pause
@@ -113,9 +154,9 @@ Mit Laplace-Operator
 \pause
 einfacher:
 \[
-\frac{\partial^2\psi}{\partial t^2}
+\frac{\partial^2 u}{\partial t^2}
 =
-c^2\Delta \psi.
+c^2\Delta  u.
 \]
 \end{frame}
 
@@ -171,39 +212,6 @@ $\partial\Omega$}
 \]
 \end{enumerate}
 \end{frame}
-
-\begin{frame}
-\frametitle{Ordnungsreduktion}
-\[
-F\biggl(x,y,u,
-\frac{\partial u}{\partial x},
-\frac{\partial u}{\partial y},
-\frac{\partial^2 u}{\partial x^2},
-\frac{\partial^2 u}{\partial x\partial y},
-\frac{\partial^2 u}{\partial y^2}
-\biggr)=0
-\]
-\pause
-Neue Funktionen:
-\[
-p(x,y)\qquad\text{und}\qquad q(x,y)
-\]
-\pause
-Neue Gleichungen:
-\begin{gather*}
-F(x,y,u,p,q,\frac{\partial p}{\partial x},\frac{\partial p}{\partial y},
-\frac{\partial q}{\partial y})=0
-\\
-p=\frac{\partial u}{\partial x}\qquad\text{und}\qquad
-q=\frac{\partial u}{\partial y}
-\end{gather*}
-\pause
-Zus"atzlich:
-\[
-\frac{\partial p}{\partial y}=\frac{\partial q}{\partial x}
-\]
-\end{frame}
-
 
 \begin{frame}
 \frametitle{Was ist eine PDGL}
@@ -368,6 +376,39 @@ ist linear in $p_1$,\dots,$p_n$,$t_{11}$,\dots,$t_{nn}$
 \item {\bf Nichtlineare PDGL}
 \end{enumerate}
 \end{frame}
+
+\begin{frame}
+\frametitle{Ordnungsreduktion}
+\[
+F\biggl(x,y,u,
+\frac{\partial u}{\partial x},
+\frac{\partial u}{\partial y},
+\frac{\partial^2 u}{\partial x^2},
+\frac{\partial^2 u}{\partial x\partial y},
+\frac{\partial^2 u}{\partial y^2}
+\biggr)=0
+\]
+\pause
+Neue Funktionen:
+\[
+p(x,y)\qquad\text{und}\qquad q(x,y)
+\]
+\pause
+Neue Gleichungen:
+\begin{gather*}
+F(x,y,u,p,q,\frac{\partial p}{\partial x},\frac{\partial p}{\partial y},
+\frac{\partial q}{\partial y})=0
+\\
+p=\frac{\partial u}{\partial x}\qquad\text{und}\qquad
+q=\frac{\partial u}{\partial y}
+\end{gather*}
+\pause
+Zus"atzlich:
+\[
+\frac{\partial p}{\partial y}=\frac{\partial q}{\partial x}
+\]
+\end{frame}
+
 
 
 \end{document}

@@ -5,7 +5,7 @@
 // Loesungsflaeche
 
 #macro surfacepoint(xx, yy)
-	<xx, sin(yy - 0.5 * square(xx)) * exp(-xx), yy>
+	<xx, sin(yy - 0.5 * xx * xx) * exp(-xx), yy>
 #end
 
 #macro quad(xx, yy)

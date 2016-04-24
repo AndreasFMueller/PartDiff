@@ -1,0 +1,38 @@
+Die reelle Funktion $u(x)$ ist auf dem Intervall
+\[
+\Omega = [-1, 1]
+\]
+definiert. Sie erf"ullt im Innern von $\Omega$ die Differentialgleichung 
+\[
+u''(x) = 6 \cdot x
+\]
+und auf dem Rand von $\Omega$ die Randbedingungen 
+\[
+u(-1) = -1, \ \ u(1) = 1.
+\]
+Gesucht sind Approximationswerte f"ur $u$ an den Stellen
+\[
+x_1 = 0, \ \ \  x_2 = 1/2.
+\]
+Benutzen Sie Finite Elemente mit linearen Formfunktionen.
+
+\begin{loesung}
+Mit
+\[
+A = \left[\begin{array}{rr} -3 & 2 \\ 2 & -4  \end{array}\right] \ \ \text{und} \ \
+  \underline{b} =  \left(\begin{array}{r} 1/4 \\ -1/2 \end{array}\right)
+\]
+gilt  
+\[
+A \cdot \underline{\tilde u} = \underline{b}
+\]
+Hierbei ist
+\[
+\underline{\tilde u} \approx (u(0), u(1/2)).
+\]
+Es folgt 
+\[
+\underline{\tilde u} = (0, 1/8).
+\]
+\end{loesung}
+

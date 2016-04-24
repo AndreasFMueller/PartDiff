@@ -3,3 +3,9 @@ Skript zur Vorlesung Partielle Differentialgleichungen
 Zum Bauen dieses Skripts ist eine vollstaendige LaTeX Installation
 erforderlich, wie sie jeder typischen Linux Distribution beiliegt.
 
+Viele der graphischen Darstellungen werden entweder mit MetaPost oder
+mit Povray erzeugt, dies wird von den Makefiles gesteuert. Da Makefiles
+in dieser Form von Windows nicht unterstützt sind, empfiehlt es sich,
+das Skript auf einem Linux- oder Mac OS X-System zu bauen.
+
+

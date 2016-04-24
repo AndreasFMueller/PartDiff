@@ -1,0 +1,42 @@
+Die reelle Funktion $u(x)$ ist auf dem Intervall
+\[
+\Omega = [-2, 2]
+\]
+definiert. Sie erf"ullt im Innern von $\Omega$ die Differentialgleichung 
+\[
+u''(x) = 2
+\]
+und auf dem Rand von $\Omega$ die Randbedingungen 
+\[
+u(-2) = 0, \ \ u(2) = 0.
+\]
+Gesucht sind Approximationswerte f"ur $u$ zu den Stellen
+\[
+x_1 = -1, \ \ \ x_2 = 0, \ \ \  x_3 = 1.
+\]
+
+Benutzen Sie Finite Elemente mit linearen Formfunktionen.
+
+\begin{loesung}
+Mit
+\[
+A
+=
+\left[\begin{array}{rrr} -2 & 1 & 0 \\ 1 & -2 & 1 \\ 0 & 1 & -2  \end{array}\right]
+\quad\mbox{und}\quad
+\underline{b} =  \left(\begin{array}{r} 2 \\ 2 \\ 2 \end{array}\right)
+\]
+gilt  
+\[
+A \cdot \underline{\tilde u} = \underline{b}
+\]
+Hierbei ist
+\[
+\underline{\tilde u} \approx (u(-1), u(0), u(1)).
+\]
+Es folgt 
+\[
+\underline{\tilde u} = (-3,-4,-3).
+\]
+\end{loesung}
+
