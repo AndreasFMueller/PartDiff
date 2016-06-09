@@ -1,0 +1,123 @@
+Sei $0 < x_0 < 1$ und $\Omega$ des Gebiet
+\[
+\Omega=\{ (x,y)\,|\, x_0<x<1\wedge 0 < y < 1\}.
+\]
+Die Funktion $u$ erf"ullt in $\Omega$ die Differentialgleichung
+\begin{equation}
+x\frac{\partial u}{\partial x}
++
+\frac1y\frac{\partial u}{\partial y}
+=
+0
+\label{30000012:dgl}
+\end{equation}
+und die Randbedingung 
+\[
+u(x_0,y)=y^2,\qquad 0<y<1.
+\]
+\begin{teilaufgaben}
+\item
+Finden Sie eine Funktion $u$ mit diesen Eigenschaften.
+\item
+Ist die L"osung $u$ durch die gegebenen Randbedingungen eindeutig bestimmt?
+\end{teilaufgaben}
+
+\begin{loesung}
+Dies ist eine quasilineare partielle Differentialgleichung erster Ordnung,
+die mit der Methode der Charakteristiken gel"ost werden kann.
+Die Differentialgleichungen f"ur die Charakteristiken sind
+\[
+\begin{aligned}
+\dot x &= x       &&\Rightarrow&   x(t) &= x_0 e^t \\
+\dot y &= \frac1y &&           &        &          \\
+\dot u &= 0       &&\Rightarrow&   u(t) &= u_0
+\end{aligned}
+\]
+Die Gleichung f"ur $y(t)$ kann gel"ost werden, indem man sie zun"achst mit
+$y$ multipliziert und dann bemerkt, dass $2y\dot y$ die Ableitung von $y^2$
+ist.
+Die L"osung ist daher
+\begin{align*}
+\dot y &= \frac1y
+&&\Rightarrow&
+y\dot y &= 1
+&&\Rightarrow&
+\frac{d}{dt}y^2&=2y\dot y=2
+&&\Rightarrow&
+y^2(t) &= 2t + y_0^2
+&&\Rightarrow&
+y(t)&=\sqrt{2t+y_0^2}.
+\end{align*}
+\begin{teilaufgaben}
+\item
+Um eine L"osungsfunktion zu finden, m"ussen die Variablen $y_0$ und $t$ aus den
+Gleichungen
+\begin{align*}
+x(t) &= x_0e^t\\
+y(t)&=\sqrt{2t+y_0^2}\\
+u(t)&=u_0 = y_0^2
+\end{align*}
+Zun"achst kann man die erste Gleichung nach $t$ und die zweite nach $y_0^2$
+aufl"osen: 
+\begin{align*}
+t&=\log\frac{x}{x_0}\\
+y_0^2&=y^2-2t
+\end{align*}
+Zusammen mit der Gleichung f"ur $u(t)$ finden wir
+\[
+u(x,y) = y^2 - 2\log\frac{x}{x_0}.
+\]
+Zur Kontrolle leiten wir diese Funktion nach $x$ und $y$ ab
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
+-2\frac{x_0}{x}\cdot\frac1{x_0}=-\frac2x
+\\
+\frac{\partial u}{\partial y}
+&=
+2y
+\end{align*}
+und setzen dies in die Differentialgleichung ein.
+Wir erhalten
+\[
+x\frac{\partial u}{\partial x} + \frac1y\frac{\partial u}{\partial y}
+=
+x\cdot \biggl(-\frac{2}{x}\biggr)
++ \frac1y\cdot (2y)
+=
+0,
+\]
+die Funktion $u$ erf"ullt also tats"achlich die Differentialgleichung.
+Aber auch die Randwerte sind korrekt:
+\[
+u(x_0,y)=y^2-2\log\frac{x_0}{x_0}=y^2,
+\]
+also erf"ullt $u(x,y)$ auch die Randbedingungen.
+\item
+Im Grundriss erf"ullen die Charakteristiken die Gleichung
+\[
+t = \log\frac{x}{x_0}
+\qquad\Rightarrow\qquad
+y(x)=\sqrt{\log\frac{x}{x_0}+y_0^2}
+\]
+Die Charakteristik beginnt im Punkt $(x_0,y_0)$, insbesondere legen die
+gegebenen Randwerte nur Funktionswerte von $u$ zwischen den Charakteristiken
+f"ur $y_0=0$ und $y_0=1$ fest, also zwischen den Kurven
+\[
+y(x) = \sqrt{\log\frac{x}{x_0}}
+\qquad\text{und}\qquad
+y(x) = \sqrt{\log\frac{x}{x_0}+1}.
+\]
+\begin{figure}
+\centering
+\includeagraphics[]{domain-1.pdf}
+\caption{Definitionsgebiet der Differentialgleichung~\ref{30000012:dgl}
+\label{30000012:domain}}
+\end{figure}
+Abbildung~\ref{30000012} zeigt die beiden Kurven und das Gebiet $\Omega$.
+Es ist offensichtlich, dass die Charakteristiken nicht ganz $\Omega$
+"uberdecken.
+Somit legen die gegeben Randbedingungen die L"osung nicht eindeutig fest.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
