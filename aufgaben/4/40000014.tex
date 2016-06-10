@@ -3,9 +3,16 @@ Auf dem Gebiet $\Omega$ berandet von den vier Parabeln
 \begin{aligned}
 y&=\frac12\biggl( \frac{x^2}{s^2}-s^2\biggr)&&\text{mit}&s&=\frac12,1\\
 \text{und}\qquad
-y&=\frac12\biggl(-\frac{x^2}{t^2}+t^2\biggr)&&\text{mit}&t&=\frac12,1
+y&=\frac12\biggl(-\frac{x^2}{t^2}+t^2\biggr)&&\text{mit}&t&=1,\sqrt{2}
 \end{aligned}
 \]
+\begin{figure}
+\centering
+\includeagraphics[]{domain-1.pdf}
+\caption{Gebiet $\Omega$ f"ur Aufgabe~\ref{40000014}
+\label{40000014:domain}}
+\end{figure}
+(Abbildung~\ref{40000014:domain})
 soll das Eigenwertproblem
 \begin{equation}
 \Delta u = \lambda u
@@ -13,16 +20,18 @@ soll das Eigenwertproblem
 \end{equation}
 mit homogenen Randbedingungen gel"ost werden.
 Aus der Wikipedia erfahren Sie, dass die genannten Kurven 
-die Koordinatenlinien sogenannter parabolischer Koordinaten $(s,t)$ sind 
+die Koordinatenlinien sogenannter parabolischer Koordinaten $(s,t)$ sind,
+die mit den Formeln
 \begin{align*}
 x&=st\\
 y&=\frac12(t^2-s^2)
 \end{align*}
-sind, und dass sich in diesen Koordinaten l"asst Laplace-Operator als
+in kartesische Koordinaten umgerechnet werden k"onnen.
+Ausserdem l"asst sich in diesen Koordinaten der Laplace-Operator als
 \[
 \Delta u = \frac1{s^2 + t^2}\biggl(\frac{\partial^2 u}{\partial s^2}+\frac{\partial^2u}{\partial t^2}\biggr)
 \]
-schreiben l"asst.
+schreiben.
 Verwenden Sie diese Informationen f"ur einen Separationsansatz, und
 stellen Sie Differentialgleichungen und Randbedingungen daf"ur auf.
 
@@ -82,7 +91,7 @@ verlangt werden, dass
 \begin{equation}
 S({\textstyle \frac12})=S(1)=0
 \qquad\text{und}\qquad
-T({\textstyle \frac12})=T(1)=0.
+T(1)=T(\sqrt{2})=0.
 \label{40000014:seprb}
 \end{equation}
 Die Eigenwerte sind diejenigen Werte von $\lambda$, f"ur die es ein passendes
