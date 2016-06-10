@@ -1,0 +1,32 @@
+Die reelle Funktion $u(x,y)$ ist auf dem Quadrat mit Eckpunkten
+\[
+(1,0), \ \  (0,1), \ \ (-1,0), \ \  (0,-1)
+\]
+definiert. Sie erf"ullt im Innern von $\Omega$ die Poissongleichung
+\[\Delta u(x,y) = 10
+\]
+und auf dem Rand von $\Omega$ die Dirichletschen Randbedingung
+\[
+u(x,y) = 0.
+\]
+Gesucht ist eine Approximation der Werte von $u$ in den vier Punkten von $\Omega$
+\[
+(1/2,0), \ \  (0,1/2), \ \ (-1/2,0), \ \  (0,-1/2).
+\]
+Benutzen Sie hierzu Finite Volumina nach Voronoi.  
+
+\begin{loesung}
+Mit
+\[
+\tilde u_1 = \tilde u(1/2,0), \ \tilde u_2 = \tilde u(0,1/2), \ \tilde u_3 = \tilde u(-1/2,0), \ \tilde u_4 = \tilde u(0,-1/2),
+\]
+sowie
+\[
+A = \left[\begin{array}{rrrr} -6 & 1 & 0 & 1 \\ 1 & -6 & 1 & 0 \\ 0 & 1 & -6 & 1 \\ 1 & 0 & 1 & -6  \end{array}\right] \ \ \text{und} \ \
+  \underline{b} =  \left(\begin{array}{r} 5 \\ 5 \\ 5 \\ 5 \end{array}\right)
+\]
+gilt
+$A \cdot \underline{\tilde u} = \underline{b}.$
+Es folgt $\underline{\tilde u} = (-5/4, -5/4, -5/4, -5/4).$
+\end{loesung}
+
