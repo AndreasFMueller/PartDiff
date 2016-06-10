@@ -1,6 +1,6 @@
 Auf dem Gebiet $\Omega=\{(x,y)\in\mathbb R^2\,|\, x>0\}$ ist die
 Differentialgleichung
-\[
+\begin{equation}
 \sinh a \frac{\partial^2}{\partial x^2}
 +
 2\cosh a \frac{\partial^2}{\partial x\partial y}
@@ -8,7 +8,8 @@ Differentialgleichung
 \sinh a \frac{\partial^2}{\partial y^2}
 =
 0
-\]
+\label{90000013:dgl}
+\end{equation}
 gegeben.
 Von dem Parameter $a$ weiss man nur, dass $a>0$ ist.
 Ausserdem sind die Randbedingungen
@@ -34,6 +35,15 @@ wiedergibt?
 
 
 \begin{loesung}
+\begin{figure}
+\centering
+\includeagraphics[]{domain-1.pdf}
+\caption{Charakteristiken der Differentialgleichung~(\ref{90000013:dgl})
+und Rechteck $R$ (blau). 
+F"ur die Frage in Teilaufgabe b) der Aufgabe ist die fett ausgezogene
+rote Charakteristik durch den Punkt $(0,-5)$ massgeben.
+\label{90000013:domain}}
+\end{figure}
 \begin{teilaufgaben}
 \item
 Die Symbolmatrix des Differentialoperators ist
@@ -72,8 +82,10 @@ Die quadratische Gleichung~(\ref{90000013:qgl}) hat die Nullstellen
 .
 \]
 Die Charakteristiken sind also Geraden mit Steigungen
-$\coth a\pm\sqrt{\coth^2a-1}$.
+$m_{\pm}=\coth a\pm\sqrt{\coth^2a-1}$.
 Da $\coth a>1$ ist f"ur $a>0$, sind beide Steigungen positiv.
+In Abbildung~\ref{90000013:domain} sind die Charakteristiken in den Farben
+rot und gr"un dargestellt, wobei die rote Gerade die Steigung $m_+$ hst.
 Damit ist klar, dass die Charakteristiken ganz $\Omega$ "uberdecken, das
 Problem ist also gut gestellt.
 

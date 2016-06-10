@@ -70,6 +70,7 @@ drawarrow (z0 shifted (-10,0))--(z1 shifted (10,0));
 drawarrow (z2 shifted (0,-10))--(z3 shifted (0,10));
 label.top(btex $x$ etex, z1 shifted (10,0));
 label.rt(btex $y$ etex, z3 shifted (0,10));
+label(btex $R$ etex, (0.5 * u, 0.5 * u)) withcolor blue;
 
 label.lft(btex $-5$ etex, (0, -5 * u));
 draw (-2, -5 * u)--(2, -5 * u);
