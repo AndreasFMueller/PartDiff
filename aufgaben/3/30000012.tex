@@ -124,3 +124,103 @@ Somit legen die gegeben Randbedingungen die L"osung nicht eindeutig fest.
 \qedhere
 \end{teilaufgaben}
 \end{loesung}
+
+\begin{diskussion}
+Zuf"alligerweise kann man diese Aufgabe auch mit einem Separationsansatz
+mit einer Summe $u(x,y)= X(x) + Y(y)$ l"osen.
+Setzt man den Ansatz in die Differentialgleichung (\ref{30000012:dgl}) ein,
+erh"alt man
+\[
+xX'(x) +\frac1yY'(y)=0,
+\]
+was man leicht separieren kann:
+\[
+xX'(x) = - \frac1yY'(y).
+\]
+Beide Seiten m"ussen daher konstant sein, wir nennen die Konstante $k$.
+Wir m"ussen jetzt zwei gew"ohnliche Differentialgleichungen mit dem Paramter
+$k$ l"osen, die aber sofort durch Integration gel"ost werden k"Onnen:
+\begin{align*}
+X'(x)&=\frac{k}{x}&&\Rightarrow&X(x)&=k\log x + C_x      \\
+Y'(y)&=-ky        &&\Rightarrow&Y(y)&=-\frac{k}2y^2 + C_y
+\end{align*}
+Wir haben daher f"ur jedes $k$ die L"osung
+\[
+u_k(x,y)=-\frac{k}2 y^2 + k\log x + C
+\]
+gefunden.
+Aus diesen L"osungen muss jetzt durch "Uberlagerung eine L"osung 
+gebaut werden, die auch die Randbedingungen erf"ullt.
+An dieser Stelle versagt die Methode normalerweise, aber im vorliegenden
+Fall hat man wegen der speziellen Form der Randbedingungen Gl"uck, des
+gerade eine der Funktion $u_k$ die L"osung ist, man muss also
+nur noch $k$ und $C$ bestimmen.
+
+An der Stelle $(x_0,0)$ muss der Wert $0$ entstehen, also
+\[
+u_k(x_0,0) = k\log x_0 + C=0
+\qquad\Rightarrow\qquad C=-k\log x_0.
+\]
+Damit kann man die L"osung jetzt auch
+\[
+u_k(x,y)=-\frac{k}{2}y^2 +k\log\frac{x}{x_0}
+\]
+schreiben.
+Diese L"osung erf"ullt die Randbedingung im Punkt $(x_0,0)$, aber noch
+nicht f"ur alle $(x_0,y)$.
+Setzt man die Randbedingung ein, erh"alt man die Gleichung
+\begin{equation}
+u_k(x_0,y_0) = -\frac{k}{2}y_0^2 +k\log\frac{x_0}{x_0} = -\frac{k}{2}y_0^2=y_0^2.
+\label{30000012:k}
+\end{equation}
+Daraus k"onnen wir ablesen, dass $k=-2$ sein muss, und damit bekommen
+wir tats"achlich die L"osung
+\[
+u_{-2}(x,y)=y^2 -2\log\frac{x}{x_0}.
+\]
+Man beachte, dass dies f"ur jede andere Randbedingung aber nicht mehr
+funktioniert, weil die Gleichung (\ref{30000012:k}) dann nicht mehr
+ein einziges $k$, liefert.
+Und nat"urlich kann man mit dieser Methode auch nicht entscheiden, ob
+das Problem gut gestellt ist.
+
+In der Pr"ufung haben viel die Funktion
+\[
+v(x,y)=\biggl(y^2-2\log\frac{x}{x_0}\biggr)^2
+\]
+gefunden.
+Die Ursache daf"ur war, dass der $y_0$-Wert, der f"ur die Randbedingung
+$u(x_0,y_0)=y_0^2$ und die Integrationskonstante f"ur $y_0$, die
+unsorgf"altigerweise auch mit $y_0$ bezeichnet wurde, nicht
+auseinandergehalten wurden.
+Ungl"ucklich ist dabei, dass diese Funktion die Differentialgleichung
+erf"ullt.
+Dies ist nicht so "uberraschend: ist $u$ eine L"osung einer homogenen
+linearen partiellen Differentialgleichung erster Ordnung, dann ist auch
+$u^\alpha$ eine L"osung, denn es ist
+\begin{align*}
+a(x,y)\frac{\partial u^{\alpha}}{\partial x}
++
+b(x,y)\frac{\partial u^{\alpha}}{\partial x}
+&=
+a(x,y)\alpha u^{\alpha-1}\frac{\partial u}{\partial x}
++
+b(x,y)\alpha u^{\alpha-1}\frac{\partial u}{\partial y}
+=
+\alpha u^{\alpha-1}\underbrace{
+\biggl(a(x,y)\frac{\partial u}{\partial x}
++
+b(x,y)\frac{\partial u}{\partial y}\biggr)}_{\displaystyle=0}=0.
+\end{align*}
+Um sich zu versichern, dass man wirklich die L"osung gefunden hat, muss
+man also unbedingt auch die Randbedingung pr"ufen.
+\end{diskussion}
+
+\begin{bewertung}
+Methode der Charakteristiken ({\bf M}) 1 Punkt,
+Differentialgleichungen der Charakteristiken ({\bf D}) 1 Punkt,
+L"osung der Differentialgleichung f"ur $y$ ({\bf Y}) 1 Punkt,
+Einsetzen der Randbedingung ({\bf R}) 1 Punkt,
+Elimination der Variablen $y_0$ und $t$ ({\bf E}) 1 Punkt,
+ist L"osung eindeutig bestimmt ({\bf B}) 1 Punkt.
+\end{bewertung}
