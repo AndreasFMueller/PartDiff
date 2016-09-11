@@ -2,7 +2,7 @@ Verwenden Sie Laplace-Transformation nach $t$ um
 im Gebiet $\Omega=\{(x,t)\,|\, x > 1 \text{ und } t > 0\}$ eine
 L"osung der Differentialgleichung
 \begin{equation}
-x^2\frac{\partial u}{\partial t}+\frac{\partial u}{\partial t}=0
+x^2\frac{\partial u}{\partial x}+\frac{\partial u}{\partial t}=0
 \label{50000011:dgl}
 \end{equation}
 mit den Randbedingungen
@@ -23,13 +23,13 @@ die R"ucktransformation nicht finden.
 \begin{loesung}
 Die Laplace-Transformierte der Differentialgleichung~(\ref{50000011:dgl}) ist
 \begin{equation}
-x^2\frac{\partial}{\partial x}{\cal L}u(x,s) + {\cal L}u(x,s) - u(x,0)=0.
+x^2\frac{\partial}{\partial x}{\cal L}u(x,s) + s{\cal L}u(x,s) - u(x,0)=0.
 \end{equation}
 Der letzte Term f"allt wegen der zweiten Randbedingung weg.
 Wir schreiben $y_s(x)={\cal L}u(x,s)$, und suchen jetzt also eine L"osung
 der gew"ohnlichen Differentialgleichung
 \begin{equation}
-x^2y_s(x) + sy_s(x)=0.
+x^2y'_s(x) + sy_s(x)=0.
 \label{50000011:odgl}
 \end{equation}
 Die Anfangsbedingung von $y_s(x)$ f"ur $x=1$ entsteht durch
