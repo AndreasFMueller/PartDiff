@@ -1,0 +1,15 @@
+Die reelle Funktion $u(x,t)$ ist auf dem Streifen $$\Omega = [-\pi, \pi] \times [0,\infty)$$ definiert. Sie erf"ullt im Innern von $\Omega$ die W"armeleitungsgleichung $$u_{xx}(x,t) = u_{t}(x,t)$$ und auf dem Rand von $\Omega$ die Bedingungen $$u(- \pi,t) = u(\pi ,t) = 0$$ sowie $$u(x,0) = \sin(x).$$ 
+
+\vspace{1mm}
+
+Gesucht ist eine Approximation der Werte von $u$ in den drei Punkten von $\Omega$ $$(-\pi/2,\pi^2/2), \ \  (0,\pi^2/2), \ (\pi/2,\pi^2/2).$$ Benutzen Sie hierzu das Verfahren von Richardson mit Schrittweiten $$\Delta x = \pi/2 \ \ \mbox{und} \ \  \Delta t = \pi^2/8.$$
+
+\begin{loesung}
+Mit
+\[
+A = \left[\begin{array}{ccc} 
+0 & 1/2 & 0 \\
+1/2 & 0 & 1/2 \\ 0 & 1/2 & 0 \end{array}\right]$$ und $$\underline{\tilde u}^{(0)} = (-1, 0, 1)$$ folgt $$\underline{\tilde u}^{(1)} =  A \cdot \underline{\tilde u}^{(0)} = (0, 0, 0) \ \ \ \mbox{und somit} \ \ \ \underline{\tilde u}^{(4)} = (0, 0, 0).
+\]
+\end{loesung}
+

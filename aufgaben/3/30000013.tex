@@ -1,0 +1,143 @@
+Sei $0 < y_0 < 1$ und $\Omega$ das Gebiet
+\[
+\Omega=\{ (x,y)\,|\, 0<x<1\wedge y_0 < y < 1\}.
+\]
+Die Funktion $u$ erf"ullt in $\Omega$ die Differentialgleichung
+\begin{equation}
+\frac1x \frac{\partial u}{\partial x}
++
+y\frac{\partial u}{\partial y}
+=
+0
+\label{30000012:dgl}
+\end{equation}
+und die Randbedingung 
+\[
+u(x,y_0)=x^2,\qquad 0<x<1.
+\]
+\begin{teilaufgaben}
+\item
+Finden Sie eine Funktion $u$ mit diesen Eigenschaften.
+\item
+Ist die L"osung $u$ durch die gegebenen Randbedingungen eindeutig bestimmt?
+\end{teilaufgaben}
+
+\begin{loesung}
+Dies ist eine quasilineare partielle Differentialgleichung erster Ordnung,
+die mit der Methode der Charakteristiken gel"ost werden kann.
+Die Differentialgleichungen f"ur die Charakteristiken sind
+\[
+\begin{aligned}
+\dot x &= \frac1x &&           &        &=         \\
+\dot y &=       y &&\Rightarrow&   y(t) &= y_0 e^t \\
+\dot u &= 0       &&\Rightarrow&   u(t) &= u_0.
+\end{aligned}
+\]
+Die Gleichung f"ur $x(t)$ kann gel"ost werden, indem man sie zun"achst mit
+$x$ multipliziert und dann bemerkt, dass $2x\dot x$ die Ableitung von $x^2$
+ist.
+Die L"osung ist daher
+\begin{align*}
+\dot x &= \frac1x
+&&\Rightarrow&
+x\dot x &= 1
+&&\Rightarrow&
+\frac{d}{dt}x^2&=2x\dot x=2
+&&\Rightarrow&
+x^2(t) &= 2t + x_0^2
+&&\Rightarrow&
+x(t)&=\sqrt{2t+x_0^2}.
+\end{align*}
+\begin{figure}
+\centering
+\includeagraphics[]{domain-1.pdf}
+\caption{Definitionsgebiet der Differentialgleichung~\ref{30000013:dgl}
+\label{30000013:domain}}
+\end{figure}
+\begin{teilaufgaben}
+\item
+Um eine L"osungsfunktion zu finden, m"ussen die Variablen $x_0$ und $t$ aus den
+Gleichungen
+\begin{align*}
+x(t)&=\sqrt{2t+x_0^2}\\
+y(t) &= y_0e^t\\
+u(t)&=u_0 = x_0^2
+\end{align*}
+eliminiert werden, und $u$ muss durch $x$ und $y$ ausgedr"uckt werden.
+Der Parameter $y_0$ darf stehen bleiben.
+
+Zun"achst kann man die zweite Gleichung nach $t$ und die erste nach $x_0^2$
+aufl"osen: 
+\begin{align*}
+t&=\log\frac{y}{y_0}\\
+x_0^2&=x^2-2t.
+\end{align*}
+Zusammen mit der Gleichung f"ur $u(t)$ finden wir
+\[
+u(x,y) = x^2 - 2\log\frac{y}{y_0}.
+\]
+Zur Kontrolle leiten wir diese Funktion nach $x$ und $y$ ab
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
+2x
+\\
+\frac{\partial u}{\partial y}
+&=
+-2\frac{y_0}{y}\cdot\frac1{y_0}=-\frac2y
+\end{align*}
+und setzen dies in die Differentialgleichung ein.
+Wir erhalten
+\[
+\frac1x\frac{\partial u}{\partial x} + y\frac{\partial u}{\partial y}
+=
+\frac1\cdot (2x)
++
+y\cdot \biggl(-\frac{2}{y}\biggr)
+=
+0,
+\]
+die Funktion $u$ erf"ullt also tats"achlich die Differentialgleichung.
+Aber auch die Randwerte sind korrekt:
+\[
+u(x, y_0)=x^2-2\log\frac{y_0}{y_0}=x^2,
+\]
+also erf"ullt $u(x,y)$ auch die Randbedingungen.
+\item
+Im Grundriss erf"ullen die Charakteristiken die Gleichung
+\[
+t = \frac12 (x^2-x_0^2)
+\qquad\Rightarrow\qquad
+y(x)=y_0\exp\biggl(\frac12 (x^2-x_0^2)\biggr)
+\]
+Diese Charakteristik beginnt im Punkt $(x_0,y_0)$.
+Die Charakteristiken legen also nur Funktionswerte von $u$ zwischen
+den Charakteristiken f"ur $x_0=0$ und $x_0=1$ fest, also zwischen den Kurven
+\[
+y(x) = y_0\exp\frac12 x^2
+\qquad\text{und}\qquad
+y(x) = y_0\exp\biggl(\frac12 (x^2-1)\biggr)
+\]
+Abbildung~\ref{30000013} zeigt die beiden Kurven und das Gebiet $\Omega$.
+Es ist offensichtlich, dass die Charakteristiken nicht ganz $\Omega$
+"uberdecken.
+Somit legen die gegeben Randbedingungen die L"osung nicht eindeutig fest.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{diskussion}
+Diese Aufgabe ist die an der $45^\circ$-Geraden gespiegelte Version der
+Aufgabe~\ref{30000012}.
+Die dortige Beobachtung bez"uglich L"osbarkeit mit einem Separationsansatz ist
+daher hier ebenfalls anwendbar.
+\end{diskussion}
+
+\begin{bewertung}
+Methode der Charakteristiken ({\bf M}) 1 Punkt,
+Differentialgleichungen der Charakteristiken ({\bf D}) 1 Punkt,
+L"osung der Differentialgleichung f"ur $x$ ({\bf X}) 1 Punkt,
+Einsetzen der Randbedingung ({\bf R}) 1 Punkt,
+Elimination der Variablen $y_0$ und $t$ ({\bf E}) 1 Punkt,
+ist L"osung eindeutig bestimmt ({\bf B}) 1 Punkt.
+\end{bewertung}
