@@ -12,7 +12,7 @@ timestamp:	jpg
 
 jpg:	sol.jpg chr.jpg chrpl.jpg cauchy.jpg planes.jpg knick.jpg
 
-povrayoptions = -A0.1
+povrayoptions = +A0.1
 w = 3960
 h = 2160
 #w = 320
@@ -79,3 +79,24 @@ knick.jpg:	knick.png
 		-density 300 -units PixelsPerInch \
 		knick.jpg
 	
+streifen0:	streifen0.jpg
+streifen0.jpg:	streifen0.png
+	convert streifen0.png streifen0.jpg
+streifen0.png:	streifen0.pov
+	sh ../../povray $(povrayoptions) -W1024 -H768 -Ostreifen0.png \
+		streifen0.pov
+
+streifen:	streifen.jpg
+streifen.jpg:	streifen.png
+	convert streifen.png streifen.jpg
+streifen.png:	streifen.pov
+	sh ../../povray $(povrayoptions) -W1024 -H768 -Ostreifen.png \
+		streifen.pov
+
+streifen2:	streifen2.jpg
+streifen2.jpg:	streifen2.png
+	convert streifen2.png streifen2.jpg
+streifen2.png:	streifen2.pov
+	sh ../../povray $(povrayoptions) -W1024 -H768 -Ostreifen2.png \
+		streifen2.pov
+
