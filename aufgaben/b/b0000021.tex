@@ -1,0 +1,41 @@
+Die reelle Funktion $u(x,y)$ ist auf dem Quadrat
+\[
+\Omega = [0, 1] \times [0,1]
+\]
+definiert.
+Sie erf"ullt im Innern von $\Omega$ die Helmholtzsche Differentialgleichung
+\[
+\Delta u(x,y) + u(x,y) = 0
+\]
+und auf dem Rand von $\Omega$ die Dirichletsche Randbedingung
+\[
+u(x,y) = 3 \cdot x \cdot y.
+\]
+Gesucht ist eine Approximation der Werte von $u$ in den vier Punkten
+von $\Omega$
+\[
+(1/3,1/3), \ \  (2/3,1/3), \ \ (1/3,2/3), \ \ (2/3, 2/3).
+\]
+Benutzen Sie hierzu geeignete Finite Differenzen.
+
+\begin{loesung}
+Mit 
+\[
+\tilde u_1 = \tilde u(1/3,1/3), \ \tilde u_2 = \tilde u(2/3,1/3), \ \tilde u_3 = \tilde u(1/3,2/3), \ \tilde u_4 = \tilde u(1/3,2/3),
+\]
+sowie
+\[
+A = \left[\begin{array}{cccc} 
+-4 + 1/9 & 1  & 1 & 0 \\
+ 1 & -4 + 1/9 & 0 & 1 \\
+ 1 & 0 & -4 + 1/9 & 1 \\ 
+ 0 & 1 & 1  & -4 + 1/9 \end{array}\right]
+\ \ \text{und} \ \
+\underline{b} =  \left(\begin{array}{r} 0 \\ 1 \\ 1 \\ 4 \end{array}\right)
+\]
+gilt
+$A \cdot \underline{\tilde u} + \underline{b} = \underline{0}.$
+Es folgt
+$\underline{\tilde u} \approx (0.3647, 0.7092, 0.7092, 1.3933).$
+\end{loesung}
+

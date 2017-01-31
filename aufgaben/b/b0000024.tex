@@ -1,0 +1,43 @@
+Die reelle Funktion $u(x)$ ist auf dem Intervall
+\[
+\Omega = [0, 1]
+\]
+definiert. Sie erf"ullt im Innern von $\Omega$ die Differentialgleichung
+\[
+u''(x) + u'(x) = 1
+\]
+und auf dem Rand von $\Omega$ die Randbedingungen
+\[
+u(0) = 0, \ \ u(1) = 0.
+\]
+Berechnen Sie $a_1$ und $a_2$ im Approximationsansatz f\"ur $u$
+\[
+\tilde u(x) = a_1 \cdot v_1(x) + a_2 \cdot v_2(x)
+\]
+mit
+\[
+v_1(x) = x^3 - 2 \cdot x^2 + x \ \ \ \text{und} \ \ \  v_2(x) = x^3 - x^2.
+\]
+Benutzen Sie hierzu  a) die Methode von Galerkin und b) die Methode von Gauss.
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Mit 
+\[
+G = \left[\begin{array}{rr} -8/60 & 1/60 \\ 3/60 & -8/60  \end{array}\right] \ \ \text{und} \ \
+  \underline{g} =  \left(\begin{array}{r} 5/60  \\ - 5/60 \end{array}\right)
+\]
+gilt $G \cdot \underline{a} = \underline{g}.$ Es folgt $a_1 = -35/61, \ a_2 = 25/61$.
+
+\item
+Mit
+\[
+Q = \left[\begin{array}{rr} 94/30 & 59/30 \\ 59/30 & 154/30  \end{array}\right] \ \ \text{und} \ \
+  \underline{q} =  \left(\begin{array}{r} -1  \\ 1 \end{array}\right)
+\]
+gilt $Q \cdot \underline{a} = \underline{q}$.
+Es folgt $a_1 = -426/733, \ a_2 = 306/733$.
+\end{teilaufgaben}
+\end{loesung}
+

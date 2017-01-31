@@ -1,0 +1,27 @@
+Bestimmen Sie die Knotenwerte einer Approximationsl"osung $\tilde u(x)$
+des Randwertproblems
+\[
+x^2 \cdot u''(x) + x \cdot u'(x) - 4 \cdot u(x) = 0, \ \ \ x \in ]0,3[
+\]
+mit
+\[
+u(0) = 0 \ \ \ \mbox{und} \ \ \ u(3) = 1.
+\]
+Benutzen Sie hierzu \underline{zentrale} Finite Differenzen mit Schrittweite
+$\Delta x = 1$. 
+
+\begin{loesung}
+Mit 
+\[
+\tilde u_1 = \tilde u(1), \ \tilde u_2 = \tilde u(2),
+\]
+sowie 
+\[
+A = \left[\begin{array}{rr} 
+-12 & 3 \\
+3 & -12 \end{array}\right] \ \ \text{und} \ \
+\underline{b} =  \left(\begin{array}{r} 0 \\ -5 \end{array}\right)
+\]
+gilt  $A \cdot \underline{\tilde u} = \underline{b}.$
+Es folgt $\underline{\tilde u} = (1/9, 4/9).$
+\end{loesung}

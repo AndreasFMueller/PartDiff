@@ -316,22 +316,55 @@ nach $\partial_x^2u(0,y)$ ist unbestimmt.
 \subsection{Streifen}
 Das Cauchy-Problem kann also nur dann l"osbar sein, wenn die Funktionswerte
 und die ersten partiellen Ableitungen entlang einer Kurve
-auch alle zweiten Ableitungen eindeutig bestimmen. Wir suchen also
+auch alle zweiten Ableitungen eindeutig bestimmen.
+Wir versuchen daher
 diejenigen Kurven zu bestimmen, auf denen dies nicht m"oglich ist.
-Wir gehen dazu aus von der Differentialgleichung
+Wir gehen aus von der Differentialgleichung
 \begin{equation}
-a\partial_x^2u+2b\partial_x\partial_yu+c\partial_y^2u+d\partial_xu+e\partial_yu+fu=g,
+a\frac{\partial^2 u}{\partial x^2}
++
+2b\frac{\partial^2 u}{\partial x\partial y}
++
+c\frac{\partial^2 u}{\partial y^2}
++
+d\frac{\partial u}{\partial x}
++
+e\frac{\partial u}{\partial y}
++
+fu
+=g,
 \label{charequation}
 \end{equation}
-und einer Kurve
-$t\mapsto(x(t),y(t))$. Entlang der Kurve sind die Anfangswerte
+Da wir vor allem an den zweiten Ableitungen interessiert sind, bringen
+wir alle anderen Terme auf die rechte Seite, und k"urzen die neue
+rechte Seite mit $h$ ab:
+\begin{equation}
+a\frac{\partial^2 u}{\partial x^2}
++
+2b\frac{\partial^2 u}{\partial x\partial y}
++
+c\frac{\partial^2 u}{\partial y^2}
+=
+g
+-
+d\frac{\partial u}{\partial x}
++
+e\frac{\partial u}{\partial y}
++
+fu
+=h.
+\notag
+\end{equation}
+Ausserdem betrachten wir eine Kurve
+$t\mapsto(x(t),y(t))$.
+Entlang der Kurve sind die Anfangswerte
 und die partiellen Ableitungen
 \begin{equation}
 \left.
 \begin{aligned}
 u(x(t),y(t))&=u(t)\\
-\partial_xu(x(t),y(t))&=p(t)\\
-\partial_yu(x(t),y(t))&=q(t)
+\frac{\partial u}{\partial x}(x(t),y(t)) &= p(t)\\
+\frac{\partial u}{\partial y}(x(t),y(t)) &= q(t)
 \end{aligned}
 \qquad
 \right\}
@@ -400,33 +433,57 @@ verschiedene Streifen haben.
 
 Leitet man die letzten zwei Gleichungen von (\ref{charanfangs}) nach $t$ ab,
 erh"alt man
-\begin{align*}
-\dot p(t)&=
-\partial_x\partial_xu(x(t),y(t))\dot x(t)
-+
-\partial_x\partial_yu(x(t),y(t))\dot y(t)
-\\
-\dot q(t)&=
-\partial_x\partial_yu(x(t),y(t))\dot x(t)
-+
-\partial_y\partial_yu(x(t),y(t))\dot y(t)
-\end{align*}
-Zusammen mit der Differentialgleichung haben wir also die folgenden
-drei Gleichungen f"ur die zweiten partiellen Ableitungen:
-\begin{align*}
-a\partial_x^2u(x(t),y(t))+2b\partial_x\partial_yu(x(t),y(t))+c\partial_y^2u(x(t),y(t))&=g-dp(t)-eq(t)-fu(x(t),y(t))\\
-\partial_x^2u(x(t),y(t))\dot x(t)
-+
-\partial_x\partial_yu(x(t),y(t))\dot y(t)
-&=
+\[
+\begin{linsys}{3}
 \dot p(t)
+&=&
+\partial_x\partial_xu(x(t),y(t))\,\dot x(t)
+&+&
+\partial_x\partial_yu(x(t),y(t))\,\dot y(t)
+& &
 \\
-\partial_x\partial_yu(x(t),y(t))\dot x(t)
-+
-\partial_y^2u(x(t),y(t))\dot y(t)
-&=
 \dot q(t)
-\end{align*}
+&=&
+& &
+\partial_x\partial_yu(x(t),y(t))\,\dot x(t)
+&+&
+\partial_y\partial_yu(x(t),y(t))\,\dot y(t)
+\end{linsys}
+\]
+Zusammen mit der Differentialgleichung haben wir also die folgenden
+drei Gleichungen f"ur die rot hervorgehobenen zweiten partiellen Ableitungen:
+\[
+\begin{linsys}{4}
+a{\color{red}\displaystyle\frac{\partial^2 u}{\partial x^2}}
+&+&
+2b{\color{red}\displaystyle\frac{\partial^2 u}{\partial x\partial y}}
+&+&
+c{\color{red}\displaystyle\frac{\partial^2 u}{\partial y^2}}
+&=&
+h(t)
+&=&
+g-dp(t)-eq(t)-fu\\
+\dot x(t)
+{\color{red}\displaystyle\frac{\partial^2 u}{\partial x^2}}
+&+&
+\dot y(t)
+{\color{red}\displaystyle\frac{\partial^2 u}{\partial x\partial y}}
+& &
+&=&
+\dot p(t)
+& &
+\\
+& &
+\dot x(t)
+{\color{red}\displaystyle\frac{\partial^2 u}{\partial x\partial y}}
+&+&
+\dot y(t)
+{\color{red}\displaystyle\frac{\partial^2 u}{\partial y^2}}
+&=&
+\dot q(t)
+& &
+\end{linsys}
+\]
 Dieses lineare Gleichungssystem f"ur die zweiten partiellen Ableitungen
 hat die Koeffizientenmatrix
 \[
@@ -546,7 +603,7 @@ eindeutig, sie bilden also einen charakteristischen Streifen.
 \subsubsection{Wellengleichung}
 Die Charakteristiken der Wellengleichung
 \begin{equation}
-\partial_t^2-a^2\partial_x^2u=0
+\partial_t^2u-a^2\partial_x^2u=0
 \label{hyperbolisch:wellengleichung}
 \end{equation}
 sind Kurven $s\mapsto(t(s),x(s))$, die die Gleichung

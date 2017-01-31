@@ -1,0 +1,94 @@
+Das Eigenwertproblem 
+\[
+\Delta u = \lambda u
+\]
+\begin{figure}
+\centering
+\includeagraphics[]{domain-1.pdf}
+\caption{Gebiet f"ur das Eigenwertproblem von Aufgabe~\ref{40000015}.
+\label{40000015:gebiet}}
+\end{figure}%
+mit homogenen Randbedingungen soll auf dem in Abbildung~\ref{40000015:gebiet}
+dargestellten Gebiet
+mit Hilfe eines Separationsansatzes gel"ost werden.
+Daf"ur geeignete Koordinaten sind sogenannte elliptische Koordinaten
+$(\mu,\nu)\in \mathbb R^+\times [0,2\pi]$, mit der Koordinatenumrechnung
+\begin{align*}
+x&=\cosh\mu\cos\nu
+\\
+y&=\sinh\mu\sin\nu
+\end{align*}
+In einer guten Formelsammlung finden Sie den Laplace-Operator ausgedr"uckt
+in diesen Koordinaten, er ist
+\[
+\Delta
+=
+\frac1{\sinh^2\mu+\sin^2\nu}
+\biggl(
+\frac{\partial^2}{\partial \mu^2}+\frac{\partial^2}{\partial\nu^2}
+\biggr).
+\]
+F"uhren Sie einen Separationsansatz durch und stellen Sie gew"ohnliche
+Differentialgleichungen und Randbedingungen auf, die das gestellte
+Eigenwertproblem zu l"osen gestatten.
+
+\begin{loesung}
+Wir verwenden den Separationsansatz $u(\mu,\nu)=M(\mu)N(\nu)$ und
+setzen diesen in die Differentialgleichung
+\[
+\Delta u
+=
+\frac1{\sinh^2\mu+\sin^2\nu}
+\biggl(
+M''(\mu)N(\nu) + M(\mu)N''(\nu)
+\biggr)
+=
+\lambda M(\mu)N(\nu).
+\]
+Um die Variablen zu separieren dividieren wir durch $M(\mu)N(\nu)$
+und multiplizieren mit $\sinh^2\mu+\sin^2\nu$, wir erhalten
+\[
+\frac{M''(\mu)}{M(\mu)}
++
+\frac{N''(\nu)}{N(\nu)}
+=
+\lambda\sinh^2\mu + \lambda \sin^2\nu.
+\]
+Jetzt k"onnen die Variablen getrennt werden:
+\[
+\frac{M''(\mu)}{M(\mu)}-\lambda\sinh^2\mu
+=
+-\frac{N''(\nu)}{N(\nu)}+\lambda\sin^2\nu.
+\]
+Da die linke Seite nur von $\mu$, die rechte aber nur von $\nu$ abh"angt,
+m"ussen beide Seiten konstant sein.
+Wir nennen die Konstante $\kappa$.
+Damit erhalten wir zwei gew"ohnliche Differentialgleichungen
+\begin{align*}
+\frac{M''(\mu)}{M(\mu)}-\lambda\sinh^2\mu &=  \kappa
+&
+M''(\mu)-(\lambda\sinh^2\mu+\kappa)M(\mu)&=0
+\\
+\frac{N''(\nu)}{N(\nu)}-\lambda\sin^2\nu &= -\kappa
+&
+N''(\nu)-(\lambda\sin^2\nu+\kappa)N(\nu)&=0.
+\end{align*}
+Die zugeh"origen Randbedingungen sind
+\begin{align*}
+M(0)&=0&
+N({\textstyle\frac{2\pi}{8}})&=0
+\\
+M(1)&=0&
+N({\textstyle\frac{5\pi}{8}})&=0
+\end{align*}
+\end{loesung}
+
+\begin{bewertung}
+Separationsansatz mit Produkt $u(\mu,\nu) = M(\mu)N(\nu)$ ({\bf A}) 1 Punkt,
+Einsetzen in die Differentialgleichung ({\bf E}) 1 Punkt,
+Trennung der Variablen ({\bf T}) 1 Punkt,
+Differentialgleichung f"ur $M(\mu)$ ({\bf M}) 1 Punkt,
+Differentialgleichung f"ur $N(\nu)$ ({\bf N}) 1 Punkt,
+Randbedingungen f"ur $S$ und $T$ ({\bf R}) 1 Punkt.
+\end{bewertung}
+
