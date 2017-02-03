@@ -78,6 +78,8 @@ knick.jpg:	knick.png
 	convert -extract 2943x2028+480+60 knick.png -scale 50% \
 		-density 300 -units PixelsPerInch \
 		knick.jpg
+
+streifen:	streifen0 streifen1 streifen2
 	
 streifen0:	streifen0.jpg
 streifen0.jpg:	streifen0.png
@@ -86,12 +88,12 @@ streifen0.png:	streifen0.pov
 	sh ../../povray $(povrayoptions) -W1024 -H768 -Ostreifen0.png \
 		streifen0.pov
 
-streifen:	streifen.jpg
-streifen.jpg:	streifen.png
-	convert streifen.png streifen.jpg
-streifen.png:	streifen.pov
-	sh ../../povray $(povrayoptions) -W1024 -H768 -Ostreifen.png \
-		streifen.pov
+streifen1:	streifen1.jpg
+streifen1.jpg:	streifen1.png
+	convert streifen1.png streifen1.jpg
+streifen1.png:	streifen1.pov
+	sh ../../povray $(povrayoptions) -W1024 -H768 -Ostreifen1.png \
+		streifen1.pov
 
 streifen2:	streifen2.jpg
 streifen2.jpg:	streifen2.png
