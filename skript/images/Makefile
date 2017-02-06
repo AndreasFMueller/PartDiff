@@ -15,7 +15,7 @@ ODEFILES = ode-1.pdf
 GREENFILES = green-1.pdf
 CHARFILES = char-1.pdf char-2.pdf char-3.pdf
 HYPEXPFILES = hypexp-1.pdf
-HFFILES = hf-1.pdf
+HFFILES = hf-1.pdf hf-2.pdf
 KAUSALFILES = kausal-1.pdf kausal-2.pdf kausal-3.pdf kausal-4.pdf
 
 randwerte:	$(RANDWERTEFILES)
@@ -67,7 +67,10 @@ $(HYPEXPFILES):	hypexp.mp
 hf: $(HFFILES)
 $(HFFILES):	hf.mp
 	TEX=latex mpost hf.mp
-	mptopdf hf.1
+	for f in hf.*; \
+	do \
+		mptopdf $${f}; \
+	done
 
 kausal:	$(KAUSALFILES)
 $(KAUSALFILES):	kausal.mp
