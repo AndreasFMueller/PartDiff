@@ -4,21 +4,26 @@
 # (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
 
-all:	partdiff-2.pdf
+all:	partdiff-handout-2.pdf partdiff-presentation-2.pdf
+
+CONTENT = slides.tex surface.jpg kurven-1.pdf
+
+partdiff-handout-2.pdf:	partdiff-handout-2.tex $(CONTENT)
+	pdflatex partdiff-handout-2.tex
+
+partdiff-presentation-2.pdf:	partdiff-presentation-2.tex $(CONTENT)
+	pdflatex partdiff-presentation-2.tex
 
 kurven-1.pdf:	kurven.mp
 	TEX=latex mpost kurven.mp
 	mptopdf kurven.1
-
-partdiff-2.pdf:	partdiff-2.tex kurven-1.pdf surface.jpg
-	pdflatex partdiff-2.tex
 
 w = 3960
 h = 2160
 #w = 1280
 #h = 960
 
-povrayoptions = -A0.1 -W$(w) -H$(h)
+povrayoptions = +A0.1 -W$(w) -H$(h)
 
 surface.png:	surface.pov
 	sh ../../povray $(povrayoptions) -Osurface.png surface.pov
