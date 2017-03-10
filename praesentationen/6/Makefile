@@ -3,7 +3,10 @@
 #
 # (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
-all:	partdiff-6.pdf
+all:	partdiff-handout-6.pdf partdiff-presentation-6.pdf
 
-partdiff-6.pdf:	partdiff-6.tex
-	pdflatex partdiff-6.tex
+partdiff-handout-6.pdf:	partdiff-handout-6.tex slides.tex
+	pdflatex partdiff-handout-6.tex
+
+partdiff-presentation-6.pdf:	partdiff-presentation-6.tex slides.tex
+	pdflatex partdiff-presentation-6.tex

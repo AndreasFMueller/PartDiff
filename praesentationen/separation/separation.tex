@@ -1,0 +1,529 @@
+\documentclass{beamer}
+\usepackage{array}
+\usepackage{german}
+\usepackage{graphicx}
+\mode<beamer>{%
+\usetheme[hideothersubsections,hidetitle]{Hannover}
+}
+\begin{document}
+
+\begin{frame}
+\section{Separation}
+\frametitle{Separation}
+Zwei wesentliche Ideen:
+\begin{enumerate}
+\item Ansatz:
+\begin{align*}
+u(x,y)&=X(x)\cdot Y(y)\\
+S(x,y,z,t)&=S_1(x)+S_2(y)+S_3(z)+S_4(t)
+\end{align*}
+\item Beide Seiten der Gleichung sind konstant:
+\[
+F(x)=G(y)\quad\Rightarrow\quad\left\{
+\begin{aligned}
+F(x)&=\lambda\\
+G(y)&=\lambda
+\end{aligned}
+\right.
+\]
+\end{enumerate}
+Separation zerlegt eine PDGL in zwei gew"ohnliche DGL, welche "uber
+die Konstante $\lambda$ miteinander verbunden sind.
+\end{frame}
+
+\begin{frame}
+\frametitle{Vorgehen}
+\begin{enumerate}
+\item Separationsansatz in DGL einsetzen
+\item Variablen trennen $\Rightarrow$ zwei gew"ohnliche DGL, verbunden
+mit einer Konstanten $\lambda$
+\item Gew"ohnliche DGL f"ur jedes $\lambda$ l"osen: f"ur jedes $\lambda$ eine L"osung
+$u_\lambda$
+\item Mit Randbedingungen soweit m"oglich L"osungen reduzieren $\Rightarrow$
+m"ogliche $\lambda$ bestimmen
+\item Allgemeine L"osung zusammensetzen: $u = \sum_{\lambda}a_\lambda u_\lambda$
+\item Verbleibende Randbedingungen verwenden, um $a_\lambda$ zu bestimmen
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Beobachtungen}
+\begin{enumerate}
+\item Auf kompakten Gebieten gibt es eine diskrete Familie von Teill"osungen
+$u_{\lambda}$.
+\item Vollst"andige L"osung entsteht durch "Uberlagerung von Teill"osungen
+$\Rightarrow$ dazu wird {\bf Linearit"at ben"otigt}
+\item Randbedingungen k"onnen durch Fourier-Reihen erf"ullt werden
+\item $\Rightarrow$ zu jedem kompakten Gebiet gibt es eine ``verallgemeinerte
+Fourier-Theorie'' ($\Rightarrow$ Hilbert-R"aume)
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\section{Anwendungen}
+\frametitle{Anwendungen}
+\begin{enumerate}
+\item Eletrodynamik
+\item W"armelehre
+\item Wahrscheinlichkeitsrechnung
+\item Fluiddynamik
+\item Quantenphysik
+\item Finanzmathematik
+\item Mechanik
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Elektrodynamik}
+\begin{enumerate}
+\item Signalausbreitung entlang eines Kabels (Telegraphengleichung)
+\item Stromverteilung in Leitern mit einfachem Querschnitt:
+Skin-Effekt
+\item Feld von Wellenleitern mit einfacher Geometrie: 
+\begin{itemize}
+\item Koaxialkabel (Zylinderkoordinaten)
+\item Hohlleiter mit rechteckigem Querschnitt
+\item Lecherleitung (elliptische Zylinderkoordinaten)
+\end{itemize}
+\item Abstrahlung einfacher Antennen
+\begin{itemize}
+\item idealisierter Dipol (Kugelkoordinaten)
+\item Kugel (Kugelkoordinaten)
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Elektrodynamik: Dipolstrahlung}
+Berechnung der Dipolstrahlung durch Heinrich Hertz 1889
+\begin{center}
+\includegraphics[width=\hsize]{nfld-fig2re.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{W"armelehre}
+\begin{enumerate}
+\item W"armeleitung in Gebieten mit einfacher
+Geometrie (Rechtecke, Quader, Kreise, Kugeln, St"abe)
+\item Diffusion
+\item Transport (Fokker-Planck-Gleichung) in einfachen Geometrien
+\item Transformation auf verschiedene thermodynamische Potentiale
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fluiddynamik}
+
+Anwendungsm"oglichkeiten beschr"ankt, da Navier-Stokes nicht linear!
+
+\medskip
+
+Anwendung auf linearisierte Probleme oder laminare Str"omung:
+\begin{enumerate}
+\item Instabilit"at der laminaren Str"omung in Rohren mit einfachen
+Querschnitten (Kreis, Rechteck)
+\item Str"omung zwischen zwei sich drehenden Zylindern (Lager, Str"omung
+des Schmiermittels)
+\item "Uberschallstr"omung
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{"Uberschallstr"omung}
+\begin{center}
+\includegraphics[width=\hsize]{schuss.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Quantenphysik}
+\begin{enumerate}
+\item Teilchen im Vakuum
+\item Teilchen in einem Potential (Elektron im homogenen elektrischen Feld)
+\item Energieniveaus eines Wasserstoff-Atoms, He-Ions oder approximative
+Berechnung der Energieniveaus in schwereren Atomen
+(Kugelkoordinaten) $\Rightarrow$ ``Orbitale''
+\item Energieniveaus eines ionisierten Wasserstoff-Molek"uls (elliptische Koordinaten)
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Wasserstoff-Spektrum}
+\begin{center}
+\includegraphics[width=\hsize]{spectrum.pdf}
+\end{center}
+Die Quantentheorie erkl"art z.~B.~die Rydberg Formel:
+\[
+\frac1{\lambda}=R_H\biggl(\frac1{n_1^2}-\frac1{n_2^2}\biggr),\qquad n_2>n_1
+\]
+$\lambda=$ Wellenl"ange der Spektrallinie zum einem "Ubergang zwischen Quantenzust"anden
+mit den Nummern $n_1$ und $n_2$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Balmer-Serie}
+Sichtbar sind nur die Linien der Balmer-Serie, f"ur die 
+Johann Jakob Balmer (1825-1898) die Formel
+\[
+\lambda=\frac{hm^2}{m^2-4},\qquad h=3.6456\cdot10^{-7}\text{m}
+\]
+f"ur die Wellenl"angen empirisch gefunden hat (1885).
+\begin{itemize}
+\item
+Balmer konnte eine Spektrallinie f"ur $m=7$ mit Wellenl"ange 396nm
+vorhersagen, die, wie sich herausstellte, bereits von \AA ngstr"om beobachtet
+worden war.
+\item 
+Intensivstes Wasserstoff-Licht: H-$\alpha$ Linie f"ur $m=3$, 656nm, rot,
+wird oft f"ur astronomische Beobachtungen herausgefiltert (``man sieht nur den
+Wasserstoff'')
+\end{itemize}
+
+\medskip
+Balmer war zeit seines Lebens Mathematiklehrer an einem M"adchengymnasium
+in Basel.
+\end{frame}
+
+\begin{frame}
+\frametitle{Sonne in H-$\alpha$}
+\begin{center}
+\includegraphics[width=0.7\hsize]{sunhalpha.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Milchstrasse in H-$\alpha$}
+\begin{center}
+\includegraphics[width=\hsize]{skysurvey.jpg}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Finanzmathematik}
+Black-Scholes-Gleichung f"ur den Preis $V$ einer Option zu einer Aktie mit Preis
+$S$
+\[
+\frac{\partial V}{\partial t}
++
+rS\frac{\partial V}{\partial S}
++
+\frac12\sigma^2S^2\frac{\partial^2 V}{\partial S^2}=rV
+\]
+$\sigma$ zuk"unftige Volatilit"at des Basiswertes, $r$ Zinssatz
+
+Anfangswerte: Geldfl"usse zum F"alligkeitszeitpunkt der Option.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Mechanik}
+\begin{enumerate}
+\item Ausbreitung von Wellen in einfachen Geometrien
+\item Elastizit"at einfacher K"orper: Balken, rechteckige, kreisf"ormige
+oder elliptische Platten, Kugelf"ormige Schalen. $\Rightarrow$ Eigenfrequenzen
+\item Hamilton-Jacobi-Theorie
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\section{Hamilton-Jacobi}
+\frametitle{Hamilton-Jacobi-Theorie I}
+{\bf Newton:} Ein K"orper bleibt im Zustand der Ruhe oder der gleichf"ormigen
+Bewegung, solange keine "ausseren Kr"afte auf ihn wirken. 
+
+{\bf In Formeln:}
+\begin{align*}
+x&=\frac{p}{m}\cdot t\\
+p&=\operatorname{const}
+\end{align*}
+
+{\bf Idee:} Kann man das vielleicht noch besser machen? Zum Beispiel alles konstant!?
+\begin{align*}
+Q_i&=\operatorname{const}\\
+P_i&=\operatorname{const}
+\end{align*}
+Kann man jede beliebige Wurfparabel durch 6 Konstanten beschreiben?
+\end{frame}
+
+\begin{frame}
+\frametitle{Hamilton-Jacobi-Theorie II}
+
+{\bf Ausgangspunkt:}
+Hamilton-Funktion $H=$ Gesamtenergie, ausgedr"uckt in Koordinaten
+und Impulsen. 
+\[
+H(x,y,z,p_x,p_y,p_z)=\frac1{2m}(p_x^2+p_y^2+p_z^2)+mgz
+\]
+(Galileo-Experiment: Massepunkt im Schwerefeld auf der Erdoberfl"ache)
+
+{\bf Bewegungsgleichungen:} nach Hamilton
+\begin{align*}
+\frac{dx}{dt}&=\frac{\partial H}{\partial p_x}=\frac{p_x}{m}&
+\frac{dp_x}{dt}&=-\frac{\partial H}{\partial x}=0\\
+\frac{dy}{dt}&=\frac{\partial H}{\partial p_y}=\frac{p_y}{m}&
+\frac{dp_y}{dt}&=-\frac{\partial H}{\partial y}=0\\
+\frac{dy}{dt}&=\frac{\partial H}{\partial p_z}=\frac{p_z}{m}&
+\frac{dp_z}{dt}&=-\frac{\partial H}{\partial z}=-mg
+\end{align*}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Hamilton-Jacobi-Theorie III}
+Neue Koordinaten $Q_i$ und $P_i$ sind Konstanten: 
+\begin{align*}
+\frac{dQ_i}{dt}&=0&
+\frac{dP_i}{dt}&=0
+\end{align*}
+Aus den Hamilton-Gleichungen folgt, dass die neue Hamilton-Funktion $K$ nur
+eine Konstante ist:
+\begin{align*}
+\frac{\partial K}{\partial Q_i}&=-\frac{dP_i}{dt}=0&&\text{$K$ h"angt nicht von $Q_i$ ab}\\
+\frac{\partial K}{\partial P_i}&=\frac{dQ_i}{dt}=0&&\text{$K$ h"angt nicht von $P_i$ ab}
+\end{align*}
+$\Rightarrow$
+\[
+K=\operatorname{const}
+\]
+\end{frame}
+
+\begin{frame}
+\frametitle{Hamilton-Jacobi-Theorie IV}
+
+{\bf Transformation:} Transformation auf neue Koordinaten ist mit einer Funktion
+\[
+S(x,y,z,P_1,P_2,P_3)
+\]
+m"oglich.  $P_i$ sind die neuen, konstanten Impulse:
+
+{\bf Koordinatentransformationsformeln:}
+\begin{align*}
+p_x&=\frac{\partial S}{\partial x}&
+Q_1&=\frac{\partial S}{\partial P_1}\\
+p_y&=\frac{\partial S}{\partial y}&
+Q_2&=\frac{\partial S}{\partial P_2}\\
+p_z&=\frac{\partial S}{\partial z}&
+Q_3&=\frac{\partial S}{\partial P_3}
+\end{align*}
+$Q_i$ sind die neuen Koordinaten.
+Neuen Hamilton-Funktion
+\[
+K(Q,P)=H+\frac{\partial S}{\partial t}
+\]
+\end{frame}
+
+\begin{frame}
+\frametitle{Hamilton-Jacobi-Theorie V}
+
+{\bf Hamilton-Jacobi-Gleichung:}
+\[
+H\biggl(x,y,z,\frac{\partial S}{\partial x},\frac{\partial S}{\partial y},\frac{\partial S}{\partial z}\biggr)+\frac{\partial S}{\partial t}=0
+\]
+Nicht lineare PDGL:
+\[
+\frac1{2m}\biggl(
+\biggl(\frac{\partial S}{\partial x}\biggr)^2
++
+\biggl(\frac{\partial S}{\partial y}\biggr)^2
++
+\biggl(\frac{\partial S}{\partial z}\biggr)^2
+\biggr)
++mgz+\frac{\partial S}{\partial t}
+=0
+\]
+Nach Separation:
+\[
+\frac1{2m}\biggl(
+\biggl(\frac{dS_1}{dx}\biggr)^2
++
+\biggl(\frac{dS_2}{dy}\biggr)^2
++
+\biggl(\frac{dS_3}{dz}\biggr)^2
+\biggr)+mgz=-\frac{dS_4}{dt}
+\]
+Linke Seite h"angt nicht von $t$ ab:
+\[
+\frac{dS_4}{dt}=\frac{\partial S}{\partial t}=\operatorname{const}=-P_1
+\quad\Rightarrow\quad
+S_4(t)=-P_1t
+\]
+\end{frame}
+
+\begin{frame}
+\frametitle{Hamilton-Jacobi-Theorie VI}
+
+Trennung der $x$-Funktion $S_1$:
+\[
+\frac1{2m}
+\biggl(\frac{dS_1}{dx}\biggr)^2
+=-\frac1{2m}\biggl(
+\biggl(\frac{dS_2}{dy}\biggr)^2
++
+\biggl(\frac{dS_3}{dz}\biggr)^2
+\biggr)
+-mgz
++P_1
+\]
+Rechte Seite h"angt nicht von $x$ ab:
+\[
+\frac1{2m}\biggl(\frac{dS_1}{dx}\biggr)^2=\operatorname{const}=P_2
+\quad\Rightarrow\quad
+S_1=\sqrt{2mP_2}\, x
+\]
+Neue Differentialgleichung
+\[
+P_2+\frac1{2m}\biggl(\frac{dS_2}{dy}\biggr)^2
+=
+-\frac1{2m}\biggl(\frac{dS_3}{dz}\biggr)^2-mgz
++P_1
+\]
+Linke Seite h"angt nur von $y$ ab, rechte nur von $z$
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Hamilton-Jacobi-Theorie VII}
+\[
+\frac1{2m}\biggl(\frac{dS_2}{dy}\biggr)^2=\operatorname{const}=P_3
+\quad \Rightarrow\quad
+S_2(y)=\sqrt{2mP_3}\,y
+\]
+Verbleibende Gleichung f"ur $S_3$:
+\[
+P_2+P_3+
+\frac1{2m}\biggl(\frac{dS_3}{dz}\biggr)^2+mgz=P_1
+\]
+oder
+\begin{align*}
+\frac1{2m}\biggl(\frac{dS_3}{dz}\biggr)^2+mgz&=P_1 -P_2-P_3
+\\
+\frac{dS_3}{dz}&=\sqrt{2m(P_1-P_2-P_3-mgz)}
+\\
+S_3(z)&=-\frac1{3m^2g}(2m(P_1-P_2-P_3-gz))^{\frac32}
+\end{align*}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Hamilton-Jacobi-Theorie VIII}
+
+Zusammenstellung der Resultate bis jetzt:
+\begin{align*}
+S_1(x)&=\sqrt{2mP_2}\, x
+\\
+S_2(y)&=\sqrt{2mP_3}\, y
+\\
+S_3(z)&=-\frac1{3m^2g}(2m(P_1-P_2-P_3-gz))^{\frac32}
+\\
+S_4(t)&=-P_1t
+\end{align*}
+Zusammenhang mit den alten Impulsen:
+\begin{align*}
+\frac{\partial S}{\partial x}&=p_x=\sqrt{2mP_2}
+\\
+\frac{\partial S}{\partial y}&=p_y=\sqrt{2mP_3}
+\\
+\frac{\partial S}{\partial z}&=p_z=\sqrt{2m(P_1-P_2-P_3-mgz)}
+\end{align*}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Hamilton-Jacobi-Theorie IX}
+Neue Koordinaten
+\begin{align*}
+Q_1=\frac{\partial S}{\partial P_1}&=
+-t-\frac1{mg}\sqrt{2m(P_1-P_2-P_3-mgz)}
+\\
+Q_2=\frac{\partial S}{\partial P_2}&=
+\sqrt{\frac{m}{2P_2}}x+\frac1{mg}\sqrt{2m(P_1-P_2-P_3-mgz)}
+\\
+Q_3=\frac{\partial S}{\partial P_3}&=
+\sqrt{\frac{m}{2P_3}}y+\frac1{mg}\sqrt{2m(P_1-P_2-P_3-mgz)}
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Hamilton-Jacobi-Theorie X}
+
+Gleichungen nach $x$, $y$ und $z$ aufl"osen:
+\begin{align}
+z&=-\frac12g(t+Q_1)^2+\frac1{mg}(P_1-P_2-P_3)
+\label{zfunktion}
+\\
+x&=\sqrt{\frac{2P_2}m}(Q_1+Q_2+t)
+\quad\Rightarrow\quad
+\dot x=\sqrt{\frac{2P_2}m}
+\notag
+\\
+y&=\sqrt{\frac{2P_3}m}(Q_1+Q_3+t)
+\quad\Rightarrow\quad
+\dot y=\sqrt{\frac{2P_3}m}
+\notag
+\end{align}
+Man stellt fest:
+\begin{itemize}
+\item
+Gleichf"ormige Bewegung in $x$- und $y$-Richtung
+\item
+Quadratische Abh"angigkeit der H"ohe von der Zeit: Wurfparabel (Galilei)
+\item Zusammenhang zwischen $P_2$, $P_3$ und den urspr"unglichen Koordinaten:
+\[
+P_2=\frac12mv_x^2,
+\qquad
+P_3=\frac12mv_y^2
+\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Hamilton-Jacobi-Theorie XI}
+
+Physikalische Bedeutung der neuen verallgemeinerten Koordinaten:
+\begin{center}
+\begin{tabular}{|cl|}
+\hline
+Koordinate&Bedeutung\\
+\hline
+$Q_1$&Scheitelzeit\\
+$Q_2$&$x$-Achsen-"Uberquerungszeit\\
+$Q_3$&$y$-Achsen-"Uberquerungszeit\\
+$P_1$&Gesamtenergie\\
+$P_2$&Beitrag der $x$-Bewegung zur Energie\\
+$P_3$&Beitrag der $y$-Bewegung zur Energie\\
+\hline
+\end{tabular}
+\end{center}
+$Q_2$ und $Q_3$ sind bezogen auf die Scheitelzeit: wieviel vor oder nach 
+dem Scheiteldurchgang werden $x$- bzw.~$y$-Achse "uberquert?
+
+$P_1-P_2-P_3$ in (\ref{zfunktion}) ist der Energieinhalt der Vertikalbewegung.
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Hamilton-Jacobi-Theorie XII}
+
+{\bf Wozu das alles?}
+\begin{itemize}
+\item $Q_i$, $P_i$ sind die physikalisch nat"urlichsten Bahn-Elemente
+\item Bahnberechnung braucht keine numerische Integration $\Rightarrow$
+keine Rundungsfehler $\Rightarrow$ Bahnberechnung "uber sehr lange Zeit
+(Jahrmilliarden) m"oglich
+\item St"orungen der Bahn "aussern sich in langsamen "Anderungen der
+Elemente $Q_i$ und $P_i$  $\Rightarrow$ Stabilit"at des Sonnensystems
+"uber Jahrmilliarden berechenbar
+\item Anwendung: Satellitenbahnen
+\begin{itemize}
+\item Bahn wird durch 6 Elemente beschrieben
+\item St"orung z.~B.~Mond oder Sonne "aussern sich in kleinen "Anderungen
+von $Q_i$ und $P_i$.
+\item Korrekturen sind kleine "Anderungen von $Q_i$ und $P_i$
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\end{document}
