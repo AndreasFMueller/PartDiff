@@ -1,0 +1,112 @@
+Gegeben ist die Differentialgleichung
+\begin{equation}
+\frac{\partial^3 u}{\partial t^3}
++
+\frac{\partial u}{\partial x}
+=
+0
+\label{50000013:dgl}
+\end{equation}
+auf dem Gebiet
+\[
+\Omega = \{ (x,t)\,|\, t>0\wedge x > 0\}
+\]
+mit Randbedingungen
+\begin{equation}
+\begin{aligned}
+u(x,0)&=0,
+&
+\frac{\partial u}{\partial t}(x,0)
+&=
+0,
+&
+\frac{\partial^2 u}{\partial t^2}(x,0)
+&=0,
+\\
+u(0,t)&=1.
+\end{aligned}
+\end{equation}
+\begin{teilaufgaben}
+\item
+Führen Sie Laplace-Transformation nach der Variablen $t$ durch und
+stellen Sie eine Differentialgleichung für ${\cal L}u(x,s)$ mit
+Anfangsbedingungen auf.
+\item
+Bestimmen Sie die Funktion ${\cal L}u(x,s)$.
+\end{teilaufgaben}
+
+\begin{hinweis}
+Die gewöhnliche Differentialgleichung $y'+ay=b$ mit Anfangsbedingung $y(0)=c$
+hat die allgemeine Lösung
+\[
+y(x) = \biggl(c-\frac{b}{a}\biggr)e^{-ax} + \frac{b}{a}.
+\]
+\end{hinweis}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Die Laplace-Transformation der Differentialgleichung \eqref{50000013:dgl}
+ergibt
+\begin{align*}
+s^3 {\cal L}u(x,s)
+-s^2 u(x,0)
+-s\frac{\partial u}{\partial t}(x,0)
+-\frac{\partial^2 u}{\partial t^2}(x,0)
++
+\frac{\partial}{\partial x}{\cal L}u(x,s)
+&=
+0
+\end{align*}
+Die Randbedingungen besagen, dass der zweite und dritte Term wegfallen
+und dass der vierte Term $=1$ ist.
+Die Differentialgleichung wird damit zu
+\begin{align*}
+s^3 {\cal L}u(x,s)
+-1
++
+\frac{\partial}{\partial x}{\cal L}u(x,s)
+&=
+0
+\\
+\Rightarrow\qquad
+\frac{\partial}{\partial x}{\cal L}u(x,s)
++
+s^3 {\cal L}u(x,s)
+&=
+1.
+\end{align*}
+Dies ist eine mit $s$ parametrisierte gewöhnliche Differentialgleichung
+erster Ordnung für die Funktion ${\cal L}u(x,s)$.
+
+Die Anfangsbedingung für diese Differentialgleichung erhält man durch
+Laplace-Transformation der Randbedingung $u(0,t)=1$, die Laplace-Transformation
+der Konstanten ist
+\[
+{\cal L}u(0,s) = \frac1s.
+\]
+
+Die Differentialgleichung wird etwas übersichtlicher, wenn man
+$y_s(x) = {\cal L}u(x,s)$ schreibt, dann wird sie nämlich zu
+\begin{equation}
+y_s'(x) + s^3 y_s(x)=1
+\qquad\text{mit Anfangsbedingung}\qquad
+y_s(0)=\frac1s.
+\label{50000013:final}
+\end{equation}
+
+\item
+Die Differentialgleichung \eqref{50000013:final} ist eine Differentialgleichung
+der im Hinweis gegebenen Art mit $a=s^3$, $b=1$ und $c=1/s$.
+Die Lösung ist daher
+\[
+{\cal L}u(x,s)
+=
+y_s(x)
+=
+\biggl(\frac1s-\frac1{s^3}\biggr)e^{-s^3x} + \frac{1}{s^3}.
+\qedhere
+\]
+\end{teilaufgaben}
+\end{loesung}
+
