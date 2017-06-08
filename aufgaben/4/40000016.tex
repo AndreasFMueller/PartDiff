@@ -10,6 +10,7 @@ zweiter Ordnung
 +
 \biggl(1+\biggl(\frac{\partial u}{\partial x}\biggr)^2\biggr)
 \frac{\partial^2 u}{\partial y^2}
+=0
 \label{40000016:dgl}
 \end{equation}
 für die Funktion $u(x,y)$ auf dem Gebiet $\Omega =\mathbb R^2$.
@@ -23,10 +24,9 @@ haben.
 \begin{teilaufgaben}
 \item
 Führen Sie Separation durch mit Hilfe eines Ansatzes der Form
-\begin{equation}
+$
 u(x,y) = X(x) + Y(y)
-\label{40000016:ansatz}
-\end{equation}
+$
 und stellen Sie Differentialgleichungen und Anfangsbedingungen
 für $X(x)$ und $Y(y)$ auf.
 \item
@@ -36,8 +36,7 @@ Legen die Vorgaben die Separationslösung eindeutig fest?
 \begin{loesung}
 \begin{teilaufgaben}
 \item
-Die partiellen Ableitungen von $u$ nach dem Ansatz \eqref{40000016:ansatz}
-sind:
+Die partiellen Ableitungen von $u$ entsprechend dem Ansatz sind:
 \begin{equation*}
 \begin{aligned}
 \frac{\partial u}{\partial x}
@@ -76,30 +75,36 @@ rechte Seite, erhält man
 Da die Variablen separiert sind, kann man schliessen, dass beide Seiten
 der Gleichung konstant sein müssen.
 Mit der neuen Konstanten $c$ erhält man also die Gleichungen
-\begin{align*}
+\begin{align}
 \frac{X''(x)}{1+X'(x)^2} &= c
 &
 &\text{und}&
 \frac{Y''(y)}{1+Y'(y)^2} &= -c
+\label{40000016:loes}
 \\
 \intertext{mit den Anfangsbedingungen}
 X(0) &= 0
 &&&
 Y(0) &= 0
+\notag
 \\
 X'(0) &= 0
 &&&
 Y'(0) &= 0.
-\end{align*}
+\notag
+\end{align}
 \item
-Diese Anfangsbedingungen legen die Lösung $X(x)$ und $Y(y)$ eindeutig
+Diese Anfangsbedingungen legen die Lösung $X(x)$ und $Y(y)$
+der gewöhnlichen Differentialgleichungen
+\eqref{40000016:loes}
+eindeutig
 fest, und damit auch die Separationslösung $u(x,y)=X(x) + Y(y)$.
 \qedhere
 \end{teilaufgaben}
 \end{loesung}
 
 \begin{diskussion}
-Die Differntialgleichung \eqref{40000016:dgl} ist die Bedingung, dass der
+Die Differentialgleichung \eqref{40000016:dgl} ist die Bedingung, dass der
 Graph der Funktion $u(x,y)$ mittlere Krümmung $0$ hat, er wird damit eine
 Minimalfläche.
 Diese Minimalfläche wurde von H.~F.~Scherk 1834 gefunden.
