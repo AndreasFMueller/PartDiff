@@ -1,0 +1,87 @@
+Auf dem Gebiet
+\[
+\Omega = \{ (x,y)\,|\, 1 < x^2 + y^2\}
+\]
+soll die partielle Differentialgleichung in Polarkoordinaten
+\begin{equation}
+\frac{\partial^2 u}{\partial r^2}
++
+\frac{\partial^2 u}{\partial \varphi^2}
+=
+0
+\label{90000015:dgl}
+\end{equation}
+gelöst werden.
+Auf welchem Teil des Randes $x^2 +y^2 = 1$ müssen Randwerte vorgegeben
+werden, dass die Lösung für Punkte mit $x>0$ und $x^2 + y^2 = 4$
+eindeutig bestimmt ist?
+
+\begin{loesung}
+Die Differentialgleichung \eqref{90000015:dgl} hat das Symbol
+\[
+A
+=
+\begin{pmatrix}
+1&0\\
+0&-1
+\end{pmatrix}
+\qquad\Rightarrow\qquad
+\det A=-1<0
+\]
+und ist daher hyperbolisch.
+Die gestellte Frage kann daher mit Hilfe der Charakteristiken beantwortet
+werden.
+Die Differentialgleichung der Charakteristiken also Kurven $(r(t),\varphi(t))$
+in Abhängigkeit von einem Parameter $t$ ist
+\[
+\dot\varphi(t)^2 - \dot r(t)^2=0.
+\]
+Diese Differenz von zwei Quadraten kann faktorisiert werden in
+\[
+\dot\varphi(t)^2 - \dot r(t)^2
+=
+(\dot\varphi(t) + \dot r(t))
+(\dot\varphi(t) - \dot r(t)).
+\]
+Es folgen zwei Differentialgleichungen erster Ordnung
+\[
+\dot\varphi(t)\pm\dot r(t) = 0
+\qquad\Rightarrow\qquad
+\frac{dr}{d\varphi}
+=
+\frac{\dot r}{\dot \varphi}
+=
+\pm 1
+\]
+mit den Lösungen
+\[
+r(\varphi) =  \pm \varphi + \delta
+\]
+mit der Integrationskonstante $\delta$.
+Diese Kurven sind Spiralen um den Nullpunkt.
+
+Die Kurve 
+\[
+C
+=
+\{ (x,y)\,|\, x>0\wedge x^2 +y^2=4\}
+\]
+besteht aus Punkten mit $r=2$ und $-\frac{\pi}{2}<\varphi<\frac{\pi}2$.
+Um die Lösung der Differentialgleichung auf $C$ festzulegen, müssen
+Randwerte auf den Anfangspunkten vorgegeben sein, zu denen Charakteristiken
+gehören, die durch $C$ gehen (Abbildung~\ref{90000015:fig}).
+Dies gilt für Anfangswerte von $\varphi$ im Interval
+$[-\frac{\pi}2-1,\frac{\pi}2+1]$.
+\begin{figure}
+\centering
+\includeagraphics[]{domain-1.pdf}
+\caption{Definitionsgebiet $\Omega$ und Charakteristiken der
+Differentialgleichung \eqref{90000015:dgl}.
+Rot eingezeichnet der Teil des Randes, auf dem die Randwerte vorgegeben
+sein müssen, damit die Werte der Lösung der Differentialgleichung auf dem
+roten Halbkreis eindeutig bestimmt sind.
+\label{90000015:fig}}
+\end{figure}
+\end{loesung}
+
+
