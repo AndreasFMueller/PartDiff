@@ -41,6 +41,10 @@ def rad(expr w) =
 	(w * 3.14159 / 180)
 enddef;
 
+def deg(expr w) =
+	(w * 180 / 3.14159)
+enddef;
+
 def sp(expr a, s, delta) =
 	((1 + rad(a + delta)) * u * cosd(s * a), (1 + rad(a + delta)) * u * sind(s * a))
 enddef;
@@ -82,6 +86,19 @@ numeric alphamax;
 alphamax = 180 * (3.14159/2 + 1)/3.14159;
 alphamin = -alphamax;
 
+pickup pencircle scaled 0.4pt;
+
+draw (0,-2*u)--(0,2*u);
+draw (0,0)--(u,0);
+label(btex $\frac{\pi}2$ etex, (6, 8));
+label(btex $\frac{\pi}2$ etex, (6,-8));
+
+draw (0,0)--(u*cosd(alphamax),u*sind(alphamax));
+draw (0,0)--(u*cosd(alphamax),-u*sind(alphamax));
+
+label(btex $1$ etex, (-4, 9));
+label(btex $1$ etex, (-4,-9));
+
 pickup pencircle scaled 1pt;
 spirale(1, 0);
 draw p rotated alphamin withcolor blau;
@@ -95,6 +112,12 @@ endfor;
 p := p -- kreis(alphamax, u);
 pickup pencircle scaled 1.5pt;
 draw p withcolor red;
+
+z10 = (2 * u, 0) shifted (10,0);
+numeric o;
+o = 5;
+fill (z10 shifted (-o,-o))--(z10 shifted (o,-o))--(z10 shifted (o,o))--(z10 shifted (-o,o))--cycle withcolor white;
+label(btex $C$ etex, z10) withcolor red;
 
 clip currentpicture to border;
 
