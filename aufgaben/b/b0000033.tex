@@ -1,0 +1,50 @@
+In der Ebene ist ein kartesisches Koordinatensystem vorgegeben. 
+
+Die reelle Funktion $u(x,y)$ ist auf dem Quadrat
+\[
+\Omega = [0,1] \times [0,1]
+\]
+definiert. Sie erf"ullt im Innern von $\Omega$ die Differentialgleichung
+\[
+\Delta u(x,y) = 0
+\]
+und auf dem Rand von $\Omega$ die Bedingungen
+\[
+u(x,0) = 0, u(0,y) = 0, u(x,1) = 0
+\]
+sowie
+\[
+\frac{\partial u}{\partial n}(1,y) = 1.
+\]
+\vspace{2mm}
+
+Gesucht ist eine Approximation der Werte von $u$ in den vier Punkten von
+$\Omega$
+\[
+(1/3,1/3), \ \  (2/3,1/3), \ \ (1/3,2/3), \ \ (2/3,2/3).
+\]
+Benutzen Sie hierzu geeignete Finite Differenzen.
+
+\begin{loesung}
+Mit 
+\[
+\tilde u_1 = \tilde u(1/3,1/3), \ \tilde u_2 = \tilde u(2/3,1/3), \ \tilde u_3 = \tilde u(1,1/3),$$ $$\tilde u_4 = \tilde u(2/3,1/3), \ \tilde u_5 = \tilde u(2/3,2/3), \ \tilde u_6 = \tilde u(2/3,1),
+\]
+sowie 
+\[
+A = \left[\begin{array}{rrrrrr} 
+-4 & 1 & 0 & 1 & 0 & 0\\
+1 & -4 & 1 & 0 & 1 & 0 \\
+0 & 2 & -4 & 0 & 0 & 1 \\ 
+
+1 & 0 & 0 & -4 & 1 & 0 \\
+0 & 1 & 0 & 1 & -4 & 1 \\
+0 & 0 & 1 & 0 & 2 & -4 \end{array}\right] \ \ \text{und} \ \
+\underline{b} =  \left(\begin{array}{r} 0 \\ 0 \\ -2/3 \\ 0 \\ 0 \\ -2/3 \end{array}\right) 
+\]
+gilt $A \cdot \underline{\tilde u} = \underline{b}.$ Es folgt 
+\[
+\underline{\tilde u} \approx (1/27, 3/27, 8/27, 1/27, 3/27, 8/27).
+\qedhere
+\]
+\end{loesung}
