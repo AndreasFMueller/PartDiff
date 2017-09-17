@@ -1,0 +1,51 @@
+Die reelle Funktion $u(x,t)$ ist auf dem Streifen
+\[
+\Omega = [0, 1] \times [0,\infty)
+\]
+definiert. Sie erf"ullt im Innern von $\Omega$ die W\"armeleitungsgleichung
+\[
+u_{t}(x,t) = u_{xx}(x,t)
+\]
+und auf dem Rand von $\Omega$ die Bedingungen
+\[
+u(0,t) = 1 \qquad \text{und} \qquad  u(1,t) = 2,
+\]
+sowie
+\[
+u(x,0) = 1 + 2 \cdot x - x^2.
+\]
+Gesucht ist eine Approximation der Werte von $u$ in den zwei Punkten von $\Omega$
+\[
+(1/3, 1/4), \quad  (2/3, 1/4).
+\]
+Benutzen Sie hierzu das elementare Implizite Finite Differenzen Verfahren mit Schrittweiten
+\[
+\Delta x = 1/3 \qquad  \text{und} \qquad \Delta t = 1/12.
+\]
+
+\begin{loesung}
+Seien $\tilde u_{j,k} = u(j \cdot \Delta x, k \cdot \Delta t)$, sowie
+\[
+E
+=
+\left[
+\begin{array}{rr}
+10/4 & - 3/4 \\
+-3/4 & 10/4
+\end{array}\right]
+\qquad
+\text{und}
+\qquad
+\underline{e}
+=
+\begin{pmatrix}
+-3/4 \\ -6/4
+\end{pmatrix}.
+\]
+Es gilt $\tilde u^{(k)} = E \cdot \tilde u^{(k+1)} + e$
+und $\tilde u^{(k+1)} = E^{-1} \cdot (\tilde u^{(k)} - e).$
+Aus $\tilde u^{(0)} = (14/9, 17/9)$ folgt dann
+$\tilde u^{(3)} = (1.3748, 1.7081)$
+\end{loesung}
+
+
