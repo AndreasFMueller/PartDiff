@@ -1,0 +1,32 @@
+Die reelle Funktion $u(x)$ ist auf dem Intervall $$\Omega = [0, 1]$$
+definiert. Sie erf"ullt im Innern von $\Omega$ die Differentialgleichung
+\[
+- u''(x) = 20
+\]
+und auf dem Rand von $\Omega$ die Randbedingungen 
+\[
+u(0) = 0, \ \ u(1) = 0.
+\]
+Gesucht ist eine Approximationsfunktion $\tilde u(x)$ f"ur $u(x)$.
+
+Benutzen Sie das Verfahren von Gauss. Benutzen Sie die Masche $[0,1]$
+und den Approximationsansatz
+\[
+v(x) = a \cdot (x - x^2).
+\]
+
+\begin{loesung}
+Mit
+\[
+Q = \int_0^1 (-2)^2 \ dx = 4 \ \ \ \ \text{und}  \ \ \ \ q = \int_0^1 20 \cdot (-2) \  dx = -40,
+\]
+gilt  
+\[
+4 \cdot a - 40 = 0  \ \ \ \ \text{und somit }  \ \ \ \ a = 10.
+\]
+Es folgt 
+\[
+\tilde u(x) = 10 \cdot (x - x^2).
+\qedhere
+\]
+\end{loesung}

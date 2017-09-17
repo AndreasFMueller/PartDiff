@@ -1,0 +1,161 @@
+Auf dem Gebiet
+\[
+\Omega = \{ (x,y)\,|\, 1 < x^2 + y^2\}
+\]
+soll die folgende partielle Differentialgleichung in Polarkoordinaten
+\begin{equation}
+\frac{\partial^2 u}{\partial r^2}
++
+\frac{\partial^2 u}{\partial \varphi^2}
+=
+0
+\label{90000015:dgl}
+\end{equation}
+gelöst werden.
+Auf welchem Teil des Randes $x^2 +y^2 = 1$ müssen Randwerte vorgegeben
+werden, damit die Lösung $u(x,y)$ für Punkte mit $x>0$ und $x^2 + y^2 = 4$
+eindeutig bestimmt ist?
+
+\begin{loesung}
+Es ist einfacher, auch das Gebiet in Polarkoordinaten zu schreiben.
+Es gilt
+\[
+\Omega = \{ (r,\varphi)\,|\, r>1\}.
+\]
+Die Differentialgleichung \eqref{90000015:dgl} hat das Symbol
+\[
+A
+=
+\begin{pmatrix}
+1&0\\
+0&1
+\end{pmatrix}
+\qquad\Rightarrow\qquad
+\det A=-1<0
+\]
+und ist daher elliptisch.
+Die Lösung einer elliptischen Differentialgleichung in einem bestimmten
+Punkt ist nur dann eindeutig bestimmt, wenn in jedem beliebigen Randpunkt
+Randwerte vorgegeben sind.
+Genau durch diese Eigenschaft unterscheiden sich elliptische
+partielle Differentialgleichungen fundamental von den
+hyperbolischen, bei denen ein durch
+den Verlauf der Charakteristiken bestimmer Teil des Randes bereits die
+Lösung festlegen kann.
+
+Leider ist das nicht gut genug, denn das Gebiet ist in der vorliegenden
+Aufgabe unbeschränkt, während der Satz~7.2 im Skript und damit die davon
+abhängenden Sätze über die Eindeutigkeit der Lösung auch nur für beschränkte
+Gebiete gelten können.
+In der Tat ist die Funktion  $r=\sqrt{x^2+y^2}$ eine Lösung der
+Differentialgleichung, denn
+\[
+\frac{\partial^2 r}{\partial r^2} + \frac{\partial^2 r}{\partial \varphi^2}=0.
+\]
+Man kann also zu jeder Lösung $u$, die die Randbeingung auf dem ganzen Rand
+$r=1$ erfüllt, die Funktion $r$ hinzuaddieren und damit eine Lösung erhalten,
+die die gleiche Randbedingung erfüllt.
+Die Funktion $r$ wächst aber beliebig an.
+Um Eindeutigkeit der Lösung zu garantieren muss man also zusätzlich zur
+Randbedingung bei $r=1$ eine Bedingung für das Verhalten bei sehr grossen $r$
+stellen, zum Beispiel dass die Lösungen für $r\to\infty$ gegen $0$ gehen.
+
+Alternativ hätte man argumentieren können, dass die Greensche Funktion 
+die Lösung eindeutig garantieren würde.
+Doch die Greensche Funktion verlangt ja als Voraussetzung ebenfalls,
+dass die Lösung eindeutig sein muss, ist also ebenfalls von einer
+Bedingung im Unendlichen abhängig.
+Diese wird aber meist implizit gegeben, so dass dieses Argument
+tatsächlich funktionieren könnte.
+
+Ein weiterer Lösungsansatz besteht darin, dass man die Differentialgleichung
+auf dem Gebiet explizit löst.
+Dies ist mit einem Separationsansatz
+\[
+u(r,\varphi) = R(r) \cdot \Phi(\varphi)
+\]
+möglich.
+Die Separation ergibt die beiden Gleichungen
+\begin{align*}
+\Phi''(\varphi)&=-\mu^2\Phi(\varphi)
+\\
+R''(r)&=\mu^2R(r).
+\end{align*}
+Darin ist der Wert der Separationskonstanten bereits so gewählt, dass sich
+die Lösung der $\Phi$-Gleichung einfach schreiben lässt.
+Man findet dafür
+\[
+\Phi(\varphi) =
+\begin{cases}
+\sin\mu\phi\\
+\cos\mu\phi
+\end{cases}
+\]
+Dies können jedoch nur Lösungen sein, wenn sie $2\pi$-periodisch sind,
+also muss $\mu$ eine ganze Zahl sein, die wir im Folgenden wieder $n$
+schreiben.
+
+Für die Funktion $R$ finden wir
+\[
+R(r) = e^{\pm nr}.
+\]
+Die Lösung der Differentialgleichung hat also die allgemeine
+Form
+\[
+u(r,\varphi)
+=
+\frac{a_0}2
++
+\sum_{n=1}^\infty
+r^{-nr}(a_n^- \cos n\varphi + b_n^- \sin n\varphi)
++
+\sum_{n=1}^\infty
+r^{+nr}(a_n^+ \cos n\varphi + b_n^+ \sin n\varphi)
+\]
+Die Koeffizienten $a_0$, $a_n^\pm$ und $b_n^\pm$ müsssen noch bestimmt
+werden.
+Dies kann auf zwei Arten geschehen.
+\begin{enumerate}
+\item Man könnte Funktionswerte von $u$ und von der Normalableitung für
+$r=1$ vorgeben.
+Die Normalableitung fällt mit der Ableitung nach $r$ zusammen.
+Dann wäre nämlich
+\begin{align*}
+u(1,\varphi)
+&=
+\frac{a_0}2
++
+\sum_{n=1}^\infty ((a_n^-+a_n^+)\cos n\varphi + (b_n^-+b_n^+)\sin n\varphi)
+\\
+\frac{\partial u}{\partial r}(1,\varphi)
+&=
+\sum_{n=1}^\infty ((-a_n^-+a_n^+)\cos n\varphi + (-b_n^-+b_n^+)\sin n\varphi)
+\end{align*}
+Vorgabe dieser Randwerte würde also $a_n^-\pm a_n^+$ und $b_n^-\pm b_n^+$
+festlegen, und damit alle Koeffizienten.
+\item
+Man könnte durch eine Bedingung im Unendlichen die Terme der Form $e^{nr}$
+ausschliessen, dadurch würden die Koeffizienten $a_n^+=0$ und $b_n^+=0$.
+Es wären nur noch die Koeffizienten $a_n^-$ und $b_n^-$ zu bestimmen,
+und das wiederum wäre durch vorgabe der Randwerte $u(1,\varphi)$
+machbar.
+\qedhere
+\end{enumerate}
+\end{loesung}
+
+\begin{bewertung}
+Elliptischer Differentialoperator ({\bf E}) 2 Punkte,
+Randwerte müssen auf dem ganzen Rand vorgegeben werden ({\bf R}) 2 Punkte,
+Hinweis auf das Problem mit dem unbeschränkten Gebiet ({\bf U}) 2 Punkte.
+Da der letzte Schritt im Unterricht nur am Rande behandelt wurde, wird der 
+mögliche Wegfall der Punkte {\bf U} durch Anpassung der Notenskala
+kompensiert.
+
+Für den Zugang über die Separationslösung wurden Punkte wie folgt vergeben:
+Separationsansatz ({\bf A}) 1 Punkt,
+Separation ({\bf M}) 1 Punkt,
+Lösung der Separierten Gleichungen ({\bf L}) 1 Punkt,
+Bedingung, dass $n$ ganzzahlig ({\bf N}) sein muss 1 Punkt,
+Schlussfolgerung über nötige Randwertvorgaben ({\bf R}) 2 Punkte.
+\end{bewertung}
+

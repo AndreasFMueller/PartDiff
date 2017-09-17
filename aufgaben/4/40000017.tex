@@ -1,0 +1,157 @@
+Die biharmonische Gleichung
+\begin{equation}
+\Delta\Delta u =0
+\label{50000014:bi}
+\end{equation}
+soll
+%auf dem Gebiet
+%\[
+%\Omega = \{(x,y)\,|\, 0<x<1\wedge 0<y<1\}
+%\]
+gelöst werden.
+Man kann sie auch als
+\begin{equation}
+\frac{\partial^4u}{\partial x^4}
++
+2\frac{\partial^4u}{\partial x^2\partial y^2}
++
+\frac{\partial^4u}{\partial y^4}
+=
+0
+\label{50000014:bi2}
+\end{equation}
+schreiben.
+Verwenden Sie einen Separationsansatz der Form $u(x,y)=X(x)Y(y)$
+und leiten Sie gewöhnliche Differentialgleichungen für $X(x)$ und $Y(y)$
+her, mit denen das Problem gelöst werden kann.
+
+\begin{hinweis}
+Unmittelbar nach Einsetzen des Separationsansatzes lässt sich die 
+Differentialgleichung~\eqref{50000014:bi2} noch nicht separieren.
+Schreiben Sie sie in der Form
+\[
+E(x) + F(x)G(y) + H(y) = 0
+\]
+und leiten Sie nach $x$ und nach $y$ ab.
+Zeigen Sie dann, dass mindestens einer der Terme $F(x)$ und $G(x)$ konstant
+sein muss, schreiben Sie $F(x)=\lambda_1$ im ersten Fall und $G(y)=\lambda_2$ 
+im zweiten Fall.
+In jedem dieser zwei Fälle wird die Separation möglich.
+
+Die Differentialgleichungen müssen nicht gelöst werden.
+\end{hinweis}
+
+\begin{loesung}
+Einsetzen des Separationsansatzes $u(x,y)=X(x)Y(y)$ in 
+\eqref{50000014:bi2} ergibt
+\[
+X^{(4)}(x)Y(y) + 2X''(x) Y''(y) + X(x)Y^{(4)}=0.
+\]
+Nach Division durch $X(x)Y(y)$ können wir diese Gleichung leider noch
+nicht separieren:
+\begin{equation}
+\frac{X^{(4)}(x)}{X(x)}
++
+2\frac{X''(x)}{X(x)}\cdot \frac{Y''(y)}{Y(y)}
++
+\frac{Y^{(4)}(y)}{Y(y)}
+=
+0
+\label{50000014:sep}
+\end{equation}
+Gemäss Hinweis schreiben wir
+\begin{align*}
+E(x)&=\frac{X^{(4)}(x)}{X(x)},
+&
+F(x)&=\frac{X''(x)}{X(x)},
+&
+G(y)&=\frac{Y''(y)}{Y(y)},
+&
+H(y)&=\frac{Y^{(4)}(y)}{Y(y)}
+\end{align*}
+und erhalten die Differentialgleichung in der Form
+\[
+E(x) + F(x) G(y) + H(y) = 0.
+\]
+Leitet man nach $x$ und $y$ ab, erhält man
+\[
+F'(x) G'(y)=0
+\]
+Das Produkt ist $0$, wenn einer der Faktoren verschwindet, wir haben
+daher die beiden im Hinweis versprochenen Fälle 
+\[
+\begin{aligned}
+F'(x)&=0&&\Rightarrow& F(x)&=\lambda_1&&\Rightarrow& X''(x)&=\lambda_1 X(x)
+\qquad\text{und}
+\\
+G'(y)&=0&&\Rightarrow& G(y)&=\lambda_2&&\Rightarrow& Y''(y)&=\lambda_2 Y(y).
+\end{aligned}
+\]
+Wir betrachten zunächst den ersten Fall, also $X''(x)=\lambda_1 X(x)$.
+Einsetzen in die Differentialgleichung \eqref{50000014:sep} liefert
+die Gleichung
+\[
+\frac{X^{(4)}(x)}{X(x)}
++
+2\lambda_1\frac{Y''(y)}{Y(y)}
++
+\frac{Y^{(4)}(y)}{Y(y)}
+=0
+\qquad\Rightarrow\qquad
+-\frac{X^{(4)}(x)}{X(x)}
+=
+2\lambda_1\frac{Y''(y)}{Y(y)}
++
+\frac{Y^{(4)}(y)}{Y(y)}.
+\]
+Da die linke Seite nur von $x$, die rechte aber nur von $y$ abhängt, müssen
+beide konstant sein, wir schreiben $\mu_1$ für diese Konstante und
+erhalten das System von Differentialgleichungen
+\begin{align*}
+X''(x)&=\lambda_1 X(x)
+\\
+X^{(4)}(x)&=-\mu_1 X(x)
+\\
+Y^{(4)}(y)
++
+2\lambda_1 Y''(y)
+&=
+\mu_1 Y(y).
+\end{align*}
+Dies sind alles linear Differentialgleichungen mit konstanten Koeffizienten,
+die mit Standardmethoden gelöst werden können.
+
+Im zweiten Fall erhalten wir nach Einsetzen von $G(y)=\lambda_2$ in
+die Differentialgleichung~\eqref{50000014:sep}
+\[
+\frac{X^{(4)}(x)}{X(x)}
++
+2\frac{X''(x)}{X(x)}\lambda_2
++
+\frac{Y^{(4)}(y)}{Y(y)}
+=0
+\qquad\Rightarrow\qquad
+-\frac{X^{(4)}(x)}{X(x)}
+-
+2\frac{X''(x)}{X(x)}\lambda_2
+=
+\frac{Y^{(4)}(y)}{Y(y)}.
+\]
+Da die linke Seite nur von $x$, die rechte aber nur von $y$ abhängt, müssen
+beide konstant sein, wir schreiben $-\mu_2$ für diese Konstante und erhalten
+das Differentialgleichungssystem
+\begin{align*}
+Y''(y)&=\lambda_2 Y(y)
+\\
+Y^{(4)}&=-\mu_2 Y(y)
+\\
+X^{(4)}(x) + 2\lambda_2 X''(x) &= \mu_2 X(x).
+\end{align*}
+Damit haben wir für jeden Fall ein System von gewöhnlichen
+Differentialgleichungen zur Bestimmung von $X(x)$ bzw.~$Y(y)$
+gefunden.
+\end{loesung}
+
+
+
+
