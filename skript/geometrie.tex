@@ -4,43 +4,68 @@
 % (c) 2008 Prof Dr Andreas Mueller
 %
 \chapter{Geometrie der partiellen Differentialgleichungen erster Ordnung\label{chapter-geometrie}}
-\lhead{Geometrie der L"osungen}
+\lhead{Geometrie der Lösungen}
 \begin{figure}
 \begin{center}
 \includegraphics[width=\hsize]{images/ode-1.pdf}
 \end{center}
-\caption{Richtungsfeld der gew"ohnlichen Differentialgleichung
+\caption{Richtungsfeld der gewöhnlichen Differentialgleichung
 $y'=-\frac16y+e^{-\frac{x}6}\cos x$ \label{geometrie:ode}}
 \end{figure}
-Bei gew"ohnlichen Differentialgleichungen kann man sich ein grobes
-Bild des Verlaufs der L"osungen dadurch verschaffen, dass man
-die von der Differentialgleichung vorgegeben Steigung der L"osungskurve
+Bei gewöhnlichen Differentialgleichungen kann man sich ein grobes
+Bild des Verlaufs der Lösungen dadurch verschaffen, dass man
+die von der Differentialgleichung vorgegeben Steigung der Lösungskurve
 in jedem Punkt als Richtungsfeld aufzeichnet (Abbildung~\ref{geometrie:ode}).
-Die gesuchte L"osung hat als Graphen eine Kurve, die in jedem Ihrer Punkte eine
-Tangente hat, die mit dem gegebenen Richtungsfeld "ubereinstimmt.
+Die gesuchte Lösung hat als Graphen eine Kurve, die in jedem Ihrer Punkte eine
+Tangente hat, die mit dem gegebenen Richtungsfeld übereinstimmt.
 
-Die L"osung einer
+Die Lösung einer
 partiellen Differentialgleichung ist eine Funktion von mehreren Variablen,
-bei zwei Variablen k"onnen wir den Graphen dieser Funktion als Fl"ache
-"uber der $x$-$y$-Ebene visualisieren. Wie l"asst sich der Begriff der
-Steigung "ubersetzen?
+bei zwei Variablen können wir den Graphen dieser Funktion als Fläche
+über der $x$-$y$-Ebene visualisieren. Wie lässt sich der Begriff der
+Steigung übersetzen?
+
+\begin{figure}
+\centering
+\begin{tabular}{cc}
+\includegraphics[width=0.6\hsize]{3d/surface.jpg}&%
+\includegraphics[width=0.35\hsize]{images/kurven-1.pdf}
+\end{tabular}
+\caption{Die Fläche, die als Graph $z=f(x,y)$ der Funktion $f(x,y)=xy$ 
+dargestellt werden kann, kann auch als Vereinigung der roten oder grünen
+Kurvenscharen beschreiben werden.
+Die Fläche kann auch mit der Parameterdarstellung
+\eqref{quasliniear:flaechebeispiel}
+dargestellt werden.
+Die grünen Kurven sind die Koordinatenlinien dieser Parameterdarstellung
+mit $s=\operatorname{const}$,
+die roten Kurven sind Koordinatenlinien mit $t=\operatorname{const}$.
+Links im Bild die Darstellung als Fläche, rechts die Koordinatenlinien
+${\color{red}t}=\operatorname{const}$
+und
+${\color{green}s}=\operatorname{const}$
+im Grundriss.
+\label{quasilinear:flaechenalskurven}
+}
+\end{figure}
 
 
-\section{Kurven auf der L"osungsfl"ache}
-\rhead{Kurven auf der L"osungsfl"ache}
-Die L"osungsfl"ache ist unausweichlich ein zweidimensionales
+\section{Kurven auf der Lösungsfläche}
+\rhead{Kurven auf der Lösungsfläche}
+Die Lösungsfläche ist unausweichlich ein zweidimensionales
 Objekt, dem nur mit partiellen Ableitungen beizukommen ist.
-Die einzige M"oglichkeit, das Problem auf eine gew"ohnliche
-Differntialgleichung zu reduzieren besteht darin, die L"osungsfl"ache
+Die einzige Möglichkeit, das Problem auf eine gewöhnliche
+Differntialgleichung zu reduzieren besteht darin, die Lösungsfläche
 ``kurvenweise'' zu finden, sie also also eine Schar von Kurven
 zu betrachten.
 
-\subsubsection{L"osungsfl"ache als Kurvenschar}
+\subsubsection{Lösungsfläche als Kurvenschar}
 Der Graph der Funktion $u(x,y)$ kann auf zwei Arten als Schar von
-Kurven betrachtet werden. Einerseits als durch die Werte $y$
+Kurven betrachtet werden.
+Einerseits als durch die Werte $y$
 parametrisierte Schar von Kurven $x\mapsto u(x,y)$, andererseits
 also durch Werte $x$ parametrisierte Schar von Kurven $y\mapsto u(x,y)$.
-Allerdings k"onnte auch jede andere Parametrisierung der Fl"ache
+Allerdings könnte auch jede andere Parametrisierung der Fläche
 zu so einer Zerlegung Anlass geben. Die Parametrisierung
 \begin{equation}
 (s,t)\mapsto \vec x(s,t)
@@ -51,24 +76,47 @@ zu so einer Zerlegung Anlass geben. Die Parametrisierung
 liefert die durch $s$ parametrisierte Schar $t\mapsto \vec x(s,t)$
 von Kurven und die durch $t$ parametrisierte Schar $s\mapsto\vec x(s,t)$.
 
-Umgekehrt beschreibt eine Schar von Kurven eine Fl"ache, die sich
-in vielen F"allen wieder als Funktion $u(x,y)$ schreiben lassen wird.
-Man muss dazu nur f"ur jeden Punkt $(x,y)$ die Gleichungen
+In Abbildung~\ref{quasilinear:flaechenalskurven} ist der Graph der
+Funktion $u(x,y)=xy$ dargestellt.
+Man kann ihn auch mit den Parametern $t$ und $s$ gemäss
+\begin{equation}
+(t,s)
+\mapsto
+\begin{pmatrix}x\\y\\z\end{pmatrix}
+=
+\begin{pmatrix}t\sqrt{s}\\\frac1t\sqrt{s}\\s\end{pmatrix}
+\label{quasliniear:flaechebeispiel}
+\end{equation}
+parametrisieren.
+Tatsächlich gilt $xy = t\sqrt{s}\frac1t\sqrt{s}=s=z$.
+Die resultierenden Kurvenscharen sind in
+Abbildung~\ref{quasilinear:flaechenalskurven} als rote und grüne Kurven
+dargestellt.
+
+Umgekehrt beschreibt eine Schar von Kurven eine Fläche, die sich
+in vielen Fällen wieder als Funktion $u(x,y)$ schreiben lassen wird.
+Man muss dazu nur für jeden Punkt $(x,y)$ die Gleichungen
 \begin{align*}
 x(s(x,y),t(x,y))&=x\\
 y(s(x,y),t(x,y))&=y
 \end{align*}
-l"osen.
+lösen.
 Die so bestimmten Funktionen $s(x,y)$ und $t(x,y)$ setzt man dann in
-die Funktion $z(x,y)$ ein, und erh"alt die
-L"osungsfunktion
+die Funktion $z(x,y)$ ein, und erhält die
+Lösungsfunktion
 \[
 u(x,y)=z(s(x,y), t(x,y)).
 \]
 Das Ziel ist also, eine Schar (\ref{quasilinear:kurvenschar})
-von Kurven zu finden, die alle auf der L"osungsfl"ache liegen.
+von Kurven zu finden, die alle auf der Lösungsfläche liegen.
 
 \begin{beispiel}
+\begin{figure}
+\centering
+\includegraphics[width=0.8\hsize]{3d/kugel.jpg}
+\caption{Darstellung der Halbkugel als Vereinigung zweier Kurvenscharen
+\label{quasilinear:kugel}}
+\end{figure}
 Die Parametrisierung
 \[
 (\vartheta,\varphi)\mapsto
@@ -78,8 +126,8 @@ Die Parametrisierung
 \cos\vartheta
 \end{pmatrix}
 \]
-beschreibt f"ur $0\le \vartheta\le \frac{\pi}2$
-und $0\le\varphi\le 2\pi$ eine Halbkugel.
+beschreibt für $0\le \vartheta\le \frac{\pi}2$
+und $0\le\varphi\le 2\pi$ eine Halbkugel (Abbildung~\ref{quasilinear:kugel}).
 
 Die Kurvenscharen
 \[
@@ -99,24 +147,25 @@ Die Kurvenscharen
 \cos\vartheta
 \end{pmatrix}
 \]
-sind die durch $\varphi$, die geographische L"ange, parametrisierten
-L"angen- und die durch $\vartheta$, die geographische Breite
-parametrisierten Breitenkreise auf der Kugeloberfl"ache.
+sind die durch $\varphi$, die geographische Länge, parametrisierten
+Längen- und die durch $\vartheta$, die geographische Breite
+parametrisierten Breitenkreise auf der Kugeloberfläche.
 
 Die Gleichungen
 \begin{align*}
 x&=\sin\vartheta\cos\varphi\\
 y&=\sin\vartheta\sin\varphi\\
 \end{align*}
-lassen sich mindestens f"ur $x\ne 0$ durch
+lassen sich mindestens für $x\ne 0$ durch
 \begin{align*}
 \tan\varphi&=\frac{y}{x}\\
 \sin\vartheta &=\sqrt{x^2+y^2}
 \end{align*}
-aufl"osen. Dies reicht bereits, um die Funktion $u(x,y)$
-auszudr"ucken:
+auflösen. Dies reicht bereits, um die Funktion $u(x,y)$
+auszudrücken:
 \[
 u=\cos\vartheta=\sqrt{1-\sin^2\vartheta}=\sqrt{1-x^2-y^2}.
+\qedhere
 \]
 \end{beispiel}
 
@@ -125,12 +174,12 @@ u=\cos\vartheta=\sqrt{1-\sin^2\vartheta}=\sqrt{1-x^2-y^2}.
 \begin{center}
 \includegraphics[width=\hsize]{3d/cauchy.jpg}
 \end{center}
-\caption{Cauchy-Anfangskurve f"ur eine partielle Differentialgleichung
+\caption{Cauchy-Anfangskurve für eine partielle Differentialgleichung
 ($y$-Achse nach rechts)
 \label{geometrie:cauchy-anfangskurve}}
 \end{figure}
-Wir wollen f"ur partielle Differentialgleichungen erster Ordnung
-das Cauchy-Problem l"osen.
+Wir wollen für partielle Differentialgleichungen erster Ordnung
+das Cauchy-Problem lösen.
 Das bedeutet, dass eine Anfangskurve bereits vorgegeben ist
 (Abbildung~\ref{geometrie:cauchy-anfangskurve}).
 Es gibt also eine Kurve
@@ -142,21 +191,21 @@ z_0(s)
 \end{pmatrix},
 \label{quasilinear:anfangskurve}
 \end{equation}
-und die gesuchte L"osungsfunktion $u(x,y)$ muss f"ur jedes $s$ die
+und die gesuchte Lösungsfunktion $u(x,y)$ muss für jedes $s$ die
 Bedingung
 \[
 u(x_0(s), y_0(s))=z_0(s)
 \]
-erf"ullen.
+erfüllen.
 Man muss diese Kurve jetzt also erweitern zu einer Kurvenschar
 der Form (\ref{quasilinear:kurvenschar}).
-F"ur $t=0$ muss die Anfangskurve entstehen:
+Für $t=0$ muss die Anfangskurve entstehen:
 \[
 \vec x(s,0)=x_0(s).
 \]
 Jede Scharkurve $t\mapsto \vec x(s,t)$ ist also eine Kurve
 mit Anfangspunkt $x_0(s)$.
-Es liegt nahe, solche Scharkurven als L"osungen von gew"ohnlichen
+Es liegt nahe, solche Scharkurven als Lösungen von gewöhnlichen
 Differentialgleichungen zu finden.
 
 \subsection{Quasilineare partielle Differentialgleichung erster Ordnung}
@@ -170,14 +219,14 @@ b\frac{\partial u}{\partial y}
 c.
 \label{quasilinear:equation}
 \end{equation}
-Wir wollen zeigen, dass f"ur diese Art von Differentialgleichungen
-das Cauchy-Problem meistens l"osbar ist, und wollen verstehen,
-unter welchen Bedingungen es nicht l"osbar ist.
+Wir wollen zeigen, dass für diese Art von Differentialgleichungen
+das Cauchy-Problem meistens lösbar ist, und wollen verstehen,
+unter welchen Bedingungen es nicht lösbar ist.
 
-\subsubsection{Gew"ohliche Differentialgleichung erster Ordnung}
-Wir erinnern uns zun"achst an die L"osung der gew"ohnlichen
+\subsubsection{Gewöhliche Differentialgleichung erster Ordnung}
+Wir erinnern uns zunächst an die Lösung der gewöhnlichen
 Differentialgleichungen erster Ordnung.
-Eine solche legt die Ableitung $y'$ in Abh"angigkeit von 
+Eine solche legt die Ableitung $y'$ in Abhängigkeit von 
 $(x,y)$ durch eine Funktion $f(x,y)$ fest: 
 \[
 y'=f(x,y).
@@ -185,71 +234,73 @@ y'=f(x,y).
 Gesucht ist dann eine Kurve $y(x)$, welche
 in jedem Punkt $x$ die Steigung $y'(x)=f(x,y(x))$.
 Geometrisch legt die Funktion $f(x,y)$ ein Richtungsfeld fest,
-der Graph der L"osung ist eine Kurve, deren Tangente in jedem
-Punkt mit dem Richtungsfeld zusammenf"allt.
+der Graph der Lösung ist eine Kurve, deren Tangente in jedem
+Punkt mit dem Richtungsfeld zusammenfällt.
 
-Um eine L"osungskurve zu finden, kann man wie folgt vorgehen.
+Um eine Lösungskurve zu finden, kann man wie folgt vorgehen.
 Die Anfgangswerte  $y(0)=y_0$ legen einen Punkt fest.
 Die Differentialgleichung liefert jetzt die Steigung in
 diesem Punkt: $y'(0)=f(0,y(0))$.
-In erster N"aherung ist daher
+In erster Näherung ist daher
 \begin{equation}
 y(h)=y(0)+f(0,y(0))\cdot h.
 \label{quasilinear:euler}
 \end{equation}
-Mit $y(h)$ k"onnen wir das Verfahren wiederholen, und durch
+Mit $y(h)$ können wir das Verfahren wiederholen, und durch
 wiederholte Anwendung von (\ref{quasilinear:euler})
 nacheinander $y(2h)$, $y(3h)$,\dots bestimmen.
-Nat"urlich ist dies nur ein N"aherungsverfahren, das "ubrigens
+Natürlich ist dies nur ein Näherungsverfahren, das übrigens
 von Euler erdacht worden ist. Macht man $h$ sehr klein, wird
-die Approximation der wahren L"osung immer besser.
-Aber es macht plausibel, warum eine gew"ohnliche Differentialgleichung
+die Approximation der wahren Lösung immer besser.
+Aber es macht plausibel, warum eine gewöhnliche Differentialgleichung
 erster Ordnung genau eine Anfangsbedingung braucht.
 
-\subsubsection{L"osbarkeit}
-Wir versuchen jetzt, diese "Uberlegung auf die L"osbarkeit einer
+\subsubsection{Lösbarkeit}
+Wir versuchen jetzt, diese Überlegung auf die Lösbarkeit einer
 Differentialgleichung der Form (\ref{quasilinear:equation}) zu 
-"ubertragen. Wir haben jetzt nat"urlich zwei partielle Ableitungen, die
+übertragen.
+Wir haben jetzt natürlich zwei partielle Ableitungen, die
 durch die Gleichung (\ref{quasilinear:equation}) auch nicht
-eindeutig bestimmt sind. Als lineare Gleichung f"ur die partiellen
+eindeutig bestimmt sind.
+Als lineare Gleichung für die partiellen
 Ableitungen betrachtet, hat (\ref{quasilinear:equation}) unendlich 
-viele L"osungen.
+viele Lösungen.
 
-Dies ist allerdings nicht so schlimm: denn wir m"ochten ja das Cauchy-Problem
-l"osen: vorgegeben sind die Werte der Funktion entlang einer Kurve.
+Dies ist allerdings nicht so schlimm: denn wir möchten ja das Cauchy-Problem
+lösen: vorgegeben sind die Werte der Funktion entlang einer Kurve.
 Wir haben also auch unendlich viele ``Anfangswerte''.
-Zur Vereinfachung der Diskussion nehmen wir zun"achst an, dass die
-Funktionswerte f"ur $x=0$ vorgeben sind.
+Zur Vereinfachung der Diskussion nehmen wir zunächst an, dass die
+Funktionswerte für $x=0$ vorgeben sind.
 Damit sind aber nicht nur die Funktionswerte $u(0,y)$ bekannt, sondern
 auch die partiellen Ableitungen $\partial_yu(0,y)$.
 
 Wenn der Koeffizient $a(x,y,u)$
 in (\ref{quasilinear:equation})
 von $0$ verschieden ist, kann man die Gleichung
-nach $\partial_xu$ aufl"osen.
+nach $\partial_xu$ auflösen.
 Die eine partielle Ableitung legt also die andere fest.
-Durch die Anfangswerte ist die eine partielle auf der
-Anfangskurve bereits festgelegt, also steht auch schon fest,
-die andere Ableitung ist daher auch bekannt. 
+Durch die Anfangswerte ist die eine partielle Ableitung auf der
+Anfangskurve bereits festgelegt, nämlich die entlang der Anfangskurve,
+also steht auch die andere Ableitung schon fest.
 
-Wir sind also in einer "ahnlichen Situation wie bei gew"ohnlichen
+Wir sind also in einer ähnlichen Situation wie bei gewöhnlichen
 Differentialgleichungen erster Ordnung: Wenn wir die 
-Anfangskurve zum Beispiel f"ur $x=0$ kennen, also Werte
+Anfangskurve zum Beispiel für $x=0$ kennen, also Werte
 $u(0,y)$ bereits kennen, dann kennen wir
-auch die Ableitungen, und k"onnen damit die L"osung
-$y\mapsto u(h, y)$ f"ur ein kleines $h>0$ berechnen. Dies legt aber
+auch die Ableitungen, und können damit die Lösung
+$y\mapsto u(h, y)$ für ein kleines $h>0$ berechnen. Dies legt aber
 wiederum die Ableitungen fest, so dass wir noch einen Schritt 
-weiter zu $y\mapsto u(2h,y)$ gehen k"onnen sollten.
+weiter zu $y\mapsto u(2h,y)$ gehen können sollten.
 Indem wir so immer weiter schreiten, bekommen wir die ganze
-L"osungsfunktion $u(x,y)$.
+Lösungsfunktion $u(x,y)$.
 
 Wir erwarten daher, dass eine quasilineare partielle Differentialgleichung
-nicht schwieriger zu l"osen ist, als eine gew"ohnliche Differentialgleichung
+nicht schwieriger zu lösen ist, als eine gewöhnliche Differentialgleichung
 erster Ordnung.
 
 \subsubsection{Vektorschreibweise der Differentialgleichung}
-Die L"osung wird durch die folgende geometrische "Uberlegung vereinfacht.
-Wir stellen dazu die gesuchte L"osungsfunktion $u(x,y)$ als Graph
+Die Lösung wird durch die folgende geometrische Überlegung vereinfacht.
+Wir stellen dazu die gesuchte Lösungsfunktion $u(x,y)$ als Graph
 in einem dreidimensionalen Koordinatensystem $x,y,u$ dar.
 Die partielle Differentialgleichung (\ref{quasilinear:equation})
 kann auch als Vektorgleichung
@@ -264,7 +315,7 @@ kann auch als Vektorgleichung
 =0.
 \label{quasilinear:vektorform}
 \end{equation}
-geschrieben werden, wie man sich durch Ausmultiplizieren "uberzeugen
+geschrieben werden, wie man sich durch Ausmultiplizieren überzeugen
 kann.
 Den linken Vektor bezeichnen wir mit
 \[
@@ -285,7 +336,7 @@ Der rechte Vektor
 \]
 ist eine Normale auf den Graphen der Funktion
 $z=u(x,y)$. Man kann sich von dieser Tatsache zum Beispiel so 
-"uberzeugen: Die Tangentialvektoren in Achsrichtung sind
+überzeugen: Die Tangentialvektoren in Achsrichtung sind
 \[
 \vec t_x
 =
@@ -328,39 +379,39 @@ ist:
 \begin{center}
 \includegraphics[width=\hsize]{3d/normals.jpg}
 \end{center}
-\caption{Die Normalen der L"osungsfl"ache einer quasilinearen
+\caption{Die Normalen der Lösungsfläche einer quasilinearen
 partiellen Differentialgleichung erster Ordnung sind alle senkrecht
 auf dem Vektor $\vec v$ (rot, linkes Bild). Die Tangentialebenen an
-die L"osungsfl"ache haben daher eine gemeinsame Gerade mit Richtung $\vec v$.
+die Lösungsfläche haben daher eine gemeinsame Gerade mit Richtung $\vec v$.
 \label{geometrie:normals}}
 \end{figure}%
 Die Gleichung (\ref{quasilinear:vektorform}) sagt also,
 dass diese Normale senkrecht auf dem Vektor $\vec v$ steht.
-Gesucht ist also eine Fl"ache, deren Normale senkrecht auf dem
-Vektor $\vec v$ steht. Die m"oglichen Tangentialebenen von L"osungen
+Gesucht ist also eine Fläche, deren Normale senkrecht auf dem
+Vektor $\vec v$ steht. Die möglichen Tangentialebenen von Lösungen
 haben also die Gerade mit Richtung $\vec v$ gemeinsam
 (Abbildung~\ref{geometrie:normals}).
-Sie bilden ein B"uschel von Ebenen.
+Sie bilden ein Büschel von Ebenen.
 
-Wir verstehen jetzt, wie wir das Bild, das wir uns von den gew"ohnlichen
-Differentialgleichungen gemacht haben, f"ur partielle Differentialgleichungen
-modifizieren m"ussen. Die Differentialgleichung gibt in jedem Punkt
-des Raumes ein B"uschel von Ebenen vor, welche als Tangentialebenen der
-L"osungsfl"ache in Frage kommen. Die Richtung der Anfangskurve w"ahlt aus
-diesem B"uschel ein Tangentialebene aus, die Tangentialebene in einem 
+Wir verstehen jetzt, wie wir das Bild, das wir uns von den gewöhnlichen
+Differentialgleichungen gemacht haben, für partielle Differentialgleichungen
+modifizieren müssen. Die Differentialgleichung gibt in jedem Punkt
+des Raumes ein Büschel von Ebenen vor, welche als Tangentialebenen der
+Lösungsfläche in Frage kommen. Die Richtung der Anfangskurve wählt aus
+diesem Büschel ein Tangentialebene aus, die Tangentialebene in einem 
 Punkt der Anfangskurve muss die Tangente der Anfangskurve enthalten
 \begin{figure}
 \begin{center}
 \includegraphics[width=\hsize]{3d/planes.jpg}
 \end{center}
-\caption{Feld von Ebenenb"uscheln, definiert durch eine quasilineare
+\caption{Feld von Ebenenbüscheln, definiert durch eine quasilineare
 partielle Differentialgleichung erster Ordnung
 \label{geometrie:ebenenbueschelfeld}}
 \end{figure}
 (Abbildung~\ref{geometrie:ebenenbueschelfeld}).
 
 Das bedeutet zum Beispiel auch, dass die Schnittkurve von
-zwei L"osungsfl"achen immer $\vec n$ als Tangente haben muss.
+zwei Lösungsflächen immer $\vec n$ als Tangente haben muss.
 Kurven, die in jedem Punkt die Richtung $\vec n$ haben, sind
 als von ganz besonderer Bedeutung.
 Die Vektoren
@@ -372,11 +423,11 @@ a(x,y,u)\\b(x,y,u)\\c(x,y,u)
 \end{pmatrix}
 \]
 bilden ein Vektorfeld, welches in jedem Punkt tangential
-an die gesuchte Fl"ache verl"auft.
+an die gesuchte Fläche verläuft.
 
 \subsubsection{Charakteristiken}
-Statt direkt die L"osungsfl"ache zu suchen, k"onnen wir das Vektorfeld
-$\vec v$ dazu verwenden, einzelne Kurven in der L"osungsfl"ache
+Statt direkt die Lösungsfläche zu suchen, können wir das Vektorfeld
+$\vec v$ dazu verwenden, einzelne Kurven in der Lösungsfläche
 zu bestimmen.
 \begin{figure}
 \begin{center}
@@ -386,12 +437,12 @@ zu bestimmen.
 \includegraphics[width=\hsize]{3d/chr.jpg}
 \end{center}
 \caption{Charakteristiken einer quasilinearen partiellen Differentialgleichung
-erster Ordnung, mit eingezeichneten Ebenenb"uscheln (oben) und nur die
+erster Ordnung, mit eingezeichneten Ebenenbüscheln (oben) und nur die
 Charakteristiken (unten)\label{geometrie:charekeristiken-mit-buescheln}}
 \end{figure}
-Ist ein Punkt der Fl"ache bekannt,
-kann man davon ausgehend eine L"osungskurve des Vektorfeldes konstruieren.
-Dazu muss man die gew"ohnliche Differentialgleichung
+Ist ein Punkt der Fläche bekannt,
+kann man davon ausgehend eine Lösungskurve des Vektorfeldes konstruieren.
+Dazu muss man die gewöhnliche Differentialgleichung
 \begin{equation}
 \frac{d}{dt}\begin{pmatrix}x(t)\\y(t)\\z(t)\end{pmatrix}
 =
@@ -400,95 +451,95 @@ a(x(t),y(t),u(t))\\b(x(t),y(t),u(t))\\c(x(t),y(t),u(t))
 \end{pmatrix}
 \label{quasilinear:charakteristik}
 \end{equation}
-l"osen.
-Eine L"osungskurve von (\ref{quasilinear:charakteristik}) ist in jedem
-Punkt tangential an die L"osungsfl"ache, sie verl"asst die Fl"ache also
+lösen.
+Eine Lösungskurve von (\ref{quasilinear:charakteristik}) ist in jedem
+Punkt tangential an die Lösungsfläche, sie verlässt die Fläche also
 nicht.
 
 \begin{definition}
 \label{def:quasiliniear:charakteristik}
 \index{Charakteristik!einer quasilinearen partiellen
 Differentialgleichung erster Ordnung}
-Die L"osungskurven der gew"ohnlichen Differentialgleichung
+Die Lösungskurven der gewöhnlichen Differentialgleichung
 (\ref{quasilinear:charakteristik}) heissen Charakteristiken
 der partiellen Differentialgleichung (\ref{quasilinear:equation}).
 \end{definition}
 
-\subsubsection{L"osung des Cauchy-Problems}
+\subsubsection{Lösung des Cauchy-Problems}
 \begin{figure}
 \begin{center}
 \includegraphics[width=\hsize]{3d/sol.jpg}
 \end{center}
-\caption{L"osung einer quasilinearen partiellen Differentialgleichung
-erster Ordnung: die L"osungsfl"ache wird von Charakteristiken (rot) gebildet,
-sie ist parametrisiert durch den Parameter der Anfangskurve (gr"un) und den
+\caption{Lösung einer quasilinearen partiellen Differentialgleichung
+erster Ordnung: die Lösungsfläche wird von Charakteristiken (rot) gebildet,
+sie ist parametrisiert durch den Parameter der Anfangskurve (grün) und den
 Kurvenparamter entlang der Charakteristik.
 \label{geometrie:loesung-mit-charakteristiken}}
 \end{figure}
-Das Cauchy-Problem l"asst sich jetzt mit Hilfe von Charakteristiken
-l"osen. Die L"osungsfl"ache besteht aus Charakteristiken, die auch
+Das Cauchy-Problem lässt sich jetzt mit Hilfe von Charakteristiken
+lösen. Die Lösungsfläche besteht aus Charakteristiken, die auch
 die Anfangskurve schneiden
 (Abbildung~\ref{geometrie:loesung-mit-charakteristiken}).
-Um die L"osung zu berechnen, ist also wie folgt vorzugehen:
+Um die Lösung zu berechnen, ist also wie folgt vorzugehen:
 \begin{enumerate}
 \item
-F"ur jedes $s$ ist die Differentialgleichung der Charakteristiken
-(\ref{quasilinear:charakteristik}) zu l"osen und eine 
-L"osungskurve $t\mapsto \vec x(s,t)$ zu finden, die
-die Anfangsbedingung $\vec x(s,0)=\vec x_0(s)$ erf"ullt.
+Für jedes $s$ ist die Differentialgleichung der Charakteristiken
+(\ref{quasilinear:charakteristik}) zu lösen und eine 
+Lösungskurve $t\mapsto \vec x(s,t)$ zu finden, die
+die Anfangsbedingung $\vec x(s,0)=\vec x_0(s)$ erfüllt.
 \item 
-Aus den Gleichungen (\ref{quasilinear:kurvenschar}) f"ur die
-Kurvenschar m"ussen die Parameter $s$ und $t$ eliminiert werden,
+Aus den Gleichungen (\ref{quasilinear:kurvenschar}) für die
+Kurvenschar müssen die Parameter $s$ und $t$ eliminiert werden,
 sie muss in die Form $z=u(x,y)$ umgeformt werden.
 \end{enumerate}
 
 Sind die Koeffizienten der Differentialgleichung differenzierbare Funktionen,
 dann ist das Vektorfeld differenzierbar.
 Ist auch die Anfangsbedingung differenzierbar,
-dann besagen die allgemeinen S"atze "uber die Abh"angigkeit der L"osung einer
-gew"ohnlichen Differentialgleichung von den Anfangsbedingungen, dass die so
-konstruierte L"osungsfl"ache differenzierbar ist.
+dann besagen die allgemeinen Sätze über die Abhängigkeit der Lösung einer
+gewöhnlichen Differentialgleichung von den Anfangsbedingungen, dass die so
+konstruierte Lösungsfläche differenzierbar ist.
 
-Insgesamt haben wir damit das Problem der L"osung der partielle Differentialgleichungen auf das Problem 
-zur"uckgef"uhrt, beliebige L"osungskurven eines Vektorfeldes, also auf
-eine gew"ohnliche Differentialgleichung zur"uckgef"uhrt.
+Insgesamt haben wir damit das Problem der Lösung der partielle Differentialgleichungen auf das Problem 
+zurückgeführt, beliebige Lösungskurven eines Vektorfeldes, also auf
+eine gewöhnliche Differentialgleichung zurückgeführt.
 
 
 \subsubsection{Welche Anfangskurven sind nicht geeignet?}
-Damit das eben skizzierte L"osungsverfahren funktioniert, 
+Damit das eben skizzierte Lösungsverfahren funktioniert, 
 darf die Anfangskurve keine Charakteristik sein.
-Andernfalls erh"alt man ja durch Berechnung der von einem Punkt
+Andernfalls erhält man ja durch Berechnung der von einem Punkt
 der Anfangskurve ausgehenden Charakteristik nur wieder die
-Anfangskurve, es entsteht gar keine Fl"ache.
+Anfangskurve, es entsteht gar keine Fläche.
 
 Damit liefern uns die Charakteristiken nicht nur ein Verfahren
-zur L"osung einer partiellen Differentialgleichung erster Ordnung,
+zur Lösung einer partiellen Differentialgleichung erster Ordnung,
 sondern auch ein Verfahren um zu entscheiden, wo Anfangswerte
-vorgegeben werden m"ussen.
+vorgegeben werden müssen.
 
 Sei die partielle Differentialgleichung auf dem Gebiet $\Omega$
 definiert.
 Eine Charakteristik ausgehend von einem Randpunkt mit vorgegebenem
-Randwert wird sich zun"achst durch das Gebiet bewegen, kann dieses
+Randwert wird sich zunächst durch das Gebiet bewegen, kann dieses
 aber in einem anderen Punkt auch wieder verlassen. Der Wert der
-L"osungsfunktion in diesem zweiten Randwert ist offenbar durch die
+Lösungsfunktion in diesem zweiten Randwert ist offenbar durch die
 Vorgabe des ersten Randwertes bereits festgelegt.
-Eine andere Vorgabe w"urde verhindern, dass das Problem "uberhaupt
-eine L"osung hat.
+Eine andere Vorgabe würde verhindern, dass das Problem überhaupt
+eine Lösung hat.
 
-Randwerte m"ussen also auf einer Teilmenge $M\subset\partial \Omega$
+Randwerte müssen also auf einer Teilmenge $M\subset\partial \Omega$
 festgelegt werden so, dass jede Charakteristik nur einen Punkt der
 Menge $M$ trifft.
 
 \subsection{Beispiele}
-In diesem Abschnitt rechnen wir ein paar Beispiel f"ur das eben
-skizzierte L"osungsverfahren durch.
+In diesem Abschnitt rechnen wir ein paar Beispiel für das eben
+skizzierte Lösungsverfahren durch.
 \subsubsection{Konstante Koeffizienten\label{konstantekoeff}}
 Wir betrachten die Differentialgleichung
 \[
 \frac{\partial u}{\partial x}+2\frac{\partial u}{\partial y}=3
 \]
-mit der Anfangsbedingung $u(0,y)=\sin y$ und m"ochten eine L"osung f"ur
+mit der Anfangsbedingung $u(0,y)=\sin y$ und möchten eine Lösung für
 $x>0$ finden.
 
 Die Anfangskurve mit Parameter $s$ hat die Form
@@ -499,7 +550,7 @@ Die Anfangskurve mit Parameter $s$ hat die Form
 0\\s\\\sin s
 \end{pmatrix}.
 \]
-Wir m"ussen also eine Kurvenschar finden, die von dieser Anfangskurve
+Wir müssen also eine Kurvenschar finden, die von dieser Anfangskurve
 ausgeht.
 
 Die Differentialgleichung der Charakteristiken ist
@@ -508,7 +559,7 @@ Die Differentialgleichung der Charakteristiken ist
 =
 \begin{pmatrix}1\\2\\3\end{pmatrix},
 \]
-sie hat die L"osungskurven
+sie hat die Lösungskurven
 \[
 t\mapsto\begin{pmatrix}x_0\\y_0\\z_0\end{pmatrix}+t\begin{pmatrix}1\\2\\3\end{pmatrix}
 \]
@@ -528,9 +579,9 @@ s+2t\\
 \sin s+3t
 \end{pmatrix}.
 \]
-Diese Kurvenschar beschreibt die L"osungsfl"ache, wir m"ochten daraus aber
-wieder die L"osung in der vertrauteren Form $u(x,y)$ gewinnen.
-Dazu m"ussen die Variablen $s$ und $t$ aus den Gleichungen
+Diese Kurvenschar beschreibt die Lösungsfläche, wir möchten daraus aber
+wieder die Lösung in der vertrauteren Form $u(x,y)$ gewinnen.
+Dazu müssen die Variablen $s$ und $t$ aus den Gleichungen
 \begin{align*}
 x&=t\\
 y&=s+2t\\
@@ -540,13 +591,13 @@ eliminiert werden.
 Aus der ersten Gleichung folgt, dass $t$ einfach durch $x$ ersetzt werden
 kann.
 Aus der zweigen Gleichung folgt dann, dass $s=y-2x$.
-Setzt man dies in der dritten Gleichung ein, erh"alt man $z=\sin(y-2x)+3t$.
-Die L"osung der Differentialgleichung ist also
+Setzt man dies in der dritten Gleichung ein, erhält man $z=\sin(y-2x)+3t$.
+Die Lösung der Differentialgleichung ist also
 \[
 u(x,y)=\sin(y-2x)+3x.
 \]
 Durch Einsetzen in die Differentialgleichung und die Randbedingung
-kann man sich davon "uberzeugen, dass dies tats"achlich eine L"osung
+kann man sich davon überzeugen, dass dies tatsächlich eine Lösung
 ist:
 \begin{align*}
 \frac{\partial u}{\partial x}
@@ -566,12 +617,12 @@ ist:
 u(0,y_0)&=\sin y_0.
 \end{align*}
 
-\subsubsection{Kreisf"ormige Charakteristiken}
-Wir l"osen die Differentialgleichung
+\subsubsection{Kreisförmige Charakteristiken}
+Wir lösen die Differentialgleichung
 \[
 y\frac{\partial u}{\partial x}-x\frac{\partial u}{\partial y}=0
 \]
-Gem"ass der Methode der Charakteristiken m"ussen wir die L"osungskurven
+Gemäss der Methode der Charakteristiken müssen wir die Lösungskurven
 des Vektorfeldes
 \[
 \begin{pmatrix}
@@ -579,10 +630,10 @@ y\\-x\\0
 \end{pmatrix}
 \]
 finden. Da die $z$-Komponente verschwindet, sind die $z$-Komponenten
-der L"osungskurven konstant, wir ignorieren sie daher in der nachstehenden
+der Lösungskurven konstant, wir ignorieren sie daher in der nachstehenden
 Rechnung.
 
-L"osungen f"ur das Vektorfeld 
+Lösungen für das Vektorfeld 
 \[
 \begin{pmatrix}
 y\\-x
@@ -593,12 +644,12 @@ in der Ebene sind Funktionen $x(t)$ und $y(t)$, welche die Gleichungen
 \dot x(t)&=y(t)\\
 \dot y(t)&=-x(t)
 \end{align*}
-erf"ullen. Leitet man die erste Gleichung ab, und setzt die zweite
-darin ein, erh"alt man die Differentialgleichung zweiter Ordnung
+erfüllen. Leitet man die erste Gleichung ab, und setzt die zweite
+darin ein, erhält man die Differentialgleichung zweiter Ordnung
 \[
 \ddot x(t)=-x(t)
 \]
-mit den bekannten L"osungen $a\cos t$ und $a \sin t$. Da die L"osungskurve
+mit den bekannten Lösungen $a\cos t$ und $a \sin t$. Da die Lösungskurve
 zur Zeit $t=0$ auf der $y$-Achse beginnen soll, muss sie in Vektorschreibweise
 \[
 \begin{pmatrix}
@@ -610,31 +661,31 @@ x(t)\\y(t)
 \end{pmatrix}
 \]
 sein, die Kurven sind also Kreise mit Radius $y_0$ um den Nullpunkt. Offenbar
-k"onnen wir jeden Punkt der Ebene von einem Punkt in der Halbgeraden
-$\{(0,y_0)|y_0 <0\}$ aus erreichen, die Anfangsbedingung muss also nur f"ur
+können wir jeden Punkt der Ebene von einem Punkt in der Halbgeraden
+$\{(0,y_0)|y_0 <0\}$ aus erreichen, die Anfangsbedingung muss also nur für
 $y_0<0$ spezifiziert werden.
 
-Die L"osung zur Anfangsbedingung $g(y)$ kann jetzt wie folgt bestimmt werden.
-Zu einem Punkt $(x,y)$ m"ussen $y_0$ und $t$ gefunden werden, davon brauchen wir
-jedoch nur den Betrag, also $y_0=-\sqrt{x^2+y^2}$. Die L"osung ist also
+Die Lösung zur Anfangsbedingung $g(y)$ kann jetzt wie folgt bestimmt werden.
+Zu einem Punkt $(x,y)$ müssen $y_0$ und $t$ gefunden werden, davon brauchen wir
+jedoch nur den Betrag, also $y_0=-\sqrt{x^2+y^2}$. Die Lösung ist also
 \[
 u(x,y)=g(-\sqrt{x^2+y^2}).
 \]
 
-Aus diesem Beispiel k"onnen wir mehrere Lehren ziehen: 
+Aus diesem Beispiel können wir mehrere Lehren ziehen: 
 \begin{enumerate}
-\item Dass Festlegung einer Anfangsbedingung f"ur $y_0>0$ nicht n"otig ist,
-kann man der Differentialgleichung in unmittelbarer N"ahe der $y$-Achse nicht
-ansehen, erst der Verlauf der Charakterisitiken im Grossen erm"oglicht
-diese Erkenntnis. Dieses Ph"anomen wird durch den ``zus"atzlichen Platz''
-erm"oglicht, den der zweidimensionale Definitionsbereich der partielle Differentialgleichung gegen"uber dem
-eindimensionalen Definitionsbereich der gew"ohnlichen DGL bietet.
-\item Der Punkt $(0,0)$ hat spezielle Eigenschaften: wenn die L"osung stetig
-sein soll, muss $g(0)=\lim_{y\to 0-} g(y)$ sein. Damit die L"osung differenzierbar
-wird, muss aber zus"atzlich $g'(x)=0$ sein.
+\item Dass Festlegung einer Anfangsbedingung für $y_0>0$ nicht nötig ist,
+kann man der Differentialgleichung in unmittelbarer Nähe der $y$-Achse nicht
+ansehen, erst der Verlauf der Charakterisitiken im Grossen ermöglicht
+diese Erkenntnis. Dieses Phänomen wird durch den ``zusätzlichen Platz''
+ermöglicht, den der zweidimensionale Definitionsbereich der partielle Differentialgleichung gegenüber dem
+eindimensionalen Definitionsbereich der gewöhnlichen DGL bietet.
+\item Der Punkt $(0,0)$ hat spezielle Eigenschaften: wenn die Lösung stetig
+sein soll, muss $g(0)=\lim_{y\to 0-} g(y)$ sein. Damit die Lösung differenzierbar
+wird, muss aber zusätzlich $g'(x)=0$ sein.
 \end{enumerate}
 
-\subsubsection{Ein nicht l"osbares Anfangswertproblem\label{unloesbar}}
+\subsubsection{Ein nicht lösbares Anfangswertproblem\label{unloesbar}}
 Die Differentialgleichung
 \[
 x\frac{\partial u}{\partial x}
@@ -642,7 +693,7 @@ x\frac{\partial u}{\partial x}
 y\frac{\partial u}{\partial y}
 =0
 \]
-soll zu den Anfangsbedingungen $u(0,y)=\sin y$ gel"ost werden.
+soll zu den Anfangsbedingungen $u(0,y)=\sin y$ gelöst werden.
 Dazu berechnen wir wieder zuerst die Charakteristiken (ohne die 
 $z$-Komponente, die wieder konstant ist)
 \[
@@ -664,27 +715,27 @@ x(t)\\y(t)
 \end{aligned}
 \right.
 \]
-Die L"osungskurven sind Strahlen durch den Ursprung:
+Die Lösungskurven sind Strahlen durch den Ursprung:
 \[
 \begin{pmatrix}
 x(t)\\y(t)
 \end{pmatrix}
 =\begin{pmatrix}x_0\\y_0\end{pmatrix}e^t
 \]
-Um die L"osung zu konstruieren, m"ussen wir jetzt zu einem Punkt
-$(x,y)$ den Anfangspunkt der zugeh"origen Charakteristik auf der $y$-Achse
+Um die Lösung zu konstruieren, müssen wir jetzt zu einem Punkt
+$(x,y)$ den Anfangspunkt der zugehörigen Charakteristik auf der $y$-Achse
 finden. Da alle Charakteristiken durch den Nullpunkt gehen, ist dies 
-gar nicht m"oglich. 
+gar nicht möglich. 
 
-Das Problem r"uhrt daher, dass wir die Anfangsbedinung selbst auf einer
+Das Problem rührt daher, dass wir die Anfangsbedinung selbst auf einer
 Charakteristik festgelegt haben, die Charakteristiken sind also als
 Anfangskurven ungeeignet. Nur wenn die Anfangsbedingung auf einer Kurve
 festgelegt wird, die transversal, also nirgends tangential, zu den
-Charakteristiken verl"auft, kann das Anfangswertproblem gel"ost werden.
+Charakteristiken verläuft, kann das Anfangswertproblem gelöst werden.
 
 \subsection{Allgemeine partielle Differentialgleichungen erster Ordnung}
 Als Beispiel betrachten wir die folgende partielle Differentialgleichung
-erster Ordnung f"ur die Funktion $u(x,y)$
+erster Ordnung für die Funktion $u(x,y)$
 \begin{equation}
 F\biggl(
 x,y,u(x,y),\frac{\partial u}{\partial x},\frac{\partial u}{\partial y}
@@ -694,33 +745,33 @@ Diese Gleichung beschreibt einen impliziten Zusammenhang zwischen
 dem Ort im $x$-$y$-$u$-Ko\-or\-di\-na\-ten\-sys\-tem und den beiden Steigungen
 $\partial_xu$ und $\partial_yu$.
 
-Ein Anfangswertproblem, bei dem die Anfangswerte f"ur $x=0$ als
+Ein Anfangswertproblem, bei dem die Anfangswerte für $x=0$ als
 Funktion $g(y)$ festgelegt sind, also
 \[
 u(0,y)=g(y),
 \]
 legt auch die
 partiellen Ableitungen $\partial_y u(0,y)=g'(y)$ fest.  Die partielle
-Differentialgleichung schr"ankt damit ein, welche m"oglichen Ableitungen
-$\partial_xu(0,y)$ m"oglich sind. Oft wird dies nicht eindeutig sein,
+Differentialgleichung schränkt damit ein, welche möglichen Ableitungen
+$\partial_xu(0,y)$ möglich sind. Oft wird dies nicht eindeutig sein,
 die Steigung in $x$-Richtung kann also verschiedene Werte annehmen,
-es kann verschiedene L"osungsfunktionen geben. "Ahnlich wie bei der
-L"osung gew"ohnlicher Differentialgleichungen ist zu jedem Wert
+es kann verschiedene Lösungsfunktionen geben. Ähnlich wie bei der
+Lösung gewöhnlicher Differentialgleichungen ist zu jedem Wert
 aus der bereits bekannten partiellen Ableitung $\partial_yu(x,y)$
 die Steigung $\partial_xu(x,y)$ bestimmt, es ist somit plausibel, dass
-sich die L"osung "ahnlich wie bei der L"osung gew"ohnlicher Differentialgleichungen
-entwickeln l"asst. In voller Allgemeinheit ist dies nicht ganz einfach,
-und f"ur unsere Zwecke auch nicht notwendig, denn alle wesentlichen
+sich die Lösung ähnlich wie bei der Lösung gewöhnlicher Differentialgleichungen
+entwickeln lässt. In voller Allgemeinheit ist dies nicht ganz einfach,
+und für unsere Zwecke auch nicht notwendig, denn alle wesentlichen
 Eigenschaften lassen sich an dem einfacheren Fall der quasilinearen
 partielle Differentialgleichung auch beobachten.
 
 
-\section{Entstehung von Singularit"aten}
-Die L"osung einer partiellen Differentialgleichung h"angt entscheidend
+\section{Entstehung von Singularitäten}
+Die Lösung einer partiellen Differentialgleichung hängt entscheidend
 vom Verlauf der Charakteristiken ab. Treffen sich zwei Charakteristiken
-in einem Punkt, ist die L"osung nicht eindeutig bestimmt. Die L"osung
-ist also nur solange bestimmt, als sich die Charakteristiken nicht "uberschneiden.
-Andernfalls treten Singularit"aten in der L"osung auf.
+in einem Punkt, ist die Lösung nicht eindeutig bestimmt. Die Lösung
+ist also nur solange bestimmt, als sich die Charakteristiken nicht überschneiden.
+Andernfalls treten Singularitäten in der Lösung auf.
 
 Als Beispiel betrachten wir die nichtlineare Gleichung 
 \begin{equation}
@@ -731,7 +782,7 @@ mit der Anfangsbedingung
 \[
 u(0,x_0)=g(x_0)=e^{-4(x_0-\frac12)^2}.
 \]
-Nach der Methode der Charakterisitiken brauchen wir eine L"osungskurve
+Nach der Methode der Charakterisitiken brauchen wir eine Lösungskurve
 des Vektorfeldes
 \[
 \begin{pmatrix}
@@ -740,7 +791,7 @@ u\\
 0
 \end{pmatrix}
 \]
-durch den Punkt $(0,x_0, z_0)$, also eine L"osung des Differentialgleichungssystems
+durch den Punkt $(0,x_0, z_0)$, also eine Lösung des Differentialgleichungssystems
 \[
 \left.
 \begin{aligned}
@@ -763,7 +814,7 @@ x(\tau)&=z(0)\tau +x(0)
 \right.
 \]
 Der Parameter $\tau$ hat also die Bedeutung von $t$.
-Die L"osungsfl"ache ist somit
+Die Lösungsfläche ist somit
 \[
 (t,x_0)\mapsto
 \begin{pmatrix}
@@ -773,36 +824,36 @@ g(x_0)
 \end{pmatrix}.
 \]
 Die Charakteristiken in der $x$-$y$-Ebene sind Geraden mit einer
-Steigung, die von $g(x_0)$ abh"angt. Je gr"osser $g(x_0)$ ist, desto
+Steigung, die von $g(x_0)$ abhängt. Je grösser $g(x_0)$ ist, desto
 ``schneller'' bewegt sich die Integralkurve nach ``rechts''. Grosse
-Werte der Anfangsbedingung k"onnen also die kleinen Wert "uberholen,
-dabei entsteht eine Singularit"at.
+Werte der Anfangsbedingung können also die kleinen Wert überholen,
+dabei entsteht eine Singularität.
 
-Zur Zeit $t$ hat die L"osungsfunktion die Parameterdarstellung
+Zur Zeit $t$ hat die Lösungsfunktion die Parameterdarstellung
 \[
 x_0\mapsto (g(x_0)t+x_0,g(x_0))
 \]
-die Graphen in Abbildung~\ref{g} zeigen, wie sich die L"osungskurve
+die Graphen in Abbildung~\ref{g} zeigen, wie sich die Lösungskurve
 mit zunehmender Zeit entwickelt.
-Es ist offensichtlich, dass f"ur gen"ugend grosse Zeit $t$ die
-L"osungsfl"ache nicht mehr als Graph einer Funktion $u(t,x)$ derstellbar ist.
+Es ist offensichtlich, dass für genügend grosse Zeit $t$ die
+Lösungsfläche nicht mehr als Graph einer Funktion $u(t,x)$ derstellbar ist.
 \begin{figure}
 \begin{center}
 \includegraphics[width=\hsize]{graphics/welle.jpg}
 \end{center}
-\caption{L"osung der Differentialgleichung (\ref{wellenichtlinear}) mit
-entstehender Singularit"at\label{g}}
+\caption{Lösung der Differentialgleichung (\ref{wellenichtlinear}) mit
+entstehender Singularität\label{g}}
 \end{figure}
 
 \section{Randbedingungen}
 Die Methode der Charakterisitiken erlaubt uns herauszufinden, auf welchen
-Teilen des Randes die Werte einer L"osunge einer partiellen
-Differentialgleichung vorgegeben werden m"ussen.
-Die L"osungsfl"ache $u(x,y)$ besteht ja aus Charatkeristiken, sie ist also
-genau dann vollst"andig bestimmt, wenn jede Charakteristik durch mindestens 
-einen vorgegebenen Randpunkt verl"auft.
+Teilen des Randes die Werte einer Lösunge einer partiellen
+Differentialgleichung vorgegeben werden müssen.
+Die Lösungsfläche $u(x,y)$ besteht ja aus Charatkeristiken, sie ist also
+genau dann vollständig bestimmt, wenn jede Charakteristik durch mindestens 
+einen vorgegebenen Randpunkt verläuft.
 
-F"ur die Differentialgleichung
+Für die Differentialgleichung
 \begin{equation}
 \frac{\partial u}{\partial x}+2\frac{\partial u}{\partial y}=3
 \label{geometrie:knickbeispiel}
@@ -811,40 +862,40 @@ hatten wir die Charakterisiken
 \[
 t\mapsto\begin{pmatrix}x_0\\y_0\\z_0\end{pmatrix}+t\begin{pmatrix}1\\2\\3\end{pmatrix}
 \]
-gefunden. Eine L"osungsfunktion $u(x,y)$ muss von Charakteristiken
-"uberdeckt werden. 
+gefunden. Eine Lösungsfunktion $u(x,y)$ muss von Charakteristiken
+überdeckt werden. 
 Die Projektionen dieser Kurven in die $x$-$y$-Ebene sind Geraden
-mit Steigung $2$. Der Rand des Gebietes $\Omega$, in dem die Gleichung gel"ost
-werden soll, muss also jede Gerade mit Steigung $2$ h"ochstens einmal
+mit Steigung $2$. Der Rand des Gebietes $\Omega$, in dem die Gleichung gelöst
+werden soll, muss also jede Gerade mit Steigung $2$ höchstens einmal
 schneiden.
 
 Das Gebiet $\{(x,y)\in\mathbb R^2\,|\, x >0\}$  aus \ref{konstantekoeff}
 hat die $x$-Achse als Rand, und diese schneidet jede Gerade mit Steigung
 $2$ genau einmal.
 
-Interessanter wird die Diskussion jedoch f"ur das Gebiet
+Interessanter wird die Diskussion jedoch für das Gebiet
 $\Omega=\{(x,y)\,|\,0<x,y<1\}$. Die Abbildungen \ref{geometrie:charrand1}
-bis \ref{geometrie:charrand3} zeigen verschiedene M"oglichkeiten:
+bis \ref{geometrie:charrand3} zeigen verschiedene Möglichkeiten:
 \begin{enumerate}
 \item
 In Abbildung~\ref{geometrie:charrand1} sind Randwerte auf dem linken
 und rechten Rand vorgegeben. Offenbar reichen diese Randwerte nicht, um
-die Funktionswerte "uberall im Gebiet eindeutig zu bestimmen, es bleibt
-ein Teilgebiet, in dem die L"osungsfunktion nicht festgelegt ist.
+die Funktionswerte überall im Gebiet eindeutig zu bestimmen, es bleibt
+ein Teilgebiet, in dem die Lösungsfunktion nicht festgelegt ist.
 \item
 In Abbildung~\ref{geometrie:charrand2}
 sind die Randwerte am oberen und unteren Rand vorgegeben.
-In diesem Fall sind die Randwerte "uberbestimmt, eine L"osung ist
-nur m"oglich, wenn die Werte auf der linken H"alfte des unteren
-Randes mit den Werten auf der rechten H"alfte des oberen Randes
+In diesem Fall sind die Randwerte überbestimmt, eine Lösung ist
+nur möglich, wenn die Werte auf der linken Hälfte des unteren
+Randes mit den Werten auf der rechten Hälfte des oberen Randes
 kompatibel sind.
 \item
 In Abbildung~\ref{geometrie:charrand3}
 sind die Randewerte am linken und unteren Rand vorgegeben.
 Damit ist die Funktion eindeutig bestimmt, trotzdem
-muss damit noch nicht eine L"osung der Differentialgleichung
+muss damit noch nicht eine Lösung der Differentialgleichung
 gefunden sein.
-Es ist n"amlich nicht unbedingt garantiert, dass die zusammengestetze
+Es ist nämlich nicht unbedingt garantiert, dass die zusammengestetze
 Funktion 
 auf der von $(0,0)$ ausgehenden Charakteristik differenzierbar ist.
 \end{enumerate}
@@ -853,7 +904,7 @@ auf der von $(0,0)$ ausgehenden Charakteristik differenzierbar ist.
 \begin{center}
 \includegraphics{images/randwerte-2.pdf}
 \end{center}
-\caption{Randwerte am linken und rechten Rand vorgegeben: im hellgr"unen
+\caption{Randwerte am linken und rechten Rand vorgegeben: im hellgrünen
 Bereich sind die Funktionswerte nicht bestimmt \label{geometrie:charrand1}}
 \end{figure}
 
@@ -861,8 +912,8 @@ Bereich sind die Funktionswerte nicht bestimmt \label{geometrie:charrand1}}
 \begin{center}
 \includegraphics{images/randwerte-3.pdf}
 \end{center}
-\caption{Randwerte am unteren und oberen Rand vorgegeben: im hellgr"unen
-Bereich sind die Funktionswerte "uberbestimmt \label{geometrie:charrand2}}
+\caption{Randwerte am unteren und oberen Rand vorgegeben: im hellgrünen
+Bereich sind die Funktionswerte überbestimmt \label{geometrie:charrand2}}
 \end{figure}
 
 \begin{figure}
@@ -871,26 +922,26 @@ Bereich sind die Funktionswerte "uberbestimmt \label{geometrie:charrand2}}
 \end{center}
 \caption{Randwerte am linken und unteren Rand vorgegeben: die Funktion
 ist zwar eindeutig bestimmt, aber die Differenzierbarkeit auf
-der von $(0,0)$ ausgehenden Charakteristik (hellgr"un) ist nicht garantiert.
+der von $(0,0)$ ausgehenden Charakteristik (hellgrün) ist nicht garantiert.
 \label{geometrie:charrand3}}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=\hsize]{3d/knick.jpg}
-\caption{L"osung der Differentialgleichung~(\ref{geometrie:knickbeispiel}),
+\caption{Lösung der Differentialgleichung~(\ref{geometrie:knickbeispiel}),
 mit Randwerten entlang des linken und unteren Randes (vergleiche
 Abbildung~\ref{geometrie:charrand3}) ist entlang einer Charakteristik
 nicht differenzierbar (vertikale Achse mit dem Faktor $0.4$ skaliert).
 \label{geometrie:knick}}
 \end{figure}
 
-Als Illustration f"ur den letzten Fall betrachte man die Randwertvorgabe
+Als Illustration für den letzten Fall betrachte man die Randwertvorgabe
 \begin{align*}
 u(x_0,0)&=0,\\
 u(0,y_0)&=y_0.
 \end{align*}
-Jedes Randst"uck legt die L"osung in einem Teil des Einheitsquadrates
+Jedes Randstück legt die Lösung in einem Teil des Einheitsquadrates
 fest, die man durch Anwendung der Methode der Charakteristiken erhalten
 kann. Die vom unteren Rand ausgehenden Charakteristiken sind
 \[
@@ -926,7 +977,7 @@ u&=y+x
 \end{aligned}
 \right.
 \]
-Die L"osungsfunktion ist also
+Die Lösungsfunktion ist also
 \[
 u(x,y)=\begin{cases}
 \frac32y&\qquad y<2x\\
@@ -934,19 +985,19 @@ x+y&\qquad y>2x,
 \end{cases}
 \]
 wie in Abbildung~\ref{geometrie:knick} dargestellt.
-F"ur $y=2x$ stimmen die beiden Terme zwar "uberein, die L"osungsfunktion
+Für $y=2x$ stimmen die beiden Terme zwar überein, die Lösungsfunktion
 ist also sicher in ganz $\Omega$ stetig.
 Aber die
-Funktion $x\mapsto u(x,y)$ ist hat Steigung $1$ f"ur $y>2x$ und
-Steigung 0 f"ur $y<2x$, ist also f"ur $y=2x$ nicht differenzierbar.
+Funktion $x\mapsto u(x,y)$ ist hat Steigung $1$ für $y>2x$ und
+Steigung 0 für $y<2x$, ist also für $y=2x$ nicht differenzierbar.
 
-\section{Zusammenfassung: Das Wichtigste in K"urze}
+\section{Zusammenfassung: Das Wichtigste in Kürze}
 \begin{enumerate}
 \item Die Verallgemeinerung des ``Richtungsfeldes'' aus der Theorie der
-gew"ohnlichen Differentialgleichungen ist ein Feld von Ebenenb"uscheln.
-Der Graph L"osungsfunktion muss in jedem Punkt eine Tangentialebene aus
-dem Ebenenb"uschel haben.
-\item Die Ebenenb"uscheln haben einen gemeinsamen Vektor, den ``roten''
+gewöhnlichen Differentialgleichungen ist ein Feld von Ebenenbüscheln.
+Der Graph Lösungsfunktion muss in jedem Punkt eine Tangentialebene aus
+dem Ebenenbüschel haben.
+\item Die Ebenenbüscheln haben einen gemeinsamen Vektor, den ``roten''
 Vektor
 \[
 \begin{pmatrix}
@@ -956,16 +1007,16 @@ c(x,y,u)
 \end{pmatrix}.
 \]
 Integralkurven dieses Vektorfeldes heissen Charakteristiken (``rote'' Kurven).
-\item L"osungsfl"achen einer quasilinearen partiellen Differentialgleichung
-werden von Charakteristiken "uberdeckt.
-\item Die L"osungsfl"ache einer quasilinearen Differntialgleichung besteht aus
+\item Lösungsflächen einer quasilinearen partiellen Differentialgleichung
+werden von Charakteristiken überdeckt.
+\item Die Lösungsfläche einer quasilinearen Differntialgleichung besteht aus
 den Charakteristiken, die durch die Anfangskurve
-(``gr"une'' Kurve) verlaufen.
-Um die L"osungsfunktion zu finden, eliminierte man den Parameter der
+(``grüne'' Kurve) verlaufen.
+Um die Lösungsfunktion zu finden, eliminierte man den Parameter der
 Anfangskurve und der Charakteristiken.
 \item Charakteristiken sind diejenigen Kurven, die als Anfangskurven
 nicht geeignet sind.
-\item Mit Hilfe von Charakteristiken kann man h"aufig entscheiden,
-welche Randwertvorgaben f"ur eine quasilineare partielle Differentialgleichung
-n"otig sind.
+\item Mit Hilfe von Charakteristiken kann man häufig entscheiden,
+welche Randwertvorgaben für eine quasilineare partielle Differentialgleichung
+nötig sind.
 \end{enumerate}

@@ -5,7 +5,7 @@
 #
 all:	jpg
 
-png:	sol chr chrpl cauchy planes
+png:	sol chr chrpl cauchy planes surface kugel
 
 timestamp:	jpg
 	touch timestamp
@@ -101,4 +101,25 @@ streifen2.jpg:	streifen2.png
 streifen2.png:	streifen2.pov
 	sh ../../povray $(povrayoptions) -W1024 -H768 -Ostreifen2.png \
 		streifen2.pov
+
+# Surface presentation
+surface:	surface.jpg
+
+surface.png:	surface.pov
+	sh ../../povray +A0.1 -W3960 -H2160 -Osurface.png surface.pov
+
+surface.jpg:	surface.png Makefile
+	convert -extract 3350x1960+108+189 surface.png -scale 50% \
+		-density 300 -units PixelsPerInch surface.jpg
+
+# Kugel presentation
+kugel:	kugel.jpg
+
+kugel.png:	kugel.pov
+	sh ../../povray +A0.1 -W3960 -H2160 -Okugel.png kugel.pov
+
+kugel.jpg:	kugel.png Makefile
+	convert -extract 2860x2180+392+0 kugel.png -scale 50% \
+			-density 300 -units PixelsPerInch kugel.jpg
+
 

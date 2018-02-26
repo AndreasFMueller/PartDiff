@@ -4,7 +4,7 @@
 # (c) 2012 Prof Dr Andreas Mueller, Hochschule Rapperswil
 # $Id$
 #
-timestamp:	saite burgers randwerte ode green char hypexp hf kausal
+timestamp:	saite burgers randwerte ode green char hypexp hf kausal kurven
 	touch timestamp
 
 RANDWERTEFILES = randwerte-1.pdf randwerte-2.pdf randwerte-3.pdf randwerte-4.pdf
@@ -79,3 +79,11 @@ $(KAUSALFILES):	kausal.mp
 	do \
 		mptopdf $${f}; \
 	done
+
+kurven:	kurven-1.pdf
+kurven-1.pdf:	kurven.mp
+	TEX=latex mpost kurven.mp
+	mptopdf kurven.1
+
+
+
