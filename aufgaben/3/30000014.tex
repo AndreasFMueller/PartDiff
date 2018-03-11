@@ -1,0 +1,148 @@
+Sei $0 < x_0 < 1$ gegeben und $\Omega$ sei das Gebiet
+\begin{equation}
+\Omega
+=
+\{ (x,y)\,|\, x_0 < x < 1 \wedge 0 < y < 1 \}.
+\label{30000014:gebiet}
+\end{equation}
+Die Funktion $u$ erfüllt in $\Omega$ die partielle Differentialgleichung
+\begin{equation}
+\frac{1}{x^2} \frac{\partial u}{\partial x}
++
+\frac{\partial u}{\partial y}
+=
+1
+\label{30000014:gleichung}
+\end{equation}
+und die Randbedingung
+\[
+u(x_0, y) = \sin(y), \qquad 0 < y < 1.
+\]
+\begin{teilaufgaben}
+\item
+Finden Sie eine Funktion $u$ mit diesen Eigenschaften.
+\item
+Ist die Lösung $u$ durch die gegebenen Randbedingungen eindeutig bestimmt?
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{figure}
+\centering
+\includeagraphics[]{domain-1.pdf}
+\caption{Charakteristiken und Definitionsbereich $\Omega$
+für die Differentialgleichung~\eqref{30000014:gleichung}
+auf dem Gebiet~\eqref{30000014:gebiet}.
+\label{30000014:domain}
+}
+\end{figure}
+Dies ist eine quasilineare partielle Differentialgleichung erster Ordnung, die
+mit der Methode der Charakteristiken gelöst werden kann.
+Die Differentialgleichungen für die Charakteristiken sind
+\[
+\begin{aligned}
+\dot x &= \frac1{x^2} &&\Rightarrow& \int x^2\,dx &=\int dt &&\Rightarrow& \frac13 x(t)^3 &= t + C
+\\
+\dot y &= 1           &&           &              &         &&\Rightarrow& y(t) &= t + D
+\\
+\dot u &= 1           &&           &              &         &&\Rightarrow& u(t) &= t + E
+\end{aligned}
+\]
+Damit die Charakteristiken auf der Anfangsgerade bei $x=x_0$ beginnen, muss
+$C=\frac13x_0^3$ gewählt werden, also
+\[
+\frac13 x^3 = t + C
+\qquad\Rightarrow\qquad
+t = \frac13(x^3-x_0^3).
+\]
+Die Charakteristik, die im Punkt $(x_0,y_0)$ beginnt, wird beschrieben durch
+die Wahl $D=y_0$.
+Die Anfangsbedingung $u(x_0,y_0)=\sin y_0 $
+verlangt dann, dass $E=\sin y_0 $.
+\begin{teilaufgaben}
+\item Zur Bestimmung einer Funktion $u$ mit den gegebenen Randbedingungen
+ist $y_0$ aus den Gleichungen
+\[
+\begin{aligned}
+{\textstyle\frac13}x^3 &= t + {\textstyle\frac13}x_0^3 &&\Rightarrow& t   &= \textstyle{\frac13}(x^3-x_0^3) \\
+y           &= t + y_0          &&\Rightarrow& y_0 &= y - t              \\
+u           &= t + \sin y_0     &&\Rightarrow& u   &= t + \sin(y-t)
+\end{aligned}
+\]
+zu eliminieren und nach $u$ aufzulösen:
+\[
+u(x,y) = 
+{\textstyle \frac13}(x^3-x_0^3)
++
+\sin (y-{\textstyle \frac13}(x^3-x_0^3)).
+\]
+Diese Lösung lässt sich durch Einsetzen auch sofort verifizieren:
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
+x^2 -
+\cos\bigl(y-{\textstyle\frac13}(x^3-x_0^3)\bigr)
+\cdot x^2
+\\
+\frac{\partial u}{\partial y}
+&=
+\cos\bigl(y-{\textstyle\frac13}(x^3-x_0^3)\bigr)
+\\
+\Rightarrow
+\qquad
+\frac1{x^2}
+\frac{\partial u}{\partial x}
++
+\frac{\partial u}{\partial y}
+&=
+\frac1{x^2}\biggl(x^2 -
+\cos\bigl(y-{\textstyle\frac13}(x^3-x_0^3)\bigr)
+\cdot x^2\biggr)
++
+\cos\bigl(y-{\textstyle\frac13}(x^3-x_0^3)\bigr)
+=1.
+\end{align*}
+\item
+Die Charakteristik durch $(x_0,y_0)$ erfüllt im Grundriss die Gleichung
+\[
+y(x)
+=
+y_0 + {\textstyle\frac13}(x^3-x_0^3)
+\ge
+y_0,
+\]
+wie in Abbildung~\ref{30000014:gebiet} dargestellt.
+Der Graph der Funktion $y(x)$ liegt für $x>x_0$ immer oberhalb der
+Geraden $y=y_0$.
+Somit sind die Werte der Funktion für $y < {\textstyle\frac13}(x^3-x_0^3)$
+nicht durch die gegebenen Randwerte bestimmt (blaues Gebiet in der
+Abbildung~\ref{30000014:gebiet}).
+Die Lösung ist also nicht eindeutig bestimmt.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{diskussion}
+Ist $g(y)$ eine beliebige differenzierbare Funktion, die mit $\sin y$ 
+für $y>0$ übereinstimmt, aber nicht für $y<0$, dann ist
+\[
+\tilde u(x,y) = {\textstyle\frac13}(x^3-x_0^3) + g(y-{\textstyle\frac13}(x^3-x_0^3))
+\]
+eine Lösung der Differentialgleichung auf einem erweiterten Gebiet
+$\{x_0\}\times \mathbb R$ mit Randwerten $u(x_0,y)=g(y)$ für beliebige $y$.
+Für Punkte $(x,y)\in\Omega$ mit $y<{\textstyle\frac13}(x^3-x_0^3)$
+ist das Argument
+der Funktion $g$ negativ, insbesondere weicht für solche Punkte $g$ von
+$\sin$ ab und damit ist dort $\tilde u(x,y)\ne u(x,y)$.
+\end{diskussion}
+
+\begin{bewertung}
+Methode der Charakteristiken ({\bf M}) 1 Punkt,
+Differentialgleichungen der Charakteristiken ({\bf D}) 1 Punkt,
+Lösung der Differentialgleichung f"ur $x$ ({\bf X}) 1 Punkt,
+Einsetzen der Randbedingung ({\bf R}) 1 Punkt,
+Elimination der Variablen $y_0$ und $t$ ({\bf E}) 1 Punkt,
+ist Lösung eindeutig bestimmt ({\bf B}) 1 Punkt.
+\end{bewertung}
+
+
+

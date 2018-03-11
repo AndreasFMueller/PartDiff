@@ -1,0 +1,129 @@
+Auf dem Gebiet $\Omega=\{(x,y)\in\mathbb R^2\,|\, x>0\}$ ist die
+Differentialgleichung
+\begin{equation}
+\sinh(a)\frac{\partial^2 u}{\partial x^2}
++
+2\cosh(a)\frac{\partial^2 u}{\partial x\partial y}
++
+\sinh(a)\frac{\partial^2 u}{\partial y^2}
+=
+0
+\label{90000013:dgl}
+\end{equation}
+gegeben.
+Von dem Parameter $a$ weiss man nur, dass $a>0$ ist.
+Ausserdem sind die Randbedingungen
+\[
+u(0,y)=g(y)\qquad\text{und}\qquad \frac{\partial u}{\partial x}(0,y)=0
+\]
+gegeben, wobei $g(y)$ eine f"ur grosse Argumentwerte nur sehr aufwendig zu
+berechnende Funktion ist.
+\begin{teilaufgaben}
+\item
+Ist das Problem gut gestellt?
+\item
+Wegen der Schwierigkeiten bei der Berechnung der Funktion $g$
+wurde eine numerische L"osung f"ur $u$ gerechnet, indem die
+Randwerte f"ur $|y|>5$ null gesetzt wurden.
+Diese L"osung wird nur in einem Teil von $\Omega$ mit der wahren L"osung
+"ubereinstimmen.
+F"ur welche Werte des Parameters $a$ kann man davon ausgehen, dass die
+numerische L"osung die wahre L"osung im Rechteck
+$R=\{(x,y)\,|\, 0\le x\le 1,-3\le y\le 3\}$ korrekt
+wiedergibt?
+\end{teilaufgaben}
+
+
+\begin{loesung}
+\begin{figure}
+\centering
+\includeagraphics[]{domain-1.pdf}
+\caption{Charakteristiken der Differentialgleichung~(\ref{90000013:dgl})
+und Rechteck $R$ (blau). 
+F"ur die Frage in Teilaufgabe b) der Aufgabe ist die fett ausgezogene
+rote Charakteristik durch den Punkt $(0,-5)$ massgeben.
+\label{90000013:domain}}
+\end{figure}
+\begin{teilaufgaben}
+\item
+Die Symbolmatrix des Differentialoperators ist
+\[
+A=\begin{pmatrix}\sinh a&\cosh a \\ \cosh a&\sinh a\end{pmatrix}
+\qquad\Rightarrow\qquad
+\det A=\sinh^2 a - \cosh^2 a = -1<0,
+\]
+die Differentialgleichung ist also hyperbolisch.
+Das Problem ist gut gestellt, wenn die von der $y$-Achse ausgehenden
+Charakteristiken das ganze Gebiet "uberdecken. 
+Dazu muss die Differentialgleichung der Charakteristiken gel"ost werden,
+sie lautet
+\[
+\dot y^2
+\sinh a
+-2
+\dot x\dot y
+\cosh a
++
+\dot x^2
+\sinh a
+=0.
+\]
+Dividieren wir durch $\sinh a $ und $\dot x^2$, erhalten wir
+\begin{equation}
+\biggl(\frac{\dot y}{\dot x}\biggr)^2
+-2\frac{\dot y}{\dot x} \coth a + 1=0
+\label{90000013:qgl}
+\end{equation}
+Der Quotient $\dot y/\dot x$ ist die Steigung $y'$ der Charakteristiken.
+Die quadratische Gleichung~(\ref{90000013:qgl}) hat die Nullstellen
+\[
+\frac{\dot y}{\dot x}=y'=
+\coth a\pm\sqrt{\coth^2 a-1}
+.
+\]
+Die Charakteristiken sind also Geraden mit Steigungen
+$m_{\pm}=\coth a\pm\sqrt{\coth^2a-1}$.
+Da $\coth a>1$ ist f"ur $a>0$, sind beide Steigungen positiv.
+In Abbildung~\ref{90000013:domain} sind die Charakteristiken in den Farben
+rot und gr"un dargestellt, wobei die rote Gerade die Steigung $m_+$ hst.
+Damit ist klar, dass die Charakteristiken ganz $\Omega$ "uberdecken, das
+Problem ist also gut gestellt.
+
+Alternativ kann man auch argumentieren, dass die $y$-Achse keine 
+Charakteristik ist, denn dieses Cauchy-Problem w"are genau dann
+nicht gut gestellt, wenn die Anfangskurve eine Charakteristik w"are.
+\item
+Die Charakteristiken sind Geraden mit positiver Steigung.
+Die numerische L"osung gibt im verlangten Rechteck die L"osung
+korrekt wieder, wenn die von $(0,-5)$ ausgehenden Charakteristiken
+das Rechteck nicht schneiden.
+Die Steigung von $(0,-5)$ zur rechten unteren Ecke des Rechtecks $R$
+ist $2$, 
+man muss also herausfinden, welches $a$ auf die diese Steigung f"uhrt.
+Dies liefert die Gleichung
+\begin{align*}
+\coth a + \sqrt{\coth^2 a-1}&=2
+\\
+\coth^2 a-1&=(2-\coth a)^2=4-4\coth a +\coth^2 a
+\\
+-1 &=4-4\coth a
+\\
+\coth a&=\frac54
+\qquad\Rightarrow\qquad
+a=1.0986
+\end{align*}
+Die numerische L"osung kann also nur f"ur $a>1.0986$ die wahre L"osung in
+$R$ korrekt wiedergeben.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+Symbolmatrix ({\bf S}) 1 Punkt,
+hyperbolisch ({\bf H}) 1 Punkt,
+Differentialgleichungen der Charakteristiken ({\bf D}) 1 Punkt,
+Steigung der Charakteristiken ({\bf M}) 1 Punkt,
+Problem gut gestellt, weil Rand keine Charakteristik ({\bf G}) 1 Punkt,
+maximale Steigung erreicht von $(0,-5)$ aus die Ecke $(1,-3)$ ({\bf A})
+1 Punkt.
+\end{bewertung}

@@ -266,8 +266,7 @@ und der Tangentialebenen in jedem Punkt der Kurve bestimmt ist.
 Etwas allgemeiner besteht das Cauchy-Problem darin, eine Integralfl"ache
 zu finden, die durch eine beliebige Kurve geht, und ausserdem in jedem Punkt
 der Kurve eine bestimmte Tangentialebene hat. Diese Vorgaben nennt man
-einen ``Streifen''.
-
+einen ``Streifen'' (Abbildung~\ref{skript:streifen}).
 Eine partielle Differentialgleichung f"ur eine Funktion $u(t,x,y)$
 von drei Variablen kann zum Beispiel dadurch festgelegen werden,
 dass man Funktionswerte $u(t,x,y)=u_0(x,y)$ zur Zeit $t=0$ festlegt.
@@ -371,7 +370,38 @@ u(x(t),y(t))&=u(t)\\
 \right\}
 \label{charanfangs}
 \end{equation}
-vorgegeben. Diese Vorgaben nennt man einen {\em Streifen}.
+vorgegeben. Diese Vorgaben nennt man einen {\em Streifen}
+(Abbildung~\ref{skript:streifen}).
+
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{3d/streifen0.png}
+\caption{Ein Streifen besteht aus der Vorgabe von Anfangskurve (rot)
+und Tangentialbenen.
+Die gr"une Fl"ache ist L"osungsfl"ache der Wellengleichung mit 
+dem Streifen als Anfangsbedingung.
+\label{skript:streifen}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{3d/streifen2.png}
+\caption{Entlang der gemeinsamen roten Kurve haben die beiden
+L"osungsfl"achen der Wellengleichung verschiedene Tangentialebenen,
+also verschiedene Streifen. 
+Der Streifen legt die L"osung eindeutig fest.
+\label{skript:streifen:eindeutig}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{3d/streifen1.png}
+\caption{Charakteristiken sind nicht geeignet als Anfangskurven,
+weil ein Streifen entlang einer Charakteristik die L"osungsfl"ache
+nicht eindeutig zu bestimmen braucht. Die Abbildung zeigt zwei L"osungen
+der Wellengleichung, die sich in dem roten Streifen ber"uhren.
+\label{skript:streifen:zweideutig}}
+\end{figure}
 
 Die Funktionen $u(t)$, $p(t)$ und $q(t)$ sind nicht ganz willk"urlich.
 Leitet man n"amlich die erste der Gleichungen (\ref{charanfangs}) nach
@@ -394,6 +424,13 @@ vorgegeben, es muss also die Beziehung
 gelten.
 
 \subsection{Charakteristiken}
+Die Vorgabe eines Streifens bestimmt die L"osung einer hyperbolischen
+partiellen Differentialgleichung meistens eindeutig.
+In Abbildung~\ref{skript:streifen:eindeutig} zeigt zwei verschiedene
+L"osungen der Wellengleichung, die entlang der $t$-Achse zwar die
+gleiche Anfangskurve, aber verschiedene Tangentialebenen und damit
+verschiedene Streifen haben.
+
 Leitet man die letzten zwei Gleichungen von (\ref{charanfangs}) nach $t$ ab,
 erh"alt man
 \[
@@ -543,10 +580,17 @@ in einer Kurve schneiden, dort sogar ber"uhren, aber trotzdem verschieden
 sind. Notwendigerweise bilden die Tangentialebenen
 entlang der Schnittkurve einen charakteristischen Streifen.
 
-\begin{satz}Ber"uhren sich zwei verschiedene Integralfl"achen entlang einer
+\begin{satz}
+\label{skript:satz:charakteristiken}
+Ber"uhren sich zwei verschiedene Integralfl"achen entlang einer
 Kurve, dann stellen diese Kurve zusammen mit den zugeh"origen Tangentialebenen
 einen charakteristischen Streifen dar.
 \end{satz}
+
+Abbildung~\ref{skript:streifen:zweideutig} zeigt zwei L"osungen der
+Wellengleichung, die sich entlang einer Charakteristik ber"uhren.
+Nach Satz~\ref{skript:satz:charakteristiken} ist der rote Streifen ein
+charakteritischer Streifen.
 
 \begin{proof}[Beweis]
 Offenbar gibt es mindestens zwei L"osungen der Differentialgleichung

@@ -1,0 +1,138 @@
+Auf dem Gebiet $\Omega=\{(x,y)\in\mathbb R^2\,|\, x>0\}$ ist die
+Differentialgleichung
+\begin{equation}
+(\alpha + 1) \frac{\partial^2 u}{\partial x^2}
++
+2\alpha\frac{\partial^2 u}{\partial x\partial y}
++
+(\alpha - 1)\frac{\partial^2 u}{\partial y^2}
+=
+0
+\label{90000014:dgl}
+\end{equation}
+gegeben.
+Von dem Parameter $\alpha$ weiss man nur, dass $\alpha > -1$ ist.
+Ausserdem sind die Randbedingungen
+\[
+u(0,y)=g(y)\qquad\text{und}\qquad \frac{\partial u}{\partial x}(0,y)=0
+\]
+gegeben, wobei $g(y)$ eine f"ur grosse Argumentwerte nur sehr aufwendig zu
+berechnende Funktion ist.
+\begin{teilaufgaben}
+\item
+Ist das Problem gut gestellt?
+\item
+Wegen der Schwierigkeiten bei der Berechnung der Funktion $g$
+wurde eine numerische L"osung f"ur $u$ gerechnet, indem die
+Randwerte f"ur $|y|>5$ null gesetzt wurden.
+Diese L"osung wird nur in einem Teil von $\Omega$ mit der wahren L"osung
+"ubereinstimmen.
+F"ur welche Werte des Parameters $\alpha$ kann man davon ausgehen, dass die
+numerische L"osung die wahre L"osung im Rechteck
+$R=\{(x,y)\,|\, 0\le x\le 3,-2\le y\le 2\}$ korrekt
+wiedergibt?
+\end{teilaufgaben}
+
+
+\begin{loesung}
+\begin{figure}
+\centering
+\includeagraphics[]{domain-1.pdf}
+\caption{Charakteristiken der Differentialgleichung~(\ref{90000014:dgl})
+und Rechteck $R$ (blau). 
+Die Steigung der roten Charakteristiken ist unabh"angig von $\alpha$.
+Die Steigung der gr"unen Charakteristiken h"angt nach~\eqref{90000014:steigung}
+von $\alpha$ ab.
+F"ur die Frage in Teilaufgabe b) der Aufgabe sind die fett ausgezogenen
+Charakteristiken durch die Ecken des Rechtecks massgeben.
+\label{90000014:domain}}
+\end{figure}
+\begin{teilaufgaben}
+\item
+Die Symbolmatrix des Differentialoperators ist
+\[
+A=\begin{pmatrix}\alpha+1&\alpha \\ \alpha&\alpha - 1\end{pmatrix}
+\qquad\Rightarrow\qquad
+\det A=(\alpha + 1)(\alpha - 1) - \alpha^2=-1<0,
+\]
+die Differentialgleichung ist also f"ur alle in Frage kommenden
+Werte von $\alpha$ hyperbolisch.
+Das Problem ist gut gestellt, wenn die von der $y$-Achse ausgehenden
+Charakteristiken das ganze Gebiet "uberdecken. 
+Dazu muss die Differentialgleichung der Charakteristiken gel"ost werden,
+sie lautet
+\[
+\dot y^2
+(\alpha + 1)
+-2
+\dot x\dot y
+\alpha
++
+\dot x^2
+(\alpha - 1)
+=0.
+\]
+Dividieren wir durch $\dot x^2$, erhalten wir
+\begin{equation}
+(\alpha + 1)
+\biggl(\frac{\dot y}{\dot x}\biggr)^2
+-2\alpha \frac{\dot y}{\dot x} +(\alpha - 1)=0
+\label{90000014:qgl}
+\end{equation}
+Der Quotient $\dot y/\dot x$ ist die Steigung $y'$ der Charakteristiken.
+Die quadratische Gleichung~(\ref{90000014:qgl}) f"ur die Steigung $y'$
+hat die Nullstellen
+\begin{equation}
+\frac{\dot y}{\dot x}=y'=
+\frac{2\alpha \pm \sqrt{4\alpha^2 - 4(\alpha+1)(\alpha - 1)}}{2(\alpha +1)}
+=
+\frac{2\alpha \pm \sqrt{4\alpha^2 - 4(\alpha^2 - 1)}}{2(\alpha + 1)}
+=
+\frac{\alpha \pm 1}{\alpha + 1}
+=
+\begin{cases}
+1&\\
+\displaystyle\frac{\alpha - 1}{\alpha + 1}
+\end{cases}
+\label{90000014:steigung}
+\end{equation}
+Die Charakteristiken sind also Geraden mit Steigung $1$ oder
+$(\alpha - 1)/(\alpha + 1)$.
+F"ur $\alpha < 1$ wird die Steigung negativ.
+F"ur Werte von $\alpha$ nahe genug bei $-1$ wird die Steigung beliebig
+negativ.
+In jedem Fall l"asst sich ganz $\Omega$ mit Charakteristiken "uberdecken.
+
+\item
+Aus der Graphik~\ref{90000014:domain} kann man ablesen,
+dass die numerische L"osung genau dann
+die L"osung im Rechteck $R$ korrekt wiedergibt, wenn von den Punkten
+$(0,\pm 5)$ ausgehenden Charakteristiken das Rechteck h"ochstens noch 
+streifen.
+F"ur die von $(0,-5)$ ausgehende Charakteristik mit Steigung $1$ ist
+dies auf jeden Fall erf"ullt.
+Die vom Punkt $(0,5)$ ausgehende Charakteristik mit muss aus
+Symmetriegr"unden mindestens die Steigung $-1$ haben.
+Das zugeh"orige $\alpha$ ist
+\[
+\frac{\alpha - 1}{\alpha + 1}=-1
+\qquad\Rightarrow\qquad
+\alpha - 1 = -\alpha - 1
+\qquad\Rightarrow\qquad
+2\alpha=0
+\qquad\Rightarrow\qquad
+\alpha =0.
+\]
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+Symbolmatrix ({\bf S}) 1 Punkt,
+hyperbolisch ({\bf H}) 1 Punkt,
+Differentialgleichungen der Charakteristiken ({\bf D}) 1 Punkt,
+Steigung der Charakteristiken ({\bf M}) 1 Punkt,
+Problem gut gestellt, weil Rand keine Charakteristik ({\bf G}) 1 Punkt,
+maximale Steigung erreicht von $(0,-5)$ aus die Ecke $(1,-3)$ ({\bf A})
+1 Punkt.
+\end{bewertung}

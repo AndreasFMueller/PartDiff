@@ -1,0 +1,116 @@
+Auf dem Gebiet $\Omega\subset\mathbb R^2$ berandet von den vier Parabeln
+\[
+\begin{aligned}
+y&=\frac12\biggl( \frac{x^2}{s^2}-s^2\biggr)&&\text{mit}&s&=\frac12,1
+	&&\qquad\text{({\color{green}gr"une} Kurven)}\\
+\text{und}\qquad
+y&=\frac12\biggl(-\frac{x^2}{t^2}+t^2\biggr)&&\text{mit}&t&=1,\sqrt{2}
+	&&\qquad\text{({\color{red}rote} Kurven)}
+\end{aligned}
+\]
+\begin{figure}
+\centering
+\includeagraphics[]{domain-1.pdf}
+\caption{Gebiet $\Omega$ f"ur Aufgabe~\ref{40000014}
+\label{40000014:domain}}
+\end{figure}%
+(Abbildung~\ref{40000014:domain})
+soll das Eigenwertproblem
+\begin{equation}
+\Delta u = \lambda u
+\label{40000014:dgl}
+\end{equation}
+mit homogenen Randbedingungen gel"ost werden.
+Aus der Wikipedia erfahren Sie, dass die genannten Kurven 
+die Koordinatenlinien sogenannter parabolischer Koordinaten $(s,t)$ sind,
+die mit den Formeln
+\begin{align*}
+x&=st\\
+y&=\frac12(t^2-s^2)
+\end{align*}
+in kartesische Koordinaten umgerechnet werden k"onnen.
+Ausserdem l"asst sich in diesen Koordinaten der Laplace-Operator als
+\[
+\Delta u = \frac1{s^2 + t^2}\biggl(\frac{\partial^2 u}{\partial s^2}+\frac{\partial^2u}{\partial t^2}\biggr)
+\]
+schreiben.
+Verwenden Sie diese Informationen f"ur einen Separationsansatz, und
+stellen Sie Differentialgleichungen und Randbedingungen daf"ur auf.
+
+\begin{hinweis}
+Es wird nicht verlangt, die Differentialgleichungen zu l"osen.
+\end{hinweis}
+
+\begin{loesung}
+Zun"achst "uberpr"ufen wir, dass die Parabeln tats"achlich Koordinatenlinien
+sind.
+Dazu l"osen wir die erste Gleichung der Koordinatensystemdefinition nach $s$
+bzw.~nach $t$ auf, und erhalten
+\[
+s=\frac{x}{t}
+\qquad\text{bzw.}\qquad
+t=\frac{x}{s}
+\]
+und setzen dies in die zweite Gleichung ein. 
+So erhalten wir
+\[
+y=\frac12\biggl(\frac{x^2}{s^2}-s^2\biggr)
+\qquad\text{bzw.}\qquad
+y=\frac12\biggl(t^2 - \frac{x^2}{t^2}\biggr),
+\]
+also genau die vorgegebenen Gleichungen.
+
+F"ur das Eigenwertproblem machen wir nun einen Separationsansatz in 
+parabolischen Koordinaten, d.~h.~wir setzen an $u(s,t)=S(s)T(t)$, und
+setzen dies in die Differentialgleichung (\ref{40000014:dgl}) ein.
+Wir erhalten
+\[
+\Delta u
+=
+\frac1{s^2+t^2}\bigl(S''(s)T(t) + S(s)T''(t)\bigr) = \lambda S(s)T(t).
+\]
+Wir dividieren durch $S(s)T(t)$ und multiplizieren mit $s^2+t^2$, so
+bekommen wir
+\[
+\frac{S''(s)}{S(s)} + \frac{T''(t)}{T(t)}=\lambda s^2 + \lambda t^2.
+\]
+In dieser Form k"onnen wir die Separation durchf"uhren:
+\[
+\frac{S''(s)}{S(s)} - \lambda s^2 = - \frac{T''(t)}{T(t)} + \lambda t^2.
+\]
+Da die linke Seite nur von $s$, die rechte nur von $t$ abh"angt, m"ussen
+beide Seiten konstant sein, wir nennen die Konstante $\mu$.
+So erhalten wir die zwei Differentialgleichungen
+\begin{equation}
+S''(s)=(\lambda s^2+\mu)S(s)
+\qquad\text{und}\qquad
+T''(t) = (\lambda t^2-\mu)T(t).
+\label{40000014:sepdgl}
+\end{equation}
+Dies sind gew"ohnliche Differentialgleichungen zweiter Ordnung f"ur die
+Funktionen $S(s)$ und $T(t)$.
+Die Funktionen sollen homogene Randbedingungen erf"ullen, es muss daher
+verlangt werden, dass
+\begin{equation}
+S({\textstyle \frac12})=S(1)=0
+\qquad\text{und}\qquad
+T(1)=T(\sqrt{2})=0.
+\label{40000014:seprb}
+\end{equation}
+Die Eigenwerte sind diejenigen Werte von $\lambda$, f"ur die es ein passendes
+$\mu$ gibt, so dass sich Funktion $S(s)$ und $T(t)$ finden lassen, die
+die Differentialgleichungen~(\ref{40000014:sepdgl}) und die
+Randbedingungen~(\ref{40000014:seprb}) erf"ullen.
+\end{loesung}
+
+\begin{bewertung}
+Separationsansatz mit Produkt $u(s,t) = T(t)S(s)$ ({\bf A}) 1 Punkt,
+Einsetzen in die Differentialgleichung ({\bf E}) 1 Punkt,
+Trennung der Variablen ({\bf A}) 1 Punkt,
+Differentialgleichung f"ur $T(t)$ ({\bf T}) 1 Punkt,
+Differentialgleichung f"ur $S(s)$ ({\bf S}) 1 Punkt,
+Randbedingungen f"ur $S$ und $T$ ({\bf R}) 1 Punkt.
+\end{bewertung}
+
+
+

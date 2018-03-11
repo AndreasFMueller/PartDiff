@@ -1,0 +1,152 @@
+Gegeben ist die nichtlineare partielle Differentialgleichung 
+zweiter Ordnung
+\begin{equation}
+\biggl(1+\biggl(\frac{\partial u}{\partial y}\biggr)^2\biggr)
+\frac{\partial^2 u}{\partial x^2}
+-2
+\frac{\partial u}{\partial y}
+\frac{\partial u}{\partial x}
+\frac{\partial^2 u}{\partial x\partial y}
++
+\biggl(1+\biggl(\frac{\partial u}{\partial x}\biggr)^2\biggr)
+\frac{\partial^2 u}{\partial y^2}
+=0
+\label{40000016:dgl}
+\end{equation}
+für die Funktion $u(x,y)$ auf dem Gebiet $\Omega =\mathbb R^2$.
+Die Funktion $u$ soll zudem die Eigenschaften
+\[
+u(0,0)=0
+\qquad\text{und}\qquad
+\operatorname{grad} u(0,0)=0
+\]
+haben.
+\begin{teilaufgaben}
+\item
+Führen Sie Separation durch mit Hilfe eines Ansatzes der Form
+$
+u(x,y) = X(x) + Y(y)
+$
+und stellen Sie Differentialgleichungen und Anfangsbedingungen
+für $X(x)$ und $Y(y)$ auf.
+\item
+Legen die Vorgaben die Separationslösung eindeutig fest?
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Die partiellen Ableitungen von $u$ entsprechend dem Ansatz sind:
+\begin{equation*}
+\begin{aligned}
+\frac{\partial u}{\partial x}
+&=
+X'(x),
+&
+\frac{\partial u}{\partial y}
+&=
+Y'(y),
+\\
+\frac{\partial^2 u}{\partial x^2}
+&=
+X''(x),
+&
+\frac{\partial^2 u}{\partial y^2}
+&=
+Y''(y),
+&
+\frac{\partial^2 u}{\partial x\partial y}
+&=
+0.
+\end{aligned}
+\end{equation*}
+Einsetzen derselben in die Differentialgleichung \eqref{40000016:dgl} 
+ergibt
+\begin{equation}
+(1+Y'(y)^2)\, X''(x) + (1+X'(x)^2)\, Y''(y) = 0.
+\label{40000016:dgl2}
+\end{equation}
+Bringt man Terme mit $x$ auf die linke Seite und Terme mit $y$ auf die
+rechte Seite, erhält man
+\begin{equation}
+\frac{X''(x)}{1+X'(x)^2}
+=
+-\frac{Y''(y)}{1+Y'(y)^2}.
+\label{40000016:sep}
+\end{equation}
+Da die Variablen separiert sind, kann man schliessen, dass beide Seiten
+der Gleichung konstant sein müssen.
+Mit der neuen Konstanten $c$ erhält man also die Gleichungen
+\begin{align}
+\qquad\qquad\qquad\qquad
+\frac{X''(x)}{1+X'(x)^2} &= c
+&
+&\text{und}&
+\frac{Y''(y)}{1+Y'(y)^2} &= -c
+\qquad\qquad\qquad\qquad
+\label{40000016:loes}
+\\
+\intertext{mit den Anfangsbedingungen}
+X(0) &= 0
+&&&
+Y(0) &= 0
+\notag
+\\
+X'(0) &= 0
+&&&
+Y'(0) &= 0.
+\notag
+\end{align}
+\item
+Diese Anfangsbedingungen legen die Lösung $X(x)$ und $Y(y)$
+der gewöhnlichen Differentialgleichungen
+\eqref{40000016:loes}
+eindeutig
+fest aber nicht die Konstante $c$.
+Es gibt also eine ganze Familie von Separationslösungen, die durch
+die Konstante $c$ parametrisiert sind.
+\end{teilaufgaben}
+
+Man beachte, dass die Anfangsbedingungen $X(0)=0$ und $Y(0)=0$ nicht aus
+den gegebenen Informationen folgen.
+Es folgt aber, dass $X(0) + Y(0) = 0$ sein muss.
+Ist aber $X(x)$ eine Lösung mit $X(0)=a$, dann ist $\tilde X(x) = X(x)-a$
+eine Lösung mit $\tilde X(0)=0$.
+Damit man mit diesem $X(x)$ eine Separationslösung konstruieren kann,
+müssten $Y(y)$ eine Lösung mit $Y(0)=-a$ sein, dann ist aber
+wiederum $\tilde Y(y) = Y(y)+a$ eine Lösung mit $\tilde Y(0)=0$.
+Die Summe der Funktionen ist jeweils eine Separationslösung, aber die
+beiden Summen
+\[
+\tilde X(x)+\tilde Y(y)
+=
+X(x)-a + Y(y)+1
+=
+X(x)+Y(y)
+\]
+sind gleich.
+Eine andere Anfangsbedingung für $X(0)$ führt also zwar auf
+andere Funktionen $X(x)$ und $Y(y)$ aber trotzdem auf die gleiche
+Separationslösung.
+\qedhere
+\end{loesung}
+
+\begin{diskussion}
+Die Differentialgleichung \eqref{40000016:dgl} ist die Bedingung, dass der
+Graph der Funktion $u(x,y)$ mittlere Krümmung $0$ hat, er wird damit eine
+Minimalfläche.
+Diese Minimalfläche wurde von H.~F.~Scherk 1834 gefunden.
+\end{diskussion}
+
+\begin{bewertung}
+Einsetzen des Separationsansatzes ({\bf E}) 1 Punkt,
+Differentialgleichung \eqref{40000016:dgl2} ({\bf D}) 1 Punkt,
+Separation \eqref{40000016:sep} ({\bf S}) 1 Punkt,
+Einzelgleichungen ({\bf C}) 1 Punkt,
+Anfangsbedingungen ({\bf A}) 1 Punkt,
+Eindeutigkeit ({\bf B}) 1 Punkt.
+\end{bewertung}
+
+
+
+
