@@ -8,4 +8,5 @@ mit Povray erzeugt, dies wird von den Makefiles gesteuert. Da Makefiles
 in dieser Form von Windows nicht unterstützt sind, empfiehlt es sich,
 das Skript auf einem Linux- oder Mac OS X-System zu bauen.
 
+The directory lecturenotes contains the english version of the script
 
