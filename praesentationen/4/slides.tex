@@ -1,4 +1,6 @@
-
+%
+% slides.tex -- Slides für Woche 4
+% 
 \section{Separation}
 
 \begin{frame}
@@ -28,7 +30,7 @@ u(x,y)=\sum_n a_nu_n(x,y)
 
 \begin{frame}
 \section{Tsunami}
-\frametitle{Sendai-Erdbeben}
+\frametitle{Sendai-Erdbeben 2011}
 \begin{center}
 \includegraphics[width=0.85\hsize]{../../skript/graphics/sendainoaa.jpg}
 \end{center}
@@ -106,37 +108,37 @@ u(t,\vartheta)=
 
 \end{frame}
 
-\begin{frame}
-\frametitle{L"osung $\Theta(\vartheta)$}
-\begin{enumerate}
-\item Substition $z=\cos\vartheta$, $y(z)=\Theta(\cos\vartheta)$
-\item Legendre-Differentialgleichung:
-\[
-\frac{d}{dz}(1-z^2)\frac{d}{dz}y(z) =my(z).
-\]
-\item Fall $m=0$:
-\[
-y(z)=\frac{C}2\frac{1+z}{1-z}+D
-\]
-\item Allgemeiner Fall: Legendre-Polynome $P_k^l(z)$, aber nur
-f"ur $m_k=-k(k+1)$, $k\in\mathbb N$ und $l=0,1,\dots,n$.
-Wir brauchen nur $l=0$.
-\end{enumerate}
-\end{frame}
-
-\begin{frame}
-\frametitle{Approximation}
-\begin{center}
-\includegraphics[width=0.9\hsize]{../../skript/graphics/tsunami0.jpg}
-\end{center}
-\end{frame}
-
-\begin{frame}
-\frametitle{Approximation}
-\begin{center}
-\includegraphics[width=0.9\hsize]{../../skript/graphics/tsunami50.jpg}
-\end{center}
-\end{frame}
+%\begin{frame}
+%\frametitle{L"osung $\Theta(\vartheta)$}
+%\begin{enumerate}
+%\item Substition $z=\cos\vartheta$, $y(z)=\Theta(\cos\vartheta)$
+%\item Legendre-Differentialgleichung:
+%\[
+%\frac{d}{dz}(1-z^2)\frac{d}{dz}y(z) =my(z).
+%\]
+%\item Fall $m=0$:
+%\[
+%y(z)=\frac{C}2\frac{1+z}{1-z}+D
+%\]
+%\item Allgemeiner Fall: Legendre-Polynome $P_k^l(z)$, aber nur
+%f"ur $m_k=-k(k+1)$, $k\in\mathbb N$ und $l=0,1,\dots,n$.
+%Wir brauchen nur $l=0$.
+%\end{enumerate}
+%\end{frame}
+%
+%\begin{frame}
+%\frametitle{Approximation}
+%\begin{center}
+%\includegraphics[width=0.9\hsize]{../../skript/graphics/tsunami0.jpg}
+%\end{center}
+%\end{frame}
+%
+%\begin{frame}
+%\frametitle{Approximation}
+%\begin{center}
+%\includegraphics[width=0.9\hsize]{../../skript/graphics/tsunami50.jpg}
+%\end{center}
+%\end{frame}
 
 \section{Transformation}
 
