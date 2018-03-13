@@ -22,20 +22,13 @@ TEXFILES = skript.tex a-einleitung.tex \
 
 skript: skript.pdf
 
-skript.ind:	$(TEXFILES) images/timestamp 3d/timestamp
-	cd images && make
+skript.ind:	$(TEXFILES) 
 	touch skript.ind
 	pdflatex skript.tex
 	makeindex skript.idx
 
 skript.pdf:	$(TEXFILES) skript.ind 
 	pdflatex skript.tex
-
-images/timestamp:
-	cd images; make timestamp
-
-3d/timestamp:
-	cd 3d; make timestamp
 
 clean:
 	rm -f skript.aux skript.ind skript.log skript.toc
