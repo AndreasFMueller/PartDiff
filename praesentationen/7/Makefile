@@ -3,6 +3,8 @@
 #
 # (c) 2015 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
+TEXFILES = slides.tex common.tex
+
 all:	partdiff-handout-7.pdf partdiff-presentation-7.pdf
 
 images = welle.jpg wellegrid.jpg
@@ -35,7 +37,7 @@ lichtkegel.jpg: lichtkegel.png
 lichtkegel.png: lichtkegel.pov lichtkegel.ini
 	povray lichtkegel.ini
 
-FILES = $(wellen_FILES) $(wdom_FILES) lichtkegel.jpg $(images) slides.tex
+FILES = $(wellen_FILES) $(wdom_FILES) lichtkegel.jpg $(images) $(TEXFILES)
 
 partdiff-presentation-7.pdf:	partdiff-presentation-7.tex $(FILES)
 	pdflatex partdiff-presentation-7.tex
