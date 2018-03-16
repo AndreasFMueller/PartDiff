@@ -1,20 +1,20 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=mptopdf 2016.5.24)  16 MAR 2018 09:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=mptopdf 2016.6.19)  16 MAR 2018 13:44
  restricted \write18 enabled.
  %&-line parsing enabled.
 **\relax saite.3
- (./saite.3{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.ma
+ (./saite.3{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.ma
 p}) [warning: the height is less than 1in] [1] 
 Here is how much of TeX's memory you used:
- 67 strings out of 496714
- 518 string characters out of 6201117
+ 67 strings out of 496709
+ 518 string characters out of 6200996
  4015999 words of memory out of 9001206
- 1718 multiletter control sequences out of 15000+600000
+ 1721 multiletter control sequences out of 15000+600000
  2232 words of font info for 2 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
  10i,3n,7p,113b,237s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-di
-st/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/
-urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/
+{/usr/local/texlive/2016/texmf-di
+st/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/
+urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
 Output written on saite.pdf (1 page, 9318 bytes).
 PDF statistics:
