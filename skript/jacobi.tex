@@ -6,47 +6,47 @@
 %
 \section{Anwendung: Hamiltonsche Mechanik\label{hamilton-mechanik}}
 In den bisherigen Bespielen wurde jeweils ein Separationsansatz mit
-einem Produkt von Teilfunktion gew"ahlt.
-Dieser Abschnitt soll illustrieren, dass in einigen F"allen auch
+einem Produkt von Teilfunktion gewählt.
+Dieser Abschnitt soll illustrieren, dass in einigen Fällen auch
 ein Separationsansatz mit einer Summe von Teilfunktionen
-zum Ziel f"uhren kann.
-Dieser Fall ist f"ur die Anwendungen recht wichtig, denn die
+zum Ziel führen kann.
+Dieser Fall ist für die Anwendungen recht wichtig, denn die
 dabei entstehende partielle Differentialgleichungen hat eine
-gen"ugend einfach Struktur, dass der erste Separationsschritt immer
-durchgef"uhrt werden kann.
+genügend einfach Struktur, dass der erste Separationsschritt immer
+durchgeführt werden kann.
 
 \subsection{Motivation}
 \index{Newtonsche Gesetze}
 \index{Planeten}
 \index{Satelliten}
-Die Newtonschen Gesetze reichen vollst"andig, um die Bewegung von
+Die Newtonschen Gesetze reichen vollständig, um die Bewegung von
 Planeten und Satelliten vorherzusagen.
 Unterliegt
-ein K"orper der Masse $m$ mit zeitabh"angigen Koordinaten $\vec x(t)$
-einer ortsabh"angigen Kraft $\vec F(\vec x)$, dann muss die Bahnkurve 
-$\vec x(t)$ die gew"ohnliche Differentialgleichung
+ein Körper der Masse $m$ mit zeitabhängigen Koordinaten $\vec x(t)$
+einer ortsabhängigen Kraft $\vec F(\vec x)$, dann muss die Bahnkurve 
+$\vec x(t)$ die gewöhnliche Differentialgleichung
 \begin{equation}
 m\frac{d^2}{dt^2}\vec x(t)=\vec F(\vec x(t))
 \label{jacobi:newton}
 \end{equation}
-erf"ullen. Ausgehend von einem bekanten Anfangspunkt $\vec x_0$ und
-der Anfangsgeschwindigkeit $\vec v_0$ l"asst sich durch
-l"osen der Differentialgleichung die Bahnkurve bestimmen.
+erfüllen. Ausgehend von einem bekanten Anfangspunkt $\vec x_0$ und
+der Anfangsgeschwindigkeit $\vec v_0$ lässt sich durch
+lösen der Differentialgleichung die Bahnkurve bestimmen.
 
 Diese Beschreibung hat jedoch ein paar praktisch bedeutsame Nachteile.
 Oft ist das Kraftgesetz nicht exakt bekannt. Zum Beispiel werden
 Satelliten in niedrigem Erdorbit\footnote{Low earth orbit, wenige 100km}
 \index{Erdorbit}
-von der zwar sehr d"unnen, aber nicht vernachl"assigbaren
-Erdatmosph"are abgebremst.
-\index{Erdatmosphare@Erdatmosph\"are}
+von der zwar sehr dünnen, aber nicht vernachlässigbaren
+Erdatmosphäre abgebremst.
+\index{Erdatmosphare@Erdatmosph\äre}
 \index{Merkur}
-Oder der Planet Merkur ver"andert laufend seine Bahn um einen winzigen
+Oder der Planet Merkur verändert laufend seine Bahn um einen winzigen
 Betrag, ein Effekt, den erst Albert Einstein mit seiner speziellen
-Relativit"atstheorie erkl"aren konnte.
+Relativitätstheorie erklären konnte.
 Man sieht sich also oft mit der Aufgabe konfrontiert, dass man zwar die
-Bahn berechnen k"onnte, wenn das Kraftgesetz exakt zutreffen w"urde,
-dass man aber die Bahnver"anderungen unter dem Einfluss kleiner
+Bahn berechnen könnte, wenn das Kraftgesetz exakt zutreffen würde,
+dass man aber die Bahnveränderungen unter dem Einfluss kleiner
 Abweichungen vom exakten Kraftgesetz bestimmen sollte.
 \index{Luftwiderstand}
 
@@ -59,35 +59,35 @@ Die Kugel wird in Richtung $\vec x_0$ weiterrollen, dabei
 aber langsamer werden und schliesslich zum Stillstand kommen.
 Es gibt also eine Kurve $t\mapsto \vec x(t, \vec x_0, \vec v_0))$,
 die beiden Vektoren $\vec x_0$ und $\vec v_0$ bestimmen die
-Bahn vollst"andig.
+Bahn vollständig.
 
 Was passiert, wenn der Billiardtisch nicht exakt horizontal ist?
-Offenbar wirkt dann eine kleine zus"atzlich Kraft auf die Billard-Kugel,
-und zwar in Richtung der gr"ossten Neigung der Billardtischplatte.
+Offenbar wirkt dann eine kleine zusätzlich Kraft auf die Billard-Kugel,
+und zwar in Richtung der grössten Neigung der Billardtischplatte.
 Wenn die Neigung sehr klein ist, ist die Abweichung von 
 $\vec x(t,\vec x_0,\vec v_0))$ sehr gering.
-Man k"onnte die Beschreibung diese Modifikation dadurch beschreiben,
+Man könnte die Beschreibung diese Modifikation dadurch beschreiben,
 dass man $\vec x_0$ und $\vec v_0$ leicht anpasst.
-Die tats"achliche Position der Kugel zur Zeit $t$ ist die Position,
+Die tatsächliche Position der Kugel zur Zeit $t$ ist die Position,
 die eine Billiardkugel auf einem horizontalen Tisch ausgehend von
 einem etwas anderen Ausgangspunkt $\vec x_0(t)$ mit einer
 etwas anderen Ausgangsgeschwindigkeit $\vec v_0(t)$
-nach Zeit $t$ erreicht h"atte.
+nach Zeit $t$ erreicht hätte.
 \end{beispiel}
 
 Der Vorteil dieser Beschreibung besteht darin, dass sich die
-Abweichung vom exakten Kraftgesetz direkt in der Zeitabh"angigkeit
-von $x_0(t)$ und $v_0(t)$ ausdr"uckt. Ist das Kraftgesetz exakt
-erf"ullt, bleiben $x_0(t)$ und $v_0(t)$ konstant. Ausserdem ist die
+Abweichung vom exakten Kraftgesetz direkt in der Zeitabhängigkeit
+von $x_0(t)$ und $v_0(t)$ ausdrückt. Ist das Kraftgesetz exakt
+erfüllt, bleiben $x_0(t)$ und $v_0(t)$ konstant. Ausserdem ist die
 Berechnung der Bahn ganz einfach: zu $\vec x_0$ kommt einfach
 ein Vielfaches von $\vec v_0$ hinzu.
 
 Die Bahnen der Satelliten sind offenbar viel komplizierter. 
 Ort und Geschwindigkeit sind nicht geeignet, die
-Bahn auf diese Art und Weise zu charakterisieren, sie "andern laufend
-dramatisch ihre Gr"osse. Niemand kann mit Leichtigkeit sagen, ob
+Bahn auf diese Art und Weise zu charakterisieren, sie ändern laufend
+dramatisch ihre Grösse. Niemand kann mit Leichtigkeit sagen, ob
 die Bahn vom Punkt  $\vec x_0$ mit Anfangsgeschwindigkeit $\vec v_0$
-irgendwie "ahnlich aussieht wie die Bahn vom Punkt $\vec x_1$
+irgendwie ähnlich aussieht wie die Bahn vom Punkt $\vec x_1$
 mit Anfangsgeschwindigkeit $\vec v_1$.
 
 \begin{aufgabe}
@@ -100,7 +100,7 @@ Bahn mit Hilfe dieser Parameter in der Form
 x_i(t) = x_i(t,Q_1,\dots,Q_n,P_1,\dots,P_n)
 \label{jacobi:aufgabekurve}
 \end{equation}
-beschreiben l"asst.
+beschreiben lässt.
 \end{aufgabe}
 
 \begin{beispiel}
@@ -113,27 +113,27 @@ y(t)&=y_0 + tv_{y0}.
 \end{aligned}
 \label{jacobi:linear}
 \end{equation}
-In dieser Form ist das bereits eine L"osung der gestellten Aufgabe,
-denn jede Bahnkurve l"asst such durch geeignete Wahl der
+In dieser Form ist das bereits eine Lösung der gestellten Aufgabe,
+denn jede Bahnkurve lässt such durch geeignete Wahl der
 Parameter $\vec x_0$ und $\vec v_0$ charakterisieren.
 
 Man kann aber noch mehr erreichen: man kann die Koordinaten $Q_i$ und $P_i$
-so w"ahlen, dass die $P_i$ alle die Bedeutung einer Energie,
+so wählen, dass die $P_i$ alle die Bedeutung einer Energie,
 und die $Q_i$ die Bedeutung einer Zeit haben.
-Die Funktion der $P_i$ k"onnen die Terme
+Die Funktion der $P_i$ können die Terme
 \begin{equation*}
 \begin{aligned}
 P_x&=\frac12mv_x^2,&
 P_y&=\frac12mv_y^2
 \end{aligned}
 \end{equation*}
-"ubernehmen, also die Beitr"age der Bewegungskomponenten in $x$-
+übernehmen, also die Beiträge der Bewegungskomponenten in $x$-
 bzw.~$y$-Richtung zur Energie. Da die Kugel reibungsfrei rollt, sind
-diese Gr"ossen konstant.
+diese Grössen konstant.
 
-Die Gr"ossen $Q_x$ und $Q_y$ m"ussen so gew"ahlt werden, dass 
-die Gleichungen (\ref{jacobi:linear}) die tats"achliche Bahn beschreiben.
-Durch Aufl"osen von (\ref{jacobi:aufgabekurve}) nach $Q_i$ findet man
+Die Grössen $Q_x$ und $Q_y$ müssen so gewählt werden, dass 
+die Gleichungen (\ref{jacobi:linear}) die tatsächliche Bahn beschreiben.
+Durch Auflösen von (\ref{jacobi:aufgabekurve}) nach $Q_i$ findet man
 \begin{equation*}
 \begin{aligned}
 Q_x&=-\frac{x_0}{v_{0x}},\\
@@ -145,17 +145,17 @@ Billardkugel die $x$- bzw.~$y$-Achse kreuzt.
 \end{beispiel}
 
 Die schwierigere Frage ist, ob jedes mechanische System eine
-L"osung der Aufgabe \ref{jacobi:aufgabe} zul"asst.
+Lösung der Aufgabe \ref{jacobi:aufgabe} zulässt.
 Die Antwort passt ins Thema: ja, man kann eine solche Beschreibung
-finden, aber man muss dazu die L"osung einer speziellen
-partiellen Differentialgleichung finden. Oft l"asst sich die
-Differentialgleichung mit einem Separationsansatz l"osen.
+finden, aber man muss dazu die Lösung einer speziellen
+partiellen Differentialgleichung finden. Oft lässt sich die
+Differentialgleichung mit einem Separationsansatz lösen.
 
 \subsection{Hamilton-Jacobi-Formalismus}
 \index{Hamilton-Jacobi-Formalismus}
 In der Hamiltonschen Beschreibung der Mechanik geht man aus von
-der Gesamtenergie $H(x_i, p_i)$ ausgedr"uckt durch Ort und Impuls.
-F"ur das Beispielproblem ist
+der Gesamtenergie $H(x_i, p_i)$ ausgedrückt durch Ort und Impuls.
+Für das Beispielproblem ist
 \index{Hamilton-Funktion}
 \begin{equation}
 H(x_i,p_i)=\frac1{2m}(p_x^2+p_y^2).
@@ -179,9 +179,9 @@ durch die Hamiltonschen Differentialgleichungen gegeben:
 Die erste Gleichung (\ref{jacobi:hamilton:geschwindigkeit}) stellt
 nur den Zusammenhang zwischen der Geschwindigkeit und dem Impuls
 her. Die zweite Gleichung (\ref{jacobi:hamilton:newton}) besagt in
-diesem Fall, dass keine Kraft wirkt. N"ahme man in 
+diesem Fall, dass keine Kraft wirkt. Nähme man in 
 (\ref{jacobi:hamilton:funktion}) noch ein Potential $V(x)$ hinzu,
-w"urde die zweite Gleichung zu
+würde die zweite Gleichung zu
 \[
 m\ddot x_i=-\frac{\partial V}{\partial x_i} = F_i(x),
 \]
@@ -191,13 +191,13 @@ Nach Hamiliton ist jeder andere Satz von Koordinaten $Q_i$ und $P_i$
 genauso geeignet zur Beschreibung des mechanischen Systems, solange die
 Gleichungen 
 (\ref{jacobi:hamilton:geschwindigkeit}) und (\ref{jacobi:hamilton:newton})
-weiterhin G"ultigkeit haben. Jacobi und Hamilton haben eine Methode
+weiterhin Gültigkeit haben. Jacobi und Hamilton haben eine Methode
 angegeben, mit der man eine Koordinatentransformation finden kann.
 
 \begin{satz}
 \label{jacobi:satz}
-Eine L"osung der Aufgabe (\ref{jacobi:aufgabe}) wird gefunden mit
-Hilfe einer Funktion $S(x_i, t)$, die L"osung der partiellen
+Eine Lösung der Aufgabe (\ref{jacobi:aufgabe}) wird gefunden mit
+Hilfe einer Funktion $S(x_i, t)$, die Lösung der partiellen
 Differentialgleichung
 \begin{equation}
 \frac{\partial S}{\partial t}
@@ -208,8 +208,8 @@ x_i,
 \biggr)
 \label{jacobi:hamilton:dgl}
 \end{equation}
-erf"ullt.
-Eine L"osungsfunktion $S$ der Differentialgleichung enth"alt notwendigerweise
+erfüllt.
+Eine Lösungsfunktion $S$ der Differentialgleichung enthält notwendigerweise
 ein Anzahl von Integrationskonstanten $P_i$.
 Die partiellen Ableitungen von $S$ nach diesen $P_i$
 sind die neuen konstanten Bahnparameter $Q_i$
@@ -218,28 +218,28 @@ Q_i=\frac{\partial S}{\partial P_i}
 \label{jacobi:hamilton:impuls}
 \end{equation}
 Die Gleichungen (\ref{jacobi:hamilton:impuls}) enthalten ausser den
-Gr"ossen $P_i$ und $Q_i$ auch die Koordinaten $x_i$ und die Zeit $t$.
-Durch Aufl"osen nach den Variablen $x_i$ l"asst sich die Bahnkurve
+Grössen $P_i$ und $Q_i$ auch die Koordinaten $x_i$ und die Zeit $t$.
+Durch Auflösen nach den Variablen $x_i$ lässt sich die Bahnkurve
 als Funktion
 \[
 x_i(t,Q_i,P_i)
 \]
-ausdr"ucken.
+ausdrücken.
 \end{satz}
-Der Parametersatz $(Q_i,P_i)$ beschreibt also alle m"oglichen 
-Bahnen. Zwei Bahnen k"onnen sehr einfach verglichen werden, wenn die
+Der Parametersatz $(Q_i,P_i)$ beschreibt also alle möglichen 
+Bahnen. Zwei Bahnen können sehr einfach verglichen werden, wenn die
 Paramter $Q_i$ und $P_i$ nahe beeinander sind, dann liegen auch
 die Bahnen nahe beeinander.
 
-Eine Begr"undung f"ur diesen Satz liegt ausserhalb der Ziele
+Eine Begründung für diesen Satz liegt ausserhalb der Ziele
 dieser Vorlesung, wir wollen aber mit zwei Beispielen zeigen,
-dass dieser Formulismus funktioniert und die L"osung der
-Bewegungsdifferentialgleichungen des Systems erm"oglicht.
+dass dieser Formulismus funktioniert und die Lösung der
+Bewegungsdifferentialgleichungen des Systems ermöglicht.
 
 \subsection{Energieerhaltung}
 Ein Spezialfall ist von besonderer Bedeutung. In einem abgeschlossenen
 System ist die Energie erhalten, die Hamilton-Funktion $H$, die ja
-die Energie darstellt, kann also nicht von der Zeit abh"angen.
+die Energie darstellt, kann also nicht von der Zeit abhängen.
 Verwenden wir einen Separationsansatz der Form 
 \[
 S(t,x_i)=S_0(t)+S_1(x_1)+\dots+S_n(x_n),
@@ -248,9 +248,9 @@ wird die Hamilton-Jacobi-Differentialgleichung zu
 \[
 S_0'(t)=H(S_1'(x_1),\dots, S_n'(x_n)).
 \]
-Die linke Seite h"angt nur von $t$ ab, auf der rechten Seite
+Die linke Seite hängt nur von $t$ ab, auf der rechten Seite
 kommt $t$ aber gar nicht vor, die Variablen $t$ und $x_i$ sind
-separiert, beide Seiten der Gleichung m"ussen konstant sein.
+separiert, beide Seiten der Gleichung müssen konstant sein.
 Wir nennen die Konstante $P_1$, sie ist der Wert der Hamilton-Funktion,
 also die Gesamtenergie.
 Damit steht auch schon fest, dass die gesuchte Funktion $S(t, x_i)$
@@ -259,44 +259,44 @@ die Form
 S(t,x_i)=P_1t + \bar S(x_i)
 \]
 haben muss, wobei $\bar S(x_i)$ die Zeit $t$ nicht enthalten kann.
-F"ur die Koordinaten $Q_i$ gilt daher
+Für die Koordinaten $Q_i$ gilt daher
 \begin{align*}
 Q_1&=\frac{\partial S}{\partial P_1}=t+\frac{\partial \bar S(x_i)}{\partial P_1},
 \\
 Q_i&=\frac{\partial \bar S}{\partial P_i},\qquad i>1
 \end{align*}
-Die Gleichungen f"ur $Q_i$ mit $i>1$ enthalten die Zeit nicht, sie
-beschreiben also ausschliesslich die Form der Bahn in Abh"angigkeit
+Die Gleichungen für $Q_i$ mit $i>1$ enthalten die Zeit nicht, sie
+beschreiben also ausschliesslich die Form der Bahn in Abhängigkeit
 von den Parameter $Q_1,\dots,Q_n,P_1,\dots,P_n$. Die erste
-Gleichung ist die einzige, die Zeit enth"alt. In ihrem zweiten
+Gleichung ist die einzige, die Zeit enthält. In ihrem zweiten
 Term kommt die Zeit ebenfalls nicht vor, sondern nur die Ortskoordinaten.
-Die Ortskoordinaten h"angen daher nur von
+Die Ortskoordinaten hängen daher nur von
 \[
 t-Q_1,Q_2,\dots,Q_n, P_1,\dots,P_n
 \]
 ab. Statt der Form (\ref{jacobi:aufgabekurve}) gibt es also sogar eine
-L"osung der Form
+Lösung der Form
 \[
 x_i(t)=x_i(t-Q_1,Q_2, \dots,Q_n,P_1,\dots,P_n).
 \]
 
-F"ur eine Punktmasse in drei Dimensionen k"onnen wir also schliessen, 
+Für eine Punktmasse in drei Dimensionen können wir also schliessen, 
 dass es immer eine Beschreibung der Bahn mit sechs Parametern
 $Q_1,Q_2,Q_3,P_1,P_2,P_3$ gibt, wobei der Parameter $Q_1$ die Bedeutung
 hat, dass ein ganz bestimmter, geometrisch ausgezeichneter Bahnpunkt
 zu dieser Zeit durchlaufen wird.
 Bei der Beschreibung von Planetenbahnen dieser Punkt typischerweise
-das Perihel, der Sonnenn"achste Punkt, oder bei Satelliten entsprechend
-das Perig"aum, der erdn"achste Punkt.
+das Perihel, der Sonnennächste Punkt, oder bei Satelliten entsprechend
+das Perigäum, der erdnächste Punkt.
 
 \subsection{Beispiele}
-\subsubsection{Bewegung ohne "ausseren Krafeinfluss in zwei Dimensionen}
+\subsubsection{Bewegung ohne äusseren Krafeinfluss in zwei Dimensionen}
 \index{Bewegung ohne Krafteinfluss}
 Wir beginnen wieder bei der Hamilton-Funktion 
 \[
 H(p_x, p_y)=\frac1{2m}(p_x^2+p_y^2).
 \]
-Nach (\ref{jacobi:hamilton:dgl}) m"ussen wir jetzt also die
+Nach (\ref{jacobi:hamilton:dgl}) müssen wir jetzt also die
 Differentialgleichung
 \[
 \frac1{2m}\biggl(
@@ -305,7 +305,7 @@ Differentialgleichung
 \biggl(\frac{\partial S}{\partial y}\biggr)^2
 \biggr)=\frac{\partial S}{\partial t}
 \]
-f"ur die Funktion $S(t,x,y)$ l"osen. Wir verwenden dazu einen 
+für die Funktion $S(t,x,y)$ lösen. Wir verwenden dazu einen 
 Separationsansatz der Form
 \[
 S(t,x,y)=S_1(x)+S_2(y) + S_3(t).
@@ -315,16 +315,16 @@ Einsetzen in die Differentialgleichung liefert
 \frac1{2m}( S_1'(x)^2+S_2'(y)^2)=S_3'(t).
 \label{jacobi:kraeftefrei:sep1}
 \end{equation}
-Die linke Seite h"angt nicht von $t$ ab, die rechte h"angt
+Die linke Seite hängt nicht von $t$ ab, die rechte hängt
 aber nur von $t$ ab, also sind beide Seiten konstant.
-Wir nennen die Konstanten $P_1$. Damit l"asst sich
+Wir nennen die Konstanten $P_1$. Damit lässt sich
 jetzt $S_3(t)$ bestimmen, es muss eine geeignete Integrationskonstante
 geben, so dass
 \[
 S_3(t)=P_1t
 \]
-damit ist die Aufgabe \ref{jacobi:aufgabe} mindestens f"ur die Variable
-$t$ bereits gel"ost.
+damit ist die Aufgabe \ref{jacobi:aufgabe} mindestens für die Variable
+$t$ bereits gelöst.
 
 Wir untersuchen jetzt die linke Seite von (\ref{jacobi:kraeftefrei:sep1}).
 Auch diese Gleichung kann man unter Verwendung der Konstanten $P_1$
@@ -334,26 +334,26 @@ separieren:
 =
 P_1-\frac1{2m}S_2'(y)^2.
 \]
-Die linke Seite h"angt nur von $x$ ab, die rechte nur von $y$, also
+Die linke Seite hängt nur von $x$ ab, die rechte nur von $y$, also
 sind beide konstant. 
-Wir nennen die Konstante $P_2$ und finden die L"osung
+Wir nennen die Konstante $P_2$ und finden die Lösung
 \[
 S_1(x)
 =
 \sqrt{2mP_2}x.
 \]
-Jetzt kann man aber auch noch $S_2$ bestimmen. Es ist n"amlich 
+Jetzt kann man aber auch noch $S_2$ bestimmen. Es ist nämlich 
 \[
 \frac1{2m} S_2'(y)^2
 =P_1-P_2
 \]
-woraus sich wie vorhin die L"osung
+woraus sich wie vorhin die Lösung
 \[
 S_2(y)
 =
 \sqrt{2m(P_1-P_2)}y
 \]
-ergibt. Damit haben wir jetzt eine L"osung der Differentialgleichung:
+ergibt. Damit haben wir jetzt eine Lösung der Differentialgleichung:
 \[
 S(x,y,t)=
 P_1t
@@ -374,14 +374,14 @@ Q_2&=\frac{\partial S}{\partial P_2}
 -
 \sqrt{\frac{m}{2(P_1-P_2)}}y
 \end{align*}
-Jetzt kann man nach $x$ und $y$ aufl"osen und damit die
+Jetzt kann man nach $x$ und $y$ auflösen und damit die
 Bahnkurve durch die Konstanten $Q_i$ und $P_i$ und die Zeit $t$
-ausdr"ucken:
+ausdrücken:
 \begin{align*}
 x&=\sqrt{\frac{2P_2}{m}}(Q_1+Q_2-t)\\
 y&=\sqrt{\frac{2(P_1-P_2)}{m}}(Q_1-t).
 \end{align*}
-Wie erwartet beschreiben diese Gleichungen eine gleichf"ormige
+Wie erwartet beschreiben diese Gleichungen eine gleichförmige
 Bewegung. Die Geschwindigkeit ist die Ableitung nach der Zeit,
 also
 \begin{align*}
@@ -399,13 +399,13 @@ P_1&=P_2+\frac{mv_y^2}2=\frac{m}2(v_x^2+v_y^2)=\frac12mv^2
 \end{align*}
 Die physikalische Bedeutung von $P_1$ ist also die kinetische
 Energie des
-Gesamtsystems, w"ahrend $P_2$ die kinetische Energie darstellt, die in
+Gesamtsystems, während $P_2$ die kinetische Energie darstellt, die in
 der Bewegungskomponent in $x$-Richtung steckt.
 
 \subsubsection{Schiefer Wurf}
 \index{schiefer Wurf}
 Wir betrachten den schiefen Wurf, der sich vom vorangegangenen
-Beispiel durch ein zus"atzliches Gravitationspotential
+Beispiel durch ein zusätzliches Gravitationspotential
 unterscheidet. Die Gesamtenergie ist jetzt
 \[
 H(x,y,t)=\frac1{2m}(p_x^2+p_y^2)+mgy.
@@ -419,23 +419,23 @@ Die Hamilton-Jacobi-Differentialgleichung lautet jetzt
 \biggr)
 +mgy=\frac{\partial S}{\partial t} 
 \]
-Der selbe Separationsansatz wie vorhin f"uhrt auch wieder zu
+Der selbe Separationsansatz wie vorhin führt auch wieder zu
 \[
 \frac1{2m}(S_1'(x)^2+S_2'(y)^2)+mgy=S_3'(t),
 \]
 woraus wieder folgt, dass $S_3'(t)=P_1$ konstant ist.
 
-Wir k"onnen aber auch $x$ und $y$ separieren:
+Wir können aber auch $x$ und $y$ separieren:
 \begin{align*}
 \frac1{2m}S_1'(x)^2&=P_1-\frac1{2m}S_2'(y)^2-mgy
 %\\
 %\frac1{\sqrt{2m}}S_1'(x)&=\sqrt{P_3-\frac1{2m}S_2'(y)^2+mgy}
 \end{align*}
-Die linke Seite h"angt nicht von $y$ ab, die rechte nicht von $x$, also sind
+Die linke Seite hängt nicht von $y$ ab, die rechte nicht von $x$, also sind
 beide konstant, wir nennen die Konstante $P_2$, und bekommen
-die L"osung $S_1=\sqrt{2mP_2} x$.
+die Lösung $S_1=\sqrt{2mP_2} x$.
 
-Die rechte Seite k"onnen wir jetzt auch l"osen:
+Die rechte Seite können wir jetzt auch lösen:
 \begin{align*}
 P_2&=
 P_1-\frac1{2m}S_2'(y)^2-mgy
@@ -452,7 +452,7 @@ S_2(y)
 &=
 -\frac1{3m^2g}\bigl(2m(P_1-P_2-mgy)\bigr)^{\frac32}
 \end{align*}
-Damit ist jetzt eine L"osungsfunktion $S(x,y,t)$ vollst"andig
+Damit ist jetzt eine Lösungsfunktion $S(x,y,t)$ vollständig
 bekannt:
 \[
 S(x,y,t)=P_1t+\sqrt{2mP_2}x
@@ -476,16 +476,16 @@ Q_2=\frac{\partial S}{\partial P_2}
 \end{aligned}
 \label{jacobi:aufloesung}
 \end{equation}
-Die erste Gleichung kann man nach $y$ aufl"osen:
+Die erste Gleichung kann man nach $y$ auflösen:
 \begin{equation}
 y=
 \frac{P_1-P_2}{mg}-\frac{g}{2}(Q_1-t)^2
 \label{jacobi:quadratisch}
 \end{equation}
-Die H"ohe h"angt quadratisch von der Zeit ab, $Q_1$ ist die Zeit
-der gr"ossten H"ohe, die Scheitelzeit.
+Die Höhe hängt quadratisch von der Zeit ab, $Q_1$ ist die Zeit
+der grössten Höhe, die Scheitelzeit.
 
-Die Aufl"osung nach $x$ wird einfacher, wenn man erst die Summe der beiden
+Die Auflösung nach $x$ wird einfacher, wenn man erst die Summe der beiden
 Gleichungen (\ref{jacobi:aufloesung}) bildet:
 \begin{align*}
 Q_1+Q_2&=t+\sqrt{\frac{m}{2P_1}}x\\

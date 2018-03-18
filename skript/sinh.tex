@@ -19,21 +19,21 @@
 \usepackage{graphicx}
 \begin{document}
 \title{Hyperbolische Funktionen und Differentialgleichungen}
-\author{Andreas M\"uller}
+\author{Andreas M\üller}
 \date{}
 \maketitle
 \begin{abstract}
-Das Standardverfahren f"ur die L"osung linearer Differentialgleichungen
-mit konstanter Koeffizienten liefert typischerweise Schwingungsl"osungen
-oder exponentiell abfallende oder anwachsende L"osungen. Die Koeffizienten
-der allgemeinen L"osungen m"ussen dann mit Hilfe der Anfangswerte bestimmt
-werden. F"ur die Schwingunsgl"osungen ist das meist sehr viel einfacher
-als f"ur die exponentiellen L"osungen. Hier wird gezeigt, wie man mit
-Hilfe der hyperbolischen Funktionen die L"osungen ebenso einfach ausdr"ucken
+Das Standardverfahren für die Lösung linearer Differentialgleichungen
+mit konstanter Koeffizienten liefert typischerweise Schwingungslösungen
+oder exponentiell abfallende oder anwachsende Lösungen. Die Koeffizienten
+der allgemeinen Lösungen müssen dann mit Hilfe der Anfangswerte bestimmt
+werden. Für die Schwingunsglösungen ist das meist sehr viel einfacher
+als für die exponentiellen Lösungen. Hier wird gezeigt, wie man mit
+Hilfe der hyperbolischen Funktionen die Lösungen ebenso einfach ausdrücken
 kann.
 \end{abstract}
 \section{Differentialgleichungen zweiter Ordnung}
-Das Standardverfahren f"ur die L"osung einer gew"ohnlichen linearen
+Das Standardverfahren für die Lösung einer gewöhnlichen linearen
 Differentialgleichung mit konstanten Koeffizienten
 \[
 a_2y''+ a_1y'+a_0y=0
@@ -44,7 +44,7 @@ des charakteristischen Polynoms
 p(\lambda)=a_2\lambda^2+a_1\lambda+a_0
 \]
 finden muss.
-Die allgemeine L"osung der Differentialgleichung ist dann
+Die allgemeine Lösung der Differentialgleichung ist dann
 eine Linearkombination
 \[
 y(x)=
@@ -67,12 +67,12 @@ findet man das lineare Gleichungssystem
 \lambda_1A_1&+&\lambda_2A_2&=&v_0.
 \end{linsys}
 \]
-Besonders einfach wird die Bestimmung jedoch f"ur die Differentialgleichung
+Besonders einfach wird die Bestimmung jedoch für die Differentialgleichung
 \[
 y''+k^2 y=0.
 \]
-Dann sind die $\lambda_{1,2}=\pm\sqrt{-k^2}$ imagin"ar, und man kann statt
-der Exponentiall"osungen auch den Ansatz
+Dann sind die $\lambda_{1,2}=\pm\sqrt{-k^2}$ imaginär, und man kann statt
+der Exponentiallösungen auch den Ansatz
 \[
 y(x)=A\cos kx+B\sin kx
 \]
@@ -90,9 +90,9 @@ y(x)=y_0\cos kx + \frac{v_0}{k}\sin kx
 \label{hyp:loesung}
 \end{equation}
 
-F"ur die analoge Differentialgleichung $y''-k^2y=0$ geht dies nicht.
+Für die analoge Differentialgleichung $y''-k^2y=0$ geht dies nicht.
 Die Nullstellen des charakteristischen Polynoms sind hier 
-$\lambda_{1,2}=\pm k$, und es f"uhrt nichts an dem linearen Gleichungssystem
+$\lambda_{1,2}=\pm k$, und es führt nichts an dem linearen Gleichungssystem
 \[
 \begin{linsys}{3}
  A_1&+& A_2&=&y_0\\
@@ -100,7 +100,7 @@ kA_1&-&kA_2&=&v_0
 \end{linsys}
 \]
 vorbei.
-Die L"osung kann allerdings zum Beispiel mit dem Determinantenverfahren
+Die Lösung kann allerdings zum Beispiel mit dem Determinantenverfahren
 ziemlich direkt gefunden werden:
 \begin{align*}
 A_1
@@ -114,7 +114,7 @@ A_2
 \frac{\left|\begin{matrix}1&y_0\\k&v_0\end{matrix}\right|}{\left|\begin{matrix}1&1\\k&-k\end{matrix}\right|}
 =\frac{v_0-ky_0}{-2k}.
 \end{align*}
-Damit kann man jetzt die L"osung auch in diesem Fall hinschreiben:
+Damit kann man jetzt die Lösung auch in diesem Fall hinschreiben:
 \begin{align}
 y(x)
 &=
@@ -132,9 +132,9 @@ y_0\frac{e^{kx}+e^{-kx}}2
 +\frac{v_0}{k}\frac{e^{kx}-e^{-kx}}2.
 \label{hyp:hyperbelfunktionen}
 \end{align}
-Die Erf"ullung der Anfangsbedingung k"onnte also auch in diesem Falle
+Die Erfüllung der Anfangsbedingung könnte also auch in diesem Falle
 sehr einfach sein, wenn man nicht die Funktionen $e^{\pm kx}$ verwenden
-w"urde, sondern deren Linearkombinationen wie in (\ref{hyp:hyperbelfunktionen}).
+würde, sondern deren Linearkombinationen wie in (\ref{hyp:hyperbelfunktionen}).
 
 \section{Hyperbolische Funktionen}
 \begin{figure}
@@ -153,22 +153,22 @@ Die hyperbolischen Funktionen sind durch
 definiert.
 Abbildung~\ref{hyp:graphen} zeigt die Graphen der beiden Funktionen.
 Auf den ersten Blick haben diese Definitionen nichts mit den bekannten
-trigonometrischen Funktionen zu tun, die Namen sinus hyperbolicus f"ur
-$\sinh$ und cosinus hyperbolicus f"ur $\cosh$ scheinen ungerechtfertigt.
+trigonometrischen Funktionen zu tun, die Namen sinus hyperbolicus für
+$\sinh$ und cosinus hyperbolicus für $\cosh$ scheinen ungerechtfertigt.
 
 \subsection{Komplexe Definition der trigonometrischen Funktionen}
 Aus der Euler-Formel
 \[
 e^{it}=\cos t+i\sin t
 \]
-l"asst sich auch eine Definition der trigonometrischen Funktionen
+lässt sich auch eine Definition der trigonometrischen Funktionen
 ableiten. Dazu wendet man die Euler-Formel auf $t$ und $-t$ an:
 \begin{align*}
 \cos t+i\sin t&=e^{it}\\
 \cos t-i\sin t&=e^{-it}
 \end{align*}
 Dieses Gleichungssystem kann man mit der Additionsmethode nach den
-Funktionen $\cos t$ und $\sin t$ aufl"osen. Man findet:
+Funktionen $\cos t$ und $\sin t$ auflösen. Man findet:
 \begin{align*}
 \cos t
 &=
@@ -178,13 +178,13 @@ Funktionen $\cos t$ und $\sin t$ aufl"osen. Man findet:
 &=
 \frac{e^{it}-e^{-it}}{2i}
 \end{align*}
-Die trigonometrischen Funktionen k"onnen also auf eine Art definiert werden,
-die der Definition der hyperbolischen Funktionen v"ollig analog ist.
+Die trigonometrischen Funktionen können also auf eine Art definiert werden,
+die der Definition der hyperbolischen Funktionen völlig analog ist.
 Der einzige Unterschied ist ein Faktor $i$ hie und da.
 Wir erwarten daher, dass die hyperbolischen Funktionen Eigenschaften
-haben, die den Eigenschaften der trigonometrischen Funktionen v"ollig
+haben, die den Eigenschaften der trigonometrischen Funktionen völlig
 analog sind.
-Mehr als ein ver"andertes Vorzeichen hie und da erwarten wir nicht.
+Mehr als ein verändertes Vorzeichen hie und da erwarten wir nicht.
 
 
 \subsection{Geometrie}
@@ -196,16 +196,16 @@ $t\mapsto (\cosh t, \sinh t)$ ist eine ``Einheits-Hyperbel'' mit
 Asymptoten $y=\pm x$.
 \label{anhang:hyperbel}}
 \end{figure}
-Die trigonometrischen Funktionen entstanden aus dem Bed"urfnis, 
-rechtwinklige Dreiecke berechnen zu k"onnen.
-Abstrahiert man diese bis auf "Ahnlichkeit, geht es nur noch um rechtwinklige
-Dreiecke, die mindestens eine Seite der L"ange $1$ haben.
+Die trigonometrischen Funktionen entstanden aus dem Bedürfnis, 
+rechtwinklige Dreiecke berechnen zu können.
+Abstrahiert man diese bis auf Ähnlichkeit, geht es nur noch um rechtwinklige
+Dreiecke, die mindestens eine Seite der Länge $1$ haben.
 Diese kann man auf die gewohnte Art am Einheitskreis illustrieren.
 Die Beziehung 
 \[
 \sin^2t+\cos^2t=1
 \]
-f"ur die trigonometrischen Funktionen erlauben dann, den Einheitskreis als
+für die trigonometrischen Funktionen erlauben dann, den Einheitskreis als
 \[
 t\mapsto (\cos t,\sin t)
 \]
@@ -215,8 +215,8 @@ Die hyperbolischen Funktionen parametrisieren in der Form
 \[
 t\mapsto (\cosh t, \sinh t)
 \]
-nat"urlich auch eine Kurve in der Ebene.
-Um herauszufinden, welcher Kurve das sein k"onnte, berechnen wir die 
+natürlich auch eine Kurve in der Ebene.
+Um herauszufinden, welcher Kurve das sein könnte, berechnen wir die 
 Quadrate der hyperbolischen Funktionen:
 \begin{align}
 \sinh^2 t&=\frac14(e^{2t}-2+e^{-2t}),
@@ -224,7 +224,7 @@ Quadrate der hyperbolischen Funktionen:
 \cosh^2 t&=\frac14(e^{2t}+2+e^{-2t}).
 \label{hyp:definition}
 \end{align}
-Sie stimmen bis auf den mittleren Term "uberein.
+Sie stimmen bis auf den mittleren Term überein.
 Die Differenz ist 
 \[
 \cosh^2t - \sinh^2t=1,
@@ -239,15 +239,15 @@ Dies ist eine Hyperbel mit Asymptoten $y=\pm x$
 Damit ist die Bezeichnung als hyperbolische Funktionen gerechtfertigt.
 
 \subsection{Additionstheoreme}
-Gibt es auch ein Additionstheorem f"ur die hyperbolischen Funktionen?
-Wenn die Analogie zu den trigonometrischen Funktionen durchf"uhrbar ist,
-dann m"ussten die Additionstheoreme ungef"ahr die Form
+Gibt es auch ein Additionstheorem für die hyperbolischen Funktionen?
+Wenn die Analogie zu den trigonometrischen Funktionen durchführbar ist,
+dann müssten die Additionstheoreme ungefähr die Form
 \begin{align*}
 \sinh(a+b)&=\sinh a\cosh b + \cosh a\sinh b,\\
 \cosh(a+b)&=\cosh a\cosh b - \sinh a\sinh b
 \end{align*}
 haben, mit einem abweichenden Vorzeichen hie und da.
-Um dies nachzupr"ufen, verwenden wir die Definition und rechnen
+Um dies nachzuprüfen, verwenden wir die Definition und rechnen
 \begin{align*}
 \sinh a\cosh b + \cosh b\sinh b
 &=
@@ -280,7 +280,7 @@ Um dies nachzupr"ufen, verwenden wir die Definition und rechnen
 \end{align*}
 aus.
 Die Vermutung betreffend der korrekten Form der Additionstheoreme
-war also richtig im Falle von $\sinh(a+b)$, f"ur $\cosh(a+b)$ muss
+war also richtig im Falle von $\sinh(a+b)$, für $\cosh(a+b)$ muss
 allerdings ein Vorzeichen gewechselt werden.
 Die korrekte Form der Additionstheoreme ist
 \begin{align*}
@@ -292,10 +292,10 @@ Die korrekte Form der Additionstheoreme ist
 In der Analysis lernt man, die Ableitungen der trigonometrischen Funktionen
 aus den Additionstheoremen abzuleiten.
 Da die Additionstheoreme der hyperbolischen Funktionen mit den 
-Additionstheoremen bis auf ein Vorzeichen "ubereinstimmen, sollten
+Additionstheoremen bis auf ein Vorzeichen übereinstimmen, sollten
 auch die Ableitungsregeln bis auf ein Vorzeichen mit den Ableitungsregeln
-der trigonometrischen Funktionen "ubereinstimmen. 
-Nat"urlich k"onnen wir aus der Definition (\ref{hyp:definition}) die
+der trigonometrischen Funktionen übereinstimmen. 
+Natürlich können wir aus der Definition (\ref{hyp:definition}) die
 Ableitungen auch direkt berechnen:
 \begin{align*}
 \frac{d}{dx}\cosh x
@@ -312,21 +312,21 @@ Ableitungen auch direkt berechnen:
 \end{align*}
 Die Ableitungen sind also sogar noch ein bisschen einfacher, da sie sich
 schon ab der zweiten Ableitung wiederholen.
-Die zweiten Ableitungen sind bereits wieder die urspr"unglichen Funktionen
+Die zweiten Ableitungen sind bereits wieder die ursprünglichen Funktionen
 \begin{align*}
 \sinh''x&=\sinh x
 &
 \cosh''x&=\cosh x.
 \end{align*}
 
-\subsection{Werte f"ur Argument 0}
+\subsection{Werte für Argument 0}
 Die Werte der trigonometrischen Funktionen und ihrer ersten Ableitungen
-im Nullpunkt und die entsprechenden Werte f"ur die hyperbolischen
-Funktionen sind ebenfalls v"ollig analog:
+im Nullpunkt und die entsprechenden Werte für die hyperbolischen
+Funktionen sind ebenfalls völlig analog:
 \begin{center}
 \begin{tabular}{|l|>{$}c<{$}>{$}c<{$}|>{$}c<{$}>{$}c<{$}|}
 \hline
-Wert f"ur $x=0$ von&\sin x&\cos x&\sinh x&\cosh x\\
+Wert für $x=0$ von&\sin x&\cos x&\sinh x&\cosh x\\
 \hline
 Funktion           &  0   &  1   &   0   &   1   \\
 Ableitung          &  1   &  0   &   1   &   0   \\
@@ -334,9 +334,9 @@ Ableitung          &  1   &  0   &   1   &   0   \\
 \end{tabular}
 \end{center}
 
-\subsection{L"osung von Differentialgleichungen}
-Die Werte f"ur Argument $0$ sind genau die Eigenschaften,
-welche die Erf"ullung der Anfangsbedingung
+\subsection{Lösung von Differentialgleichungen}
+Die Werte für Argument $0$ sind genau die Eigenschaften,
+welche die Erfüllung der Anfangsbedingung
 einer Differentialgleichung so einfach gemacht haben.
 Die Differentialgleichung 
 \[
@@ -346,10 +346,10 @@ mit Anfangsbedingungen
 \[
 y(0)=y_0\qquad\text{und}\qquad y'(0)=v_0
 \]
-hat die L"osung
+hat die Lösung
 \[
 y(x)=y_0\cosh kx +\frac{v_0}{k}\sinh kx,
 \]
-in v"olliger Analogie zu (\ref{hyp:loesung}).
+in völliger Analogie zu (\ref{hyp:loesung}).
 
 \end{document}
