@@ -4,11 +4,11 @@ zweidimensionalen Federpendels mit der Hamilton-Funktion
 H(x,y,p_x,p_y)=\frac1{2m}(p_x^2+p_y^2)+K(x^2 + y^2)
 \]
 an. Stellen Sie die Hamilton-Jacobi-Differentialgleichung auf
-und l"osen Sie sie mit Hilfe eines Separationsansatzes.
+und lösen Sie sie mit Hilfe eines Separationsansatzes.
 
 \begin{loesung}
 Das ``Kochrezept'' der Hamilton-Jacobi-Theorie besagt, dass eine
-Funktion $S(t, x, y)$ gesucht werden muss, die L"osung
+Funktion $S(t, x, y)$ gesucht werden muss, die Lösung
 der Differentialgleichung
 \[
 \frac1{2m}\biggl(
@@ -27,7 +27,7 @@ Wir erhalten
 \frac1{2m}\bigl( S_2'(x)^2+S_3'(y)^2 \bigr)+K(x^2+y^2)=S_1'(t).
 \]
 Darin ist die Variable $t$ bereits separiert, sie kommt alleine auf
-der rechten Seite vor. Also m"ussen beide Seiten der Gleichung konstant
+der rechten Seite vor. Also müssen beide Seiten der Gleichung konstant
 sein, wir nennen die Konstante $P_1$. Es folgt dann, dass 
 $S_3(t)=P_1t$.
 Genau genommen fehlt hier noch eine Integrationskonstante, da wir aber
@@ -42,19 +42,19 @@ erhalten wir
 P_1-
 \frac1{2m}S_3'(y)^2-Ky^2
 \]
-Wieder m"ussen beide Seiten konstant sein, wir nennen die Konstanten $P_2$
+Wieder müssen beide Seiten konstant sein, wir nennen die Konstanten $P_2$
 und erhalten die Differentialgleichungen
 \begin{align*}
 S_2'(x)&=\sqrt{2mP_2-2mKx^2}=\sqrt{2mK}\sqrt{\frac{P_2}{K}-x^2}\\
 S_3'(y)&=\sqrt{2m(P_1-P_2)-2mKy^2}=\sqrt{2mK}\sqrt{\frac{P_1-P_2}{K}-y^2}
 \end{align*}
-Die L"osung findet man durch Integration, in beiden F"allen muss ein 
+Die Lösung findet man durch Integration, in beiden Fällen muss ein 
 Integral der Form
 \[
 \int \sqrt{A-x^2}\,dx
 \]
 berechnet werden.
-Da dies nur f"ur $A>0$ m"oglich ist, schreiben wir $A=a^2$.
+Da dies nur für $A>0$ möglich ist, schreiben wir $A=a^2$.
 In einer guten Formelsammlung finden wir die Stammfunktion
 \[
 \int\sqrt{a^2-x^2}\,dx
@@ -95,18 +95,18 @@ S_3(y)
 +
 \frac{P_1-P_2}2 \sqrt{\frac{2m}{K}}\arcsin y\sqrt{\frac{K}{P_1-P_2}}
 \end{align*}
-Die gesuchte L"osungsfunktion ist dann die Summe dieser drei Terme.
+Die gesuchte Lösungsfunktion ist dann die Summe dieser drei Terme.
 \end{loesung}
 
 \begin{diskussion}
 Die Berechnung der neuen Koordinaten $Q_1$ und $Q_2$ ist in diesem
-Fall ziemlich kompliziert. Man kann sich aber mindestens "uberlegen,
-dass wegen der Terme mit $\arcsin$ wohl periodische L"osungen zu
+Fall ziemlich kompliziert. Man kann sich aber mindestens überlegen,
+dass wegen der Terme mit $\arcsin$ wohl periodische Lösungen zu
 erwarten sind, was ja auch der Erfahrung entspricht.
 
-Die Berechnung der L"osung kann mit dem folgenden Maxima\footnote{Maxima
+Die Berechnung der Lösung kann mit dem folgenden Maxima\footnote{Maxima
 ist eine freie Computer-Algebra-Software, die von
 http://maxima.sourceforge.net heruntergeladen werden kann}-Programm
-einfach durchgef"uhrt werden:
+einfach durchgeführt werden:
 \verbatimainput{federpendel.maxima}
 \end{diskussion}

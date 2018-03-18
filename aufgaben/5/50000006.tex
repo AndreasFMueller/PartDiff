@@ -9,14 +9,14 @@ u(x,0)=g(x).
 \begin{teilaufgaben}
 \item
 Wandeln Sie die partielle Differentialgleichung mit Hilfe der
-Laplace-Transformation f"ur die Variable $t$ in eine Familie
-gew"ohnlicher Differentialgleichungen um.
+Laplace-Transformation für die Variable $t$ in eine Familie
+gewöhnlicher Differentialgleichungen um.
 \item
-L"osen Sie die partielle Differentialgleichung mit Hilfe der Charakteristiken.
+Lösen Sie die partielle Differentialgleichung mit Hilfe der Charakteristiken.
 \item 
-Bestimmen Sie die Laplace-Transformation der in b) gefunden L"osung, und
-pr"ufen Sie nach, ob sie eine L"osung der in a) gefunden Familie von
-gew"ohnlichen Differentialgleichungen ist.
+Bestimmen Sie die Laplace-Transformation der in b) gefunden Lösung, und
+prüfen Sie nach, ob sie eine Lösung der in a) gefunden Familie von
+gewöhnlichen Differentialgleichungen ist.
 \end{teilaufgaben}
 
 \begin{loesung}
@@ -38,11 +38,11 @@ $1$, also
 \right]_0^\infty=\frac1s.
 \]
 Schreibt man $y_s(x)={\cal L}u(x,s)$, dann hat man
-f"ur jedes $s$  die Differentialgleichung
+für jedes $s$  die Differentialgleichung
 \[
 y'_s(x)+sy_s(x)-g(x)=\frac1s
 \]
-zu l"osen.
+zu lösen.
 \item
 Die Charakteristiken haben die Differentialgleichung
 \[
@@ -53,7 +53,7 @@ x\\t\\u
 1\\1\\1
 \end{pmatrix}.
 \]
-mit den L"osungen
+mit den Lösungen
 \begin{align*}
 x&=\tau + x_0\\
 t&=\tau + t_0\\
@@ -66,8 +66,8 @@ x&=t+x_0
 &\Rightarrow&x_0=x-t\\
 u&=t+g(x_0)=t+g(x-t).
 \end{align*}
-Durch Einsetzen in die Differentialgleichung kann man "uberpr"ufen,
-dass $u(x,t)=t+g(x-t)$ tats"achlich eine L"osung ist:
+Durch Einsetzen in die Differentialgleichung kann man überprüfen,
+dass $u(x,t)=t+g(x-t)$ tatsächlich eine Lösung ist:
 \[
 \frac{\partial u}{\partial x}+\frac{\partial u}{\partial t}
 =
@@ -78,7 +78,7 @@ Die Laplace-Transformierte der Funktion $t\mapsto t+g(x-t)$ ist
 \[
 y_s(x)=\int_0^\infty (t+g(x-t))e^{-st}\,dt.
 \]
-Um diese Funktion in die Differentialgleichung einsetzen zu k"onnen,
+Um diese Funktion in die Differentialgleichung einsetzen zu können,
 braucht man die Ableitung
 \begin{align*}
 y'_s(x)=\int_0^\infty g'(x-t)e^{-st}\,dt
@@ -87,7 +87,7 @@ y'_s(x)=\int_0^\infty g'(x-t)e^{-st}\,dt
 \\
 &=g(x)-s\int_0^\infty g(x-t) e^{-st}\,dt
 \end{align*}
-Setzt man dies in die Differentialgleichung ein, erh"alt man
+Setzt man dies in die Differentialgleichung ein, erhält man
 \begin{align*}
 y'_s(x)+sy_s(x)-g(x)&=g(x)-s\int_0^\infty g(x-t)e^{-st}\,dt
 \\
@@ -102,7 +102,7 @@ y'_s(x)+sy_s(x)-g(x)&=g(x)-s\int_0^\infty g(x-t)e^{-st}\,dt
 &=\left[-\frac1s e^{-st}\right]_0^\infty
 =\frac1s,
 \end{align*}
-die Differentialgleichung ist also erf"ullt.
+die Differentialgleichung ist also erfüllt.
 \qedhere
 \end{teilaufgaben}
 \end{loesung}

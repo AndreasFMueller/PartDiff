@@ -1,15 +1,15 @@
 Einen Stab ist bis zur Zeit $t=0$ mit zwei
-W"armereservoirs auf den Temperaturen $-1$ bei $x=-\frac{\pi}2$ und
+Wärmereservoirs auf den Temperaturen $-1$ bei $x=-\frac{\pi}2$ und
 $1$ bei $x=\frac{\pi}2$ verbunden,
-so dass sich ein station"arer Zustand eingestellt hat (siehe
-"Ubung 1). Zur Zeit $t=0$ werden die Reservoirs entfernt und der
-Stab wird sich selbst "uberlassen. Insbesondere kann durch die
-Enden keine W"arme mehr abgeleitet werden. L"osen sie die
-W"armeleitungsgleichung
+so dass sich ein stationärer Zustand eingestellt hat (siehe
+Übung 1). Zur Zeit $t=0$ werden die Reservoirs entfernt und der
+Stab wird sich selbst überlassen. Insbesondere kann durch die
+Enden keine Wärme mehr abgeleitet werden. Lösen sie die
+Wärmeleitungsgleichung
 \[
 \frac{\partial u}{\partial t}=\frac{\partial^2 u}{\partial x^2}
 \]
-f"ur diesen Fall.
+für diesen Fall.
 
 \begin{hinweis}
 \begin{figure}
@@ -18,7 +18,7 @@ f"ur diesen Fall.
 \caption{Graph der Dreiecksfunktion von Aufgabe~\ref{40000005}.
 \label{40000005:dreieck}}
 \end{figure}
-Verwenden sie f"ur die
+Verwenden sie für die
 ``Dreiecksfunktion'' (Abbildung~\ref{40000005:dreieck})
 \[
 d(x)
@@ -37,23 +37,23 @@ d(x)=\sum_{n=0}^\infty \frac{8(-1)^n}{\pi^2(2n+1)^2}\sin (2n+1)x
 \end{hinweis}
 
 \begin{hinweis}
-Eine L"osung dieser Aufgabe mit der Transformationsmethode ist als
+Eine Lösung dieser Aufgabe mit der Transformationsmethode ist als
 Aufgabe \ref{50000005} dargestellt.
 \end{hinweis}
 
 \begin{loesung}
-Wir kontrollieren zun"achst die angegebenen Fourierkoeffizienten.
+Wir kontrollieren zunächst die angegebenen Fourierkoeffizienten.
 Da die Dreiecksfunktion eine ungerade Funktion ist, kommen in ihrer
 Fourier-Reihe nur Sinus-Terme vor. Die Koeffizienten werden mit
-den "ublichen Fourier-Integralen berechnet:
+den üblichen Fourier-Integralen berechnet:
 \begin{align*}
 b_k&=\frac{1}{\pi}\int_{-\pi}^{\pi} d(x)\sin kx\,dx\\
 &=\frac{2}{\pi}\int_{0}^{\pi} d(x)\sin kx\,dx
 \end{align*}
 Weil die Sinus-Funktionen mit geradem $k$ auf dem Interval $[0,\pi]$
-bez"uglich des Punktes $x=\frac{\pi}2$ ungerade sind, verschwinden die
-zugeh"origen Fourier-Koeffizienten, es bleiben also nur noch die
-Koeffizienten f"ur ungerades $k$ zu berechnen. Sei also $k$ ungerade, dann
+bezüglich des Punktes $x=\frac{\pi}2$ ungerade sind, verschwinden die
+zugehörigen Fourier-Koeffizienten, es bleiben also nur noch die
+Koeffizienten für ungerades $k$ zu berechnen. Sei also $k$ ungerade, dann
 ist
 \begin{align*}
 b_k
@@ -66,8 +66,8 @@ b_k
 &=
 \frac{8}{\pi^2}\left[ -\frac{1}kx\cos kx+\frac1{k^2}\sin kx\right]_0^{\frac{\pi}2}
 \end{align*}
-F"ur ungerades $k$ verschwindet der Kosinus-Term, so dass nur der Sinus-Term
-stehen bleibt. Dieser ist $1$ f"ur $k=1,5,9,\dots$ und $-1$ f"ur $k=3,7,11,\dots$.
+Für ungerades $k$ verschwindet der Kosinus-Term, so dass nur der Sinus-Term
+stehen bleibt. Dieser ist $1$ für $k=1,5,9,\dots$ und $-1$ für $k=3,7,11,\dots$.
 Schreibt man $k=2n+1$, dann ist
 \[
 b_k=b_{2n+1}=\frac{(-1)^n8}{\pi^2(2n+1)^2},
@@ -75,7 +75,7 @@ b_k=b_{2n+1}=\frac{(-1)^n8}{\pi^2(2n+1)^2},
 wie behauptet.
 
 Jetzt kann man die Differentialgleichung mit dem Separationsansatz
-l"osen. Dazu setzt man $u(t,x)=T(t)X(x)$ an und setzt dies in die
+lösen. Dazu setzt man $u(t,x)=T(t)X(x)$ an und setzt dies in die
 Differentialgleichung ein:
 \[
 T'(t)X(t)=T(t)X''(x)
@@ -84,72 +84,72 @@ Falls $X(x)\ne 0$ und $T(t)\ne 0$ kann man dividieren:
 \[
 \frac{T'(t)}{T(t)}=\frac{X''(x)}{X(x)}
 \]
-Da die rechte Seite nur von $x$, die linke aber nur von $t$ abh"angt,
-m"ussen beide Seiten gleich einer Konstanten $\lambda$ sein, also
+Da die rechte Seite nur von $x$, die linke aber nur von $t$ abhängt,
+müssen beide Seiten gleich einer Konstanten $\lambda$ sein, also
 \[
 T'(t)=\lambda T(t),\qquad X''(x)=\lambda X(x).
 \]
-Die Temperatur ist eine positive Gr"osse, die mit der Zeit abnimmt,
-dies ist nur m"oglich wenn $\lambda$ eine negative Zahl $\lambda=-\mu$
-sein, worin $\mu$ positiv sein soll. Dann kann man die gew"ohnlichen
-Differentialgleichungen l"osen:
+Die Temperatur ist eine positive Grösse, die mit der Zeit abnimmt,
+dies ist nur möglich wenn $\lambda$ eine negative Zahl $\lambda=-\mu$
+sein, worin $\mu$ positiv sein soll. Dann kann man die gewöhnlichen
+Differentialgleichungen lösen:
 \begin{align*}
 T(t)&=e^{-\mu t}&X(x)&=\sin\sqrt{\mu}x\\
     &            &X(x)&=\cos\sqrt{\mu}x
 \end{align*}
 
-Die L"osungen m"ussen ausserdem die Randbedingungen erf"ullen.
-In diesem Fall dr"ucken die Randbedingungen aus, dass der Stab isoliert ist,
-also keine W"arme "uber die Enden hinweg fliessen kann. Dazu ist n"otig,
-dass dort kein Temperaturgef"alle herscht, wir haben also
-\[\frac{\partial u}{\partial x}=0\quad\text{f"ur $x=\pm\frac{\pi}2$}.\]
-F"ur die Sinus-L"osungen bedeutet dies
+Die Lösungen müssen ausserdem die Randbedingungen erfüllen.
+In diesem Fall drücken die Randbedingungen aus, dass der Stab isoliert ist,
+also keine Wärme über die Enden hinweg fliessen kann. Dazu ist nötig,
+dass dort kein Temperaturgefälle herscht, wir haben also
+\[\frac{\partial u}{\partial x}=0\quad\text{für $x=\pm\frac{\pi}2$}.\]
+Für die Sinus-Lösungen bedeutet dies
 \[
 X'\biggl(\frac{\pi}2\biggr)=\sqrt{\mu}\cos \sqrt{\mu}\frac{\pi}2=0,
 \]
 also muss $\sqrt{\mu}$ in diesem Falle eine ungerade Zahl sein,
 zum Beispiel $\sqrt{\mu}=2n+1$ oder
 $\mu=(2n+1)^2$.
-F"ur die Kosinus-L"osungen folgt "ahnlich
+Für die Kosinus-Lösungen folgt ähnlich
 \[
 X'\biggl(\frac{\pi}2\biggr)=-\sqrt{\mu}\sin\sqrt{\mu}\frac{\pi}2=0,
 \]
 Also muss $\sqrt{\mu}$ eine gerade Zahl sein, zum Beispiel $\sqrt{\mu}=2n$ oder
 $\mu=4n^2$.
-Die L"osungen, die die Anfangsbedingung
-erf"ullen, sind also
+Die Lösungen, die die Anfangsbedingung
+erfüllen, sind also
 \[
 e^{-4n^2t}\cos 2nx\qquad\text{und}\qquad e^{-(2n+1)^2t}\sin(2n+1)x.
 \]
 
-Jetzt m"ussen wir die allgemeine L"osung der Differentialgleichung aus
-diesen Einzell"osungen linear kombinieren, also
+Jetzt müssen wir die allgemeine Lösung der Differentialgleichung aus
+diesen Einzellösungen linear kombinieren, also
 \[
 u(t,x)=
 \sum_{n=0}^\infty a_ne^{-2nt}\cos 2nx +\sum_{n=0}^\infty b_n e^{-(2n+1)^2t}\sin(2n+1)x,
 \]
-und die Koeffizienten so w"ahlen, dass die Anfangsbedingung erf"ullt wird.
+und die Koeffizienten so wählen, dass die Anfangsbedingung erfüllt wird.
 
 Da die Anfangsbedingung eine ungerade Funktion is, brauchen wir die Kosinus-Terme,
 die ja alle gerade sind, nicht. Es bleiben also die $b_n$ zu bestimmen, indem
-man $t=0$ einsetzt. Man erh"alt
+man $t=0$ einsetzt. Man erhält
 \begin{align*}
 u(0,x)&=\sum_{n=0}^\infty b_n\sin(2n+1)x=d(x)
 \\
 \Rightarrow
 b_n&=\frac{8(-1)^n}{\pi^2(2n+1)^2}.
 \end{align*}
-Die L"osung der W"armeleitungsgleichung ist also
+Die Lösung der Wärmeleitungsgleichung ist also
 \[
 u(t,x)=
 \sum_{n=0}^\infty \frac{8(-1)^n}{\pi^2(2n+1)^2}e^{-(2n+1)^2t}\sin(2n+1)x
 \]
-Eine graphische Darstellung der L"osung ist in Abbildung~\ref{40000005:bild}
+Eine graphische Darstellung der Lösung ist in Abbildung~\ref{40000005:bild}
 zu finden.
 \begin{figure}
 \begin{center}
 \includeagraphics[width=\hsize]{waerme.jpg}
 \end{center}
-\caption{L"osung der W"armeleitungsgleichung (Aufgabe \ref{40000005})\label{40000005:bild}}
+\caption{Lösung der Wärmeleitungsgleichung (Aufgabe \ref{40000005})\label{40000005:bild}}
 \end{figure}
 \end{loesung}

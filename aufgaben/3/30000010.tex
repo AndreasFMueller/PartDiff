@@ -6,17 +6,17 @@ ist die partielle Differentialgleichung
 \end{equation}
 gegeben.
 \begin{teilaufgaben}
-\item Finden Sie eine L"osung, die die Randbedingung
+\item Finden Sie eine Lösung, die die Randbedingung
 \[
 u(0,y)=\cos y
 \]
-erf"ullt.
-\item Ist die L"osung durch diese Randbedingung eindeutig festgelegt?
+erfüllt.
+\item Ist die Lösung durch diese Randbedingung eindeutig festgelegt?
 \end{teilaufgaben}
 
 \begin{loesung}
 Es handelt sich um eine quasilineare Differentialgleichung erster Ordnung,
-die gestellten Fragen k"onnen mit Hilfe von Charakteristiken beantwortet
+die gestellten Fragen können mit Hilfe von Charakteristiken beantwortet
 werden.
 \begin{teilaufgaben}
 \item
@@ -27,7 +27,7 @@ sind
 \dot y &= 1\label{30000010:2}\\
 \dot u &= 0\label{30000010:3}
 \end{align}
-Die erste Gleichung kann mit Separation der Variablen gel"ost werden:
+Die erste Gleichung kann mit Separation der Variablen gelöst werden:
 \begin{align*}
 \frac{dx}{dt}&=\frac1{\cos x}
 &&\Rightarrow&
@@ -37,12 +37,12 @@ Die erste Gleichung kann mit Separation der Variablen gel"ost werden:
 &&\Rightarrow&
 x&=\arcsin(t + C)
 \end{align*}
-Die Randwerte sind f"ur $x=0$ vorgegeben, wir parametrisieren die
-Charakteristiken daher so, dass sie f"ur $t=0$ auf der $y$-Achse
+Die Randwerte sind für $x=0$ vorgegeben, wir parametrisieren die
+Charakteristiken daher so, dass sie für $t=0$ auf der $y$-Achse
 im Punkt $(0,y_0)$ beginnen. Dazu muss $C=0$ sein.
 
-Die zweite Gleichung \eqref{30000010:2} hat als L"osung $y=t+y_0$, und
-die dritte \eqref{30000010:3} hat $u=u_0=\cos y_0$ als L"osung.
+Die zweite Gleichung \eqref{30000010:2} hat als Lösung $y=t+y_0$, und
+die dritte \eqref{30000010:3} hat $u=u_0=\cos y_0$ als Lösung.
 Man muss also aus den Gleichungen
 \begin{align*}
 x&=\arcsin t\\
@@ -65,25 +65,25 @@ Zur Kontrolle rechnen wir nach:
 &=
 \sin(y-\sin x)-\sin(y-\sin x)=0.
 \end{align*}
-Diese Funktion erf"ullt auch die Randbedingung
+Diese Funktion erfüllt auch die Randbedingung
 \begin{equation*}
 u(0,y)=\cos(y-\sin 0)=\cos y.
 \end{equation*}
-Die Funktion $u(x,y)=\cos(y-\sin x)$ ist also eine L"osung der
+Die Funktion $u(x,y)=\cos(y-\sin x)$ ist also eine Lösung der
 Differentialgleichung.
 \item
 \begin{figure}
 \centering
 \includeagraphics[width=0.45\hsize]{domain-1.pdf}
 \caption{Charakteristiken der Differentialgleichung \eqref{30000010:gleichung},
-im blauen Teilgebiet ist die L"osung durch die Randwerte (gr"un) nicht
+im blauen Teilgebiet ist die Lösung durch die Randwerte (grün) nicht
 festgelegt.
 \label{30000010:char}}
 \end{figure}
 \begin{figure}
 \centering
 \includeagraphics[width=0.7\hsize]{loes.jpg}
-\caption{3D-Darstellung der L"osung, soweit sie durch die Randbedingung
+\caption{3D-Darstellung der Lösung, soweit sie durch die Randbedingung
 eindeutig bestimmt ist. Die $y$-Achse zeigt nach vorne.
 \label{30000010:loesungsflaeche}}
 \end{figure}
@@ -96,15 +96,15 @@ y=y_0 + \sin x,
 sie sind in Abbildung~\ref{30000010:char} dargestellt.
 Man erkennt, dass die Werte im Teilgebiet $y < \sin x$ durch die
 Anfangswerte nicht festgelegt sind.
-Der durch die Randbedingungen festgelegte Teil der L"osungsfl"ache ist
+Der durch die Randbedingungen festgelegte Teil der Lösungsfläche ist
 in Abbildung~\ref{30000010:loesungsflaeche} dargestellt.
 
 Ist $g\colon\mathbb R\to\mathbb R$ eine beliebige differenzierbare Funktion mit
-$g(y)=\cos y$ f"ur $y>0$, dann ist $g(y-\sin x)$ eine L"osung der
+$g(y)=\cos y$ für $y>0$, dann ist $g(y-\sin x)$ eine Lösung der
 Differentialgleichung \eqref{30000010:gleichung}, die die Randbedingung
-erf"ullt. Da die Funktion $g(y)$ f"ur $y<0$ beliebig gew"ahlt werden
-kann, gibt es beliebig viele L"osungen der Differentialgleichung,
-die die Randbedingung erf"ullen.
+erfüllt. Da die Funktion $g(y)$ für $y<0$ beliebig gewählt werden
+kann, gibt es beliebig viele Lösungen der Differentialgleichung,
+die die Randbedingung erfüllen.
 \qedhere
 \end{teilaufgaben}
 \end{loesung}
@@ -112,10 +112,10 @@ die die Randbedingung erf"ullen.
 \begin{bewertung}
 Quasilineare PDGL ({\bf Q}) 1 Punkt,
 Differentialgleichungen der Charakteristiken ({\bf D}) 1 Punkt,
-L"osung der Differentialgleichungen f"ur $x(t)$ ({\bf X})
+Lösung der Differentialgleichungen für $x(t)$ ({\bf X})
 und $y(t)$ ({\bf Y}) je 1 Punkt,
-L"osung der partiellen Differentialgleichung ({\bf U}) 1 Punkt,
+Lösung der partiellen Differentialgleichung ({\bf U}) 1 Punkt,
 Verwendung der Charakteristikenmethode zur Beurteilung ob
-vorgegebenen Randwerte die L"osung eindeutig bestimmen ({\bf B}) 1 Punkt.
+vorgegebenen Randwerte die Lösung eindeutig bestimmen ({\bf B}) 1 Punkt.
 \end{bewertung}
 
