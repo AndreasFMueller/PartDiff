@@ -5,12 +5,14 @@
 #
 all:	jpg
 
-png:	sol chr chrpl cauchy planes surface kugel
+png:	sol chr chrpl cauchy planes surface kugel streifen
 
 timestamp:	jpg
 	touch timestamp
 
-jpg:	sol.jpg chr.jpg chrpl.jpg cauchy.jpg planes.jpg knick.jpg
+jpg:	sol.jpg chr.jpg chrpl.jpg cauchy.jpg planes.jpg knick.jpg \
+	streifen0.jpg streifen1.jpg streifen2.jpg \
+	surface.jpg kugel.jpg
 
 povrayoptions = +A0.1
 w = 3960
