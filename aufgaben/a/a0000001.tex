@@ -1,9 +1,9 @@
-Stellen Sie die Lagrange-Charpits-Gleichungen f"ur die
+Stellen Sie die Lagrange-Charpits-Gleichungen für die
 die partielle Differentialgleichung
 \[
 4u\frac{\partial u}{\partial x}=\biggl(\frac{\partial u}{\partial y}\biggr)^2,
 \]
-auf. L"osen Sie sie soweit m"oglich.
+auf. Lösen Sie sie soweit möglich.
 % Randwerte: $u=1$ auf $x+2y=2$
 
 \begin{loesung}
@@ -29,7 +29,7 @@ p'&=-\partial_xF-p\partial_uF=-4p^2\\
 q'&=-\partial_yF-q\partial_uF=-4pq
 \end{align*}
 
-Die vierte Differentialgleichung l"asst sich durch Separation integrieren:
+Die vierte Differentialgleichung lässt sich durch Separation integrieren:
 \begin{align*}
 \int \frac{dp}{p^2}=-\frac1{p}&=-4s+p_0
 \end{align*}
@@ -38,7 +38,7 @@ oder
 p=\frac1{4s-p_0}.
 \]
 Wenn aber $p$ bekannt ist, dann liefert die Differentialgleichung
-f"ur $q$:
+für $q$:
 \begin{align*}
 q'&=-4pq
 \\
@@ -52,18 +52,18 @@ Da jetzt $q$ bekannt ist, kann auch $y$ bestimmt werden
 y'&=-2q=\frac{2q_0}{p_0-4s}\\
 y&= \frac{q_0}2\log(p_0-4s)+y_0
 \end{align*}
-Mit $p$ und $q$ kann man jetzt die Differentialgleichung f"ur
+Mit $p$ und $q$ kann man jetzt die Differentialgleichung für
 $u$ vereinfachen:
 \begin{align*}
 u'-4pu=2q^2
 \end{align*}
 ist eine inhomogene lineare Differentialgleichung erster Ordnung,
-f"ur die es ein Standardverfahren gibt, Variation der Konstanten:
-Die allgemeine L"osung ist
+für die es ein Standardverfahren gibt, Variation der Konstanten:
+Die allgemeine Lösung ist
 \[
 u(s)=\frac{q_0^3}{4(p_0-4s)} + u_0(4s-p_0).
 \]
-Mit der ersten Differentialgleichung l"asst sich jetzt auch $x$
+Mit der ersten Differentialgleichung lässt sich jetzt auch $x$
 bestimmen:
 \[
 x=\int 4u\,ds=

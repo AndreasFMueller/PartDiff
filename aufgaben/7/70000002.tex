@@ -1,7 +1,7 @@
 Aus der Navier-Stokes-Gleichung kann man ableiten, dass die
-Str"omungsgeschwindigkeit $v(r,\varphi)$ einer laminaren,
-station"aren Str"omung einer inkompressiblen Fl"ussigkeit
-durch ein Rohr mit kreisf"ormigem Querschnitt mit Radius 1
+Strömungsgeschwindigkeit $v(r,\varphi)$ einer laminaren,
+stationären Strömung einer inkompressiblen Flüssigkeit
+durch ein Rohr mit kreisförmigem Querschnitt mit Radius 1
 die partielle Differentialgleichung
 \[
 \Delta v=c
@@ -10,18 +10,18 @@ auf dem in Polarkoordinaten beschriebenen Gebiet des Rohrquerschnittes
 \[
 \Omega = \{ (r,\varphi)\,|\,0 < r < 1,0 < \varphi < 2\pi\}
 \]
-erf"ullt.
+erfüllt.
 \begin{teilaufgaben}
-\item Die Fl"ussigkeit haftet an der Wand. Formulieren Sie dies
-als Randbedingungen f"ur die Funktion $v(r,\varphi)$
-\item Finden Sie eine L"osung f"ur $v(r,\varphi)$. ({\it Hinweis:}
-die L"osung h"angt polynomiell vom Radius ab.)
-\item Ist dies die einzige m"ogliche L"osung?
+\item Die Flüssigkeit haftet an der Wand. Formulieren Sie dies
+als Randbedingungen für die Funktion $v(r,\varphi)$
+\item Finden Sie eine Lösung für $v(r,\varphi)$. ({\it Hinweis:}
+die Lösung hängt polynomiell vom Radius ab.)
+\item Ist dies die einzige mögliche Lösung?
 \end{teilaufgaben}
 
 \begin{loesung}
 \begin{teilaufgaben}
-\item Dass die Fl"ussigkeit an der Wand des Rohres haftet, hat zur
+\item Dass die Flüssigkeit an der Wand des Rohres haftet, hat zur
 Folge, dass dort die Geschwindigkeit verschwindet, es ist also
 \[
 v(1,\varphi)=0,\qquad\forall 0\le \varphi\le 2\pi.
@@ -33,9 +33,9 @@ v(1,\varphi)=0,\qquad\forall 0\le \varphi\le 2\pi.
 \frac1r\frac{\partial}{\partial r}r\frac{\partial}{\partial r}
 +\frac1{r^2}\frac{\partial^2}{\partial\varphi^2}
 \]
-Wir suchen zun"achst eine partikul"are L"osung $v_p(r,\varphi)$.
-Wir k"onnen davon ausgehen, dass die L"osung rotationssymmetrisch
-sein wird, also $v_p$ gar nicht von $\varphi$ abh"angen wird,
+Wir suchen zunächst eine partikuläre Lösung $v_p(r,\varphi)$.
+Wir können davon ausgehen, dass die Lösung rotationssymmetrisch
+sein wird, also $v_p$ gar nicht von $\varphi$ abhängen wird,
 $v_p(r,\varphi)=v_p(r)$. Damit bekommen wir
 \[
 \Delta v=
@@ -47,7 +47,7 @@ $v_p(r,\varphi)=v_p(r)$. Damit bekommen wir
 =
 \frac1rv_p'(r)+v_p''(r)=c.
 \]
-Gem"ass Hinweis ist ein Polynom gesucht. F"ur ein Monom $r^k$
+Gemäss Hinweis ist ein Polynom gesucht. Für ein Monom $r^k$
 gilt
 \[
 \left(\frac1r\frac{d}{dr}+\frac{d^2}{dr^2}\right)r^k
@@ -69,13 +69,13 @@ in die Differentialgleichung ein und berechnen
 \quad
 a=\frac{c}{4}
 \]
-Diese partikul"are L"osung lautet also
+Diese partikuläre Lösung lautet also
 \[
 v_p(r,\varphi)=\frac{c}{4}r^2.
 \]
-Sie erf"ullt allerdings wegen $v_p(1,\varphi)=\frac{c}{4}$ die
+Sie erfüllt allerdings wegen $v_p(1,\varphi)=\frac{c}{4}$ die
 Randbedingung nicht. Wir brauchen daher noch eine
-L"osung $v_h(r,\varphi)$ der Differentialgleichung
+Lösung $v_h(r,\varphi)$ der Differentialgleichung
 \[
 \Delta v_h=0
 \]
@@ -84,23 +84,23 @@ Funktion
 \[
 v_h(r,\varphi)=-\frac{c}{4}
 \]
-leistet dies. Somit ist die endg"ultige L"osung:
+leistet dies. Somit ist die endgültige Lösung:
 \[
 v(r,\varphi)=v_p(r,\varphi)+v_h(r,\varphi)=\frac{c}{4}r^2 -\frac{c}{4}=
 \frac{c}{4}(r^2-1).
 \]
 \item Eine elliptische PDGL wie $\Delta u=c$ hat mit vorgegebenen
-Dirichlet-Randwerten nur eine L"osung. Zur Erinnerung: Der Grund
+Dirichlet-Randwerten nur eine Lösung. Zur Erinnerung: Der Grund
 war das Maximum-Prinzip.
-G"abe es n"amlich eine zweite L"osung $\bar v(r,\varphi)$ mit gleichen
-Randwerten, w"are
-$v-\bar v$ eine L"osung der Gleichung
+Gäbe es nämlich eine zweite Lösung $\bar v(r,\varphi)$ mit gleichen
+Randwerten, wäre
+$v-\bar v$ eine Lösung der Gleichung
 \[
 \Delta (v-\bar v)=0
 \]
 also eine harmonische Funktion. Die Randwerte von $v-\bar v$ sind $0$.
 Da eine harmonische Funktion das Maximum auf dem Rand annimmt, ist
-$v-\bar v=0$, die  L"osung ist also eindeutig.
+$v-\bar v=0$, die  Lösung ist also eindeutig.
 \qedhere
 \end{teilaufgaben}
 \end{loesung}

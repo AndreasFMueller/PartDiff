@@ -1,27 +1,27 @@
-Verwenden Sie die Greensche Funktion f"ur das Interval $I=[-1,1]$,
+Verwenden Sie die Greensche Funktion für das Interval $I=[-1,1]$,
 um die Differentialgleichung
 \[
 u''(x)=1-x^2
 \]
 auf $I$ mit Randbedingungen $u(-1)=u(1)=0$
-zu l"osen.
+zu lösen.
 
 \begin{loesung}
-In der Vorlesung wurde die Greensche Funktion f"ur das Interval
-$[0,1]$ konstruiert. Als erstes m"ussen wir daher die Greensche
-Funktion f"ur das Interval $[-1,1]$ anpassen. Dies kann auf
+In der Vorlesung wurde die Greensche Funktion für das Interval
+$[0,1]$ konstruiert. Als erstes müssen wir daher die Greensche
+Funktion für das Interval $[-1,1]$ anpassen. Dies kann auf
 verschiedene Arten geschehen.
-Einerseits kann man die L"osung aus dem
+Einerseits kann man die Lösung aus dem
 Skript nehmen, und durch Skalieren in die richtige Form bringen.
-Man k"onnte auch einfach die Rechnung im Skript nochmals f"ur
-das Interval $[-1,1]$ durchf"uhren. Drittens kann man
-die Greensche Funktion aus singul"anren L"osungen bestimmen.
+Man könnte auch einfach die Rechnung im Skript nochmals für
+das Interval $[-1,1]$ durchführen. Drittens kann man
+die Greensche Funktion aus singulänren Lösungen bestimmen.
 
 In der Vorlesung wurde gezeigt, dass die Greensche Funktion
-aus den singul"aren L"osungen $\sigma(x,\xi)$ berechnet werden
+aus den singulären Lösungen $\sigma(x,\xi)$ berechnet werden
 kann. Dazu muss man $\sigma(x,\xi)$ mit einer in $x$ harmonischen
-Funktion erg"anzen, so dass die Summe die Randbedingung erf"ullt.
-Im vorliegenden Fall ist also $u_h$ f"ur
+Funktion ergänzen, so dass die Summe die Randbedingung erfüllt.
+Im vorliegenden Fall ist also $u_h$ für
 \[
 G(x,\xi)=\sigma(x,\xi)+u_h(x,\xi)
 =
@@ -30,18 +30,18 @@ G(x,\xi)=\sigma(x,\xi)+u_h(x,\xi)
 zu suchen, und $u_h$ muss harmonisch sein. In einer Dimension
 heisst das,
 $u_h(x,\xi)=ax+b$, wobei $a$ und $b$ so zu bestimmen sind, dass die
-Randbedingung erf"ullt wird.
+Randbedingung erfüllt wird.
 \begin{align*}
 G(-1,\xi)&={\textstyle\frac12}|-1-\xi|-a+b&={\textstyle\frac12}(1+\xi)-a+b&=0\\
 G(1,\xi)&={\textstyle\frac12}|1-\xi|+a+b&={\textstyle\frac12}(1-\xi)+a+b&=0
 \end{align*}
-Aus Summe und Differenz dieser beiden Gleichungen erh"alt man
+Aus Summe und Differenz dieser beiden Gleichungen erhält man
 schliesslich
 \begin{align*}
 1+2b&=0&\Rightarrow\qquad b&=\frac12\\
 \xi-2a&=0&\Rightarrow\qquad a&=\frac{\xi}2
 \end{align*}
-Daraus folgt f"ur die Greensche Funktion
+Daraus folgt für die Greensche Funktion
 \begin{align*}
 G(x,\xi)
 &=
@@ -55,7 +55,7 @@ G(x,\xi)
 &\qquad x<\xi
 \end{cases}
 \end{align*}
-Diese Form ist f"ur die Berechnung der L"osung nicht optimal. Man kann
+Diese Form ist für die Berechnung der Lösung nicht optimal. Man kann
 aber auch schreiben:
 \begin{align*}
 G(x,\xi)
@@ -76,7 +76,7 @@ x-\xi
 \end{align*}
 Damit ist die Greensche Funktion gefunden.
 
-Mit dieser Greenschen Funktion kann jetzt die L"osung der
+Mit dieser Greenschen Funktion kann jetzt die Lösung der
 Differentialgleichung berechnet werden:
 \begin{align*}
 u(x)&=\int_{-1}^1
@@ -95,33 +95,33 @@ u(x)&=\int_{-1}^1
 -\frac1{12}(x^4-6x^2+5)
 \end{align*}
 wobei die Berechnung des Integrals mit Mathematica erfolgte.
-Man kann durch Einsetzen nachpr"ufen, dass
+Man kann durch Einsetzen nachprüfen, dass
 $u(-1)=u(1)=0$ und dass $u''(x)=1-x^2$, die Greensche Funktion
-liefert also tats"achlich eine L"osung des Problems.
+liefert also tatsächlich eine Lösung des Problems.
 
 Nun noch die Berechnung der Greenschen Funktion als Skalierung
-der bereits berechneten Funktion. Die Greensche Funktion $G(x,\xi)$ f"ur
+der bereits berechneten Funktion. Die Greensche Funktion $G(x,\xi)$ für
 das Interval $[0,1]$
 $G(x,\xi)$ hat die Eigenschaft, dass die partielle Funktion
-$x\mapsto G(x,\xi)$ f"ur jedes $\xi$ die Randbedingungen erf"ullt,
+$x\mapsto G(x,\xi)$ für jedes $\xi$ die Randbedingungen erfüllt,
 und ausserdem
 \[
 \frac{\partial^2}{\partial x^2}G(x,\xi)=\delta(x-\xi).
 \]
 Der Ausdruck $\frac12(x+1)$ bildet $-1$ auf $0$ und $1$ auf $1$
 ab, setzt man ihn in die Greensche Funktion $K(x,\xi)$ ein,
-die f"ur das Interval $[0,1]$ berechnet wurde,
-erh"alt man eine Funktion
+die für das Interval $[0,1]$ berechnet wurde,
+erhält man eine Funktion
 \[
 G(x,\xi)=K({\textstyle\frac12}(x+1),{\textstyle\frac12}(\xi+1)),
 \]
 welche
-f"ur jeden Wert von $\xi$ die Randbedingung erf"ullt, also
+für jeden Wert von $\xi$ die Randbedingung erfüllt, also
 $K(\frac12(-1+1),\frac12(\xi+1))=G(0,\frac12(\xi+1))=0$ und
 $G(\frac12(1+1),\frac12(\xi+1))=G(1,\frac12(\xi+1))=0$.
 Die Bedingung, dass die zweite Ableitung eine Dirac-Distribution
-sein muss, wird jedoch verletzt. Wir "uberlegen uns, wie die
-die Skalierung den Wert der Ableitung ver"andert.
+sein muss, wird jedoch verletzt. Wir überlegen uns, wie die
+die Skalierung den Wert der Ableitung verändert.
 Die Ableitung von $G$ nach der ersten Variablen ist:
 \begin{align*}
 \frac{\partial}{\partial x}G(x,\xi)
@@ -139,13 +139,13 @@ x\mapsto K(x,\xi)=\begin{cases}
 \end{cases}
 \]
 ist in jedem Teilinterval $x>\xi$ und $x<\xi$ eine lineare Funktion. Die Ableitung
-ist also eine st"uckweise konstante Funktion.
-Die Ableitung davon ist "uberall $0$, ausser an der Stelle $x=\xi$,
+ist also eine stückweise konstante Funktion.
+Die Ableitung davon ist überall $0$, ausser an der Stelle $x=\xi$,
 insbesondere ist die Ableitung der skalierten Ableitung gleich gross
 wie die Ableitung der unskalierten Ableitung, der Faktor $\frac12$ ist
 also alles, was kompensiert werden muss.
 
-Die Greensche Funktion f"ur dieses Problem wird damit
+Die Greensche Funktion für dieses Problem wird damit
 \begin{align*}
 G(x,\xi)&=
 2K({\textstyle\frac12}(x+1),{\textstyle\frac12}(\xi+1))

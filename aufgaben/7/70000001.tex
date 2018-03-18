@@ -15,7 +15,7 @@ x^2\frac{\partial^2u}{\partial x^2}
 \begin{teilaufgaben}
 \item Zeichnen Sie das Gebiet $\Omega$.
 \item Ist $L$ elliptisch, hyperbolisch oder parabolisch?
-\item Zeigen Sie, dass $u(x,y)=\sin(xy)$ eine L"osung der
+\item Zeigen Sie, dass $u(x,y)=\sin(xy)$ eine Lösung der
 Differentialgleichung
 \[
 Lu=xy\cos(xy)
@@ -26,7 +26,7 @@ u(x,y)&=0            &&\text{$xy=\pi$ oder $xy=2\pi$},\\
 u(\pi,y)&=\sin(\pi y)&&1\le y\le 2,\\
 u(x,\pi)&=\sin(\pi x)&&1\le x\le 2.
 \end{align*}
-\item Warum ist dies die einzige L"osung im Teilgebiet mit $x>0$, $y>0$?
+\item Warum ist dies die einzige Lösung im Teilgebiet mit $x>0$, $y>0$?
 \end{teilaufgaben}
 
 \begin{loesung}
@@ -38,7 +38,7 @@ Das Gebiet wird im ersten Quadranten von zwei Hyperbeln und zwei Strecken berand
 \end{center}
 Es gibt aber auch noch einen Teil im dritten Quadranten, der mit dem Teilgebiet
 im ersten Quadranten nicht verbunden ist. Das Teilgebiet im
-dritten Quadranten ist unbeschr"ankt, das ganze Gebiet zwischen
+dritten Quadranten ist unbeschränkt, das ganze Gebiet zwischen
 den beiden Hyperbeln ist eingschlossen.
 \item
 Die Symbolmatrix ist
@@ -49,14 +49,14 @@ x^2&\frac12xy\\
 \end{pmatrix}
 \]
 Um zu beurteilen, ob die beiden Eigenwerte gleiches Vorzeichen haben,
-gen"ugt es, die Determinante zu berechnen:
+genügt es, die Determinante zu berechnen:
 \[
 \det(A)=x^2y^2-\frac14x^2y^2=\frac34x^2y^2>0,
 \]
 der Operator ist also elliptisch.
 \item
-Es muss gepr"uft werden, ob die Differentialgleichung erf"ullt ist,
-und ob die Randbedingungen erf"ullt sind.
+Es muss geprüft werden, ob die Differentialgleichung erfüllt ist,
+und ob die Randbedingungen erfüllt sind.
 Die partiellen Ableitungen sind
 \begin{align*}
 \frac{\partial u}{\partial x}&=y\cos(xy)
@@ -75,31 +75,31 @@ Lu&=-x^2y^2\sin(xy)+xy(\cos(xy)-xy\sin(xy))-x^2y^2\sin(xy)+3x^2y^2\sin(xy)\
 \\
 &=xy\cos(xy),
 \end{align*}
-ist also erf"ullt.
-F"ur die Randbedingungen gilt an den gekr"ummten Randst"ucken
+ist also erfüllt.
+Für die Randbedingungen gilt an den gekrümmten Randstücken
 \begin{align*}
 xy&=\pi&\Rightarrow\quad u(x,y)&=\sin(xy)=\sin\pi=0\\
 xy&=2\pi&\Rightarrow\quad u(x,y)&=\sin(xy)=\sin2\pi=0
 \end{align*}
-und an den geraden St"ucken
+und an den geraden Stücken
 \begin{align*}
 u(\pi,y)&=\sin(\pi y)
 &u(x,\pi)&=\sin(x\pi),
 \end{align*}
 die Randbedingungen
-sind also auch erf"ullt. Damit ist $u$ eine L"osung der PDGL.
+sind also auch erfüllt. Damit ist $u$ eine Lösung der PDGL.
 \item
-F"ur L"osungen elliptischer Differentialgleichungen gilt das Maximumprinzip.
-Ein weitere L"osung $\bar u(x,y)$ der Gleichung erg"abe
+Für Lösungen elliptischer Differentialgleichungen gilt das Maximumprinzip.
+Ein weitere Lösung $\bar u(x,y)$ der Gleichung ergäbe
 $v=u-\bar u$ mit
 $Lu=0$, wobei $v$ auf dem Rand des Gebietes verschwindet.
-Da $v$ dort das Maximum haben m"usste, folgt $v=0$ oder $u=\bar u$,
-es gibt also gar keine andere L"osung.
+Da $v$ dort das Maximum haben müsste, folgt $v=0$ oder $u=\bar u$,
+es gibt also gar keine andere Lösung.
 
-Allerdings gilt dieses Argument nur f"ur beschr"ankte Gebiete, also nur
-f"ur den Teil im ersten Quadranten. Dort ist die L"osung tas"achlich
-eindeutig. F"ur das Teilgebiet im dritten Quadranten kann es
-jedoch noch weitere L"osungen geben.
+Allerdings gilt dieses Argument nur für beschränkte Gebiete, also nur
+für den Teil im ersten Quadranten. Dort ist die Lösung tasächlich
+eindeutig. Für das Teilgebiet im dritten Quadranten kann es
+jedoch noch weitere Lösungen geben.
 \qedhere
 \end{teilaufgaben}
 \end{loesung}

@@ -11,16 +11,16 @@ wir wollen Sie auf dem Gebiet
 studieren.
 \begin{teilaufgaben}
 \item Ist diese Gleichung elliptisch, parabolisch oder hyperbolisch?
-\item F"uhren Sie Separation durch und finden Sie zwei gew"ohnliche
-Differentialgleichungen, mit denen Sie Teill"osungen f"ur
-die Fokker-Planck-Gleichung finden k"onnen.
-\item Finden Sie alle Teill"osungen, f"ur die $u(x,t)$ f"ur $t\to\infty$
-und gewisse $x$ unbeschr"ankt w"achst, und f"ur die ausserdem $u(t,0)=0$ gilt.
+\item Führen Sie Separation durch und finden Sie zwei gewöhnliche
+Differentialgleichungen, mit denen Sie Teillösungen für
+die Fokker-Planck-Gleichung finden können.
+\item Finden Sie alle Teillösungen, für die $u(x,t)$ für $t\to\infty$
+und gewisse $x$ unbeschränkt wächst, und für die ausserdem $u(t,0)=0$ gilt.
 \end{teilaufgaben}
 
 \begin{loesung}
 \begin{teilaufgaben}
-\item F"ur die Symbolmatrix sind nur die zweiten Ableitungen massgebend,
+\item Für die Symbolmatrix sind nur die zweiten Ableitungen massgebend,
 daher ist sie
 \[
 \begin{pmatrix}
@@ -29,9 +29,9 @@ daher ist sie
 \end{pmatrix}
 \]
 mit Determinante $0$, also ist die Gleichung parabolisch.
-Insbesondere erwarten wir ein Verhalten der L"osungen wie
-bei der W"armeleitungsgleichung.
-\item F"ur die Separation machen wir den Ansatz
+Insbesondere erwarten wir ein Verhalten der Lösungen wie
+bei der Wärmeleitungsgleichung.
+\item Für die Separation machen wir den Ansatz
 \[
 u(x,t)=X(x)T(t)
 \]
@@ -42,9 +42,9 @@ X(x)T'(t)&=-X'(x)T(t)+X''(x)T(t)\\
 \end{align*}
 wobei die Division durch $T(t)X(X)$ erlaubt ist, weil
 dieser Ausdruck nur auf einer kleinen Menge verschwindet.
-Da die linke Seite nur von $t$, die rechte aber nur von $x$ abh"angt,
-m"ussen beide Seiten konstant sein, wir nennen die Konstante
-$\mu$. So erhalten wir die zwei gew"ohnlichen Differentialgleichungen
+Da die linke Seite nur von $t$, die rechte aber nur von $x$ abhängt,
+müssen beide Seiten konstant sein, wir nennen die Konstante
+$\mu$. So erhalten wir die zwei gewöhnlichen Differentialgleichungen
 \begin{align}
 \frac{T'(t)}{T(t)}&=\mu&&\Rightarrow&T'(t)&=\mu T(t)
 \label{80000001:Tgleichung}
@@ -54,15 +54,15 @@ $\mu$. So erhalten wir die zwei gew"ohnlichen Differentialgleichungen
 \end{align}
 \item
 Die Gleichung \eqref{80000001:Tgleichung} kann leicht mit der Exponentialfunktion
-gel"ost werden:
+gelöst werden:
 \[
 T(t)=T(0)e^{\mu t}.
 \]
-Dieser Faktor kann nur dann f"ur $t\to\infty$ unbeschr"ankt wachsen, wenn
-$\mu > 0$. Wir suchen also L"osungen von \eqref{80000001:Xgleichung} f"ur
+Dieser Faktor kann nur dann für $t\to\infty$ unbeschränkt wachsen, wenn
+$\mu > 0$. Wir suchen also Lösungen von \eqref{80000001:Xgleichung} für
 positives $\mu$.
-Diese gew"ohnliche lineare Differentialgleichung zweiter Ordnung wird
-wie "ublich mit Hilfe des charakteristischen Polynoms gel"ost, welches
+Diese gewöhnliche lineare Differentialgleichung zweiter Ordnung wird
+wie üblich mit Hilfe des charakteristischen Polynoms gelöst, welches
 in diesem Fall lautet
 \[
 \lambda^2-\lambda-\mu=0
@@ -72,14 +72,14 @@ in diesem Fall lautet
 \lambda_{\pm}(\mu)=\frac12\pm\sqrt{\frac14+\mu}
 \]
 Da $\mu > 0$ ist, wird $\lambda_{\pm}(\mu)$ immer reell sein.
-Damit ist die allgmeine L"osung f"ur $X(x)$
+Damit ist die allgmeine Lösung für $X(x)$
 \[
 X(x)=
 A(\mu)e^{\lambda_+(\mu)x}
 +
 B(\mu)e^{\lambda_+(\mu)x}
 \]
-Sie soll f"ur $x=0$ verschwinden, also
+Sie soll für $x=0$ verschwinden, also
 \[
 X(0)=
 A(\mu)e^{\lambda_+(\mu)\cdot 0}
@@ -98,13 +98,13 @@ e^{-x\sqrt{\frac14+\mu}}
 \\
 &=2Ae^{\frac12x}\sinh x\sqrt{\frac14+\mu}.
 \end{align*}
-Zusammen mit der bereits gefundenen L"osung f"ur $T(t)$ sind also
-die Teill"osungen
+Zusammen mit der bereits gefundenen Lösung für $T(t)$ sind also
+die Teillösungen
 \[
 u(x,t,\mu)=
 Ce^{\frac12x+\mu t}\sinh x\sqrt{\frac14+\mu}.
 \]
-{\bf Kontrolle:} Zur Kontrolle setzen wir die L"osung $u(x,t,\mu)$
+{\bf Kontrolle:} Zur Kontrolle setzen wir die Lösung $u(x,t,\mu)$
 in die Differentialgleichung ein
 \begin{align*}
 \frac{\partial}{\partial t}u(x,t,\mu)&=
@@ -133,8 +133,8 @@ C\biggl(\frac14+\mu\biggr)e^{\frac12x+\mu t}\sinh x\sqrt{\frac14+\mu}
 =
 \frac{\partial u}{\partial t},
 \end{align*}
-die Funktionen erf"ullen also die partielle Differentialgleichung.
-Wegen $\sinh 0=0$ ist auch die Randbedingung trivial erf"ullt.
+die Funktionen erfüllen also die partielle Differentialgleichung.
+Wegen $\sinh 0=0$ ist auch die Randbedingung trivial erfüllt.
 \qedhere
 \end{teilaufgaben}
 \end{loesung}
