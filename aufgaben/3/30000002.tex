@@ -1,4 +1,4 @@
-Betrachten Sie das Cauchy-Problem f"ur die Differentialgleichung
+Betrachten Sie das Cauchy-Problem für die Differentialgleichung
 \begin{equation}
 y\frac{\partial u}{\partial x}+x\frac{\partial u}{\partial y}=0
 \label{30000006:1}
@@ -6,15 +6,15 @@ y\frac{\partial u}{\partial x}+x\frac{\partial u}{\partial y}=0
 und die Randbedingung $u(0,y)=y^2$.
 Sie kann offenbar auf dem Gebiet $\Omega_+=\{ (x,y)\in\mathbb R^2\,|\, x > 0\}$
 oder auf dem Gebiet $\Omega_-=\{(x,y)\in\mathbb R^2\,|\, x <0\}$ betrachtet
-werden. Man kann aber auch eine L"osung in jedem dieser Gebiet zu einer
-L"osung in $\Omega_+\cup\Omega_-=\mathbb R^2$ zusammensetzen. In diesem
-Sinne ist es auch sinnvoll, von einer Anfangsbedingung f"ur
-(\ref{30000006:1}) im Gebiet $\Omega=\mathbb R^2$ zu sprechen.
+werden. Man kann aber auch eine Lösung in jedem dieser Gebiet zu einer
+Lösung in $\Omega_+\cup\Omega_-=\mathbb R^2$ zusammensetzen. In diesem
+Sinne ist es auch sinnvoll, von einer Anfangsbedingung für
+\eqref{30000006:1} im Gebiet $\Omega=\mathbb R^2$ zu sprechen.
 \begin{teilaufgaben}
 \item Bestimmen Sie die Charakteristiken.
-\item Welcher Teil der $x$-$y$-Ebene wird von Charakteristiken "uberdeckt,
+\item Welcher Teil der $x$-$y$-Ebene wird von Charakteristiken überdeckt,
 die von der $y$-Achse ausgehen?
-\item L"osen Sie das Cauchy-Problem. "Uberpr"ufen sie die L"osung durch
+\item Lösen Sie das Cauchy-Problem. "Uberprüfen sie die Lösung durch
 Einsetzen in die Differentialgleichung.
 \item Betrachten Sie die Funktion
 \[
@@ -24,15 +24,15 @@ u(x,y)&\qquad |y|\ge |x|\\
 \end{cases}
 \]
 Rechnen Sie nach, dass diese Funktion ebenfalls die Differentialgleichung
-erf"ullt
+erfüllt
 die aber offenbar von $u(x,y)$ verschieden ist (zum Beispiel ist
-$u(1,0)=-1$ und $v(1,0)=1$). Ist sie eine L"osung?
+$u(1,0)=-1$ und $v(1,0)=1$). Ist sie eine Lösung?
 \end{teilaufgaben}
 
 \begin{loesung}
 Die Anfangsbedingung in dieser Aufgabe ist auf der $y$-Achse vorgegeben.
 Zur Vermeidung von Verwechslungen bezeichnen wir die $y$-Werte auf
-der $y$-Achse wieder mit $y_0$, "ahnlich wie in Aufgabe \ref{30000001}.
+der $y$-Achse wieder mit $y_0$, ähnlich wie in Aufgabe \ref{30000001}.
 Die Methode der Charakteristiken wird also Funktionen $x(y_0,t)$,
 $y(y_0,t)$ und $u(y_0,t)$ derart, dass die Differentialgleichungen
 \begin{equation}
@@ -43,7 +43,7 @@ $y(y_0,t)$ und $u(y_0,t)$ derart, dass die Differentialgleichungen
 \end{aligned}
 \label{30000002:chareq}
 \end{equation}
-erf"ullt sind mit den Anfangsbedingungen 
+erfüllt sind mit den Anfangsbedingungen 
 \begin{align*}
 x(y_0, 0)&=0\\
 y(y_0, 0)&=y_0\\
@@ -52,18 +52,18 @@ u(y_0, 0)&=f(y_0)
 wobei $f(y_0)$ die Anfangsfunktion entlang der $y$-Achse ist.
 \begin{teilaufgaben}
 \item
-Aus der Gleichung (\ref{30000002:chareq}) kann man ablesen,
+Aus der Gleichung \eqref{30000002:chareq} kann man ablesen,
 dass alle Charakteristiken parallel zur $x$-$y$-Ebene verlaufen.
 Man kann also, um die Frage zu beantworten, nur die Differentialgleichungen
-f"ur die beiden Funktionen $x$ und $y$ l"osen.
+für die beiden Funktionen $x$ und $y$ lösen.
 
 Leitet man die erste
-Gleichung ab und setzt die zweite Gleichung ein, erh"alt man die
+Gleichung ab und setzt die zweite Gleichung ein, erhält man die
 die Differentialgleichung
 \[
 \ddot x(t)=x(t)
 \]
-mit den L"osungen $x(t)=a\cosh t$ und $x(t)=b\sinh t$.
+mit den Lösungen $x(t)=a\cosh t$ und $x(t)=b\sinh t$.
 Da wir Kurven
 suchen, die auf der $y$-Achse im Punkt $(0,y_0)$ beginnen, muss
 \[
@@ -78,22 +78,22 @@ y_0
 \end{pmatrix}
 \]
 sein.
-Diese Funktionen erf"ullen die Gleichung $y^2-x^2=y_0^2$, sie stellen
+Diese Funktionen erfüllen die Gleichung $y^2-x^2=y_0^2$, sie stellen
 also Hyperbeln durch die Punkte $(0,y_0)$ dar.
 \item
-Die L"osungskurven sind Hyperbeln mit den Asymptoten $y=\pm x$, die
-Charaketerisitiken k"onnen die Asymptoten nicht "uberschreiten, es wird
-also nur der Bereich $\{(x,y)|\;|x|<|y|\}$ der $x$-$y$-Ebene "uberdeckt.
+Die Lösungskurven sind Hyperbeln mit den Asymptoten $y=\pm x$, die
+Charaketerisitiken können die Asymptoten nicht überschreiten, es wird
+also nur der Bereich $\{(x,y)|\;|x|<|y|\}$ der $x$-$y$-Ebene überdeckt.
 \item
-Die Gleichung f"ur $u$ liefert $u(y_0, t)=y_0^2$.
+Die Gleichung für $u$ liefert $u(y_0, t)=y_0^2$.
 Nach dem zweiten Schritt in der Methode der Charakteristiken
-m"ussen wir jetzt $t$ und $y_0$ aus den Gleichungen
+müssen wir jetzt $t$ und $y_0$ aus den Gleichungen
 \begin{align*}
 x&=y_0\sinh t\\
 y&=y_0\cosh t\\
 u&=y_0^2
 \end{align*}
-eliminieren. F"ur die hyperbolischen Funktionen gilt
+eliminieren. Für die hyperbolischen Funktionen gilt
 \[
 y^2-x^2=y_0^2(\cosh^2t-\sinh^2t)=y_0^2.
 \]
@@ -101,16 +101,16 @@ Setzen wir dies in der dritten Gleichung ein, erhalten wir
 \[
 u(x,y)=y^2-x^2.
 \]
-Tats"achlich kann man durch Ableiten nachrechnen
+Tatsächlich kann man durch Ableiten nachrechnen
 \begin{align*}
 \frac{\partial u}{\partial x}&=-2x\\
 \frac{\partial u}{\partial y}&=2y\\
 \Rightarrow
 y\frac{\partial u}{\partial x}+x\frac{\partial u}{\partial y}&=-2xy+2xy=0,
 \end{align*}
-Die Differentialgleichung ist also erf"ullt.
+Die Differentialgleichung ist also erfüllt.
 \item
-Die Ableitungen f"ur $|x|>|y|$ sind
+Die Ableitungen für $|x|>|y|$ sind
 \begin{align*}
 \frac{\partial v}{\partial x}
 &=2(x^2-y^2)2x\\
@@ -126,19 +126,19 @@ x \frac{\partial v}{\partial x}
 4xy(x^2-y^2)
 -4xy(x^2-y^2)=0,
 \]
-$v$ erf"ullt also die Differentialgleichung.
+$v$ erfüllt also die Differentialgleichung.
 Trotzdem ist es keine
-L"osung, denn die Ableitungen passen an der Nahtstelle nicht zusammen.
-Auf der Geraden $x=y$ gilt n"amlich:
+Lösung, denn die Ableitungen passen an der Nahtstelle nicht zusammen.
+Auf der Geraden $x=y$ gilt nämlich:
 \begin{align*}
 \frac{\partial}{\partial x}(y^2-x^2)&=-2x\\
 \frac{\partial}{\partial x}(x^2-y^2)^2&=2(x^2-y^2)2x=0
 \end{align*}
-f"ur $x>0$ sind die Ableitungen also verschieden.
+für $x>0$ sind die Ableitungen also verschieden.
 \end{teilaufgaben}
 
-Man kann f"ur diese Differentialgleichung f"ur geeignete Anfangsbedingungen
-verschiedene L"osungen konstruieren. Seien $f$ und $g$ irgendwelche
+Man kann für diese Differentialgleichung für geeignete Anfangsbedingungen
+verschiedene Lösungen konstruieren. Seien $f$ und $g$ irgendwelche
 differenzierbaren Funktionen mit $f(0)=g(0)$ und $f'(0)=g'(0)=0$,
 und betrachten wir die Funktion
 \[
@@ -149,7 +149,7 @@ g(x^2-y^2)&\qquad |y|\le|x|
 \]
 An der Nahtstelle passen die Werte zusammen, wenn $|x|=|y|$ ist $x^2-y^2$,
 d.~h.~$f(y^2-x^2)=f(0)=g(0)=g(x^2-y^2)$, es spielt also keine Rolle, welche
-der Definitionen man w"ahlt.
+der Definitionen man wählt.
 Auch die Ableitungen passen zusammen:
 \begin{align*}
 \frac{\partial}{\partial x}f(y^2-x^2)&=-2xf'(y^2-x^2)=-2xf'(0)=0
@@ -170,19 +170,19 @@ y\partial_xu+x\partial_yu
 yg'(x^2-y^2)2x-xg'(x^2-y^2)2y=0&\qquad |y|<|x|
 \end{cases}
 \]
-Sie ist also eine L"osung. Sie erf"ullt die Anfangsbedingung
-$u(0,y)=f(y^2)$, f"ur jede beliebige Funktion $g$. Das Cauchyproblem
-ist also nicht eindeutig l"osbar.
+Sie ist also eine Lösung. Sie erfüllt die Anfangsbedingung
+$u(0,y)=f(y^2)$, für jede beliebige Funktion $g$. Das Cauchyproblem
+ist also nicht eindeutig lösbar.
 
-Ursache daf"ur ist nat"urlich, dass man von der $y$-Achse aus mit
+Ursache dafür ist natürlich, dass man von der $y$-Achse aus mit
 Charakteristiken nur den Bereich $|y|\ge |x|$ erreichen kann.
-Die L"osung mit Charakteristiken kann die Unterschiedlichen L"osungen
+Die Lösung mit Charakteristiken kann die Unterschiedlichen Lösungen
 im Bereich $|y|<|x|$ gar nicht ``sehen''.
-Die Funktion $u$ erf"ullt entlang der $x$-Achse eine Anfangsbedingung
-der Form $u(x,0)=g(x^2)$, diese Werte beeinflussen die L"osung aber
-nur im Bereich $|y|<|x|$. Sofern die L"osungen an der Nahtstelle
+Die Funktion $u$ erfüllt entlang der $x$-Achse eine Anfangsbedingung
+der Form $u(x,0)=g(x^2)$, diese Werte beeinflussen die Lösung aber
+nur im Bereich $|y|<|x|$. Sofern die Lösungen an der Nahtstelle
 zusammenpassen, was durch $f'(0)=g'(0)=0$ sichergestellt wird,
-kann man also die L"osung unendlich viele L"osungen dieses Cauchy-Problems
+kann man also die Lösung unendlich viele Lösungen dieses Cauchy-Problems
 finden.
 \end{loesung}
 

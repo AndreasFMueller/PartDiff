@@ -1,8 +1,8 @@
-L"osen Sie die Wellengleichung
+Lösen Sie die Wellengleichung
 \[
 \frac{\partial^2 u}{\partial t^2}=\frac{\partial^2 u}{\partial x^2}
 \]
-f"ur eine zwischen $x=0$ und $x=\pi$ gespannte Saite,
+für eine zwischen $x=0$ und $x=\pi$ gespannte Saite,
 die zur Zeit $t=0$ in Ruhelage ist, aber die Geschwindigkeit
 \[
 \frac{\partial u}{\partial t}(0, x)
@@ -12,7 +12,7 @@ die zur Zeit $t=0$ in Ruhelage ist, aber die Geschwindigkeit
 hat.
 
 \begin{hinweis}
-Eine L"osung mit Separation dieser Aufgabe ist in \ref{40000004}
+Eine Lösung mit Separation dieser Aufgabe ist in \ref{40000004}
 dargestellt, verwenden Sie hier die Transformationsmethode bzw.~Fourierreihen.
 \end{hinweis}
 
@@ -24,7 +24,7 @@ also die Transformation
 \[u(t,x) \mapsto \hat u(t, k)= C\int_0^{\pi} u(t,x)\sin kx\, dx\]
 mit einer geeigneten Normierungskonstanten $C$, die im vorliegenden
 Fall allerdings unwichtig ist (weil die Berechnung der Fourierreihe
-im Hinweis bereits durchgef"uhrt ist).
+im Hinweis bereits durchgeführt ist).
 
 Die Transformation der Differentialgleichung 
 \begin{equation}
@@ -44,14 +44,14 @@ Die Fouriertransformation der Anfangsbedingung ist
 \label{40000004:anfbedudot}
 \end{align}
 Die Gleichung
-(\ref{gleichungfueruk})
-ist eine gew"ohnliche Differentialgleichung f"ur jeden
-einzelnen Fourierkoeffizienten, mit allgemeiner L"osung
+\eqref{gleichungfueruk}
+ist eine gewöhnliche Differentialgleichung für jeden
+einzelnen Fourierkoeffizienten, mit allgemeiner Lösung
 \[
 \hat u(t,k)=A_k\cos kt+B_k\sin kt
 \]
 Darin sind die Koeffizienten $A_k$ und $B_k$ aus den Anfangsbedingungen
-(\ref{40000004:anfbedu}) und (\ref{40000004:anfbedudot}) zu bestimmen:
+\eqref{40000004:anfbedu} und \eqref{40000004:anfbedudot} zu bestimmen:
 \begin{align*}
 \hat u(0,k)&=A_k=0\\
 \partial_t \hat u(0,k)&=kB_k=
@@ -65,7 +65,7 @@ Insbesondere gilt
 \[
 B_1=\frac34,\qquad B_3=-\frac1{12}
 \]
-Damit sind die zeitabh"angigen Fourierkoeffizienten $\hat u(t,k)$ bestimmt:
+Damit sind die zeitabhängigen Fourierkoeffizienten $\hat u(t,k)$ bestimmt:
 \[
 \hat u(t,k)=
 \begin{cases}

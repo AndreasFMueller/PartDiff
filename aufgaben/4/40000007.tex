@@ -8,7 +8,7 @@ n(x,y)^2
 \label{40000007:eikonal}
 \end{equation}
 eine wichtige Rolle.
-Eine L"osung $u(x,y)$ beschreibt die
+Eine Lösung $u(x,y)$ beschreibt die
 Ausbreitung einer Welle in einem Medium mit der optischen
 Dichte  $n(x,y)$, dabei sind Kurven gleicher Werte von $u(x,y)$
 die Kurven gleicher Phase, entsprechen also den Wellenfronten.
@@ -16,10 +16,10 @@ Insbesondere steht der Gradient von $u$ immer senkrecht auf
 der Wellenfront, zeigt also in Richtung der Lichtausbreitung.
 \begin{teilaufgaben}
 \item
-L"osen Sie die Gleichung
-(\ref{40000007:eikonal}) mit Hilfe eines Separationsansatzes
+Lösen Sie die Gleichung
+\eqref{40000007:eikonal} mit Hilfe eines Separationsansatzes
 der Form $u(x,y)=X(x) + Y(y)$
-f"ur 
+für 
 \[
 n(x,y)=
 \begin{cases}n_1&\qquad x< 0\\
@@ -28,7 +28,7 @@ n_2&\qquad x>0.
 \]
 \item
 Berechnen Sie die Winkel $\alpha_1$ und $\alpha_2$ zwischen den Gradienten
-Ihrer L"osung und der $x$-Achse f"ur $x<0$ und $x>0$. Bestimmen Sie 
+Ihrer Lösung und der $x$-Achse für $x<0$ und $x>0$. Bestimmen Sie 
 $\sin\alpha_1/\sin\alpha_2$.
 \end{teilaufgaben}
 
@@ -42,23 +42,23 @@ Wir verwenden den Separationsansatz
 u(x,y)=X(x) + Y(y).
 \]
 Einsetzen in die Differentialgleichung
-(\ref{40000007:eikonal}) ergibt in separierter Form
+\eqref{40000007:eikonal} ergibt in separierter Form
 \[
 n(x)^2-X'(x)^2=Y'(y)^2.
 \]
 Die linke Seite hängt nur von $x$ ab, die rechte nur von $y$,
-also m"ussen beide konstant sein.
+also müssen beide konstant sein.
 Wir nennen die gemeinsame Konstante, die offenbar positiv sein
 muss, $\lambda^2$.
-F"ur $Y(y)$ finden wir die Differentialgleichung
+Für $Y(y)$ finden wir die Differentialgleichung
 \[
 Y'(y)=\lambda \qquad\Rightarrow\qquad Y(y)=\lambda y+ C_y.
 \]
-F"ur $X(x)$ ergibt sich dagegen
+Für $X(x)$ ergibt sich dagegen
 \[
 X'(x)=\sqrt{n(x)^2-\lambda^2}.
 \]
-Jetzt m"ussen wir die Fälle $x<0$ und $x>0$ unterscheiden.
+Jetzt müssen wir die Fälle $x<0$ und $x>0$ unterscheiden.
 In jedem dieser Fälle ist $n(x)$ konstant, es gilt dort
 also
 \[
@@ -68,14 +68,14 @@ X'(x)=\sqrt{n_i^2-\lambda^2}
 \qquad
 X(x)=x\sqrt{n_i^2-\lambda^2} + C_x.
 \]
-Die L"osung ist also
+Die Lösung ist also
 \[
 u(x,y)=\lambda y + x\sqrt{n_i^2-\lambda^2} + C
 \]
-wobei f"ur $x<0$ der Wert $n_1$ f"ur $n_i$ zu nehmen ist.
+wobei für $x<0$ der Wert $n_1$ für $n_i$ zu nehmen ist.
 Die Konstanten $C_x$ und $C_y$ haben wir in eine Konstante $C$
-zusammengefasst\footnote{Diese Konstaten ist weder f"ur die Anwendung noch
-f"ur das im nächsten Schritt angestrebte Ziel notwendig. In der Anwendung
+zusammengefasst\footnote{Diese Konstaten ist weder für die Anwendung noch
+für das im nächsten Schritt angestrebte Ziel notwendig. In der Anwendung
 bedeutet $u$ die Phase einer Welle, eine additive Konstante ist also nichts
 anderes als eine Phasenverschiebung der Welle um den selben Betrag
 im ganzen Gebiet. Im nächsten Schritt wird der Gradient von $u$ untersucht,
@@ -90,7 +90,7 @@ Der Gradient ist
 \lambda
 \end{pmatrix}
 \]
-F"ur den Winkel zwischen $x$-Achse und Gradient gilt
+Für den Winkel zwischen $x$-Achse und Gradient gilt
 \[
 \tan\alpha_i
 =
@@ -112,8 +112,8 @@ dies ist das Brechungsgesetz von Snellius.
 \end{loesung}
 
 \begin{diskussion}
-Die L"osung $u(x,y)$ der Eikonalgleichung ist die Phase einer Welle
-$A(x,y)e^{iu(x,y)}$ in einer Näherung f"ur sehr kleine Wellenlänge.
+Die Lösung $u(x,y)$ der Eikonalgleichung ist die Phase einer Welle
+$A(x,y)e^{iu(x,y)}$ in einer Näherung für sehr kleine Wellenlänge.
 Die Eikonalgleichung kann aus den elektromagnetischen Feldgleichungen
 abgleitet werden.
 In dieser Näherung sind Beugungseffekte nicht beobachtbar, und das

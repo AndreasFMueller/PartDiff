@@ -15,7 +15,7 @@ u(x,0)=g(x)
 erf"ullen.
 \begin{teilaufgaben}
 \item Verwenden Sie die Laplace-Transformation nach $t$,
-um (\ref{50000007:gleichung}) in eine Familie gew"ohnlicher
+um \eqref{50000007:gleichung} in eine Familie gew"ohnlicher
 Differentialgleichungen zu verwandeln.
 \item
 Ist die Funktion $u(x,t)$ durch die Randbedingungen eindeutig bestimmt?
@@ -35,7 +35,7 @@ Anfangsbedingungen nicht vergessen!
 \begin{loesung}
 \begin{teilaufgaben}
 \item
-Die Laplace-Transformation von (\ref{50000007:gleichung}) ergibt
+Die Laplace-Transformation von \eqref{50000007:gleichung} ergibt
 \begin{align}
 \frac{\partial}{\partial x}{\cal L}u(x,s)
 +x\bigl(-u(x,0)+s{\cal L}u(x,s)\bigr)&=\frac1{s^2}
@@ -58,7 +58,7 @@ Darin haben wir die Laplace-Transformierte von $t$ verwendet:
 \right]_0^\infty=\frac1{s^2}.
 \end{align*}
 Schreibt man $y_s(x)={\cal L}u(x,s)$, wird deutlich,
-dass (\ref{50000007:transformiert}) eine mit $s$ parametrisierte
+dass \eqref{50000007:transformiert} eine mit $s$ parametrisierte
 Familie von gew"ohnlichen, linearen, inhomogenen Differentialgleichungen
 \begin{equation}
 y_s'(x)+xsy_s(x)=\frac1{s^2}-xg(x)
@@ -85,7 +85,7 @@ dass $y_s(x)$ f"ur alle $x$ existiert und eindeutig bestimmt ist.
 Daher wird auch $u(x,t)$ eindeutig bestimmt sein.
 
 Man kann auch mit Hilfe von Charakteristiken zu diesem Schluss kommen, 
-(\ref{50000007:gleichung}) ist n"amlich auch eine quasilineare partielle
+\eqref{50000007:gleichung} ist n"amlich auch eine quasilineare partielle
 Differentialgleichung erster Ordnung.
 Das Differentialgleichungssystem f"ur die Charakteristiken mit Parameter $p$
 ist
@@ -112,7 +112,7 @@ ablesen.
 \includeagraphics[width=0.6\hsize]{domain-1.pdf}
 \end{center}
 \caption{Charakteristiken der partiellen
-Differentialgleichung~(\ref{50000007:gleichung}).
+Differentialgleichung~\eqref{50000007:gleichung}.
 Die fett ausgezogene Charakteristik trennt die Einflussgebiet der
 Randbedingungen auf der $x$- und $t$-Achse.
 \label{50000007:bild}}
@@ -120,11 +120,11 @@ Randbedingungen auf der $x$- und $t$-Achse.
 \begin{figure}
 \centering
 \includeagraphics[width=0.5\hsize]{loes.jpg}
-\caption{L"osunsgfl"ache der Differentialgleichung~(\ref{50000007:gleichung}).
+\caption{L"osunsgfl"ache der Differentialgleichung~\eqref{50000007:gleichung}.
 \label{50000007:loesungsflaeche}}
 \end{figure}
 \item
-Die homogene Differentialgleichung zu (\ref{50000007:family}) l"asst sich
+Die homogene Differentialgleichung zu \eqref{50000007:family} l"asst sich
 mit Separation l"osen:
 \begin{align*}
 y_s'  + xsy_s&=0

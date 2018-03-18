@@ -16,10 +16,10 @@ u(0,x)&=1-x^2&x&\in[-1,1]\\
 \end{align*}
 \begin{teilaufgaben}
 \item Ist sie elliptisch, parabolisch oder hyperbolisch?
-\item F"uhren Sie die Differentialgleichung mit Hilfe eines
-Separationsansatzes in ein System von gew"ohnlichen
-Differentialgleichungen "uber. L"osen Sie mindestens eine der
-gew"ohnlichen Differentialgleichungen.
+\item Führen Sie die Differentialgleichung mit Hilfe eines
+Separationsansatzes in ein System von gewöhnlichen
+Differentialgleichungen über. Lösen Sie mindestens eine der
+gewöhnlichen Differentialgleichungen.
 \end{teilaufgaben}
 
 \begin{loesung}
@@ -31,9 +31,9 @@ Die Symbolmatrix des Differentialoperators ist
 \frac1{1-x^2}&0\\0&-1
 \end{pmatrix}.
 \]
-Da sie diagonal ist, k"onnen die Eigenwerte von der Diagonalen
+Da sie diagonal ist, können die Eigenwerte von der Diagonalen
 abgelesen werden. Sie haben verschiedenes Vorzeichen, wegen
-$-1<x<1$ ist n"amlich $1-x^2>0$. Also ist die Differentialgleichung
+$-1<x<1$ ist nämlich $1-x^2>0$. Also ist die Differentialgleichung
 hyperbolisch.
 \item
 Wir verwenden einen Separationsansatz der Form
@@ -51,17 +51,17 @@ Nach Division durch $T(t)X(t)$ erhalten wir
 \end{equation}
 womit die Variablen $x$ und $t$ erfolgreich separiert sind.
 
-Jede Seite von (\ref{40000001:separiert}) muss konstant sein. W"are die
-Konstante postiv, erhielten wir aus der Gleichung f"ur $T$ exponentiell
-anwechsende L"osungen, was f"ur eine Wellengleichung nicht passt, wir
-k"onnen also annehmen, dass die Konstante nicht positiv ist.
+Jede Seite von \eqref{40000001:separiert} muss konstant sein. Wäre die
+Konstante postiv, erhielten wir aus der Gleichung für $T$ exponentiell
+anwechsende Lösungen, was für eine Wellengleichung nicht passt, wir
+können also annehmen, dass die Konstante nicht positiv ist.
 Daher nennen wir sie $-\omega^2$.
 
-F"ur $T$ ergibt sich die Gleichung
+Für $T$ ergibt sich die Gleichung
 \[
 T''(t)=-\omega^2 T(t)
 \]
-mit der allgemeinen L"osung
+mit der allgemeinen Lösung
 \[
 T(t)=A\cos\omega t+B\sin\omega t.
 \]
@@ -70,15 +70,15 @@ $T'(0)=0$ sein muss, also
 \[
 T'(0)=-A\omega\sin\omega \cdot 0+B\omega\cos\omega\cdot 0=B\omega=0.
 \]
-Da also $B=0$, ist die einzig m"ogliche L"osung
+Da also $B=0$, ist die einzig mögliche Lösung
 \[
 T(t)=A\cos\omega t.
 \]
-Die Gleichung f"ur $X$ ist
+Die Gleichung für $X$ ist
 \[
 X''+\omega^2(1-x^2)X=0
 \]
-ist nicht so einfach l"osbar, die L"osungen heissen die parabolischen
+ist nicht so einfach lösbar, die Lösungen heissen die parabolischen
 Zylinderfunktionen.
 \qedhere
 \end{teilaufgaben}

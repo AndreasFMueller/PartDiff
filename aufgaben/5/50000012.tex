@@ -1,6 +1,6 @@
 Verwenden Sie Laplace-Transformation nach $t$ um
 im Gebiet $\Omega=\{(x,t)\,|\, x > 1 \text{ und } t > 0\}$ eine
-L"osung der Differentialgleichung
+Lösung der Differentialgleichung
 \begin{equation}
 \frac{\partial u}{\partial t} +3\frac{\partial u}{\partial x} = -\frac{u}{x}
 \label{50000012:dgl}
@@ -8,16 +8,16 @@ L"osung der Differentialgleichung
 mit den Randbedingungen
 \begin{equation}
 \begin{aligned}
-u(1,t)&=t& &\text{f"ur $t>0$},\\
-u(x,0)&=0& &\text{f"ur $x > 1$}
+u(1,t)&=t& &\text{für $t>0$},\\
+u(x,0)&=0& &\text{für $x > 1$}
 \end{aligned}
 \label{50000012:rb}
 \end{equation}
 zu finden.
 
 \begin{hinweis}
-Sie d"urfen die Laplace-Transformierte der L"osung stehen lassen, wenn Sie
-die R"ucktransformation nicht finden.
+Sie dürfen die Laplace-Transformierte der Lösung stehen lassen, wenn Sie
+die Rücktransformation nicht finden.
 \end{hinweis}
 
 \begin{loesung}
@@ -28,7 +28,7 @@ s{\cal L}u(x,s) - \underbrace{u(x,0)}_{\displaystyle =0}
 =
 -\frac1x{\cal L}u(x,s).
 \]
-Der besseren "Ubersicht halber k"urzen wir ${\cal L}u(x,s)=y_s(x)$ ab
+Der besseren "Ubersicht halber kürzen wir ${\cal L}u(x,s)=y_s(x)$ ab
 und erhalten
 \begin{align*}
 3y_s'(x) + sy_s(x) &= -\frac1x y_s(x)
@@ -43,7 +43,7 @@ Durch Integration der letzten Zeile finden wir
 \\
 y_s(x) &= C(s) e^{-sx/3}\frac1{\sqrt[3]{x}}\qquad\text{mit}\quad C(s)=e^{k(s)}.
 \end{align*}
-Darin ist die Konstante $C(s)$ aus den Randbedingungen f"ur $x=1$
+Darin ist die Konstante $C(s)$ aus den Randbedingungen für $x=1$
 noch zu ermitteln.
 Die Laplace-Transformiere von $u(1,t)$ ist
 \begin{align*}
@@ -58,7 +58,7 @@ Die Laplace-Transformiere von $u(1,t)$ ist
 =
 \biggl[ -\frac1{s^2}e^{-st}\biggr]_0^\infty=\frac1{s^2}.
 \end{align*}
-Setzt man dies in die Randbedingung f"ur $y_s(1)$ ein, erh"alt man
+Setzt man dies in die Randbedingung für $y_s(1)$ ein, erhält man
 \[
 {\cal L}u(1,s) = \frac1{s^2} = y_s(1)=C(s) e^{-s/3}
 \qquad
@@ -66,7 +66,7 @@ Setzt man dies in die Randbedingung f"ur $y_s(1)$ ein, erh"alt man
 \qquad
 C(s) = \frac{e^{s/3}}{s^2}.
 \]
-Damit kann man jetzt auch die Laplace-Transformierte der L"osung der gegeben
+Damit kann man jetzt auch die Laplace-Transformierte der Lösung der gegeben
 partiellen Differentialgleichung hinschreiben:
 \[
 {\cal L}u(x,s)
@@ -81,7 +81,7 @@ y_s(x)
 %\begin{figure}
 %\centering
 %\includeagraphics[width=0.7\hsize]{loes.jpg}
-%\caption{L"osungsfl"ache der Differentialgleichung~(\ref{50000012:dgl})
+%\caption{Lösungsfläche der Differentialgleichung~\eqref{50000012:dgl}
 %in Aufgabe~\ref{50000011}
 %\label{50000012:graph}}
 %\end{figure}
@@ -94,8 +94,8 @@ y_s(x)
 Laplacetransformierte Differentialgleichung ({\bf D}) 1 Punkt,
 Einsetzen der zweiten Randbedingung ({\bf Z}) 1 Punkt,
 Laplacetransformierte der ersten Randbedingung als Anfangsbedingung
-der gew"ohnlichen Differentialgleichung ({\bf R}) 1 Punkt,
-L"osung der homogenen Differentialgleichung ({\bf H}) 1 Punkt,
+der gewöhnlichen Differentialgleichung ({\bf R}) 1 Punkt,
+Lösung der homogenen Differentialgleichung ({\bf H}) 1 Punkt,
 Bestimmung der Konstanten $C$ ({\bf C}) 1 Punkt,
-(Laplace-Transformierte der) L"osung ({\bf L}) 1 Punkt.
+(Laplace-Transformierte der) Lösung ({\bf L}) 1 Punkt.
 \end{bewertung}

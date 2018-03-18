@@ -11,19 +11,19 @@ soll im Gebiet
 \[
 \Omega = \{(x,y) \,|\, x > 0, y > 0\}
 \]
-gel"ost werden.
-Am linken Rand soll die L"osung die Randbedingung
+gelöst werden.
+Am linken Rand soll die Lösung die Randbedingung
 \[
 u(0, y)=\sin e^{y^2},\quad y>0
 \]
-erf"ullen.
-Da diese Funktion f"ur grosse Argumente sehr rasch oszilliert,
-ist die numerische L"osung nicht ganz einfach.
-F"ur eine erste Diskussion der L"osung w"are es jedoch ausreichend,
-wenn man die Werte $u(1,y)$ f"ur $0<y<1$ bestimmen k"onnte.
-Es wird behauptet, man k"onne diese Werte auch bestimmen,
+erfüllen.
+Da diese Funktion für grosse Argumente sehr rasch oszilliert,
+ist die numerische Lösung nicht ganz einfach.
+Für eine erste Diskussion der Lösung wäre es jedoch ausreichend,
+wenn man die Werte $u(1,y)$ für $0<y<1$ bestimmen könnte.
+Es wird behauptet, man könne diese Werte auch bestimmen,
 wenn die Randwerte $u(0,y)=0$
-gesetzt werden f"ur gen"ugend grosse $y>a$. Wie gross muss $a$
+gesetzt werden für genügend grosse $y>a$. Wie gross muss $a$
 sein, damit diese Aussage stimmt?
 
 \begin{loesung}
@@ -41,17 +41,17 @@ mit der Determinanten
 die im ganzen Gebiet $\Omega$ negativ ist. Die Differentialgleichung ist
 also hyperbolisch.
 
-F"ur hyperbolische partielle Differentialgleichungen kann mit Hilfe der
+Für hyperbolische partielle Differentialgleichungen kann mit Hilfe der
 Charakteristiken entschieden werden, ob ein Randwert Einfluss auf einen
-Funktionswert hat. Wir stellen daher zun"achst die Differentialgleichung
+Funktionswert hat. Wir stellen daher zunächst die Differentialgleichung
 der Charakteristiken auf:
 \begin{align*}
 \dot y^2-y\dot x^2&=0\\
 \biggl(\frac{\dot y}{\dot x}\biggr)^2&=y\\
 y'&=\pm\sqrt{y}.
 \end{align*}
-Diese gew"ohnliche Differentialgleichung kann mit der Separationsmethode
-gel"ost werden:
+Diese gewöhnliche Differentialgleichung kann mit der Separationsmethode
+gelöst werden:
 \begin{align*}
 \int\frac{dy}{\sqrt{y}}
 =\int y^{-\frac12}\,dy
@@ -61,16 +61,16 @@ gel"ost werden:
 \Rightarrow\qquad
 y&=\biggl(\frac12 x + C\biggr)^2
 \end{align*}
-Die Charakteristiken sind also Parabeln, die die $x$-Achse ber"uhren,
+Die Charakteristiken sind also Parabeln, die die $x$-Achse berühren,
 siehe Abbildung~\ref{90000009:domain}.
 \begin{figure}
 \begin{center}
 \includeagraphics[]{domain-1.pdf}
 \end{center}
-\caption{Charakteristiken (rot) der Differentialgleichung (\ref{90000009:dgl}).
+\caption{Charakteristiken (rot) der Differentialgleichung \eqref{90000009:dgl}.
 Die hervorgehobenen Charakteristiken durch den Punkt $(1,1)$ bestimmen,
 welche Intervalle von Anfangspunkten auf der $y$-Achse die Werte 
-$u(1,y)$ der L"osung f"ur $0<y<1$ beeinflussen k"onnen.
+$u(1,y)$ der Lösung für $0<y<1$ beeinflussen können.
 \label{90000009:domain}}
 \end{figure}
 
@@ -80,9 +80,9 @@ findet, welche durch den Punkt $(0,a)$ und $(1,1)$ geht:
 1&=\biggl(\frac12\cdot 1^2 + C\biggr)^2&&\Rightarrow& \pm1&=\frac12 + C&&\Rightarrow& C&=\begin{cases}\frac12&\\-\frac32\end{cases}\\
 a&=\biggl(\frac12\cdot 0 + C\biggr)^2=C^2&&           &     &            &&\Rightarrow& a&=\begin{cases}\frac14&\\\frac94&\end{cases}
 \end{align*}
-Der Wert $a=\frac14$ geh"ort zur Charakteristik, die im Punkt $(-1,0)$
-die $x$-Achse ber"uhrt, der Wert $a=\frac94$ geh"ort zur Charakterstik,
-die in $(3,0)$ ber"uhrt.
+Der Wert $a=\frac14$ gehört zur Charakteristik, die im Punkt $(-1,0)$
+die $x$-Achse berührt, der Wert $a=\frac94$ gehört zur Charakterstik,
+die in $(3,0)$ berührt.
 Kein Randwert mit $y>a=\frac94$ kann je einen Funktionswert $u(1,y)$ mit $0<y<1$
 beeinflussen.
 \end{loesung}
@@ -91,7 +91,7 @@ beeinflussen.
 Symbolmatrix ({\bf S}) 1 Punkt,
 Differentialgleichung ist hyperbolisch ({\bf H}) 1 Punkt,
 Differentialgleichung der Charakteristiken ({\bf X}) 1 Punkt,
-L"osung der Differentialgleichung ({\bf L}) 1 Punkt,
-Bedingung f"ur Charakteristik druch Punkt $(1,1)$ ({\bf B}) 1 Punkt,
+Lösung der Differentialgleichung ({\bf L}) 1 Punkt,
+Bedingung für Charakteristik druch Punkt $(1,1)$ ({\bf B}) 1 Punkt,
 Bestimmung von $a$ ({\bf A}) 1 Punkt.
 \end{bewertung}

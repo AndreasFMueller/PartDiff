@@ -4,7 +4,7 @@ ist die Differentialgleichung
 x\frac{\partial u}{\partial x}+\frac{\partial u}{\partial t}=0
 \label{50000008:gleichung}
 \end{equation}
-gegeben. Die L"osung soll die Randbedingungen
+gegeben. Die Lösung soll die Randbedingungen
 \[
 u(1,t)=1-\cos at
 \qquad
@@ -12,21 +12,21 @@ u(1,t)=1-\cos at
 \qquad
 u(x,0)=0
 \]
-erf"ullen ($a > 0$).
+erfüllen ($a > 0$).
 \begin{teilaufgaben}
 \item Verwenden Sie die Laplace-Transformation nach $t$,
-um (\ref{50000008:gleichung}) in eine Familie gew"ohnlicher
+um \eqref{50000008:gleichung} in eine Familie gewöhnlicher
 Differentialgleichungen zu verwandeln.
 \item 
-Ist die L"osung der Differentialgleichung~(\ref{50000008:gleichung}) durch
+Ist die Lösung der Differentialgleichung~\eqref{50000008:gleichung} durch
 die Randbedingungen eindeutig festgelegt?
 \item
-L"osen Sie die in a) gefundene gew"ohnliche Differentialgleichung,
+Lösen Sie die in a) gefundene gewöhnliche Differentialgleichung,
 soweit dies in geschlossener Form\footnote{In geschlossener Form
-l"osen heisst, dass man eine Formel f"ur die L"osung angeben kann, die 
+lösen heisst, dass man eine Formel für die Lösung angeben kann, die 
 nur die wohlbekannten Funktionen verwendet, und in der keine nicht
 ausgerechneten Integrale mehr stehen.
-} m"oglich ist.
+} möglich ist.
 \end{teilaufgaben}
 
 \begin{hinweis}
@@ -42,7 +42,7 @@ Anfangsbedingungen nicht vergessen!
 \begin{teilaufgaben}
 \item
 Die Laplacetransformation nach der Variablen $t$
-ergibt f"ur die Differentialgleichung
+ergibt für die Differentialgleichung
 \[
 x\frac{\partial{\cal L}u(x,s)}{\partial x}
 -
@@ -55,26 +55,26 @@ x\frac{\partial{\cal L}u(x,s)}{\partial x}
 +
 s{\cal L}u(x,s)=0.
 \]
-Die Anfangsbedingung f"ur ${\cal L}u(x,s)$ f"ur $x=1$ ist die
+Die Anfangsbedingung für ${\cal L}u(x,s)$ für $x=1$ ist die
 Laplacetransformierte der Kosinusfunktion
 \[
 {\cal L}u(1,s)=\frac1s-\frac{s}{s^2+a^2} = \frac{a^2}{s(s^2+a^2)}.
 \]
 In der letzten Form erkennt man auch, dass die Laplacetransformierte
-f"ur alle $s$ positiv ist.
+für alle $s$ positiv ist.
 \item
-Die Theorie der gew"ohnlichen Differentialgleichungen garantiert, dass
+Die Theorie der gewöhnlichen Differentialgleichungen garantiert, dass
 die Funktionen ${\cal L}u(x,s)$ eindeutig festgelegt sind, damit folgt
 auch, dass $u(x,t)$ eindeutig festgelegt ist.
 \item
 Schreiben wir $y_s(x)={\cal L}u(x,s)$ erhalten wir die Differentialgleichung
-in etwas "ubersichtlicherer Form
+in etwas übersichtlicherer Form
 \begin{equation}
 xy_s'(x)+sy_s(x)=0.
 \label{50000008:sdgl}
 \end{equation}
-Diese gew"ohnliche Differentialgleichung kann mit Separation der
-Variablen gel"ost werden:
+Diese gewöhnliche Differentialgleichung kann mit Separation der
+Variablen gelöst werden:
 \begin{align*}
 \frac{y_s'}{y_s}&=-\frac{s}{x}
 \\
@@ -84,7 +84,7 @@ Variablen gel"ost werden:
 \\
 y_s(x)&=Cx^{-s}.
 \end{align*}
-Die Anfangsbedingung f"ur $x=1$ liefert
+Die Anfangsbedingung für $x=1$ liefert
 \begin{equation}
 y_s(1)=C=\frac{s}{s^2+a^2}
 \qquad\Rightarrow\qquad
@@ -95,22 +95,22 @@ y_s(x)
 \frac{a^2}{s(s^2+a^2)}x^{-s}.
 \label{50000008:loesung}
 \end{equation}
-Die rechte Seite ist immer positiv, ansonsten w"are die oben durchgef"uhrte
-L"osung der Differentialgleichung nicht zul"assig.
+Die rechte Seite ist immer positiv, ansonsten wäre die oben durchgeführte
+Lösung der Differentialgleichung nicht zulässig.
 \qedhere
 \end{teilaufgaben}
 \end{loesung}
 
 \begin{diskussion}
-Die R"ucktransformation von (\ref{50000008:loesung}) l"asst sich
-ebenfalls durchf"uhren, verlangt aber vertiefte Kenntnisse der
+Die Rücktransformation von \eqref{50000008:loesung} lässt sich
+ebenfalls durchführen, verlangt aber vertiefte Kenntnisse der
 Laplace-Transformation, und war daher nicht verlangt.
 
-Den Faktor $x^{-s}$ auf der rechten Seite von (\ref{50000008:loesung})
+Den Faktor $x^{-s}$ auf der rechten Seite von \eqref{50000008:loesung}
 kann man auch als $e^{-s\log x}$
 schreiben, damit wird klar, dass $u(x,t)$ nur eine um $\log x$ verschobene
 Version der Funktion $u(1,t)$ ist. 
-Die zweite Verschiebeeigenschaft der Laplace-Transformation lautet n"amlich
+Die zweite Verschiebeeigenschaft der Laplace-Transformation lautet nämlich
 \[
 {\cal L}\bigl(f(t-\log x)\theta(t-\log x)\bigr)
 =
@@ -130,24 +130,24 @@ u(x,t)=\begin{cases}
 \end{cases}
 \label{50000008:ruecktransformiert}
 \end{equation}
-die L"osung der Differentialgleichung (\ref{50000008:gleichung}) ist.
+die Lösung der Differentialgleichung \eqref{50000008:gleichung} ist.
 \begin{figure}
 \centering
 \includeagraphics[]{domain-1.pdf}
-\caption{Charakteristiken der Differentialgleichung~(\ref{50000008:gleichung})
+\caption{Charakteristiken der Differentialgleichung~\eqref{50000008:gleichung}
 \label{50000008:charakteristiken}}
 \end{figure}
 \begin{figure}
 \centering
 \includeagraphics[width=\hsize]{loes.jpg}
-\caption{3D-Darstellung der L"osungsfl"ache der
-Differentialgleichung~(\ref{50000008:gleichung}), $x$-Achse nach vorne.
+\caption{3D-Darstellung der Lösungsfläche der
+Differentialgleichung~\eqref{50000008:gleichung}, $x$-Achse nach vorne.
 \label{50000008:loesung}}
 \end{figure}
 
 
-Diese quasilineare partielle Differentialgleichung kann nat"urlich auch
-mit Hilfe von Charakteristiken gel"ost werden.
+Diese quasilineare partielle Differentialgleichung kann natürlich auch
+mit Hilfe von Charakteristiken gelöst werden.
 Die Differentialgleichungen der Charakteristiken sind
 \begin{equation}
 \begin{aligned}
@@ -165,35 +165,35 @@ u(\tau)&=u_0
 \end{aligned}
 \label{50000008:chardgl}
 \end{equation}
-Die Randbedingungen legen die L"osung eindeutig fest, wie man aus
+Die Randbedingungen legen die Lösung eindeutig fest, wie man aus
 Abbildung~\ref{50000008:charakteristiken} ablesen kann.
 
 Die Charakteristik durch den Punkt $(1,0)$, in Abildung~\ref{50000008:charakteristiken} etwas breiter eingezeichnet, spielt eine besondere Rolle.
 Funktionswerte in Punkten oberhalb dieser Charakteristik sind durch die 
 Randbedingung $u(1,t)=1-\cos at$ festgelegt, Funktionswerte in Punkten
 unterhalb dieser Charakteristik sind $0$.
-F"ur diese Charakteristik ist $x_0=1$ und $t_0=0$, die Charakteristik
+Für diese Charakteristik ist $x_0=1$ und $t_0=0$, die Charakteristik
 hat daher die Gleichung $t=\log x$, wie man aus den ersten zwei Gleichungen
-von (\ref{50000008:chardgl}) ablesen kann.
+von \eqref{50000008:chardgl} ablesen kann.
 
-Aus der zweiten Gleichung von (\ref{50000008:chardgl})
+Aus der zweiten Gleichung von \eqref{50000008:chardgl}
 liest man $\tau=t-t_0$ ab, so dass 
 $x=x_0e^{t-t_0}$ folgt.
-F"ur die Randbedingung f"ur $x=1$ folgt $x=e^{t-t_0}$
-oder $t_0=t-\log x$ und damit die L"osung 
+Für die Randbedingung für $x=1$ folgt $x=e^{t-t_0}$
+oder $t_0=t-\log x$ und damit die Lösung 
 \[
 u(\tau)=u_0=1-\cos at_0=1-\cos a(t-\log x).
 \]
-Da f"ur Punkte unterhalb der Charakteristik $t=\log x$ der Funktionswert $0$
-sein muss, erh"alt man wieder (\ref{50000008:ruecktransformiert}) als L"osung.
+Da für Punkte unterhalb der Charakteristik $t=\log x$ der Funktionswert $0$
+sein muss, erhält man wieder \eqref{50000008:ruecktransformiert} als Lösung.
 \end{diskussion}
 
 \begin{bewertung}
 Transformation der Gleichung ({\bf G}) 1 Punkt,
 Laplace-Transformation der Anfangsbedingung ({\bf A}) 1 Punkt,
 Eindeutigkeit in Teilaufgabe b) ({\bf E}) 1 Punkt,
-Separation der homogenen Differentialgleichung (\ref{50000008:sdgl})
+Separation der homogenen Differentialgleichung \eqref{50000008:sdgl}
 ({\bf S}) 1 Punkt,
-L"osung der homogenen Gleichung ({\bf L}) 1 Punkt,
-Einsetzen der Anfangsbedingungen (\ref{50000008:loesung}) ({\bf R}) 1 Punkt.
+Lösung der homogenen Gleichung ({\bf L}) 1 Punkt,
+Einsetzen der Anfangsbedingungen \eqref{50000008:loesung} ({\bf R}) 1 Punkt.
 \end{bewertung}
