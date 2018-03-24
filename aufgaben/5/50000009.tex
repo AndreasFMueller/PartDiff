@@ -10,22 +10,22 @@ Auf dem Gebiet $\Omega = \{(x,t)\,|\, x,t > 0\}$ ist die Differentialgleichung
 gegeben mit den Randbedingungen
 \begin{equation}
 \begin{aligned}
-u(x,0)&=x^2&\text{f"ur}\quad x&>0\\
-u(0,t)&=t  &\text{f"ur}\quad t&>0
+u(x,0)&=x^2&\text{für}\quad x&>0\\
+u(0,t)&=t  &\text{für}\quad t&>0
 \end{aligned}
 \end{equation}
-Finden Sie eine L"osung.
-(Aufgabe von Tobias Pl"uss, HSLU 2015)
+Finden Sie eine Lösung.
+(Aufgabe von Tobias Plüss, HSLU 2015)
 
-\begin{proof}[L"osung mit Laplace-Transformation]
+\begin{proof}[Lösung mit Laplace-Transformation]
 Die Laplace-Transformation der Variablen $t$ verwandelt die
-Differentialgleichung (\ref{50000009:dgl}) in eine Differentialgleichung
+Differentialgleichung \eqref{50000009:dgl} in eine Differentialgleichung
 \[
 \frac{\partial U}{\partial x}+sU=\frac1s+x^2
 \]
-f"ur die Funtion $U(x,s)=({\cal L}u)(x,s)$. Wir betrachten Sie
-als eine gew"ohnliche inhomogene lineare Differentialgleichung,
-und l"osen Sie mit dem "ublichen Verfahren. Dazu muss erst die L"osung 
+für die Funtion $U(x,s)=({\cal L}u)(x,s)$. Wir betrachten Sie
+als eine gewöhnliche inhomogene lineare Differentialgleichung,
+und lösen Sie mit dem üblichen Verfahren. Dazu muss erst die Lösung 
 der homogenen Differentialgleichung
 \[
 U' + sU = 0
@@ -36,7 +36,7 @@ U'=-sU
 \qquad\Rightarrow\qquad
 U=ke^{-xs}.
 \]
-Die inhomogene Gleichung wird dann durch Variation der Konstanten $k$ gel"ost,
+Die inhomogene Gleichung wird dann durch Variation der Konstanten $k$ gelöst,
 man findet
 \[
 k' = e^{sx}\biggl(\frac1s+x^2\biggr).
@@ -46,7 +46,7 @@ man bekommt
 \[
 k=e^{sx}\frac{s^2x^2-2sx+s+2}{s^3}+C
 \]
-und damit f"ur die L"osung
+und damit für die Lösung
 \begin{equation}
 U=\frac{s^2x^2-2sx+s+2}{s^3}+Ce^{-sx}.
 \label{50000009:allg}
@@ -56,7 +56,7 @@ $u(0,t)=t$ bekommt man durch Laplace-Transformation
 \[
 U(0,s)=\frac1{s^2}.
 \]
-Durch Einsetzen von $x=0$ in die allgemeine L"osung~(\ref{50000009:allg})
+Durch Einsetzen von $x=0$ in die allgemeine Lösung~\eqref{50000009:allg}
 findet man
 \[
 U(0,s)=\frac{s+2}{s^3}+C=\frac1{s^2}
@@ -69,8 +69,8 @@ U(x,s)=\frac{s^2x^2-2sx+s+2}{s^3}
 +
 e^{-sx}\biggl(\frac1{s^2}-\frac{s+2}{s^3}\biggr).
 \]
-Dies ist die Laplace-Transformierte der L"osung $u(x,t)$, $U$ muss jetzt
-also noch zur"ucktransformiert werden.
+Dies ist die Laplace-Transformierte der Lösung $u(x,t)$, $U$ muss jetzt
+also noch zurücktransformiert werden.
 Die Rechnung ergibt
 \[
 u(x,t)=x^2-2xt+t+t^2-(t-x)^2\theta(t-x),
@@ -90,8 +90,8 @@ t+(t-x)^2(1- \theta(t-x))
 &=t+(x-t)^2\theta(x-t).
 \label{50000009:laplaceloesung}
 \end{align}
-Das Auftreten der Heaviside-Funktion k"onnte dazu verleiten anzunehmen,
-die L"osungsfunktion sei nicht stetig. Da die Heaviside-Funktion
+Das Auftreten der Heaviside-Funktion könnte dazu verleiten anzunehmen,
+die Lösungsfunktion sei nicht stetig. Da die Heaviside-Funktion
 aber mit einer stetigen Funktion multipliziert wird, die genau dort
 verschwindet, wo die Heaviside-Funktion ihre Sprungstelle hat, 
 ist das Resultat stetig. Man kann es auch so schreiben:
@@ -101,11 +101,11 @@ t&\qquad x<t\\
 t+(x-t)^2&\qquad\text{sonst}.
 \end{cases}
 \]
-f"ur $x=t$ geben beide Teilfunktionen den Wert $t$, die Funktion $u(x,t)$
+für $x=t$ geben beide Teilfunktionen den Wert $t$, die Funktion $u(x,t)$
 ist also stetig.
 \end{proof}
 
-\begin{proof}[L"osung mit Charakteristiken]
+\begin{proof}[Lösung mit Charakteristiken]
 \begin{figure}
 \centering
 \includeagraphics[]{domain-1.pdf}
@@ -115,12 +115,12 @@ ist also stetig.
 \begin{figure}
 \centering
 \includeagraphics[width=0.6\hsize]{loes.jpg}
-\caption{L"osungsfl"ache der Differentialgleichung~\ref{50000009:dgl}
+\caption{Lösungsfläche der Differentialgleichung~\ref{50000009:dgl}
 mit Charakteristiken
 \label{50000009:loesung}}
 \end{figure}
 Die Differentialgleichung ist quasilinear und von erster Ordnung, man kann
-sie also auch mit Charakteristiken l"osen.
+sie also auch mit Charakteristiken lösen.
 Die Differentialgleichung der Charakteristiken mit Parameter $\tau$ ist
 \[
 \begin{aligned}
@@ -131,10 +131,10 @@ Die Differentialgleichung der Charakteristiken mit Parameter $\tau$ ist
 \]
 Den Verlauf der Projektionen der Charakteristiken auf die $x$-$t$-Ebene zeigt
 Abbildung~\ref{50000009:charakteristiken}.
-Wir m"ussen die Charakteristiken danach unterscheiden, ob sie den unteren
+Wir müssen die Charakteristiken danach unterscheiden, ob sie den unteren
 oder den linken Rand des Gebietes treffen.
 
-F"ur Charakteristiken, die den linken Rand des Gebietes treffen, ist $x_0=0$
+Für Charakteristiken, die den linken Rand des Gebietes treffen, ist $x_0=0$
 und $u_0=u(0,t_0)=t_0$, also
 \[
 \begin{aligned}
@@ -143,10 +143,10 @@ t&=x+t_0&&\Rightarrow& t_0&=t-x\\
 u&=x+(t-x)=t.
 \end{aligned}
 \]
-Aus der Bedingung $t_0>0$ lesen wir ab, dass diese L"osung f"ur Punkte
+Aus der Bedingung $t_0>0$ lesen wir ab, dass diese Lösung für Punkte
 mit $t>x$ gilt.
 
-F"ur die Charakteristiken, die den unteren Rand des Gebietes treffen,
+Für die Charakteristiken, die den unteren Rand des Gebietes treffen,
 ist $t_0=0$ und $u_0=u(x_0,0)=x_0^2$, also
 \[
 \begin{aligned}
@@ -155,18 +155,18 @@ x&=t+x_0&&\Rightarrow&x_0=x-t\\
 u&=t+x_0^2=t+(x-t)^2.
 \end{aligned}
 \]
-Aus der Bedingung $x_0>0$ lesen wir diesmal ab, dass diese L"osung f"ur Punkte
+Aus der Bedingung $x_0>0$ lesen wir diesmal ab, dass diese Lösung für Punkte
 mit $t < x$ gilt.
 
-Will man beide L"osungsteile in einer einzigen Funktion schreiben, kann
-man dazu die Heaviside-Funktion verwenden. Die zweite L"osung hat ja
-einen zus"atzlichen Term $(x-t)^2$, der genau dann auftritt, wenn $t<x$
+Will man beide Lösungsteile in einer einzigen Funktion schreiben, kann
+man dazu die Heaviside-Funktion verwenden. Die zweite Lösung hat ja
+einen zusätzlichen Term $(x-t)^2$, der genau dann auftritt, wenn $t<x$
 gilt, oder wenn $\theta(x-t)=1$ ist.
-Die L"osung ist daher
+Die Lösung ist daher
 \begin{equation}
 u(x,t)=t+(x-t)^2\theta(x-t),
 \label{50000009:charakteristikenloesung}
 \end{equation}
-was mit der L"osung~(\ref{50000009:laplaceloesung}) "ubereinstimmt.
+was mit der Lösung~\eqref{50000009:laplaceloesung} übereinstimmt.
 \end{proof}
 

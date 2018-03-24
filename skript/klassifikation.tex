@@ -6,28 +6,28 @@
 %
 \chapter{Begriffe und Klassifikation}
 \lhead{Begriffe und Klassifikation}
-Partielle Differentialgleichungen sind Gleichungen f"ur eine
+Partielle Differentialgleichungen sind Gleichungen für eine
 unbekannte Funktion mehrere Variablen, die Werte der Funktion
-mit ihren partiellen Ableitungen verkn"upft.
-In diesem Kapitel schreiben wir f"ur die gesuchte Funktion immer
+mit ihren partiellen Ableitungen verknüpft.
+In diesem Kapitel schreiben wir für die gesuchte Funktion immer
 $u(x_1,\dots,x_n)$, die Variablen sind $x_1,\dots,x_n$.
-Wir schreiben daf"ur auch
+Wir schreiben dafür auch
 \[
 u\colon \mathbb R^n\to\mathbb R:(x_1,\dots,x_n)\mapsto u(x_1,\dots,x_n).
 \]
-Zu kl"aren ist folgendes:
+Zu klären ist folgendes:
 \begin{compactenum}
 \item Was genau ist eine partielle Differentialgleichung?
 \item Wo ist sie definiert?
 \item Wie sind Anfangs- und Randbedingungen zu formulieren?
 \item Welche Arten von partiellen Differentialgleichungen gibt es?
 \end{compactenum}
-Wir schreiben oft auch kompakter $x=(x_1,\dots,x_n)$ f"ur die Punkte
+Wir schreiben oft auch kompakter $x=(x_1,\dots,x_n)$ für die Punkte
 aus $\mathbb R^n$.
 
 \rhead{Differentialgleichungen}
 \section{Differentialgleichungen\label{klassifikation:differentialgleichungen}}
-Eine partielle Differentialgleichung verkn"upft die Funktionswerte
+Eine partielle Differentialgleichung verknüpft die Funktionswerte
 $u(x_1,\dots,x_n)$ mit den Werten der partiellen Ableitungen
 \begin{equation}
 \frac{\partial u}{\partial x_1},
@@ -42,12 +42,12 @@ $u(x_1,\dots,x_n)$ mit den Werten der partiellen Ableitungen
 \frac{\partial^3 u}{\partial x_{i_1}\partial x_{i_2}\partial x_{i_3}},\dots
 \label{ableitungen}
 \end{equation}
-W"ahrend es bei einer Funktion von einer Variablen nur eine Ableitung
+Während es bei einer Funktion von einer Variablen nur eine Ableitung
 jeder Ordnung gibt, hat eine Funktion von $n$ Variablen $n^k$ Ableitungen
 der Ordnung $k$.
 
 Eine Differentialgleichung liegt vor, wenn bekannt ist, wie verschiedenen
-Ableitungen miteinander verkn"upft werden m"ussen.
+Ableitungen miteinander verknüpft werden müssen.
 Die Wellengleichung hatte zum Beispiel die Form
 \begin{equation}
 \frac{\partial^2 u}{\partial x_1^2}
@@ -63,7 +63,7 @@ es werden also nur die beiden zweiten Ableitungen
 \qquad
 \frac{\partial^2 u}{\partial x_2^2}
 \]
-miteinander vernk"upft, die anderen Ableitungen der Liste
+miteinander vernküpft, die anderen Ableitungen der Liste
 (\ref{ableitungen}) kommen gar nicht vor.
 Schreiben wir
 \[
@@ -77,18 +77,18 @@ F\biggl(
 \frac{\partial^2 u}{\partial x_2^2}
 \biggr)=0.
 \]
-Die Funktion $F$ k"onnte allerdings noch beliebig viel komplizierter
+Die Funktion $F$ könnte allerdings noch beliebig viel komplizierter
 ausfallen.
-Sie k"onnte zum Beispiel auch noch von den Variablen $x_1,\dots,x_n$,
+Sie könnte zum Beispiel auch noch von den Variablen $x_1,\dots,x_n$,
 den Funktionswerten $u(x_1,\dots,x_n)$ und von weiteren Ableitungen
-abh"angen.
-Und die Abh"angigkeit von den Ableitungen k"onnte komplizierter sein,
+abhängen.
+Und die Abhängigkeit von den Ableitungen könnte komplizierter sein,
 nicht nur linear wie in diesem Beispiel.
 
 Allgemein ist eine partielle Differentialgleichung gegeben
 durch eine Funktion
 \[
-F(x_1,\dots,x_n,u,\dots\text{Variablen f"ur partielle Ableitungen von $u$}\dots).
+F(x_1,\dots,x_n,u,\dots\text{Variablen für partielle Ableitungen von $u$}\dots).
 \]
 Die Differentialgleichung
 entsteht dadurch, dass man die unbekannte Funktion
@@ -98,23 +98,23 @@ gleich $0$ setzt:
 F\biggl(x_1,\dots,x_n,u(x_1,\dots,x_n),\dots,
 \frac{\partial^k u}{\partial x_{i_1}\partial x_{i_2}\dots \partial x_{i_k}},\dots\biggr)=0.
 \]
-Oft verwendete Bezeichnungen f"ur die Variablen f"ur die Ableitungen sind
-$p_i$ f"ur die ersten Ableitungen und $t_{ij}$ f"ur die zweiten Ableitungen.
+Oft verwendete Bezeichnungen für die Variablen für die Ableitungen sind
+$p_i$ für die ersten Ableitungen und $t_{ij}$ für die zweiten Ableitungen.
 
 
 \subsection{Ordnung\label{klassifikation:ordnung}}
 \index{Ordnung}
-\index{Differntialgleichung!gew\"ohnliche}
-Wie bei gew"ohnlichen Differentialgleichungen ist die Ordnung
-die h"ochste Ableitung der unbekannten Funktion, die in der
-Differentialgleichung vorkommt. Wir wollen dies etwas ausf"uhrlicher
-diskutieren f"ur partielle Differentialgleichungen f"ur eine Funktion
+\index{Differntialgleichung!gew\öhnliche}
+Wie bei gewöhnlichen Differentialgleichungen ist die Ordnung
+die höchste Ableitung der unbekannten Funktion, die in der
+Differentialgleichung vorkommt. Wir wollen dies etwas ausführlicher
+diskutieren für partielle Differentialgleichungen für eine Funktion
 $u$ in den Variablen $x_1,\dots,x_n$.
 
 \subsubsection{Partielle Differentialgleichung erster Ordnung}
 In einer PDGL erster Ordnung kommen nur erste Ableitungen der
 unbekannten Funktion vor.
-Sie l"asst sich also in der Form 
+Sie lässt sich also in der Form 
 \[
 F\biggl(x_1,\dots,x_n, u, \frac{\partial u}{\partial x_1},\dots,\frac{\partial u}{\partial x_n}\biggr)=0
 \]
@@ -137,9 +137,9 @@ q\to\frac{\partial u}{\partial y}.
 
 \subsubsection{Partielle Differentialgleichung zweiter Ordnung}
 Wie das erste Kapitel gezeigt hat, sind die PDGL zweiter Ordnung bei weitem
-die wichtigsten. Eine solche PDGL enth"alt neben den ersten Ableitungen
-auch alle zweiten Ableitungen. Da die L"osungsfunktion stetig differenzierbar
-sein wird, h"angen die gemischten Ableitungen nicht von der Reihenfolge
+die wichtigsten. Eine solche PDGL enthält neben den ersten Ableitungen
+auch alle zweiten Ableitungen. Da die Lösungsfunktion stetig differenzierbar
+sein wird, hängen die gemischten Ableitungen nicht von der Reihenfolge
 ab, also
 \[
 \frac{\partial^2 u}{\partial x_i\partial x_j}
@@ -170,24 +170,24 @@ Funktionen
 \begin{align*}
 F(t_{11},\dots,t_{nn})&=t_{11}-a^2(t_{22}+\dots+t_{nn})&&\text{Wellengleichung}
 \\
-F(p_1,t_{22},\dots,t_{nn})&=p_1-a^2(t_{22}+\dots+t_{nn})&&\text{W"armeleitung}
+F(p_1,t_{22},\dots,t_{nn})&=p_1-a^2(t_{22}+\dots+t_{nn})&&\text{Wärmeleitung}
 \\
 F(t_{11},\dots,t_{nn})&=t_{11}+\dots+t_{nn}&&\text{Poisson-Problem}
 \end{align*}
 
-\subsection{*Multiindizes und h"ohere partielle Ableitungen\label{klassifikation:multiindizes}}
+\subsection{*Multiindizes und höhere partielle Ableitungen\label{klassifikation:multiindizes}}
 Im vorangegangenen Abschnitt wurden gemischte partielle Ableitungen
-nach verschiedenen unabh"angigen Variablen ben"otigt. Die Notation
+nach verschiedenen unabhängigen Variablen benötigt. Die Notation
 \[
 \frac{\partial^k u}{\partial x_{i_1}\partial x_{i_2}\dots\partial x_{i_k}}
 \]
-wirkt etwas schwerf"allig. In dem Formelzeichen steckt ja eigentlich
+wirkt etwas schwerfällig. In dem Formelzeichen steckt ja eigentlich
 nur die Information, dass nach den Variablen abgeleitet werden
 soll, die die Nummern $i_1,\dots,i_k$ haben, und dabei kommt es
 nicht einmal auf deren Reihenfolge an, nur die Anzahl Ableitungen
-f"ur jede Variable ist wesentlich.
+für jede Variable ist wesentlich.
 \begin{definition}
-Wir nennen ${\bf k}=(k_1,\dots,k_n)$ einen Multiindex der L"ange $n$.
+Wir nennen ${\bf k}=(k_1,\dots,k_n)$ einen Multiindex der Länge $n$.
 Der Grad des Multiindex ist $|{\bf k}|=k_1+\dots+k_n$.
 \end{definition}
 Mit Multiindizes kann man Terme, die in der mehrdimensionalen
@@ -200,7 +200,7 @@ x^{\mathbf k}&=x_1^{k_1}x_2^{k_2}\dots x_n^{k_n}\\
 =\frac{\partial^{|{\mathbf k}|}}{\partial x_1^{k_1}\dots\partial x_n^{k_n}}u
 =D^{\mathbf k}u=D_1^{k_1}D_2^{k_2}\dots D_n^{k_n}u
 \end{align*}
-Nat"urlich kann man Multiindizes auch dazu verwenden, andere 
+Natürlich kann man Multiindizes auch dazu verwenden, andere 
 Objekte zu indizieren. Zum Beispiel kann man eine mehrfache Potenzreihe
 jetzt so schreiben:
 \[
@@ -208,7 +208,7 @@ f(x_1,\dots,x_n)=\sum_{\mathbf k}a_{\mathbf k}x^{\mathbf k},
 \]
 wobei die $a_{\mathbf k}\in\mathbb R$ die Koeffizienten der Potenzreihe sind.
 
-Eine partielle Differentialgleichung $m$-ter Ordnung mit $n$ unabh"angigen 
+Eine partielle Differentialgleichung $m$-ter Ordnung mit $n$ unabhängigen 
 Variable ist jetzt eine Funktion
 \begin{align*}
 F&\colon \mathbb R^n\times \mathbb R^{\{{\mathbf k}|\,|{\mathbf k}|\le m\}} \to \mathbb R
@@ -217,25 +217,25 @@ F&\colon \mathbb R^n\times \mathbb R^{\{{\mathbf k}|\,|{\mathbf k}|\le m\}} \to 
 \end{align*}
 Die Funktion hat ausser den Argumenten $x_1,\dots,x_n$ Argumente,
 die mit den Multiindizes angeschrieben sind. Der kleinste Multiindex
-ist $(0,\dots,0)$, er steht f"ur die Funktion $u$. In das Argument mit
+ist $(0,\dots,0)$, er steht für die Funktion $u$. In das Argument mit
 dem Multiindex ${\mathbf k}$ muss die Ableitung von $u$ nach diesem
 Multiindex eingesetzt werden. Die ersten Multiindizes sind
 \[
 (1,0,\dots,0), (0,1,\dots,0),\dots, (0,\dots, 0,1),
 \]
-die zugeh"origen Ableitungen sind die
+die zugehörigen Ableitungen sind die
 ersten partiellen Ableitungen:
 \[
 F(x_1,\dots,x_n,u,\partial_1 u,\dots,\partial_2 u,\dots)=0.
 \]
 
 \subsection{Umwandlung in ein System niedrigerer Ordnung\label{klassifikation:umwandlung}}
-Wie bei gew"ohnlichen Differentialgleichungen kann man auch eine
-partielle Differentialgleichung h"oherer Ordnung in ein System
+Wie bei gewöhnlichen Differentialgleichungen kann man auch eine
+partielle Differentialgleichung höherer Ordnung in ein System
 von partiellen Differentialgleichungen niedrigerer Ordnung
 umwandeln.
 
-Bei einer gew"ohnlichen Differentialgleichung 
+Bei einer gewöhnlichen Differentialgleichung 
 \[
 F(x,y,y',y'',\dots,y^{(n)})=0
 \]
@@ -255,29 +255,29 @@ Ordnung ist eine System von $n$ Differentialgleichungen erster Ordnung
 geworden.
 
 Sei jetzt eine partielle Differentialgleichung zweiter Ordnung mit
-zwei unabh"angigen Variablen $x$ und $y$ gegeben, also eine 
+zwei unabhängigen Variablen $x$ und $y$ gegeben, also eine 
 Gleichung der Form
 \[
 F\biggl(x,y,u,\frac{\partial u}{\partial x},\frac{\partial u}{\partial y},
 \frac{\partial^2 u}{\partial x^2},\frac{\partial^2 u}{\partial x\partial y},
 \frac{\partial^2u}{\partial y^2}\biggr)=0.
 \]
-Nach dem Muster der gew"ohnlichen Differentialgleichung brauchen wir
-jetzt neue Funktionen, die f"ur die Ableitungen stehen, also zum
-Beispiel $p(x,y)$ und $q(x,y)$. Wir m"ussen ausdr"ucken, dass diese
+Nach dem Muster der gewöhnlichen Differentialgleichung brauchen wir
+jetzt neue Funktionen, die für die Ableitungen stehen, also zum
+Beispiel $p(x,y)$ und $q(x,y)$. Wir müssen ausdrücken, dass diese
 Funktionen Ableitungen von $u$ sind, das liefert uns zwei neue
 partielle Differentialgleichungen
 \[
 p=\frac{\partial u}{\partial x},\qquad q=\frac{\partial u}{\partial y}.
 \]
-Auch die zweiten Ableitungen k"onnen wir damit ausdr"ucken:
+Auch die zweiten Ableitungen können wir damit ausdrücken:
 \begin{align*}
 \frac{\partial^2 u}{\partial x^2}&=\frac{\partial p}{\partial x}\\
 \frac{\partial^2 u}{\partial x\partial y}&=\frac{\partial p}{\partial y}=\frac{\partial q}{\partial x}\\
 \frac{\partial^2 u}{\partial y^2}&=\frac{\partial q}{\partial y}
 \end{align*}
-Die urspr"ungliche Differentialgleichung allein reicht jetzt
-nat"urlich nicht mehr, wir haben jetzt ein Differentialgleichungssystem
+Die ursprüngliche Differentialgleichung allein reicht jetzt
+natürlich nicht mehr, wir haben jetzt ein Differentialgleichungssystem
 erster Ordnung
 \begin{align*}
 F\biggl(x,y,u,p,q,\frac{\partial p}{\partial x},\frac{\partial p}{\partial y},\frac{\partial q}{\partial y}\biggr)&=0\\
@@ -286,7 +286,7 @@ q&=\frac{\partial u}{\partial y}\\
 \frac{\partial p}{\partial y}&=\frac{\partial q}{\partial x}
 \end{align*}
 Wir haben also ein partielle Differentialgleichung zweiter Ordnung auf
-ein System von partiellen Differentialgleichungen erster Ordnung f"ur
+ein System von partiellen Differentialgleichungen erster Ordnung für
 drei unbekannte Funktionen reduziert.
 
 \subsection{*Umwandlung einer Gleichung beliebiger Ordnung\label{klassifikation:beliebigeordnung}}
@@ -299,9 +299,9 @@ x_1,\dots,x_n, u, \frac{\partial u}{\partial x_1},\dots,\frac{\partial u}{\parti
 \]
 wobei als Argumente Ableitungen mit Multiindizes ${\mathbf k}$ mit
 $|{\mathbf k}|\le m$ vorkommen. Daraus kann man jetzt ein System von
-partiellen Differentialgleichungen machen, indem man f"ur jeden
-Multiindex $|{\mathbf k}|$ mit $|{\mathbf k}|\le m$ eine zus"atzliche
-Funktion $p_{\mathbf k}$ einf"uhren. In die Funktion k"onnen wir
+partiellen Differentialgleichungen machen, indem man für jeden
+Multiindex $|{\mathbf k}|$ mit $|{\mathbf k}|\le m$ eine zusätzliche
+Funktion $p_{\mathbf k}$ einführen. In die Funktion können wir
 dann statt der Ableitungen von $u$ die Funktionen $p_{\mathbf k}$
 einsetzen.
 \[
@@ -318,23 +318,23 @@ welche sagen, dass die die $p_{\mathbf k}$ eigentlich Ableitungen sind:
 \frac{\partial}{\partial x_i}p_{\mathbf k}=p_{{\mathbf k} + (0,\dots,1,\dots,0)}\quad\forall i\;\forall{\mathbf k}(|{\mathbf k}|<m),
 \]
 wobei die $1$ an der $i$-ten Stelle steht. Dazu kommen Gleichungen
-die besagen, dass die gemischten Ableitungen vertauscht werden k"onnen.
+die besagen, dass die gemischten Ableitungen vertauscht werden können.
 Sei ${\mathbf k}$ ein Multiindex, und sei ${\mathbf k}'$ ein Multiindex,
 aus dem ${\mathbf k}$ entsteht, wenn man an der Stelle $i$ eins addiert.
 Ebenso sei ${\mathbf k}''$ ein Multiindex, aus dem ${\mathbf k}$ entsteht,
-wenn man an der Stellen $j$ eins addiert. F"ur jede solche Konstellation
-erh"alt man eine zus"atzliche Gleichung:
+wenn man an der Stellen $j$ eins addiert. Für jede solche Konstellation
+erhält man eine zusätzliche Gleichung:
 \[
 \frac{\partial}{\partial x_i}p_{{\mathbf k}'}=\frac{\partial}{\partial x_j}p_{{\mathbf k}''},
 \]
-denn beide Terme stehen ja eigentlich f"ur $\partial_{\mathbf k}u$.
+denn beide Terme stehen ja eigentlich für $\partial_{\mathbf k}u$.
  
 \rhead{Gebiete}
 \section{Gebiete\label{klassifikation:gebiete}}
-Bei gew"ohnlichen Differentialgleichungen ist eine
+Bei gewöhnlichen Differentialgleichungen ist eine
 Funktion von nur einer Variablen gesucht, das Definitionsgebiet ist
 daher immer ein Intervall.
-Eine L"osung ist dann festgelegt durch die Differentialgleichung
+Eine Lösung ist dann festgelegt durch die Differentialgleichung
 und bestimmte Werte an einem (Anfangswerte) oder beiden (Randwertproblem)
 Enden des Definitionsgebietes.
 
@@ -344,19 +344,19 @@ in Frage. Und die einfache Unterscheidung zwischen Randwertproblem
 und Anfangswertproblem wird ebenfalls verwischt, es ist nur klar,
 dass wahrscheinlich auf Teilen des Randes des Definitionsgebietes
 Werte der Funktion und eventuell gewisser Ableitungen
-vorgegeben werden m"ussen, um die L"osungen der Differentialgleichung
+vorgegeben werden müssen, um die Lösungen der Differentialgleichung
 eindeutig festzulegen.
 
 Die partiellen Ableitungen einer Funktion $u$
 in einem Punkt $(x_1,\dots,x_n)$ 
 sind nur dann sinnvoll definiert, wenn die Funktion in einer 
 kleinen Umgebung von $(x_1,\dots x_n)$ ausgewertet werden kann.
-Es muss ja f"ur die partielle Ableitung nach $x_i$ der Grenzwert
+Es muss ja für die partielle Ableitung nach $x_i$ der Grenzwert
 \[
 \frac{\partial u}{\partial x_i}=
 \lim_{\Delta x_i\to 0}\frac{u(x_1,\dots,x_i+\Delta x_i, \dots ,x_n)-u(x_1,\dots,x_n)}{\Delta x_i}
 \]
-bestimmt werden k"onnen.
+bestimmt werden können.
 
 \begin{definition}
 Ein Gebiet $\Omega\subset \mathbb R^n$ ist eine offene Teilmenge
@@ -365,7 +365,7 @@ auch ein kleiner Ball
 \[
 B(x, r)=\{x'\in\mathbb R^n\,|\,|x-x'|<r\}.
 \]
-in $\Omega$ enthalten, wenn nur $r$ klein genug aber $r>0$ gew"ahlt wird:
+in $\Omega$ enthalten, wenn nur $r$ klein genug aber $r>0$ gewählt wird:
 $B(x,r)\subset\Omega$.
 \end{definition}
 
@@ -385,19 +385,19 @@ Die Menge
 \Omega_2 = \{ (x,y)\in\mathbb R^2\,|\, x\ge 0\}.
 \]
 ist {\it kein} Gebiet. $\Omega_2$ ist die rechte Halbebene in $\mathbb R^2$.
-$\Omega_2$ enth"alt auch die Punkte $(0,y)$. Jeder Ball um einen
-Punkt der Form $(0,y)$ enth"alt auch Punkte mit negativer
-$x$-Koordinate, also Punkte, die nicht zu $\Omega_2$ geh"oren.
+$\Omega_2$ enthält auch die Punkte $(0,y)$. Jeder Ball um einen
+Punkt der Form $(0,y)$ enthält auch Punkte mit negativer
+$x$-Koordinate, also Punkte, die nicht zu $\Omega_2$ gehören.
 Somit kann ein Ball um $(0,y)$ nicht in $\Omega_2$ enthalten sein.
 \end{beispiel}
 
 Der Unterschied zwischen den beiden Mengen $\Omega_1$ und $\Omega_2$
 ist offenbar, dass $\Omega_2$ offenbar auch Teile des Randes
-enth"alt. Der Rand einer Menge besteht aus den Punkten, in deren
+enthält. Der Rand einer Menge besteht aus den Punkten, in deren
 Umgebung sich immer Punkte der Menge wie auch Punkte ausserhalb
 der Menge finden. Der Rand der Menge $\Omega_1$ ist leer, der Rand
 der Menge $\Omega_2$ ist die $y$-Achse. Gebiete sind also Mengen,
-die ihren Rand nicht enthalten. F"ur den Rand einer Menge $M$
+die ihren Rand nicht enthalten. Für den Rand einer Menge $M$
 schreibt man auch $\partial M$.
 
 \begin{beispiel}
@@ -409,19 +409,19 @@ schreibt man auch $\partial M$.
 \begin{definition}
 Ist $M\subset\mathbb R^n$ eine beliebige Teilmenge von $\mathbb R^n$,
 dann bezeichnet man mit $\mathring M$ das Innere, also die Punkte,
-f"ur die auch noch eine Umgebung in $M$ enthalten ist. Mit
+für die auch noch eine Umgebung in $M$ enthalten ist. Mit
 $\bar M=M\cup\partial M$ bezeichnet.
 \end{definition}
 
 \section{Anfangs- und Randbedingungen\label{klassifikation:randbedingungen}}
 \rhead{Anfangs- und Randbedingungen}
-Wie bei gew"ohnlichen Differentialgleichungen reicht auch bei
+Wie bei gewöhnlichen Differentialgleichungen reicht auch bei
 partiellen Differentialgleichungen die Gleichung alleine nicht
-zur Bestimmung der L"osung.
-\subsection{Anfangs- und Randwerte bei gew"ohnlichen Differentialgleichungen\label{klassifkation:anfangswerte-ode}}
-Bei gew"ohnlichen Differentialgleichungen
-m"ussen zus"atzlich Anfangs- oder Randwerte spezifiziert werden.
-Um die L"osung der Differentialgleichung
+zur Bestimmung der Lösung.
+\subsection{Anfangs- und Randwerte bei gewöhnlichen Differentialgleichungen\label{klassifkation:anfangswerte-ode}}
+Bei gewöhnlichen Differentialgleichungen
+müssen zusätzlich Anfangs- oder Randwerte spezifiziert werden.
+Um die Lösung der Differentialgleichung
 \[
 y''+p(x)y'+q(x)y=0
 \]
@@ -435,88 +435,88 @@ festzulegen, braucht man insgesamt zwei Bedingungen, zum Beispiel
 \alpha_0y(0)+\beta_0y'(0)&=\gamma_0\\
 \alpha_1y(1)+\beta_1y'(1)&=\gamma_1.
 \end{align*}
-%wobei die Koeffizientenmatrix auf der linken Seite regul"ar sein muss.
+%wobei die Koeffizientenmatrix auf der linken Seite regulär sein muss.
 \end{itemize}
 
 \begin{beispiel}
 Selbst in dem einfachen Beispiel einer linearen Differentialgleichung
 zweiter Ordnung ist nicht jede beliebige Kombination von Randwertvorgaben
-m"oglich. Die Gleichung
+möglich. Die Gleichung
 \[
 y''=0
 \]
-bedeutet zum Beispiel, dass die Funktion $y$ keine Kr"ummung hat, sie
+bedeutet zum Beispiel, dass die Funktion $y$ keine Krümmung hat, sie
 ist also linear, $y=Ax+B$. Insbesondere muss die Steigung am rechten
 Rand des Intervals gleich gross sein wie am linken Rand. Versucht man
 also die Randwerte der Ableitungen als
 \[
 y'(0)=0\qquad y'(1)=1,
 \]
-erh"alt man ein unl"osbares Problem, die Randwerte sind widerspr"uchlich.
+erhält man ein unlösbares Problem, die Randwerte sind widersprüchlich.
 \end{beispiel}
 
-\subsection{Randwerte f"ur partielle Differentialgleichungen\label{klassifikation:randwerte-pde}}
+\subsection{Randwerte für partielle Differentialgleichungen\label{klassifikation:randwerte-pde}}
 Bei einer partiellen Differentialgleichung ist die Spezifikation
 der Randwerte ungleich komplizierter.
-\subsubsection{Randwerte f"ur die Saite}
-Um ein Gef"uhl zu entwickeln, betrachten wir die n"otigen
-Randwertvorgaben f"ur die schwingende Saite.
+\subsubsection{Randwerte für die Saite}
+Um ein Gefühl zu entwickeln, betrachten wir die nötigen
+Randwertvorgaben für die schwingende Saite.
 \begin{figure}
 \begin{center}
 \includegraphics{../common/images/randwerte-1.pdf}
 \end{center}
-\caption{Randwerte f"ur die Wellengleichung der schwingenden Saite.
+\caption{Randwerte für die Wellengleichung der schwingenden Saite.
 Das Gebiet ist hellrot eingezeichnet, sein Rand tiefrot, mit den 
 notwendigen Randwerten entlang des Randes\label{klassifikation:randwertesaite}}
 \end{figure}
-In Abbildung \ref{klassifikation:randwertesaite} ist das Gebiet f"ur
-die Saitengleichung hellrot gezeichnet. Randwerte k"onnen auf dem
+In Abbildung \ref{klassifikation:randwertesaite} ist das Gebiet für
+die Saitengleichung hellrot gezeichnet. Randwerte können auf dem
 linken und/oder rechten Rand vorgegeben werden und/oder auf dem
 Intervall $[0,l]$ der $x$-Achse.
 
-Aus der Theorie der gew"ohnlichen Differentialgleichungen wissen wir,
-dass f"ur eine Differentialgleichung zweiter Ordnung zwei Randwertvorgaben
-gemacht werden m"ussen.
+Aus der Theorie der gewöhnlichen Differentialgleichungen wissen wir,
+dass für eine Differentialgleichung zweiter Ordnung zwei Randwertvorgaben
+gemacht werden müssen.
 Man kann die Funktionswerte an jedem Ende des
 Intervals angeben, oder man kann an einem Ende den Funktionswert
 sowie die erste Ableitung angeben.
 
-Genau dies wird bei der Saitengleichung gemacht. Vernachl"assigt man
-die $t$-Abh"angigkeit, sieht man nur noch eine Differentialgleichung
+Genau dies wird bei der Saitengleichung gemacht. Vernachlässigt man
+die $t$-Abhängigkeit, sieht man nur noch eine Differentialgleichung
 zweiter Ordnung in $x$ und die Gleichungen 
 \[
 u(0,t)=0\qquad u(l,t)=0
 \]
-geben die Randwerte f"ur diese Differentialgleichung vor.
-Schaut man dagegen nur die $t$-Abh"angigkeit an,
+geben die Randwerte für diese Differentialgleichung vor.
+Schaut man dagegen nur die $t$-Abhängigkeit an,
 sieht man eine Differentialgleichung
 in der Variablen $t$ auf der positiven reellen Achse, es bleibt also
-nichts anderes "ubrig, als Anfangswert und Anfangsableitung (nach $t$)
+nichts anderes übrig, als Anfangswert und Anfangsableitung (nach $t$)
 vorzugeben.
 
 Im Prinzip gibt es mehrere erste Ableitungen, die vorzugeben versuchen 
-k"onnten. Wenn aber die Randwerte 
+könnten. Wenn aber die Randwerte 
 $ u(x,0)=f(x)$
 bekannt sind, dann sind auch die partiellen Ableitungen nach $x$ bereits
 bekannt:
 \[
 \frac{\partial }{\partial x}u(x,0)=f'(x).
 \]
-Man kann also h"ochstens noch die Ableitung senkrecht dazu,
+Man kann also höchstens noch die Ableitung senkrecht dazu,
 in $t$-Richtung vorgeben.
 
 Es stellt sich heraus, dass mit diesen Vorgaben das Problem eindeutig
-l"osbar ist.
+lösbar ist.
 Leider ist es im Allgemeinen deutlich schwieriger, welche Randwertvorgaben
-n"otig sind, um die L"osung eindeutig zu bestimmen, oder auch nur
+nötig sind, um die Lösung eindeutig zu bestimmen, oder auch nur
 widerspruchsfreie Randwertvorgaben zu machen.
 
 \subsubsection{Allgemeine Diskussion}
-Zun"achst ist nicht einmal klar, welcher Teil des Randes
-"uberhaupt herangezogen werden muss. Im Prinzip k"onnen Randwerte
+Zunächst ist nicht einmal klar, welcher Teil des Randes
+überhaupt herangezogen werden muss. Im Prinzip können Randwerte
 auf jeder beliebigen Teilmenge des Randes spezifiziert werden.
 
-Ausserdem k"onnen nicht nur Werte der unbekannten Funktion, sondern auch
+Ausserdem können nicht nur Werte der unbekannten Funktion, sondern auch
 partielle Ableitungen derselben vorgegben werden. Allerdings sind 
 diese nicht beliebig. Betrachten Wir dazu die rechte Halbebene
 \[
@@ -549,7 +549,7 @@ D_{\vec v}u(x_1,\dots,x_k)=\vec v\cdot\operatorname{grad}u.
 \]
 Nur die Richtungsableitung in Richtung der Normalen 
 ist noch nicht festgelegt.
-Wir schreiben f"ur die Ableitung in Richtung $\vec n$
+Wir schreiben für die Ableitung in Richtung $\vec n$
 \[
 \frac{\partial u}{\partial\vec n}=\frac{\partial u}{\partial n}
 =\vec n\cdot\operatorname{grad}u.
@@ -571,7 +571,7 @@ x\frac{\partial u}{\partial x}
 +
 y\frac{\partial u}{\partial y}.
 \]
-Oder f"ur die spezielle Funktion $u(x,y)=x^3y$:
+Oder für die spezielle Funktion $u(x,y)=x^3y$:
 \[
 \frac{\partial u}{\partial n}
 =
@@ -608,16 +608,16 @@ In einem Punkt $(x,-x)$ des Randes ist die Normalableitung also
 \subsubsection{Das Cauchy-Problem\label{klassifikation:cauchy-problem}}
 Der Rand dieses Gebietes
 besteht nicht mehr nur aus einzelnen Punkten wie im eindimensionalen
-Fall, sondern aus Kurven oder Fl"achen. Um zu verstehen, wie die
-Randbedingungen entlang dieser Kurven oder Fl"achen formuliert
-werden k"onnen, betrachten
-wir das sogenannte Cauchy-Problem f"ur eine Funktion $u(x,y)$ von
-zwei Variablen. Wir suchen eine L"osung, welche wir durch Angabe
-von Randwerten auf f"ur $x=0$ ($y$-Achse) festlegen m"ochten.
+Fall, sondern aus Kurven oder Flächen. Um zu verstehen, wie die
+Randbedingungen entlang dieser Kurven oder Flächen formuliert
+werden können, betrachten
+wir das sogenannte Cauchy-Problem für eine Funktion $u(x,y)$ von
+zwei Variablen. Wir suchen eine Lösung, welche wir durch Angabe
+von Randwerten auf für $x=0$ ($y$-Achse) festlegen möchten.
 
-Nat"urlich l"asst sich das Cauchy-Problem auch f"ur PDGL mit mehr
+Natürlich lässt sich das Cauchy-Problem auch für PDGL mit mehr
 als zwei Variablen formulieren. In diesem Fall wird eine Funktion
-$u(x_1,\dots,x_n)$ gesucht, welche f"ur $x_1=0$ vorgegebene Werte
+$u(x_1,\dots,x_n)$ gesucht, welche für $x_1=0$ vorgegebene Werte
 \[
 u(0,x_2,\dots,x_n)=g(x_2,\dots,x_n)
 \]
@@ -627,15 +627,15 @@ vorgegeben worden.
 
 Das allgmeine Cauchy-Problem in zwei Dimensionen legt die Werte der
 unbekannten Funktion auf einer
-Kurve im Definitionsgebiet fest und fragt danach, ob eine L"osung existiert, und
+Kurve im Definitionsgebiet fest und fragt danach, ob eine Lösung existiert, und
 ob sie eindeutig bestimmt ist.
 Das allgemeine Cauchy-Problem in beleibig vielen Dimensionen legt die
-Werte der unbekannten Funktion auf einer Hyperfl"ache im Definitionsgebiet
-fest und frag danach, ob eine L"osung existeirt,
+Werte der unbekannten Funktion auf einer Hyperfläche im Definitionsgebiet
+fest und frag danach, ob eine Lösung existeirt,
 und ob sie eindeutigt bestimmt ist.
 
 \subsubsection{Partielle Differentialgleichungen erster Ordnung}
-Eine gew"ohnliche Differentialgleichungen erster Ordnung ben"otigt
+Eine gewöhnliche Differentialgleichungen erster Ordnung benötigt
 nur einen einzigen Anfangswert.
 In Analogie dazu werden in unserem Beispielproblem 
 die Werte von $u$ entlang der $y$-Achse erforderlich sein.
@@ -643,7 +643,7 @@ Wir nehmen daher an, dass die Bedingung
 \[
 u(0,y)=g(y)
 \]
-die L"osung $u$ festlegt.
+die Lösung $u$ festlegt.
 
 Wir nehmen an, dass die Funktion $g$ stetig differenziertbar ist.
 Dann ist
@@ -661,9 +661,9 @@ F(x,y,u(x,y), \partial_x u, \partial_y u)=0
 zwischen der Funktion und ihren partiellen Ableitungen fest.
 Zwar gilt dies im Allgemeinen nur im inneren des Definitionsbereiches,
 doch
-unter g"unstigen Voraussetzungen wird die Funktion $F(x,y,u,p,q)$
-nach $p$ aufl"osbar sein, und zwar sogar auf dem Rand, also f"ur
-$x\to 0$. Gibt es eine L"osung $u(x,y)$ des Cauchy-Problems, dann
+unter günstigen Voraussetzungen wird die Funktion $F(x,y,u,p,q)$
+nach $p$ auflösbar sein, und zwar sogar auf dem Rand, also für
+$x\to 0$. Gibt es eine Lösung $u(x,y)$ des Cauchy-Problems, dann
 ist 
 \begin{align*}
 0&=
@@ -679,15 +679,15 @@ F(x,y,u(x,y), \partial_x u(x,y), \partial_y u(x,y)\\
 F(0,y,g(y),\partial_x u(0,y), g'(y))
 \end{align*}
 Da wir von der Funktion $F$ angenommen haben, dass sie sich
-nach $p$ aufl"osen l"asst, ist also $\partial_x u(0,y)$ durch
+nach $p$ auflösen lässt, ist also $\partial_x u(0,y)$ durch
 die Anfangsbedingungen und die Gleichung ebenfalls festgelegt.
 
-Das Cauchy-Problem f"ur eine Differentialgleichung erster Ordnung
+Das Cauchy-Problem für eine Differentialgleichung erster Ordnung
 muss als nur Anfangswerte entlang einer Geraden vorgeben, Ableitungen
-sind nicht n"otig, da sie durch die Funktionswerte und die Gleichung
+sind nicht nötig, da sie durch die Funktionswerte und die Gleichung
 bereits festgelegt sind.
 
-Statt der Werte entlang der $y$-Achse k"onnten wir auch nur den
+Statt der Werte entlang der $y$-Achse könnten wir auch nur den
 Wert in einem Punkt sowie die Ableitungen
 in diese Richtung vorgeben, zum Beispiel in der Form
 \begin{align*}
@@ -695,22 +695,22 @@ u(0,0)&=u_0\\
 \frac{\partial u}{\partial y}(0,y)&=h(y).
 \end{align*}
 Dies liefert jedoch nichts neues, denn die Funktion $g(y)=u(0,y)$
-wird durch die gew"ohnliche Differentialgleichung
+wird durch die gewöhnliche Differentialgleichung
 \[
 g'(y)=\frac{\partial u}{\partial y}(0,y)=h(y)
 \]
-f"ur die unbekannte Funktion $g(y)$
+für die unbekannte Funktion $g(y)$
 mit der Anfangsbedinung $g(0)=u_0$ bestimmt.
-Indem man diese Gleichung l"ost, f"uhrt man Anfangsbedingungen
-mit Ableitungen entlang der $y$-Achse auf gew"ohnliche
-Anfangswerte zur"uck.
+Indem man diese Gleichung löst, führt man Anfangsbedingungen
+mit Ableitungen entlang der $y$-Achse auf gewöhnliche
+Anfangswerte zurück.
 
 \subsubsection{Partielle Differentialgleichungen zweiter Ordnung}
-F"ur eine gew"ohnliche Differentialgleichung zweiter Ordnung m"ussen
-zus"atzliche Anfangsbedingungen spezifiziert werden, typischerweise
+Für eine gewöhnliche Differentialgleichung zweiter Ordnung müssen
+zusätzliche Anfangsbedingungen spezifiziert werden, typischerweise
 die erste Ableitung.
 
-F"ur eine partielle Differentialgleichung zweiter
+Für eine partielle Differentialgleichung zweiter
 Ordnung wird man entsprechend zu den Anfangswerten $g(y)$ die Werte
 der ersten Ableitungen hinzunehmen wollen.
 Wie wir im vorangegangenen Abschnitt gesehen haben, sind die partiellen
@@ -730,16 +730,16 @@ u(0,y)&=g(y)&
 
 \subsubsection{Beliebige Anfangskurve}
 Im allgemeinen Fall sind die Randwerte nicht auf einer Koordinatenachse
-vorgegeben. Es gibt sogar F"alle, wo dies gar nicht m"oglich ist,
+vorgegeben. Es gibt sogar Fälle, wo dies gar nicht möglich ist,
 ein Beispiel wird in \ref{unloesbar} gezeigt.
 Die Festlegung von Werten entlang der der $y$-Achse entspricht
-der Forderung, dass die L"osungsfl"ache durche eine bestimmte Kurve
+der Forderung, dass die Lösungsfläche durche eine bestimmte Kurve
 verlaufen muss, die als Parameterdarstellung $y\mapsto (0,y,g(y))$
 hat. Die Verallgemeinerung das allgemeine Cauchy-Problem:
 
 \begin{problem}[Cauchy-Problem] Sei $\gamma$ eine Kurve im Raum und
 $F(x,y,u,\partial_xu,\partial_yu)=0$ eine PDGL. Eine Funktion $u(x,y)$
-heisst eine L"osung des Cauchy-Problems mit Anfangskurve $\gamma$, wenn
+heisst eine Lösung des Cauchy-Problems mit Anfangskurve $\gamma$, wenn
 $\gamma$ im Graphen von $u$ enthalten ist.
 \end{problem}
 
@@ -747,9 +747,9 @@ Durch die Wahl eines geeigneten Koordinatensystems kann aber immer
 erreicht werden, dass in der Umgebung eines einzelnen Randpunktes
 dieses Situation vorliegt.
 Die Richtung der $x$-Achse ist dann die Normale auf die Randkurve oder
-Randfl"ache.
+Randfläche.
 Die Ableitung entlang der $x$-Achse ist daher eigentlich eine Ableitung
-in Normalenrichtung, wir schreiben daf"ur
+in Normalenrichtung, wir schreiben dafür
 \[
 \frac{\partial u}{\partial n}
 \]
@@ -762,7 +762,7 @@ die Normalableitung mit Hilfe der Formel
 \]
 berechnen.
 
-Ist $n$ der Normalenvektor auf die Kurve (oder Fl"ache f"ur $n=3$), auf
+Ist $n$ der Normalenvektor auf die Kurve (oder Fläche für $n=3$), auf
 der die Randwerte vorgegeben sind, dann kann die Normalableitung mit 
 Hilfe der Richtungsableitung berechnet werden, es ist
 \[
@@ -771,12 +771,12 @@ Hilfe der Richtungsableitung berechnet werden, es ist
 
 \subsection{Allgemeines Randwertproblem\label{klassifikation:allgemeines-randwertproblem}}
 Bei partiellen Differentialgleichungen hat der Definitionsbereich einen
-weit gr"osseren Einfluss auf die L"osung als bei gew"ohnlichen
+weit grösseren Einfluss auf die Lösung als bei gewöhnlichen
 Differentialgleichungen. Das in den voranstehenden Abschnitten
-diskutierte Cauchy-Problem erlaubt zun"achst zu beurteilen, welche
+diskutierte Cauchy-Problem erlaubt zunächst zu beurteilen, welche
 Art von Randbedingungen sinnvoll ist. 
 So haben Wir gesehen, dass Randwerte in folgenden Formen vorgegeben
-werden k"onnen: 
+werden können: 
 \begin{itemize}
 \item Als Werte entlang des Randes des Definitionsgebietes der
 Differentialgleichung, also in der Form
@@ -791,23 +791,23 @@ Rand, geschrieben
 \]
 Dieser Randbedingungen heissen Neumann-Randbedingungen.
 \item Als Kombination von Funktionswerten und Ableitungen: es ist
-m"oglich, auf verschiedenen Teilen des Randes Randwerte oder Normalableitungen
-vorzugeben, es ist aber auch m"oglich, eine Linearkombination
+möglich, auf verschiedenen Teilen des Randes Randwerte oder Normalableitungen
+vorzugeben, es ist aber auch möglich, eine Linearkombination
 von Randwerten und Normalableitungen vorzugeben.
 \end{itemize}
-Dies gen"ugt jedoch noch nicht, zu entscheiden, ob durch diese
-Bedingungen die L"osungen eindeutig festgelegt sind.
-Dazu ist ein vertieftere Theorie n"otig. W"ahrend bei den gew"ohnlichen
+Dies genügt jedoch noch nicht, zu entscheiden, ob durch diese
+Bedingungen die Lösungen eindeutig festgelegt sind.
+Dazu ist ein vertieftere Theorie nötig. Während bei den gewöhnlichen
 Differentialgleichungen eine relativ einfache Methode (Picard-Iteration)
 unter relativ milden Voraussetzungen zu beweisen  erlaubt, dass
-gew"ohnliche Differentialgleichungen zu gegebenen Anfangswerten eine
-eindeutig bestimmte L"osung haben, wenigstens f"ur eine gewisses Zeitinterval,
-ist dieser Beweis f"ur partielle Differentialgleichungen ungleich schwieriger.
-F"ur gewisse Typen von partiellen Differentialgleichungen ist dies jedoch
-m"oglich, einige davon werden in den kommenden Kapiteln behandelt.
+gewöhnliche Differentialgleichungen zu gegebenen Anfangswerten eine
+eindeutig bestimmte Lösung haben, wenigstens für eine gewisses Zeitinterval,
+ist dieser Beweis für partielle Differentialgleichungen ungleich schwieriger.
+Für gewisse Typen von partiellen Differentialgleichungen ist dies jedoch
+möglich, einige davon werden in den kommenden Kapiteln behandelt.
 
-\section{L"osung einer partiellen Differentialgleichung\label{klassifikation:loesung}}
-Zur L"osung einer partiellen Differentialgleichung m"ussen also
+\section{Lösung einer partiellen Differentialgleichung\label{klassifikation:loesung}}
+Zur Lösung einer partiellen Differentialgleichung müssen also
 drei Dinge vorgegeben sein
 \begin{enumerate}
 \item Eine Differentialgleichung
@@ -815,31 +815,31 @@ drei Dinge vorgegeben sein
 \item Randwertvorgaben auf einem Teil des Randes $\partial\Omega$.
 \end{enumerate}
 \begin{definition}
-Eine L"osung dieses Problems ist eine Funktion $u$, welche
+Eine Lösung dieses Problems ist eine Funktion $u$, welche
 auf $\bar\Omega$ (nicht nur auf $\Omega$!) definiert ist,
-im Gebiet $\Omega$ so oft differenzierbar ist wie n"otig, damit
+im Gebiet $\Omega$ so oft differenzierbar ist wie nötig, damit
 sie sinnvoll in die Differentialgleichung eingesetzt werden kann,
-in $\Omega$ die Differentialgleichung erf"ullt,
-und ausserdem die Randwertbedingungen erf"ullt.
+in $\Omega$ die Differentialgleichung erfüllt,
+und ausserdem die Randwertbedingungen erfüllt.
 \end{definition}
 
-Das Problem heisst ``gut gestellt'', wenn die gew"ahlten Vorgaben
-die L"osung eindeutig bestimmen.
-Es ist die Aufgabe der Theorie zu kl"aren, ob ein Problem
+Das Problem heisst ``gut gestellt'', wenn die gewählten Vorgaben
+die Lösung eindeutig bestimmen.
+Es ist die Aufgabe der Theorie zu klären, ob ein Problem
 gut gestellt ist, denn erst dann kann man von einem numerischen
 Verfahren eine sinnvolle Antwort erwarten.
 
 \section{Spezielle Typen von partiellen Differentialgleichungen\label{klassifikation:spezielletypen}}
 \rhead{Spezielle PDGL}
-F"ur einige spezielle Typen von Differentialgleichungen werden wir
-die Frage nach Existenz und Eindeutigkeit einer L"osung beantworten
-k"onnen, und manchmal sogar eine explizite L"osung angeben k"onnen.
-Dazu geh"oren die linearen und die quasilinearen partiellen
+Für einige spezielle Typen von Differentialgleichungen werden wir
+die Frage nach Existenz und Eindeutigkeit einer Lösung beantworten
+können, und manchmal sogar eine explizite Lösung angeben können.
+Dazu gehören die linearen und die quasilinearen partiellen
 Differentialgleichungen, die in diesem Abschnitt beschrieben werden.
 
 \subsection{Lineare partielle Differentialgleichungen\label{klassifikation:linear}}
 Die bisher vorgestellten Differentialgleichungen sind also alle lineare
-Ausdr"ucke in den ersten und zweiten Ableitungen, man k"onnte sie in der
+Ausdrücke in den ersten und zweiten Ableitungen, man könnte sie in der
 Form
 \begin{align*}
 \sum_{i,j=1}^n a_{ij}(x)\frac{\partial}{\partial x_i} \frac{\partial}{\partial x_j}\psi(x)
@@ -850,8 +850,8 @@ Form
 \end{align*}
 Die Gleichung heisst homogen, wenn $f=0$ ist.
 
-Damit diese Probleme "uberhaupt eine L"osung haben, m"ussen noch 
-Randbedingungen hinzugef"ugt werden.
+Damit diese Probleme überhaupt eine Lösung haben, müssen noch 
+Randbedingungen hinzugefügt werden.
 Auch diese lassen sich in der Form linearer Gleichungen zwischen den 
 Funktionswerten und den Normalableitungen von $\psi$ auf dem Rand des
 Gebietes gegeben:
@@ -863,9 +863,9 @@ a\psi(x)+b\partial_n\psi(x)&=g(x)\quad\forall x\in\gamma
 \end{align*}
 Die Randbedingungen heissen homogen, wenn $g=0$ ist.
 
-Sind $\psi_1$ und $\psi_2$ zwei L"osungen der homogenen Gleichungen und der
+Sind $\psi_1$ und $\psi_2$ zwei Lösungen der homogenen Gleichungen und der
 homogenen Randbedingungen, dann ist auch $\alpha_1\psi_1+\alpha_2\psi_2$
-L"osungen der homogenen Gleichung under homogenen Randbedingungen:
+Lösungen der homogenen Gleichung under homogenen Randbedingungen:
 \begin{align*}
 &\sum_{i,j=1}^n a_{ij}(x)\partial_i \partial_j
 (\alpha_1\psi_1(x)+\alpha_2\psi_2(x))
@@ -891,7 +891,7 @@ L"osungen der homogenen Gleichung under homogenen Randbedingungen:
 \psi_2(x)
 =0
 \end{align*}
-oder f"ur die Randbedingung
+oder für die Randbedingung
 \begin{align*}
 a(\alpha_1\psi_1(x) +\alpha_2\psi_2(x))
 \;+&b\partial_n
@@ -904,11 +904,11 @@ a(\alpha_1\psi_1(x) +\alpha_2\psi_2(x))
 \psi_2(x))
 =0\quad\forall x\in\gamma
 \end{align*}
-Die L"osungen einer homogenen partiellen Differentialgleichung
+Die Lösungen einer homogenen partiellen Differentialgleichung
 bilden also einen Vektorraum. Insbesondere lassen sich beliebige
-L"osungen der inhomogenen Differentialgleichung dadurch finden, dass
-man eine partikul"are L"osung $\psi_p$ der homogenen Differentialgleichung
-findet, und dazu eine beliebige L"osung der homogenen Differentialgleichung
+Lösungen der inhomogenen Differentialgleichung dadurch finden, dass
+man eine partikuläre Lösung $\psi_p$ der homogenen Differentialgleichung
+findet, und dazu eine beliebige Lösung der homogenen Differentialgleichung
 $\psi_h$ hinzuaddiert.
 
 \subsection{Quasilineare partielle Differentialgleichungen erster Ordnung\label{klassifikation:quasilinear}}
@@ -919,7 +919,7 @@ $
 F(x,y,u,p,q)
 $
 ist also linear in $p$ und $q$. Die Variablen $x$ und $y$ sowie die
-gesuchte Funktion k"onnen daher nur in den Koeffizienten der
+gesuchte Funktion können daher nur in den Koeffizienten der
 Variablen $p$ und $q$ vorkommen, $F$ muss von der Form
 \[
 F(x,y,u,p,q)=a(x,y,u)p+b(x,y,u)q+c(x,y,u)
@@ -930,7 +930,7 @@ hat also die Form
 a(x,y,u(x,y))\frac{\partial u}{\partial x}+b(x,y,u(x,y))\frac{\partial u}{\partial y}
 =c(x,y,u(x,y)).
 \]
-F"ur mehr Variablen $x_1,\dots,x_n$ gilt analog, dass eine quasilineare
+Für mehr Variablen $x_1,\dots,x_n$ gilt analog, dass eine quasilineare
 Differentialgleichung die Form
 \[
 a_1(x_1,\dots,x_n,u)\frac{\partial u}{\partial x_1}
@@ -943,27 +943,27 @@ a_n(x_1,\dots,x_n,u)\frac{\partial u}{\partial x_n}
 \]
 hat.
 
-Nat"urlich lassen sich auch quasilineare partielle Differentialgleichungen
-h"oherer Ordnung definieren, in einer solchen Differentialgleichung
-kommen zwar h"oheren partielle Ableitungen vor, aber immer nur linear,
+Natürlich lassen sich auch quasilineare partielle Differentialgleichungen
+höherer Ordnung definieren, in einer solchen Differentialgleichung
+kommen zwar höheren partielle Ableitungen vor, aber immer nur linear,
 man kann sie also immer in der Form schreiben:
 \[
 \sum_{\bf k} a_{\bf k}(x,y,u)\partial_{\bf k} u(x,y) = 0,
 \]
-worin die Funktionen $a_{\bf k}(x,y,u)$ nur f"ur endlich viele
+worin die Funktionen $a_{\bf k}(x,y,u)$ nur für endlich viele
 Multiindizes ${\bf k}$ von $0$ verschieden sind.
 
 \subsection{Nichtlineare Gleichungen\label{klassifikation:nichtlinear}}
 Die bisher vorgestellten Beispiele von partiellen Differentialgleichungen
 sind alle linear. Viele Gleichungen der Physik sind jedoch
-nicht linear.  Ber"uhmtestes Beispiel sind die Gleichungen, die
-die Str"omung eines Gases beschreiben. Bereits Leonhard Euler hat 
-f"ur die Str"omung eines idealen Gases ein System von partiellen
+nicht linear.  Berühmtestes Beispiel sind die Gleichungen, die
+die Strömung eines Gases beschreiben. Bereits Leonhard Euler hat 
+für die Strömung eines idealen Gases ein System von partiellen
 \index{Dichte}
 \index{Druck}
-Differentialgleichungen gefunden f"ur die Dichte $\varrho$, den Druck
-$p$ und die Str"omungsgeschwindigkeit $\vec v$, alle drei sind Funktionen
-\index{Stromungsgeschwindigkeit@Str\"omungsgeschwindigkeit}
+Differentialgleichungen gefunden für die Dichte $\varrho$, den Druck
+$p$ und die Strömungsgeschwindigkeit $\vec v$, alle drei sind Funktionen
+\index{Stromungsgeschwindigkeit@Str\ömungsgeschwindigkeit}
 von allen drei Raumkoordinaten und der Zeit. Die wichtigste davon
 ist die Eulersche Gleichung:
 \index{Eulersche Gleichung}
@@ -979,7 +979,7 @@ ist die Eulersche Gleichung:
 \end{align*}
 Diese Gleichung kann nicht linear sein, weil im zweiten Term
 Produkte von $v_j$ mit Ableitungen von $v_i$ vorkommen.
-Ber"ucksichtigt man auch noch die Z"ahigkeit, wird die Gleichung
+Berücksichtigt man auch noch die Zähigkeit, wird die Gleichung
 noch komplizierter:
 \[
 \varrho\left(
@@ -993,16 +993,16 @@ noch komplizierter:
 \]
 
 In einer Dimension bleibt von dieser Gleichung nur noch eine Komponente
-$u(t,x)$ "ubrig, f"ur die eine Gleichung der ungef"ahren Form
+$u(t,x)$ übrig, für die eine Gleichung der ungefähren Form
 \[
 \frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}
 =\eta\frac{\partial^2u}{\partial x^2}
 \]
-gelten muss (wir haben den Druckgradienten vernachl"assigt und
+gelten muss (wir haben den Druckgradienten vernachlässigt und
 $\varrho = 1$ angenommen). Diese Gleichung wurde von
 Johannes Martinus Burgers ausgiebig studiert, und heisst
 daher Gleichung von Burgers.
-Eine L"osung des Anfangswertproblems der Gleichung von Burgers kann 
+Eine Lösung des Anfangswertproblems der Gleichung von Burgers kann 
 in expliziter Form gefunden werden, wir beschreiben diese in Kapitel
 \ref{chapter-nichtlinear}.
 
@@ -1033,19 +1033,19 @@ In dieser Notation lassen sich die bekannten Operatoren wie folgt schreiben:
 \Delta &=\partial_x^2+\partial_y^2+\dots=\sum_{i=0}^n\partial_i^2\\
 \operatorname{grad}&=\nabla=\begin{pmatrix}\partial_1\\\vdots\\\partial_n\end{pmatrix}
 \end{align*}
-Die Normalableitung, die in Randbedingungen f"ur partielle Differentialgleichungen
+Die Normalableitung, die in Randbedingungen für partielle Differentialgleichungen
 eine besondere Rolle spielt, wird 
 \[
 \frac{\partial u}{\partial n}=\partial_nu
 \]
 geschrieben.
 
-\section{Zusammenfassung: Das Wichtigste in K"urze}
+\section{Zusammenfassung: Das Wichtigste in Kürze}
 \begin{enumerate}
 \item Eine Differentialgleichung ist eine Funktion
 der Koordinaten, der gesuchten Funktion und ihrere partiellen Ableitungen
 (\ref{klassifikation:differentialgleichungen}).
-\item Die Ordnung ist die h"ochste in der Differentialgleichung vorkommende
+\item Die Ordnung ist die höchste in der Differentialgleichung vorkommende
 Ableitung (\ref{klassifikation:ordnung}).
 \item In zwei Dimensionen kann eine Differentialgleichung erster Ordnung
 immer durch eine Funktion $F(x,y,u,p,q)$ beschrieben werden. Die
@@ -1069,20 +1069,20 @@ Dimensionen ist $F(x,y,u,p,q)$ linear in $u$, $p$ und $q$.
 partiellen Ableitungen der gesuchten Funktion, aber nicht unbedingt
 in der Funktion selbst (\ref{klassifikation:quasilinear}).
 \item Das Gebiet $\Omega$, auf dem die Differentialgleichung definiert
-ist, hat einen entscheidenden Einfluss auf die L"osungen (\ref{klassifikation:gebiete}).
-\item Die L"osung ist erst eindeutig bestimmt, wenn geeignete Randbedingungen
+ist, hat einen entscheidenden Einfluss auf die Lösungen (\ref{klassifikation:gebiete}).
+\item Die Lösung ist erst eindeutig bestimmt, wenn geeignete Randbedingungen
 vorgegeben sind (\ref{klassifikation:randbedingungen}). 
 \item Bei partiellen Differentialgleichungen erster Ordnung sind typischerweise
-Randwerte f"ur einen Teil des Randes vorzugeben.
+Randwerte für einen Teil des Randes vorzugeben.
 \item Bei partiellen Differentialgleichungen zweiter Ordnung sind
 Randwert (Dirichlet-Rand\-bedingungen,
 (\ref{klassifikation:dirichlet-randbedingung}))
 und/oder die Normalableitung
 (Neumann-Randbedingung (\ref{klassifikation:neumann-randbedingung})
 vorzugeben.
-\item Eine L"osung einer partiellen Differentialgleichung ist eine
+\item Eine Lösung einer partiellen Differentialgleichung ist eine
 Funktion, die auf dem abgeschlossenen Gebiet definiert ist, im Inneren
 des Gebietes die Differentialgleichung und auf dem Rand
-die vorgegebenen Randwert erf"ullt (\ref{klassifikation:loesung}).
+die vorgegebenen Randwert erfüllt (\ref{klassifikation:loesung}).
 
 \end{enumerate}

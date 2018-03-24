@@ -5,20 +5,20 @@ Das Eigenwertproblem
 \begin{figure}
 \centering
 \includeagraphics[]{domain-1.pdf}
-\caption{Gebiet f"ur das Eigenwertproblem von Aufgabe~\ref{40000015}.
+\caption{Gebiet für das Eigenwertproblem von Aufgabe~\ref{40000015}.
 \label{40000015:gebiet}}
 \end{figure}%
 mit homogenen Randbedingungen soll auf dem in Abbildung~\ref{40000015:gebiet}
 dargestellten Gebiet
-mit Hilfe eines Separationsansatzes gel"ost werden.
-Daf"ur geeignete Koordinaten sind sogenannte elliptische Koordinaten
+mit Hilfe eines Separationsansatzes gelöst werden.
+Dafür geeignete Koordinaten sind sogenannte elliptische Koordinaten
 $(\mu,\nu)\in \mathbb R^+\times [0,2\pi]$, mit der Koordinatenumrechnung
 \begin{align*}
 x&=\cosh\mu\cos\nu
 \\
 y&=\sinh\mu\sin\nu
 \end{align*}
-In einer guten Formelsammlung finden Sie den Laplace-Operator ausgedr"uckt
+In einer guten Formelsammlung finden Sie den Laplace-Operator ausgedrückt
 in diesen Koordinaten, er ist
 \[
 \Delta
@@ -28,9 +28,9 @@ in diesen Koordinaten, er ist
 \frac{\partial^2}{\partial \mu^2}+\frac{\partial^2}{\partial\nu^2}
 \biggr).
 \]
-F"uhren Sie einen Separationsansatz durch und stellen Sie gew"ohnliche
+Führen Sie einen Separationsansatz durch und stellen Sie gewöhnliche
 Differentialgleichungen und Randbedingungen auf, die das gestellte
-Eigenwertproblem zu l"osen gestatten.
+Eigenwertproblem zu lösen gestatten.
 
 \begin{loesung}
 Wir verwenden den Separationsansatz $u(\mu,\nu)=M(\mu)N(\nu)$ und
@@ -54,16 +54,16 @@ und multiplizieren mit $\sinh^2\mu+\sin^2\nu$, wir erhalten
 =
 \lambda\sinh^2\mu + \lambda \sin^2\nu.
 \]
-Jetzt k"onnen die Variablen getrennt werden:
+Jetzt können die Variablen getrennt werden:
 \[
 \frac{M''(\mu)}{M(\mu)}-\lambda\sinh^2\mu
 =
 -\frac{N''(\nu)}{N(\nu)}+\lambda\sin^2\nu.
 \]
-Da die linke Seite nur von $\mu$, die rechte aber nur von $\nu$ abh"angt,
-m"ussen beide Seiten konstant sein.
+Da die linke Seite nur von $\mu$, die rechte aber nur von $\nu$ abhängt,
+müssen beide Seiten konstant sein.
 Wir nennen die Konstante $\kappa$.
-Damit erhalten wir zwei gew"ohnliche Differentialgleichungen
+Damit erhalten wir zwei gewöhnliche Differentialgleichungen
 \begin{align*}
 \frac{M''(\mu)}{M(\mu)}-\lambda\sinh^2\mu &=  \kappa
 &
@@ -73,7 +73,7 @@ M''(\mu)-(\lambda\sinh^2\mu+\kappa)M(\mu)&=0
 &
 N''(\nu)-(\lambda\sin^2\nu+\kappa)N(\nu)&=0.
 \end{align*}
-Die zugeh"origen Randbedingungen sind
+Die zugehörigen Randbedingungen sind
 \begin{align*}
 M(0)&=0&
 N({\textstyle\frac{2\pi}{8}})&=0
@@ -87,8 +87,8 @@ N({\textstyle\frac{5\pi}{8}})&=0
 Separationsansatz mit Produkt $u(\mu,\nu) = M(\mu)N(\nu)$ ({\bf A}) 1 Punkt,
 Einsetzen in die Differentialgleichung ({\bf E}) 1 Punkt,
 Trennung der Variablen ({\bf T}) 1 Punkt,
-Differentialgleichung f"ur $M(\mu)$ ({\bf M}) 1 Punkt,
-Differentialgleichung f"ur $N(\nu)$ ({\bf N}) 1 Punkt,
-Randbedingungen f"ur $S$ und $T$ ({\bf R}) 1 Punkt.
+Differentialgleichung für $M(\mu)$ ({\bf M}) 1 Punkt,
+Differentialgleichung für $N(\nu)$ ({\bf N}) 1 Punkt,
+Randbedingungen für $S$ und $T$ ({\bf R}) 1 Punkt.
 \end{bewertung}
 

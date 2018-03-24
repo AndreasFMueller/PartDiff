@@ -1,4 +1,4 @@
-L"osen Sie die Differentialgleichung
+Lösen Sie die Differentialgleichung
 \[
 x^2\frac{\partial u}{\partial x}+y^2\frac{\partial u}{\partial y}=0
 \]
@@ -9,25 +9,25 @@ u(x,-1)=\frac1x,\quad x<0.
 
 \begin{loesung}
 Dies ist eine quasilineare partielle Differentialgleichung
-erster Ordnung, die mit Hilfe von Charakteristiken gel"ost werden
+erster Ordnung, die mit Hilfe von Charakteristiken gelöst werden
 kann.
 Die Anfangswerte sind auf den Punkten $(x_0,-1)$ vorgegeben.
-Das Differentialgleichungssytem f"ur die Charakteristiken ist
+Das Differentialgleichungssytem für die Charakteristiken ist
 \begin{align*}
 \dot x&=x^2\\
 \dot y&=y^2\\
 \dot u&=0
 \end{align*}
-Die Funktionen $x$, $y$ und $u$ m"ussen die Anfangsbedingungen
+Die Funktionen $x$, $y$ und $u$ müssen die Anfangsbedingungen
 \begin{align*}
 x(x_0,t)&=x_0\\
 y(x_0,t)&=-1\\
 u(x_0,t)&=\frac1{x_0}
 \end{align*}
-erf"ullen.
+erfüllen.
 
 Die ersten beiden Differentialgleichungen sind von der selben Art, diese
-gew"ohnliche Differentialgleichung l"asst sich leicht mit dem Separation l"osen:
+gewöhnliche Differentialgleichung lässt sich leicht mit dem Separation lösen:
 \begin{align*}
 \frac{dx}{dt}&=x^2
 &\Rightarrow&
@@ -50,7 +50,7 @@ Die Anfangsbedingungen verlangen
 x(x_0,0)&=x_0&&\Rightarrow&C_1&=-\frac1{x_0}&&\Rightarrow&x(t)&=-\frac1{t-\frac1{x_0}}=\frac{x_0}{1-tx_0}\\
 y(x_0,0)&=-1&&\Rightarrow&C_2&=1&&\Rightarrow&y(t)&=-\frac1{t+1}
 \end{align*}
-Nach dem zweiten Schritt der Charakteristiken-Methode m"ussen wir jetzt
+Nach dem zweiten Schritt der Charakteristiken-Methode müssen wir jetzt
 $x_0$ und $t$ aus den Gleichungen
 \begin{align*}
 x&=-\frac{1}{t-\frac1{x_0}},\\
@@ -62,7 +62,7 @@ Die zweite Gleichung liefert
 \[
 t=-1-\frac1{y}.
 \]
-Setzen wir dies und die dritte Gleichung in der Gleichung f"ur $x$ ein,
+Setzen wir dies und die dritte Gleichung in der Gleichung für $x$ ein,
 finden wir
 \begin{align*}
 x&=-\frac{1}{-1-\frac1y-u},\\
@@ -71,12 +71,12 @@ u(x,y)&=-1+\frac1x-\frac1y.
 \end{align*}
 
 {\bf Kontrolle:}
-Tats"achlich kann man durch Einsetzen von $(x_0,-1)$ sofort nachpr"ufen,
-dass $u$ die Randbedingung erf"ullt:
+Tatsächlich kann man durch Einsetzen von $(x_0,-1)$ sofort nachprüfen,
+dass $u$ die Randbedingung erfüllt:
 \[
 u(x_0,-1)=\frac1{x_0}-\frac1{-1}-1=\frac1{x_0}.
 \]
-Aber auch die Differentialgleichung ist erf"ullt:
+Aber auch die Differentialgleichung ist erfüllt:
 \[
 \left.
 \begin{aligned}
@@ -91,14 +91,14 @@ x^2\frac{\partial u}{\partial x}+y^2\frac{\partial u}{\partial y}
 =
 0,
 \]
-die Funktion ist also tats"achlich eine L"osung.
+die Funktion ist also tatsächlich eine Lösung.
 
 \medskip
 
 Alternativ kann man diese Aufgabe auch mit Hilfe eines Separationsansatzes
-l"osen. Allerdings verlangt dieses L"osung Hilfsmittel, die im Bachelor-Studium
-normalerweise nicht behandelt werden. Sie ist daher f"ur Studenten dieses
-Kurses nicht wirklich durchf"uhrbar. Trotzdem ist unten ein Bewertungsschema
+lösen. Allerdings verlangt dieses Lösung Hilfsmittel, die im Bachelor-Studium
+normalerweise nicht behandelt werden. Sie ist daher für Studenten dieses
+Kurses nicht wirklich durchführbar. Trotzdem ist unten ein Bewertungsschema
 angegben, auch wenn die letzten zwei Punkte praktisch unerreichbar waren.
 
 \medskip
@@ -113,8 +113,8 @@ mit $y$ auf die rechte, bekommt man
 \[
 x^2\frac{X'(x)}{X(x)}=- y^2\frac{Y'(y)}{Y(y)}.
 \]
-Da die linke Seite nur von $x$, die rechte aber nur von $y$ abh"angt,
-m"ussen beide Seiten konstant sein, wir nenne die Konstante $\mu$.
+Da die linke Seite nur von $x$, die rechte aber nur von $y$ abhängt,
+müssen beide Seiten konstant sein, wir nenne die Konstante $\mu$.
 So entstehen die beiden Differentialgleichungen
 \begin{align*}
 x^2\frac{X'(x)}{X(x)}&=\mu
@@ -139,12 +139,12 @@ y^2\frac{Y'(y)}{Y(y)}&=-\mu
 \Rightarrow\;
 Y(y)&=Be^{\frac{\mu}{y}},
 \end{align*}
-und damit die Teill"osungen
+und damit die Teillösungen
 \[
 u_\mu(x,y)=e^{\mu\bigl(-\frac1x+\frac1y\bigr)}.
 \]
-Aus diesen Teill"osungen muss jetzt die L"osung so linear kombiniert
-werden, dass die Anfangsbedingung erf"ullt wird. Die Linearkombination
+Aus diesen Teillösungen muss jetzt die Lösung so linear kombiniert
+werden, dass die Anfangsbedingung erfüllt wird. Die Linearkombination
 wird in diesem Fall ein Integral:
 \[
 u(x,y)=\int_{\mathbb R}C(\mu)

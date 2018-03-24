@@ -16,19 +16,19 @@ Ausserdem sind die Randbedingungen
 \[
 u(0,y)=g(y)\qquad\text{und}\qquad \frac{\partial u}{\partial x}(0,y)=0
 \]
-gegeben, wobei $g(y)$ eine f"ur grosse Argumentwerte nur sehr aufwendig zu
+gegeben, wobei $g(y)$ eine für grosse Argumentwerte nur sehr aufwendig zu
 berechnende Funktion ist.
 \begin{teilaufgaben}
 \item
 Ist das Problem gut gestellt?
 \item
 Wegen der Schwierigkeiten bei der Berechnung der Funktion $g$
-wurde eine numerische L"osung f"ur $u$ gerechnet, indem die
-Randwerte f"ur $|y|>5$ null gesetzt wurden.
-Diese L"osung wird nur in einem Teil von $\Omega$ mit der wahren L"osung
-"ubereinstimmen.
-F"ur welche Werte des Parameters $a$ kann man davon ausgehen, dass die
-numerische L"osung die wahre L"osung im Rechteck
+wurde eine numerische Lösung für $u$ gerechnet, indem die
+Randwerte für $|y|>5$ null gesetzt wurden.
+Diese Lösung wird nur in einem Teil von $\Omega$ mit der wahren Lösung
+übereinstimmen.
+Für welche Werte des Parameters $a$ kann man davon ausgehen, dass die
+numerische Lösung die wahre Lösung im Rechteck
 $R=\{(x,y)\,|\, 0\le x\le 1,-3\le y\le 3\}$ korrekt
 wiedergibt?
 \end{teilaufgaben}
@@ -38,9 +38,9 @@ wiedergibt?
 \begin{figure}
 \centering
 \includeagraphics[]{domain-1.pdf}
-\caption{Charakteristiken der Differentialgleichung~(\ref{90000013:dgl})
+\caption{Charakteristiken der Differentialgleichung~\eqref{90000013:dgl}
 und Rechteck $R$ (blau). 
-F"ur die Frage in Teilaufgabe b) der Aufgabe ist die fett ausgezogene
+Für die Frage in Teilaufgabe b) der Aufgabe ist die fett ausgezogene
 rote Charakteristik durch den Punkt $(0,-5)$ massgeben.
 \label{90000013:domain}}
 \end{figure}
@@ -54,8 +54,8 @@ A=\begin{pmatrix}\sinh a&\cosh a \\ \cosh a&\sinh a\end{pmatrix}
 \]
 die Differentialgleichung ist also hyperbolisch.
 Das Problem ist gut gestellt, wenn die von der $y$-Achse ausgehenden
-Charakteristiken das ganze Gebiet "uberdecken. 
-Dazu muss die Differentialgleichung der Charakteristiken gel"ost werden,
+Charakteristiken das ganze Gebiet überdecken. 
+Dazu muss die Differentialgleichung der Charakteristiken gelöst werden,
 sie lautet
 \[
 \dot y^2
@@ -75,7 +75,7 @@ Dividieren wir durch $\sinh a $ und $\dot x^2$, erhalten wir
 \label{90000013:qgl}
 \end{equation}
 Der Quotient $\dot y/\dot x$ ist die Steigung $y'$ der Charakteristiken.
-Die quadratische Gleichung~(\ref{90000013:qgl}) hat die Nullstellen
+Die quadratische Gleichung~\eqref{90000013:qgl} hat die Nullstellen
 \[
 \frac{\dot y}{\dot x}=y'=
 \coth a\pm\sqrt{\coth^2 a-1}
@@ -83,23 +83,23 @@ Die quadratische Gleichung~(\ref{90000013:qgl}) hat die Nullstellen
 \]
 Die Charakteristiken sind also Geraden mit Steigungen
 $m_{\pm}=\coth a\pm\sqrt{\coth^2a-1}$.
-Da $\coth a>1$ ist f"ur $a>0$, sind beide Steigungen positiv.
+Da $\coth a>1$ ist für $a>0$, sind beide Steigungen positiv.
 In Abbildung~\ref{90000013:domain} sind die Charakteristiken in den Farben
-rot und gr"un dargestellt, wobei die rote Gerade die Steigung $m_+$ hst.
-Damit ist klar, dass die Charakteristiken ganz $\Omega$ "uberdecken, das
+rot und grün dargestellt, wobei die rote Gerade die Steigung $m_+$ hst.
+Damit ist klar, dass die Charakteristiken ganz $\Omega$ überdecken, das
 Problem ist also gut gestellt.
 
 Alternativ kann man auch argumentieren, dass die $y$-Achse keine 
-Charakteristik ist, denn dieses Cauchy-Problem w"are genau dann
-nicht gut gestellt, wenn die Anfangskurve eine Charakteristik w"are.
+Charakteristik ist, denn dieses Cauchy-Problem wäre genau dann
+nicht gut gestellt, wenn die Anfangskurve eine Charakteristik wäre.
 \item
 Die Charakteristiken sind Geraden mit positiver Steigung.
-Die numerische L"osung gibt im verlangten Rechteck die L"osung
+Die numerische Lösung gibt im verlangten Rechteck die Lösung
 korrekt wieder, wenn die von $(0,-5)$ ausgehenden Charakteristiken
 das Rechteck nicht schneiden.
 Die Steigung von $(0,-5)$ zur rechten unteren Ecke des Rechtecks $R$
 ist $2$, 
-man muss also herausfinden, welches $a$ auf die diese Steigung f"uhrt.
+man muss also herausfinden, welches $a$ auf die diese Steigung führt.
 Dies liefert die Gleichung
 \begin{align*}
 \coth a + \sqrt{\coth^2 a-1}&=2
@@ -112,7 +112,7 @@ Dies liefert die Gleichung
 \qquad\Rightarrow\qquad
 a=1.0986
 \end{align*}
-Die numerische L"osung kann also nur f"ur $a>1.0986$ die wahre L"osung in
+Die numerische Lösung kann also nur für $a>1.0986$ die wahre Lösung in
 $R$ korrekt wiedergeben.
 \qedhere
 \end{teilaufgaben}

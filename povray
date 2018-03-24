@@ -9,7 +9,12 @@
 #
 case `uname` in
 Darwin)
-	exec povray +L/Applications/PovrayCommandLineMac/include "$@"
+	if [ -d /Applications/PovrayCommandLineMacV2 ]
+	then
+		exec povray +L/Applications/PovrayCommandLineMacV2/include "$@"
+	else
+		exec povray +L/Applications/PovrayCommandLineMac/include "$@"
+	fi
 	;;
 *)
 	exec povray "$@"

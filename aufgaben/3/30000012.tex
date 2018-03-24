@@ -2,7 +2,7 @@ Sei $0 < x_0 < 1$ und $\Omega$ das Gebiet
 \[
 \Omega=\{ (x,y)\,|\, x_0<x<1\wedge 0 < y < 1\}.
 \]
-Die Funktion $u$ erf"ullt in $\Omega$ die Differentialgleichung
+Die Funktion $u$ erfüllt in $\Omega$ die Differentialgleichung
 \begin{equation}
 x\frac{\partial u}{\partial x}
 +
@@ -19,13 +19,13 @@ u(x_0,y)=y^2,\qquad 0<y<1.
 \item
 Finden Sie eine Funktion $u$ mit diesen Eigenschaften.
 \item
-Ist die L"osung $u$ durch die gegebenen Randbedingungen eindeutig bestimmt?
+Ist die Lösung $u$ durch die gegebenen Randbedingungen eindeutig bestimmt?
 \end{teilaufgaben}
 
 \begin{loesung}
 Dies ist eine quasilineare partielle Differentialgleichung erster Ordnung,
-die mit der Methode der Charakteristiken gel"ost werden kann.
-Die Differentialgleichungen f"ur die Charakteristiken sind
+die mit der Methode der Charakteristiken gelöst werden kann.
+Die Differentialgleichungen für die Charakteristiken sind
 \[
 \begin{aligned}
 \dot x &= x       &&\Rightarrow&   x(t) &= x_0 e^t \\
@@ -33,10 +33,10 @@ Die Differentialgleichungen f"ur die Charakteristiken sind
 \dot u &= 0       &&\Rightarrow&   u(t) &= u_0.
 \end{aligned}
 \]
-Die Gleichung f"ur $y(t)$ kann gel"ost werden, indem man sie zun"achst mit
+Die Gleichung für $y(t)$ kann gelöst werden, indem man sie zunächst mit
 $y$ multipliziert und dann bemerkt, dass $2y\dot y$ die Ableitung von $y^2$
 ist.
-Die L"osung ist daher
+Die Lösung ist daher
 \begin{align*}
 \dot y &= \frac1y
 &&\Rightarrow&
@@ -56,23 +56,23 @@ y(t)&=\sqrt{2t+y_0^2}.
 \end{figure}
 \begin{teilaufgaben}
 \item
-Um eine L"osungsfunktion zu finden, m"ussen die Variablen $y_0$ und $t$ aus den
+Um eine Lösungsfunktion zu finden, müssen die Variablen $y_0$ und $t$ aus den
 Gleichungen
 \begin{align*}
 x(t) &= x_0e^t\\
 y(t)&=\sqrt{2t+y_0^2}\\
 u(t)&=u_0 = y_0^2
 \end{align*}
-eliminiert werden, und $u$ muss durch $x$ und $y$ ausgedr"uckt werden.
+eliminiert werden, und $u$ muss durch $x$ und $y$ ausgedrückt werden.
 Der Parameter $x_0$ darf stehen bleiben.
 
-Zun"achst kann man die erste Gleichung nach $t$ und die zweite nach $y_0^2$
-aufl"osen: 
+Zunächst kann man die erste Gleichung nach $t$ und die zweite nach $y_0^2$
+auflösen: 
 \begin{align*}
 t&=\log\frac{x}{x_0}\\
 y_0^2&=y^2-2t.
 \end{align*}
-Zusammen mit der Gleichung f"ur $u(t)$ finden wir
+Zusammen mit der Gleichung für $u(t)$ finden wir
 \[
 u(x,y) = y^2 - 2\log\frac{x}{x_0}.
 \]
@@ -96,14 +96,14 @@ x\cdot \biggl(-\frac{2}{x}\biggr)
 =
 0,
 \]
-die Funktion $u$ erf"ullt also tats"achlich die Differentialgleichung.
+die Funktion $u$ erfüllt also tatsächlich die Differentialgleichung.
 Aber auch die Randwerte sind korrekt:
 \[
 u(x_0,y)=y^2-2\log\frac{x_0}{x_0}=y^2,
 \]
-also erf"ullt $u(x,y)$ auch die Randbedingungen.
+also erfüllt $u(x,y)$ auch die Randbedingungen.
 \item
-Im Grundriss erf"ullen die Charakteristiken die Gleichung
+Im Grundriss erfüllen die Charakteristiken die Gleichung
 \[
 t = \log\frac{x}{x_0}
 \qquad\Rightarrow\qquad
@@ -111,7 +111,7 @@ y(x)=\sqrt{\log\frac{x}{x_0}+y_0^2}.
 \]
 Die Charakteristik beginnt im Punkt $(x_0,y_0)$, insbesondere legen die
 gegebenen Randwerte nur Funktionswerte von $u$ zwischen den Charakteristiken
-f"ur $y_0=0$ und $y_0=1$ fest, also zwischen den Kurven
+für $y_0=0$ und $y_0=1$ fest, also zwischen den Kurven
 \[
 y(x) = \sqrt{\log\frac{x}{x_0}}
 \qquad\text{und}\qquad
@@ -119,17 +119,17 @@ y(x) = \sqrt{\log\frac{x}{x_0}+1}.
 \]
 Abbildung~\ref{30000012} zeigt die beiden Kurven und das Gebiet $\Omega$.
 Es ist offensichtlich, dass die Charakteristiken nicht ganz $\Omega$
-"uberdecken.
-Somit legen die gegeben Randbedingungen die L"osung nicht eindeutig fest.
+überdecken.
+Somit legen die gegeben Randbedingungen die Lösung nicht eindeutig fest.
 \qedhere
 \end{teilaufgaben}
 \end{loesung}
 
 \begin{diskussion}
-Zuf"alligerweise kann man diese Aufgabe auch mit einem Separationsansatz
-mit einer Summe $u(x,y)= X(x) + Y(y)$ l"osen.
-Setzt man den Ansatz in die Differentialgleichung (\ref{30000012:dgl}) ein,
-erh"alt man
+Zufälligerweise kann man diese Aufgabe auch mit einem Separationsansatz
+mit einer Summe $u(x,y)= X(x) + Y(y)$ lösen.
+Setzt man den Ansatz in die Differentialgleichung \eqref{30000012:dgl} ein,
+erhält man
 \[
 xX'(x) +\frac1yY'(y)=0,
 \]
@@ -137,23 +137,23 @@ was man leicht separieren kann:
 \[
 xX'(x) = - \frac1yY'(y).
 \]
-Beide Seiten m"ussen daher konstant sein, wir nennen die Konstante $k$.
-Wir m"ussen jetzt zwei gew"ohnliche Differentialgleichungen mit dem Paramter
-$k$ l"osen, die aber sofort durch Integration gel"ost werden k"Onnen:
+Beide Seiten müssen daher konstant sein, wir nennen die Konstante $k$.
+Wir müssen jetzt zwei gewöhnliche Differentialgleichungen mit dem Paramter
+$k$ lösen, die aber sofort durch Integration gelöst werden können:
 \begin{align*}
 X'(x)&=\frac{k}{x}&&\Rightarrow&X(x)&=k\log x + C_x      \\
 Y'(y)&=-ky        &&\Rightarrow&Y(y)&=-\frac{k}2y^2 + C_y
 \end{align*}
-Wir haben daher f"ur jedes $k$ die L"osung
+Wir haben daher für jedes $k$ die Lösung
 \[
 u_k(x,y)=-\frac{k}2 y^2 + k\log x + C
 \]
 gefunden.
-Aus diesen L"osungen muss jetzt durch "Uberlagerung eine L"osung 
-gebaut werden, die auch die Randbedingungen erf"ullt.
+Aus diesen Lösungen muss jetzt durch Überlagerung eine Lösung 
+gebaut werden, die auch die Randbedingungen erfüllt.
 An dieser Stelle versagt die Methode normalerweise, aber im vorliegenden
-Fall hat man wegen der speziellen Form der Randbedingungen Gl"uck, des
-gerade eine der Funktion $u_k$ die L"osung ist, man muss also
+Fall hat man wegen der speziellen Form der Randbedingungen Glück, des
+gerade eine der Funktion $u_k$ die Lösung ist, man muss also
 nur noch $k$ und $C$ bestimmen.
 
 An der Stelle $(x_0,0)$ muss der Wert $0$ entstehen, also
@@ -161,43 +161,43 @@ An der Stelle $(x_0,0)$ muss der Wert $0$ entstehen, also
 u_k(x_0,0) = k\log x_0 + C=0
 \qquad\Rightarrow\qquad C=-k\log x_0.
 \]
-Damit kann man die L"osung jetzt auch
+Damit kann man die Lösung jetzt auch
 \[
 u_k(x,y)=-\frac{k}{2}y^2 +k\log\frac{x}{x_0}
 \]
 schreiben.
-Diese L"osung erf"ullt die Randbedingung im Punkt $(x_0,0)$, aber noch
-nicht f"ur alle $(x_0,y)$.
-Setzt man die Randbedingung ein, erh"alt man die Gleichung
+Diese Lösung erfüllt die Randbedingung im Punkt $(x_0,0)$, aber noch
+nicht für alle $(x_0,y)$.
+Setzt man die Randbedingung ein, erhält man die Gleichung
 \begin{equation}
 u_k(x_0,y_0) = -\frac{k}{2}y_0^2 +k\log\frac{x_0}{x_0} = -\frac{k}{2}y_0^2=y_0^2.
 \label{30000012:k}
 \end{equation}
-Daraus k"onnen wir ablesen, dass $k=-2$ sein muss, und damit bekommen
-wir tats"achlich die L"osung
+Daraus können wir ablesen, dass $k=-2$ sein muss, und damit bekommen
+wir tatsächlich die Lösung
 \[
 u_{-2}(x,y)=y^2 -2\log\frac{x}{x_0}.
 \]
-Man beachte, dass dies f"ur jede andere Randbedingung aber nicht mehr
-funktioniert, weil die Gleichung (\ref{30000012:k}) dann nicht mehr
+Man beachte, dass dies für jede andere Randbedingung aber nicht mehr
+funktioniert, weil die Gleichung \eqref{30000012:k} dann nicht mehr
 ein einziges $k$, liefert.
-Und nat"urlich kann man mit dieser Methode auch nicht entscheiden, ob
+Und natürlich kann man mit dieser Methode auch nicht entscheiden, ob
 das Problem gut gestellt ist.
 
-In der Pr"ufung haben viel die Funktion
+In der Prüfung haben viel die Funktion
 \[
 v(x,y)=\biggl(y^2-2\log\frac{x}{x_0}\biggr)^2
 \]
 gefunden.
-Die Ursache daf"ur war, dass der $y_0$-Wert, der f"ur die Randbedingung
-$u(x_0,y_0)=y_0^2$ und die Integrationskonstante f"ur $y_0$, die
-unsorgf"altigerweise auch mit $y_0$ bezeichnet wurde, nicht
+Die Ursache dafür war, dass der $y_0$-Wert, der für die Randbedingung
+$u(x_0,y_0)=y_0^2$ und die Integrationskonstante für $y_0$, die
+unsorgfältigerweise auch mit $y_0$ bezeichnet wurde, nicht
 auseinandergehalten wurden.
-Ungl"ucklich ist dabei, dass diese Funktion die Differentialgleichung
-erf"ullt.
-Dies ist nicht so "uberraschend: ist $u$ eine L"osung einer homogenen
+Unglücklich ist dabei, dass diese Funktion die Differentialgleichung
+erfüllt.
+Dies ist nicht so überraschend: ist $u$ eine Lösung einer homogenen
 linearen partiellen Differentialgleichung erster Ordnung, dann ist auch
-$u^\alpha$ eine L"osung, denn es ist
+$u^\alpha$ eine Lösung, denn es ist
 \begin{align*}
 a(x,y)\frac{\partial u^{\alpha}}{\partial x}
 +
@@ -212,15 +212,15 @@ b(x,y)\alpha u^{\alpha-1}\frac{\partial u}{\partial y}
 +
 b(x,y)\frac{\partial u}{\partial y}\biggr)}_{\displaystyle=0}=0.
 \end{align*}
-Um sich zu versichern, dass man wirklich die L"osung gefunden hat, muss
-man also unbedingt auch die Randbedingung pr"ufen.
+Um sich zu versichern, dass man wirklich die Lösung gefunden hat, muss
+man also unbedingt auch die Randbedingung prüfen.
 \end{diskussion}
 
 \begin{bewertung}
 Methode der Charakteristiken ({\bf M}) 1 Punkt,
 Differentialgleichungen der Charakteristiken ({\bf D}) 1 Punkt,
-L"osung der Differentialgleichung f"ur $y$ ({\bf Y}) 1 Punkt,
+Lösung der Differentialgleichung für $y$ ({\bf Y}) 1 Punkt,
 Einsetzen der Randbedingung ({\bf R}) 1 Punkt,
 Elimination der Variablen $y_0$ und $t$ ({\bf E}) 1 Punkt,
-ist L"osung eindeutig bestimmt ({\bf B}) 1 Punkt.
+ist Lösung eindeutig bestimmt ({\bf B}) 1 Punkt.
 \end{bewertung}

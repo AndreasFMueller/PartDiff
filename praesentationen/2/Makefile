@@ -6,7 +6,7 @@
 
 all:	partdiff-handout-2.pdf partdiff-presentation-2.pdf
 
-CONTENT = slides.tex surface.jpg kurven-1.pdf
+CONTENT = common.tex slides.tex surface.jpg kurven-1.pdf
 
 partdiff-handout-2.pdf:	partdiff-handout-2.tex $(CONTENT)
 	pdflatex partdiff-handout-2.tex

@@ -1,4 +1,4 @@
-Finden Sie eine beschr"ankte L"osung der Differentialgleichung
+Finden Sie eine beschränkte Lösung der Differentialgleichung
 \begin{equation}
 \frac1{1+t^2}\frac{\partial u}{\partial t}=\frac{\partial^2 u}{\partial x^2}
 \label{40000010:dgl}
@@ -6,12 +6,12 @@ Finden Sie eine beschr"ankte L"osung der Differentialgleichung
 auf dem Gebiet $\Omega=\{(x,t)\,|\, 0<x<\pi,t>0\}$ 
 mit den Randbedingungen
 \begin{align*}
-u(0,t)=u(\pi,0)&=0&&\text{f"ur $t > 0$}\\
-u(x,0)&=\sin x&&\text{f"ur $0<x<\pi$}.
+u(0,t)=u(\pi,0)&=0&&\text{für $t > 0$}\\
+u(x,0)&=\sin x&&\text{für $0<x<\pi$}.
 \end{align*}
 
 \begin{loesung}
-Diese Differentialgleichung kann mit einem Seprationsansatz gel"ost werden.
+Diese Differentialgleichung kann mit einem Seprationsansatz gelöst werden.
 Wir schreiben $u(x,t)=X(x)T(t)$ und setzen dies in die Differentialgleichung
 ein:
 \begin{align*}
@@ -22,18 +22,18 @@ und erhalten die separierte Differentialgleichung
 \[
 \frac1{1+t^2}\frac{T'(t)}{T(t)}=\frac{X''(x)}{X(x)}=\mu.
 \]
-Die Differentialgleichung f"ur $T$ kann mit der Separationsmethode
-gel"ost werden:
+Die Differentialgleichung für $T$ kann mit der Separationsmethode
+gelöst werden:
 \begin{align*}
 T'(t)&=\mu (1+t^2)T(t)\\
 \int\frac{dT}{T}&=\mu\int 1+t^2\,dt\\
 \log|T|&=\mu(t+\frac13t^3) +C\\
 T(t)&=K\exp\mu\biggl(t+\frac13t^3\biggr)
 \end{align*}
-Diese L"osungsfunktion ist nur dann beschr"ankt, kann also nur dann
-f"ur die gesuchte L"osung in Frage kommen, wenn $\mu <0$.
+Diese Lösungsfunktion ist nur dann beschränkt, kann also nur dann
+für die gesuchte Lösung in Frage kommen, wenn $\mu <0$.
 
-Die Differentialgleichung f"ur $X$ ist
+Die Differentialgleichung für $X$ ist
 \begin{align*}
 X''(x)&=\mu X(x)\\
 \Rightarrow\qquad
@@ -44,15 +44,15 @@ Die Randbedingungen verlangen, dass
 X(0)&=A_\mu=0,\\
 X(\pi)&=A_\mu\cos(\sqrt{-\mu}\pi)+B_\mu\sin(\sqrt{-\mu}\pi)=B_\mu\sin(\sqrt{-\mu}\pi).
 \end{align*}
-Da $B_\mu\ne 0$ sein muss, wenn "uberhaupt eine L"osung gefunden werden
+Da $B_\mu\ne 0$ sein muss, wenn überhaupt eine Lösung gefunden werden
 soll, muss $\sin(\sqrt{-\mu}\pi)=0$ sein, d.~h.~$\mu$ muss eine negative ganze
 Zahl sein, wir schreiben $k=\sqrt{-\mu}$ oder $\mu=-k^2$.
-Damit haben wir L"osungen
+Damit haben wir Lösungen
 \[
 u_k(x,t)=K_k e^{-k^2(t+\frac13t^3)}\sin kx
 \]
-gefunden, die jetzt zu einer L"osung zusammengesetzt werden m"ussen, die
-die Randbedingung f"ur $t=0,$ $0<x<\pi$ erf"ullt. Dazu setzen wir an:
+gefunden, die jetzt zu einer Lösung zusammengesetzt werden müssen, die
+die Randbedingung für $t=0,$ $0<x<\pi$ erfüllt. Dazu setzen wir an:
 \[
 u(x,t)=\sum_{k=1}^\infty K_k e^{-k^2(t+\frac13t^3)}\sin kx
 \]
@@ -61,7 +61,7 @@ und setzen die Anfangsbedingung ein:
 u(x,0)=\sin x=\sum_{k=1}^\infty K_k \sin kx.
 \]
 Koeffizientenvergleich zeigt, dass $K_1=1$ sein muss und alle anderen $K_k$
-verschwinden m"ussen, die gesuchte L"osung ist also
+verschwinden müssen, die gesuchte Lösung ist also
 \[
 u(x,t)=e^{-(t+\frac13t^3)}\sin x.
 \qedhere
@@ -89,24 +89,24 @@ e^{-(t+\frac13t^3)}
 -e^{-(t+\frac13t^3)}
 \sin x
 \end{align*}
-Die Gleichung (\ref{40000010:dgl}) ist also erf"ullt.
-Aber auch die Randbedingungen sind erf"ullt:
+Die Gleichung \eqref{40000010:dgl} ist also erfüllt.
+Aber auch die Randbedingungen sind erfüllt:
 \begin{align*}
 u(0,t)&=e^{-(t+\frac13t^3)}\sin 0=0\\
 u(\pi,t)&=e^{-(t+\frac13t^3)}\sin\pi=0\\
 u(x,0)&=\sin x,
 \end{align*}
-$u(x,t)$ ist also genau die gesuchte L"osung.
+$u(x,t)$ ist also genau die gesuchte Lösung.
 \end{diskussion}
 
 \begin{bewertung}
 Separationsansatz ({\bf S}) 1 Punkt,
 Wahl einer Konstanten ({\bf K}) 1 Punkt,
-L"osung der Gleichung f"ur $T$ ({\bf T}) 1 Punkt,
-L"osung der Gleichung f"ur $X$ ({\bf X}) 1 Punkt,
-Anwendung der Randbedingungen f"ur $x=0$ und $x=\pi$
+Lösung der Gleichung für $T$ ({\bf T}) 1 Punkt,
+Lösung der Gleichung für $X$ ({\bf X}) 1 Punkt,
+Anwendung der Randbedingungen für $x=0$ und $x=\pi$
 zur Eingrenzung von $X$ ({\bf R}) 1 Punkt,
-Anwendung der Randbedingungen f"ur $t=0$ zur Bestimmung
-der L"osung ({\bf L}) 1 Punkt.
+Anwendung der Randbedingungen für $t=0$ zur Bestimmung
+der Lösung ({\bf L}) 1 Punkt.
 \end{bewertung}
 

@@ -8,37 +8,37 @@ Die partielle Differentialgleichung
 =0
 \label{70000008:pdgl}
 \end{equation}
-soll im Gebiet $\Omega=\{(x,y)\,|\, 0< x<1,\; 0<y<1\}$ gel"ost
+soll im Gebiet $\Omega=\{(x,y)\,|\, 0< x<1,\; 0<y<1\}$ gelöst
 werden. Auf dem Rand von $\Omega$ soll $u$ die folgenden Werte
 annehmen:
 \begin{align*}
 &
 	&u(x,1)&=\sin({\textstyle\frac\pi4}(1-x))
 		&&
-			&&\text{f"ur $0<x<1$}\\
+			&&\text{für $0<x<1$}\\
 u(0,y)&=\sin({\textstyle\frac\pi4}y)
 	&&
 		&u(1,y)&=\sin({\textstyle\frac\pi4}(1-y))
-			&&\text{f"ur $0<y<1$}\\
+			&&\text{für $0<y<1$}\\
 &
 	&u(x,0)&=\sin({\textstyle\frac\pi4} x)
 		&&                
-			&&\text{f"ur $0<x<1$}
+			&&\text{für $0<x<1$}
 \end{align*}
-Bei der numerischen Berechnung der L"osung wird ein Wert
+Bei der numerischen Berechnung der Lösung wird ein Wert
 $u(\frac12,\frac12)=0.72$ gefunden. Kann das sein?
 
 \begin{hinweis}
-Versuchen Sie nicht, die partielle Differentialgleichung zu l"osen.
+Versuchen Sie nicht, die partielle Differentialgleichung zu lösen.
 \end{hinweis}
 
 \begin{loesung}
-Eine Aussage "uber die Gr"osse einzelner Werte l"asst sich f"ur
-elliptische partielle Differentialgleichungen machen, da f"ur diese das
+Eine Aussage über die Grösse einzelner Werte lässt sich für
+elliptische partielle Differentialgleichungen machen, da für diese das
 Maximumprinzip gilt.
 
-Wir pr"ufen daher zun"achst, ob eine elliptische
-partielle Differentialgleichung vorliegt. Dazu ben"otigen wir die
+Wir prüfen daher zunächst, ob eine elliptische
+partielle Differentialgleichung vorliegt. Dazu benötigen wir die
 Symbolmatrix, die in diesem Fall 
 \[
 A=\begin{pmatrix}
@@ -53,17 +53,17 @@ dieser Matrix positiv ist:
 \det A=\underbrace{(2-x^2)}_{> 1}\underbrace{(2-y^2)}_{> 1}-\underbrace{x^4y^4}_{< 1}>0
 \]
 Man beachte dazu, dass im Inneren des Gebietes, und nur dies ist relevant,
-die angegebenen Ungleichungen erf"ullt sind, die Determinante ist also
+die angegebenen Ungleichungen erfüllt sind, die Determinante ist also
 positiv.
-Daraus folgt, dass die partielle Differentialgleichung (\ref{70000008:pdgl})
+Daraus folgt, dass die partielle Differentialgleichung \eqref{70000008:pdgl}
 elliptisch ist.
 
 Das Maximum-Prinzip besagt, dass die Funktionswerte von $u$ im Inneren
-des Gebietes die Randwerte nicht "ubersteigen oder unterschreiten
-k"onnen. Die Randwerte sind Funktionswerte der Funktion $f(t)=\sin(\frac\pi4t)$
-f"ur $0<t<1$. Da die Funktion $\sin(\frac\pi4t)$ monoton wachsend ist, ist das
+des Gebietes die Randwerte nicht übersteigen oder unterschreiten
+können. Die Randwerte sind Funktionswerte der Funktion $f(t)=\sin(\frac\pi4t)$
+für $0<t<1$. Da die Funktion $\sin(\frac\pi4t)$ monoton wachsend ist, ist das
 Maximum $\sin\frac\pi4=\frac{\sqrt{2}}2=0.7071067811865$.
-Die L"osung $u$ darf daher im Gebiet $\Omega$ nie gr"osser als
+Die Lösung $u$ darf daher im Gebiet $\Omega$ nie grösser als
 $\frac{\sqrt{2}}2$ werden. Der numerisch gefundene Wert im Punkt
 $(\frac12,\frac12)$ widerspricht also dem Maximumprinzip.
 \end{loesung}

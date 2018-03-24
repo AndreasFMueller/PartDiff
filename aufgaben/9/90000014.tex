@@ -16,19 +16,19 @@ Ausserdem sind die Randbedingungen
 \[
 u(0,y)=g(y)\qquad\text{und}\qquad \frac{\partial u}{\partial x}(0,y)=0
 \]
-gegeben, wobei $g(y)$ eine f"ur grosse Argumentwerte nur sehr aufwendig zu
+gegeben, wobei $g(y)$ eine für grosse Argumentwerte nur sehr aufwendig zu
 berechnende Funktion ist.
 \begin{teilaufgaben}
 \item
 Ist das Problem gut gestellt?
 \item
 Wegen der Schwierigkeiten bei der Berechnung der Funktion $g$
-wurde eine numerische L"osung f"ur $u$ gerechnet, indem die
-Randwerte f"ur $|y|>5$ null gesetzt wurden.
-Diese L"osung wird nur in einem Teil von $\Omega$ mit der wahren L"osung
-"ubereinstimmen.
-F"ur welche Werte des Parameters $\alpha$ kann man davon ausgehen, dass die
-numerische L"osung die wahre L"osung im Rechteck
+wurde eine numerische Lösung für $u$ gerechnet, indem die
+Randwerte für $|y|>5$ null gesetzt wurden.
+Diese Lösung wird nur in einem Teil von $\Omega$ mit der wahren Lösung
+übereinstimmen.
+Für welche Werte des Parameters $\alpha$ kann man davon ausgehen, dass die
+numerische Lösung die wahre Lösung im Rechteck
 $R=\{(x,y)\,|\, 0\le x\le 3,-2\le y\le 2\}$ korrekt
 wiedergibt?
 \end{teilaufgaben}
@@ -38,12 +38,12 @@ wiedergibt?
 \begin{figure}
 \centering
 \includeagraphics[]{domain-1.pdf}
-\caption{Charakteristiken der Differentialgleichung~(\ref{90000014:dgl})
+\caption{Charakteristiken der Differentialgleichung~\eqref{90000014:dgl}
 und Rechteck $R$ (blau). 
-Die Steigung der roten Charakteristiken ist unabh"angig von $\alpha$.
-Die Steigung der gr"unen Charakteristiken h"angt nach~\eqref{90000014:steigung}
+Die Steigung der roten Charakteristiken ist unabhängig von $\alpha$.
+Die Steigung der grünen Charakteristiken hängt nach~\eqref{90000014:steigung}
 von $\alpha$ ab.
-F"ur die Frage in Teilaufgabe b) der Aufgabe sind die fett ausgezogenen
+Für die Frage in Teilaufgabe b) der Aufgabe sind die fett ausgezogenen
 Charakteristiken durch die Ecken des Rechtecks massgeben.
 \label{90000014:domain}}
 \end{figure}
@@ -55,11 +55,11 @@ A=\begin{pmatrix}\alpha+1&\alpha \\ \alpha&\alpha - 1\end{pmatrix}
 \qquad\Rightarrow\qquad
 \det A=(\alpha + 1)(\alpha - 1) - \alpha^2=-1<0,
 \]
-die Differentialgleichung ist also f"ur alle in Frage kommenden
+die Differentialgleichung ist also für alle in Frage kommenden
 Werte von $\alpha$ hyperbolisch.
 Das Problem ist gut gestellt, wenn die von der $y$-Achse ausgehenden
-Charakteristiken das ganze Gebiet "uberdecken. 
-Dazu muss die Differentialgleichung der Charakteristiken gel"ost werden,
+Charakteristiken das ganze Gebiet überdecken. 
+Dazu muss die Differentialgleichung der Charakteristiken gelöst werden,
 sie lautet
 \[
 \dot y^2
@@ -80,7 +80,7 @@ Dividieren wir durch $\dot x^2$, erhalten wir
 \label{90000014:qgl}
 \end{equation}
 Der Quotient $\dot y/\dot x$ ist die Steigung $y'$ der Charakteristiken.
-Die quadratische Gleichung~(\ref{90000014:qgl}) f"ur die Steigung $y'$
+Die quadratische Gleichung~\eqref{90000014:qgl} für die Steigung $y'$
 hat die Nullstellen
 \begin{equation}
 \frac{\dot y}{\dot x}=y'=
@@ -98,22 +98,22 @@ hat die Nullstellen
 \end{equation}
 Die Charakteristiken sind also Geraden mit Steigung $1$ oder
 $(\alpha - 1)/(\alpha + 1)$.
-F"ur $\alpha < 1$ wird die Steigung negativ.
-F"ur Werte von $\alpha$ nahe genug bei $-1$ wird die Steigung beliebig
+Für $\alpha < 1$ wird die Steigung negativ.
+Für Werte von $\alpha$ nahe genug bei $-1$ wird die Steigung beliebig
 negativ.
-In jedem Fall l"asst sich ganz $\Omega$ mit Charakteristiken "uberdecken.
+In jedem Fall lässt sich ganz $\Omega$ mit Charakteristiken überdecken.
 
 \item
 Aus der Graphik~\ref{90000014:domain} kann man ablesen,
-dass die numerische L"osung genau dann
-die L"osung im Rechteck $R$ korrekt wiedergibt, wenn von den Punkten
-$(0,\pm 5)$ ausgehenden Charakteristiken das Rechteck h"ochstens noch 
+dass die numerische Lösung genau dann
+die Lösung im Rechteck $R$ korrekt wiedergibt, wenn von den Punkten
+$(0,\pm 5)$ ausgehenden Charakteristiken das Rechteck höchstens noch 
 streifen.
-F"ur die von $(0,-5)$ ausgehende Charakteristik mit Steigung $1$ ist
-dies auf jeden Fall erf"ullt.
+Für die von $(0,-5)$ ausgehende Charakteristik mit Steigung $1$ ist
+dies auf jeden Fall erfüllt.
 Die vom Punkt $(0,5)$ ausgehende Charakteristik mit muss aus
-Symmetriegr"unden mindestens die Steigung $-1$ haben.
-Das zugeh"orige $\alpha$ ist
+Symmetriegründen mindestens die Steigung $-1$ haben.
+Das zugehörige $\alpha$ ist
 \[
 \frac{\alpha - 1}{\alpha + 1}=-1
 \qquad\Rightarrow\qquad

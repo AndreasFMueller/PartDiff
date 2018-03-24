@@ -5,10 +5,10 @@ Differentialgleichung
 =
 \frac{\partial^2 u}{\partial x^2}+2\frac{\partial u}{\partial x}
 \]
-gel"ost werden. Finden Sie eine L"osung $u(x,t)$, die Randwerte
+gelöst werden. Finden Sie eine Lösung $u(x,t)$, die Randwerte
 \begin{align*}
-u(0,t)&=u(\pi,t)=0&&\text{f"ur $t>0$}\\
-u(x,0)&=e^{-x}\sin x&&\text{f"ur $0<x<\pi$}
+u(0,t)&=u(\pi,t)=0&&\text{für $t>0$}\\
+u(x,0)&=e^{-x}\sin x&&\text{für $0<x<\pi$}
 \end{align*}
 hat.
 
@@ -19,25 +19,25 @@ Ein Separationsansatz $u(x,t)=X(x)T(t)$ ergibt die separierte Gleichung
 =
 \frac{X''(x)+2X'(x)}{X(x)}.
 \]
-Da die linke Seite nur von $t$, die rechte aber nur von $x$ abh"angt,
-m"ussen beide Seiten konstant $=\lambda$ sein. Die linke Seite wird
+Da die linke Seite nur von $t$, die rechte aber nur von $x$ abhängt,
+müssen beide Seiten konstant $=\lambda$ sein. Die linke Seite wird
 damit zu
 \[
 T' = \lambda T
 \]
 Die partielle Differentialgleichung ist parabolisch, wir erwarten also
-das Verhalten der L"osungen wie bei der W"armeleitungsgleichung, insbesondere
+das Verhalten der Lösungen wie bei der Wärmeleitungsgleichung, insbesondere
 erwarten wir, dass die Amplituden mit der Zeit abnehmen, was einer
-negativen Konstanten f"ur $\lambda$ entspricht. Wir schreiben daher
-$\lambda=-\mu^2$ f"ur die Konstante.
-Die L"osungen f"ur die Funktion $T$ sind daher $T=T_0e^{-\mu^2t}$.
+negativen Konstanten für $\lambda$ entspricht. Wir schreiben daher
+$\lambda=-\mu^2$ für die Konstante.
+Die Lösungen für die Funktion $T$ sind daher $T=T_0e^{-\mu^2t}$.
 
-Die rechte Seite f"uhrt jetzt auf die Differentialgleichung
+Die rechte Seite führt jetzt auf die Differentialgleichung
 \[
 X''+2X'+\mu^2X=0.
 \]
-Diese gew"ohnliche lineare Differentialgleichung zweiter Ordnung
-kann mit dem Standardverfahren gel"ost werden. Das charakteristische
+Diese gewöhnliche lineare Differentialgleichung zweiter Ordnung
+kann mit dem Standardverfahren gelöst werden. Das charakteristische
 Polynom 
 \[
 \lambda^2+2\lambda +\mu^2=0
@@ -46,8 +46,8 @@ hat die Nullstellen
 \[
 \lambda_{\pm}=-1\pm\sqrt{1-\mu^2}.
 \]
-A priori wissen wir nichts "uber das Vorzeichen des Radikanden,
-f"ur positive Radikanden w"aren L"osungen der Form
+A priori wissen wir nichts über das Vorzeichen des Radikanden,
+für positive Radikanden wären Lösungen der Form
 \begin{equation}
 e^{x(-1+ \sqrt{1-\mu^2})}
 \qquad
@@ -65,7 +65,7 @@ e^{-x}\sinh(x\sqrt{1-\mu^2})
 e^{-x}\cosh(x\sqrt{1-\mu^2}),
 \label{40000009:hyp}
 \end{equation}
-f"ur negative Radikanden aber solche der Form
+für negative Radikanden aber solche der Form
 \begin{equation}
 e^{-x}\sin(x\sqrt{\mu^2-1})
 \qquad
@@ -74,39 +74,39 @@ e^{-x}\sin(x\sqrt{\mu^2-1})
 e^{-x}\cos(x\sqrt{\mu^2-1})
 \label{40000009:trig}
 \end{equation}
-m"oglich. Da unsere L"osung als Anfangsbedingung f"ur $t=0$ die
-Funktion $e^{-x}\sin x$ haben muss, sind (\ref{40000009:exp}) 
-und (\ref{40000009:hyp}) nicht geeignet, und wir
-w"ahlen (\ref{40000009:trig}).
+möglich. Da unsere Lösung als Anfangsbedingung für $t=0$ die
+Funktion $e^{-x}\sin x$ haben muss, sind \eqref{40000009:exp}
+und \eqref{40000009:hyp} nicht geeignet, und wir
+wählen \eqref{40000009:trig}.
 
-Wir m"ussen aber auch die Randwertbedingungen
+Wir müssen aber auch die Randwertbedingungen
 $X(0)=X(\pi)=0$
-befriedigen k"onnen.
-Da $\cos 0=1$ ist, kommt die $\cos$-L"osung
-in (\ref{40000009:trig}) nicht mehr in Frage.
-Aber auch die $\sin$-L"osung ist nur
-zul"assig, wenn $\sin(\pi\sqrt{\mu^2-1})=0$, also
+befriedigen können.
+Da $\cos 0=1$ ist, kommt die $\cos$-Lösung
+in \eqref{40000009:trig} nicht mehr in Frage.
+Aber auch die $\sin$-Lösung ist nur
+zulässig, wenn $\sin(\pi\sqrt{\mu^2-1})=0$, also
 $\sqrt{\mu^2-1}=k$ eine ganze Zahl ist.
 Daraus ergibt sich $\mu=\sqrt{k^2+1}$.
 
 Wir suchen jetzt also eine
-L"osung der Differentialgleichung in der Form
+Lösung der Differentialgleichung in der Form
 \[
 u(x,t)=\sum_{k=1}^\infty b_ke^{-(k^2+1)t}e^{-x}\sin kx.
 \]
-Diese L"osung muss auch noch die Randbedingung f"ur $t=0$ im
-Bereich $0<x<\pi$ erf"ullen:
+Diese Lösung muss auch noch die Randbedingung für $t=0$ im
+Bereich $0<x<\pi$ erfüllen:
 \[
 u(x,0)=\sum_{k=1}^\infty b_ke^{-x}\sin kx=e^{-x}\sin x.
 \]
 Daraus schliessen wir, dass die Koeffizienten
 \[
 b_k=\begin{cases}
-1&\qquad\text{f"ur $k=1$}\\
+1&\qquad\text{für $k=1$}\\
 0&\qquad\text{sonst}
 \end{cases}
 \]
-sind. Die L"osung ist also
+sind. Die Lösung ist also
 \begin{equation}
 u(x,t)=
 e^{-2t-x}\sin x.
@@ -115,9 +115,9 @@ e^{-2t-x}\sin x.
 \end{loesung}
 
 \begin{diskussion}
-Zur Kontrolle kann man die L"osung (\ref{30000009:solution})
+Zur Kontrolle kann man die Lösung \eqref{30000009:solution}
 noch in die Differentialgleichung einsetzen.
-Dazu berechnen wir zun"achst die partiellen Ableitungen
+Dazu berechnen wir zunächst die partiellen Ableitungen
 \begin{align*}
 \frac{\partial u}{\partial t}
 &=
@@ -153,21 +153,21 @@ e^{-2t-x}\cos x
 \\
 &=\frac{\partial u}{\partial t}.
 \end{align*}
-Asserdem gilt f"ur $t=0$:
+Asserdem gilt für $t=0$:
 \[
 u(x,0)=e^{-x}\sin x,
 \]
-die Randbedingung ist also auch erf"ullt.
+die Randbedingung ist also auch erfüllt.
 \end{diskussion}
 
 \begin{bewertung}
 Separationsansatz ({\bf S}) 1 Punkt,
 Wahl einer Konstanten ({\bf K}) 1 Punkt,
-L"osung der Gleichung f"ur $T$ ({\bf T}) 1 Punkt,
-L"osung der Gleichung f"ur $X$ ({\bf X}) 1 Punkt,
-Anwendung der Randbedingungen f"ur $x=0$ und $x=\pi$
+Lösung der Gleichung für $T$ ({\bf T}) 1 Punkt,
+Lösung der Gleichung für $X$ ({\bf X}) 1 Punkt,
+Anwendung der Randbedingungen für $x=0$ und $x=\pi$
 zur Eingrenzung von $X$ ({\bf R}) 1 Punkt,
-Anwendung der Randbedingungen f"ur $t=0$ zur Bestimmung 
-der L"osung ({\bf L}) 1 Punkt.
+Anwendung der Randbedingungen für $t=0$ zur Bestimmung 
+der Lösung ({\bf L}) 1 Punkt.
 \end{bewertung}
 

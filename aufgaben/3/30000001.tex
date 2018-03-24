@@ -1,4 +1,4 @@
-L"osen Sie das Cauchy-Problem f"ur die Differentialgleichung
+Lösen Sie das Cauchy-Problem für die Differentialgleichung
 \[
 \frac{\partial u}{\partial x}
 +
@@ -12,13 +12,13 @@ u(x,0)=\cos x.
 \]
 
 \begin{loesung}
-Die Anfangskurve f"ur das Cauchy-Problem ist in diesem Falle also die
+Die Anfangskurve für das Cauchy-Problem ist in diesem Falle also die
 $x$-Achse. Um Verwechslungen mit der Funktion $x$ zu vermeiden, bezeichnen
-wir die Werte von $x$ auf der $x$-Achse mit $x_0$, die zugeh"origen
+wir die Werte von $x$ auf der $x$-Achse mit $x_0$, die zugehörigen
 Anfangswerte sind dann $\cos x_0$. 
 
 Die Methode der Charakteristiken besagt jetzt also, dass wir Funktionen
-$x(x_0, t)$, $y(x_0,t)$ und $u(x_0,t)$ bestimmen m"ussen, die die
+$x(x_0, t)$, $y(x_0,t)$ und $u(x_0,t)$ bestimmen müssen, die die
 Differentialgleichungen
 \[
 \begin{pmatrix}
@@ -30,13 +30,13 @@ Differentialgleichungen
 1\\1\\1
 \end{pmatrix}
 \]
-erf"ullen mit der Anfangsbedingung
+erfüllen mit der Anfangsbedingung
 \begin{align*}
 x(x_0,0)&=x_0\\
 y(x_0,0)&=0\\
 u(x_0,0)&=\cos x_0.
 \end{align*}
-Diese sind nat"urlich von der Form
+Diese sind natürlich von der Form
 \[
 \begin{pmatrix}
 x(x_0,t)\\
@@ -50,14 +50,14 @@ t\\
 \cos x_0 + t
 \end{pmatrix}.
 \]
-Gem"ass dem zweiten Schritt der Methode der Charakteristiken m"ussen
+Gemäss dem zweiten Schritt der Methode der Charakteristiken müssen
 wir jetzt $t$ und $x_0$ aus diesen Gleichungen eliminieren:
 \begin{align*}
 x&=x_0+t\\
 y&=t\\
 u&=\cos x_0 + t
 \end{align*}
-Die zweite Gleichung besagt, dass wir $t$ durch $y$ ersetzen k"onnen:
+Die zweite Gleichung besagt, dass wir $t$ durch $y$ ersetzen können:
 \begin{align*}
 x&=x_0+y&x_0=x-y\\
 u&=\cos x_0 + y.
@@ -66,7 +66,7 @@ Setzen wir die erste Gleichung in die zweite ein, erhalten wir
 \[
 u=\cos(x-y)+y.
 \]
-Wir "uberpr"ufen das Resultat noch durch nachrechnen:
+Wir überprüfen das Resultat noch durch nachrechnen:
 \begin{align*}
 \frac{\partial u}{\partial x}
 &=
@@ -85,6 +85,6 @@ Wir "uberpr"ufen das Resultat noch durch nachrechnen:
 1+\sin(x-y)
 =1,
 \end{align*}
-die Differentialgleichung ist also erf"ullt.
+die Differentialgleichung ist also erfüllt.
 \end{loesung}
 

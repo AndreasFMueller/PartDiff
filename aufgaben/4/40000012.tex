@@ -7,15 +7,15 @@ ist die partielle Differentialgleichung
 gegeben.
 \begin{teilaufgaben}
 \item
-F"uhren Sie Separation in Polarkoordinaten durch.
+Führen Sie Separation in Polarkoordinaten durch.
 \item
-Finden Sie f"ur $\lambda=0$ eine L"osung von
-(\ref{40000012:gleichung}), die den Randbedingungen
+Finden Sie für $\lambda=0$ eine Lösung von
+\eqref{40000012:gleichung}, die den Randbedingungen
 \begin{align*}
-u(x,0)&= 0&u(x,y)&=\sin 2\varphi \qquad \text{f"ur $x^2+y^2=1$ oder $4$}\\
+u(x,0)&= 0&u(x,y)&=\sin 2\varphi \qquad \text{für $x^2+y^2=1$ oder $4$}\\
 u(0,y)&= 0&      &
 \end{align*}
-gen"ugt.
+genügt.
 Darin ist $\varphi$ der Polarwinkel, es gilt $\tan\varphi=\frac{y}{x}$.
 \item
 Wo sind die Maxima der in Teilaufgabe b) gefundenen Funktion $u(x,y)$?
@@ -30,12 +30,12 @@ Suchen Sie Radialfunktionen $R(r)$ in der Form $R(r)=r^{\alpha}$.
 \centering
 \includeagraphics[]{domain-1.pdf}
 \caption{Definitionsgebiet $\Omega$ der Differentialgleichung
-(\ref{40000012:gleichung})
+\eqref{40000012:gleichung}
 \label{40000012:gebiet}
 }
 \end{figure}
 Das Gebiet ist in Abbildung~\ref{40000012:gebiet} dargestellt.
-Wir arbeiten in Polarkoordinaten, da l"asst sich der Laplace-Operator als
+Wir arbeiten in Polarkoordinaten, da lässt sich der Laplace-Operator als
 \[
 \Delta u
 =
@@ -44,7 +44,7 @@ Wir arbeiten in Polarkoordinaten, da l"asst sich der Laplace-Operator als
 \frac1{r^2}
 \frac{\partial^2}{\partial\varphi^2}
 \]
-ausdr"ucken.
+ausdrücken.
 \begin{teilaufgaben}
 \item
 Wir setzen einen Separationsansatz der Form $u(r,\varphi)=R(r)\Phi(\varphi)$
@@ -68,8 +68,8 @@ R(r)\Phi''(\varphi),
 &=
 -\frac{\Phi''(\varphi)}{\Phi(\varphi)}.
 \end{align*}
-Da die linke Seite nur von $r$, die rechte aber nur von $\varphi$ abh"angt,
-m"ussen beide Seiten konstant sein und wir
+Da die linke Seite nur von $r$, die rechte aber nur von $\varphi$ abhängt,
+müssen beide Seiten konstant sein und wir
 erhalten die zwei Gleichungen
 \begin{align}
 r^2R''(r)+rR'(r)-\lambda r^2 R(r)&=\phantom{-}\mu R(r)
@@ -80,39 +80,39 @@ r^2R''(r)+rR'(r)-\lambda r^2 R(r)&=\phantom{-}\mu R(r)
 \end{align}
 mit einer noch zu bestimmenden Konstanten $\mu$.
 \item
-Die Funktionen $\Phi(\varphi)$ m"ussen die Randbedingungen
+Die Funktionen $\Phi(\varphi)$ müssen die Randbedingungen
 \[
 \Phi(0)=\Phi({\textstyle\frac{\pi}2})=0
 \]
-erf"ullen.
-Die Randbedingungen auf den $x$- und $y$-Achsen verlangen, dass f"ur $\Phi$
-oszillierende L"osungen verwendet werden m"ussen, was nur m"oglich ist,
-wenn $\mu>0$ ist. Wir setzen daher $\mu=m^2$. Damit bekommen wir f"ur die
+erfüllen.
+Die Randbedingungen auf den $x$- und $y$-Achsen verlangen, dass für $\Phi$
+oszillierende Lösungen verwendet werden müssen, was nur möglich ist,
+wenn $\mu>0$ ist. Wir setzen daher $\mu=m^2$. Damit bekommen wir für die
 $\Phi(\varphi)$
 \[
 \Phi(\varphi)=\begin{cases}\sin m\varphi,\\\cos m\varphi.\end{cases}
 \]
-Die Kosinus-L"osung erf"ullt die Randbedingung auf der $x$-Achse nicht,
-und die Sinus-L"osung erf"ullt die Randbedingung auf der $y$-Achse nur,
+Die Kosinus-Lösung erfüllt die Randbedingung auf der $x$-Achse nicht,
+und die Sinus-Lösung erfüllt die Randbedingung auf der $y$-Achse nur,
 wenn $m=2k$ mit $k\in\mathbb Z$ ist.
-Wir haben also die Teill"osungen
+Wir haben also die Teillösungen
 \[
 \Phi_k(\varphi)=\sin 2k\varphi, \quad\varphi\in[0,{\textstyle \frac{\pi}2}]
 \]
 gefunden.
 
-F"ur jedes $k$ m"ussen jetzt noch Funktionen $R_k(r)$ gefunden werden.
+Für jedes $k$ müssen jetzt noch Funktionen $R_k(r)$ gefunden werden.
 Man kann aber jetzt schon sagen, dass wegen der speziellen Randbedingungen
-auf den kreisf"ormigen Teilen des Randes nur die L"osung $k=1$ ben"otigt wird.
+auf den kreisförmigen Teilen des Randes nur die Lösung $k=1$ benötigt wird.
 
 \begin{figure}
 \centering
 \includeagraphics[width=0.8\hsize]{loes.jpg}
-\caption{3D-Darstellung der L"osungsfunktion
+\caption{3D-Darstellung der Lösungsfunktion
 \label{40000012:3d}}
 \end{figure}
 Aufgrund des Hinweises versuchen wir die Radialfunktion in der Form
-$R(r)=r^\alpha$, und setzen dies in (\ref{40000012:erste}) ein:
+$R(r)=r^\alpha$, und setzen dies in \eqref{40000012:erste} ein:
 \begin{align*}
 r^2\alpha(\alpha-1)r^{\alpha-2}+r\alpha r^{\alpha-1}&=4k^2r^{\alpha}
 \\
@@ -124,28 +124,28 @@ r^2\alpha(\alpha-1)r^{\alpha-2}+r\alpha r^{\alpha-1}&=4k^2r^{\alpha}
 \\
 \alpha&=\pm2k
 \end{align*}
-Wir wissen bereits, dass nur der Fall $k=1$ ben"otigt wird, und suchen
+Wir wissen bereits, dass nur der Fall $k=1$ benötigt wird, und suchen
 daher Koeffizienten $A$ und $B$ derart, dass
 \[
-Ar^2+Br^{-2}=1\qquad \text{f"ur $r=1,2$.}
+Ar^2+Br^{-2}=1\qquad \text{für $r=1,2$.}
 \]
-Dies f"uhrt auf das Gleichungssystem
+Dies führt auf das Gleichungssystem
 \[
 \begin{linsys}{3}
  A&+&       B&=&1\\
 4A&+&\frac14B&=&1
 \end{linsys}
 \]
-mit den L"osungen
+mit den Lösungen
 \[
 A=\frac15,\qquad B=\frac45.
 \]
-Die gesuchte L"osung der Differentialgleichung ist also
+Die gesuchte Lösung der Differentialgleichung ist also
 \[
 u(r,\varphi)=\biggl(\frac15r^2+\frac45r^{-2}\biggr)\sin 2\varphi.
 \]
-Die Abbildung~\ref{40000012:3d} zeigt eine 3D-Darstellung der L"osungsfunktion.
-Der folgende Maxima-Code verifiziert, dass dies die korrekte L"osung ist.
+Die Abbildung~\ref{40000012:3d} zeigt eine 3D-Darstellung der Lösungsfunktion.
+Der folgende Maxima-Code verifiziert, dass dies die korrekte Lösung ist.
 \verbatimainput{check.maxima}
 \item
 Die Funktion $u$ ist wegen $\lambda=0$ eine harmonische Funktion, ihre
@@ -161,10 +161,10 @@ Maxima in den Punkten
 \end{loesung}
 
 \begin{bewertung}
-Differentialgleichung f"ur $R$ ({\bf R}) 1 Punkt,
-Differentialgleichung f"ur $\Phi$ ({$\mathbf \Phi$}) 1 Punkt,
-L"osung der Gleichung f"ur $\phi$ ($\textbf{L}_\Phi$) 1 Punkt,
-L"osung der Gleichung f"ur $R$ mit dem Potenzansatz ($\textbf{L}_R$) 1 Punkt,
+Differentialgleichung für $R$ ({\bf R}) 1 Punkt,
+Differentialgleichung für $\Phi$ ({$\mathbf \Phi$}) 1 Punkt,
+Lösung der Gleichung für $\phi$ ($\textbf{L}_\Phi$) 1 Punkt,
+Lösung der Gleichung für $R$ mit dem Potenzansatz ($\textbf{L}_R$) 1 Punkt,
 Einsetzen der Randwerte/Koeffizientenvergleich ({\bf B}) 1 Punkt,
 Maximumprinzip und Maximalstellen ({\bf M}) 1 Punkt.
 \end{bewertung}

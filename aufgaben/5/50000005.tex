@@ -1,18 +1,18 @@
 Einen Stab ist bis zur Zeit $t=0$ mit zwei
-W"armereservoirs auf den Temperaturen $-1$ bei $x=-\frac{\pi}2$ und
+Wärmereservoirs auf den Temperaturen $-1$ bei $x=-\frac{\pi}2$ und
 $1$ bei $x=\frac{\pi}2$ verbunden,
-so dass sich ein station"arer Zustand eingestellt hat (siehe
-"Ubung 1). Zur Zeit $t=0$ werden die Reservoirs entfernt und der
-Stab wird sich selbst "uberlassen. Insbesondere kann durch die
-Enden keine W"arme mehr abgeleitet werden. L"osen sie die
-W"armeleitungsgleichung
+so dass sich ein stationärer Zustand eingestellt hat (siehe
+Übung 1). Zur Zeit $t=0$ werden die Reservoirs entfernt und der
+Stab wird sich selbst überlassen. Insbesondere kann durch die
+Enden keine Wärme mehr abgeleitet werden. Lösen sie die
+Wärmeleitungsgleichung
 \[
 \frac{\partial u}{\partial t}=\frac{\partial^2 u}{\partial x^2}
 \]
-f"ur diesen Fall.
+für diesen Fall.
 
 \begin{hinweis}
-Verwenden sie f"ur die
+Verwenden sie für die
 ``Dreiecksfunktion''
 (eine graphische Darstellung derselben finden Sie in Aufgabe~\ref{40000005}
 in Kapitel~4)
@@ -35,23 +35,23 @@ hat.
 
 \begin{hinweis}
 Diese Aufgabe wurde bereits als \ref{40000005} mit der Separationsmethode
-gel"ost.
+gelöst.
 \end{hinweis}
 
 \begin{loesung}
-Die L"osung mit der Transformationsmethode
+Die Lösung mit der Transformationsmethode
 verwendet Fourier-Transformation
 entlang der $x$-Achse und Laplace-Transformation entlang der Zeit-Achse.
-Wir schreiben $\hat u(t,k)$ f"ur die Fourier-Transformation und ${\cal L} u$
-f"ur die Laplace-Transformation.
+Wir schreiben $\hat u(t,k)$ für die Fourier-Transformation und ${\cal L} u$
+für die Laplace-Transformation.
 
-Die Anfangsbedingungen sind ungerade, so dass auch die L"osung der
-Differentialgleichung f"ur alle Zeiten ungerade sein wird. Die
+Die Anfangsbedingungen sind ungerade, so dass auch die Lösung der
+Differentialgleichung für alle Zeiten ungerade sein wird. Die
 Randbedingung sagen ausserdem, dass
 $\partial_xu(t,-\frac{\pi}2)=\partial_xu(t,\frac{\pi}2)=0$ gilt.
 Dies bedeutet, dass man die Funktion durch Spiegelung an
 $-\frac{\pi}2$ bzw.~$\frac{\pi}2$ zu einer $2\pi$-periodischen
-Funktion auf ganz $\mathbb R$ fortsetzen kann. Insbesondere l"asst
+Funktion auf ganz $\mathbb R$ fortsetzen kann. Insbesondere lässt
 sich $u(t,x)$ mit einer Sinusreihe entwickeln. Seien $\hat u(t,k)$
 die Fourier-Sinus-Koeffizienten. Damit haben wir als Differentialgleichung
 der $\hat u(t,k)$
@@ -64,7 +64,7 @@ s{\cal L}\hat u(s,k) - \hat u(0,k)&=-k^2 {\cal L}\hat u(s,k)\\
 (s+k^2){\cal L}\hat u(s,k)&=\hat u(0,k)\\
 {\cal L}\hat u(s,k)&=\frac{\hat u(0,k)}{s+k^2}
 \end{align*}
-R"ucktransformation ergibt:
+Rücktransformation ergibt:
 \[
 \hat u(t,k)=\hat u(0,k) e^{-k^2t}
 \]
@@ -74,18 +74,18 @@ man aber dem Hinweis entnehmen:
 \hat u(0,2n+1)=
 \frac{8(-1)^n}{\pi^2(2n+1)^2}
 \]
-und damit die endg"ultige L"osung durch Summieren der Fourierreihen bekommen:
+und damit die endgültige Lösung durch Summieren der Fourierreihen bekommen:
 \[
 u(t,x)=
 \sum_{n=0}^\infty \frac{8(-1)^n}{\pi^2(2n+1)^2}e^{-(2n+1)^2t}\sin(2n+1)x
 \]
-Eine graphische Darstellung der L"osung ist in Abbildung~\ref{50000005:bild}
+Eine graphische Darstellung der Lösung ist in Abbildung~\ref{50000005:bild}
 zu finden.
 \begin{figure}
 \begin{center}
 \includeagraphics[width=\hsize]{waerme.jpg}
 \end{center}
-\caption{L"osung der W"armeleitungsgleichung (Aufgabe~\ref{50000005})
+\caption{Lösung der Wärmeleitungsgleichung (Aufgabe~\ref{50000005})
 \label{50000005:bild}}
 \end{figure}
 \end{loesung}

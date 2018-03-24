@@ -1,4 +1,4 @@
-L"osen Sie die Eikonal-Gleichung
+Lösen Sie die Eikonal-Gleichung
 \begin{equation}
 \biggl( \frac{\partial u}{\partial x} \biggr)^2
 +
@@ -8,22 +8,22 @@ y
 \label{4000008:eikonal}
 \end{equation}
 Im Gebiet $\Omega=\{(x,y)\,|\, y > 0\}$.
-Finden Sie eine L"osung, deren Gradient im Punkt $(0,1)$ parallel
+Finden Sie eine Lösung, deren Gradient im Punkt $(0,1)$ parallel
 zur $x$-Achse ist.
-Die L"osung beschreibt wie in Aufgabe~\ref{4000007} die
+Die Lösung beschreibt wie in Aufgabe~\ref{4000007} die
 Phase einer Wellenfront, die auf der $y$-Achse beginnt.
 Berechnen Sie die Orthogonaltrajektorien, also die Strahlrichtung.
 
 \begin{hinweis}
-Dies ist ein einfaches Modell f"ur die Lichtreflektion in einer
-heissen Luftschicht unmittelbar "uber dem von der Sonne aufgeheizten
+Dies ist ein einfaches Modell für die Lichtreflektion in einer
+heissen Luftschicht unmittelbar über dem von der Sonne aufgeheizten
 Boden. Die Hitze reduziert die optische Dichte.
 \end{hinweis}
 
 \begin{loesung}
-Die Differentialgleichung  l"asst sich mit einem Separationsansatz
+Die Differentialgleichung  lässt sich mit einem Separationsansatz
 $u(x,y)=X(x)+Y(y)$
-l"osen:
+lösen:
 \[
 X'(x)^2+Y'(y)^2=y
 \qquad
@@ -31,29 +31,29 @@ X'(x)^2+Y'(y)^2=y
 \qquad
 X'(x)^2=y-Y'(y)^2
 \]
-Die linke Seite h"angt nur von $x$ ab, die rechte nur von $y$, also
+Die linke Seite hängt nur von $x$ ab, die rechte nur von $y$, also
 sind beide konstant.
 Wir nennen die gemeinsame Konstante, die offensichtlich positiv sein
 muss $a^2$.
 
-F"ur $X(x)$ finden wir dann
+Für $X(x)$ finden wir dann
 \[
 X'(x)^2=a^2
 \qquad\Rightarrow\qquad
 X(x)=ax
 \]
-und f"ur $Y(y)$
+und für $Y(y)$
 \[
 Y'(x)^2=y-a^2
 \qquad\Rightarrow\qquad
 Y(y)=\int \sqrt{y-a^2}\,dy=\frac23(y-a^2)^{\frac32}
 \]
-Die L"osung ist also
+Die Lösung ist also
 \[
 u(x,y)=ax + \frac23(y-a^2)^{\frac32}.
 \]
 
-Der Gradient dieser L"osung ist
+Der Gradient dieser Lösung ist
 \[
 \operatorname{grad}u(x,y)=\begin{pmatrix}a\\\sqrt{y-a^2}\end{pmatrix}
 \]
@@ -67,15 +67,15 @@ wir suchen also Funktionen $x(s)$ und $y(s)$ mit der Eigenschaft
 \frac{dx}{ds}&=1\\
 \frac{dy}{ds}&=\sqrt{y-1}
 \end{align*}
-Diese beiden Differentialgleichungen sind entkoppelt, sie k"onnen
-separat gel"ost werden. Die erste f"ur $x(s)$ ist trivial:
+Diese beiden Differentialgleichungen sind entkoppelt, sie können
+separat gelöst werden. Die erste für $x(s)$ ist trivial:
 \[
 x(s)=s + x_0,
 \]
 wobei $x_0$ eine Integrationskonstante ist.
 Da die Kurve vom Punkt $(0,1)$ ausgehen soll, muss $x_0=0$ sein.
 
-Die zweite ist nicht linear, sie kann aber mit Separation gel"ost
+Die zweite ist nicht linear, sie kann aber mit Separation gelöst
 werden:
 \begin{align*}
 y'&=\sqrt{y-1}
@@ -87,7 +87,7 @@ y'&=\sqrt{y-1}
 y&=1+\frac14(s+s_0)^2
 \end{align*}
 mit der Integrationskonstanten.
-Da f"ur $s=0$ die Kurve durch den Punkt $(0,1)$ gehen soll, folgt
+Da für $s=0$ die Kurve durch den Punkt $(0,1)$ gehen soll, folgt
 wieder $s_0=0$.
 
 Die gesuchte Kurve hat daher die Parameterdarstellung
@@ -101,13 +101,13 @@ s\\
 1+\frac14s^2
 \end{pmatrix}.
 \]
-Da $x=s$ gilt, kann man $y$ auch direkt durch $x$ ausdr"ucken:
+Da $x=s$ gilt, kann man $y$ auch direkt durch $x$ ausdrücken:
 \[
 y=\frac14x^2+1.
 \]
-Der Lichtstrahl, der horizontal durch den Punkt $(0,1)$ verl"auft,
-kr"ummt sich also quadratisch in $y$-Richtung.
-Dies ist das bekannte Ph"anomen der Lichtspiegelung in einer
+Der Lichtstrahl, der horizontal durch den Punkt $(0,1)$ verläuft,
+krümmt sich also quadratisch in $y$-Richtung.
+Dies ist das bekannte Phänomen der Lichtspiegelung in einer
 heisser Luftschicht.
 \end{loesung}
 
@@ -115,23 +115,23 @@ heisser Luftschicht.
 \begin{figure}
 \centering
 \includeagraphics[]{fatamorgana-1.pdf}
-\caption{Lichtstrahlen durch den Punkt $(x_0,y_0)$ f"ur verschiedene
+\caption{Lichtstrahlen durch den Punkt $(x_0,y_0)$ für verschiedene
 Werte des Separationsparameters $a$.
 \label{40000008:fata}}
 \end{figure}
-Die Gleichung der Orthogonaltrajektorien l"asst sich nat"urlich noch
-allgemeiner l"osen, wir suchen die Trajektorien, die durch den Punkt
+Die Gleichung der Orthogonaltrajektorien lässt sich natürlich noch
+allgemeiner lösen, wir suchen die Trajektorien, die durch den Punkt
 $(x_0,y_0)$ verlaufen.
-Das Gleichungssystem f"ur die Funktionen $x(s)$ und $y(s)$ wird
+Das Gleichungssystem für die Funktionen $x(s)$ und $y(s)$ wird
 \begin{align*}
 x'&=a\\
 y'&=\sqrt{y-a^2}
 \end{align*}
-Die L"osung f"ur $x(s)$, die f"ur $s=0$ den Wert $x_0$ annimmt, ist
+Die Lösung für $x(s)$, die für $s=0$ den Wert $x_0$ annimmt, ist
 \[
 x(s)=as+x_0.
 \]
-Die Gleichung f"ur $y(s)$ kann wieder mit Separation gel"ost werden,
+Die Gleichung für $y(s)$ kann wieder mit Separation gelöst werden,
 man findet
 \[
 y(s)=a^2+\frac14(s+s_0)^2.
@@ -140,16 +140,16 @@ Damit $y(0)=y_0$ wird, muss
 \[
 s_0=\pm 2\sqrt{y_0-a^2}
 \]
-gew"ahlt werden.
-Die allgemeine Form der L"osung ist dann
+gewählt werden.
+Die allgemeine Form der Lösung ist dann
 \begin{align*}
 x(s)&=as+x_0
 \\
 y(s)&=a^2 + \frac14\left(s\pm2\sqrt{y_0-a^2}\right)^2
 \end{align*}
-Alle L"osungskurven sind also Parabeln durch den Punkt $(x_0,y_0)$,
-$a^2$ ist der kleinstm"ogliche Wert von $y$ ist (Abbildung~\ref{40000008:fata}).
-Der Wert $a=0$ liefert einen Lichtstrahl parallel zur $y$-Achse, f"ur $a^2=y_0$
-verl"auft der Strahl durch den Punkt $(x_0,y_0)$ horizontal.
+Alle Lösungskurven sind also Parabeln durch den Punkt $(x_0,y_0)$,
+$a^2$ ist der kleinstmögliche Wert von $y$ ist (Abbildung~\ref{40000008:fata}).
+Der Wert $a=0$ liefert einen Lichtstrahl parallel zur $y$-Achse, für $a^2=y_0$
+verläuft der Strahl durch den Punkt $(x_0,y_0)$ horizontal.
 \end{diskussion}
 

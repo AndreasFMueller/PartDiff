@@ -1,4 +1,4 @@
-L"osen Sie die partielle Differentialgleichung
+Lösen Sie die partielle Differentialgleichung
 \[
 \frac{\partial^2}{\partial x^2}u+\frac{\partial^2}{\partial y^2}u
 +2\frac{\partial }{\partial y}u+u=0
@@ -20,21 +20,21 @@ X''(x)Y(y)+X(x)Y''(y)+2X(x)Y'(y)+X(x)Y(y)&=0
 &=
 -\frac{X''(x)}{X(x)}
 \end{align*}
-Daraus folgen die beiden gew"ohnlichen Differentialgleichungen
+Daraus folgen die beiden gewöhnlichen Differentialgleichungen
 \begin{align*}
 X''(x)&=-\lambda X(x)\\
 Y''(y)+2Y'(y)+(1-\lambda)Y(y)&=0
 \end{align*}
-Die erste Gleichung hat f"ur positives $\lambda$ die L"osungen
-$\sin\sqrt{\lambda}x$, diese erf"ullen die Randbedingung f"ur $x=0$
+Die erste Gleichung hat für positives $\lambda$ die Lösungen
+$\sin\sqrt{\lambda}x$, diese erfüllen die Randbedingung für $x=0$
 und $x=\pi$ aber nur, wenn $\sqrt{\lambda}$ eine Ganzzahl ist, also
-$\lambda=n^2$. F"ur negatives $\lambda$ gibt es keine L"osung,
+$\lambda=n^2$. Für negatives $\lambda$ gibt es keine Lösung,
 die die Randbedingungen respektiert. Daher wird die zweite Gleichung
 \[
 Y''(y)+2Y'(y)+(1-n^2)Y(y)=0
 \]
 Dies ist eine lineare Differentialgleichung mit konstanten
-Koeffizienten, die mit dem "ublichen Verfahren gel"ost werden
+Koeffizienten, die mit dem üblichen Verfahren gelöst werden
 kann. Das charakteristische Polynom ist
 \[
 \omega^2+2\omega+(1-n^2)=0,
@@ -43,17 +43,17 @@ es hat die Nullstellen
 \[
 \omega_{\pm}=-1\pm{\sqrt{1-(1-n^2)}}=-1\pm n.
 \]
-Die allgmeine L"osung lautet also
+Die allgmeine Lösung lautet also
 \[
 u_n(x,y)=(a_{n,+}e^{(-1+n)y}+a_{n,-}e^{(-1-n)y})\sin nx.
 \]
 Die Exponentialfaktoren lassen sich aber eleganter
-mit den hyperbolischen Funktionen ausdr"ucken:
+mit den hyperbolischen Funktionen ausdrücken:
 \[
 u_n(x,y)=(a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx.
 \]
-Tats"achlich kann man nachrechen, dass diese Funktionen
-tats"achlich L"osungen sind. Die Ableitungen sind
+Tatsächlich kann man nachrechen, dass diese Funktionen
+tatsächlich Lösungen sind. Die Ableitungen sind
 \begin{align*}
 \frac{\partial}{\partial x}u_n(x,y)
 &=
@@ -94,20 +94,20 @@ n(a_n\sinh ny+b_n\cosh ny)e^{-y}\sin nx
 (a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx
 &=0
 \end{align*}
-In dieser Form ist die Anfangsbedingung etwas "ubersichtlicher
-zu erf"ullen, weil  $\sinh n0=0$ und $\cosh n0=1$. Die Normalableitung
+In dieser Form ist die Anfangsbedingung etwas übersichtlicher
+zu erfüllen, weil  $\sinh n0=0$ und $\cosh n0=1$. Die Normalableitung
 am Rand $y=0$ ist die Ableitung in Richtung $y$, also
 \begin{align*}
 u_n(x,0)&=a_n\sin nx
 \\
 \frac{\partial}{\partial n}u_n(x,0)&=(-a_n+nb_n)\sin nx
 \end{align*}
-Man kann also zun"achst aus den Werten f"ur $y=0$ das $a_n$
-ermitteln, und dann mit Hilfe der Normalableitungen f"ur $y=0$
+Man kann also zunächst aus den Werten für $y=0$ das $a_n$
+ermitteln, und dann mit Hilfe der Normalableitungen für $y=0$
 daraus die $b_n$.
 
 Im vorliegenden Fall ist $a_1=1$ der einzige $a$-Koeffizient,
-der nicht verschwindet. Andererseits braucht man zur Erf"ullung
+der nicht verschwindet. Andererseits braucht man zur Erfüllung
 der Bedingung an die Ableitung den Fall $n=3$. Es folgt
 \begin{align*}
 a_1&=1&&\\
@@ -115,7 +115,7 @@ a_1&=1&&\\
 a_3&=0&&\\
 -a_3+3b_3&=1&\Rightarrow\quad b_3&=\frac13
 \end{align*}
-Offenbar ist die gesuchte L"osung also
+Offenbar ist die gesuchte Lösung also
 \[
 u(x,y)=e^{-y}(\sin x \cosh y +
 \sin x\sinh y
@@ -123,6 +123,6 @@ u(x,y)=e^{-y}(\sin x \cosh y +
 \frac13\sin 3x \sinh 3y),
 \]
 wie man auch durch Nachrechnen zum Beispiel mit einem Computeralgebrasystem
-"uberpr"ufen kann.
+überprüfen kann.
 \end{loesung}
 

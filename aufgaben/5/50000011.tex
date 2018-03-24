@@ -1,6 +1,6 @@
 Verwenden Sie Laplace-Transformation nach $t$ um
 im Gebiet $\Omega=\{(x,t)\,|\, x > 1 \text{ und } t > 0\}$ eine
-L"osung der Differentialgleichung
+Lösung der Differentialgleichung
 \begin{equation}
 x^2\frac{\partial u}{\partial x}+\frac{\partial u}{\partial t}=0
 \label{50000011:dgl}
@@ -8,32 +8,32 @@ x^2\frac{\partial u}{\partial x}+\frac{\partial u}{\partial t}=0
 mit den Randbedingungen
 \begin{equation}
 \begin{aligned}
-u(1,t)&=t& &\text{f"ur $t>0$},\\
-u(x,0)&=0& &\text{f"ur $x > 1$}
+u(1,t)&=t& &\text{für $t>0$},\\
+u(x,0)&=0& &\text{für $x > 1$}
 \end{aligned}
 \label{50000011:rb}
 \end{equation}
 zu finden.
 
 \begin{hinweis}
-Sie d"urfen die Laplace-Transformierte der L"osung stehen lassen, wenn Sie
-die R"ucktransformation nicht finden.
+Sie dürfen die Laplace-Transformierte der Lösung stehen lassen, wenn Sie
+die Rücktransformation nicht finden.
 \end{hinweis}
 
 \begin{loesung}
-Die Laplace-Transformierte der Differentialgleichung~(\ref{50000011:dgl}) ist
+Die Laplace-Transformierte der Differentialgleichung~\eqref{50000011:dgl} ist
 \begin{equation}
 x^2\frac{\partial}{\partial x}{\cal L}u(x,s) + s{\cal L}u(x,s) - u(x,0)=0.
 \end{equation}
-Der letzte Term f"allt wegen der zweiten Randbedingung weg.
-Wir schreiben $y_s(x)={\cal L}u(x,s)$, und suchen jetzt also eine L"osung
-der gew"ohnlichen Differentialgleichung
+Der letzte Term fällt wegen der zweiten Randbedingung weg.
+Wir schreiben $y_s(x)={\cal L}u(x,s)$, und suchen jetzt also eine Lösung
+der gewöhnlichen Differentialgleichung
 \begin{equation}
 x^2y'_s(x) + sy_s(x)=0.
 \label{50000011:odgl}
 \end{equation}
-Die Anfangsbedingung von $y_s(x)$ f"ur $x=1$ entsteht durch
-Laplace-Transformation der ersten Randbedingung in~(\ref{50000011:rb}) ist
+Die Anfangsbedingung von $y_s(x)$ für $x=1$ entsteht durch
+Laplace-Transformation der ersten Randbedingung in~\eqref{50000011:rb} ist
 \begin{align*}
 {\cal L}u(1,s)
 &=
@@ -51,7 +51,7 @@ t\cdot \frac1{-s}e^{-st}
 -\frac1{s^2}e^{-st}
 \biggr]_0^\infty=\frac1{s^2}.
 \end{align*}
-Die allgemeine L"osung der gew"ohnlichen Differentialgleichung~(\ref{50000011:odgl}) ist
+Die allgemeine Lösung der gewöhnlichen Differentialgleichung~\eqref{50000011:odgl} ist
 \begin{align*}
 \frac{y_s'}{y_s}&=-\frac{s}{x^2}
 \\
@@ -65,7 +65,7 @@ y_s(1)={\cal L}u(1,s)=\frac1{s^2}=C(s)e^{s}
 \qquad\Rightarrow\qquad
 C(s)=\frac1{s^2}e^{-s}.
 \]
-Damit ist die Differentialgleichung~(\ref{50000011:odgl}) gel"ost, wir haben
+Damit ist die Differentialgleichung~\eqref{50000011:odgl} gelöst, wir haben
 \begin{equation}
 y_s(x)
 =
@@ -76,18 +76,18 @@ y_s(x)
 \frac1{s^2}e^{s(1-\frac1x)}.
 \label{50000011:sol}
 \end{equation}
-Die R"ucktransformation war nicht verlangt, l"asst sich aber mit der
+Die Rücktransformation war nicht verlangt, lässt sich aber mit der
 Verschiebungsformel bestimmen.
 Diese besagt, dass $e^{-as}F(s)$ die Laplace-Transformierte von 
 $f(t-a)$ ist, wenn $F(s)$ die Laplace-Transformierte von $f(t)$ ist.
-Diese Situation liegt in (\ref{50000011:sol}) mit
+Diese Situation liegt in \eqref{50000011:sol} mit
 \[
 a = -\biggl(1-\frac1x\biggr)
 \qquad\text{und}\qquad
 F(s)=\frac1{s^2}
 \]
 vor.
-Die L"osung ist daher
+Die Lösung ist daher
 \[
 u(x,t)
 =
@@ -99,7 +99,7 @@ t-1+\frac1x
 &\qquad t < 1-\frac1x
 \end{cases}
 \]
-Wir kontrollieren dieses Resultat durch Einsetzen, f"ur $t>1-\frac1x$
+Wir kontrollieren dieses Resultat durch Einsetzen, für $t>1-\frac1x$
 erhalten wir
 \begin{align*}
 \frac{\partial u}{\partial x}
@@ -114,16 +114,16 @@ x^2\frac{\partial u}{\partial x}+\frac{\partial u}{\partial t}
 =
 x^2\cdot \biggl(-\frac1{x^2}\biggr) + 1 = -1 + 1=0,
 \]
-die Differentialgleichung ist also erf"ullt.
-F"ur die Randbedingung erh"alt man
+die Differentialgleichung ist also erfüllt.
+Für die Randbedingung erhält man
 \[
 u(1,t)=t-1+\frac11=t,
 \]
-somit ist auch die Randbedingung erf"ullt.
+somit ist auch die Randbedingung erfüllt.
 \begin{figure}
 \centering
 \includeagraphics[width=0.7\hsize]{loes.jpg}
-\caption{L"osungsfl"ache der Differentialgleichung~(\ref{50000011:dgl})
+\caption{Lösungsfläche der Differentialgleichung~\eqref{50000011:dgl}
 in Aufgabe~\ref{50000011}
 \label{50000011:graph}}
 \end{figure}
@@ -131,9 +131,9 @@ in Aufgabe~\ref{50000011}
 
 \begin{diskussion}
 Die Differentialgleichung ist ausserdem eine quaslineare partielle
-Differentialgleichung erster Ordnung, die mit Charakteristiken gel"ost
+Differentialgleichung erster Ordnung, die mit Charakteristiken gelöst
 werden kann.
-Die Differentialgleichungen f"ur die Charkateristiken mit Parameter $s$
+Die Differentialgleichungen für die Charkateristiken mit Parameter $s$
 sind 
 \[
 \begin{aligned}
@@ -142,7 +142,7 @@ sind
 \dot u&=0   &&\Rightarrow& u &= u_0
 \end{aligned}
 \]
-Die erste Gleichung kann mit Separation gel"ost werden:
+Die erste Gleichung kann mit Separation gelöst werden:
 \begin{align*}
 \int \frac{dx}{x^2}
 &=
@@ -152,8 +152,8 @@ Die erste Gleichung kann mit Separation gel"ost werden:
 &=
 t+C
 \end{align*}
-Damit f"ur $t=0$ der Wert $x_0$ entsteht, muss $C=-\frac1{x_0}$
-gew"ahlt werden, es gilt also f"ur die im Punkt $(x_0,0)$ beginnende
+Damit für $t=0$ der Wert $x_0$ entsteht, muss $C=-\frac1{x_0}$
+gewählt werden, es gilt also für die im Punkt $(x_0,0)$ beginnende
 Charakteristik 
 \begin{align*}
 -\frac1x&=s-\frac1{x_0}\\
@@ -168,15 +168,15 @@ Da die Randbedingung entlang der $x$-Achse verschwindet ist
 klar, dass im Teilgebiet $t<\frac1{x_0}-\frac1x$
 die Funktion $u$ identisch verschwindet.
 
-F"ur Charakteristiken, die im Punkt $(1,t_0)$ beginnen, muss man dagegen
-$C=-1-t_0$ w"ahlen, und es gilt
+Für Charakteristiken, die im Punkt $(1,t_0)$ beginnen, muss man dagegen
+$C=-1-t_0$ wählen, und es gilt
 \begin{align*}
 -\frac1x&=s-1-t_0\\
        t&=s      \\
        u&=t_0.
 \end{align*}
 Daraus muss $t_0$ und $s$ eliminert werden, und es muss $u$ durch $x$ und $t$
-ausgedr"uckt werden.
+ausgedrückt werden.
 Man findet
 \begin{align*}
 -\frac1x&=t-1-u
@@ -184,15 +184,15 @@ Man findet
 \Rightarrow\qquad
 u&=t-1+\frac1x,
 \end{align*}
-also genau die L"osung, die auch mit der Laplace-Transformation gefunden wurde.
+also genau die Lösung, die auch mit der Laplace-Transformation gefunden wurde.
 \end{diskussion}
 
 \begin{bewertung}
 Laplacetransformierte Differentialgleichung ({\bf D}) 1 Punkt,
 Einsetzen der zweiten Randbedingung ({\bf Z}) 1 Punkt,
 Laplacetransformierte der ersten Randbedingung als Anfangsbedingung
-der gew"ohnlichen Differentialgleichung ({\bf R}) 1 Punkt,
-L"osung der homogenen Differentialgleichung ({\bf H}) 1 Punkt,
+der gewöhnlichen Differentialgleichung ({\bf R}) 1 Punkt,
+Lösung der homogenen Differentialgleichung ({\bf H}) 1 Punkt,
 Bestimmung der Konstanten $C$ ({\bf C}) 1 Punkt,
-(Laplace-Transformierte der) L"osung ({\bf L}) 1 Punkt.
+(Laplace-Transformierte der) Lösung ({\bf L}) 1 Punkt.
 \end{bewertung}

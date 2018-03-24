@@ -1,11 +1,11 @@
-In der Vorlesung wurde die Greensche Funktion f"ur das Problem
+In der Vorlesung wurde die Greensche Funktion für das Problem
 \[
 \begin{aligned}
 \Delta u&= f & &\text{in $\Omega$}\\
        u&= g & &\text{auf $\partial\Omega$}
 \end{aligned}
 \]
-f"ur das eindimensionale Gebiet  $\Omega=[0,1]$ hergeleitet.
+für das eindimensionale Gebiet  $\Omega=[0,1]$ hergeleitet.
 Sie lautet 
 \[
 G(x,\xi) = (x-\xi)\vartheta(x-\xi) -x(1-\xi).
@@ -19,11 +19,11 @@ u''(x)& = e^x& &\text{in $(0,1)$}\\
 \end{aligned}
 \label{70000010:problem}
 \]
-zu l"osen.
+zu lösen.
 
 \begin{loesung}
-Die Greensche Funktion liefert die L"osung f"ur das
-Problem~(\ref{70000010:problem}) "uber die Formel
+Die Greensche Funktion liefert die Lösung für das
+Problem~\eqref{70000010:problem} über die Formel
 \begin{equation}
 u(x)
 =
@@ -92,7 +92,7 @@ e^x-x-1
 &=
 e^x+x-xe-1.
 \end{align*}
-Diese Funktion erf"ullt wie zu erwarten die Randbedingungen nicht, denn
+Diese Funktion erfüllt wie zu erwarten die Randbedingungen nicht, denn
 wenn wir die Werte $x=0$ und $x=1$ einsetzen, erhalten wir
 \begin{align*}
 \int_0^1 G(0,\xi) f(\xi)\,d\xi
@@ -102,22 +102,22 @@ wenn wir die Werte $x=0$ und $x=1$ einsetzen, erhalten wir
 &=0.
 \end{align*}
 Die korrekten Randbedingungen werden durch das zweite Integral in
-(\ref{70000010:green}) erf"ullt, f"ur die wir jedoch erst die
+\eqref{70000010:green} erfüllt, für die wir jedoch erst die
 Ableitung der Greenschen Funktion wenigstens an den Stellen $0$ und $1$
-berechnen m"ussen:
+berechnen müssen:
 \begin{align*}
 \frac{\partial G}{\partial\xi}
 &=(-1)\vartheta(x-\xi) - x(-1)
 =\begin{cases}
 -1+x=-(1-x)
-\qquad&\text{f"ur $\xi=0$}
+\qquad&\text{für $\xi=0$}
 \\
 x
-\qquad&\text{f"ur $\xi=1$.}
+\qquad&\text{für $\xi=1$.}
 \end{cases}
 \end{align*}
-Setzt man dies in das zweite Integral der Formel~(\ref{70000010:green}) ein,
-erh"alt man
+Setzt man dies in das zweite Integral der Formel~\eqref{70000010:green} ein,
+erhält man
 \begin{align*}
 \int_{\partial[0,1]}\frac{\partial G}{\partial \xi} g(\xi)\,dn
 &=
@@ -131,9 +131,9 @@ xg(1) + (1-x)g(0)
 +
 xb.
 \end{align*}
-Das Minuszeichen im zweiten Ausdruck r"uhrt daher, dass die die Normale $n$
+Das Minuszeichen im zweiten Ausdruck rührt daher, dass die die Normale $n$
 nach aussen zeigen muss, bei $\xi=0$ als in die negative Richtung, $n=-1$.
-Zusammen kann man jetzt die L"osung hinschreiben:
+Zusammen kann man jetzt die Lösung hinschreiben:
 \[
 u(x)
 =
@@ -158,6 +158,6 @@ u(1)
 &=
 16,
 \end{align*}
-somit ist $u$ tats"achlich die L"osung des gestellten Problems.
+somit ist $u$ tatsächlich die Lösung des gestellten Problems.
 \end{loesung}
 
