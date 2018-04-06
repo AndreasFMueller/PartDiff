@@ -2,14 +2,20 @@ Betrachten Sie die Differentialgleichung
 \[
 y\partial_x^2u+\partial_y^2u=0
 \]
+\begin{teilaufgaben}
+\item
 Wo ist sie elliptisch bzw.~hyperbolisch?
-
+\item
 Berechnen Sie die charakteristischen Kurven der Differentialgleichung
-im Gebiet $\Omega=\{(x,y)\in\mathbb R^2|y<0\}$.
+im Gebiet $\Omega=\{(x,y)\in\mathbb R^2\,|\,y<0\}$.
+\item
 Finden Sie die Charakteristiken, die durch den Punkt
 $(1,-1)$ gehen.
+\end{teilaufgaben}
 
 \begin{loesung}
+\begin{teilaufgaben}
+\item
 Die Differentialgleichung hat das Symbol
 \[
 A=\begin{pmatrix}y&0\\0&1\end{pmatrix}
@@ -17,6 +23,7 @@ A=\begin{pmatrix}y&0\\0&1\end{pmatrix}
 mit Eigenwerten $y$ und $1$, sie ist also im Gebiet $\{(x,y)\,|\,y>0\}$
 elliptisch und in $\{(x,y)\,|\,y<0\}$ hyperbolisch.
 
+\item
 Die Richtung $v$ der charakteristischen Kurven erfüllt,
 $v^tAv=0$, also $yv_1^2-v_2^2=0$. Wählt man eine
 Parameterdarstellung $s\mapsto(x(s),y(s))$ für die
@@ -39,6 +46,7 @@ mit den Lösungen
 \\
 y&=-\biggl(\frac32(\pm x+C)\biggr)^{\frac23}.
 \end{align*}
+\item
 Für die Lösungskurven, die durch den Punkt $(1,-1)$ gehen,
 muss die Konstante $C$ geeignet bestimmt werden:
 \begin{align*}
@@ -58,4 +66,6 @@ C&=\mp 1-\frac23
 \end{figure}
 Die Graphen der Charakteristiken sind in Abbildung \ref{90000006:char}
 dargestellt.
+\qedhere
+\end{teilaufgaben}
 \end{loesung}
