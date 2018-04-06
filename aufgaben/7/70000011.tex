@@ -107,10 +107,10 @@ u(r,\varphi)
 \frac{a_0}2
 +
 \sum_{n=1}^\infty
-r^{-nr}(a_n^- \cos n\varphi + b_n^- \sin n\varphi)
+e^{-nr}(a_n^- \cos n\varphi + b_n^- \sin n\varphi)
 +
 \sum_{n=1}^\infty
-r^{+nr}(a_n^+ \cos n\varphi + b_n^+ \sin n\varphi)
+e^{+nr}(a_n^+ \cos n\varphi + b_n^+ \sin n\varphi)
 \]
 Die Koeffizienten $a_0$, $a_n^\pm$ und $b_n^\pm$ müsssen noch bestimmt
 werden.
@@ -125,13 +125,13 @@ u(1,\varphi)
 &=
 \frac{a_0}2
 +
-\sum_{n=1}^\infty ((a_n^-+a_n^+)\cos n\varphi + (b_n^-+b_n^+)\sin n\varphi)
+\sum_{n=1}^\infty ((a_n^-e^{-n}+a_n^+e^n)\cos n\varphi + (b_n^-e^{-n}+b_n^+e^n)\sin n\varphi)
 \\
 \frac{\partial u}{\partial r}(1,\varphi)
 &=
-\sum_{n=1}^\infty ((-a_n^-+a_n^+)\cos n\varphi + (-b_n^-+b_n^+)\sin n\varphi)
+\sum_{n=1}^\infty ((-na_n^-e^{-n}+na_n^+e^n)\cos n\varphi + (-nb_n^-e^{-n}+nb_n^+e^n)\sin n\varphi)
 \end{align*}
-Vorgabe dieser Randwerte würde also $a_n^-\pm a_n^+$ und $b_n^-\pm b_n^+$
+Vorgabe dieser Randwerte würde also $a_n^-e^{-n}\pm a_n^+e^n$ und $b_n^-e^{-n}\pm b_n^+e^n$
 festlegen, und damit alle Koeffizienten.
 \item
 Man könnte durch eine Bedingung im Unendlichen die Terme der Form $e^{nr}$
