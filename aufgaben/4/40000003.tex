@@ -170,10 +170,43 @@ Die Lösung ist also wieder eindeutig bestimmt.
 \item
 Bei einer Drehung des Koordinatensystems um $45^\circ$ gehen
 $x$ und $y$ in $\xi=\frac{\sqrt{2}}2(x+y)$ und $\eta=\frac{\sqrt{2}}2(x-y)$
-über. Umgekehrt lassen sich auch die Koordinaten $x$ und $y$ durch
-die neuen Koordinaten $\xi$ und $\eta$ ausdrücken:
+über.
+%Umgekehrt lassen sich auch die Koordinaten $x$ und $y$ durch
+%die neuen Koordinaten $\xi$ und $\eta$ ausdrücken:
+%\[
+%x=\frac{\sqrt{2}}2(\xi-\eta),\qquad y=\frac{\sqrt{2}}2(\xi+\eta).
+%\]
+%Die Ableitungen davon sind
+%\[
+%\begin{aligned}
+%\frac{\partial x}{\partial \xi} &= \frac{\sqrt{2}}{2},
+%&
+%\frac{\partial x}{\partial \eta}&=-\frac{\sqrt{2}}{2},
+%&
+%\frac{\partial y}{\partial \xi} &= \frac{\sqrt{2}}{2}
+%&&\text{und}&
+%\frac{\partial y}{\partial \eta}&= \frac{\sqrt{2}}{2}.
+%\end{aligned}
+%\]
+Wir brauchen davon noch die Ableitungen
 \[
-x=\frac{\sqrt{2}}2(\xi-\eta),\qquad y=\frac{\sqrt{2}}2(\xi+\eta).
+\begin{aligned}
+\frac{\partial\xi}{\partial x}
+&=
+\frac{\sqrt{2}}{2},
+&&&
+\frac{\partial\xi}{\partial y}
+&=
+\frac{\sqrt{2}}{2},
+\\
+\frac{\partial\eta}{\partial x}
+&=
+\frac{\sqrt{2}}{2}
+&&\text{und}&
+\frac{\partial\eta}{\partial y}
+&=
+-\frac{\sqrt{2}}{2}.
+\end{aligned}
 \]
 Damit kann die Lösung $u$ jetzt auch in den Koordinaten $(\xi,\eta)$
 geschrieben werden. Die Ableitungen nach $x$ und $y$
