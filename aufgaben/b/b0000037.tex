@@ -1,0 +1,63 @@
+Die reelle Funktion $u(x,t)$ ist auf dem Streifen
+\[
+\Omega = [0, 4] \times [0,\infty)
+\]
+definiert.
+Sie erfüllt im Innern von $\Omega$ die Wellengleichung
+\[
+u_{tt}(x,t) = 2 \cdot u_{xx}(x,t)
+\]
+und auf dem Rand von $\Omega$ die Bedingungen
+\[
+u(0,t) = u(4,t) = 0,
+\]
+sowie
+\[
+u(x,0) = 4 \cdot x - x^2 \ \ \ \text{und} \ \ \ u_t(x,0) = 3.
+\]
+Gesucht ist eine Approximation der Werte von $u$ in den drei Punkten von
+$\Omega$
+\[
+(1, 3), \ \  (2, 3), \ \ (3,3).
+\]
+Benutzen Sie hierzu geeignete Finite Differenzen mit Schrittweiten
+\[
+\Delta x = 1 \ \ \  \text{und} \ \  \ \Delta t = 1.
+\]
+
+\begin{loesung}
+Mit
+\[
+\tilde u_{j,k} = u(j, k)
+\]
+gilt
+\[
+\tilde u_{j, k+1}
+=
+2 \cdot \tilde u_{j-1, k} - 2 \cdot \tilde u_{j, k}
++ 2 \cdot \tilde u_{j+1, k} - u_{j, k-1}
+\]
+und
+\[
+\tilde u_{1,0} = 3,
+\ \ \tilde u_{2,0} = 4,
+\ \ \tilde u_{3,0} = 3
+\ \ \ \text{sowie}
+\ \ \ \tilde u_{1,1} = 6,
+\ \ \tilde u_{2,1} = 7,
+\ \ \tilde u_{3,1} = 6.
+\]
+Es folgt
+\[
+\tilde u_{1,2} = -1, \ \ \tilde u_{2,2} = 6, \ \ , \ \ u_{3,2} = -1
+\]
+und
+\[
+\tilde u_{1,3} = 8, \ \  \tilde u_{2,3} = -23, \ \ \ \tilde u_{3,3} = 8.
+\qedhere
+\]
+\end{loesung}
+
+
+
+

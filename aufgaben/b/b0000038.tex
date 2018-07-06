@@ -1,0 +1,56 @@
+Die reelle Funktion $u(x,t)$ ist auf dem Streifen
+\[
+\Omega = [0, 1] \times [0,\infty)
+\]
+definiert.
+Sie erfüllt im Innern von $\Omega$ die W"armeleitungsgleichung
+\[
+u_{xx}(x,t) = u_{t}(x,t)
+\]
+und auf dem Rand von $\Omega$ die Bedingungen
+\[
+u(0,t) = u(1,t) = 0,
+\]
+sowie
+\[
+u(x,0) = 16 \cdot (x - x^2).
+\]
+
+\vspace{1mm}
+
+Gesucht ist eine Approximation der Werte von $u$ in den zwei Punkten von
+$\Omega$
+\[
+(1/3,1/2), \ \  (2/3,1/2).
+\]
+Benutzen Sie hierzu das Verfahren von Crank-Nicolson mit Schrittweiten
+\[
+\Delta x = 1/3 \ \ \text{und} \ \  \Delta t = 1/4.
+\]
+
+\begin{loesung}
+Mit
+\[
+A = \left[\begin{array}{rr} 26 & -9 \\ -9 & 26 \end{array}\right]
+\ \ \text{und}
+\ \ B = \left[\begin{array}{rr} -10 & 9 \\ 9 & -10 \end{array}\right]
+\]
+gilt
+\[
+A \cdot \underline{\tilde u}^{(k+1)}
+=
+B \cdot \underline{\tilde u}^{(k)}
+\ \ \ \text{oder auch}
+\ \ \ \underline{\tilde u}^{(k+1)} = A^{-1} \cdot B \cdot \underline{\tilde u}^{(k)}.
+\]
+Aus 
+\[
+\underline{\tilde u}^{(0)} = (32/9, 32/9)
+\]
+folgt
+\[
+\underline{\tilde u}^{(2)} = (32/2601, 32/2601).
+\qedhere
+\]
+\end{loesung}
+

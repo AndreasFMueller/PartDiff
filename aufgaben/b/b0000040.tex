@@ -1,0 +1,45 @@
+Die reelle Funktion $u(x)$ ist auf dem Intervall
+\[
+\Omega = [0, 2 \cdot \pi]
+\]
+definiert.
+Sie erfüllt im Innern von $\Omega$ die Differentialgleichung
+\[
+u''(x) + 2 \cdot u(x) = x
+\]
+und auf dem Rand von $\Omega$ die Randbedingungen
+\[
+u(0) = 0, \ \ u(2 \cdot \pi) = 0.
+\]
+Berechnen Sie $a_1, a_2, a_3$ im Approximationsansatz für $u$
+\[
+\tilde u(x) = a_1 \cdot v_1(x) + a_2 \cdot v_2(x) + a_3 \cdot v_3(x)
+\]
+mit
+\[
+v_1(x) = \sin(x), \ \ \ v_2(x) = \sin(2 \cdot x) \ \ \ \text{und} \ \ \  v_3(x) = \sin(3 \cdot x).
+\]
+Benutzen Sie hierzu die Methode von Galerkin.
+
+\begin{loesung}
+Mit
+\[
+G = \left[\begin{array}{ccc} 
+\pi & 0 & 0 \\
+0 & - 2 \cdot \pi & 0 \\
+0 & 0 & -7 \cdot \pi \\
+ \end{array}\right] \ \ \text{und} \ \
+\underline{g}
+=
+\left(\begin{array}{c} -2 \cdot \pi \\ - \pi \\ - 2 \cdot \pi/3  \end{array}\right)
+\]
+folgt aus $G \cdot \underline{a} = \underline{g}$
+\[
+\underline{a} = (-2, 1/2, 2/21)
+\]
+und
+\[
+\tilde u(x) = -2 \cdot \sin(x) + 1/2 \cdot \sin(2 \cdot x) + 2/21 \cdot \sin(3 \cdot x).
+\qedhere
+\]
+\end{loesung}
