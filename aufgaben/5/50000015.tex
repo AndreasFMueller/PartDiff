@@ -1,0 +1,128 @@
+Betrachten Sie die Differentialgleichung
+\begin{equation}
+\frac{\partial u}{\partial t}
++
+\frac{\partial^4 u}{\partial x^4}
+=
+0
+\end{equation}
+auf dem Gebiet
+\[
+\Omega = \{ (t,x)\,|\, t>0, x\in\mathbb R\}
+\]
+mit den Bedingungen
+\begin{align*}
+u(0,x) &= 0,\\
+u(t,0) &= 1,\\
+\frac{\partial}{\partial x}u(t,0) &=0,\\
+\frac{\partial^2}{\partial x^2}u(t,0) &=0,\\
+\frac{\partial^3}{\partial x^3}u(t,0) &=0.
+\end{align*}
+für $x\in\mathbb R$ und $t > 0$.
+\begin{teilaufgaben}
+\item
+Verwenden Sie die Laplace-Transformation und finden Sie eine gewöhnliche
+Differentialgleichung samt Anfangsbedingungen, mit deren Hilfe das
+Problem gelöst werden kann.
+\item
+Ist das Problem gut gestellt?
+\end{teilaufgaben}
+
+\begin{hinweis}
+Es wird nicht verlangt, dass Sie die gewöhnliche Differentialgleichung lösen.
+\end{hinweis}
+
+%\begin{hinweis}
+%Die Differentialgleichungen $y''''+ay=0$ hat die Lösungen
+%\begin{center}
+%\begin{tabular}{|
+%>{$}l<{$}|
+%>{$}l<{$}|
+%>{$}l<{$}|
+%>{$}l<{$}|
+%>{$}l<{$}|}
+%\hline
+%y(x)&y'(x)&y''(x)&y'''(x)&y''''(x)\\
+%\hline
+%e^{bx}\sin bx 
+%	&be^{bx}(\sin bx +\cos bx)
+%		&2b^2e^{bx}\cos bx
+%			&2b^3(\cos bx-\sin bx)
+%				&-4b^4e^{bx}\sin bx
+%\\
+%e^{-bx}\sin bx
+%	&be^{-bx}(\cos bx-\sin bx)
+%		&-2b^2e^{-bx}\cos bx
+%			&2b^3(\sin bx+\cos bx)
+%				&-4b^4e^{-bx}\sin bx
+%\\
+%e^{bx}\cos bx 
+%	&be^{bx}(\cos bx-\sin bx)
+%		&-2b^2e^{bx}\sin bx
+%			&-2b^3e^{bx}(\sin bx-\cos bx)
+%				&-4b^4e^{bx}\cos bx
+%\\
+%e^{-bx}\cos bx
+%	&-be^{-bx}(\sin bx-\cos bx)
+%		&2b^2 e^{-bx}\sin bx
+%			&2b^3(\cos bx-\sin bx)
+%				&-4b^4e^{-bx}\cos bx
+%\\
+%\hline
+%\end{tabular}
+%\end{center}
+%\end{hinweis}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Die Laplace-Transformation der Differentialgleichung ergibt
+\[
+s{\mathcal{L}u} - u(0,x) + \frac{\partial^4}{\partial x^4}{\mathcal{L}u} = 0.
+\]
+Der zweite Term fällt wegen der Anfangsbedingungen weg.
+Mit der Notation $y_s(x) = \mathcal{L}u(s,x)$ wird die Gleichung zu
+\begin{equation}
+y_s''''(x)+sy_s(x)=0.
+\label{50000015:eq}
+\end{equation}
+
+Die Laplacetransformation der übrigen Bedingungen liefert
+\begin{align*}
+\mathcal{L} u(s,0)&=\frac1s
+\\
+\frac{\partial}{\partial x}\mathcal{L}u(s,0)&= 0\\
+\frac{\partial^2}{\partial x^2}\mathcal{L}u(s,0)&= 0\\
+\frac{\partial^3}{\partial x^3}\mathcal{L}u(s,0)&= 0
+\end{align*}
+Wir suchen also eine Lösungsfunktion $y_s(x)$ für die die Differentialgleichung
+\eqref{50000015:eq}, die die Anfangsbedingungen
+\begin{equation}
+y_s(0)=\frac1s,\qquad
+y'_s(0)=0,\qquad
+y''_s(0)=0
+\qquad\text{und}\qquad
+y'''_s(0)=0
+\label{50000015:anf}
+\end{equation}
+erfüllt.
+\item
+Die Differentialgleichung \eqref{50000015:eq} ist mit den gegebenen
+Anfangsbedingungen \eqref{50000015:anf} eindeutig lösbar, also ist
+das Problem gut gestellt.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item
+Laplace-Transformation der DGL ({\bf L}) 1 Punkt,
+Vereinfachung $u(0,x)=0$ ({\bf V}) 1 Punkt,
+Laplace-Transformation der Anfangsbedingung $u(t,0)=1$ ({\bf A}) 1 Punkt,
+Laplace-Transformation für die Anfangsbedingungen für die Ableitungen
+({\bf D}) je 1 Punkt,
+\item
+Problem gut gestellt ({\bf G}) 1 Punkt.
+\end{teilaufgaben}
+\end{bewertung}

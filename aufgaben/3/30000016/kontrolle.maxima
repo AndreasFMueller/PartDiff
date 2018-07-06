@@ -1,0 +1,11 @@
+/*
+ * Kontrolle der Lösung von Aufgabe 30000016
+ *
+ * (c) 2018 Prof Dr Andreas Müller, Hochschule Rapperswil
+ */
+u: y + (x + cos(y) - 1)^2;
+
+diff(u,x);
+diff(u,y);
+
+sin(y) * diff(u,x) + diff(u,y) - 1;

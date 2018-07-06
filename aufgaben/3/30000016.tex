@@ -1,0 +1,121 @@
+Gegeben ist die Differentialgleichung
+\begin{equation}
+\sin y\,\frac{\partial u}{\partial x}
++
+\frac{\partial u}{\partial y}
+=
+1
+\label{30000016:eq}
+\end{equation}
+auf dem Gebiet 
+\[
+\Omega=\{ (x,y) \,|\, -1<x<1\;\text{und}\; 0<y<\infty\}.
+\]
+mit der Randbedingung
+\[
+u(x,0) = x^2.
+\]
+\begin{teilaufgaben}
+\item
+Finden Sie eine Lösung der Differentialgleichung \eqref{30000016:eq}.
+\item
+Ist die Lösung durch die Vorgaben eindeutig bestimmt?
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{figure}
+\centering
+\includeagraphics[]{char.pdf}
+\caption{Charakteristiken der Differentialgleichung
+\eqref{30000016:eq}.
+Das hellrote Gebiet wird nicht von Charakteristiken überdeckt, die von der
+Randbedingung festgelegt werden.
+\label{30000016:char}}
+\end{figure}
+Es handelt sich um eine quasilineare partielle Differentialgleichung erster
+Ordnung, die mit der Methode der Charakteristiken gelöst werden kann.
+\begin{teilaufgaben}
+\item
+Die Differentialgleichung der Charakteristiken
+\[
+\begin{aligned}
+\dot x&= \sin y &&&&\\
+\dot y&= 1 &&\Rightarrow &y&=t+y_0\\
+\dot u&= 1 &&&&
+\end{aligned}
+\]
+Da die Charakteristiken auf dem unteren Rand des Gebietes beginnen sollen,
+können wir $y_0=0$ wählen, also $y=t$. 
+Die erste Differentialgleichung hat als Lösung
+\[
+x(t) = \int \sin y(t)\,dt = \int \sin t\,dt = -\cos t + C.
+\]
+Die Konstante $C$ muss so gewählt werden, dass die Kurve bei $x_0$
+beginnt, also $x_0=x(0)=-\cos 0 + C=C-1$ oder $C=x_0+1$.
+Somit muss $x(t)=x_0+1-\cos t$ verwendet werden.
+Die letzte Differentialgleichung hat als Lösung
+\[
+u(t) = t + u_0.
+\]
+Der Wert von $u_0$ wird durch die Randedingung $u_0=u(x_0,0)=x_0^2$
+festgelegt.
+Wir müssen also aus den Gleichungen
+\begin{align*}
+x&=x_0+1-\cos y\\
+u(x,y)&=y+x_0^2
+\end{align*}
+die Grösse $x_0$ eliminieren.
+Es ist $x_0=x+\cos y$, also
+\begin{equation}
+u(x,y) = y + (x+\cos y-1)^2.
+\label{30000016:l}
+\end{equation}
+
+Wir überprüfen dieses Resultat durch Einsetzen in die Differentialgleichung.
+Die Ableitungen sind
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
+2(x+\cos y - 1),
+\\
+\frac{\partial u}{\partial y}
+&=
+1-2(x+\cos y - 1)\sin y.
+\end{align*}
+Einsetzen in die Differentialgleichung ergibt
+\[
+\sin y
+2(x+\cos y - 1)
++
+1-2(x+\cos y - 1)\sin y
+=
+1,
+\]
+also erfüllt~\eqref{30000016:l} die Differentialgleichung.
+Einsetzen von $y$ liefert
+\[
+(x,y) = 0 + (x + cos 0 - 1)^2 = x^2,
+\]
+die Anfangsbedingung ist also auch erfüllt.
+\item
+Die Charaketeristiken sind im Grundriss die Kurven $(x_0-\cos y,y)$, also
+Cosinus-Kurven in Abhängigkeit von $y$.
+Die vom Interval $(-1,1)$ ausgehenden Kurven überdecken nicht das ganze
+Gebiet $\Omega$, damit ist die Lösung nicht eindeutig bestimmt
+(Abbildung~\ref{30000016:char}).
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item
+Quasilinear DGL 1. Ordnung ({\bf Q}) 1 Punkt,
+Charakteristikengleichung ({\bf C}) 1 Punkt,
+die ``einfachen'' Lösungen für $y$ und $u$ ({\bf E}) 1 Punkt,
+Lösung für $x(t)$ ({\bf X}) 1 Punkt,
+Lösung für $u(x,y)$ (Eliminiation von $x_0$, {\bf U}) 1 Punkt,
+\item
+Charakteristiken überdecken nicht das ganze Gebiet ({\bf G}) 1 Punkt.
+\end{teilaufgaben}
+\end{bewertung}
