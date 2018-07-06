@@ -52,22 +52,23 @@ eine partikuläre Lösung der Differentialgleichung.
 \item
 \begin{figure}
 \centering
-\begin{tikzpicture}[>=latex,thick]
-\fill[color=red!20] (0,0) rectangle ({2*3.1415},{2*3.1415});
-\draw[->] (-0.1,0)--(6.6,0) coordinate[label={$x$}];
-\draw[->] (0,-0.1)--(0,6.6) coordinate[label={right:$y$}];
-\draw[color=red,line width=1.4pt] (0,0)--({2*3.1415},0)--({2*3.1415},{2*3.1415})--(0,{2*3.1415})--cycle;
-\draw (0,-0.1)--(0,0.1);
-\draw ({2*3.1415},-0.1)--({2*3.1415},0.1);
-\draw (-0.1,{2*3.1415})--(0.1,{2*3.1415});
-\node at (0,{2*3.1415}) [left] {$\pi$};
-\node at ({2*3.1415},0) [below] {$\pi$};
-\node at (0,0) [below left] {$0$};
-\node at (3.1415,0) [above] {$u_h(x,y)=-\frac12\sin x$};
-\node at (3.1415,{2*3.1415}) [below] {$u_h(x,y)=\frac12\sin x$};
-\node at (0,3.1415) [right] {$u_h(x,y)=0$};
-\node at ({2*3.1415},3.1415) [left] {$u_h(x,y)=0$};
-\end{tikzpicture}
+\includeagraphics[]{domain.pdf}
+%\begin{tikzpicture}[>=latex,thick]
+%\fill[color=red!20] (0,0) rectangle ({2*3.1415},{2*3.1415});
+%\draw[->] (-0.1,0)--(6.6,0) coordinate[label={$x$}];
+%\draw[->] (0,-0.1)--(0,6.6) coordinate[label={right:$y$}];
+%\draw[color=red,line width=1.4pt] (0,0)--({2*3.1415},0)--({2*3.1415},{2*3.1415})--(0,{2*3.1415})--cycle;
+%\draw (0,-0.1)--(0,0.1);
+%\draw ({2*3.1415},-0.1)--({2*3.1415},0.1);
+%\draw (-0.1,{2*3.1415})--(0.1,{2*3.1415});
+%\node at (0,{2*3.1415}) [left] {$\pi$};
+%\node at ({2*3.1415},0) [below] {$\pi$};
+%\node at (0,0) [below left] {$0$};
+%\node at (3.1415,0) [above] {$u_h(x,y)=-\frac12\sin x$};
+%\node at (3.1415,{2*3.1415}) [below] {$u_h(x,y)=\frac12\sin x$};
+%\node at (0,3.1415) [right] {$u_h(x,y)=0$};
+%\node at ({2*3.1415},3.1415) [left] {$u_h(x,y)=0$};
+%\end{tikzpicture}
 \caption{Gebiet für die Aufgaben~\ref{40000018}
 \label{40000018:gebiet}}
 \end{figure}
