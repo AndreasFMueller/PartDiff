@@ -1,0 +1,43 @@
+Bestimmen Sie die Knotenwerte einer Approximationslösung
+$\tilde u(x)$ des Randwertproblems
+\[
+u''(x) + x \cdot u'(x) - 2 \cdot u(x) = 2, \ \ \ x \in ]0,1[
+\]
+mit
+\[
+u(0) = 0
+\qquad
+\text{und}
+\qquad
+u(1) = 1.
+\]
+
+Benutzen Sie hierzu zentrale Finite Differenzen mit Schrittweite
+$\Delta x = 1/4$. 
+
+
+\begin{loesung}
+Mit 
+\[
+\tilde u_1
+=
+\tilde u(0.25), \ \tilde u_2 = \tilde u(0.5), \ \tilde u_3 = \tilde u(0.75),
+\]
+sowie 
+\[
+A = \left[\begin{array}{rrr} 
+-34.0 & 16.5 & 0 \\
+15.0 & -34.0 & 17.0 \\
+0 & 14.5 & -34.0 \end{array}\right]
+\qquad
+\text{und}
+\qquad
+\underline{b} =  \left(\begin{array}{r} 2.0 \\ 2.0 \\ -15.5 \end{array}\right) 
+\]
+gilt
+$A \cdot \underline{\tilde u} = \underline{b}$.
+Es folgt $\underline{\tilde u} = (0.0625, 0.2500, 0.5625).$
+\end{loesung}
+
+
+

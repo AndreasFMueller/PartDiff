@@ -1,0 +1,194 @@
+Auf dem Quadrat
+\begin{equation}
+\Omega = \{ (x,y)\,|\, 0<x<\pi \;\text{und}\; 0 < y < \pi \}
+\label{40000019:domain}
+\end{equation}
+soll die Differentialgleichung
+\begin{equation}
+\Delta u = \cosh(\!\sqrt{2}x\,)\cdot \sin y
+\label{40000019:pde}
+\end{equation}
+mit den Randbedingungen $u=0$ auf $\partial\Omega$ gelöst werden.
+Die Lösung soll in der Form $u=u_p+u_h$ gefunden werden, wobei
+$u_h$ eine Lösung der homogenen Gleichung $\Delta u_h=0$ ist.
+\begin{teilaufgaben}
+\item
+Finden sie eine partikuläre Lösung $u_p$.
+\item
+Bestimmen Sie die Randbedingungen von $u_h$.
+\item
+Verwenden Sie einen Separationsansatz für $u_h$, stellen Sie die
+Differentialgleichungen und Randbedinungen für die Faktoren auf.
+\item
+Lösen Sie die Differentialgleichungen.
+\item
+Führen Sie den Koeffizientenvergleich durch und bestimmen sie $u_h$.
+\end{teilaufgaben}
+
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Dies ist eine inhomogene Differentialgleichung, wir brauchen also zunächst
+eine partikuläre Lösung.
+Die rechte Seite der Differentialgleichung ist eine Funktion, die bis auf
+einen konstanten Faktor die Differentialgleichung erfüllt.
+Es gilt nämlich
+\[
+\Delta (
+\cosh \!\sqrt{2}x\cdot \sin y
+)
+=
+2\cosh \!\sqrt{2}x\cdot \sin y
+-\cosh\!\sqrt{2}x\cdot\sin y
+=
+\cosh \!\sqrt{2}x\cdot \sin y
+\]
+Also ist
+\[
+u_p(x,y)
+=
+\cosh \!\sqrt{2}x\cdot \sin y
+\]
+eine partikuläre Lösung der Differentialgleichung.
+\item
+\begin{figure}
+\centering
+\includeagraphics[]{domain.pdf}
+\caption{Gebiet für die Aufgaben~\ref{40000019}
+\label{40000019:gebiet}}
+\end{figure}
+Auf dem Rand des Gebietes $\Omega$ sind die Funktionswerte von $u_p$:
+\[
+u_p(x,0) = u_p(x,\pi)=0,
+\quad
+u_p(0,y) = \sin y
+\quad\text{und}\quad
+u_p(\pi,y) = \cosh\!\sqrt{2}x\cdot \sin y.
+\]
+Wir suchen daher eine Lösung der homogenen Gleichung $\Delta u_h = 0$
+mit den Randbedingungen
+\[
+u_h(0,y) = u_h(\pi,y) = 0,
+\quad
+u_h(0,y) = -\sin y
+\quad\text{und}\quad
+u_h(\pi,y) = -\cosh\!\sqrt{2}\pi\cdot \sin y
+\]
+(Siehe auch Abbildung~\ref{40000019:gebiet}.)
+\item
+Zur Bestimmung der Lösung $u_h$ der homogenen Gleichung verwenden wir einen
+Separationsansatz, wir setzen
+\[
+u(x,y) = X(x)\cdot Y(y).
+\]
+Diesen Ansatz setzen wir in die Differentialgleichung ein und erhalten
+\[
+X''(x)Y(y) + X(x)Y''(y)=0
+\qquad\Rightarrow\qquad
+\frac{X''(x)}{X(x)} = -\frac{Y''(y)}{Y(y)}
+\]
+Die Separationsmethode besagt, dass die Seiten der Gleichung konstant
+sein müssen, also
+\[
+X''(x) = -\mu X(x)
+\qquad\text{und}\qquad
+Y''(y) = \mu Y(y).
+\]
+Je nach Vorzeichen von $\mu$ sind die Lösungen trigonometrische Funktionen
+oder Exponentialfunktionen, die Randbedingungen müssen über das Vorzeichen
+von $\mu$ entscheiden.
+\item
+Die homogenen Randbedingungen lauten für $Y$: 
+\[
+Y(0)=0
+\qquad\text{und}\qquad
+Y(\pi)=0.
+\]
+Diese lassen sich nur mit der Lösung $\sin kx$ mit ganzzahligem $k$
+erfüllen.
+Demzufolge hat die Gleichung für $X(x)$ die Lösungen $e^{kx}$ und $e^{-kx}$.
+Die allgemeine Lösung für $u_h$ ist daher
+\[
+u_h(x,y)
+=
+\sum_{k=1}^\infty (a_k e^{kx} + b_k e^{-kx})\sin ky
+\]
+mit noch zu bestimmenden Koeffizienten $a_k$ und $b_k$.
+Diese Lösung erfüllt bereits die Randbedingungen für $y=0$ und $y=\pi$.
+\item
+Es bleiben also noch die Randbedingungen für $x=0$ und $x=\pi$ zu erfüllen:
+\begin{equation}
+\begin{aligned}
+u_h(0,y)   &= \sum_{k=1}^\infty \sin ky \cdot (a_k + b_k)&&=-\sin y
+\\
+u_h(\pi,y) &= \sum_{k=1}^\infty \sin ky \cdot (a_ke^{k\pi} + b_ke^{-k\pi}) &&=-\cosh\!\sqrt{2}\pi\cdot \sin y
+\end{aligned}
+\end{equation}
+Koeffizientenvergleich zeigt, dass diese
+Gleichungen nur für $k=1$ erfüllt sein können, daher muss
+\begin{equation}
+\begin{linsys}{2}
+       a_1&+&        b_1&=& -1\\
+e^{\pi}a_1&+&e^{-\pi}b_1&=& -\cosh\!\sqrt{2}\pi 
+\end{linsys}
+\end{equation}
+gelten.
+Alle anderen Koeffizienten $a_k$ und $b_k$ mit $k\ne 1$ verschwinden.
+Die Koeffizienten $a_1$ und $b_1$ kann man zum Beispiel mit der Kramerschen
+Regel finden:
+\begin{align*}
+a_1
+&=
+\frac{-e^{-\pi}+\cosh\!\sqrt{2}\pi}{e^{-\pi}-e^{\pi}},
+\\
+b_1
+&=
+\frac{-\cosh\!\sqrt{2}\pi-e^{\pi}}{e^{-\pi}-e^{\pi}}.
+\end{align*}
+Damit erhalten wir für die Lösung der homogenen Gleichung
+\[
+u_h(x,y)
+=
+\frac{-e^{-\pi}+\cosh\!\sqrt{2}\pi}{e^{-\pi}-e^{\pi}}\cdot e^{kx} \sin y
++
+\frac{-\cosh\!\sqrt{2}\pi-e^{\pi}}{e^{-\pi}-e^{\pi}}\cdot e^{-kx} \sin y
+\]
+und für die Lösung der Differentialgleichung
+\[
+u
+=
+u_p + u_h
+=
+\cosh \!\sqrt{2}x\cdot \sin y
++
+\frac{ \sin y}{e^{-\pi}-e^{\pi}}
+\cdot \biggl(
+(-e^{-\pi}+\cosh\!\sqrt{2}\pi) e^{kx}
++
+(-\cosh\!\sqrt{2}\pi-e^{\pi}) e^{-kx}
+\biggr).
+\qedhere
+\]
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item
+Partikuläre Lösung ({\bf P}) 1 Punkt,
+\item
+Randbedingungen für $u_h$ ({\bf R}) 1 Punkt,
+\item
+Separation ({\bf S}) 1 Punkt,
+\item
+Lösungen für $Y(y)$ und Ganzzahligkeitsbedingung ({\bf Y}) 1 Punkt,
+Lösungen für $X(x)$ ({\bf X}) 1 Punkt,
+\item
+Koeffizientenvergleich und Lösung ({\bf K}) 1 Punkt.
+\end{teilaufgaben}
+\end{bewertung}
+
+
+
+

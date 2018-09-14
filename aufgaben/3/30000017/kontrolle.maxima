@@ -1,0 +1,11 @@
+/*
+ * Kontrolle der Lösung von Aufgabe 30000017
+ *
+ * (c) 2018 Prof Dr Andreas Müller, Hochschule Rapperswil
+ */
+u: x + (y - sin(x))^3;
+
+diff(u,x);
+diff(u,y);
+
+diff(u,x) + cos(x) * diff(u,y) - 1;

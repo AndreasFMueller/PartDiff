@@ -1,0 +1,142 @@
+Gegeben ist die Differentialgleichung
+\begin{equation}
+\frac{\partial u}{\partial x}
++
+\cos x\, \frac{\partial u}{\partial y}
+=
+1
+\label{30000017:eq}
+\end{equation}
+auf dem Gebiet 
+\[
+\Omega=\{ (x,y) \,|\,
+0<x<\infty
+\;\text{und}\;
+-1<y<1
+\}.
+\]
+mit der Randbedingung
+\[
+u(0,y) = y^3.
+\]
+\begin{teilaufgaben}
+\item
+Finden Sie eine Lösung der Differentialgleichung \eqref{30000017:eq}.
+\item
+Ist die Lösung durch die Vorgaben eindeutig bestimmt?
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{figure}
+\centering
+\includeagraphics[]{char.pdf}
+\caption{Charakteristiken der Differentialgleichung
+\eqref{30000017:eq}.
+Das hellrote Gebiet wird nicht von Charakteristiken überdeckt, die von der
+Randbedingung festgelegt werden.
+\label{30000017:char}}
+\end{figure}
+Es handelt sich um eine quasilineare partielle Differentialgleichung erster
+Ordnung, die mit der Methode der Charakteristiken gelöst werden kann.
+\begin{teilaufgaben}
+\item
+Die Differentialgleichung der Charakteristiken
+\[
+\begin{aligned}
+\dot x&= 1      &&\Rightarrow &x&=t+x_0\\
+\dot y&= \cos x &&            & &      \\
+\dot u&= 1      &&            & &
+\end{aligned}
+\]
+Da die Charakteristiken am linken Rand des Gebietes beginnen sollen,
+können wir $x_0=0$ wählen, also $x=t$. 
+Die erste Differentialgleichung hat als Lösung
+\[
+y(t) = \int \cos x(t)\,dt = \int \cos t\,dt = \sin t + C.
+\]
+Die Konstante $C$ muss so gewählt werden, dass die Kurve bei $y_0$
+beginnt, also $y_0=y(0)=\sin 0 + C=C$ oder $C=y_0$.
+Somit muss $y(t)=y_0+\sin t$ verwendet werden.
+Die letzte Differentialgleichung hat als Lösung
+\[
+u(t) = t + u_0.
+\]
+Der Wert von $u_0$ wird durch die Randedingung $u_0=u(y_0,0)=y_0^3$
+festgelegt.
+Wir müssen also aus den Gleichungen
+\begin{align*}
+y&=y_0+\sin x\\
+u(x,y)&=x+y_0^3
+\end{align*}
+die Grösse $y_0$ eliminieren.
+Es ist $y_0=y-\sin x$, also
+\begin{equation}
+u(x,y)
+=
+x + (y-\sin x)^3.
+\label{30000017:l}
+\end{equation}
+
+Wir überprüfen dieses Resultat durch Einsetzen in die Differentialgleichung.
+Die Ableitungen sind
+\begin{align*}
+%(%i2) u:x+(y-sin(x))^3
+%                                           3
+%(%o2)                          (y - sin(x))  + x
+%(%i3) diff(u,x)
+%                                                   2
+%(%o3)                     1 - 3 cos(x) (y - sin(x))
+%(%i4) diff(u,y)
+%                                              2
+%(%o4)                           3 (y - sin(x))
+\frac{\partial u}{\partial x}
+&=
+1 - 3 \cos x\cdot(y-\sin x)^2
+\\
+\frac{\partial u}{\partial y}
+&=
+3(y-\sin x)^2
+\end{align*}
+Einsetzen in die Differentialgleichung ergibt
+\[
+1 - 3 \cos x\cdot(y-\sin x)^2
++
+\cos x
+\cdot
+(
+3(y-\sin x)^2
+)
+=
+1,
+\]
+also erfüllt~\eqref{30000017:l} die Differentialgleichung.
+Einsetzen von $x=0$ liefert
+\[
+u(x,y)
+=
+0 + (y-\sin 0)^3 = y^3.
+\]
+die Anfangsbedingung ist also auch erfüllt.
+\item
+Die Charaketeristiken sind im Grundriss die Kurven $(x, y_0+\sin x)$, also
+Sinus-Kurven in Abhängigkeit von $x$.
+Die vom Interval $(-1,1)$ auf der $y$-Achse ausgehenden Kurven überdecken
+nicht das ganze
+Gebiet $\Omega$, damit ist die Lösung nicht eindeutig bestimmt
+(Abbildung~\ref{30000017:char}).
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item
+Quasilinear DGL 1. Ordnung ({\bf Q}) 1 Punkt,
+Charakteristikengleichung ({\bf C}) 1 Punkt,
+die ``einfachen'' Lösungen für $x$ und $u$ ({\bf E}) 1 Punkt,
+Lösung für $y(t)$ ({\bf Y}) 1 Punkt,
+Lösung für $u(x,y)$ (Elimination von $y_0$, {\bf U}) 1 Punkt,
+\item
+Charakteristiken überdecken nicht das ganze Gebiet ({\bf G}) 1 Punkt.
+\end{teilaufgaben}
+\end{bewertung}

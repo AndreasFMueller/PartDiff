@@ -1,0 +1,121 @@
+Betrachten Sie die Differentialgleichung
+\begin{equation}
+\frac{\partial^2 u}{\partial x^2}
++
+2
+\frac{\partial^2 u}{\partial x\partial y}
+-
+e^{-x}
+\frac{\partial^2 u}{\partial y^2}
+=
+0
+\label{90000017:dgl}
+\end{equation}
+auf dem Gebiet
+\begin{equation}
+\Omega
+=
+\left\{(x,y)\,\left|\, 0<x<1\wedge 0 <y<1\right.\right\}
+\label{90000017:gebiet}
+\end{equation}
+mit den Randbedingungen
+\[
+u(x,0) = f(x)
+\qquad\text{und}\qquad
+u(0,y) = g(y)
+\]
+mit glatten Funktionen $f(x)$ und $g(y)$, die ausserdem $f(0)=g(0)$ erfüllen.
+Ist das Problem gut gestellt?
+
+\begin{hinweis}
+Im Laufe der Lösung werden Sie auf eine gewöhnliche Differentialgleichung
+für $y(x)$ stossen, die relativ schwierig zu lösen ist.
+Versuchen Sie nicht, diese zu lösen.
+Leiten Sie vielmehr aus der Differentialgleichung eine Formel für $y'(x)$ ab,
+untersuchen Sie das Vorzeichen von $y'(x)$ und leiten Sie daraus ab,
+ob das Problem gut gestellt ist.
+\end{hinweis}
+
+\begin{loesung}
+\begin{figure}
+\centering
+\includeagraphics[]{char.pdf}
+\caption{Charakteristiken der Differentialgleichung~\eqref{90000017:dgl}
+im Gebiet $\Omega$.
+Die grünen Charakteristiken überdecken nicht das ganze Gebiet.
+\label{90000017:char}}
+\end{figure}
+Das Symbol des Differentialoperators  ist die Matrix
+\[
+A
+=
+\begin{pmatrix} 1 & 1\\ 1 & -e^{-x} \end{pmatrix}
+\qquad\Rightarrow\qquad
+\det A
+=
+-1 -e^{-x} < -1 < 0,
+\]
+insbesondere ist der Operator hyperbolisch.
+
+Um zu bestimmen, ob das Problem gut gestellt ist, müssen wir daher die
+Charakteristiken bestimmen.
+Beide Charakteristikenscharen, die von den Randwerten ausgehen, müssen das
+ganze Gebiet überdecken, damit das Problem gut gestellt ist.
+
+Die Charakteristiken erfüllen die Differentialgleichung
+\begin{align*}
+\dot y^2
+-
+2 \cdot \dot x \dot y
+-
+e^{-x}\cdot \dot x^2
+&=
+0
+\\
+(y')^2
+-2\cdot y'
+-e^{-x} 
+=
+0
+\end{align*}
+Diese Gleichung kann mit der Lösungsformel für quadratische Gleichungen
+aufgelöst werden, man findet
+\begin{equation}
+y' = 1 \pm \sqrt{1+e^{-x}}.
+\label{90000017:ableitung}
+\end{equation}
+Daraus kann man ablesen, dass die Steigung der Charakteristiken nicht von
+$y$ abhängt, sondern nur von $x$.
+Zu jedem der Vorzeichen in \eqref{90000017:ableitung} gibt es eine Schar
+von Charakteristiken, die sich nur durch eine Verschiebung in $y$-Richtung
+unterscheiden.
+
+Für das positive Vorzeichen in \eqref{90000017:ableitung} ist die
+Ableitung $y' > 0$, für das negative Vorzeichen ist $y'<0$.
+Die eine Schar von Charakteristiken verläuft daher von links oben
+nach rechts unten, die andere Schar verläuft von links unten nach
+rechts oben.
+Der Verlauf der Charakteristiken ist in Abbildung~\ref{90000017:char}
+dargestellt.
+
+Die fallenden Charakteristiken (in Abbildung~\ref{90000017:char} grün
+dargestellt), die vom linken Rand des Gebietes
+ausgehen, können nicht das ganze Gebiet überdecken, das hellgrün
+hinterlegte Teilgebiet wird nicht abgedeckt, somit ist das
+Problem nicht gut gestellt.
+\end{loesung}
+
+\begin{diskussion}
+Wenn man $\Omega$ auf den ganzen ersten Quadranten ausdehnt, überdecken
+die Charakteristiken das ganze Gebiet.
+\end{diskussion}
+
+\begin{bewertung}
+Symbol ({\bf A}) 1 Punkt,
+hyperbolisch ({\bf H}) 1 Punkt,
+Differentialgleichung der Charakteristiken ({\bf D}) 1 Punkt,
+Quadratische Gleichung für Steigung ({\bf Q}) 1 Punkt,
+Kriterium für gut gestellt ({\bf K}) 1 Punkt,
+Folgerung ({\bf F}) 1 Punkt.
+\end{bewertung}
+
