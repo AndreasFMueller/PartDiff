@@ -1,0 +1,30 @@
+%
+% solutions.tex
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Solutions of partial differential equations\label{klassifikation:loesung}}
+To solve a partial differential equation, the following data has to be
+specified:
+\begin{enumerate}
+\item
+A differential equation, e.~g.~by specifying the function $F$
+\item
+A domain $\Omega$
+\item
+Boundary values on part of the boundary $\partial\Omega$.
+\end{enumerate}
+\begin{definition}
+A solution of a partial differential equation is a function $u$
+defined on $\bar \Omega$ (not only on $\Omega$!), which is
+differentiable in $\Omega$, satisfies the differential equation in
+$\Omega$, and satisfies the boundary conditions on $\partial\Omega$.
+\end{definition}
+
+A problem is called {\em well posed} if the data determines the solution
+uniquely.
+The theory to be developed in subsequent chapters has to be able to
+determine whether a problem is well posed.
+Only then does it make sense to try to use a numerical algorithm
+and to expect a well behaved solution.
+

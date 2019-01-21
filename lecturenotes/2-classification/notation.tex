@@ -1,0 +1,38 @@
+%
+% klassifikation.tex
+% 
+%
+% (c) 2008 Prof Dr Andreas Mueller
+%
+\section{Appendix: Notation}
+\rhead{Notation}
+The traditional way to write derivatives isn't very compact, which is why
+we will use the following equivalent notation
+\begin{align*}
+\frac{\partial f(x,y)}{\partial x}
+&=\frac{\partial}{\partial x}f(x,y)
+=\partial_x f(x,y)\\
+\frac{\partial f}{\partial x_i}(x,y)
+&=\partial_{x_i}f(x,y)=\partial_if(x,y)
+\end{align*}
+We will also use the following operator notation for derivatives:
+\begin{align*}
+\frac{\partial}{\partial x}
+&=
+\partial_x\\
+\frac{\partial}{\partial x_i}
+&=
+\partial_{x_i}
+=\partial_i
+\end{align*}
+In this notation, the well known opeators can be written as:
+\begin{align*}
+\Delta &=\partial_x^2+\partial_y^2+\dots=\sum_{i=0}^n\partial_i^2\\
+\operatorname{grad}&=\nabla=\begin{pmatrix}\partial_1\\\vdots\\\partial_n\end{pmatrix}
+\end{align*}
+The normal derivative which is used in boundary conditions for partial
+differential equations is written as
+\[
+\frac{\partial u}{\partial n}=\partial_nu.
+\]
+

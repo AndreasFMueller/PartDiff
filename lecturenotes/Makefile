@@ -13,7 +13,14 @@ TEXFILES = lecturenotes.tex a-intro.tex 				\
 	1-examples/heatequation.tex					\
 	1-examples/supersonic.tex					\
 	1-examples/beamequation.tex					\
-	1-examples/plateequation.tex
+	1-examples/plateequation.tex					\
+	2-classification/classification.tex				\
+	2-classification/domains.tex					\
+	2-classification/equations.tex					\
+	2-classification/types.tex					\
+	2-classification/solutions.tex					\
+	2-classification/notation.tex					\
+	2-classification/conditions.tex
 
 #	beispiele.tex klassifikation.tex geometrie.tex \
 #	separation.tex tsunami.tex transformation.tex \

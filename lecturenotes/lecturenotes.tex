@@ -60,29 +60,20 @@ Hochschule f"ur Technik, Rapperswil, 2008-2018
     linkcolor=blue
 }
 \tableofcontents
-\newtheorem{satz}{Satz}[chapter]
+\newtheorem{satz}{Theorem}[chapter]
 \newtheorem{problem}[satz]{Problem}
-\newtheorem{hilfssatz}[satz]{Hilfssatz}
+\newtheorem{hilfssatz}[satz]{Lemma}
 \newtheorem{definition}[satz]{Definition}
-\newtheorem{annahme}[satz]{Annahme}
-\newtheorem{aufgabe}[satz]{Aufgabe}
-\newenvironment{beispiel}[1][Beispiel]{%
+\newtheorem{annahme}[satz]{Assumption}
+\newtheorem{aufgabe}[satz]{Task}
+\newenvironment{beispiel}[1][Example]{%
 \begin{proof}[#1]%
 \renewcommand{\qedsymbol}{$\bigcirc$}
 }{\end{proof}}
 \mainmatter
 \input{a-intro.tex}
 \input{1-examples/examples.tex}
-%\input klassifikation.tex
-%\input geometrie.tex
-%\input separation.tex
-%\input tsunami.tex
-%\input jacobi.tex
-%\input transformation.tex
-%\input pdgl2ord.tex
-%\input elliptisch.tex
-%\input parabolisch.tex
-%\input hyperbolisch.tex
+\input{2-classification/classification.tex}
 \appendix
 %\input anhangsinh.tex
 %\input nichtlinear.tex
