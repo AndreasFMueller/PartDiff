@@ -1,0 +1,39 @@
+%
+% supersonic.tex -- the equation for a supersonic flow
+%
+% (c) 2008 Prof Dr Andreas Mueller
+%
+\rhead{Supersonic flow}
+\section{Supersonic flow}
+In the year 1928, Jakob Ackeret habilitated at ETH Zprich with a 
+paper with the title
+``Über Luft-Kräfte bei sehr grossen
+Geschwindigkeiten insbesondere bei ebenen Strömungen''.
+He showed how to compute the aerodynamic forces on an object
+in a supersonic flow using a linear approximation.
+The velocity field of the gas that enters the region of interest with
+velocity $v_1$ in $x$-direction turns out to be the gradient of
+a function $\varphi(x,y,z)$ that satisfies the equation
+\[
+(1-Ma_1)\frac{\partial^2\varphi}{\partial x^2}
++
+\frac{\partial^2\varphi}{\partial y^2}
++
+\frac{\partial^2\varphi}{\partial z^2}=0.
+\]
+In the expression
+$Ma_1=\frac{v_1}{c_1}$, $c_1$ is the speed of sound.
+
+For small velocities, we have $(1-Ma_1)>0$, and the equation
+becomes similar to the Poisson problem.
+This is called potential flow.
+
+For supersonic flow, however, the first term
+$(1-Ma_1) < 0$
+changes sign, and the equation behaves like a wave equation.
+In fact, the flow shows show waves propagating away from the object
+and thus carrying away it's energy
+(figure~\ref{ueberschall2d}).
+By carefully analyzing this solution, Ackeret was able to compute
+aredynamic drag due to these shock waves.
+

@@ -1,0 +1,51 @@
+%
+% poissonproblem.tex
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Poisson-Problem}
+\rhead{Poisson-Problem}
+
+\subsection{Minimal surfaces\label{beispiele:minimal surfaces}}
+What shape will a soap film take when it is lifted to height
+$f(x,y)$ at the boundary $(x,y)\in\gamma$ of 
+a two dimensional domain $G\subset \mathbb R^2$?
+If we describe the height of the soap film using a function
+$u(x,y)$, we expect to find a partial differential equation for $u$
+with boundary condition $f$.
+
+In the derivation of the equation of motion for the vibrating string
+we learned, that the force accelerating the string depended on the
+curvature of the string.
+The soap film has two directions in which it can curve, and surface
+tension is the same in all directions.
+We therefore expect that force accelerating the film proportional
+to the sum of the second derivatives with respect to $x$ and $y$.
+Since the film is supposed not to move, we expect the differential
+equation:
+\[
+\frac{\partial^2 u }{\partial x^2}+\frac{\partial^2 u }{\partial y^2}
+=\Delta u =0.
+\]
+This simplified derivation is certainly valid for small deviations.
+
+\subsection{Electric potential}
+In electrodynamics it is shown that a static electric field is a 
+gradient field, i.~e.~there is a potential $\varphi$ such that the
+electric field
+\[
+\vec E=\operatorname{grad}\varphi
+\]
+is its gradient.
+It is also shown that the sources of the field are the electric charges.
+Without charges, there are no sources to the field.
+The mathematical expression of these facts is that 
+the electric field satisfies the same partial differential equation
+\[
+\operatorname{div}\vec E=\operatorname{div}\operatorname{grad}\varphi
+=\Delta \varphi=0
+\]
+as a minimal surface.
+This problem seems to have mathematical significance independent of the
+particular application.
+

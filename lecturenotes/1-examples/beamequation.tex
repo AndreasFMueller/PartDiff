@@ -1,0 +1,54 @@
+%
+% beamequation.tex -- beam equation
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\rhead{Beam equation}
+\section{Beam equation}
+In the derivation of the differential equation of a string we
+have used that fact that the string does not resist to being
+bent.
+Even large curvature of the string does not result in force trying
+to straighten it out again.
+A beam behaves completely differently.
+Bending the beam creates internal stresses in the beam that
+try to bring the beam back to its original shape.
+We don't try to explain these forces, but it is natural to expect that
+they will be proportional to the curvature and thus to the second
+derivatives of the beam.
+In addition, the are proportional to some material constants
+(the elastic modulus $E$)
+and to a property derived from the cross section of the beam,
+namely the second moment $I$%
+\footnote{The definition of $I$ is not relevant for the present
+discussion.}.
+
+A segment of length $\Delta x$ of a beam with linear mass density $m$
+therefore experiences the following force components:
+\begin{enumerate}
+\item
+Restoring forces caused by the stresses in the beam:
+$-EI\frac{\partial^4}{\partial^4 x}w(t,x)\Delta x$
+\item
+Damping
+$-b\frac{\partial}{\partial t}w(t,x)\Delta x$
+\item
+Exterior forces, e.~g.~loads on the beam:
+$q(x,t)\Delta x$
+\end{enumerate}
+By Newton's law, these forces musst sum up to
+\[
+m\Delta x\frac{\partial^2}{\partial^2 t}w(t,x).
+\]
+By going to the limit $\Delta x\to 0$ once more we get
+\begin{align*}
+m\frac{\partial^2}{\partial^2t}w(t,x)
+&=-EI\frac{\partial^4}{\partial^4x}w(t,x)-b\frac{\partial}{\partial t}w(t,x)+q(t,x)
+\\
+EI\frac{\partial^4}{\partial^4x}w(t,x)
++b\frac{\partial}{\partial t}w(t,x)
++m\frac{\partial^2}{\partial^2t}w(t,x)
+&=q(t,x)
+\end{align*}
+The motion of a beam therefore follows a partial differential equation.
+

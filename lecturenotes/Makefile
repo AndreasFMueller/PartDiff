@@ -6,7 +6,15 @@
 # 
 all:	lecturenotes
 
-TEXFILES = lecturenotes.tex a-intro.tex 
+TEXFILES = lecturenotes.tex a-intro.tex 				\
+	1-examples/examples.tex						\
+	1-examples/waveequation.tex					\
+	1-examples/poissonproblem.tex					\
+	1-examples/heatequation.tex					\
+	1-examples/supersonic.tex					\
+	1-examples/beamequation.tex					\
+	1-examples/plateequation.tex
+
 #	beispiele.tex klassifikation.tex geometrie.tex \
 #	separation.tex tsunami.tex transformation.tex \
 #	pdgl2ord.tex \

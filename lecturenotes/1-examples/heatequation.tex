@@ -1,0 +1,71 @@
+%
+% heatequation.tex -- heat equation
+%
+% (c) 2008 Prof Dr Andreas Mueller
+%
+\rhead{Heat equation}
+\section{Heat equation}
+The heat equation is a prototype for a so called parabolic differential
+equation.
+Such equations are also used to describe diffusion processes.
+The Schrödinger equation, the basis of quantum mechanics, is also of this type.
+
+We derive the heat equation for the one dimensional case.
+We examine a rod of length $l$ between $x$-coordinates $0$ and $l$
+and strive to compute the temperature distribution $T(x,t)$ for 
+$0<x<l$ and for all times $t>0$.
+We need the initial temperature distribution, which we call
+$T(x,0) = f(x)$.
+We expect to solve this problem using a partial differential equation.
+
+The heat that flows in a time interval $\Delta t$ through the rod at
+coordinate $x$ is proportional to the temperature gradient at that point.
+The amount of heat flowing into the section  of the rod between
+$x$ and $x+\Delta x$ is therefore proprtional to
+\[
+\frac{\partial T}{\partial x}(x+\Delta x)-\frac{\partial T}{\partial x}(x).
+\]
+This additional heat lets the temperature if the segment rise, depending
+on the heat capacity of the material.
+The volume of the segment is $\Delta x$, the temperature change is smaller
+when the volume is larger.
+It becomes
+\[
+\Delta T
+=
+\kappa
+\frac{1}{\Delta x}
+\biggl(
+\frac{\partial T}{\partial x}(x+\Delta x)-\frac{\partial T}{\partial x}(x).
+\biggr) \Delta t.
+\]
+Dividing by $\Delta t$ and going to the limits $\Delta t\to 0$
+and $\Delta x\to 0$ leads to
+\[
+\lim_{\Delta t\to 0}\frac{\Delta T}{\Delta t}
+=
+\frac{\partial T}{\partial t}
+=
+\kappa
+\lim_{\Delta x\to 0}\frac1{\Delta x}\left(\frac{\partial T}{\partial x}(x+\Delta x)-\frac{\partial T}{\partial x}(x)\right)
+=\kappa\frac{\partial^2T}{\partial x^2}.
+\]
+
+Again we have to specify suitable initial and boundary conditions.
+As initial condition we already have found
+\[
+T(x,0)=f(x)\qquad \forall x\in[0,l].
+\]
+As a boundary condition at the end of the rod we could prescribe the
+temperature.
+In physics terms this means that both ends of the rod are in contact
+with a heat reservoir at constant temperature.
+If we prescribe the derivatives of $T$ with respect to $x$ at $x=0$ and
+$x=l$, we fix the flow of heat into the rod.
+In particular, requiring
+\[
+\frac{\partial T}{\partial x} = 0
+\]
+means that no heat flows through the ends of the rod, the rod is
+thermally isolated from its environment.
+

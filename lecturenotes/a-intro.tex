@@ -5,122 +5,122 @@
 %
 \lhead{Introduction}
 \chapter*{Introduction}
-\index{Mechanik!klassische}
-\index{Elektrizitatslehre@Elektrizit\"atslehre}
-\index{Populationsdynamik}
-Gew"ohnliche Differentialgleichungen werden in der klassischen Mechanik,
-in der Elektrizit"atslehre, in der Populationsdynamik, und ganz 
-allgemein "uberall dort erfolgreich eingesetzt, wo die
-"Anderungsrate einer skalaren Gr"osse von den aktuellen Werten dieser Gr"osse
-abh"angt.
-\index{Massepunkt}
-\index{Newtonsches Gesetz}
-Ein Massepunkt bei der Ortskoordinate $x$ "andert seine Position
-gem"ass dem Newtonschen Gesetz
+\index{mechanics!classical}
+\index{electrodynamics}
+\index{population dynamics}
+Ordinary differential equations are used in classical mechanics,
+in electrodynamics, in population dynamics and more generally in any
+application where the rate of change of a variable depends und the current
+values of the same variable.
+\index{point mass}
+\index{Newton's law}
+A point mass at coordinate $x$ changes its position according to 
+Newton's law
 \[
 ma=m\ddot x=F.
 \]
-H"angt $F$ von der aktuellen Position des Massepunktes ab, wie dies zum
-Beispiel bei einem an einer Feder aufgeh"angten Gewicht der Fall ist,
-liegt eine Differentialgleichung f"ur die von der Zeit abh"angige
-Position $x(t)$ des Massepunktes vor:
+If the force $F$ depends on the position of the mass, as e.~g.~in the
+case of a weight suspended from a spring, we get a differential equation
+for the time dependent position $x(t)$:
 \[
 m\frac{d^2}{dt^2}x(t)=F(x(t)).
 \]
-In der klassischen Analysis wird gezeigt, dass solche Gleichungen bei
-gegebenen Anfangsbedingungen eine eindeutig bestimmte L"osung haben.
-Mit etwas zus"atzlichem Aufwand werden auch Differentialgleichungen
-f"ur mehrere skalare Gr"ossen behandelt, die alle vom gleichen Parameter
-(typischerweise der Zeit) abh"angen.
+Classical analysis proves theorems that show that we can expect such
+a differential equation to have a unique solution for each
+initial condition under relatively mild assumptions on the function $F$.
+Only slight additional work is required for differential equations 
+for a vector valued function.
 
-\index{Felder!elektrische}
-\index{Temperaturverteilung}
-\index{Druck}
-\index{Gas}
-\index{Stromungsgeschwindigkeit@Str\"omungsgeschwindigkeit}
-\index{Flussigkeit@Fl\"ussigkeit}
-Zur Beschreibung elektrischer Felder, der Temperaturverteilung in
-einem Fest\-k"orper, des Druckes in einem Gas oder der Str"omungsgeschwindigkeit
-in einer Fl"ussigkeit reicht eine einzelne oder einige wenige skalare
-Gr"ossen jedoch nicht. Vielmehr muss man in den genannten Beispielen
-zu jedem Zeitpunkt und an jedem Punkt des Raumes die interessierende Gr"osse
-bestimmen. Sie ist also nicht mehr nur eine Funktion der Zeit, sondern eine
-Funktion von Ort und Zeit.
-\index{Saite!schwingende}
-Die Auslenkung einer schwingenden Saite
-beispielsweise ist eine Funktion $f(x,t)$, sie beschreibt, wie stark
-die Saite an der Koordinate $x$ zur Zeit $t$ von der Ruhelage ausgelenkt ist.
-Insbesondere hat die Saite zu jeder Zeit $t_0$ eine andere Form, die durch
-die Funktion von einer Variablen
-\[
-x\mapsto f(x,t_0)
-\]
-gegeben ist.
+\index{fields!electrical}
+\index{temperature distribution}
+\index{pressure}
+\index{gas}
+\index{flow}
+\index{fluid}
+To describe electrical fields, temperature distributions, pressure
+in a gas or flow velocity in a fluid, we need to determine functions 
+that do not only depend on a single time variable, but also on additional
+variables like position.
+In addition, the rate of change depending on position may also influence
+the development.
 
-Man k"onnte vielleicht die Hoffnung hegen, dass die zeitliche "Anderung
-der Auslenkung an der Stelle $x$ nur von der Position $x$ abh"angt.
-Dies kann aber nicht sein, denn wenn die Saite in einer Umgebung
-des Punktes $x$ sehr stark schwankt, ``ziehen'' die ``benachbarten'' Teile
-der Saite ebenfalls an dem Punkt, vor allem dann, wenn die Saite gekr"ummt
-ist. Die zeitliche "Anderung der Auslenkung, also die Ableitung von $f(x,t)$
-nach der Zeit, h"angt also nicht nur von $f(x,t)$ ab, sondern auch von
-den Ableitungen nach $x$. Es entsteht eine Gleichung, die die verschiedenen
-partiellen Ableitungen von $f$ miteinander verkn"upft, zum Beispiel in
-etwa folgender Form:
+The deflection of a vibrating string is a function $f(x,t)$, where $x$ is
+the position along the string and $t$ is time.
+For each point $t_0$ in time, the shape of the string is different and
+described by the function $x\mapsto f(x,t_0)$.
+Any hope that it might be possible to derive a differential equation
+for the motion of point on the string in isolation is quickly dashed
+by the simple observation, that the force acting on such point
+increases if neightboring points are deviate more from a straight line.
+This means that the acceleration of a point on the string depends on 
+the curvature.
+We therefore expect an equation that links the second time derivative of $f$
+to the second spacial derivative.
+The equation we will later derive has the form
 \begin{align*}
-a^2\frac{\partial^2}{\partial x^2}f&= \frac{\partial^2}{\partial t^2}f
+a^2\frac{\partial^2}{\partial x^2}f&= \frac{\partial^2}{\partial t^2}f.
 \end{align*}
-Kann man diese sogenannte partielle Differentialgleichung l"osen,
-kann man die Form der Saite zu jedem
-beliebigen zuk"unftigen Zeitpunkt voraussagen.
-\index{Differentialgleichung!partielle}
+If we are able to solve such a partial differential equation,
+we will be able to predict the shape of the string for every point in
+time.
+Equivalently, we will be able to predict the movement $t\mapsto f(x_0,t)$
+for every point $x_0$ on the string.
+\index{differential equation!partial}
 
 \index{Differentialgleichung!gew\"ohnliche}
-Bei gew"ohnlichen Differentialgleichungen hat man gelernt, dass die Gleichung
-alleine die L"osung noch nicht eindeutig bestimmt, sondern dass dazu noch
-weitere Angaben, sogenannte Anfangs- oder Randbedingungen n"otig sind.
-Die Theorie der partiellen Differentialgleichungen muss daher auf folgende
-Fragen eine Antwort liefern:
+The theory of ordinary differential equations shows that the equation
+by itself does not determine the solution.
+Additional data in the form of initial or boundary conditions has to be
+specified.
+Partial differential equations will not be different in that regard.
+The theory thus has to provide answers to the following questions:
 \begin{enumerate}
-\item Wie muss ein Problem, welches mit Hilfe partieller Differentialgleichungen
-gel"ost werden soll, "uberhaupt gestellt werden, damit die L"osung wohlbestimmt
-ist?
-\item Welche Eigenschaften haben die L"osungen? Wieviele Ableitungen haben
-die L"osungen? Wie sieht die L"osung in der N"ahe des Randes aus, bleiben
-sie stetig, oder werden Sie unbegrenzt gross?
-\item Wie berechnet man die L"osung einer partiellen Differentialgleichung?
+\item
+How do we have to formulate the differential equation in order to ensure
+that a solution will be well defined?
+\item
+What properties will the solution have?
+What does the solution look like close to the boundary, does it remain
+continuous or differentiable, does it increase beyond any limit?
+\item
+How can we compute solutions numerically?
 \end{enumerate}
-Die Vorlesung ``Partielle Differentialgleichungen'' im Master of Sciences in
-Engineering versucht diese Fragen zu beantworten. Der Kurs ist in zwei Teile
-geteilt. Im ersten Teil werden die genannten Fragen theoretisch untersucht.
-Leider stellt sich heraus, dass man zwar klare Aussagen dar"uber machen kann,
-welche Gleichungen l"osbar sind, und wieviele L"osungen gegebenenfalls
-existieren, dass man auch deren Eigenschaften sehr gut beschreiben kann,
-aber leider auch nur in ganz wenigen F"allen geschlossene Formeln f"ur die
-L"osungen finden kann. Mit der mathematischen Gewissheit, dass L"osungen
-existieren und sich ``anst"andig benehmen'' er"offnet sich aber auch die
-im zweiten Teil behandelte M"oglichkeit, die Gleichungen mit Hilfe eines
-Computers numerisch zu l"osen.
+This course tries to give some basics answers to these questions.
+It has two parts.
+The first part deals with the theoretical basics.
+It teaches how to set up a problem involving partial differential equations
+so that conclusions about existence and uniqueness of solutions are possible.
+In some cases, we will even be able to find a solution in closed form.
+This, however, will be rather the exception than the rule.
+The second part then strives to actually compute these solutions using
+a computer algorithm.
 
-Dieses Skript enth"alt die im ersten Teil der Vorlesung behandelten 
-Themen. Es gliedert sich in folgende Kapitel:
+The present lecture notes cover the first part of the course.
+They are structured as follows:
 \begin{enumerate}
-\item Beispiele von partiellen Differentialgleichungen. Die wichtigsten
-Differentialgleichungen aus Mechanik, W"armelehre und Elektrizit"atslehre
-werden vorgestellt. Sie dienen in sp"ateren Kapiteln als Beispiele
-f"ur theoretische "Uberlegungen wie auch f"ur L"osungsmethoden.
-\item L"osung mit Separation der Variablen.
-\index{Separation der Variablen}
-\item L"osung mit Hilfe von Integraltransformationen
-\index{Integraltransformation}
-\item Elliptische partielle Differentialgleichungen
-\index{Differentialgleichung!partielle!elliptische}
-\item Parabolische partielle Differentialgleichungen
-\index{Differentialgleichung!partielle!parabolische}
-\item Hyperbolische partielle Differentialgleichungen
-\index{Differentialgleichung!partielle!hyperbolische}
-\item Nichtlineare Ph"anomene am Beispiel der Gleichung von Burgers.
-\index{Differentialgleichung!partielle!nichtlineare}
+\item
+Examples of partial differential equations.
+The most important partial differential equations from mechanics,
+thermodynamics and electrodynamics are presented.
+They serve as prototypical examples in later chapters to illustrate
+and apply the theoretical insights.
+\item
+Method of separation of variables.
+\item
+Solutions using integral transforms.
+\item
+Classification of partial differential equations of second order.
+These equations turn out to be of utmost practical importance, but
+they arise in 3 distinctly different types with very different properties
+and which require vastly different solution methods.
+\item
+Elliptic partial differential equations.
+\item
+Parabolic partial differential equations.
+\item
+Hyperbolic partial differential equations.
+\item
+Some nonlinear partial differential equations.
 \end{enumerate}
 
 
