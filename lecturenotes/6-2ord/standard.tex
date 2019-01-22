@@ -1,0 +1,316 @@
+%
+% standard.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Standard form}
+\rhead{Standard form}
+In the form (\ref{operator2ordnung})
+the differential equation is defined by the choice of coefficients
+$(a_{ij})$, $b_i$ and $c$.
+They can also be functions of the independen variables $x_i$.
+
+However, not all the coefficients are equally imporant in influencing
+the character of the solutions.
+A change of coordinates will also change the coefficients.
+We can expect that suitable transformations will be able to turn
+most coefficients to zero, so that only very few coefficients remain
+that then determine the character of the solutions.
+So the first step taken in this section is to find out how a change
+of coordinates changes the coefficients.
+The nexst step then is to find out what properties are invariant
+under coordinate transformation.
+
+\subsection{Linear transformation of the coordinates
+\label{lineare-transformation}}
+A coordinate transformation
+\[
+x_i=\sum_{j}t_{ij}x_j'
+\]
+transforms the derivates according to the chain rule
+\[
+\frac{\partial u}{\partial x'_j}
+=
+\sum_{i=1}^n
+\frac{\partial x_i}{\partial x'_j} \frac{\partial u}{\partial x_i}
+=
+\sum_{i=1}^nt_{ij}\frac{\partial u}{\partial x_i}.
+\]
+We can derive from this how the coefficients $b_i$ will be transformed.
+We denote the coefficients of the first derivatives in
+(\ref{operator2ordnung}) expressed in $x_i'$-coordinate by $b_i'$.
+In both coordinate systems, the first derivative terms have to agree, so
+we have
+\[
+\sum_{i=1}^n b_i\frac{\partial u}{\partial x_i}
+=
+\sum_{i=1}^n b_i'\frac{\partial u}{\partial x_i'}
+=
+\sum_{i,j=1}^n b_i't_{ji}\frac{\partial u}{\partial x_j}
+=
+\sum_{j,i=1}^n b_j't_{ij}\frac{\partial u}{\partial x_i}.
+\]
+But this only works if
+\[
+b_i = \sum_{j=1}^n t_{ij}b_j'.
+\]
+If we denote the matrix inverse to the matrix $(t_{ij})$ by $(t'_{ij})$,
+then rule that expresses the $b_i'$ by $b_i$ becomes
+\[
+b_j'=\sum_{i=1}^n t'_{ji}b_i.
+\]
+
+Let $T$ denote the matrix with coefficients $t_{ij}$ and let $b$
+denote the vector of coefficients $b_i$.
+Similarly for $t_{ij}^$ and $b_i'$.
+Then we can write the coordinate transformation in matrix form as
+\[
+b=Tb'
+\qquad\Rightarrow\qquad
+b'=T^{-1}b=T'b.
+\]
+
+In a similar fashion we can treat the second derivatives.
+First we compute the derivatives using the chain rule:
+\[
+\frac{\partial}{\partial x_i'}\frac{\partial}{\partial x_j'} u
+=
+\frac{\partial}{\partial x_i'}
+\sum_{k=1}^nt_{kj}\frac{\partial}{\partial x_k}u
+=
+\sum_{k,l=1}^nt_{li}t_{kj}\frac{\partial}{\partial x_l}\frac{\partial}{\partial x_k}u.
+\]
+In transformed coordinates, we must get the analogous expression
+with coefficients $a'_{ij}$, so we have
+\begin{align*}
+\sum_{i,j=1}^n
+a'_{ij}\frac{\partial}{\partial x_i'}\frac{\partial}{\partial x_j'} u
+&=
+\sum_{i,j=1}^n
+a_{ij}'
+\sum_{k,l=1}^n
+t_{li}t_{kj}\frac{\partial}{\partial x_l}\frac{\partial}{\partial x_k}u.
+=
+\sum_{k,l=1}^n
+\biggl(
+\sum_{i,j=1}^n
+a_{ij}'
+t_{li}t_{kj}
+\biggr)
+\frac{\partial}{\partial x_l}\frac{\partial}{\partial x_k}u
+\\
+&=
+\sum_{i,j=1}^n
+\underbrace{
+\biggl(
+\sum_{k,l=1}^n
+a_{lk}'
+t_{il}t_{jk}
+\biggr)}_{\textstyle a_{ij}}
+\frac{\partial}{\partial x_i}\frac{\partial}{\partial x_j}u.
+\end{align*}
+Thus the coefficients
+$a_{ij}$ are transformed according to
+\[
+a_{ij}=\sum_{k,l=1}^n t_{il}a_{lk}'t_{jk},
+\]
+or in matrix form
+\[
+A=TA'T^t
+\qquad\Rightarrow\qquad
+A'=T'AT'^t.
+\]
+These rules are of course only true if 
+$a_{ij}$ and $b_i$ are constants.
+Otherwise we get additional terms from the derivatives of the coefficients.
+
+% XXX
+
+\subsection{Einfluss der Terme erster Ordnung
+\label{einfluss-terme-erster-ordnung}}
+Wir wollen zeigen, dass für die Frage, welche Randwerte wo einen
+Einfluss auf die Lösung haben, für die Koeffizienten $b_i$ nicht
+von Bedeutung sind.
+
+Bei einer gewöhnlichen Differentialgleichung zweiter Ordnung beschreibt
+der Koeffizient der ersten Ableitung die Dämpfung, die zu exponentieller
+Abnahme der Amplitude führt.
+Indem man die Lösung mit Hilfe eines Exponentialfaktors wieder verstärkt,
+kann man die Dämpfung zum Verschwinden bringen, und klarer machen,
+ob Schwingungslösungen oder exponentiell abfallende Lösungen vorliegen.
+
+Dasselbe gilt für die Lösung $u(x)$ der Differentialgleichung
+(\ref{operator2ordnung}).
+Wir betrachen die Funktion
+\[
+v(x)=e^{k\cdot x} u(x),
+\qquad
+k\cdot x = \sum_{i=1}^n k_ix_i \quad(\text{Skalarprodukt})
+\]
+und suchen eine partielle Differentialgleichung, die $v$ genau dann löst,
+wenn $u$ die Differentialgleichung
+(\ref{operator2ordnung}) löst.
+
+Dazu berechnen wir die Wirkung des Differentialoperators, der nur 
+aus den zweiten Ableitungen besteht:
+\[
+M=\sum_{i,j=1}^n a_{ij}\frac{\partial^2}{\partial x_i\,\partial x_j}.
+\]
+Seine Wirkung auf der Funktion $v$ ist
+\begin{align*}
+Mv
+&=
+\sum_{i,j=1}^na_{ij}
+\frac{\partial}{\partial x_i}
+\frac{\partial}{\partial x_j} e^{k\cdot x}u
+\\
+&=
+e^{k\cdot x}
+\biggl(
+\sum_{i,j=1}^na_{ij}
+\frac{\partial^2 u}{\partial x_i\,\partial x_j}
++
+\sum_{i,j=1}^n a_{ij}k_i\frac{\partial u}{\partial x_j}
++
+\sum_{i,j=1}^n a_{ij}k_j\frac{\partial u}{\partial x_i}
++
+\sum_{i,j=1}^n a_{ij}k_ik_ju
+\biggr)
+\\
+&=
+e^{k\cdot x}
+\biggl(
+\sum_{i,j=1}^na_{ij}
+\frac{\partial^2 u}{\partial x_i\,\partial x_j}
++
+2\sum_{i,j=1}^n a_{ij}k_i\frac{\partial u}{\partial x_j}
++
+\sum_{i,j=1}^n a_{ij}k_ik_ju
+\biggr)
+\end{align*}
+Im letzten Schritt haben wir verwendet, dass wir die Laufvariablen
+in der zweiten Summe beliebig umbenennen können.
+
+Jetzt nutzen wir die Möglichkeit, die Koeffizienten $k_i$ für unsere
+Zwecke geeignet zu wählen.
+Wir versuchen zu erreichen, dass der mittlere Term genau dem Term 
+der ersten Ableitungen in (\ref{operator2ordnung}) entspricht.
+Dazu muss gelten
+\begin{equation}
+b_j=2\sum_{i=1}^n a_{ij}k_i
+\label{bequation}
+\end{equation}
+Falls die Matrix $A$ der Koeffizienten $a_{ij}$ regulär ist, lässt
+sich dieses lineare Gleichungssystem lösen, es gilt
+\[
+k=
+{A^t}^{-1}
+\frac{b}2.
+\]
+Schreiben wir ausserdem
+\[
+\alpha = \sum_{i,j=1}^n a_{ij}k_ik_j,
+\]
+dann folgt, dass die Gleichung $Lu=f$ genau dann erfüllt ist, wenn
+\begin{align}
+Mv
+&=
+e^{k\cdot x}\biggl(
+\sum_{i,j=1}^n a_{ij}\frac{\partial^2}{\partial x_i\,\partial x_j}u
++\sum_{i=1}^n b_i\frac{\partial u}{\partial x_i}+\alpha u
+\biggr)
+\\
+&=
+e^{k\cdot x}
+(L+\alpha -c)u
+=
+e^{k\cdot x}Lu + (\alpha -c)v
+\notag
+\\
+(M-(\alpha - c))v&=e^{k\cdot x}Lu=e^{k\cdot x}f.
+\label{reducedoperator}
+\end{align}
+Die Gleichung (\ref{operator2ordnung}) wird also genau dann von der
+Funktion $u$ gelöst, wenn die Funktion $v(x)=e^{k\cdot x}u(x)$ 
+die Gleichung (\ref{reducedoperator}) löst.
+Auch wird die Lösung $u$ der Gleichung (\ref{operator2ordnung})
+im Punkt $x$ 
+genau dann durch eine Änderung der Randbedingung verändert, 
+wenn die gleiche Änderung der Randbedingung die Lösung $v$ 
+der Gleichung (\ref{reducedoperator}) im selben Punkt verändert.
+
+Zusammenfassend können wir daher sagen, dass falls die Matrix der
+Koeffizienten $a_{ij}$ regulär ist, oder mindestens das Gleichungssystem
+(\ref{bequation}) lösbar ist, für die Beantwortung der Anfangs
+dieses Kapitels gestellten Fragen die Terme der ersten Ableitungen
+ignoriert werden können.
+Falls $a_{ij}$ nicht regulär ist, dann lassen sich die Terme der
+ersten Ableitungen nicht alle wegtransformieren.
+
+\subsection{Symbolmatrix}
+Da die zweiten Ableitungen untereinandern vertauschen, also 
+\[
+\frac{\partial^2}{\partial x_i\,\partial x_j}
+=
+\frac{\partial^2}{\partial x_j\,\partial x_i},
+\]
+sind die Koeffizienten $a_{ij}$ und $a_{ji}$ voneinander abhängig.
+Insbesondere kann man zusätzlich verlangen, dass $a_{ij}=a_{ji}$,
+dass also die Matrix $A$ symmetrisch ist.
+
+\begin{definition}Ist $L$ ein linearer Differentialoperator zweiter Ordnung
+\[
+Lu=\sum_{i,j=1}^na_{ij}\frac{\partial u}{\partial x_i\,\partial x_j},
+\]
+dann heisst die symmetrische Matrix
+$(a_{ij})$ das Symbol des Operators.
+\end{definition}
+
+Im Abschnitt~\ref{einfluss-terme-erster-ordnung} haben wir gesehen,
+dass die Terme mit ersten Ableitungen wegtransformiert werden können,
+wenn die Gleichung 
+\[
+Ak=\frac{b}2
+\]
+lösbar ist.
+Wenn $A$ nicht regulär ist, dann kann $b$ nur dann wegtransformiert werden,
+wenn $b$ im Bild der Matrix $A$ liegt.
+Vektoren senkrecht zum Bild können dagegen nicht wegtransformiert werden.
+Falls also $b\perp \operatorname{im} A$, dann ist
+\[
+b\cdot Ax=(A^tb)\cdot x\;\forall x
+\qquad\Rightarrow\qquad
+Ab=0,
+\]
+ein Vektor $b$ im Kern von $A$ kann also nicht wegtransformiert werden.
+
+\begin{beispiel}
+Als Beispiel betrachten wir den Operator 
+\[
+L
+=
+\sum_{i=2}^n\frac{\partial^2}{\partial x_i^2}
++
+\sum_{i=1}^nb_i\frac{\partial}{\partial x_i}
+\]
+mit der Symbolmatrix
+\[
+A=\begin{pmatrix}
+      0&      0& \dots&0\\
+      0&      1& \dots&0\\
+\vdots &\vdots &\ddots&\vdots\\
+      0&      0&\dots &1
+\end{pmatrix}
+\]
+Der Vektor $e_1$ ist im Kern von $A$, also lässt sich die erste
+Ableitung nach $x_1$ nicht wegtransformieren, die einfachste
+Form, die wir für diesen Operator erreichen können ist daher
+\[
+\sum_{i=2}^n\frac{\partial^2}{\partial x_i^2}
++
+\frac{\partial}{\partial x_1}.
+\]
+Dies ist der Operator, den wir für die Wärmeleitungsgleichung
+kennengelernt haben.
+\end{beispiel}
+

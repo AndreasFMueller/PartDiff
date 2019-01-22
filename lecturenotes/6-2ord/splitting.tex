@@ -1,0 +1,90 @@
+%
+% splitting.tex --
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Splitting the solution}
+\rhead{Splitting the solution}
+We would like to better understand the solution space of a linear partial
+differential equation of second order with operator $L$.
+We start with the formulation
+\begin{equation}
+\begin{aligned}
+Lu&=f&&\qquad\text{in $\Omega$}\\
+ u&=g&&\qquad\text{on $\partial\Omega$,}
+\end{aligned}
+\label{pdgl2ord:allg}
+\end{equation}
+of the problem and are looking for solutions.
+Because the equation is linear, we can attempt to build the solution
+as a linear combination of functions that each partially solve the
+problem.
+
+In a firs step, we try to solve the equation without regard to the
+boundary conditions.
+We call such a solution $u_p$, it solves
+\begin{equation}
+Lu_p=f\qquad\text{in $\Omega$.}
+\label{pdgl2ord:up}
+\end{equation}
+We don't require anything about the values of $u_p$ on the boundary
+$\partial\Omega$.
+
+To solve the original problem, we now need an additional summand $u_r$
+that takes care of the boundary values.
+In order for $u_p+u_r$ to be a better solution of the original problem,
+it still has to solve the partial differential equation:
+\[
+L(u_p+u_r)=f+Lu_r=f\qquad\Rightarrow\qquad Lu_r=0.
+\qquad\text{in $\Omega$.}
+\]
+In addition, we want to make sure that the boundary conditions
+\[
+u_p+u_r=g\qquad\Rightarrow\qquad u_r=g-u_p\qquad\text{auf $\partial\Omega$}
+\]
+are satisfied.
+So the function $u_r$ has to be a solution of the following partial
+differential equation problem:
+\begin{equation}
+\begin{aligned}
+Lu_r&=0&&\qquad\text{in $\Omega$}\\
+ u_r&=g-u_p&&\qquad\text{auf $\partial\Omega$}
+\end{aligned}
+\label{pdgl2ord:ur}
+\end{equation}
+Note that $u_r$ satisfies a simpler partial differential equation,
+simpler mainly because it is homogenous.
+The complication has been shifted to the boundary values.
+
+It could still be possible that the original problem has more solutions
+than the one just found.
+We should be able to find such solutions from $u_p+u_r$ by adding
+an additional term $u_h$.
+This term must not destroy what we have accomplished with the first
+two steps,
+it thereforem ust satisfy the equations
+\begin{equation}
+\begin{aligned}
+L(u_p+u_r+u_h)&=f+Lu_h&&\Rightarrow&Lu_h&=0&&\text{in $\Omega$}\\
+  u_p+u_r+u_h &=g +u_h&&\Rightarrow& u_h&=0&&\text{auf $\partial\Omega$}
+\end{aligned}
+\label{pdgl2ord:uh}
+\end{equation}
+A solution of the problem~(\ref{pdgl2ord:allg}) thus consists of three
+terms $u_p$, $u_r$ and $u_h$:
+\begin{enumerate}
+\item
+$u_p$ solves the differential equation~(\ref{pdgl2ord:up}) disregarding
+the boundary conditions.
+\item
+$u_r$ solves the differential equation~(\ref{pdgl2ord:ur}),
+$u_p+u_r$ solves the original problem.
+\item
+If the homogeneous problem~(\ref{pdgl2ord:uh}) with homogeneous
+boundary conditions has nontrivial solution, then the solution
+of the original problem is not unique.
+Any solution $u_h$ of the homogeneous problem gives an additional
+solution.
+\end{enumerate}
+
+

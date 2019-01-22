@@ -1,0 +1,86 @@
+%
+% types.tex -- 
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Types of partial differential equations}
+\rhead{Classification}
+In section~\ref{lineare-transformation}
+it was shown that a coordinate transform with matrix $T$ transforms
+the symbol matrix $A$ according to
+\[
+A'=TAT^t .
+\]
+Linear algebra teaches that for any symmetric matrix $A$ it is always possible 
+to find an orthogonal matrix $T$ such that $A'=TAT^t$ is diagonal with
+the eigenvalues of $A$ on the the diagonal:
+\[
+TAT^t
+=
+\begin{pmatrix}\lambda_1&\dots&0\\
+\vdots&\ddots&\vdots\\
+0&\dots&\lambda_n
+\end{pmatrix}.
+\]
+Using a suitable coordinate system it is thus always possible to 
+bring a partial differential operator of second order into the form
+\[
+\sum_{i=1}\lambda_i\frac{\partial^2}{\partial x_i^2}u.
+\]
+
+By stretching the coordinate axis $x_i$ by 
+$\sqrt{|\lambda_i|}$
+we can furthermore achieve that the differential operator
+has the form
+\[
+\sum_{i=1}\varepsilon_i\frac{\partial^2}{\partial x_i^2}u,
+\]
+where the numbers $\varepsilon_i$ have values $0$, $1$ or $-1$.
+
+If needed, we can also change the sign of the differential equation.
+This changes the sign of the symbol matrix and the eigenvalues, which
+allows us to have the majority of eigenvalues positive.
+
+This means that partial differential operators of second order are
+characterised by the signs of the eigenvalues of the symbol matrix.
+We denote the number of positive eigenvalues $P$, the number of negative
+eigenvalues $N$ and the number of zero eigenvalues $Z$.
+The examples from chapter \ref{chapter-beispiele}
+can be catalogued as follows:
+\begin{center}
+\begin{tabular}{l|ccc}
+Differential operator&P&N&Z
+\\
+\hline
+Laplace&
+$n$&$0$&$0$
+\\
+waves&
+$n-1$&$1$&$0$
+\\
+heat&
+$n-1$&$0$&$1$
+\end{tabular}
+\end{center}
+We derive the following classification:
+
+\begin{definition} The partial differential equation
+(\ref{operator2ordnung})
+with numbers $P$, $N$ and $Z$ are called
+\begin{center}
+\begin{tabular}{lcl}
+hyperbolic&provided&$Z=0$ and $P=1$ or $P=n-1$\\
+parabolic&provided&$Z>0$\\
+elliptic&provided&$Z=0$ and $P=n$ or $P=0$\\
+ultrahyperbolic&provided&$Z=0$ and $1<P<n-1$
+\end{tabular}
+\end{center}
+\end{definition}
+In particular, the equations in chapter \ref{chapter-beispiele}
+fall into these categories as follows:
+\begin{itemize}
+\item {\bf elliptisch:} Potential problem
+\item {\bf hyperbolisch:} wave equation, linearized supersonic flow
+\item {\bf parabolisch:} heat equation, diffusion
+\end{itemize}
+
