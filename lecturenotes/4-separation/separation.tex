@@ -1,0 +1,68 @@
+%
+% separation.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\lhead{Separation der Variablen}
+\rhead{}
+\chapter{Separation der Variablen\label{chapter-separation}}
+\index{Stroboskop}
+\index{Eigenschwingung}
+\index{stehende Welle}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\hsize]{../common/graphics/stringvibrlarge-10-06-06.jpg}
+\end{center}
+\caption{Schwingende Saite (Bild von A.~Davidhazy, http://people.rit.edu/andpph/)
+\label{separation:schwingendesaite}}
+\end{figure}
+Beleuchtet man eine schwingende Saite mit einem Stroboskop mit der
+Frequenz der Eigenschwingung, scheint die Saite stillzustehen. 
+In periodischen Zeit\-ab\-stän\-den sieht die Lösung der Wellengleichung
+also gleich aus.
+Misst man andererseits die Auslenkung der Saite
+an einer Stelle in Abhängigkeit von der Zeit, beobachtet man
+eine harmonische Schwingung, die sich mit Hilfe von $\sin$- und
+$\cos$-Funktionen beschreiben lässt. Man kann also vermuten,
+dass die Lösung der Wellengleichung der schwingenden Saite
+ein Produkt
+\[
+u(x,t)=X(x)\cdot\sin\omega t\quad\text{oder}\quad X(x)\cdot\cos\omega t.
+\]
+ist. Ziel dieses Kapitels ist, diese Idee zu einem Lösungsverfahren
+weiterzuentwickeln und auf einige Differentialgleichungen anzuwenden.
+
+\input{4-separation/ode.tex}
+\input{4-separation/idea.tex}
+\input{4-separation/lpde.tex}
+\input{4-separation/membrane.tex}
+\input{4-separation/disk.tex}
+\input{4-separation/initial.tex}
+\input{4-separation/summary.tex}
+
+\section{Zusammenfassung: das Wichtigste in Kürze}
+\begin{enumerate}
+\item
+Durch einen geeigneten Ansatz lassen sich einige partielle
+Differentialgleichung in über Konstanten gekoppelte gewöhnliche
+Differentialgleichungen zerlegen.
+\item
+Die Wahl des Lösungsansatzes wird durch die Geometrie des Gebietes
+(Koordinatensystem) und die Art der Differentialgleichung bestimmt.
+\item
+Für lineare Differentialgleichung lassen sich aus den durch Separation
+gefundenen Teil\-lö\-sungen Lösungen der ursprünglichen Differentialgleichung
+linear kombinieren.
+\item
+Die zentrale Idee des Verfahrens ist, dass in einer Gleichung,
+in der die eine Seite nur von $x$, die ander aber nicht von $x$
+abhängt, beide Seiten konstant sein müssen.
+\item
+Im Falle von partiellen Differentialgleichungen zweiter Ordnung, die
+sich häufig mit einem Produktansatz behandeln lassen, führt die
+Separation das ursprüngliche Problem auf ein Eigenwertproblem mit
+weniger Variablen.
+\end{enumerate}
+
+\input{4-separation/tsunami.tex}
+\input{4-separation/jacobi.tex}

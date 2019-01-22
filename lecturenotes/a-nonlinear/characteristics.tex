@@ -1,0 +1,290 @@
+%
+% characteristics.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil 
+%
+\section{Charakteristiken bei nichtlinearen PDGL erster Ordnung}
+Im Kapitel~\ref{chapter-geometrie} war die Idee erfolgreich, die Lösung,
+die man sich als Fläche im Raum mit den Koordinaten $(x,y,u)$
+vorstellen konnte, aus Kurven zusammenzusetzen, die sich auf der
+Fläche befinden. Das hat vor allem deshalb funktioniert, weil es
+einfach war, einen Vektor zu finden, der tangential an die Fläche
+war. Im wesentlichen war die quasilineare Differentialgleichung ein
+Skalarprodukt mit der Flächennormalen als einem Faktor, so dass
+der andere Faktor eine Tangente sein musste. Da alle möglichen
+normalen in einer Ebene lagen, gab es nur eine einzige gemeinsme
+Tangente, welche wir für die Differentialgleichung der
+Charakteristiken verwenden konnten.
+
+Im nichtlinearen Fall funktioniert dies nicht mehr so einfach.
+Die möglichen Normalen liegen nicht mehr alle in einer Ebene,
+weil die Beziehung zwischen den partiellen Ableitungen nicht
+mehr linear ist. Es gibt also auch nicht mehr nur eine einzige
+Tangente, die Wahl der geeigneten Tangente hängt jetzt auch
+von den Werten der partiellen Ableitungen in einem Punkt ab.
+Es genügt also nicht mehr nach einer Kurve
+\[
+s\mapsto
+\begin{pmatrix}
+x(s)\\
+y(s)\\
+u(s)
+\end{pmatrix}
+\]
+zu finden, stattdessen müssen wir eine Kurve 
+\[
+s\mapsto
+\begin{pmatrix}
+x(s)\\
+y(s)\\
+u(s)\\
+p(s)\\
+q(s)
+\end{pmatrix}.
+\]
+suchen, wobei $p$ und $q$ wieder für die partiellen Ableitungen
+steht. Ziel ist jetzt also, ein System von Differentialgleichungen
+für diese fünf Funktionen zu finden.
+
+\subsection{Cauchy-Methode im nichtlinearen Fall}
+Gegeben sei eine nichtlineare Differentialgleichung von zwei
+Variablen $x$ und $y$, die wir in der Form
+\[
+F(x,y,u,p,q)=0
+\]
+schreiben, wobei $p$ und $q$ wieder für die partiellen Ableitungen
+von $u$ nach $x$ bzw.~$y$ stehen.
+
+Wir suchen Kurven auf der Lösungsfläche, wir verwenden $s$ als
+Kurvenparameter.
+Nehmen wir weiter an, wir hätten bereits eine Lösungsfunktion $u(x,y)$.
+Weil es jetzt keinen
+einfachen linearen Zusammenhang zwischen den ersten Ableitungen
+mehr gibt, wie im quasilinearen Fall, müssen wir allgemeiner
+auch $p(s)$ und $p(s)$ mitschleppen, wir suchen also fünf
+Funktionen
+\begin{equation}
+x(s),\;
+y(s),\; 
+u(s),\; 
+p(s),\; 
+\text{und}\;
+q(s),
+\label{nichtlinear:kurve}
+\end{equation}
+so dass die Kurve $(x(s),y(s),z(s))$ auf der Lösungsfläche
+verläuft und ausserdem die partiellen Ableitungen 
+von $u(x,y)$ mit den Werten von $p$ und $q$ übereinstimmen.
+Es muss also gelten
+\begin{align*}
+\frac{\partial u}{\partial x}(x(s), y(s))&=p(s)\\
+\frac{\partial u}{\partial y}(x(s), y(s))&=q(s)
+\end{align*}
+Setzt man die Funktionen (\ref{nichtlinear:kurve}) in die Funktion
+$F$ ein, ist die Gleichung immer erfüllt. Als muss auch die Ableitung
+verschwinden:
+\begin{align}
+0
+&=
+\frac{d}{ds}F(x(s),y(s),u(s),p(s),q(s))=0
+\notag
+\\
+&=
+\frac{\partial F}{\partial x}x'(s)
++
+\frac{\partial F}{\partial y}y'(s)
++
+\frac{\partial F}{\partial u}u'(s)
++
+\frac{\partial F}{\partial p}p'(s)
++
+\frac{\partial F}{\partial q}q'(s)
+\label{nichtlinear:totale}
+\end{align}
+Die Ableitung der Bedingung, dass die Kurve in der Fläche bleiben muss,
+liefert eine weitere Gleichung für die unbekannten Funktionen:
+\begin{align}
+\frac{d}{ds}u(x(s),y(s))&=\frac{d}{ds}u(s)
+\notag
+\\
+\frac{\partial u}{\partial x}x'(s)
++
+\frac{\partial u}{\partial y}y'(s)
+&=
+u'(s)
+\notag
+\\
+p(s)x'(s)+q(s)y'(s)
+&=
+u'(s).
+\label{nichtlinear:flaeche}
+\end{align}
+%Schliesslich muss auch gelten, dass die gemischten zweiten Ableitungen
+%nicht von der Reihenfolge der Ableitungen abhängen:
+%\[
+%\frac{\partial^2u}{\partial x\partial y}
+%=
+%\frac{\partial^2u}{\partial y\partial x}.
+%\]
+Insgesamt hat man jetzt also die Gleichungen
+\begin{equation}
+\begin{pmatrix}
+\partial_x F+p\partial_uF& \partial_y F+q\partial_uF&0&\partial_pF&\partial_qF\\
+p&q&-1&0&0
+\end{pmatrix}
+\begin{pmatrix}
+x'(s)\\
+y'(s)\\
+u'(s)\\
+p'(s)\\
+q'(s)
+\end{pmatrix}=0.
+\label{nichtlinear:gleichungen}
+\end{equation}
+Sowenig wie die Wahl der Tangenten bei den quasilinearen partiellen
+Differentialgleichungen eindeutig war, kann man erwarten dass im
+allgemeinen nichtlinearen Fall ein Richtungsvektor eindeutig zu
+bestimmen ist. Aber der Vektor 
+\[
+\begin{pmatrix}
+\partial_pF\\
+\partial_qF\\
+p\partial_pF+q\partial_qF\\
+-\partial_xF-p\partial_uF\\
+-\partial_yF-q\partial_uF
+\end{pmatrix}
+\]
+löst das Gleichungssystem (\ref{nichtlinear:gleichungen}).
+Man kann also versuchen, die Kurve als Lösungskurve des
+Differentialgleichungssystems
+\begin{align*}
+x'(s)
+&=
+\partial_pF
+\\
+y'(s)
+&=
+\partial_qF
+\\
+u'(s)
+&=
+p\partial_pF+q\partial_qF
+\\
+p'(s)
+&=
+-\partial_xF-p\partial_uF
+\\
+q'(s)
+&=
+-\partial_yF-q\partial_uF
+\end{align*}
+Diese Kurven heissen die Charakteristiken der nichtlinearen
+Differentialgleichung.
+Sie können auf die genau gleiche Art zur Lösung der Gleichung
+verwendet werden wie im quasilinearen Fall.
+
+\subsection{Beispiel: Eikonal-Gleichung}
+Als Beispiel betrachten wir die Eikonal-Gleichung 
+\[
+\biggl(\frac{\partial u}{\partial x}\biggr)^2
++
+\biggl(\frac{\partial u}{\partial y}\biggr)^2
+=
+n(x,y)^2.
+\]
+Sie spielt in der Optik eine wichtige Rolle, sie beschreibt die
+Phase einer Welle, die sich in einem Medium mit Brechungsindex $n(x,y)$
+ausbreitet. Wir wollen die Gleichung im Gebiet $\Omega=\{(x,y)\,|\,y>0\}$
+lösen mit der Randbedingung $u(0,y)=0$. Weiter unten werden wir auch 
+die Funktion $n(x,y)$ noch weiter einschränken.
+
+\subsubsection{Differentialgleichungen der Charakteristiken}
+Die Funktion $F$ ist offenbar
+\[
+F(x,y,u,p,q)=p^2+q^2-n(x,y)^2
+\]
+Die partiellen Ableitungen sind
+\begin{align*}
+\partial_xF&=-2n(x,y)\partial_x n(x,y)\\
+\partial_yF&=-2n(x,y)\partial_y n(x,y)\\
+\partial_uF&=0\\
+\partial_pF&=2p\\
+\partial_qF&=2q.
+\end{align*}
+Wir spezialisieren jetzt auf den Fall $n(x,y)=y$, dann wird das 
+Differentialgleichungssystem für die Charakteristiken
+\begin{align*}
+x'&=\partial_pF=2p\\
+y'&=\partial_qF=2q\\
+u'&=p\partial_pF+q\partial_qF=2p^2+2q^2\\
+p'&=-\partial_xF-p\partial_uF=0\\
+q'&=-\partial_yF-q\partial_uF=2y
+\end{align*}
+Wir suchen eine Familie von Kurven, welche für $s=0$ jeweils
+im Punkt $(0,y_0,0)$ beginnen.
+Ausserdem muss auch $\partial_yu(0,y_0)=q(0,y_0)=0$ gelten.
+
+\subsubsection{Lösung der Charakteristikengleichung}
+Aus der Gleichung für $p'$ folgt, dass $p$ entlang einer Charakteristik
+konstant ist, $p=p_0$. Aus der Gleichung für $x'$ folgt, dann
+dass $x=p_0s+p_1$ ist. Weil aber $x(0)=0$ sein muss, folgt $p_1=0$.
+Offenbar spielt es auch keine Rolle, welchen Wert wir für $p_0$
+wählen, eine andere Wahl ändert nur die Geschwindigkeit, mit der
+die Charakteristik durchlaufen wird. Wir setzen also $s=x$.
+
+Die beiden Funktionen sind über die zweite und fünfte Gleichung
+aneinander gekoppelt, leitet man die zweite einmal ab und setzt die
+fünfte ein, erhält man die Gleichung
+\[
+y''=4y.
+\]
+Diese hat die bekannten Lösungen $\cosh 2s$ und $\sinh 2s$.
+Mit geeigneten Konstanten $A$ und $B$ ist die allgemeine
+Lösung also
+\[
+y(x)=A\cosh 2x + B\sinh 2x.
+\]
+Da $y(0)=y_0$ gelten muss, folgt $A=y_0$. Durch Ableiten finden wir
+$y'(x)=2q(x)=2y_0\sinh 2x + 2B\cosh 2x$, also ist $q(x)=y_0\sinh 2x+B\cosh 2x$. 
+Weil aber für $x=0$ gelten muss $q(0)=0$, ist $B=0$.
+Somit haben wir die Funktionen $y$ und $q$ vollständig bestimmt:
+\begin{align}
+y(x)&=y_0\cosh 2x,
+\label{nichtlinear:y}
+\\
+q(x)&=y_0\sinh 2x.\notag
+\end{align}
+
+Jetzt bleibt nur noch $u$ zu bestimmen, wozu wir die dritte Gleichung
+verwenden:
+\begin{align}
+u'&=2p^2+2q^2=
+2 + 2y_0^2\cosh^22x
+\notag
+\\
+\Rightarrow\qquad
+u&=\int
+2 + 2y_0^2\cosh^22x
+\,dx
+\notag
+\\
+&=2x +2y_0^2\biggl(\frac18\sinh 4x+\frac12x\biggr)
+\label{nichtlinear:l2}
+\end{align}
+Quadriert man (\ref{nichtlinear:y}), erhält man
+\begin{align*}
+y^2
+&=
+y_0^2\biggl(\frac12\cosh 4x+\frac12\biggr)
+\\
+y_0^2&=\frac{2y^2}{\cosh4x + 1}.
+\end{align*}
+Dies kann man in (\ref{nichtlinear:l2}) einsetzen, was die Lösung
+liefert:
+\begin{equation}
+u(x,y)
+=
+2x+\frac{y^2(\sinh4x+4x)}{4(\cosh4x+1)}
+\label{nichtlinear:loesung}
+\end{equation}
+

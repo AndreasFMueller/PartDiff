@@ -1,0 +1,38 @@
+%
+% cauchy.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Das Cauchy-Problem in höheren Dimensionen}
+\rhead{Das Cauchy-Problem}
+Im letzten Abschnitt haben wir Anfangswerte auf der Geraden $t=0$
+vorgegeben, damit waren auch gleichzeitig die Ableitungen 
+$\partial_x u(0,x)$ festgelegt. Ausserdem hatten wir mit der Funktion $v_0$
+die Ableitungen $\partial_t u(0,x)$ vorgegeben.
+Der Graph der Lösungsfunktion ist ein Fläche, eine sogenante
+Integralfläche der Differentialgleichung. Die Anfangsbedingung
+definiert eine Kurve $x\mapsto(x,0,u_0(x))$, die Integralfläche muss
+durch diese Kurve gehen.
+Durch die zwei Ableitungen ist zudem in jedem Punkt der Kurve
+eine Tangentialebene an die Integralfläche vorgegeben.
+
+Wie das Beispiel zeigt, ist die Lösungsfläche durch Vorgabe einer Kurve und
+und der Tangentialebenen in jedem Punkt der Kurve bestimmt ist.
+Etwas allgemeiner besteht das Cauchy-Problem darin, eine Integralfläche
+zu finden, die durch eine beliebige Kurve geht, und ausserdem in jedem Punkt
+der Kurve eine bestimmte Tangentialebene hat. Diese Vorgaben nennt man
+einen ``Streifen'' (Abbildung~\ref{skript:streifen}).
+Eine partielle Differentialgleichung für eine Funktion $u(t,x,y)$
+von drei Variablen kann zum Beispiel dadurch festgelegen werden,
+dass man Funktionswerte $u(t,x,y)=u_0(x,y)$ zur Zeit $t=0$ festlegt.
+Dadurch sind auch die Ableitungen $\partial_x u(0,x,y)=\partial_xu_0(x,y)$
+und $\partial_y u(0,x,y)=\partial_y u_0(x,y)$ bestimmt. Die Lösung wird
+aber erst eindeutig bestimmt sein, wenn auch die Ableitung in $t$-Richtung
+vorgegeben ist, zum Beispiel in der Form $\partial_t(0,x,y)=v_0(x,y)$.
+
+Allgemeiner besteht das Cauchy-Problem darin, eine Lösung zu finden
+die entlang einer beliebigen Fläche im $(t,x,y)$-Raum vorgegebene
+Werte annimmt. Ausserdem muss die Richtungsableitungen in eine Richtung
+senkrecht auf die Fläche (Normalableitung) ebenfalls vorgegebene Werte annehmen.
+
+

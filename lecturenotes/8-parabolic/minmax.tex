@@ -1,0 +1,43 @@
+%
+% minmax.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Maximum-Minimum-Prinzip}
+\index{Maximumprinzip}
+\rhead{Maximum-Prinzip}
+In der Theorie der elliptischen PDGL war die Mittelwerteigenschaft
+der Ausgangspunkt für den Beweis des Maximumprinzips. Obwohl
+diese Eigenschaft bei den 
+Lösungen der Wärmeleitungsgleichung nicht mehr erfüllt ist,
+gilt für sie ein Maximum-Minimum-Prinzip.
+\begin{satz}[Maximum-Minimum-Prinzip für die Wärmeleitungsgleichung]
+Sei $\Omega$ ein beschränktes Gebiet und
+$u$ eine Funktion auf $[0,T]\times\Omega$.
+Weiter sei
+\begin{align*}
+M_{\partial \Omega}&:=\max\{u(t,x)\,|\,x\in\partial\Omega, t\in[0,T]\}
+&
+m_{\partial \Omega}&:=\min\{u(t,x)\,|\,x\in\partial\Omega, t\in[0,T]\}
+\\
+M_0&:=
+\max\{u(0,x)\,|\,x\in\Omega\}
+&
+m_0&:=
+\min\{u(0,x)\,|\,x\in\Omega\}
+\\
+M&:=\max\{M_0,M_{\partial\Omega}\}
+&
+m&:=\min\{M_0,M_{\partial\Omega}\}
+\end{align*}
+Falls $u$ die homogene
+Wärmeleitungsgleichung erfüllt, also $\partial_tu-\kappa\Delta u=0$,
+gilt
+\[
+m\le u(t,x)\le M\quad\forall(t,x)\in[0,T]\times\bar\Omega.
+\]
+\end{satz}
+Wie bei den elliptischen partiellen Differentialgleichungen folgt, dass
+die das homogene Anfangs- und Randwert-Problem der Wärmeleitungsgleichung
+nur eine Lösung hat.
+

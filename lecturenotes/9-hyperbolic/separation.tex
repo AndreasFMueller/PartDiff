@@ -1,0 +1,57 @@
+%
+% separation.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Separation}
+Oft wird die Wellengleichung auf ein Gebiet der Form
+$\Omega = G\times(0,\infty)$ angewandt, also ein 
+festes Raumgebiet $G$.
+Eine Pauke ändert zum Beispiel die Form des Felles während des
+Spielens nicht. In diesen Fällen ist ein Separationsansatz möglich.
+Die hyperbolische partielle Differentialgleichung 
+\[
+\frac1{a^2}\frac{\partial^2 u}{\partial t^2}=\Delta u
+\]
+kann mit dem Ansatz $u(x,t)=\varphi(x)\cdot T(t)$ in zwei
+Differentialgleichungen zerlegt werden:
+\begin{gather*}
+\begin{aligned}
+\frac1{a^2}T''(t)\varphi(x)&=T(t)\Delta \varphi(x)\\
+\frac1{a^2}\frac{T''(t)}{T(t)}&=\frac{\Delta\varphi(x)}{\varphi(x)}=\lambda\\
+\end{aligned}
+\\
+\Rightarrow\qquad
+T''(t)=\lambda a^2T(t)\qquad\text{und}\qquad\Delta \varphi=\lambda\varphi.
+\end{gather*}
+Die Differentialgleichung für $T$ ist eine Schwingungsdifferentialgleichung
+und stellt damit bezüglich Existenz und Eindeutigkeit der Lösung
+kein grosses Problem dar. Wenn $T(0)$ und $T'(0)$ bekannt sind, dann
+können wir die Lösung für beliebiges $t$ angeben.
+
+Die zweite Gleichung $\Delta \varphi-\lambda\varphi=0$ ist eine
+elliptische partielle Differentialgleichung, über welche wir
+in Kapitel~\ref{chapter-elliptisch} einiges an Theorie entwickelt haben.
+Zum Beispiel wurde dort gesagt, dass elliptische Probleme auf
+zusammenhängenden und beschränkten Gebieten eine eindeutige
+Lösung haben, wenn man die Randwerte entlang des gesamten Randes
+kennt.
+
+Wir können daraus schliessen, dass das hyperbolische Problem eine
+Lösung hat, wenn wir $u(x,0)$ und $\partial_tu(x,0)$ für
+$x\in G$ kennen, und ausserdem die Werte $u(x,t)$ für $x\in\partial G$.
+Dies passt zu der am Paukenfell gewonnenen Intuition: dessen Schwingung
+ist bekannt, wenn Anfangsauslenkung und -geschwindigkeit bekannt sind,
+und ausserdem die Randwerte des Felles während der ganzen Zeit
+bekannt sind.
+
+Dieses Verfahren versagt aber in Fällen, wo sich das Gebiet verändert,
+zum Beispiel bei der Expansion eines Gases.
+Die langsame Expansion zum Beispiel in einer Posaune, deren ``Gebiet''
+sich ja während des Spielens dauernd verändert, scheint dabei kein
+Problem zu sein, jedenfalls kann ein Posaunist auch schwierige Passagen
+ohne Studium der Wellengleichung meistern.
+Was passiert aber, wenn der
+Kolben, der eine Expansionsgefäss verschliesst, mit einer Geschwindigkeit
+grösser als die Schallgeschwindigkeit bewegt wird? 
+

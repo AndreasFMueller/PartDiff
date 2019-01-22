@@ -1,0 +1,391 @@
+%
+% linearization.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil 
+%
+\section{Linearisierung}
+\rhead{Linearisierung}
+In einigen Fällen sind Lösungen einer nichtlinearen PDGL gesucht, die 
+nur wenig von einer bekannten Lösung abweichen. Beispielsweise ändert
+ein stromlinienförmig gebautes Flugzeug bei hoher Geschwindigkeit die
+Strömung nur vergleichsweise wenig. Man kann daher versuchen, aus der
+nichtlinearen Gleichung eine lineare Gleichung für die Abweichung
+von der bekannten Lösung abzuleiten. Dieses Verfahren wird oft auch
+Störungstheorie genannt.
+
+\subsection{Das allgemeine Vorgehen}
+Der Einfachheit halber führen wir das Verfahren nur für Gleichungen
+erster Ordnung in zwei Variablen durch. Eine solche PDGL kann mit Hilfe
+einer Funktion $F(x,y,u,p,q)$ von fünf Variablen geschrieben werden als
+\begin{equation}
+F(x,y,u(x,y), \partial_xu(x,y),\partial_yu(x,y))=0.
+\label{nichtlinear}
+\end{equation}
+Sei $u(x,y)$ eine Lösung der Gleichung (\ref{nichtlinear}). Wir suchen
+jetzt weitere Lösungen der Gleichung, die sich jedoch nur wenig von
+$u$ unterscheiden dürfen. Wir setzen diese Lösungen in der Form
+\begin{equation}
+u(x,y)+av(x,y)
+\label{linearisierungansatz}
+\end{equation}
+an, wobei der Parameter $a$ dazu dienen soll, die den
+zweiten Term beliebig klein machen zu können. Wir möchten eine Gleichung
+für $v(x,y)$ aufstellen.
+
+Wir setzen den Ansatz (\ref{linearisierungansatz}) in die Gleichung
+ein, und erhalten
+\[
+F(x,y,u(x,y)+av(x,y),\partial_xu(x,y)+a\partial_xv(x,y),
+\partial_yu(x,y)+a\partial_yv(x,y))=0
+\]
+Für $a=0$ ist die Gleichung erfüllt, wir suchen ein $v$ so dass die Gleichung
+für kleine $a$ näherungsweise auch erfüllt ist. Dies erreichen wir,
+indem wir nach $a$ ableiten:
+\begin{align*}
+0&=
+\left.\frac{d}{da}
+F(x,y,u(x,y)+av(x,y),\partial_xu(x,y)+a\partial_xv(x,y),
+\partial_yu(x,y)+a\partial_yv(x,y))\right|_{a=0}
+\\
+&=F(x,y,u(x,y),\partial_xu(x,y),\partial_yu(x,y))
+\\
+&\qquad
++
+\partial_uF(x,y,u(x,y),\partial_xu(x,y),\partial_yu(x,y))\cdot v(x,y)
+\\
+&\qquad
++
+\partial_pF(x,y,u(x,y),\partial_xu(x,y),\partial_yu(x,y))\cdot \partial_xv(x,y)
+\\
+&\qquad
++
+\partial_qF(x,y,u(x,y),\partial_xu(x,y),\partial_yu(x,y))\cdot \partial_yv(x,y)
+\end{align*}
+Der erste Term fällt weg, weil $u$ bereits eine Lösung ist,
+es bleibt eine lineare PDGL für $v$:
+\begin{align*}
+0&=
+\partial_uF(x,y,u(x,y),\partial_xu(x,y),\partial_yu(x,y))\cdot v(x,y)
+\\
+&\qquad
++
+\partial_pF(x,y,u(x,y),\partial_xu(x,y),\partial_yu(x,y))\cdot \partial_xv(x,y)
+\\
+&\qquad
++
+\partial_qF(x,y,u(x,y),\partial_xu(x,y),\partial_yu(x,y))\cdot \partial_yv(x,y)
+\end{align*}
+Etwas allgemeiner könnte auch noch die Funktion $F$ von $a$ abhängen,
+also $F(a,x,y,u,p,q)$. In diesem Fall wird die Ableitung nach $a$ an
+der Stelle $a=0$ zu
+\begin{align*}
+0&=
+\left.\frac{d}{da}
+F(x,y,u(x,y)+av(x,y),\partial_xu(x,y)+a\partial_xv(x,y),
+\partial_yu(x,y)+a\partial_yv(x,y))\right|_{a=0}
+\\
+&=
+F(0,x,y,u(x,y),\partial_xu(x,y),\partial_yu(x,y))
+\\
+&\qquad
++\partial_aF(0,x,y,u(x,y),\partial_xu(x,y),\partial_yu(x,y))
+\\
+&\qquad
++
+\partial_uF(a,x,y,u(x,y),\partial_xu(x,y),\partial_yu(x,y))\cdot v(x,y)
+\\
+&\qquad
++
+\partial_pF(a,x,y,u(x,y),\partial_xu(x,y),\partial_yu(x,y))\cdot \partial_xv(x,y)
+\\
+&\qquad
++
+\partial_qF(a,x,y,u(x,y),\partial_xu(x,y),\partial_yu(x,y))\cdot \partial_yv(x,y)
+\end{align*}
+Die lineare PDGL ist in diesem Fall
+\begin{align*}
+0
+&=
+\partial_aF(0,x,y,u(x,y),\partial_xu(x,y),\partial_yu(x,y))
+\\
+&\qquad
++
+\partial_uF(x,y,u(x,y),\partial_xu(x,y),\partial_yu(x,y))\cdot v(x,y)
+\\
+&\qquad
++
+\partial_pF(x,y,u(x,y),\partial_xu(x,y),\partial_yu(x,y))\cdot \partial_xv(x,y)
+\\
+&\qquad
++
+\partial_qF(x,y,u(x,y),\partial_xu(x,y),\partial_yu(x,y))\cdot \partial_yv(x,y)
+\end{align*}
+Jede Lösung der nichtlinearen Gleichung gibt also Anlass zu Lösungen
+in ``unmittelbarer'' Nähe, welche aus der linearisierten Gleichung
+gefunden werden können.
+
+\subsection{Linearisierung von PDGL zweiter Ordnung}
+Eine PDGL zweiter Ordnung ist gegeben durch eine Funktion von neun
+Variablen
+\[
+F(x,y,u,p,q,r,s,t),
+\]
+in die man die Funktionswerte und die Ableitungen einsetzt:
+\[
+F(x,y,u(x,y), \partial_xu(x,y),\partial_yu(x,y),
+\partial_x^2u(x,y),
+\partial_x\partial_yu(x,y),
+\partial_y^2u(x,y))
+=0
+\]
+Um die linearisierte PDGL zu finden, geht man wieder von einer
+Lösung $u(x,y)$ aus, und sucht eine ``Nachbarlösung'' in der
+Form $u(x,y)+av(x,y)$. Diesen Ansatz setzt man in die 
+Differentialgleichung ein und leitet an der Stelle $a=0$
+nach $a$ ab. Wie im Falle der Gleichung erster Ordnung kann auch
+hier der Parameter $a$ auch in $F$ vorkommen, wir führen gleich
+von Anfang an diesen allgemeineren Fall  durch:
+\begin{align*}
+0&=
+\frac{d}{da}
+F(a,x,y,u(x,y), \partial_xu(x,y)+a\partial_xv(x,y),\partial_yu(x,y)+a\partial_yv(x,y),
+\\
+&\qquad
+\partial_x^2u(x,y)+a\partial_x^2v(x,y),
+\partial_x\partial_yu(x,y)+a\partial_x\partial_yv(x,y),
+\partial_y^2u(x,y)+a\partial_y^2v(x,y))\bigg|_{a=0}
+\\
+&=
+F(x,y,u(x,y), \partial_xu(x,y),\partial_yu(x,y),
+\partial_x^2u(x,y),
+\partial_x\partial_yu(x,y),
+\partial_y^2u(x,y))
+\\
+&\qquad+
+\partial_a
+F(0,x,y,u(x,y), \partial_xu(x,y),\partial_yu(x,y),
+\partial_x^2u(x,y),
+\partial_x\partial_yu(x,y),
+\partial_y^2u(x,y))
+\\
+&\qquad+
+\partial_u
+F(0,x,y,u(x,y), \partial_xu(x,y),\partial_yu(x,y),
+\partial_x^2u(x,y),
+\partial_x\partial_yu(x,y),
+\partial_y^2u(x,y))\cdot v(x,y)
+\\
+&\qquad+
+\partial_p
+F(0,x,y,u(x,y), \partial_xu(x,y),\partial_yu(x,y),
+\partial_x^2u(x,y),
+\partial_x\partial_yu(x,y),
+\partial_y^2u(x,y))\cdot \partial_xv(x,y)
+\\
+&\qquad+
+\partial_q
+F(0,x,y,u(x,y), \partial_xu(x,y),\partial_yu(x,y),
+\partial_x^2u(x,y),
+\partial_x\partial_yu(x,y),
+\partial_y^2u(x,y))\cdot \partial_yv(x,y)
+\\
+&\qquad+
+\partial_q
+F(0,x,y,u(x,y), \partial_xu(x,y),\partial_yu(x,y),
+\partial_x^2u(x,y),
+\partial_x\partial_yu(x,y),
+\partial_y^2u(x,y))\cdot \partial_x^2v(x,y)
+\\
+&\qquad+
+\partial_r
+F(0,x,y,u(x,y), \partial_xu(x,y),\partial_yu(x,y),
+\partial_x^2u(x,y),
+\partial_x\partial_yu(x,y),
+\partial_y^2u(x,y))\cdot \partial_x\partial_yv(x,y)
+\\
+&\qquad+
+\partial_s
+F(0,x,y,u(x,y), \partial_xu(x,y),\partial_yu(x,y),
+\partial_x^2u(x,y),
+\partial_x\partial_yu(x,y),
+\partial_y^2u(x,y))\cdot \partial_y^2v(x,y)
+\end{align*}
+
+\subsection{Linearisierung der Burgers Gleichung}
+Wir wenden das Linearisierungsverfahren auf die Gleichung von Burgers an.
+Wir schreiben sie zur leichteren Übertragbarkeit der Formeln
+mit $x$ und $y$ als unabhängige Variablen anstellen von $x$ und $t$,
+wir suche also Lösungen der Differentialgleichung
+\[
+\partial_yu-u\partial_xu-\partial_x^2u=0
+\]
+Die Funktion $F$ ist in diesem Fall
+\[
+F(x,y,u,p,q,r,s,t)=q-r-up.
+\]
+Die Linearisierungsformeln sagen, dass wir die Ableitungen von $F$ nach
+den Variablen verwenden müssen als Koeffizienten der Ableitungen,
+für die die Variablen stehen.  Dabei müssen wir in die partiellen Ableitungen
+von $F$ jeweils die Lösung $u$ bzw.~ihre partiellen Ableitungen einsetzen.
+Die Koeffizienten sind
+\begin{align*}
+\partial_uF&=-p=-\partial_xu(x,y)
+\\
+\partial_pF
+&=-u=-u(x,y)
+\\
+\partial_qF
+&=1
+\\
+\partial_rF
+&=-1
+\end{align*}
+alle anderen partiellen Ableitungen von $F$ verschwinden. Die linearisierte
+Gleichung lautet also
+\begin{align*}
+-\partial_xu(x,y)\cdot v(x,y)
+-
+u(x,y)\cdot\partial_xv(x,y)
++\partial_yv(x,y)
+-\partial_x^2v(x,y)=0,
+\end{align*}
+eine parabolische PDGL. In den ursprünglichen Koordinaten und der
+üblichen Reihenfolge der Ableitungen geschrieben
+lautet sie
+\[
+-\partial_x^2v(t,x)
++\partial_tv(t,x)
++ u(t,x)\cdot\partial_xv(t,x)
++\partial_xu(t,x)\cdot v(t,x)
+=0,
+\]
+
+\subsubsection{Konstante Geschwindigkeit}
+Die konstante Funktion $u(t,x)=c$ ist eine Lösung der nichtlinearen
+Gleichung. Die linearisierte Gleichung wird damit zu
+\[
+\partial_tv
+-\partial_x^2v
+-c\partial_xv=0.
+\]
+Leider ist diese Gleichung auch noch nicht direkt in einer Form,
+in der wir sie lösen können. Schreiben wir die gesuchte Funktion
+in der Form
+\[
+v(t,x)=w(t,x+ct)
+\]
+und bezeichnen die partiellen Ableitungen von $w$ nach der ersten
+und zweiten Variablen mit $\partial_1w$ bzw.~$\partial_2w$, dann
+erhalten wir zunächst die partiellen Ableitungen von $v$
+in der Form
+\begin{align*}
+\partial_t v(t,x)&=\partial_1w(t,x+ct)+c\partial_2w(t,x+ct)
+\\
+\partial_x v(t,x)&=\partial_2w(t,x+ct)
+\\
+\partial_x^2v(t,x)&=\partial_2^2w(t,x+ct)
+\end{align*}
+In die PDGL eingesetzt erhalten wir
+\begin{align*}
+0&=
+\partial_t v(t,x)
+-\partial_x^2v(t,x)
+-c\partial_x v(t,x)
+\\
+&=
+\partial_1w(t,x+ct)+c\partial_2w(t,x+ct)
+-\partial_2^2w(t,x+ct)
+-c\partial_2w(t,x+ct)
+\\
+&=\partial_1w(t,x+ct)-\partial_2w(t,x+ct)
+\end{align*}
+Die Funktion $w$ ist also eine Lösung der Wärmeleitungsgleichung.
+
+\subsubsection{Lösungen der linearisierten Gleichung}
+Die Wärmeleitungsgleichung hat die Standardlösungen
+\[
+w(t,x)=\frac1{\sqrt{t}}e^{-\frac{(x-\xi)^2}{4t}},
+\]
+die man durch Nachrechnen unmittelbar bestätigen kann:
+\begin{align*}
+\partial_t w(t,x)
+&=
+\left(
+-\frac1{2t^{\frac32}}
++\frac{(x-\xi)^2}{4t^{\frac52}}
+\right)e^{-\frac{x^2}{4t}}
+\\
+\partial_x w(t,x)
+&=
+-\frac{(x-\xi)}{2t^{\frac32}}
+e^{-\frac{x^2}{4t}}
+\\
+\partial_x^2w(t,x)
+&=
+\left(
+\frac{(x-\xi)^2}{4t^{\frac52}}
+-\frac{1}{2t^{\frac32}}
+\right)e^{-\frac{x^2}{4t}}
+\\
+\partial_tw(t,x)-\partial_x^2w(t,x)
+&=
+\left(
+-\frac1{2t^{\frac32}}
++\frac{(x-\xi)^2}{4t^{\frac52}}
+-\frac{(x-\xi)^2}{4t^{\frac52}}
++\frac{1}{2t^{\frac32}}
+\right)e^{-\frac{(x-\xi)^2}{4t}}=0
+\end{align*}
+Als Lösungen der linearisierten Gleichung kommen also Funktionen der
+Form
+\[
+v(t,x)=\frac1{\sqrt{t}}e^{-\frac{(x-\xi+ct)^2}{4t}}
+\]
+oder Überlagerungen derselben in Frage.
+
+\subsubsection{Stabilität der Strömung}
+Die im vorangegangenen Abschnitt abgeleiteten Lösung der linearisierten
+Gleichung lässt sich auch so interpretieren: eine kleine Störung zur Zeit
+$t=0$ wird Anlass zu einem mit Geschwindigkeit $c$ nach links
+laufenden gaussschen Wellenbuckel Anlass geben. Dieser Buckel wird mit
+der Zeit immer flacher und ausgedehnter werden. Insbesondere verschwinden
+kleine Störungen mit der Zeit wieder, die Strömung ist also stabil.
+
+Tritt jedoch eine Störung auf, die so gross ist, dass die Linearisierung
+nicht mehr anwendbar ist, dann werden neue Phänomene auftreten, insbesondere kann
+die Strömung instabil sein. Störungen können sich aufschaukeln bis die
+Lösung nicht mehr stetig ist (Geschwindigkeitssprünge, Schockwellen)
+oder die Geschwindigkeit könnte unvorhersagbar zu schwanken beginnen
+(Turbulenz).
+
+Alternativ könnte man auch mit dem Maximumprinzip argumentieren: Extremwerte
+sind in der Anfangsbedingung zu finden, eine Störung muss also mit der
+Zeit immer schwächer werden.
+
+\subsubsection{Ansteigende Geschwindigkeit}
+Wir untersuchen diese Gleichung noch für den Fall der bereits 
+früher untersuchten speziellen Lösung 
+\[
+u(t,x)=\frac{A-x}{B+t}
+\]
+explizit aufschreiben. Dazu benötigen wir die partielle Ableitung
+nach $x$, die wir ebenfalls bereits früher berechnet haben:
+\begin{align*}
+\partial_x u(t,x)&=-\frac{1}{B+t}
+\end{align*}
+Die linearisierte Gleichung wird damit zu
+\begin{align*}
+-\partial_x^2v(t,x)
++\partial_tv(t,x)
++ \frac{A-x}{B+t}\partial_xv(t,x)
+-\frac{1}{B+t} v(t,x)
+&=0
+\\
+-(B+t)\partial_x^2v(t,x)
++(B+t)\partial_tv(t,x)
++ (A-x)\partial_xv(t,x)
+- v(t,x)
+&=0
+\end{align*}
+Leider lässt sich in diesem Fall nicht so offensichtlich eine Lösung finden.
+

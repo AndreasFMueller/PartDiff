@@ -1,0 +1,47 @@
+%
+% parabolic.tex
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\chapter{Parabolische Differentialgleichungen\label{chapter-parabolisch}}
+\index{Differentialgleichung!partielle!parabolische}
+\lhead{Parabolische PDGL}
+\rhead{}
+Im vorangegangen Kapitel waren wir in der Lage, mit Hilfe der Greenschen
+Funktion eine Lösung eines elliptischen Randwertproblems zu finden.
+Dieser Lösungsweg hing vom Maxmimumprinzip ab.
+Es garantierte die Eindeutigkeit einer
+Lösung und machte damit die Konstruktion der Greenschen Funktion
+erst möglich.
+
+\index{parabolische partielle Differentialgleichung}
+Für parabolische Differentialgleichung ist ein analoges Vorgehen
+möglich, wobei aber immer der Zeitkoordinate (oder der Richtung
+des Eigenvektors mit Eigenwert $0$ der Koeffizientenmatrix)
+eine besondere Bedeutung zukommt.
+Dies wird in den ersten drei
+Abschnitten ohne Beweise  oder tiefer gehende Analyse zusammengefasst.
+
+Im Unterschied zu den elliptischen
+Gleichungen kann man die Wärmeleitunsgleichung aber auch
+\index{Warmeleitungsgleichung@W\ärmeleitungsgleichung}
+als eine ``Zeitentwicklungsgleichung'' verstehen, so wie die
+gewöhnliche Differentialgleichung $\dot x=f(x,t)$
+für den Zustandsvektor $x$ die Zeitentwicklung in einem endlichdimensionalen
+System beschreibt. Der Definitionsbereich der Wärmeleitungsgleichung
+ist ja typischerweise von der Form $\Omega\times[0,\infty[$, wobei
+$\Omega$ ein Raumgebiet ist.
+Die Lösung der Wärmeleitungsgleichung ist eine zeitabhängige Funktion
+auf $\Omega$, was zum Beispiel durch einen Separationsansatz
+ausgedrückt werden kann. Es stellt sich dann heraus, dass die Lösungen
+des elliptischen Problems auf $\Omega$ dazu verwendet werden können,
+die Wärmeleitungsgleichung zu lösen.
+
+
+\input{8-parabolic/problem.tex}
+\input{8-parabolic/minmax.tex}
+\input{8-parabolic/particular.tex}
+\input{8-parabolic/green.tex}
+\input{8-parabolic/causality.tex}
+\input{8-parabolic/eigenfunctions.tex}
+

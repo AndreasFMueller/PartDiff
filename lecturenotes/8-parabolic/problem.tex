@@ -1,0 +1,27 @@
+%
+% problem.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Problemstellung}
+\rhead{Problemstellung}
+Sei $\Omega$ ein Gebiet in $\mathbb R^n$. Der Operator 
+\[
+\partial_t-\kappa\Delta
+\]
+ist ein parabolischer Operator auf $\mathbb R_+\times \Omega$.
+Eine Lösung des Wärmeleitungsproblems ist eine Funktion
+$u\colon\mathbb R_+\times\Omega\to\mathbb R,$
+welche folgende Bedingungen erfüllt
+\begin{align*}
+\partial_tu(t,x)-\kappa\Delta u(t,x)&=f(t,x)&&(t,x)\in\mathbb R_+\times\Omega
+\\
+u(0,x)&=u_0(x)&&x\in\Omega
+\\
+\alpha u+\beta\frac{\partial u}{\partial n}&=g(t, x)&&x\in\partial\Omega, t>0
+\end{align*}
+Falls das Gebiet $\Omega$ unbeschränkt ist, zum Beispiel $\Omega=\mathbb R^n$,
+wird es notwendig sein, zusätzliche Bedingungen für das Verhalten
+der Lösung für $t\to\infty$ hinzuzufügen, damit die Lösungen weiterhin
+wohlbestimmt sind.
+

@@ -1,0 +1,72 @@
+%
+% inverse.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Gibt es einen zu $\Delta$ inversen Operator?}
+Um das Problem $\Delta u=f$ zu lösen, müsste man einfach einen
+inversen Operator $\Delta^{-1}$ kennen, dann wäre die gesuchte
+Lösung $u=\Delta^{-1}f$. Dies ist natürlich zu schön, um wahr
+zu sein, aber die folgenden zwei Beispiele sollen illustrieren,
+dass für elliptische Operatoren
+mindestens etwas Ähnliches durchaus im Bereich des Möglichen
+liegen könnte.
+
+\subsection{Ableitung und Integration}
+Die Gleichung in einer Dimension
+\[
+u''(x)=f(x)
+\]
+kann direkt mit Hilfe von Integrationen gelöst werden. Dazu muss
+man nur eine Stammfunktion $F$ von $f$ finden, also $F' = f$ und
+weiter eine Stammfunktion $u$ von $F$, dann gilt
+$u''(x)=F'(x)=f(x)$. Trotzdem ist $u$ noch keine Lösung, denn 
+sie erfüllt die Randbedingungen noch nicht.
+
+\subsection{Lineare Gleichungen}
+Man kann sich vorstellen, dass durch Diskretisation aus der 
+Differentialgleichung $u''=f$ auf dem Interval $[a,b]$ ein lineares Gleichungssystem
+$Au=f$ entsteht. Die Komponenten der Vektoren $u$ und $f$ sind dabei
+Werte von $u$ und $f$ an ausgewählten Punkten. Und es ist nicht
+abwegig, dass es eine inverse Matrix $G$ geben könnte, mit der man
+die Lösung $u=Gf$ finden könnte.
+
+Das Matrizenprodukt ist
+\[
+\sum_{j}g_{ij}f_j = u_i,
+\]
+und auch die $g_{ij}$ könnte man als Werte einer Funktion $G(x,y)$
+betrachten. Die Summe ist dann nur der diskrete Fall eines Integrals,
+man könnte also auf die Idee kommen, dass
+die Lösung $u$ mit einer Formel der Form
+\[
+u(x)=\int_a^b G(x,\xi)f(\xi)\,d\xi
+\]
+gefunden werden kann. Auch dies wird noch nicht funktionieren,
+weil wiederum die Randbedingung nicht berücksichtigt wurde.
+
+\subsection{Randbedingungen}
+Die Randbedingungen sollten ebenfalls linear in das Problem eingehen.
+Im eindimensionalen Problem haben wir nur zwei Punkte auf dem Rand,
+also müssten sie einen Beitrag der Form
+\[
+K(x,a) g(a) + K(x,b)g(b)
+\]
+beitragen. Besteht der Rand dagegen aus vielen Punkten, würde dies
+wieder zu einer grossen Summe
+\[
+\sum_{i}K(x,a_i)g(a_i),
+\]
+wobei die Punkte $a_i$ auf dem Rand liegen. In der Grenze erwartet man
+als für die Randwerte einen zweiten Beitrag
+\[
+\int_{\partial\Omega}K(x,\xi)g(\xi)\,d\xi
+\]
+in Form eines Kurven- oder Oberflächenintegrals über den Rand des
+Gebietes.
+Wir suchen daher eine allgmeine Lösung des Problems in der Form
+\begin{equation}
+u(x)=\int_{\Omega} G(x,\xi)f(\xi)\,d\xi + \int_{\partial\Omega} K(x,\xi)g(\xi)\,d\xi.
+\label{greenformula}
+\end{equation}
+

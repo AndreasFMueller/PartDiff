@@ -1,0 +1,58 @@
+%
+% domains.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Transformation bei beliebigen Gebieten}
+Mit Hilfe von Integraltransformationen können partielle
+Differentialgleichungen  gelöst werden, wenn die Transformation
+an das Definitionsgebiet angepasst ist:
+\begin{center}
+\begin{tabular}{cl}
+Definitionsgebiet&Transformation\\
+\hline
+$[0,\infty)$&Laplacetransformation\\
+$\mathbb R$&Fouriertransformation\\
+$[-\pi,\pi]$&Fourierreihen
+\end{tabular}
+\end{center}
+Die Separationsmethode zeigt uns aber auch, wie dieses 
+Verfahren verallgemeinert werden kann. Die Wärmeleitungsgleichung
+soll auf einem Gebiet $G\subset \mathbb R^n$ gelöst werden, d.~h.~es
+soll eine Lösung der Differentialgleichung
+\[
+\partial_t u(t,x)=\Delta u(t,x)
+\]
+gefunden werden für $(t,x)\in [0,\infty)\times G$ mit der Anfangsbedingung
+\[
+u(0,x)=u_0(x) \quad x\in G
+\]
+und der Randbedingung
+\[
+au(t,x)+b\partial_nu(t,x)=0\quad (t,x)\in[0,\infty)\times \partial G
+\]
+gefunden werden. Kapitel \ref{chapter-separation} suggeriert, dass
+es eine Familie von Funktionen $u_k(x)$ gibt, die der Gleichung
+\[
+\Delta u_k=\lambda_k u_k
+\]
+und der Randbedingung genügen, und mit denen sich die 
+Anfangsbedingung als Reihe schreiben lässt:
+\[
+u_0(x)=\sum_{k=1}^\infty a_ku_k(x).
+\]
+Dann kann man die Lösung der Wärmeleitungsgleichung sofort
+hinschreiben:
+\[
+u(t,x)=\sum_{k=1}e^{-\lambda_kt}u_k(x)
+\]
+Die Funktionen spielen die Rolle von $e^{ikx}$ in der Fouriertheorie.
+
+Die moderne Mathematik kennt eine allgemeine Theorie der harmonischen
+Analyse auf sogenannten Lie-Gruppen, welche die Fourier- und 
+Laplace-Theorie verallgemeinert und vereinheitlicht, und welche
+weitere Gebiete zu behandeln erlaubt. Zum Beispiel ermöglicht
+die Entwicklung von Funktionen auf einer ($n$-dimensionalen)
+Kugel mit sogenannten Kugelfunktionen die Idee der Fourierreihen
+auf einem Interval auf höherdimensionale Gebiete zu verallgemeinern.
+

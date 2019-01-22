@@ -1,0 +1,99 @@
+%
+% particular.tex
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Partikuläre Lösung}
+\index{partikul\äre L\ösung}
+\rhead{Partikuläre Lösung}
+Um das anfangs des Kapitels gestellt Problem zu lösen, kann man jetzt
+gleich vorgehen wie im Fall elliptischer Randwertprobleme. Zunächst
+braucht man singuläre Lösungen, also Lösungen, welche die
+Wärmeleitungsgleichung mit einer $\delta$-Funktion als rechte Seite
+lösen.
+Man kann durch etwas mühsame Rechnung nachprüfen, dass für $0<\tau<t$
+der Ausdruck
+\[
+\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)
+\]
+die Wärmeleitungsgleichung erfüllt. Daraus lässt sich
+dann die Funktion
+\begin{equation}
+K(t-\tau, x-\xi)
+=
+\vartheta(t-\tau)
+\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)
+\label{parabolischsingulaer}
+\end{equation}
+konstruieren, welche die gewünschten Eigenschaften hat:
+
+\begin{satz}
+Die Funktion $K$ erfüllt die Wärmeleitungsgleichung
+\begin{align*}
+\partial_tK-\kappa\Delta_xK&=0&&(\tau, \xi)\ne(t,x)
+\\
+\lim_{t\to\tau^+}K(t-\tau, x-\xi)&=\delta(x-\xi).
+\end{align*}
+Bezüglich der Koordinaten $(\tau,\xi)$ gilt
+\begin{align*}
+-\partial_{\tau} K-\kappa\Delta_{\xi}K&=0\qquad(\tau,\xi)\ne(t,x)
+\\
+\lim_{\tau\to t^-}K(t-\tau, x-\xi)&=\delta(x-\xi)
+\end{align*}
+\end{satz}
+
+Eine partikuläre Lösung des Problems kann wieder mit Hilfe eines Integrals
+gefunden werden:
+\begin{align*}
+u(t,x)
+&=
+\int_\Omega\int_0^\infty
+K(t-\tau,x-\xi)f(\tau,\xi)
+\,d\tau\,d\xi
+\\
+&=
+\int_\Omega\int_0^\infty
+\vartheta(t-\tau)\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)
+f(\tau,\xi)
+\,d\tau\,d\xi
+\\
+&=
+\int_\Omega\int_0^t
+\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)
+f(\tau,\xi)
+\,d\tau\,d\xi
+\end{align*}
+Setzt man dies in die Wärmeleitungsgleichung ein, ergibt sich
+\begin{align*}
+(\partial_t-\kappa\Delta)u
+&=
+\int_\Omega\int_0^t
+(\partial_t-\kappa\Delta)\biggl[
+\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)\biggr]
+f(\tau,\xi)
+\,d\tau\,d\xi
+\\
+&\quad+
+\lim_{\tau\to t-}
+\int_\Omega
+\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)
+f(t,\xi)
+\,d\xi
+\end{align*}
+Das erste Integral verschwindet, weil der Ausdruck in der eckigen Klammer
+für alle $0<\tau<t$ die Wärmeleitungsgleichung erfüllt, also von
+$\partial_t-\kappa\Delta$ zu $0$ gemacht wird.
+Der Teil des Integranden vor $f(t,\xi)$ im zweiten Integral ist eine
+Approximation der $\delta$-Funktion an der Stelle $x$, also ist der Grenzwert
+$f(t,x)$. Insgesamt ist also
+\[
+(\partial_t-\kappa\Delta)u=f,
+\]
+wie behauptet.
+

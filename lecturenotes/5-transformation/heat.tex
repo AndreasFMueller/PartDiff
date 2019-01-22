@@ -1,0 +1,98 @@
+%
+% heat.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Wärmeleitung auf einem Kreis}
+\rhead{Wärmeleitung}
+Wir betrachten jetzt die Wärmeleitungsgleichung auf einem Drahtring
+mit gegebenen Anfangswerten. Die Temperaturverteilung auf dem
+Kreis beschreiben wir als eine periodische Funktion auf dem Interval
+$[-\pi,\pi]$. Gesucht ist daher eine Lösung der Wärmelteitungsgleichung
+mit den Anfangsbedingungen
+\begin{align*}
+\partial_t u(t,x)&=\partial_x^2 u(t,x) &&\forall(t,x)\in\mathbb R\times[-\pi,\pi]\\
+u(0,x)&=f(x)&& \forall x\in[-\pi,\pi]\\
+\end{align*}
+
+\subsection{Fouriertransformation auf dem Interval}
+Wie im einführenden Beispiel gehen wir jetzt zu Fourierkoeffizienten
+über.
+Der Einfachheit halber verwenden wir komplexe Fourierkoeffizienten
+\[
+c_k=\hat f(k)=\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx}f(x)\,dx
+\]
+Wenden wir die Transformation auf die ursprüngliche Differentialgleichung
+an, erhalten wir
+\begin{align}
+\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx}\partial_t u(t,x)\,dx
+&=\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx}\partial_x^2 u(t,x)\,dx
+\notag
+\\
+\partial_t\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx} u(t,x)\,dx
+&=
+\frac1{2\pi}
+\underbrace{
+\left[
+e^{-ikx}\partial_x u(t,x)
+\right]_{-\pi}^{\pi}}_{=0}
++
+ik\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx}\partial_x u(t,x)\,dx
+\notag
+\\
+&=
+0 + 
+ik\frac1{2\pi}
+\underbrace{
+\left[
+e^{-ikx}u(t,x)
+\right]_{-\pi}^{\pi}}_{=0}
+-
+k^2\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx} u(t,x)\,dx
+\notag
+\\
+&=
+-
+k^2\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx} u(t,x)\,dx
+\notag
+\\
+\partial_t\hat u(t,k)&=-k^2 \hat u(t,k)
+\label{fouriertransformiert}
+\end{align}
+Aus der partiellen Differentialgleichung ist ein System von gewöhnlichen
+Differentialgleichungen für $t\ge 0$ geworden.
+
+\subsection{Laplacetransformation}
+Durch Laplace-Transformation der Gleichung (\ref{fouriertransformiert})
+erhalten wir die Gleichung
+\begin{align*}
+\int_0^{\infty} \partial_t \hat u(t,k)e^{-st}\,dt
+&=
+-k^2\int_0^{\infty}\hat u(t,k)e^{-st}\,dt
+\\
+\left[\hat u(t,k)e^{-st}\right]_0^{\infty}
++
+s\int_0^{\infty}\hat u(t,k)e^{-st}\,dt
+&=
+-k^2{\cal L}\hat u(s,k)
+\\
+\hat u(0,k)-s{\cal L}\hat u(s,k)&=k^2{\cal L}\hat u(s,k).
+\\
+{\cal L}\hat u(s,k)&=\frac{\hat u(0,k)}{s+k^2}
+\end{align*}
+
+\subsection{Rücktransformation}
+Um die allgemeine Lösung der Differentialgleichung zu finden,
+muss man jetzt rücktransformieren, zunächst nach Laplace:
+\begin{align*}
+\hat u(t,k)&={\cal L}^{-1}\left(\frac1{s+k^2}\right)\hat u(0,k)
+\\
+&=e^{-k^2t}\hat u(0,k)
+\end{align*}
+und dann auch noch nach Fourier, also durch Bilden der Fourierreihe
+\begin{align*}
+u(t,x)&=\sum_{k\in\mathbb Z}e^{-k^2t}\hat u(0,k)e^{ikx}
+\\
+&=\sum_{k\in\mathbb Z}\hat u(0,k)e^{ikx-k^2t}
+\end{align*}
+

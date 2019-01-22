@@ -1,0 +1,174 @@
+%
+% waves.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Wellengleichung in einer Dimension}
+\rhead{Eindimensionale Wellengleichung}
+Die Wellengleichung in der Ebene ist
+\[
+\partial_t^2u-a^2\partial_x^2u=0,
+\]
+welche wir auf dem Gebiet
+\[
+\Omega = \{(x,t) \,|\, t > 0\}
+\]
+lösen möchten.
+$a$ hat die Dimension einer Geschwindigkeit, $a$ ist die
+Ausbreitungsgeschwindigkeit der Wellen entlang der $x$-Achse.
+
+\subsection{Konstante Geschwindigkeit}
+Wir nehmen an, dass $a$ eine Konstante ist. Dann lässt sich die Gleichung
+auch als
+\begin{align*}
+(\partial_t -a\partial_x)(\partial_t+a\partial_x)u&=0
+\\
+\text{oder}&
+\\
+(\partial_t +a\partial_x)(\partial_t-a\partial_x)u&=0
+\end{align*}
+schreiben.
+Offenbar sind Lösungen der folgenden partiellen Differentialgleichungen
+erster Ordnung
+\begin{align}
+\partial_t u-a\partial_x u&=0
+\label{wellelinks}
+\\
+\partial_t u+a\partial_x u&=0
+\label{wellerechts}
+\end{align}
+automatisch auch Lösungen der Wellengleichung.
+
+\subsection{Lösung der partiellen Differentialgleichung erster Ordnung}
+Wir möchten die Wellengleichung für eine Anfangsbedingung der Art
+\begin{equation}
+u(x,t)=u_0(x),\qquad x\in\mathbb R
+\label{welleanfang}
+\end{equation}
+lösen, und suchen daher zunächst Lösungen der beiden
+PDGL erster Ordnung (\ref{wellelinks}) und (\ref{wellerechts})
+mit genau derselben Anfangsbedingung.
+
+Beide Differentialgleichungen sind quasilineare Differentialgleichungen
+erster Ordnung, das Verfahren aus Kapitel~\ref{chapter-geometrie}
+liefert dafür eine Lösung. Wir haben dazu zunächst die Lösung der
+Gleichung der Charakteristiken zu finden. Diese lautet
+\begin{align*}
+\frac{dx}{ds}&=-a
+\\
+\frac{dt}{ds}&=1
+\\
+\frac{du}{ds}&=0
+\end{align*}
+Die dritte Gleichung sagt, dass $u$ nicht von $s$ abhängt. Die
+zweite Gleichung sagt, dass bis auf eine additive Konstante $s$
+und $t$ übereinstimmen, wir können also ohne weiteres $t=s$
+wählen. Damit bleibt nur noch die erste Gleichung, welche ebenfalls
+einfach zu lösen ist, wir erhalten als Lösung
+\begin{equation}
+\begin{aligned}
+x(s)&=-as+x_0\\
+t(s)&=s\\
+z(s)&=z_0
+\end{aligned}
+\label{hyperbolisch:quasi1}
+\end{equation}
+
+Der zweite Parameter in der Lösung des Cauchy-Problems ist der
+Parameter entlang der Anfangskurve, in unserem Fall ist dies $x_0$,
+denn die Anfangskurve wird durch die Werte entlang der $x$-Achse
+gegeben. Wir haben also genauer die Gleichungen
+\begin{equation}
+\begin{aligned}
+x(s,x_0)&=-as+x_0\\
+t(s,x_0)&=s\\
+z(s,x_0)&=u_0(x_0)
+\end{aligned}
+\label{hyperbolisch:quasi2}
+\end{equation}
+
+Der zweite Schritt des Lösungsverfahrens von Kapitel~\ref{chapter-geometrie}
+besagt, dass die Variablen $s$ und $x_0$ aus den Gleichungen
+(\ref{hyperbolisch:quasi2})
+\begin{equation}
+u(x(s,x_0), t(s,x_0))=z(s,x_0)
+\label{hyperbolisch:quasi3}
+\end{equation}
+zu eliminieren seien.
+Aber aus der zweiten Gleichung 
+(\ref{hyperbolisch:quasi2})
+folgt $s=t$, und aus
+ersten Gleichung von
+$x_0=at+x$. Setzt man dies zusammen mit der dritten Gleichung von
+(\ref{hyperbolisch:quasi2}) in 
+(\ref{hyperbolisch:quasi3}) ein, erhält man
+\[
+u(x, t)=u_0(x_0)=u_0(at+x).
+\]
+Als Funktion von $x$ ist
+$u(x,t)$ als eine um $at$ nach links verschobene Kopie von $u_0$.
+Die Lösung von (\ref{wellelinks})
+ist also eine mit Geschwindigkeit $a$ nach links
+laufende Welle.
+
+Analog liefert die Gleichung (\ref{wellerechts}) eine mit Geschwindigkeit
+$a$ nach rechts laufende Kopie von $u_0$. Da die Wellengleichung linear ist,
+ist auch jede Linearkombination dieser beiden Lösungen eine Lösung der
+Differentialgleichung. Sind $u_+(x)$ und $u_-(x)$ zwei beliebige Funktionen
+derart, dass $u_+(x)+u_-(x)=u_0(x)$, dann ist
+\begin{equation}
+u(x,t)=u_+(x+at)+u_-(x-at)
+\label{dalembertloesung}
+\end{equation}
+eine Lösung der Wellengleichung mit der Anfangsbedingung (\ref{welleanfang}).
+
+\subsection{Anfangsgeschwindigkeit}
+Die Lösung der Wellengleichung ist aber erst durch eine weitere
+Anfangsbedingung der Form
+\begin{equation}
+\partial_tu(x,0)=v_0(x)\label{welleanfangdt}
+\end{equation}
+vollständig bestimmt.
+Wenn sich die Lösung in der Form (\ref{dalembertloesung}) schreiben lassen
+soll, muss gelten
+\begin{align*}
+u_+(x)+u_-(x)&=u_0(x)\\
+au_+'(x)-au_-'(x)&=v_0(x)
+\end{align*}
+Ist $V_0$ eine Stammfunktion von $\frac1av_0$, also $V_0'=\frac1av_0$,
+dann folgt aus der zweiten Gleichung, dass 
+\[
+u_+(x)-u_-(x)=V_0(x)+c.
+\]
+Diese Gleichungen kann man nach $u_+$ und $u_-$ auflösen:
+\begin{align*}
+u_+(x)&=\frac12(u_0(x)+V_0(x)+c)\\
+u_-(x)&=\frac12(u_0(x)-V_0(x)-c)
+\end{align*}
+und damit
+\begin{align}
+u(x,t)
+&=
+\frac12\bigl(u_0(x+at)+V_0(x+at)+c\bigr)+\frac12\bigl(u_0(x-at)-V_0(x-at)-c\bigr)
+\notag
+\\
+&=
+\frac12\bigl(u_0(x+at)+V_0(x+at)\bigr)+\frac12\bigl(u_0(x-at)-V_0(x-at)\bigr)
+\label{hyperbolisch:dalembert}
+\end{align}
+Die Lösung (\ref{hyperbolisch:dalembert})
+heisst die d'Alembert-Lösung der Wellengleichung.
+\index{d'Alembert}
+\index{d'Alembert-L\ösung}
+
+Natürlich sind die einzelnen Summanden Lösungen der Wellengleichung, aber auch
+die Anfangsbedingungen sind so erfüllt:
+\begin{align*}
+u(x,0)&=u_0(x)\\
+\partial_tu(x,0)&=\frac12\bigl(au_0'(x+at)+v_0(x)-au_0'(x)+v_0(x)\bigr) =v_0(x)
+\end{align*}
+Somit lässt sich die Wellengleichung in der Ebene einfach durch Finden einer
+Stammfunktion für eine Funktion entlang der $x$-Achse konstruieren.
+Das anfangs des Abschnittes
+gestellte Problem entspricht dem Fall $v_0(x)=0$.
+

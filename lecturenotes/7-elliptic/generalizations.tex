@@ -1,0 +1,64 @@
+%
+% generalizations.tex
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Verallgemeinerungen}
+\rhead{Verallgemeinerungen}
+Die in diesem Kapitel gefundenen Methoden können in verschiedene Richtungen
+verallgemeinert werden.
+\subsection{Neumann-Randbedingungen}
+\index{Neumann-Randbedingungen}
+Das Dirichlet-Problem wurde mit Hilfe einer Greenschen Funktion $G(x,\xi)$
+gelöst, welche als Funktion von $x$ die Randbedingung
+\[
+G(x,\xi)=0\quad\forall x\in\partial\Omega
+\]
+erfüllt.
+Verwendet man stattdessen eine Greensche Funktion, welche die
+%\marginpar{\tiny Greensche Funktion für Neumann-Randbedingungen}
+Neumann-Randbedingungen
+\[
+\frac{\partial}{\partial n}G(x,\xi)=0\quad\forall x\in\partial\Omega
+\]
+erfüllt, bleibt im Beweis von \ref{dirichletloesung}
+die Formel
+\begin{align*}
+u(x)&=\int_{\Omega}G(x,\xi)f(\xi)\,d\mu(\xi)+\int_{\partial\Omega}G(x,\xi)\operatorname{grad}u(\xi)\cdot dn
+\end{align*}
+stehen. Für Neumann-Randbedingungen $\partial_n u=g$ kann man dies ersetzen
+durch
+\begin{align*}
+u(x)&=\int_{\Omega}G(x,\xi)f(\xi)\,d\mu(\xi)+\int_{\partial\Omega}G(x,\xi)g(\xi)\,d\mu(\xi)
+\end{align*}
+Auch für Neumann-Randbedingungen gibt es also eine Greensche Funktion, welche
+das Problem für beliebige Randwerte löst.
+
+\subsection{Allgemeinere Operatoren}
+Die Greensche Funktion kann unter gewissen Voraussetzungen
+an die Koeffizienten auch für beliebige elliptische Operatoren
+\[
+Lu=\biggl(\sum_{i,j}a_{ij}\frac{\partial^2}{\partial x_i\partial x_j}
++\sum_ib_i\frac{\partial}{\partial x_i} +c\biggr)u
+\]
+zweiter Ordnung konstruiert werden.
+
+\subsection{Abstrakte Formulierung}
+Das in diesem Kapitel erreichte kann auch wie folgt formuliert werden.
+Gegeben war elliptischen Operator $L$ und ein weiterer Operator $B$,
+der aus der Funktion $u$ die relevanten Randwerte ermittelte. $Bu$
+ist ein Funktion auf dem Rand $\partial \Omega$ des Gebietes. 
+Das Problem
+\begin{align*}
+Lu&=f(x)&&x\in\Omega
+\\
+Bu&=g(x)&&x\in\partial\Omega
+\end{align*}
+konnte mit Hilfe einer Integralformel
+\[
+u(x)=\int_\Omega G(x,\xi)f(\xi)\,d\mu(\xi)+\int_{\partial \Omega}K(x,\xi)g(\xi)\,d\mu(\xi)
+\]
+gelöst werden.
+Die Funktionen $G$ und $K$ ermöglichen also, die Operatoren $L$ und $B$
+zu invertieren.
+

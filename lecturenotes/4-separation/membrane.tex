@@ -1,0 +1,204 @@
+%
+% membrane.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Schwingende rechteckige Membran}
+\rhead{Rechteckige Membran}
+\index{Membran!rechteckig}
+Wir betrachten die Schwingung einer rechteckigen Membran, die am Rande
+des Gebietes
+\[
+R=\{(x,y)\,|\,0\le x\le a,0\le y\le b\} =(0,a)\times(0,b)
+\]
+eingespannt ist. Zur Zeit $t=0$ sei die Form der Membran durch die
+Funktion $f(x,y)$ gegeben.
+Für beliebige Zeit $t\ge 0$ wird sie beschrieben durch eine Funktion $u(x,y,t)$,
+welche der Differentialgleichung
+\[
+\frac1{c^2}\frac{\partial^2u}{\partial t^2}=\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}
+\]
+genügt mit den Anfangsbedingungen
+\begin{align*}
+u(x,y,0)&=f(x,y)\quad\forall 0\le x\le a,0\le y\le b,
+\\
+\frac{\partial}{\partial t}u(x,y,0)&=g(x,y)\quad\forall 0\le x\le a,0\le y\le b
+\end{align*}
+und den Randbedingungen
+\begin{align*}
+u(0,y,t)&=0&u(a,y,t)&=0&\forall t\ge 0,0\le y\le b,\\
+u(x,0,t)&=0&u(x,b,t)&=0&\forall t\ge 0,0\le x\le a.
+\end{align*}
+
+\subsection{Separation der Zeit}
+\index{Separation}
+Nach der in der Einleitung motivierten Idee suchen wir Lösungen also
+Produkt einer Funktion $T(t)$, die nur von der Zeit abhängt, und einer Funktion
+$\varphi(x,y)$, welche nur vom Ort abhängt, also
+\[
+u(x,y,t)=T(t)\cdot\varphi(x,y).
+\]
+Leider kann ein einzelnes solches Produkt nicht alle Anfangsbedingungen
+erfüllen. Wäre dies nämlich möglich, müsste $\varphi(x,y)\sim f(x,y)$
+sein und alle Teile der Membran würden im Gleichtakt hin und her schwingen.
+Simulationen oder physikalische Experimente zeigen aber, dass es
+Anfangsbedingungen gibt, bei denen die Teile der Membran gegenläufig
+schwingen.
+
+Anderseits, muss die Lösung auf jeden Fall die Randbedingung erfüllen,
+es muss also gelten
+\begin{align*}
+\varphi(0,y)&=0&\varphi(a,y)&=0&0\le y\le b\\
+\varphi(x,0)&=0&\varphi(x,b)&=0&0\le x\le a
+\end{align*}
+Setzen wir diesen Ansatz für $u$ in der Wellengleichung ein,
+erhalten wir
+\[
+\frac1{c^2}T''(t)\varphi(x,y)=T(t)\left(
+\frac{\partial^2\varphi}{\partial x^2}
++
+\frac{\partial^2\varphi}{\partial y^2}
+\right)
+\]
+Wir suchen eine Funktion $u$, die nicht identisch verschwindet,
+es gibt also einige Zeitpunkte $t$ und Orte $(x,y)$, an denen $T(t)$
+und $\varphi(x,y)$ nicht verschwinden. An diesen Stellen kann man die
+Gleichung umformen in
+\begin{equation}
+\frac1{c^2}\frac{T''(t)}{T(t)}
+= \frac1{\varphi(x,y)}\left( \frac{\partial^2\varphi}{\partial x^2}
++ \frac{\partial^2\varphi}{\partial y^2} \right)
+\label{separiertMembran}
+\end{equation}
+Die rechte Seite hängt nur
+vom Ort ab, darf sich also nicht ändern, wenn man die Zeit $t$ variert.
+Als Funktion der Zeit muss die linke Seite eine Konstante sein,
+es gibt also ein $k$ mit der Eigenschaft
+\[
+\frac1{c^2}\frac{T''(t)}{T(t)}=k
+\qquad\Leftrightarrow\qquad
+T''(t)=k T(t).
+\]
+Diese gewöhnliche Differentialgleichung hat Lösungen der Form 
+$e^{\pm\sqrt{k}t}$ für positives $k$. Für negatives $k$ sind $\sin\sqrt{k}t$ 
+und $\cos\sqrt{k}t$ Lösungen.
+Aus physikalischer Sicht sind nur Lösungen mit Schwingungscharakter sinnvoll,
+wir können daher annehmen, dass $k<0$.
+Ein solches $k$ lässt sich in der Form $k=-\lambda^2$ schreiben.
+Es gibt also ein $\lambda$ mit der Eigenschaft
+\[
+\frac1{c^2}\frac{T''(t)}{T(t)}=-\lambda^2
+\]
+oder
+\[
+T''(t)=-c^2\lambda^2 T(t).
+\]
+Dies ist eine gewöhnliche Differentialgleichung zweiter Ordnung, welche mit
+bekannten Methoden gelöst werden kann.
+Die allgemeine Lösung dieser Gleichung ist von der Form
+\[
+A\cos c\lambda t+B\sin c\lambda t.
+\]
+
+\subsection{Reduktion auf ein Eigenwertproblem}
+\index{Eigenwertproblem}
+Die linke Seite von (\ref{separiertMembran}) hängt nur von der Zeit ab, darf sich
+also nicht ändern, wenn man $x$ oder $y$ variert. Als Funktion des Ortes
+muss die rechte Seite also ebenfalls konstant sein:
+\begin{align*}
+\frac1{\varphi(x,y)}\left(
+\frac{\partial^2\varphi}{\partial x^2}
++
+\frac{\partial^2\varphi}{\partial y^2}
+\right)&=-\lambda^2\\
+\frac{\partial^2\varphi}{\partial x^2}
++
+\frac{\partial^2\varphi}{\partial y^2}
+=\Delta\varphi
+&=-\lambda^2
+\varphi(x,y)
+\end{align*}
+Die gesuchte Funktion $\varphi$ ist also ein Eigenvektor des linearen
+Operators $\Delta$ zum Eigenwert $-\lambda^2$.
+Nur die Eigenwerte des Operator $\Delta$ kommen also für die
+Zeitabhängigkeitsgleichung in Frage.
+
+\subsection{Separation von $x$ und $y$}
+\index{Separation}
+Für das Eigenwertproblem können wir erneut den Separationsansatz
+\[
+\varphi(x,y)=X(x)\cdot Y(y)
+\]
+versuchen.
+Einsetzen in die Differentialgleichung ergibt
+\begin{align*}
+X''(x)Y(x)+X(x)Y''(y)&=-\lambda^2 X(x)Y(y)
+\\
+\frac{X''(x)}{X(x)}+\frac{Y''(y)}{Y(y)}&=-\lambda^2
+\end{align*}
+Jeder der Brüche hängt nur von jeweils einer Variable ab, was nur
+möglich ist, wenn beide Terme konstant sind. Damit ist das Problem
+reduziert auf zwei Gleichungen
+\begin{align*}
+X''(x)&=-\lambda_1^2X(x)\\
+Y''(y)&=-\lambda_2^2Y(y)\\
+\lambda_1^2+\lambda_2^2&=\lambda^2
+\end{align*}
+Die allgemeinen Lösungen dieser Gleichungen, die auch die Randbedingung
+bei $x=0$ bzw.~$y=0$ erfüllt, sind
+\begin{align*}
+X(x)&=A\sin \lambda_1x\\
+Y(y)&=B\sin \lambda_2y
+\end{align*}
+Die Randbedingungen für $x=a$ und $y=b$ können nur erfüllt werden,
+wenn $\lambda_1a$ und $\lambda_2b$ Vielfache von $\pi$ sind, also
+\[
+\lambda_1=\frac{k\pi}a
+\qquad
+\text{und}
+\qquad
+\lambda_2=\frac{l\pi}b
+\]
+Die möglichen Werte von $\lambda$ sind also
+\[
+\lambda_{kl}^2=\left(\frac{k^2}{a^2} + \frac{l^2}{b^2}\right)\pi^2,\qquad k,l\in\mathbb Z
+\]
+Damit kann man jetzt die allgemeine Lösung des Schwingungsproblems aus den
+Teillösungen
+\[
+\varphi_{kl}(x,y)=\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y
+\]
+für das Eigenwertproblem
+und den Teillösungen
+\[
+u_{kl}(x,y,t)
+=
+(A_{kl}\cos c\lambda_{kl} t+
+B_{kl}\sin c\lambda_{kl} t)
+\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y
+\]
+für das zeitabhängige Problem
+zu einer allgemeinen Lösung
+\begin{equation}
+u(x,y,t)=\sum_{k,l}
+(A_{kl}\cos c\lambda_{kl} t+
+B_{kl}\sin c\lambda_{kl} t)
+\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y
+\label{allgemeineloesung}
+\end{equation}
+zusammensetzen.
+
+\subsection{Anfangsbedingungen}
+\index{Anfangsbedingungen}
+Die allgemeine Lösung muss jetzt auch noch die Anfangsbedingung erfüllen:
+\begin{align*}
+\sum_{k,l}A_{kl}
+\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y&=f(x,y)\\
+\sum_{k,l}B_{kl}c\lambda_{kl}
+\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y&=g(x,y)\\
+\end{align*}
+Die Koeffizienten $A_{kl}$ und $B_{kl}$ können in einfachen Fällen mit
+Koeffizientenvergleich und im Allgemeinen mit Hilfe der Theorie
+der Fourierreihen berechnet werden.
+\index{Fourierreihe}
+

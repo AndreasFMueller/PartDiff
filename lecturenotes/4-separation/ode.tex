@@ -1,0 +1,55 @@
+%
+% ode.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Separation der Variablen für gewöhnliche Differentialgleichungen}
+Die Differentialgleichung 
+\begin{equation}
+y'-xy=0
+\label{separation:ode}
+\end{equation}
+kann mit Separation der Variablen gelöst werden:
+\begin{align*}
+\frac{dy}{dx}&=xy\\
+\frac1y\,dy&=x\,dx\\
+\int\frac1y\,dy&=\int x\,dx\\
+\log|y|&=\frac12x^2+C\\
+y&=y_0e^{\frac12x^2}
+\end{align*}
+Das Verfahren beruht auf dem Prinzip, auf jeder Seite der Gleichung
+nur eine Variable zu haben.
+Dabei zerlegt man sogar die Ableitung $dy/dx$, was man ja eigentlich
+gar nicht darf.
+Die Separation führt die Lösung der Differentialgleichung auf die
+Berechnung zweier Integrale zurück, also eigentlich auf die
+Lösung einer besonders einfachen Differentialgleichung der Form $y'=f(x)$
+mit Lösung $y(x)=\int f(x)\,dx$.
+Diese Form der Lösung sagt uns auch genau, was wir an Anfangsbedingungen
+brauchen.
+Ist $y_0$ der Wert der Lösung an der Stelle $x_0$, dann liefert
+das Integral die Lösungsfunktion
+\[
+y(x)=\int_{x_0}^xf(\xi)\,d\xi + y_0.
+\]
+
+So einfach wird es für partielle Differentialgleichungen nicht sein.
+Insbesondere für die an sich schon etwas ``anrüchige'' Operationen,
+den Differentialquotienten $dy/dx$ auseinanderzureissen gibt es keinerlei
+Entsprechung bei partiellen Ableitungen.
+Unter geeigneten Voraussetzungen an das Gebiet und die Differentialgleichung
+ist es aber immer noch denkbar, dass man die Variablen trennen kann,
+also 
+\[
+\text{Funktionen/Ableitungen nur mit $x$} = \text{Funktionen/Ableitungen nur mit $y$}
+\]
+Da die linke Seite nur von $x$ abhängt, die rechte aber nur von $y$, müssen
+beide Seiten konstant sein, die partielle Differentialgleichung zerfällt
+in eine linke {\em gewöhnliche} Differentialgleichung für eine Funktion von
+$x$ und eine rechte {\em gewöhnliche} Differentialgleichung für $y$.
+
+Da wir über gewöhnliche Differntialgleichungen Bescheid wissen, sollte
+es uns so möglich sein, eine partielle Differentialgleichung zu lösen
+und herzuleiten, welche Art von Randwerten vorgegeben werden müssen, damit
+die Differentialgleichung eindeutig lösbar ist.
+

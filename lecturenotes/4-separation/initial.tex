@@ -1,0 +1,92 @@
+%
+% initial.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\rhead{Anfangsbedingungen}
+\section{Anfangsbedingungen}
+In den bisherigen Beispielen haben wir Lösungen einer partiellen
+Differentialgleichung gesucht und gefunden, welche bestenfalls einen
+Teil der Randbedingungen erfüllt haben.
+So haben wir zwar sichergestellt, dass die schwingende Membran eingespannt
+bleibt, aber die Auslenkung der Membran zu Beginn haben wir ignoriert.
+
+Um zu verstehen, wie die Anfangsbedingungen ebenfalls berücksichtig
+werden können, betrachten wir die Wellengleichung
+\[
+\frac{\partial^2 u}{\partial t^2}=\frac{\partial^2 u}{\partial x^2}
+\]
+auf dem Gebiet $(t,x)\in\mathbb R\times [0,\pi]$
+mit den Randbedingungen
+\[
+u(t,0)=u(t,\pi)=0.
+\]
+Wir verwenden den Separationsansatz
+$u(t,x)=T(t)\cdot X(t)$, welcher uns wie früher dargestellt auf eine
+Gleichung
+\[
+\frac{T''(t)}{T(t)}=\frac{X''(x)}{X(x)}=-\lambda^2
+\]
+führt.
+Die Gleichung 
+\[
+X''(x)=-\lambda^2 X(x)
+\]
+hat als Lösung Linearkombinationen von Sinus- und Kosinusfunktionen
+\[
+X(x)=A\cos\lambda x+B\sin\lambda x.
+\]
+Damit die Anfangsbedingung am linken Rand erfüllt ist, muss $A=0$
+sein. Am rechten Rand bleibt daher nur $B\sin\lambda \pi$, und wir
+müssen $B\ne 0$ annehmen, da sonst die ganze Lösung verschwinden
+würde. $\sin\lambda \pi$ wird aber nur dann verschwinden, wenn
+$\lambda$ eine ganze Zahl ist, also
+\[
+X_k(x)=B\sin kx, \quad 0<k\in\mathbb Z.
+\]
+Die dazu passende Lösung von $T''(t)=-k^2T(t)$ hat genau die
+gleiche Form, so dass die allgemeine Lösung zum Wert $\lambda=k$
+\[
+u_k(t,x)=\sin kx\left(A_k\cos kt+B_k\sin kt\right)
+\]
+ist.
+
+Diese Teillösungen $u_k(t,x)$ erfüllen bereits die Differentialgleichung
+und die Randbedingungen. Noch nicht erfüllt werden die Anfangsbedingungen
+zur Zeit $t=0$. Wir geben sie in der Form
+\begin{align*}
+u(0,x)&=f(x)\quad x\in[0,\pi]\\
+\frac{\partial u}{\partial t}(0,x)&=g(x)\quad x\in[0,\pi]
+\end{align*}
+vor.
+
+Wir suchen jetzt also eine Lösung in der Form
+\[
+u(t,x)=\sum_{k=1}^{\infty}
+\left(A_k\cos kt+B_k\sin kt\right)
+\sin kx,
+\]
+welche die Anfangsbedingung erfüllt. Durch Einsetzen erhält
+man
+\begin{align*}
+\sum_{k=1}^{\infty}
+A_k \sin kx
+&=f(x)
+\\
+\sum_{k=1}^{\infty}
+B_kk\sin kx
+&=g(x)
+\end{align*}
+für $x\in[0,\pi]$.
+Die Lösung $u(t,x)$ kann also vollständig bestimmt werden, indem man
+die Anfangsbedingungen in eine Fourier-$\sin$-Reihe entwickelt. Sind
+$\hat f(k)$ und $\hat g(k)$ die Fourier-Koeffizienten, wird die
+vollständige Lösung
+\[
+u(t,x)
+=
+\sum_{k=1}^{\infty}(\hat f(k)\cos kt+\hat g(k)k\sin kt)\sin kx.
+\]
+Mit geeigneten Voraussetzungen an die Funktionen $f$ und $g$ werden
+diese Reihen konvergieren.
+

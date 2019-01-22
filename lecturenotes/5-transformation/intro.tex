@@ -1,0 +1,133 @@
+%
+% intro.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Einführungsbeispiel}
+\subsection{Wellengleichung für die schwingende Saite}
+\rhead{Schwingende Saite}
+Zur Einführung betrachten wir erneut das Beispiel der
+schwingenden Saite mit der Gleichung
+\[
+\partial_t^2u=\partial_x^2u.
+\]
+Durch einen Separationsansatz hatten wir dieses Problem
+darauf zurückgeführt, Gleichungen $X''=-k^2X$ und $T''=-k^2T$
+zu lösen.
+Dabei haben wir die harmonischen Funktionen wieder gefunden,
+mit Hilfe der Fouriertheorie ist sodann die Bestimmung einer Lösung
+gelungen.
+
+Andererseits könnten wir auch mit der Fouriertheorie beginnen und
+verwenden, dass sich eine Funktion auf dem Interval $[0,\pi]$
+durch Spiegelung zu einer periodischen Funktion auf $[-\pi,0]$
+erweitern lässt. Indem wir zu jedem Zeitpunkt $t$ eine Fourieranalyse
+durchführen, lässt sich die Funktion $x\mapsto u(t,x)$ als
+Fourierreihe 
+\[
+u(t,x)=\frac{a_0(t)}2+\sum_{k=1}^\infty a_k(t)\cos kx+b_k(t)\sin kx
+\]
+mit zeitabhängigen Koeffizienten schreiben.
+Setzen wir diesen Ansatz in die Differentialgleichung ein, ergibt sich
+\begin{align*}
+\partial_t^2u(t,x)&=\frac{a_0''(t)}2
++\sum_{k=1}^\infty a_k''(t)\cos kx+b_k''(t)\sin kx\\
+\partial_x^2u(t,x)&=
+-\sum_{k=1}^\infty a_k(t)k^2\cos kx+b_k(t)k^2\sin kx
+\end{align*}
+Wenn diese Funktionen gleich sein sollen, muss
+\[
+\frac{a_0''(t)}2
++\sum_{k=1}^\infty (a_k''(t)+k^2a_k(t))\cos kx+(b_k''(t)+k^2b_k(t))\sin kx=0
+\]
+gelten. Nach der Fourier-Theorie ist dies nur möglich, wenn die
+Fourier-Koeffizienten alle verschwinden:
+\begin{align*}
+a_0''(t)&=0\\
+a_k''(t)&=-k^2a_k(t)\\
+b_k''(t)&=-k^2b_k(t)
+\end{align*}
+mit $k>0$.
+Wir haben also durch Übergang zu Fourierkoeffizienten ein System
+von gewöhnlichen Differentialgleichungen für die Fourier-Koeffizienten
+gefunden. Die Lösungen sind wohl bekannt:
+\begin{align*}
+a_0(t)&=m_0t+c_0\\
+a_k(t)&=A^a_k\cos kt+B^a_k\sin kt\\
+b_k(t)&=A^b_k\cos kt+B^b_k\sin kt\\
+\end{align*}
+Dies entspricht den Lösungen, die wir bereits im vorangegangenen
+Kapitel gefunden haben.
+
+\subsection{Anfangsbedingungen}
+Die Differentialgleichungen für die Koeffizienten $a_k(t)$ und $b_k(t)$
+können erst dann vollständig gelöst werden, wenn Anfangs oder Randbedingungen
+gegeben sind. Sei also zusätzlich zur Wellengleichung die Anfangsbedingung
+\begin{align*}
+u(0,x)&=f(x)\\
+\frac{\partial u}{\partial t}&=g(x)
+\end{align*}
+gegeben. auch die Funktionen $f$ und $g$ können duch eine Fourierreihe
+dargestellt werden, werden wir schreiben
+\begin{align*}
+f(x)&=\frac{a_0^f}2+\sum_{k=1}^\infty a_k^f\cos kx+b_k^f\sin kx\\
+g(x)&=\frac{a_0^g}2+\sum_{k=1}^\infty a_k^g\cos kx+b_k^g\sin kx
+\end{align*}
+Zusammen mit dem Ansatz für $u(t,x)$ als Fourierreihe finden wir jetzt
+die Bedingungen für $t=0$
+\begin{align*}
+\frac{a_0(0)}2+\sum_{k=1}^\infty a_k(0)\cos kx +b_k(0)\sin kx
+&=
+\frac{a_0^f}2+\sum_{k=1}^\infty a_k^f\cos kx+b_k^f\sin kx\\
+\\
+\frac{a_0'(0)}2+\sum_{k=1}^\infty a_k'(0)\cos kx+b_k'(0)\sin kx
+&=
+\frac{a_0^g}2+\sum_{k=1}^\infty a_k^g\cos kx+b_k^g\sin kx
+\end{align*}
+Koeffizientenvergleich liefert jetzt die Anfangsbedingungen für die
+Funktionen $a_k$ und $b_k$:
+\begin{align*}
+a_k(0)&=a_k^f&b_k(0)&=b_k^f\\
+a_k'(0)&=a_k^g&b_k'(0)&=b_k^g\\
+\end{align*}
+Zusammen mit den früher gefundenen Lösungen gilt also
+\begin{align*}
+c_0&=a_0^f&&&A_k^a&=a_k^f&&&&&A_k^b&=b_k^f\\
+m_0&=a_0^g&&&kB_k^a&=a_k^g&\Rightarrow B_k^a&=\frac1ka_k^g&&&kB_k^b&=b_k^g&\Rightarrow B_k^b&=\frac1kb_k^g
+\end{align*}
+Die vollständige Lösung ist damit
+\begin{align*}
+u(t,x)=\frac{a_0^gt+a_0^f}2
++\sum_{k=1}^\infty
+\biggl(a_k^f\cos kt+\frac1ka_k^g\sin kt\biggr)\cos kx
++
+\biggl(b_k^f\cos kt+\frac1kb_k^g\sin kt\biggr)\sin kx.
+\end{align*}
+
+\subsection{Inhomogene Wellengleichung}
+Das Verfähren lässt sich auch die inhomogene Wellengleichung
+\[
+\partial_t^2u-\partial_x^2u=f
+\]
+verallgemeinern. Die Funktion $f(t,x)$ lässt sich natürlich ebenso wie
+$u$ als Fourierreihe entwickeln:
+\[
+f(t,x)=\frac{a_0^f(t)}2+\sum_{k=1}^\infty a_k^f(t)\cos kx+b_k^f(t)\sin kx.
+\]
+Setzt man dies zusammen mit der Entwicklung für $u(t,x)$ in die
+Differentialgleichung ein, findet man die Gleichungen
+\begin{align*}
+a''_k(t)+k^2a_k(t)&=a_k^f(t)\\
+b''_k(t)+k^2b_k(t)&=b_k^f(t),
+\end{align*}
+also ein System von gewöhnlichen inhomogenen linearen Differentialgleichungen.
+
+\subsection{Lehren aus dem Einführungsbeispiel}
+Durch die Transformation auf die Fourier-Koeffizienten verschwindet die
+Ableitung nach $x$,  stattdessen bleibt nur noch eine gewöhnliche
+Differentialgleichung, die zweifache Ableitung nach $x$ wurde zur
+algebraischen Operation der Multiplikation mit $-k^2$. Diese Transformation
+war möglich, weil der $x$-Definitionsbereich ein Interval war.
+Für andere Definitionsbereiche wird die Fourier-Transformation nicht
+geeignet sein.
+

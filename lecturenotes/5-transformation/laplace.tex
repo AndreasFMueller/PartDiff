@@ -1,0 +1,162 @@
+%
+% laplace.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Laplace-Transformation Crash-Course}
+Für $[0,\infty[$ als Definitionsbereich ist die Laplace-Transformation
+die geeignete Transformation. Dieser Abschnitt enthält einen Kurzabriss
+der wesentlichen Ideen der Theorie der Laplace-Transformation.
+Für uns wesentlich ist dabei, dass die Transformation die Ableitungen
+in algebraische Operationen umwandelt. Eine algebraische Gleichung ist
+einfacher zu lösen, die Rücktransformation liefert daraus die Lösung.
+
+\subsection{Definition}
+\begin{definition}
+Die Laplace-Transformierte ${\cal L}f$ einer Funktion
+$f\colon[0,\infty)\to\mathbb R$ ist die Funktion
+\[
+({\cal L}f)(s)=\int_0^\infty f(t)e^{-st}\,dt.
+\]
+\end{definition}
+Offenbar ist ${\cal L}f$ für beliebige beschränkte Funktionen $f$ definiert.
+
+\subsection{Beispiele}
+Drei Beispiele sollen das Rechnen mit der Laplace-Transformation
+illustrieren.
+\begin{enumerate}
+\item
+Sei $f(t)=c$ eine konstante Funktion. Die Laplace-Transformation
+\[
+({\cal L}f)(s)
+=
+\int_0^\infty ce^{-st}\,dt
+=
+\left[
+-\frac{c}{s}e^{-st}
+\right]_0^\infty=\frac{c}{s}.
+\]
+
+\item
+Sei jetzt $f(t)=e^{-kt}$, die Laplace-Transformation ist
+\[
+({\cal L}f)(s)=\int_0^\infty e^{-kt}e^{-st}\,dt
+=\int_0^{\infty}e^{-(s+k)t}\,dt
+=
+\left[
+- \frac1{s+k}e^{-(s+k)t}
+\right]_0^\infty
+=\frac1{s+k}.
+\]
+
+\item
+Wir berechnen jetzt die Laplace-Transformierte einer Ableitung, also
+$({\cal L}f')(s)$:
+\begin{align*}
+({\cal L}f')(s)
+&=
+\int_0^\infty f'(t)e^{-st}\,dt
+\\
+&=
+\left[f(t)e^{-ts}\right]_0^\infty
++
+\int_0^\infty sf(t)e^{-st}\,dt
+\\
+&=
+-f(0)+s\int_0^\infty f(t)e^{-st}\,dt
+\\
+&=s({\cal L}f)(s)-f(0).
+\end{align*}
+Wie versprochen wandelt die Laplace-Transformation die Ableitung
+ein eine algebraische Operation um.
+\end{enumerate}
+
+\subsection{Lösung einer gewöhnlichen Differentialgleichung}
+Wir lösen die Differentialgleichung
+\[
+\dot x(t)+px(t)=f(t)
+\]
+mit der Anfangsbedingung $x(0)=0$.
+Die Laplace-Transformation der Differentialgleichung ist
+\[
+s({\cal L}x)(s)-x(0)+p({\cal L}x)(s)=({\cal L}f)(s).
+\]
+Zu bestimmen ist $x$, diese Gleichung ist eine algebraische Gleichung
+für ${\cal L}x$, die man auch nach ${\cal L}x$ auflösen kann:
+\[
+({\cal L}x)(s)
+=
+\frac{({\cal L}f)(s)}{s+p}
+\]
+Um zu zeigen, wie mit dieser Methode die vollständige Lösung gefunden
+werden kann, führen wir die Rücktransformation für $f(t)=q$ durch.
+Zunächst ist in diesem Fall
+\[
+({\cal L}f)(s)=\frac{q}{s}
+\]
+und damit 
+\[
+({\cal L}x)(s)
+=
+\frac{q}{s(s+p)}=\frac{q}{p}\frac{1}{s}-\frac{q}{p}\frac{1}{s+p}
+\]
+Beide Termen auf der rechten Seite können mit den Beispielen im vorangegangenen
+Abschnitt rücktransformiert werden:
+\[
+x(t)=\frac{q}{p}-\frac{q}{p}e^{-pt}=\frac{q}{p}(1-e^{-pt}).
+\]
+
+\subsection{Lösung einer partiellen Differentialgleichung}
+Dieses Verfahren funktioniert auch für partielle Differentialgleichungen.
+Als Beispiel lösen wir die quaslineare Differentialgleichung
+\[
+\frac{\partial u}{\partial t}+x\frac{\partial u}{\partial x}=x
+\]
+$u$ ist definiert für $t\ge0$, $x\ge 0$ und wir verlangen die Randbedingungen
+\begin{align*}
+u(x,0)&=0\qquad x>0\\
+u(0,t)&=0\qquad t>0\\
+\end{align*}
+Die Laplacetransformation der Differentialgleichung ist
+\[
+s({\cal L}u)(s,x)-u(0,x)+x\frac{\partial}{\partial x}({\cal L}u)(s,x)=\frac{x}{s},
+\]
+sie hat die Ableitung nach der Zeit zum Verschwinden gebracht. Für jedes
+$s$ kann man dies als eine gewöhnliche Differentialgleichung für die
+Funktion $x\mapsto ({\cal L}u)(s,x)$ mit der Anfangsbedingung
+$({\cal L}u)(s,0)=0$ betrachten.
+Die Lösung mit den Standardmethoden 
+ergibt
+\[
+({\cal L}u)(s,x)=\frac{x}{s(s+1)}=\frac{x}{s}-\frac{x}{s+1}.
+\]
+Beide Terme können rücktransformiert werden, die Lösung ist
+\[
+u(t,x)=x-xe^{-t}=x(1-e^{-t}).
+\]
+Wir berechnen zur Kontrolle die Ableitungen
+\begin{align*}
+\frac{\partial u}{\partial t}
+&=
+xe^{-t}
+\\
+\frac{\partial u}{\partial x}
+&=
+1-e^{-t},
+\end{align*}
+damit 
+\[
+xe^{-t}+x(1-e^{-t})=x,
+\]
+die Differentialgleichung ist also erfüllt, und wegen
+\begin{align*}
+u(x,0)
+&=
+0
+\\
+u(0,t)
+&=
+0
+\end{align*}
+sind auch die Randbedingungen erfüllt.
+

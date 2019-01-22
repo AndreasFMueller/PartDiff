@@ -1,0 +1,78 @@
+%
+% intro.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Einführung}
+\rhead{Einführung}
+In den bisherigen Kapiteln waren die Differentialgleichungen auf sehr
+speziellen Gebieten definiert gewesen, zum Beispiel Rechtecken, Kreissscheiben,
+unendlichen Streifen, Halbebenen oder auf ganz $\mathbb R^n$. 
+Die Anwendungen verlangen aber, dass elliptische partielle
+Differentialgleichungen, auf fast beliebigen Gebieten gelöst werden können.
+Insbesondere wollen wir erstehen, unter welchen Bedingungen eine
+Lösung existiert und eindeutig bestimmt ist.
+
+\subsection{Laplace-Gleichung}
+\index{Laplace-Gleichung}
+Als Beispiel für die Eigenschaften der Lösungen
+%\marginpar{\tiny Formulierung des Beispielproblems}
+elliptischer linearer partieller Differentialgleichungen
+betrachten wir in diesem Kapitel die Laplace-Gleichung
+auf einem Gebiet $\Omega\subset\mathbb R^n$
+\begin{align}
+\Delta u&=f &&\text{in $\Omega$}
+\label{elliptisch:laplaceequation}
+\\
+\intertext{mit Dirichlet Randbedingungen}
+u&=g && \text{auf $\partial\Omega$},
+\label{dirichletrandbedingung}
+\\
+\intertext{Neumann Randbedingungen}
+\frac{\partial u}{\partial n}&=g && \text{auf $\partial\Omega$}
+\\
+\intertext{oder der gemischten Randbedingungen}
+\alpha u + \beta\frac{\partial u}{\partial n}&=g && \text{auf $\partial\Omega$.}
+\label{elliptisch:gemischt}
+\end{align}
+Eine Lösung dieses Problems ist eine auf $\Omega$
+zweimal stetig differenzierbare
+Funktion $u$, welche stetig auf den Rand ausgedehnt werden kann,
+und dort die Randbedingungen erfüllt. Zur Vereinfachung der
+Diskussion betrachten wir in diesem Abschnitt nur die
+Dirichlet-Randbedingungen (\ref{dirichletrandbedingung}).
+
+Aus der allgemeinen Theorie linearer partieller Differentialgleichungen
+%\marginpar{\tiny Allgemeine Lösungsstrategie}
+kann man ableiten, dass wir für
+die Lösung des gestellten Problems wie folgt vorgehen müssen
+\begin{enumerate}
+\item Zunächst brauchen wir eine partikuläre
+Lösung $u_p$ der Laplace-Gleichung (\ref{elliptisch:laplaceequation}).
+\item Mit $u_p$ reduziert sich das Problem darauf, eine Lösung
+$u_r=u-u_p$ der homogenen Gleichung $\Delta u_r=0$
+zu finden, welche die Randbedingung
+\[
+u_r=g-u_p
+\]
+erfüllt.
+\item
+Weitere Lösungen des Problems unterscheiden sich von dem
+bereits gefundenen Problem nur durch eine Funktion $u_h$, welche
+$\Delta u_h=0$ in $\Omega$ und $u_h=0$ auf $\partial\Omega$ erfüllt.
+\end{enumerate}
+Wir werden in diesem Kapitel zeigen, dass die Lösung diese Problems
+eindeutig ist, dass also das einzige mögliche $v=0$ ist.
+Ausserdem werden wir Formeln für partikuläre Lösungen wie auch für
+das homogene Problem aufstellen.
+
+\subsection{Harmonische Funktionen}
+\index{harmonische Funktion}
+Angesichts der Bedeutung der Lösungen des homogenen Problems
+geben wir diesen einen speziellen Namen:
+
+\begin{definition}
+Eine zweimal stetig differenzierbare Funktion $u$ auf dem Gebiet $\Omega$
+heisst harmonisch, wenn $\Delta u=0$.
+\end{definition}
+

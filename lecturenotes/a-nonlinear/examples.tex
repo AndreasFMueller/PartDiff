@@ -1,0 +1,119 @@
+%
+% examples.tex
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil 
+%
+\section{Bespiele nichtlinearer PDGL}
+\rhead{Beispiele}
+Wir stellen ein paar Beispiel nichtlinearer Differentialgleichungen
+zusammen, die sich in Anwendungsproblemen stellen. Einzelne Beispiele
+kamen bereits im ersten Kapitel zur Sprache.
+
+\subsection{Eulersche Gleichung}
+Die Eulersche Gleichung
+\begin{equation}
+\frac{\partial \vec v}{\partial t}+(\vec v\cdot\nabla)\vec v=-\frac1\varrho\operatorname{grad}p
+\label{euler}
+\end{equation}
+drückt das Newtonsche Gesetz für eine Flüssigkeit der Dichte $\varrho$ aus,
+welche sich mit Geschwindigkeit $\vec v$ bewegt.
+Zusammen mit der Kontinuitätsgleichung
+\[
+\frac{\partial\varrho}{\partial t}+\operatorname{div}(\varrho \vec v)=0
+\]
+ergeben sich vier Gleichungen für die fünf unbekannten Funktionen
+$\vec v$ (drei Komponenten) und $\varrho$ und $p$. Für eine vollständige
+Lösung des Problems sind also noch weitere Gleichungen notwendig, auf die
+wir jedoch nicht eingehen wollen.
+
+Als Gleichung für $\vec v$ ist (\ref{euler}) nicht linear wegen des Termes
+$(\vec v\cdot \nabla)\vec v$. Ausgeschrieben ist seine $i$-Komponente
+\[
+\biggl(\sum_{k=1}^3v_k\partial_k\biggr)v_i.
+\]
+In nur einer Dimension wird die Gleichung zu
+\[
+\partial_tv+v\partial_xv=-\frac1\varrho\operatorname{grad}p
+\]
+Ist $v$ eine Lösung der homogenen Gleichung, also
+\[
+\partial_t v+v\partial_x v=0,
+\]
+dann erfüllt $\lambda v$ die Differentialgleichung nicht mehr. Würde
+$\lambda v$ die Differentialgleichung erfüllen, wurde folgen
+\begin{align*}
+&&\lambda(\partial_t v+\lambda v\partial_xv)&=0
+\\
+\Rightarrow
+&&
+\partial_t v+\lambda v\partial_xv&=0
+\\
+\Rightarrow
+&&
+(\lambda -1)v\partial_xv&=0
+\end{align*}
+Dies ist jedoch nur möglich, wenn $\partial_xv=0$, also für eine
+konstante Strömung.
+
+\subsection{Navier-Stokes Gleichung}
+Die wohl berühmteste nichtlineare partielle Differentialgleichung ist
+die Navier-Stokes Gleichung, welche ein strömendes zähes Medium beschreibt.
+\[
+\varrho\biggl(
+\frac{\partial \vec v}{\partial t}+(\vec v\operatorname \nabla)\vec v
+\biggr)
+=
+-\operatorname{grad}p
++\eta\Delta \vec v+\biggl(\zeta+\frac{\eta}3\biggr)\operatorname{grad}\operatorname{div}\vec v
+\]
+Auch diese Gleichung für $\vec v$ ist wegen des Ausdrucks $(\vec v\cdot\nabla)\vec v$
+nicht linear.
+
+\subsection{Gleichung von Burgers}
+In einer Dimension  wird die Navier-Stokes Gleichung für eine inkompressibles
+Medium zu
+\[
+\varrho(\partial_t v+v\partial_x v)-a\partial_x^2v=0
+\]
+($a$ ist ein Ausdruck in $\zeta$ und $\eta$).
+Durch die Substitution
+\[
+u(t,x)=v(t,-x)
+\]
+erhält man daraus 
+\begin{align*}
+\partial_tu(t,x)&=\partial_tv(t,-x)\\
+\partial_xu(t,x)&=-\partial_xv(t,-x)\\
+\partial_x^2u(t,x)&=\partial_x^2v(t,-x)\\
+\varrho
+\partial_t v+v\partial_x v-\partial_x^2v
+&=
+\varrho(\partial_tu(t,x)-u\partial_x(t,x))-a\partial_x^2u
+\end{align*}
+Für $\varrho=1$ und $a=1$ wird die Gleichung zu
+\[
+\partial_tu=u\partial_xu+\partial_x^2u,
+\]
+in dieser Form heisst sie die Gleichung von Burgers,
+und wird weiter unten im Abschnitt
+\ref{burgers} genauer studiert.
+
+Aus der Euler Gleichung lässt sich analog die Burgers Gleichung
+für die ideale Flüssigkeit ableiten:
+\[
+\frac{\partial}{\partial t}u+\frac{\partial}{\partial x}\left(\frac{u^2}2\right)
+=0
+\]
+Wir verwenden diese in Abschnitt \ref{burgersunstetig} um zu illustrieren,
+wie nichtlineare Gleichungen spontan Unstetigkeiten entwickeln können.
+
+\subsection{Korteweg-deVries Gleichung}
+Die Wellenausbreitung in einem Kanal kann mit einer PDGL beschrieben werden,
+welche äquivalent ist zu
+\[
+\partial_tu+6u\partial_xu+\partial_x^3u=0.
+\]
+Wegen des Terms $u\partial_xu$ ist auch diese Gleichung nicht linear.
+Sie ist berühmt für die sogenannten Solitonen, Wellen, die über
+lange Zeit ihre Form erhalten.
+

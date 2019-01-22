@@ -1,0 +1,233 @@
+%
+% eigenfunctions.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Eigenfunktionen und Lösungen der Wärmeleitungsgleichung}
+\index{Eigenfunktion}
+\rhead{Eigenfunktionen}
+Im vorangegangenen Kapitel haben wir das Problem
+\begin{align*}
+\Delta u&=f&&\text{in $\Omega$}\\
+u&=g&&\text{auf $\partial\Omega$}
+\end{align*}
+studiert und dabei festgestellt, dass es ähnlich wie bei Matrixgleichungen
+$Ax=b$ eine Art Inverse gibt, welche durch die Greensche Funktion
+bereitgestellt wird. Sogar formal war die Lösung analog einer Matrixgleichung,
+die Rolle der Matrix mit zwei Indizes übernahm eine Funktion mit zwei
+Variablen, statt einer Summe war ein Integral zu bilden.
+
+Für eine parabolische PDGL tritt die Zeitentwicklung hinzu. In
+ein Matrixproblem übersetzt geht es darum, einen zeitlich
+veränderlichen Vektor $x(t)$ zu finden, dessen Ableitung mit einer
+Matrixgleichung $\dot x=Ax$ berechnet werden kann. Wir versuchen daher,
+die Lösung dieser Art von Matrix-Differentialgleichung auf das
+Wärmeleitungsproblem anzuwenden.
+
+\subsection{Systeme gewöhnlicher DGL erster Ordnung}
+Das einer homogenen parabolischen linearen PDGL äquivalente Problem
+ist ein homogenes System
+von linearen gewöhnlichen Differentialgleichungen für eine vektorwertige Funktion
+$t\mapsto x(t)\in\mathbb R^n$.
+Ein solches System ist gegeben durch eine Matrix $A$ und die Gleichung
+\[
+\frac{d}{dt}x(t)=Ax(t).
+\]
+\index{Diagonalform}
+Hätte die Matrix $A$ Diagonalform, könnte die allgemeine Lösung 
+sofort angegeben werden:
+\[
+A=\begin{pmatrix}
+\lambda_1&\dots&0\\
+\vdots&\ddots&\vdots\\
+0&\dots&\lambda_n
+\end{pmatrix}
+\qquad\Rightarrow\qquad
+x(t)=\begin{pmatrix}
+x_1(0)e^{\lambda_1t}
+\\
+\vdots
+\\
+x_n(0)e^{\lambda_nt}
+\end{pmatrix}.
+\]
+Unter gewissen Voraussetzungen an die Matrix $A$ kann man $n$
+orthonormierte Eigenvektoren
+\index{Eigenvektoren!orthonormiert}
+$e_1,\dots,e_n$ finden. Nimmt man einen solchen Vektor als
+Anfangsbedingung, ist die Lösung $e_ie^{\lambda_it}$. Schreibt man die
+Anfangsbedingung in den Eigenvektoren, z.~B.
+\[
+x(0)=\sum_{i=1}^n(e_i \cdot x(0))e_i,
+\]
+kann man die Lösung der Differentialgleichung sofort hinschreiben:
+\begin{equation}
+x(t)=\sum_{i=1}^n
+e^{\lambda_i t}
+(e_i\cdot x(0))e_i
+.
+\label{development}
+\end{equation}
+Tatsächlich ergibt Einsetzen in die beiden Seiten der Differentialgleichung
+\begin{align*}
+\frac{d}{dt}x(t)&=\sum_{i=1}^n\lambda_ie^{\lambda_i t}(e_i\cdot x(0))e_i
+\\
+Ax(t)
+&=\sum_{i=1}e^{\lambda_it}(e_i\cdot x(0))Ae_i
+=\sum_{i=1}e^{\lambda_it}(e_i\cdot x(0))\lambda_i e_i
+\end{align*}
+Damit haben wir die Lösungen des homogenen Differentialgleichungssystems
+gefunden.
+
+\subsection{Variation der Konstanten}
+\index{Variation der Konstanten}
+Das Verfahren der Variation der Konstanten erlaubt, eine inhomogene
+Differentialgleichung erster Ordnung zu lösen, also
+\[
+\frac{d}{dt}x(t)-Ax(t)=f(t),
+\]
+wobei $f$ eine vektorwertige Funktion ist.
+Die allgemeine Lösung der homogenen Gleichung war
+\[
+\sum_{i=0}^nc_ie^{\lambda_i t}e_i,
+\]
+wobei $c_i=(e_i\cdot x(0))$ war.
+Das Verfahren der Variation der Konstanten schreibt vor, die Konstanten
+$c_i$ durch Funktionen $c_i(t)$ zu ersetzen,
+\[
+x(t)=\sum_{i=1}^nc_i(t)e^{\lambda_it}e_i,
+\]
+und in die Differentialgleichung
+einzusetzen, also
+\begin{align*}
+\sum_{i=1}^n\dot c_i(t)e^{\lambda_it}e_i
++
+\sum_{i=1}^n\lambda_i c_i(t)e^{\lambda_it}e_i
+-\sum_{i=1}^n\lambda_i c_i(t)e^{\lambda_it}e_i
+&=
+f(t)
+\\
+\sum_{i=1}^n\dot c_i(t)e^{\lambda_it}e_i
+&=
+f(t)
+\end{align*}
+Bildet man das Skalarprodukt mit $e_i$, ergibt sich 
+\[
+\dot c_i(t)e^{\lambda_i t}=(e_i\cdot f(t)).
+\]
+Wir kürzen die rechte Seite mit $f_i(t)=e_i\cdot f(t)$ ab.
+Dann ist
+\[
+c_i(t)=c_i(0)+\int_0^te^{-\lambda_i \tau}f_i(\tau)\,d\tau
+\]
+und für die Lösung
+\begin{align*}
+x(t)&=
+\sum_{i=1}^n
+(e_i\cdot x(0))e_i+
+\sum_{i=1}^ne^{\lambda_i t}\int_0^te^{-\lambda_i \tau}(e_i\cdot f(\tau))e_i\,d\tau
+\\
+&=
+x(0)
++
+\int_0^t
+\biggl(
+\sum_{i=1}^n
+e^{\lambda_i(t- \tau)}(e_i\cdot f(\tau))\biggr)e_i\,d\tau
+\end{align*}
+Man kann dies durch Einsetzen nachprüfen:
+\begin{align*}
+\frac{d}{dt}x(t)
+&=
+\sum_{i=1}^n\left.e^{-\lambda_i (t-\tau)}(e_i\cdot f(\tau))e_i \right|_{\tau=t}
+\\
+&=
+\sum_{i=1}^n(e_i\cdot f(t))e_i=f(t)
+\end{align*}
+
+\subsection{Eigenwerte und Eigenvektoren}
+\index{Eigenwert}
+\index{Eigenvektor}
+Ist das Gebiet $\Omega$ beschränkt mit nicht zu ``kompliziertem'' Rand,
+kann man für zeigen, dass eine Folge $u_i(x)$
+von Eigenfunktionen zu jedem Eigenwert $\lambda_i$ existiert,
+\index{Eigenfunktion}
+die das Dirichlet-Problem mit homogenen
+Randbedingungen löst, also
+\[
+\Delta u_i=\lambda_iu_i,\qquad u_{i|\partial\Omega} = 0.
+\]
+Ausserdem kann man diese Lösungen so skalieren, dass sie ``Betrag'' 1 haben:
+\[
+\int_{\Omega}|u_i(\xi)|^2\,d\xi=1
+\]
+und ausserdem orthogonal aufeinander stehen:
+\[
+\int_{\Omega}u_i(\xi)u_j(\xi)\,d\xi=0\qquad\forall i\ne j.
+\]
+\index{orthogonale Funktionen}
+
+Verwendet man $u_i$ als ein Faktor in einem Separationsansatz für
+die parabolische Gleichung
+\[
+\partial_tu=\kappa\Delta u,
+\]
+erhält man für die Gleichung
+\begin{align*}
+\partial_t (T(t)u_i(t))-\kappa\Delta(T(t)u_i(t))&=0
+\\
+T'(t)u_i(t)-\kappa T(t)\Delta u_i(t)&=0
+\\
+T'(t)u_i(t)-\kappa T(t)\lambda_i u_i(t)&=0
+\\
+\frac{T'(t)}{T(t)}&=\kappa\lambda_i
+\\
+\Rightarrow\qquad T(t)=Ce^{\kappa\lambda_it}
+\end{align*}
+Für solche Anfangsbedingungen kann also die Lösung sofort angegeben
+werden.
+\subsection{Die inhomogene Gleichung}
+Das Verfahren der Variation der Konstanten kann auch für partielle
+Differentialgleichungen durchgeführt werden. Wir setzen die Lösung
+an als
+\[
+u(t,x)=\sum_{i=0}^\infty c_i(t) e^{\kappa\lambda_i t}u_i(x)
+\]
+Einsetzen in die Differentialgleichung ergibt
+\begin{align*}
+\sum_{i=0}^\infty \dot c_i(t)e^{\kappa\lambda_it}u_i(x)
++\kappa\sum_{i=0}^\infty c_i(t)\kappa\lambda_i e^{\lambda_it}u_i(x)
+-\kappa\sum_{i=0}^\infty c_i(t)e^{\kappa\lambda_it}\lambda_iu_i(x)
+&=f(x)
+\\
+\sum_{i=0}^\infty \dot c_i(t)e^{\kappa\lambda_it}u_i(x)
+&=f(t,x)
+\end{align*}
+Skalarprodukt mit $u_i$ ergibt
+\begin{align*}
+\dot c_i(t)&= e^{-\kappa\lambda_it}\int_{\Omega}u_i(\xi)f(t,\xi)\,d\xi
+\\
+c_i(t)&=c_i(0)+\int_0^te^{-\kappa\lambda_i\tau}\int_{\Omega}u_i(\xi)f(\tau,\xi)\,d\xi\,d\tau
+\end{align*}
+und für die partikuläre Lösung
+\begin{align*}
+u(t,x)&=
+\sum_{i=0}^\infty
+u_i(x)
+\int_0^t
+e^{\kappa\lambda_i(t-\tau)}\int_{\Omega}u_i(\xi)f(\tau,\xi)\,d\xi\,d\tau
+\end{align*}
+Die Greensche Funktion für das Wärmeleitungsproblem mit
+Dirichlet-Randbedinungen kann also auch als
+\[
+G(t,x,\tau,\xi)
+=
+\sum_{i=0}^\infty
+e^{\kappa\lambda_i (t-\tau)}
+u_i(x)
+u_i(\xi)
+\]
+geschrieben werden. Die Lösung des parabolischen Problems ist damit
+auf die Lösung des elliptischen Eigenwertproblems reduziert worden.
+
+

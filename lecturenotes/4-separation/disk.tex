@@ -1,0 +1,345 @@
+%
+% disk.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Kreisgebiet}
+\rhead{Kreisgebiet}
+\index{Kreisgebiet}
+\index{Kreisscheibe}
+In diesem Abschnitt betrachten wir eine Kreisscheibe
+\[
+G=\{(x,y)\in\mathbb R^2|x^2+y^2 < R\}
+\]
+mit Radius $R$ als Definitionsbereich. Da sich dieses Gebiet durch
+eine Streckung um den Faktor $\frac1R$ immer auf einen Einheitskreis
+abbilden lässt, können wir ohne Verlust an Allgemeinheit vorausetzen,
+dass $R=1$ ist.
+
+Ein Kreisgebiet tritt zum Beispiel beim Problem auf, die Schwingungen
+einer kreisförmigen Membran zu berechnen, wie sie bei einer Kesselpauke
+vorkommen. Nach den Ergebnissen des ersten Kapitels suchen wir nach einer
+Funktion $u$, welche auf $G$ die Gleichung
+\[
+\frac1{a^2}\frac{\partial^2 u}{\partial t^2}=\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}
+\]
+erfüllt. Wie bei der Schwingung der einer rechteckigen Platte
+wird daraus mit dem Ansatz $ u(x,y,t)=u(x,y)\cdot T(t)$ ein
+Eigenwertproblem:
+\begin{align*}
+T''(t)&=-a^2\lambda^2 T(t)\\
+\Delta u(x,y)&=-\lambda^2u(x,y)
+\end{align*}
+Das Poissonproblem ist der Spezialfall $\lambda=0$.
+\index{Poissonproblem}
+
+\subsection{Polarkoordinaten}
+\index{Polarkoordinaten}
+Offenbar sind Polarkoordinaten speziell gut an das Problem angepasst, 
+eine Randbedingung lässt sich zum Beispiel durch eine Funktion beschreiben,
+welche nur vom Polarwinkel abhängt.
+Eine schwingende kreisförmite Membran führt also auf die partielle
+Differentialgleichung
+\[
+\frac{\partial^2u(r,\varphi)}{\partial t^2}=\Delta u(r,\varphi)
+\]
+mit der Randbedingung
+\[
+u(R,\varphi)=0,\qquad\varphi\in[0,2\pi],
+\]
+wobei wie oben $R$ der Radius der Membran ist.
+
+Damit das Problem auf einem Kreisgebiet in Polarkoordinaten behandelt
+werden kann,
+brauchen wir einen Ausdruck für $\Delta u$ in Polarkoordinaten.
+\begin{align}
+x&=r\cos\varphi\\
+y&=r\sin\varphi
+\label{polarkoordinaten}
+\end{align}
+Um die Ableitungen nach $x$ und $y$ durch Ableitungen $\varphi$ und $r$ zu
+ersetzen, leiten wir (\ref{polarkoordinaten}) nach $x$ und $y$ ab:
+\begin{align*}
+1&=
+\frac{\partial r}{\partial x}\cos\varphi
+-r\sin\varphi \frac{\partial\varphi}{\partial x}
+&
+0&=
+\frac{\partial r}{\partial y}\cos\varphi
+-r\sin\varphi \frac{\partial\varphi}{\partial y}
+\\
+0&=
+\frac{\partial r}{\partial x}\sin\varphi
++r\cos\varphi \frac{\partial\varphi}{\partial x}
+&
+1&=
+\frac{\partial r}{\partial y}\sin\varphi
++r\cos\varphi \frac{\partial\varphi}{\partial y}
+\end{align*}
+In Matrixschreibweise ist dies
+\begin{align*}
+\begin{pmatrix}1\\0\end{pmatrix}
+&=
+\begin{pmatrix}
+\cos\varphi&-\sin\varphi\\
+\sin\varphi&\cos\varphi
+\end{pmatrix}
+\begin{pmatrix}
+\frac{\partial r}{\partial x}\\
+r\frac{\partial \varphi}{\partial x}
+\end{pmatrix}
+&
+\begin{pmatrix}0\\1\end{pmatrix}
+&=
+\begin{pmatrix}
+\cos\varphi&-\sin\varphi\\
+\sin\varphi&\cos\varphi
+\end{pmatrix}
+\begin{pmatrix}
+\frac{\partial r}{\partial y}\\
+r\frac{\partial \varphi}{\partial y}
+\end{pmatrix}
+\end{align*}
+Die $2\times2$ Matrix ist eine Drehmatrix, die Inverse findet man, indem man
+$\varphi$ durch $-\varphi$ ersetzt. Die Multiplikation auf der linken Seite
+ergibt jeweils die erste bzw. zweite Spalte der Drehmatrix zum
+Winkel $\varphi$:
+\begin{align*}
+\cos\varphi
+&=\frac{\partial r}{\partial x}
+&&
+&
+\sin\varphi
+&=
+\frac{\partial r}{\partial y}
+&&
+\\
+-\sin\varphi
+&=r\frac{\partial \varphi}{\partial x}
+&\Rightarrow\quad
+\frac{\partial\varphi}{\partial x}&=-\frac1r\sin\varphi
+&
+\cos\varphi
+&=
+r\frac{\partial\varphi}{\partial y}
+&\Rightarrow\quad
+\frac{\partial\varphi}{\partial y}&=\frac1r\cos\varphi
+\end{align*}
+Mit diesen Formeln können wir jetzt die höheren Ableitungen
+von $u$ nach  $x$ und $y$ durch Ableitungen nach $r$ und $\varphi$
+ersetzen.
+
+Die partiellen Ableitungen von $\varphi$ nach $x$ und $y$ sind
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
+\frac{\partial u}{\partial r}
+\frac{\partial r}{\partial x}
++
+\frac{\partial u}{\partial\varphi}
+\frac{\partial \varphi}{\partial x}
+=
+\frac{\partial u}{\partial r}
+\cos\varphi
+-
+\frac{\partial u}{\partial\varphi}
+\frac1r\sin\varphi
+\\
+\frac{\partial u}{\partial y}
+&=
+\frac{\partial u}{\partial r}
+\frac{\partial r}{\partial y}
++
+\frac{\partial u}{\partial\varphi}
+\frac{\partial \varphi}{\partial y}
+=
+\frac{\partial u}{\partial r}
+\sin\varphi
++
+\frac{\partial u}{\partial\varphi}
+\frac1r\cos\varphi
+\end{align*}
+Die zweiten Ableitungen sind
+\begin{align*}
+\frac{\partial^2u}{\partial x^2}
+&=
+\frac{\partial}{\partial r}
+\left(
+\frac{\partial u}{\partial r}
+\cos\varphi
+-
+\frac{\partial u}{\partial\varphi}
+\frac1r\sin\varphi
+\right)
+\frac{\partial r}{\partial x}
++
+\frac{\partial }{\partial \varphi}
+\left(
+\frac{\partial u}{\partial r}
+\cos\varphi
+-
+\frac{\partial u}{\partial\varphi}
+\frac1r\sin\varphi
+\right)
+\frac{\partial\varphi}{\partial x}
+\\
+&=
+\frac{\partial}{\partial r}
+\left(
+\frac{\partial u}{\partial r}
+\cos\varphi
+-
+\frac{\partial u}{\partial\varphi}
+\frac1r\sin\varphi
+\right)
+\cos\varphi
+-
+\frac{\partial }{\partial \varphi}
+\left(
+\frac{\partial u}{\partial r}
+\cos\varphi
+-
+\frac{\partial u}{\partial\varphi}
+\frac1r\sin\varphi
+\right)
+\frac1r\sin\varphi
+\\
+&=
+\frac{\partial^2u}{\partial r^2} \cos^2\varphi
+-
+\frac{\partial^2u}{\partial r\partial\varphi} \frac1r\sin\varphi \cos\varphi
++
+\frac{\partial u}{\partial\varphi} \frac1{r^2}\sin\varphi\cos\varphi
+\\
+&\quad
+-
+\frac{\partial^2u}{\partial\varphi\partial r}\frac1r \cos\varphi\sin\varphi
++\frac{\partial u}{\partial r}\frac1r\sin^2\varphi
++\frac{\partial^2u}{\partial\varphi^2}
+\frac1{r^2}\sin^2\varphi
++\frac{\partial u}{\partial\varphi}\frac1{r^2}\cos\varphi\sin\varphi
+\\
+\frac{\partial^2u}{\partial y^2}
+&=
+\frac{\partial}{\partial r}
+\left(
+\frac{\partial u}{\partial r}
+\sin\varphi
++
+\frac{\partial u}{\partial\varphi}
+\frac1r\cos\varphi
+\right)
+\frac{\partial r}{\partial y}
++
+\frac{\partial}{\partial \varphi}
+\left(
+\frac{\partial u}{\partial r}
+\sin\varphi
++
+\frac{\partial u}{\partial\varphi}
+\frac1r\cos\varphi
+\right)
+\frac{\partial \varphi}{\partial y}
+\\
+&=
+\frac{\partial}{\partial r}
+\left(
+\frac{\partial u}{\partial r}
+\sin\varphi
++
+\frac{\partial u}{\partial\varphi}
+\frac1r\cos\varphi
+\right)
+\sin\varphi
++
+\frac{\partial}{\partial \varphi}
+\left(
+\frac{\partial u}{\partial r}
+\sin\varphi
++
+\frac{\partial u}{\partial\varphi}
+\frac1r\cos\varphi
+\right)
+\frac1r\cos\varphi
+\\
+&=
+\frac{\partial^2u}{\partial r^2}\sin^2\varphi
++\frac{\partial^2u}{\partial r\partial\varphi}\frac1r\cos\varphi\sin\varphi
+-\frac{\partial u}{\partial\varphi}\frac1{r^2}\cos\varphi\sin\varphi
+\\
+&\quad
++
+\frac{\partial^2u}{\partial\varphi\partial r}\frac1r\sin\varphi\cos\varphi
++\frac{\partial u}{\partial r}\frac1r\cos^2\varphi
++\frac{\partial^2u}{\partial \varphi^2}\frac1{r^2}\cos^2\varphi
+-\frac{\partial u}{\partial \varphi}\frac1{r^2}\sin\varphi\cos\varphi
+\end{align*}
+\index{Laplace-Operator!in Polarkoordinaten}
+Die Summe dieser zwei Terme ist die gesucht Darstellung des Laplace-Operators
+in Polarkoordinaten:
+\begin{align*}
+\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}
+&=
+\frac{\partial^2u}{\partial r^2}
++\frac{\partial u}{\partial r}\frac1r
++\frac{\partial^2u}{\partial\varphi^2}\frac1{r^2}
+\\
+&=
+\left(\frac1r\frac{\partial}{\partial r}r\frac{\partial}{\partial r}+\frac1{r^2}\frac{\partial^2}{\partial \varphi^2}\right)u
+\end{align*}
+Darstellungen des Laplace-Operators in weiteren Koordinatensystemen können
+in jeder einigermassen vollständigen Formelsammlung gefunden werden.
+
+\subsection{Separation der Ortsvariablen}
+Die Lösung $u(r,\varphi)$ des Eigenwertproblems setzen wir wieder
+als Produkt einer Funktion
+$R(r)$
+nur von  $r$ und einer Funktion $\Phi(\varphi)$ nur von $\varphi$ an.
+Mit der im vorangegangenen Abschnitt gefundenen Formel für den Laplace-Operator
+in Polarkoordinaten erhalten wir jetzt die Gleichungen
+\begin{align*}
+\Delta u=
+\biggl(R''(r) + \frac1rR'(r)\biggr)\Phi(\varphi)
++\frac1{r^2}R(r)\Phi''(\varphi)&=-\lambda^2 R(r)\cdot\Phi(\varphi)\\
+\frac{r^2R''(r)+rR'(r)}{R(r)}+\frac{\Phi''(\varphi)}{\Phi(\varphi)}
+&=-\lambda^2 r^2
+\\
+\frac{r^2R''(r)+rR'(r)}{R(r)}+\lambda^2 r^2&=-\frac{\Phi''(\varphi)}{\Phi(\varphi)}
+\end{align*}
+Da die rechte Seite nur von $\varphi$ abhängt, die linke Seite aber nur von $r$,
+müssen beide Seiten konstant sein, wir nennen diese Konstante $\mu^2$.
+Damit sind die Variablen separiert:
+\begin{align}
+\Phi''(\varphi)+\mu^2\Phi(\varphi)&=0\label{phigleichung}\\
+r^2R''(r)+rR'(r)+(\lambda^2 r^2-\mu^2)R(r)&=0\label{rgleichung}
+\end{align}
+
+\subsection{Lösung der separierten Differentialgleichungen}
+Die allgemeine Lösung der Gleichung (\ref{phigleichung}) ist
+\[
+\Phi(\varphi)=A\cos\mu\varphi +B\sin\mu\varphi.
+\]
+Dies ist nur dann $2\pi$-periodisch, wenn $\mu$ eine ganze
+Zahl ist, also $\mu=k$ mit $k\in\mathbb Z$.
+
+Die Gleichung (\ref{rgleichung}) für $R$ bekommt damit die Form
+\[
+r^2R''(r)+rR'(r)+(\lambda^2 r^2-k^2)R(r)=0,
+\]
+sie ist verwandt mit der Besselschen Differentialgleichung.
+Die Funktion $P(\varrho)=R(\varrho/\lambda)=R(r)$ hat die Ableitungen
+\begin{align*}
+\varrho P'(\varrho)&=\frac{\varrho}{\lambda}R'(\varrho/\lambda)=rR'(r)\\
+\varrho^2 P''(\varrho)&=\frac{\varrho^2}{\lambda^2}R'(\varrho/\lambda)=r^2R''(r)
+\end{align*}
+und erfüllt somit die Besselsche Differentialgleichung
+\[
+\varrho^2P''(\varrho)+\varrho P'(\varrho)+(\varrho^2-k^2)P(\varrho).
+\]
+Lösungen der Besselschen Differentialgleichungen sind die Besselfunktionen
+\[
+P(\varrho)=J_{\pm k}(\lambda r)=R(r)
+\]
+Wie bei der rechteckigen Membran kann die allgemeine Lösung jetzt aus
+den Teillösungen zusammengesetzt werden.
+

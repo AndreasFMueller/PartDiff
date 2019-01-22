@@ -1,0 +1,50 @@
+%
+% green.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Greensche Funktion}
+\index{Greensche Funktion}
+\rhead{Greensche Funktion}
+Wir wollen jetzt die singulären Lösungen $K$ zu einer Lösung des Problems
+mit homogenen Randbedingungen erweitern.
+Wie beim Laplace-Problem suchen wir jetzt eine Funktion $J(t,x,\tau,\xi)$,
+welche wie $K$ die Differentialgleichungen erfüllt, also
+\begin{align*}
+\partial_t J-\kappa\Delta_xJ&=0
+&
+-\partial_\tau J-\kappa\Delta_\xi J&=0
+&t>\tau
+\\
+J&=0&J&=0&t<\tau
+\end{align*}
+und ausserdem die Randbedingung 
+\begin{align*}
+J(t,x,\tau,\xi)&=-K(t,x,\tau,\xi)&&x\in\partial\Omega
+\end{align*}
+Falls dieses Problem immer eine Lösung hat, nennen wir die
+Summe
+\[
+G(t,x,\tau,\xi)=K(t,x,\tau,\xi)+J(t,x,\tau,\xi)
+\]
+wieder die Greensche Funktion für das Wärmeleitungsproblem
+mit Dirichlet-Rand\-bedingungen. Und ebenfalls analog wie bei elliptischen
+partiellen Differentialgleichungen kann man eine Lösungsformel
+angeben
+\begin{align}
+u(t,x)&=
+\int_0^t\int_{\Omega}G(t,x,\tau,\xi)f(\tau,\xi)\,d\xi\,d\tau
+\notag
+\\
+&\quad+\int_{\Omega}G(t,x,0,\xi)u_0(\xi)\,d\xi
+\notag
+\\
+&\quad +\kappa\int_0^t\int_{\partial \Omega}
+G(t,x,\tau,\xi)\operatorname{grad}_\xi u
+-u\operatorname{grad}_\xi G(t,x,\tau,\xi)\cdot dn\,d\tau
+\label{green-parabolisch}
+\end{align}
+
+Selbstverständlich kann die Theorie wie bei elliptischen Gleichungen
+auch für Neumann-Randbedingungen verfeinert werden.
+

@@ -1,0 +1,75 @@
+%
+% boundary.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Welche Randwerte beeinflussen die Lösung in einem Punkt?}
+\begin{figure}
+\centering
+\includegraphics{../common/images/kausal-1.pdf}\qquad\qquad%
+\includegraphics{../common/images/kausal-2.pdf}
+\caption{Randwerte und Punkte des Gebietes, die Einfluss auf einen
+Funktionswert der Lösung haben.
+Bei einer elliptischen Differentialgleichung $\Delta u=f$
+(links)
+hängt jeder Funktionswert von jedem Randwert und von jedem Wert der
+Funktion $f$ ab.
+Die Lösung einer quasilinearen partiellen Differentialgleichung  (rechts)
+im Punkt $x$ hängt vom Randwert im Anfangspunkt $x_0$ einer Charaketeristik
+ab, die durch $x$ verläuft.
+\label{einflussmenge1}}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics{../common/images/kausal-3.pdf}\qquad\qquad%
+\includegraphics{../common/images/kausal-4.pdf}
+\caption{Randwerte und Punkte des Gebietes, die Einfluss auf einen
+Funktionswert der Lösung haben.
+Die Lösung einer parabolischen partiellen Differentialgleichung
+zur Zeit $t$ hängt von allen Werten $t'<t$ ab.
+Bei einer hyperbolischen partiellen Differentialgleichung beinflussen 
+nur die Funktionswerte innerhalb eines vom Punkt $x$ ausgehenden Kegels
+von Charakteristiken den Wert der Lösung im Punkt $x$.
+\label{einflussmenge2}}
+\end{figure}
+Mit der entwickelten Theorie ist es jetzt möglich, einen Antwort auf die
+Frage zu geben, welche Punkte auf dem Rand oder auch im Inneren des Gebietes
+einen Einfluss auf die Lösung einer partiellen Differentialgleichung
+der Form $Lu=f$ haben.
+
+Im Kapitel~\ref{chapter-elliptisch} haben wir für die Lösung einer
+elliptischen partiellen Differentialgleichung eine Formel angegeben,
+die $u(x)$ aus allen Randwerten $g$ und der Funktion $f$ in allen 
+inneren Punkten berechnet:
+\[
+u(x)
+=
+\int_\omega G(x,\xi)f(\xi)\,d\xi
++
+\int_{\partial\Omega} \operatorname{grad}_\xi G(x,\xi)g(\xi)\,d\xi.
+\]
+Eine Änderung von $g$ in irgend einem Punkt des Randes wird im allgemeinen
+Die Lösung $u(x)$ verändern, ebenso eine beliebige Änderung von $f$
+(Abbildung~\ref{einflussmenge1}, links).
+
+Im Gegensatz dazu wurde im Kapitel~\ref{chapter-geometrie} gezeigt, 
+dass die Lösung einer quasilinearen partiellen Differentialgleichung
+erster Ordnung im Punkt $x$ nur vom Wert der Anfangsbedingung im Anfangspunkt
+derjenigen Charakteristik abhängt, die durch $x$ verläuft
+(Abbildung~\ref{einflussmenge1}, rechts).
+
+Die Lösung einer parabolischen partiellen Differentialgleichungen 
+kann ebenfalls mit Hilfe einer Greenschen Funktion ausgedrückt werden.
+Die Formel~(\ref{green-parabolisch}) zeigt, dass die Werte $u(t,x)$
+im Allgemeinen von allen Randwerten $g(t',\xi)$ und $f(t',\xi)$
+mit $t'<t$ abhängt (Abbildung~\ref{einflussmenge2}, links).
+
+Die Charakteristischen Flächen (Kurven) beantworten die entsprechende
+Frage für eine hyperbolische partielle Differentialgleichung.
+Die charakteristischen Flächen (Kurven), die durch den Punkte $x$ verlaufen,
+definieren einen Kegel.
+Der Wert $u(x)$ der Lösung im Punkt $x$ hängt ab von den
+Funktionswerten der rechten Seite der Gleichung und den Randwerten
+in diesem Kegel
+(Abbildung~\ref{einflussmenge2}, rechts).
+
