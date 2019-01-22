@@ -1,0 +1,221 @@
+%
+% hyp.tex -- XXX
+%
+% (c) 2015 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\section{Hyperbolische Funktionen}
+\begin{figure}
+\centering
+\includegraphics{../common/images/hf-1.pdf}
+\caption{Graphen der Funktionen $x\mapsto\cosh x$ (blau)
+und $x\mapsto\sinh x$ (rot)
+\label{hyp:graphen}}
+\end{figure}
+Die hyperbolischen Funktionen sind durch
+\[
+\sinh x =\frac{e^x-e^{-x}}2
+\qquad\text{und}\qquad
+\cosh x = \frac{e^x+e^{-x}}2
+\]
+definiert.
+Abbildung~\ref{hyp:graphen} zeigt die Graphen der beiden Funktionen.
+Auf den ersten Blick haben diese Definitionen nichts mit den bekannten
+trigonometrischen Funktionen zu tun, die Namen sinus hyperbolicus für
+$\sinh$ und cosinus hyperbolicus für $\cosh$ scheinen ungerechtfertigt.
+
+\subsection{Komplexe Definition der trigonometrischen Funktionen}
+Aus der Euler-Formel
+\[
+e^{it}=\cos t+i\sin t
+\]
+lässt sich auch eine Definition der trigonometrischen Funktionen
+ableiten. Dazu wendet man die Euler-Formel auf $t$ und $-t$ an:
+\begin{align*}
+\cos t+i\sin t&=e^{it}\\
+\cos t-i\sin t&=e^{-it}
+\end{align*}
+Dieses Gleichungssystem kann man mit der Additionsmethode nach den
+Funktionen $\cos t$ und $\sin t$ auflösen. Man findet:
+\begin{align*}
+\cos t
+&=
+\frac{e^{it}+e^{-it}}2
+&
+\sin t
+&=
+\frac{e^{it}-e^{-it}}{2i}
+\end{align*}
+Die trigonometrischen Funktionen können also auf eine Art definiert werden,
+die der Definition der hyperbolischen Funktionen völlig analog ist.
+Der einzige Unterschied ist ein Faktor $i$ hie und da.
+Wir erwarten daher, dass die hyperbolischen Funktionen Eigenschaften
+haben, die den Eigenschaften der trigonometrischen Funktionen völlig
+analog sind.
+Mehr als ein verändertes Vorzeichen hie und da erwarten wir nicht.
+
+
+\subsection{Geometrie}
+Die trigonometrischen Funktionen entstanden aus dem Bedürfnis, 
+rechtwinklige Dreiecke berechnen zu können.
+Abstrahiert man diese bis auf Ähnlichkeit, geht es nur noch um rechtwinklige
+Dreiecke, die mindestens eine Seite der Länge $1$ haben.
+Diese kann man auf die gewohnte Art am Einheitskreis illustrieren.
+Die Beziehung 
+\[
+\sin^2t+\cos^2t=1
+\]
+für die trigonometrischen Funktionen erlauben dann, den Einheitskreis als
+\[
+t\mapsto (\cos t,\sin t)
+\]
+zu parametrisieren.
+
+\begin{figure}
+\centering
+\includegraphics{../common/images/hf-2.pdf}
+\caption{Die Kurve mit der Parameterdarstellung
+$t\mapsto (\cosh t, \sinh t)$ ist eine ``Einheits-Hyperbel'' (rot) mit 
+Asymptoten $y=\pm x$ (blau).
+\label{anhang:hyperbel}}
+\end{figure}
+Die hyperbolischen Funktionen parametrisieren in der Form
+\[
+t\mapsto (\cosh t, \sinh t)
+\]
+natürlich auch eine Kurve in der Ebene.
+Um herauszufinden, welcher Kurve das sein könnte, berechnen wir die 
+Quadrate der hyperbolischen Funktionen:
+\begin{align}
+\sinh^2 t&=\frac14(e^{2t}-2+e^{-2t}),
+\\
+\cosh^2 t&=\frac14(e^{2t}+2+e^{-2t}).
+\label{hyp:definition}
+\end{align}
+Sie stimmen bis auf den mittleren Term überein.
+Die Differenz ist 
+\[
+\cosh^2t - \sinh^2t=1,
+\]
+die hyperbolischen Funktionen $x=\cosh t$ und $y=\sinh t$
+beschreiben also eine Kurve mit der Gleichung
+\[
+x^2-y^2=1.
+\]
+Dies ist eine Hyperbel mit Asymptoten $y=\pm x$
+(Abbildung~\ref{anhang:hyperbel}).
+Damit ist die Bezeichnung als hyperbolische Funktionen gerechtfertigt.
+
+\subsection{Additionstheoreme}
+Gibt es auch ein Additionstheorem für die hyperbolischen Funktionen?
+Wenn die Analogie zu den trigonometrischen Funktionen durchführbar ist,
+dann müssten die Additionstheoreme ungefähr die Form
+\begin{align*}
+\sinh(a+b)&=\sinh a\cosh b + \cosh a\sinh b,\\
+\cosh(a+b)&=\cosh a\cosh b - \sinh a\sinh b
+\end{align*}
+haben, mit einem abweichenden Vorzeichen hie und da.
+Um dies nachzuprüfen, verwenden wir die Definition und rechnen
+\begin{align*}
+\sinh a\cosh b + \cosh b\sinh b
+&=
+\frac14(e^a-e^{-a})(e^b+e^{-b})
++
+\frac14(e^a+e^{-a})(e^b-e^{-b})
+\\
+&=\frac14(e^{a+b}+e^{a-b}-e^{-a+b}-e^{-a-b} + e^{a+b}-e^{a-b}+e^{-a+b}-e^{-a-b})
+\\
+&=
+\frac14(2e^{a+b}-2e^{-a-b})
+=
+\frac12(e^{a+b}-e^{-a-b})=\sinh(a+b),
+\\
+\cosh a\cosh b-\sinh a\sinh b
+&=
+\frac14(e^a+e^{-a})(e^b+e^{-b})
+-
+\frac14(e^a-e^{-a})(e^b-e^{-b})
+\\
+&=
+\frac14(e^{a+b}+e^{a-b}+e^{-a+b}+e^{-a-b})
+-
+\frac14(e^{a+b}-e^{a-b}-e^{-a+b}+e^{-a-b})
+\\
+&=
+\frac14(2e^{a-b}+2e^{-a+b})
+=
+\frac12(e^{a-b}+e^{-a+b})=\cosh(a-b)
+\end{align*}
+aus.
+Die Vermutung betreffend der korrekten Form der Additionstheoreme
+war also richtig im Falle von $\sinh(a+b)$, für $\cosh(a+b)$ muss
+allerdings ein Vorzeichen gewechselt werden.
+Die korrekte Form der Additionstheoreme ist
+\begin{align*}
+\sinh(a\pm b)&=\sinh a\cosh b \pm \cosh a\sinh b,\\
+\cosh(a\pm b)&=\cosh a\cosh b \pm \sinh a\sinh b.
+\end{align*}
+
+\subsection{Ableitungen}
+In der Analysis lernt man, die Ableitungen der trigonometrischen Funktionen
+aus den Additionstheoremen abzuleiten.
+Da die Additionstheoreme der hyperbolischen Funktionen mit den 
+Additionstheoremen bis auf ein Vorzeichen übereinstimmen, sollten
+auch die Ableitungsregeln bis auf ein Vorzeichen mit den Ableitungsregeln
+der trigonometrischen Funktionen übereinstimmen. 
+Natürlich können wir aus der Definition (\ref{hyp:definition}) die
+Ableitungen auch direkt berechnen:
+\begin{align*}
+\frac{d}{dx}\cosh x
+&=
+\frac12\frac{d}{dx}(e^x+e^{-x})
+=
+\frac12(e^x-e^{-x})=\sinh x
+\\
+\frac{d}{dx}\sinh x
+&=
+\frac12\frac{d}{dx}(e^x-e^{-x})
+=
+\frac12(e^x+e^{-x})=\cosh x
+\end{align*}
+Die Ableitungen sind also sogar noch ein bisschen einfacher, da sie sich
+schon ab der zweiten Ableitung wiederholen.
+Die zweiten Ableitungen sind bereits wieder die ursprünglichen Funktionen
+\begin{align*}
+\sinh''x&=\sinh x
+&
+\cosh''x&=\cosh x.
+\end{align*}
+
+\subsection{Werte für Argument 0}
+Die Werte der trigonometrischen Funktionen und ihrer ersten Ableitungen
+im Nullpunkt und die entsprechenden Werte für die hyperbolischen
+Funktionen sind ebenfalls völlig analog:
+\begin{center}
+\begin{tabular}{|l|>{$}c<{$}>{$}c<{$}|>{$}c<{$}>{$}c<{$}|}
+\hline
+Wert für $x=0$ von&\sin x&\cos x&\sinh x&\cosh x\\
+\hline
+Funktion           &  0   &  1   &   0   &   1   \\
+Ableitung          &  1   &  0   &   1   &   0   \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Lösung von Differentialgleichungen}
+Die Werte für Argument $0$ sind genau die Eigenschaften,
+welche die Erfüllung der Anfangsbedingung
+einer Differentialgleichung so einfach gemacht haben.
+Die Differentialgleichung 
+\[
+y''-k^2y=0
+\]
+mit Anfangsbedingungen
+\[
+y(0)=y_0\qquad\text{und}\qquad y'(0)=v_0
+\]
+hat die Lösung
+\[
+y(x)=y_0\cosh kx +\frac{v_0}{k}\sinh kx,
+\]
+in völliger Analogie zu (\ref{hyp:loesung}).
+
