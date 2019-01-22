@@ -1,26 +1,27 @@
 %
-% singularities.tex -- -- XXX
+% singularities.tex -- 
 %
-% (c) 2008 Prof Dr Andreas Mueller
+% (c) 2019 Prof Dr Andreas Mueller
 %
-\section{Entstehung von Singularitäten}
-Die Lösung einer partiellen Differentialgleichung hängt entscheidend
-vom Verlauf der Charakteristiken ab. Treffen sich zwei Charakteristiken
-in einem Punkt, ist die Lösung nicht eindeutig bestimmt. Die Lösung
-ist also nur solange bestimmt, als sich die Charakteristiken nicht überschneiden.
-Andernfalls treten Singularitäten in der Lösung auf.
+\section{Development of singularities}
+The solution of a partial differential equation depends crucially
+on the geometry of the characteristics.
+If the projections onto the $x$-$y$-plane of two characteristics 
+meet, the solution can no longer be unique.
+The solution is only unique if characteristics don't intersect.
+Otherwise singularities will develop.
 
-Als Beispiel betrachten wir die nichtlineare Gleichung 
+As an example we consider the nonlinear equation of Burgers
 \begin{equation}
 \frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}=0.
 \label{wellenichtlinear}
 \end{equation}
-mit der Anfangsbedingung 
+with initial conditions
 \[
 u(0,x_0)=g(x_0)=e^{-4(x_0-\frac12)^2}.
 \]
-Nach der Methode der Charakterisitiken brauchen wir eine Lösungskurve
-des Vektorfeldes
+According to the method of characteristics, we need solution curves for the
+vector field
 \[
 \begin{pmatrix}
 1\\
@@ -28,7 +29,9 @@ u\\
 0
 \end{pmatrix}
 \]
-durch den Punkt $(0,x_0, z_0)$, also eine Lösung des Differentialgleichungssystems
+through the point
+$(0,x_0, z_0)$,
+i.~e. a solution onf the system of differential equations
 \[
 \left.
 \begin{aligned}
@@ -50,8 +53,9 @@ x(\tau)&=z(0)\tau +x(0)
 \end{aligned}
 \right.
 \]
-Der Parameter $\tau$ hat also die Bedeutung von $t$.
-Die Lösungsfläche ist somit
+We read off that the parameter $\tau$ 
+is identical to $t$.
+The solution surface thus has the parametrization
 \[
 (t,x_0)\mapsto
 \begin{pmatrix}
@@ -60,25 +64,25 @@ g(x_0)t+x_0\\
 g(x_0)
 \end{pmatrix}.
 \]
-Die Charakteristiken in der $x$-$y$-Ebene sind Geraden mit einer
-Steigung, die von $g(x_0)$ abhängt. Je grösser $g(x_0)$ ist, desto
-``schneller'' bewegt sich die Integralkurve nach ``rechts''. Grosse
-Werte der Anfangsbedingung können also die kleinen Wert überholen,
-dabei entsteht eine Singularität.
+Projections of characteristics into the $x$-$t$-plane are straight
+lines with slope depending on $g(x_0)$.
+The larger $g(x_0)$, the more the integral curve veers off to the right.
+Large values of the initial condition will thus overtake the smaller
+values, creating jump singularities.
 
-Zur Zeit $t$ hat die Lösungsfunktion die Parameterdarstellung
+At tiem t$t$, the solution has parametrization
 \[
-x_0\mapsto (g(x_0)t+x_0,g(x_0))
+x_0\mapsto (g(x_0)t+x_0,g(x_0)).
 \]
-die Graphen in Abbildung~\ref{g} zeigen, wie sich die Lösungskurve
-mit zunehmender Zeit entwickelt.
-Es ist offensichtlich, dass für genügend grosse Zeit $t$ die
-Lösungsfläche nicht mehr als Graph einer Funktion $u(t,x)$ derstellbar ist.
+The graphs in figure~\ref{g} show how the solution develops over time.
+It becomes obvious that for sufficiently large time $t$ the solution
+surface can not longer be the graph of a function $u(t,x)$.
+
 \begin{figure}
 \begin{center}
 \includegraphics[width=\hsize]{../common/graphics/welle.jpg}
 \end{center}
-\caption{Lösung der Differentialgleichung (\ref{wellenichtlinear}) mit
-entstehender Singularität\label{g}}
+\caption{Solution of the partial differential equation
+\eqref{wellenichtlinear} developing a singularity \label{g}}
 \end{figure}
 

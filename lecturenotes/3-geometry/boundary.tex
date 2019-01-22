@@ -1,107 +1,119 @@
 %
-% boundry.tex  -- XXX
+% boundry.tex  -- 
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\section{Randbedingungen}
-Die Methode der Charakterisitiken erlaubt uns herauszufinden, auf welchen
-Teilen des Randes die Werte einer Lösunge einer partiellen
-Differentialgleichung vorgegeben werden müssen.
-Die Lösungsfläche $u(x,y)$ besteht ja aus Charatkeristiken, sie ist also
-genau dann vollständig bestimmt, wenn jede Charakteristik durch mindestens 
-einen vorgegebenen Randpunkt verläuft.
+\section{Boundary conditions}
+The method of characteristics allows us to find out on which parts of the
+boundary we have to specify boundary conditions to make the solution
+unique.
+The solution surface corresponding to $u(x,y)$ consists of characteristics
+so it is uniquely determined if exactly one characteristic goes through
+each point.
 
-Für die Differentialgleichung
+For the differential equation
 \begin{equation}
 \frac{\partial u}{\partial x}+2\frac{\partial u}{\partial y}=3
 \label{geometrie:knickbeispiel}
 \end{equation}
-hatten wir die Charakterisiken 
+we have found the characteristics
 \[
-t\mapsto\begin{pmatrix}x_0\\y_0\\z_0\end{pmatrix}+t\begin{pmatrix}1\\2\\3\end{pmatrix}
+t\mapsto\begin{pmatrix}x_0\\y_0\\z_0\end{pmatrix}+t\begin{pmatrix}1\\2\\3\end{pmatrix}.
 \]
-gefunden. Eine Lösungsfunktion $u(x,y)$ muss von Charakteristiken
-überdeckt werden. 
-Die Projektionen dieser Kurven in die $x$-$y$-Ebene sind Geraden
-mit Steigung $2$. Der Rand des Gebietes $\Omega$, in dem die Gleichung gelöst
-werden soll, muss also jede Gerade mit Steigung $2$ höchstens einmal
-schneiden.
+The graph of the solution function $u(x,y)$ must be covered by characteristics.
+The projections of these curves into the $x$-$y$-plane are straight lines
+with slope $2$.
+The boundary of the domain $\Omega$, in which the equation needs to be
+solved, thus must intersect each straight line with slope $2$ exactly once.
 
-Das Gebiet $\{(x,y)\in\mathbb R^2\,|\, x >0\}$  aus \ref{konstantekoeff}
-hat die $x$-Achse als Rand, und diese schneidet jede Gerade mit Steigung
-$2$ genau einmal.
+The domain
+$\{(x,y)\in\mathbb R^2\,|\, x >0\}$  from \ref{konstantekoeff}
+has the $x$-axis as boundary which intersects every straight line with
+slope exactly once.
 
-Interessanter wird die Diskussion jedoch für das Gebiet
-$\Omega=\{(x,y)\,|\,0<x,y<1\}$. Die Abbildungen \ref{geometrie:charrand1}
-bis \ref{geometrie:charrand3} zeigen verschiedene Möglichkeiten:
+The domain $\Omega=\{(x,y)\,|\,0<x,y<1\}$ is more interesting.
+Figures \ref{geometrie:charrand1}
+to \ref{geometrie:charrand3}
+show various possibilities:
 \begin{enumerate}
 \item
-In Abbildung~\ref{geometrie:charrand1} sind Randwerte auf dem linken
-und rechten Rand vorgegeben. Offenbar reichen diese Randwerte nicht, um
-die Funktionswerte überall im Gebiet eindeutig zu bestimmen, es bleibt
-ein Teilgebiet, in dem die Lösungsfunktion nicht festgelegt ist.
+In figure~\ref{geometrie:charrand1}
+boundary values are prescribed on the left and right boundary.
+These boundary values are not sufficient to determine the solution
+everywhere in the domain.
+There is a part not covered by characteristics where the solution
+is not fixed.
 \item
-In Abbildung~\ref{geometrie:charrand2}
-sind die Randwerte am oberen und unteren Rand vorgegeben.
-In diesem Fall sind die Randwerte überbestimmt, eine Lösung ist
-nur möglich, wenn die Werte auf der linken Hälfte des unteren
-Randes mit den Werten auf der rechten Hälfte des oberen Randes
-kompatibel sind.
+In figure~\ref{geometrie:charrand2}
+boundary values are given on the top and bottom boundaries of the
+square.
+A solution is only possible if the values solution emanating from
+the left half of the bottom boundary coincides with the solution
+emanating from the right half of the top boundary.
+If the boundary values on these parts are not compatible, no solution
+exists.
 \item
-In Abbildung~\ref{geometrie:charrand3}
-sind die Randewerte am linken und unteren Rand vorgegeben.
-Damit ist die Funktion eindeutig bestimmt, trotzdem
-muss damit noch nicht eine Lösung der Differentialgleichung
-gefunden sein.
-Es ist nämlich nicht unbedingt garantiert, dass die zusammengestetze
-Funktion 
-auf der von $(0,0)$ ausgehenden Charakteristik differenzierbar ist.
+In figure~\ref{geometrie:charrand3}
+the boundary values are specified on the left and bottom side
+of the square.
+This fixes the solution function uniquely.
+Nevertheless it is not entirely clear that we have found a solution,
+because it is still possible that the combined function is not
+differentiable on the characteristic through the lower left
+corner of the square.
 \end{enumerate}
+The last situation is very common, the solution we find here is
+differentiable outside of a set of measure zero.
+This is called a {\em weak} solution of the differential equation.
 
 \begin{figure}
 \begin{center}
 \includegraphics{../common/images/randwerte-2.pdf}
 \end{center}
-\caption{Randwerte am linken und rechten Rand vorgegeben: im hellgrünen
-Bereich sind die Funktionswerte nicht bestimmt \label{geometrie:charrand1}}
+\caption{Boundary values on the left and right side: solution
+not determined in the light green portion of the domain.
+\label{geometrie:charrand1}}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics{../common/images/randwerte-3.pdf}
 \end{center}
-\caption{Randwerte am unteren und oberen Rand vorgegeben: im hellgrünen
-Bereich sind die Funktionswerte überbestimmt \label{geometrie:charrand2}}
+\caption{Boundary values on the top and bottom side of the square:
+solution overdetermined in the light green portioin of the domain
+\label{geometrie:charrand2}}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics{../common/images/randwerte-4.pdf}
 \end{center}
-\caption{Randwerte am linken und unteren Rand vorgegeben: die Funktion
-ist zwar eindeutig bestimmt, aber die Differenzierbarkeit auf
-der von $(0,0)$ ausgehenden Charakteristik (hellgrün) ist nicht garantiert.
+\caption{Boundary values on the left and bottom sides of the square:
+solution well defined but differentiability on the light green
+characteristic emanating from $(0,0)$ is not guaranteed.
 \label{geometrie:charrand3}}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=\hsize]{../common/3d/knick.jpg}
-\caption{Lösung der Differentialgleichung~(\ref{geometrie:knickbeispiel}),
-mit Randwerten entlang des linken und unteren Randes (vergleiche
-Abbildung~\ref{geometrie:charrand3}) ist entlang einer Charakteristik
-nicht differenzierbar (vertikale Achse mit dem Faktor $0.4$ skaliert).
+\caption{The solution of the differential
+equation~(\ref{geometrie:knickbeispiel}),
+with boundary values along the left and bottom sides of the square
+(see also figure~\ref{geometrie:charrand3})
+is not differentiable along the characteristic through $(0,0)$
+(vertical axis scaled by a factor $0.4$).
 \label{geometrie:knick}}
 \end{figure}
 
-Als Illustration für den letzten Fall betrachte man die Randwertvorgabe
+As an illustration of the last case consider the boundary values
 \begin{align*}
 u(x_0,0)&=0,\\
 u(0,y_0)&=y_0.
 \end{align*}
-Jedes Randstück legt die Lösung in einem Teil des Einheitsquadrates
-fest, die man durch Anwendung der Methode der Charakteristiken erhalten
-kann. Die vom unteren Rand ausgehenden Charakteristiken sind
+Each side fixes part of the solution in the unit square, we can get 
+explicit formulas using the method of characteristics.
+The characteristics starting from the bottom side are
 \[
 \left.
 \begin{aligned}
@@ -118,7 +130,7 @@ u&=\frac32y
 \end{aligned}
 \right.
 \]
-Die vom linken Rand ausgehenden Charakteristiken sind 
+The characteristics from the left side of the square are
 \[
 \left.
 \begin{aligned}
@@ -135,17 +147,16 @@ u&=y+x
 \end{aligned}
 \right.
 \]
-Die Lösungsfunktion ist also
+Thus the solution function is
 \[
 u(x,y)=\begin{cases}
 \frac32y&\qquad y<2x\\
 x+y&\qquad y>2x,
 \end{cases}
 \]
-wie in Abbildung~\ref{geometrie:knick} dargestellt.
-Für $y=2x$ stimmen die beiden Terme zwar überein, die Lösungsfunktion
-ist also sicher in ganz $\Omega$ stetig.
-Aber die
-Funktion $x\mapsto u(x,y)$ ist hat Steigung $1$ für $y>2x$ und
-Steigung 0 für $y<2x$, ist also für $y=2x$ nicht differenzierbar.
+as displayed in figure~\ref{geometrie:knick}.
+For $y=2x$, both terms coincide, so the solution function is continuous
+in all of $\Omega$.
+However, the partial function $x\mapsto u(x,y)$ has slope $1$
+for $y>2x$ and slope $0$ for $y<2x$, so it is not differentiable at $y=2x$.
 

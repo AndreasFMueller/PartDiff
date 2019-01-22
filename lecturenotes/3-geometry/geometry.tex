@@ -1,67 +1,50 @@
 %
-% geometrie.tex %% Beispiele partieller Differentialgleichungen -- XXX
+% geometry.tex -- 
 %
-% (c) 2008 Prof Dr Andreas Mueller
+% (c) 2019 Prof Dr Andreas Mueller
 %
-\chapter{Geometrie der partiellen Differentialgleichungen erster Ordnung\label{chapter-geometrie}}
-\lhead{Geometrie der Lösungen}
+\chapter{Geometry of partial differential equations of first order\label{chapter-geometrie}}
+\lhead{Geometry of solutions}
 \begin{figure}
 \begin{center}
 \includegraphics[width=\hsize]{../common/images/ode-1.pdf}
 \end{center}
-\caption{Richtungsfeld der gewöhnlichen Differentialgleichung
+\caption{direction field of the ordinary differential equation 
 $y'=-\frac16y+e^{-\frac{x}6}\cos x$ \label{geometrie:ode}}
 \end{figure}
-Bei gewöhnlichen Differentialgleichungen kann man sich ein grobes
-Bild des Verlaufs der Lösungen dadurch verschaffen, dass man
-die von der Differentialgleichung vorgegeben Steigung der Lösungskurve
-in jedem Punkt als Richtungsfeld aufzeichnet (Abbildung~\ref{geometrie:ode}).
-Die gesuchte Lösung hat als Graphen eine Kurve, die in jedem Ihrer Punkte eine
-Tangente hat, die mit dem gegebenen Richtungsfeld übereinstimmt.
+The direction field of an ordinary differential equation is a very
+convenient way to build an intuition about the solutions of an equation
+(figure~\ref{geometrie:ode}).
+The solution curve is tangent to directions specified by the differential
+equation.
 
-Die Lösung einer
-partiellen Differentialgleichung ist eine Funktion von mehreren Variablen,
-bei zwei Variablen können wir den Graphen dieser Funktion als Fläche
-über der $x$-$y$-Ebene visualisieren. Wie lässt sich der Begriff der
-Steigung übersetzen?
 
-\begin{figure}
-\centering
-\begin{tabular}{cc}
-\includegraphics[width=0.6\hsize]{../common/3d/surface.jpg}&%
-\includegraphics[width=0.35\hsize]{../common/images/kurven-1.pdf}
-\end{tabular}
-\caption{Die Fläche, die als Graph $z=f(x,y)$ der Funktion $f(x,y)=xy$ 
-dargestellt werden kann, kann auch als Vereinigung der roten oder grünen
-Kurvenscharen beschreiben werden.
-Die Fläche kann auch mit der Parameterdarstellung
-\eqref{quasliniear:flaechebeispiel}
-dargestellt werden.
-Die grünen Kurven sind die Koordinatenlinien dieser Parameterdarstellung
-mit $s=\operatorname{const}$,
-die roten Kurven sind Koordinatenlinien mit $t=\operatorname{const}$.
-Links im Bild die Darstellung als Fläche, rechts die Koordinatenlinien
-${\color{red}t}=\operatorname{const}$
-und
-${\color{green}s}=\operatorname{const}$
-im Grundriss.
-\label{quasilinear:flaechenalskurven}
-}
-\end{figure}
+The solution of partial differential equation with two independent variables
+can be visualized as a surface.
+Is there concept similar to the direction field of a differential equation
+that helps us imagine the solutions?
+
+The first idea that comes to mind is a field of tangent planes.
+Such a field would fix the first derivatives individually.
+What a partial differential equation does, however, is to only fix a
+combination of first derivatives.
+We have to look for a more complicated answer.
 
 \input{3-geometry/curves.tex}
 \input{3-geometry/singularities.tex}
 \input{3-geometry/boundary.tex}
 
 
-\section{Zusammenfassung: Das Wichtigste in Kürze}
+\section{Summary}
 \begin{enumerate}
-\item Die Verallgemeinerung des ``Richtungsfeldes'' aus der Theorie der
-gewöhnlichen Differentialgleichungen ist ein Feld von Ebenenbüscheln.
-Der Graph Lösungsfunktion muss in jedem Punkt eine Tangentialebene aus
-dem Ebenenbüschel haben.
-\item Die Ebenenbüscheln haben einen gemeinsamen Vektor, den ``roten''
-Vektor
+\item
+The generalization of direction field from the theory of ordinary
+differential equations is a sheaf of planes.
+The graph of the solution function must have a tangent plane in the 
+sheaf for every point.
+\item
+The planes of the sheaf have a common vector, called the axis of the sheaf,
+or informally in these notes the ``red'' vector.
 \[
 \begin{pmatrix}
 a(x,y,u)\\
@@ -69,17 +52,21 @@ b(x,y,u)\\
 c(x,y,u)
 \end{pmatrix}.
 \]
-Integralkurven dieses Vektorfeldes heissen Charakteristiken (``rote'' Kurven).
-\item Lösungsflächen einer quasilinearen partiellen Differentialgleichung
-werden von Charakteristiken überdeckt.
-\item Die Lösungsfläche einer quasilinearen Differntialgleichung besteht aus
-den Charakteristiken, die durch die Anfangskurve
-(``grüne'' Kurve) verlaufen.
-Um die Lösungsfunktion zu finden, eliminierte man den Parameter der
-Anfangskurve und der Charakteristiken.
-\item Charakteristiken sind diejenigen Kurven, die als Anfangskurven
-nicht geeignet sind.
-\item Mit Hilfe von Charakteristiken kann man häufig entscheiden,
-welche Randwertvorgaben für eine quasilineare partielle Differentialgleichung
-nötig sind.
+Integral curves of this vector field are called characteristics
+or informally ``red'' curves.
+\item
+The solution surface of a quasilinear partial differential equation
+is covered by characteristics that all go through the initial curve
+(informally the ``green'' curve).
+\item
+To find the solution function, eliminate the parameter of the initial
+curve and the of the characteristics.
+\item
+Characteristics are those curves that are not suitable as initial
+curves.
+This characterization will be comes useful in
+chapter~\ref{chapter-hyperbolisch}.
+\item
+With the help of characteristics it is possible to decide which boundary
+conditions are necessary in order for a problem to be well posed.
 \end{enumerate}
