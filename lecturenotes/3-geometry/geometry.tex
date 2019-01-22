@@ -1,0 +1,85 @@
+%
+% geometrie.tex %% Beispiele partieller Differentialgleichungen -- XXX
+%
+% (c) 2008 Prof Dr Andreas Mueller
+%
+\chapter{Geometrie der partiellen Differentialgleichungen erster Ordnung\label{chapter-geometrie}}
+\lhead{Geometrie der Lösungen}
+\begin{figure}
+\begin{center}
+\includegraphics[width=\hsize]{../common/images/ode-1.pdf}
+\end{center}
+\caption{Richtungsfeld der gewöhnlichen Differentialgleichung
+$y'=-\frac16y+e^{-\frac{x}6}\cos x$ \label{geometrie:ode}}
+\end{figure}
+Bei gewöhnlichen Differentialgleichungen kann man sich ein grobes
+Bild des Verlaufs der Lösungen dadurch verschaffen, dass man
+die von der Differentialgleichung vorgegeben Steigung der Lösungskurve
+in jedem Punkt als Richtungsfeld aufzeichnet (Abbildung~\ref{geometrie:ode}).
+Die gesuchte Lösung hat als Graphen eine Kurve, die in jedem Ihrer Punkte eine
+Tangente hat, die mit dem gegebenen Richtungsfeld übereinstimmt.
+
+Die Lösung einer
+partiellen Differentialgleichung ist eine Funktion von mehreren Variablen,
+bei zwei Variablen können wir den Graphen dieser Funktion als Fläche
+über der $x$-$y$-Ebene visualisieren. Wie lässt sich der Begriff der
+Steigung übersetzen?
+
+\begin{figure}
+\centering
+\begin{tabular}{cc}
+\includegraphics[width=0.6\hsize]{../common/3d/surface.jpg}&%
+\includegraphics[width=0.35\hsize]{../common/images/kurven-1.pdf}
+\end{tabular}
+\caption{Die Fläche, die als Graph $z=f(x,y)$ der Funktion $f(x,y)=xy$ 
+dargestellt werden kann, kann auch als Vereinigung der roten oder grünen
+Kurvenscharen beschreiben werden.
+Die Fläche kann auch mit der Parameterdarstellung
+\eqref{quasliniear:flaechebeispiel}
+dargestellt werden.
+Die grünen Kurven sind die Koordinatenlinien dieser Parameterdarstellung
+mit $s=\operatorname{const}$,
+die roten Kurven sind Koordinatenlinien mit $t=\operatorname{const}$.
+Links im Bild die Darstellung als Fläche, rechts die Koordinatenlinien
+${\color{red}t}=\operatorname{const}$
+und
+${\color{green}s}=\operatorname{const}$
+im Grundriss.
+\label{quasilinear:flaechenalskurven}
+}
+\end{figure}
+
+\input{3-geometry/curves.tex}
+\input{3-geometry/singularities.tex}
+\input{3-geometry/boundary.tex}
+
+
+\section{Zusammenfassung: Das Wichtigste in Kürze}
+\begin{enumerate}
+\item Die Verallgemeinerung des ``Richtungsfeldes'' aus der Theorie der
+gewöhnlichen Differentialgleichungen ist ein Feld von Ebenenbüscheln.
+Der Graph Lösungsfunktion muss in jedem Punkt eine Tangentialebene aus
+dem Ebenenbüschel haben.
+\item Die Ebenenbüscheln haben einen gemeinsamen Vektor, den ``roten''
+Vektor
+\[
+\begin{pmatrix}
+a(x,y,u)\\
+b(x,y,u)\\
+c(x,y,u)
+\end{pmatrix}.
+\]
+Integralkurven dieses Vektorfeldes heissen Charakteristiken (``rote'' Kurven).
+\item Lösungsflächen einer quasilinearen partiellen Differentialgleichung
+werden von Charakteristiken überdeckt.
+\item Die Lösungsfläche einer quasilinearen Differntialgleichung besteht aus
+den Charakteristiken, die durch die Anfangskurve
+(``grüne'' Kurve) verlaufen.
+Um die Lösungsfunktion zu finden, eliminierte man den Parameter der
+Anfangskurve und der Charakteristiken.
+\item Charakteristiken sind diejenigen Kurven, die als Anfangskurven
+nicht geeignet sind.
+\item Mit Hilfe von Charakteristiken kann man häufig entscheiden,
+welche Randwertvorgaben für eine quasilineare partielle Differentialgleichung
+nötig sind.
+\end{enumerate}

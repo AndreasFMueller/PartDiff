@@ -1,0 +1,151 @@
+%
+% boundry.tex  -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Randbedingungen}
+Die Methode der Charakterisitiken erlaubt uns herauszufinden, auf welchen
+Teilen des Randes die Werte einer Lösunge einer partiellen
+Differentialgleichung vorgegeben werden müssen.
+Die Lösungsfläche $u(x,y)$ besteht ja aus Charatkeristiken, sie ist also
+genau dann vollständig bestimmt, wenn jede Charakteristik durch mindestens 
+einen vorgegebenen Randpunkt verläuft.
+
+Für die Differentialgleichung
+\begin{equation}
+\frac{\partial u}{\partial x}+2\frac{\partial u}{\partial y}=3
+\label{geometrie:knickbeispiel}
+\end{equation}
+hatten wir die Charakterisiken 
+\[
+t\mapsto\begin{pmatrix}x_0\\y_0\\z_0\end{pmatrix}+t\begin{pmatrix}1\\2\\3\end{pmatrix}
+\]
+gefunden. Eine Lösungsfunktion $u(x,y)$ muss von Charakteristiken
+überdeckt werden. 
+Die Projektionen dieser Kurven in die $x$-$y$-Ebene sind Geraden
+mit Steigung $2$. Der Rand des Gebietes $\Omega$, in dem die Gleichung gelöst
+werden soll, muss also jede Gerade mit Steigung $2$ höchstens einmal
+schneiden.
+
+Das Gebiet $\{(x,y)\in\mathbb R^2\,|\, x >0\}$  aus \ref{konstantekoeff}
+hat die $x$-Achse als Rand, und diese schneidet jede Gerade mit Steigung
+$2$ genau einmal.
+
+Interessanter wird die Diskussion jedoch für das Gebiet
+$\Omega=\{(x,y)\,|\,0<x,y<1\}$. Die Abbildungen \ref{geometrie:charrand1}
+bis \ref{geometrie:charrand3} zeigen verschiedene Möglichkeiten:
+\begin{enumerate}
+\item
+In Abbildung~\ref{geometrie:charrand1} sind Randwerte auf dem linken
+und rechten Rand vorgegeben. Offenbar reichen diese Randwerte nicht, um
+die Funktionswerte überall im Gebiet eindeutig zu bestimmen, es bleibt
+ein Teilgebiet, in dem die Lösungsfunktion nicht festgelegt ist.
+\item
+In Abbildung~\ref{geometrie:charrand2}
+sind die Randwerte am oberen und unteren Rand vorgegeben.
+In diesem Fall sind die Randwerte überbestimmt, eine Lösung ist
+nur möglich, wenn die Werte auf der linken Hälfte des unteren
+Randes mit den Werten auf der rechten Hälfte des oberen Randes
+kompatibel sind.
+\item
+In Abbildung~\ref{geometrie:charrand3}
+sind die Randewerte am linken und unteren Rand vorgegeben.
+Damit ist die Funktion eindeutig bestimmt, trotzdem
+muss damit noch nicht eine Lösung der Differentialgleichung
+gefunden sein.
+Es ist nämlich nicht unbedingt garantiert, dass die zusammengestetze
+Funktion 
+auf der von $(0,0)$ ausgehenden Charakteristik differenzierbar ist.
+\end{enumerate}
+
+\begin{figure}
+\begin{center}
+\includegraphics{../common/images/randwerte-2.pdf}
+\end{center}
+\caption{Randwerte am linken und rechten Rand vorgegeben: im hellgrünen
+Bereich sind die Funktionswerte nicht bestimmt \label{geometrie:charrand1}}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics{../common/images/randwerte-3.pdf}
+\end{center}
+\caption{Randwerte am unteren und oberen Rand vorgegeben: im hellgrünen
+Bereich sind die Funktionswerte überbestimmt \label{geometrie:charrand2}}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics{../common/images/randwerte-4.pdf}
+\end{center}
+\caption{Randwerte am linken und unteren Rand vorgegeben: die Funktion
+ist zwar eindeutig bestimmt, aber die Differenzierbarkeit auf
+der von $(0,0)$ ausgehenden Charakteristik (hellgrün) ist nicht garantiert.
+\label{geometrie:charrand3}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{../common/3d/knick.jpg}
+\caption{Lösung der Differentialgleichung~(\ref{geometrie:knickbeispiel}),
+mit Randwerten entlang des linken und unteren Randes (vergleiche
+Abbildung~\ref{geometrie:charrand3}) ist entlang einer Charakteristik
+nicht differenzierbar (vertikale Achse mit dem Faktor $0.4$ skaliert).
+\label{geometrie:knick}}
+\end{figure}
+
+Als Illustration für den letzten Fall betrachte man die Randwertvorgabe
+\begin{align*}
+u(x_0,0)&=0,\\
+u(0,y_0)&=y_0.
+\end{align*}
+Jedes Randstück legt die Lösung in einem Teil des Einheitsquadrates
+fest, die man durch Anwendung der Methode der Charakteristiken erhalten
+kann. Die vom unteren Rand ausgehenden Charakteristiken sind
+\[
+\left.
+\begin{aligned}
+x&=x_0+t\\
+y&=2t\\
+u&=3t
+\end{aligned}
+\right\}
+\qquad\Rightarrow\qquad
+\left\{
+\begin{aligned}
+t&=\frac12y\\
+u&=\frac32y
+\end{aligned}
+\right.
+\]
+Die vom linken Rand ausgehenden Charakteristiken sind 
+\[
+\left.
+\begin{aligned}
+x&=t\\
+y&=y_0+2t\\
+u&=y_0+3t
+\end{aligned}
+\right\}
+\qquad\Rightarrow\qquad
+\left\{
+\begin{aligned}
+y_0&=y-2x\\
+u&=y+x
+\end{aligned}
+\right.
+\]
+Die Lösungsfunktion ist also
+\[
+u(x,y)=\begin{cases}
+\frac32y&\qquad y<2x\\
+x+y&\qquad y>2x,
+\end{cases}
+\]
+wie in Abbildung~\ref{geometrie:knick} dargestellt.
+Für $y=2x$ stimmen die beiden Terme zwar überein, die Lösungsfunktion
+ist also sicher in ganz $\Omega$ stetig.
+Aber die
+Funktion $x\mapsto u(x,y)$ ist hat Steigung $1$ für $y>2x$ und
+Steigung 0 für $y<2x$, ist also für $y=2x$ nicht differenzierbar.
+

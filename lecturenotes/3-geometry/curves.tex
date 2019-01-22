@@ -1,0 +1,722 @@
+%
+% geometrie.tex %% Beispiele partieller Differentialgleichungen -- XXX
+%
+% (c) 2008 Prof Dr Andreas Mueller
+%
+
+\section{Kurven auf der Lösungsfläche}
+\rhead{Kurven auf der Lösungsfläche}
+Die Lösungsfläche ist unausweichlich ein zweidimensionales
+Objekt, dem nur mit partiellen Ableitungen beizukommen ist.
+Die einzige Möglichkeit, das Problem auf eine gewöhnliche
+Differntialgleichung zu reduzieren besteht darin, die Lösungsfläche
+``kurvenweise'' zu finden, sie also eine Schar von Kurven
+zu betrachten.
+
+\subsubsection{Lösungsfläche als Kurvenschar}
+Der Graph der Funktion $u(x,y)$ kann auf zwei Arten als Schar von
+Kurven betrachtet werden.
+Einerseits als durch die Werte $y$
+parametrisierte Schar von Kurven $x\mapsto u(x,y)$, andererseits
+also durch Werte $x$ parametrisierte Schar von Kurven $y\mapsto u(x,y)$.
+Allerdings könnte auch jede andere Parametrisierung der Fläche
+zu so einer Zerlegung Anlass geben. Die Parametrisierung
+\begin{equation}
+(s,t)\mapsto \vec x(s,t)
+=
+\begin{pmatrix}x(s,t)\\y(s,t)\\z(s,t)\end{pmatrix}
+\label{quasilinear:kurvenschar}
+\end{equation}
+liefert die durch $s$ parametrisierte Schar $t\mapsto \vec x(s,t)$
+von Kurven und die durch $t$ parametrisierte Schar $s\mapsto\vec x(s,t)$.
+
+In Abbildung~\ref{quasilinear:flaechenalskurven} ist der Graph der
+Funktion $u(x,y)=xy$ dargestellt.
+Man kann ihn auch mit den Parametern $t$ und $s$ gemäss
+\begin{equation}
+(t,s)
+\mapsto
+\begin{pmatrix}x\\y\\z\end{pmatrix}
+=
+\begin{pmatrix}t\sqrt{s}\\\frac1t\sqrt{s}\\s\end{pmatrix}
+\label{quasliniear:flaechebeispiel}
+\end{equation}
+parametrisieren.
+Tatsächlich gilt $xy = t\sqrt{s}\frac1t\sqrt{s}=s=z$.
+Die resultierenden Kurvenscharen sind in
+Abbildung~\ref{quasilinear:flaechenalskurven} als rote und grüne Kurven
+dargestellt.
+
+Umgekehrt beschreibt eine Schar von Kurven eine Fläche, die sich
+in vielen Fällen wieder als Funktion $u(x,y)$ schreiben lassen wird.
+Man muss dazu nur für jeden Punkt $(x,y)$ die Gleichungen
+\begin{align*}
+x(s(x,y),t(x,y))&=x\\
+y(s(x,y),t(x,y))&=y
+\end{align*}
+lösen.
+Die so bestimmten Funktionen $s(x,y)$ und $t(x,y)$ setzt man dann in
+die Funktion $z(x,y)$ ein, und erhält die
+Lösungsfunktion
+\[
+u(x,y)=z(s(x,y), t(x,y)).
+\]
+Das Ziel ist also, eine Schar (\ref{quasilinear:kurvenschar})
+von Kurven zu finden, die alle auf der Lösungsfläche liegen.
+
+\begin{beispiel}
+\begin{figure}
+\centering
+\includegraphics[width=0.8\hsize]{../common/3d/kugel.jpg}
+\caption{Darstellung der Halbkugel als Vereinigung zweier Kurvenscharen
+\label{quasilinear:kugel}}
+\end{figure}
+Die Parametrisierung
+\[
+(\vartheta,\varphi)\mapsto
+\begin{pmatrix}
+\sin\vartheta\cos\varphi\\
+\sin\vartheta\sin\varphi\\
+\cos\vartheta
+\end{pmatrix}
+\]
+beschreibt für $0\le \vartheta\le \frac{\pi}2$
+und $0\le\varphi\le 2\pi$ eine Halbkugel (Abbildung~\ref{quasilinear:kugel}).
+
+Die Kurvenscharen
+\[
+\vartheta\mapsto
+\begin{pmatrix}
+\sin\vartheta\cos\varphi\\
+\sin\vartheta\sin\varphi\\
+\cos\vartheta
+\end{pmatrix}
+\qquad
+\text{und}
+\qquad
+\varphi\mapsto
+\begin{pmatrix}
+\sin\vartheta\cos\varphi\\
+\sin\vartheta\sin\varphi\\
+\cos\vartheta
+\end{pmatrix}
+\]
+sind die durch $\varphi$, die geographische Länge, parametrisierten
+Längen- und die durch $\vartheta$, die geographische Breite
+parametrisierten Breitenkreise auf der Kugeloberfläche.
+
+Die Gleichungen
+\begin{align*}
+x&=\sin\vartheta\cos\varphi\\
+y&=\sin\vartheta\sin\varphi\\
+\end{align*}
+lassen sich mindestens für $x\ne 0$ durch
+\begin{align*}
+\tan\varphi&=\frac{y}{x}\\
+\sin\vartheta &=\sqrt{x^2+y^2}
+\end{align*}
+auflösen. Dies reicht bereits, um die Funktion $u(x,y)$
+auszudrücken:
+\[
+u=\cos\vartheta=\sqrt{1-\sin^2\vartheta}=\sqrt{1-x^2-y^2}.
+\qedhere
+\]
+\end{beispiel}
+
+\subsubsection{Erster Parameter: Cauchy-Anfangswerte}
+\begin{figure}
+\begin{center}
+\includegraphics[width=\hsize]{../common/3d/cauchy.jpg}
+\end{center}
+\caption{Cauchy-Anfangskurve für eine partielle Differentialgleichung
+($y$-Achse nach rechts)
+\label{geometrie:cauchy-anfangskurve}}
+\end{figure}
+Wir wollen für partielle Differentialgleichungen erster Ordnung
+das Cauchy-Problem lösen.
+Das bedeutet, dass eine Anfangskurve bereits vorgegeben ist
+(Abbildung~\ref{geometrie:cauchy-anfangskurve}).
+Es gibt also eine Kurve
+\begin{equation}
+s\mapsto\vec x_0(s)=\begin{pmatrix}
+x_0(s)\\
+y_0(s)\\
+z_0(s)
+\end{pmatrix},
+\label{quasilinear:anfangskurve}
+\end{equation}
+und die gesuchte Lösungsfunktion $u(x,y)$ muss für jedes $s$ die
+Bedingung
+\[
+u(x_0(s), y_0(s))=z_0(s)
+\]
+erfüllen.
+Man muss diese Kurve jetzt also erweitern zu einer Kurvenschar
+der Form (\ref{quasilinear:kurvenschar}).
+Für $t=0$ muss die Anfangskurve entstehen:
+\[
+\vec x(s,0)=x_0(s).
+\]
+Jede Scharkurve $t\mapsto \vec x(s,t)$ ist also eine Kurve
+mit Anfangspunkt $x_0(s)$.
+Es liegt nahe, solche Scharkurven als Lösungen von gewöhnlichen
+Differentialgleichungen zu finden.
+
+\subsection{Quasilineare partielle Differentialgleichung erster Ordnung}
+Wir betrachten in diesem Abschnitt eine quaslineare partielle 
+Differentialgleichung
+\begin{equation}
+a\frac{\partial u}{\partial x}
++
+b\frac{\partial u}{\partial y}
+=
+c.
+\label{quasilinear:equation}
+\end{equation}
+Wir wollen zeigen, dass für diese Art von Differentialgleichungen
+das Cauchy-Problem meistens lösbar ist, und wollen verstehen,
+unter welchen Bedingungen es nicht lösbar ist.
+
+\subsubsection{Gewöhliche Differentialgleichung erster Ordnung}
+Wir erinnern uns zunächst an die Lösung der gewöhnlichen
+Differentialgleichungen erster Ordnung.
+Eine solche legt die Ableitung $y'$ in Abhängigkeit von 
+$(x,y)$ durch eine Funktion $f(x,y)$ fest: 
+\[
+y'=f(x,y).
+\]
+Gesucht ist dann eine Kurve $y(x)$, welche
+in jedem Punkt $x$ die Steigung $y'(x)=f(x,y(x))$.
+Geometrisch legt die Funktion $f(x,y)$ ein Richtungsfeld fest,
+der Graph der Lösung ist eine Kurve, deren Tangente in jedem
+Punkt mit dem Richtungsfeld zusammenfällt.
+
+Um eine Lösungskurve zu finden, kann man wie folgt vorgehen.
+Die Anfgangswerte  $y(0)=y_0$ legen einen Punkt fest.
+Die Differentialgleichung liefert jetzt die Steigung in
+diesem Punkt: $y'(0)=f(0,y(0))$.
+In erster Näherung ist daher
+\begin{equation}
+y(h)=y(0)+f(0,y(0))\cdot h.
+\label{quasilinear:euler}
+\end{equation}
+Mit $y(h)$ können wir das Verfahren wiederholen, und durch
+wiederholte Anwendung von (\ref{quasilinear:euler})
+nacheinander $y(2h)$, $y(3h)$,\dots bestimmen.
+Natürlich ist dies nur ein Näherungsverfahren, das übrigens
+von Euler erdacht worden ist. Macht man $h$ sehr klein, wird
+die Approximation der wahren Lösung immer besser.
+Aber es macht plausibel, warum eine gewöhnliche Differentialgleichung
+erster Ordnung genau eine Anfangsbedingung braucht.
+
+\subsubsection{Lösbarkeit}
+Wir versuchen jetzt, diese Überlegung auf die Lösbarkeit einer
+Differentialgleichung der Form (\ref{quasilinear:equation}) zu 
+übertragen.
+Wir haben jetzt natürlich zwei partielle Ableitungen, die
+durch die Gleichung (\ref{quasilinear:equation}) auch nicht
+eindeutig bestimmt sind.
+Als lineare Gleichung für die partiellen
+Ableitungen betrachtet, hat (\ref{quasilinear:equation}) unendlich 
+viele Lösungen.
+
+Dies ist allerdings nicht so schlimm: denn wir möchten ja das Cauchy-Problem
+lösen: vorgegeben sind die Werte der Funktion entlang einer Kurve.
+Wir haben also auch unendlich viele ``Anfangswerte''.
+Zur Vereinfachung der Diskussion nehmen wir zunächst an, dass die
+Funktionswerte für $x=0$ vorgegeben sind.
+Damit sind aber nicht nur die Funktionswerte $u(0,y)$ bekannt, sondern
+auch die partiellen Ableitungen $\partial_yu(0,y)$.
+
+Wenn der Koeffizient $a(x,y,u)$
+in (\ref{quasilinear:equation})
+von $0$ verschieden ist, kann man die Gleichung
+nach $\partial_xu$ auflösen.
+Die eine partielle Ableitung legt also die andere fest.
+Durch die Anfangswerte ist die eine partielle Ableitung auf der
+Anfangskurve bereits festgelegt, nämlich die entlang der Anfangskurve,
+also steht auch die andere Ableitung schon fest.
+
+Wir sind also in einer ähnlichen Situation wie bei gewöhnlichen
+Differentialgleichungen erster Ordnung: Wenn wir die 
+Anfangskurve zum Beispiel für $x=0$ kennen, also Werte
+$u(0,y)$ bereits kennen, dann kennen wir
+auch die Ableitungen, und können damit die Lösung
+$y\mapsto u(h, y)$ für ein kleines $h>0$ berechnen. Dies legt aber
+wiederum die Ableitungen fest, so dass wir noch einen Schritt 
+weiter zu $y\mapsto u(2h,y)$ gehen können sollten.
+Indem wir so immer weiter schreiten, bekommen wir die ganze
+Lösungsfunktion $u(x,y)$.
+
+Wir erwarten daher, dass eine quasilineare partielle Differentialgleichung
+nicht schwieriger zu lösen ist, als eine gewöhnliche Differentialgleichung
+erster Ordnung.
+
+\subsubsection{Vektorschreibweise der Differentialgleichung}
+Die Lösung wird durch die folgende geometrische Überlegung vereinfacht.
+Wir stellen dazu die gesuchte Lösungsfunktion $u(x,y)$ als Graph
+in einem dreidimensionalen Koordinatensystem $x,y,u$ dar.
+Die partielle Differentialgleichung (\ref{quasilinear:equation})
+kann auch als Vektorgleichung
+\begin{equation}
+\begin{pmatrix}a\\b\\c\end{pmatrix}
+\cdot
+\begin{pmatrix}
+\frac{\partial u}{\partial x}\\
+\frac{\partial u}{\partial y}\\
+-1
+\end{pmatrix}
+=0.
+\label{quasilinear:vektorform}
+\end{equation}
+geschrieben werden, wie man sich durch Ausmultiplizieren überzeugen
+kann.
+Den linken Vektor bezeichnen wir mit
+\[
+\vec v=\begin{pmatrix}
+a(x,y,u)\\
+b(x,y,u)\\
+c(x,y,u)
+\end{pmatrix}.
+\]
+Der rechte Vektor
+\[
+\vec n=
+\begin{pmatrix}
+\frac{\partial u}{\partial x}\\
+\frac{\partial u}{\partial y}\\
+-1
+\end{pmatrix}
+\]
+ist eine Normale auf den Graphen der Funktion
+$z=u(x,y)$. Man kann sich von dieser Tatsache zum Beispiel so 
+überzeugen: Die Tangentialvektoren in Achsrichtung sind
+\[
+\vec t_x
+=
+\begin{pmatrix}1\\0\\\frac{\partial u}{\partial x}\end{pmatrix}
+\qquad
+\text{und}
+\qquad
+\vec t_y
+=
+\begin{pmatrix}0\\1\\\frac{\partial u}{\partial y}\end{pmatrix}
+\]
+Das Skalarprodukt von $\vec n$ mit den Vektoren $\vec t_x$ und $\vec t_y$
+ist:
+\[
+\vec n\cdot\vec t_x
+=
+\begin{pmatrix}
+\frac{\partial u}{\partial x}\\
+\frac{\partial u}{\partial y}\\
+-1
+\end{pmatrix}
+\cdot
+\begin{pmatrix}1\\0\\\frac{\partial u}{\partial x}\end{pmatrix}
+=0
+\qquad
+\text{und}
+\qquad
+\vec n\cdot\vec t_y
+=
+\begin{pmatrix}
+\frac{\partial u}{\partial x}\\
+\frac{\partial u}{\partial y}\\
+-1
+\end{pmatrix}
+\cdot
+\begin{pmatrix}0\\1\\\frac{\partial u}{\partial y}\end{pmatrix}
+=0.
+\]
+\begin{figure}
+\begin{center}
+\includegraphics[width=\hsize]{../common/3d/normals.jpg}
+\end{center}
+\caption{Die Normalen der Lösungsfläche einer quasilinearen
+partiellen Differentialgleichung erster Ordnung sind alle senkrecht
+auf dem Vektor $\vec v$ (rot, linkes Bild). Die Tangentialebenen an
+die Lösungsfläche haben daher eine gemeinsame Gerade mit Richtung $\vec v$.
+\label{geometrie:normals}}
+\end{figure}%
+Die Gleichung (\ref{quasilinear:vektorform}) sagt also,
+dass diese Normale senkrecht auf dem Vektor $\vec v$ steht.
+Gesucht ist also eine Fläche, deren Normale senkrecht auf dem
+Vektor $\vec v$ steht. Die möglichen Tangentialebenen von Lösungen
+haben also die Gerade mit Richtung $\vec v$ gemeinsam
+(Abbildung~\ref{geometrie:normals}).
+Sie bilden ein Büschel von Ebenen.
+
+Wir verstehen jetzt, wie wir das Bild, das wir uns von den gewöhnlichen
+Differentialgleichungen gemacht haben, für partielle Differentialgleichungen
+modifizieren müssen. Die Differentialgleichung gibt in jedem Punkt
+des Raumes ein Büschel von Ebenen vor, welche als Tangentialebenen der
+Lösungsfläche in Frage kommen. Die Richtung der Anfangskurve wählt aus
+diesem Büschel eine Tangentialebene aus, die Tangentialebene in einem 
+Punkt der Anfangskurve muss die Tangente der Anfangskurve enthalten
+\begin{figure}
+\begin{center}
+\includegraphics[width=\hsize]{../common/3d/planes.jpg}
+\end{center}
+\caption{Feld von Ebenenbüscheln, definiert durch eine quasilineare
+partielle Differentialgleichung erster Ordnung
+\label{geometrie:ebenenbueschelfeld}}
+\end{figure}
+(Abbildung~\ref{geometrie:ebenenbueschelfeld}).
+
+Das bedeutet zum Beispiel auch, dass die Schnittkurve von
+zwei Lösungsflächen immer $\vec n$ als Tangente haben muss.
+Kurven, die in jedem Punkt die Richtung $\vec n$ haben, sind
+als von ganz besonderer Bedeutung.
+Die Vektoren
+\[
+(x,y,u)\mapsto
+\vec v=
+\begin{pmatrix}
+a(x,y,u)\\b(x,y,u)\\c(x,y,u)
+\end{pmatrix}
+\]
+bilden ein Vektorfeld, welches in jedem Punkt tangential
+an die gesuchte Fläche verläuft.
+
+\subsubsection{Charakteristiken}
+Statt direkt die Lösungsfläche zu suchen, können wir das Vektorfeld
+$\vec v$ dazu verwenden, einzelne Kurven in der Lösungsfläche
+zu bestimmen.
+\begin{figure}
+\begin{center}
+\includegraphics[width=\hsize]{../common/3d/chrpl.jpg}
+\end{center}
+\begin{center}
+\includegraphics[width=\hsize]{../common/3d/chr.jpg}
+\end{center}
+\caption{Charakteristiken einer quasilinearen partiellen Differentialgleichung
+erster Ordnung, mit eingezeichneten Ebenenbüscheln (oben) und nur die
+Charakteristiken (unten)\label{geometrie:charekeristiken-mit-buescheln}}
+\end{figure}
+Ist ein Punkt der Fläche bekannt,
+kann man davon ausgehend eine Lösungskurve des Vektorfeldes konstruieren.
+Dazu muss man die gewöhnliche Differentialgleichung
+\begin{equation}
+\frac{d}{dt}\begin{pmatrix}x(t)\\y(t)\\z(t)\end{pmatrix}
+=
+\begin{pmatrix}
+a(x(t),y(t),u(t))\\b(x(t),y(t),u(t))\\c(x(t),y(t),u(t))
+\end{pmatrix}
+\label{quasilinear:charakteristik}
+\end{equation}
+lösen.
+Eine Lösungskurve von (\ref{quasilinear:charakteristik}) ist in jedem
+Punkt tangential an die Lösungsfläche, sie verlässt die Fläche also
+nicht.
+
+\begin{definition}
+\label{def:quasiliniear:charakteristik}
+\index{Charakteristik!einer quasilinearen partiellen
+Differentialgleichung erster Ordnung}
+Die Lösungskurven der gewöhnlichen Differentialgleichung
+(\ref{quasilinear:charakteristik}) heissen Charakteristiken
+der partiellen Differentialgleichung (\ref{quasilinear:equation}).
+\end{definition}
+
+\subsubsection{Lösung des Cauchy-Problems}
+\begin{figure}
+\begin{center}
+\includegraphics[width=\hsize]{../common/3d/sol.jpg}
+\end{center}
+\caption{Lösung einer quasilinearen partiellen Differentialgleichung
+erster Ordnung: die Lösungsfläche wird von Charakteristiken (rot) gebildet,
+sie ist parametrisiert durch den Parameter der Anfangskurve (grün) und den
+Kurvenparamter entlang der Charakteristik.
+\label{geometrie:loesung-mit-charakteristiken}}
+\end{figure}
+Das Cauchy-Problem lässt sich jetzt mit Hilfe von Charakteristiken
+lösen. Die Lösungsfläche besteht aus Charakteristiken, die auch
+die Anfangskurve schneiden
+(Abbildung~\ref{geometrie:loesung-mit-charakteristiken}).
+Um die Lösung zu berechnen, ist also wie folgt vorzugehen:
+\begin{enumerate}
+\item
+Für jedes $s$ ist die Differentialgleichung der Charakteristiken
+(\ref{quasilinear:charakteristik}) zu lösen und eine 
+Lösungskurve $t\mapsto \vec x(s,t)$ zu finden, die
+die Anfangsbedingung $\vec x(s,0)=\vec x_0(s)$ erfüllt.
+\item 
+Aus den Gleichungen (\ref{quasilinear:kurvenschar}) für die
+Kurvenschar müssen die Parameter $s$ und $t$ eliminiert werden,
+sie muss in die Form $z=u(x,y)$ umgeformt werden.
+\end{enumerate}
+
+Sind die Koeffizienten der Differentialgleichung differenzierbare Funktionen,
+dann ist das Vektorfeld differenzierbar.
+Ist auch die Anfangsbedingung differenzierbar,
+dann besagen die allgemeinen Sätze über die Abhängigkeit der Lösung einer
+gewöhnlichen Differentialgleichung von den Anfangsbedingungen, dass die so
+konstruierte Lösungsfläche differenzierbar ist.
+
+Insgesamt haben wir damit das Problem der Lösung der partielle Differentialgleichungen auf das Problem 
+zurückgeführt, beliebige Lösungskurven eines Vektorfeldes, also auf
+eine gewöhnliche Differentialgleichung zurückgeführt.
+
+
+\subsubsection{Welche Anfangskurven sind nicht geeignet?}
+Damit das eben skizzierte Lösungsverfahren funktioniert, 
+darf die Anfangskurve keine Charakteristik sein.
+Andernfalls erhält man ja durch Berechnung der von einem Punkt
+der Anfangskurve ausgehenden Charakteristik nur wieder die
+Anfangskurve, es entsteht gar keine Fläche.
+
+Damit liefern uns die Charakteristiken nicht nur ein Verfahren
+zur Lösung einer partiellen Differentialgleichung erster Ordnung,
+sondern auch ein Verfahren um zu entscheiden, wo Anfangswerte
+vorgegeben werden müssen.
+
+Sei die partielle Differentialgleichung auf dem Gebiet $\Omega$
+definiert.
+Eine Charakteristik ausgehend von einem Randpunkt mit vorgegebenem
+Randwert wird sich zunächst durch das Gebiet bewegen, kann dieses
+aber in einem anderen Punkt auch wieder verlassen. Der Wert der
+Lösungsfunktion in diesem zweiten Randwert ist offenbar durch die
+Vorgabe des ersten Randwertes bereits festgelegt.
+Eine andere Vorgabe würde verhindern, dass das Problem überhaupt
+eine Lösung hat.
+
+Randwerte müssen also auf einer Teilmenge $M\subset\partial \Omega$
+festgelegt werden so, dass jede Charakteristik nur einen Punkt der
+Menge $M$ trifft.
+
+\subsection{Beispiele}
+In diesem Abschnitt rechnen wir ein paar Beispiel für das eben
+skizzierte Lösungsverfahren durch.
+\subsubsection{Konstante Koeffizienten\label{konstantekoeff}}
+Wir betrachten die Differentialgleichung
+\[
+\frac{\partial u}{\partial x}+2\frac{\partial u}{\partial y}=3
+\]
+mit der Anfangsbedingung $u(0,y)=\sin y$ und möchten eine Lösung für
+$x>0$ finden.
+
+Die Anfangskurve mit Parameter $s$ hat die Form
+\[
+\vec x_0(s)
+=
+\begin{pmatrix}
+0\\s\\\sin s
+\end{pmatrix}.
+\]
+Wir müssen also eine Kurvenschar finden, die von dieser Anfangskurve
+ausgeht.
+
+Die Differentialgleichung der Charakteristiken ist
+\[
+\frac{d}{dt}\begin{pmatrix}x(t)\\y(t)\\z(t)\end{pmatrix}
+=
+\begin{pmatrix}1\\2\\3\end{pmatrix},
+\]
+sie hat die Lösungskurven
+\[
+t\mapsto\begin{pmatrix}x_0\\y_0\\z_0\end{pmatrix}+t\begin{pmatrix}1\\2\\3\end{pmatrix}
+\]
+Der Anfangspunkt $(0,s,\sin s)$ entwickelt sich also mit der Zeit zu
+\[
+\begin{pmatrix}
+x(s,t)\\
+y(s,t)\\
+z(s,t)
+\end{pmatrix}
+=
+\begin{pmatrix}0\\s\\\sin s\end{pmatrix}+t\begin{pmatrix}1\\2\\3\end{pmatrix}
+=
+\begin{pmatrix}
+t\\
+s+2t\\
+\sin s+3t
+\end{pmatrix}.
+\]
+Diese Kurvenschar beschreibt die Lösungsfläche, wir möchten daraus aber
+wieder die Lösung in der vertrauteren Form $u(x,y)$ gewinnen.
+Dazu müssen die Variablen $s$ und $t$ aus den Gleichungen
+\begin{align*}
+x&=t\\
+y&=s+2t\\
+z&=\sin s+3t
+\end{align*}
+eliminiert werden.
+Aus der ersten Gleichung folgt, dass $t$ einfach durch $x$ ersetzt werden
+kann.
+Aus der zweigen Gleichung folgt dann, dass $s=y-2x$.
+Setzt man dies in der dritten Gleichung ein, erhält man $z=\sin(y-2x)+3t$.
+Die Lösung der Differentialgleichung ist also
+\[
+u(x,y)=\sin(y-2x)+3x.
+\]
+Durch Einsetzen in die Differentialgleichung und die Randbedingung
+kann man sich davon überzeugen, dass dies tatsächlich eine Lösung
+ist:
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=-2\cos(y-2x)+3
+\\
+\frac{\partial u}{\partial y}
+&=\cos (y-2x)
+\\
+\Rightarrow\qquad
+\frac{\partial u}{\partial x}
++2
+\frac{\partial u}{\partial y}
+&=
+-2\cos(y-2x)+3
++2\cos(y-2x)=3
+\\
+u(0,y_0)&=\sin y_0.
+\end{align*}
+
+\subsubsection{Kreisförmige Charakteristiken}
+Wir lösen die Differentialgleichung
+\[
+y\frac{\partial u}{\partial x}-x\frac{\partial u}{\partial y}=0
+\]
+Gemäss der Methode der Charakteristiken müssen wir die Lösungskurven
+des Vektorfeldes
+\[
+\begin{pmatrix}
+y\\-x\\0
+\end{pmatrix}
+\]
+finden. Da die $z$-Komponente verschwindet, sind die $z$-Komponenten
+der Lösungskurven konstant, wir ignorieren sie daher in der nachstehenden
+Rechnung.
+
+Lösungen für das Vektorfeld 
+\[
+\begin{pmatrix}
+y\\-x
+\end{pmatrix}
+\]
+in der Ebene sind Funktionen $x(t)$ und $y(t)$, welche die Gleichungen
+\begin{align*}
+\dot x(t)&=y(t)\\
+\dot y(t)&=-x(t)
+\end{align*}
+erfüllen. Leitet man die erste Gleichung ab, und setzt die zweite
+darin ein, erhält man die Differentialgleichung zweiter Ordnung
+\[
+\ddot x(t)=-x(t)
+\]
+mit den bekannten Lösungen $a\cos t$ und $a \sin t$. Da die Lösungskurve
+zur Zeit $t=0$ auf der $y$-Achse beginnen soll, muss sie in Vektorschreibweise
+\[
+\begin{pmatrix}
+x(t)\\y(t)
+\end{pmatrix}
+=y_0\begin{pmatrix}
+\sin t\\
+\cos t
+\end{pmatrix}
+\]
+sein, die Kurven sind also Kreise mit Radius $y_0$ um den Nullpunkt. Offenbar
+können wir jeden Punkt der Ebene von einem Punkt in der Halbgeraden
+$\{(0,y_0)|y_0 <0\}$ aus erreichen, die Anfangsbedingung muss also nur für
+$y_0<0$ spezifiziert werden.
+
+Die Lösung zur Anfangsbedingung $g(y)$ kann jetzt wie folgt bestimmt werden.
+Zu einem Punkt $(x,y)$ müssen $y_0$ und $t$ gefunden werden, davon brauchen wir
+jedoch nur den Betrag, also $y_0=-\sqrt{x^2+y^2}$. Die Lösung ist also
+\[
+u(x,y)=g(-\sqrt{x^2+y^2}).
+\]
+
+Aus diesem Beispiel können wir mehrere Lehren ziehen: 
+\begin{enumerate}
+\item Dass Festlegung einer Anfangsbedingung für $y_0>0$ nicht nötig ist,
+kann man der Differentialgleichung in unmittelbarer Nähe der $y$-Achse nicht
+ansehen, erst der Verlauf der Charakterisitiken im Grossen ermöglicht
+diese Erkenntnis. Dieses Phänomen wird durch den ``zusätzlichen Platz''
+ermöglicht, den der zweidimensionale Definitionsbereich der partielle Differentialgleichung gegenüber dem
+eindimensionalen Definitionsbereich der gewöhnlichen DGL bietet.
+\item Der Punkt $(0,0)$ hat spezielle Eigenschaften: wenn die Lösung stetig
+sein soll, muss $g(0)=\lim_{y\to 0-} g(y)$ sein. Damit die Lösung differenzierbar
+wird, muss aber zusätzlich $g'(x)=0$ sein.
+\end{enumerate}
+
+\subsubsection{Ein nicht lösbares Anfangswertproblem\label{unloesbar}}
+Die Differentialgleichung
+\[
+x\frac{\partial u}{\partial x}
++
+y\frac{\partial u}{\partial y}
+=0
+\]
+soll zu den Anfangsbedingungen $u(0,y)=\sin y$ gelöst werden.
+Dazu berechnen wir wieder zuerst die Charakteristiken (ohne die 
+$z$-Komponente, die wieder konstant ist)
+\[
+\frac{d}{dt}
+\begin{pmatrix}
+x(t)\\y(t)
+\end{pmatrix}
+=
+\begin{pmatrix}
+x(t)\\y(t)
+\end{pmatrix}
+\quad
+\Rightarrow
+\quad
+\left\{
+\begin{aligned}
+\dot x(t)&=x(t)\\
+\dot y(t)&=y(t)
+\end{aligned}
+\right.
+\]
+Die Lösungskurven sind Strahlen durch den Ursprung:
+\[
+\begin{pmatrix}
+x(t)\\y(t)
+\end{pmatrix}
+=\begin{pmatrix}x_0\\y_0\end{pmatrix}e^t
+\]
+Um die Lösung zu konstruieren, müssen wir jetzt zu einem Punkt
+$(x,y)$ den Anfangspunkt der zugehörigen Charakteristik auf der $y$-Achse
+finden. Da alle Charakteristiken durch den Nullpunkt gehen, ist dies 
+gar nicht möglich. 
+
+Das Problem rührt daher, dass wir die Anfangsbedinung selbst auf einer
+Charakteristik festgelegt haben, die Charakteristiken sind also als
+Anfangskurven ungeeignet. Nur wenn die Anfangsbedingung auf einer Kurve
+festgelegt wird, die transversal, also nirgends tangential, zu den
+Charakteristiken verläuft, kann das Anfangswertproblem gelöst werden.
+
+\subsection{Allgemeine partielle Differentialgleichungen erster Ordnung}
+Als Beispiel betrachten wir die folgende partielle Differentialgleichung
+erster Ordnung für die Funktion $u(x,y)$
+\begin{equation}
+F\biggl(
+x,y,u(x,y),\frac{\partial u}{\partial x},\frac{\partial u}{\partial y}
+\biggr)=0.
+\end{equation}
+Diese Gleichung beschreibt einen impliziten Zusammenhang zwischen
+dem Ort im $x$-$y$-$u$-Ko\-or\-di\-na\-ten\-sys\-tem und den beiden Steigungen
+$\partial_xu$ und $\partial_yu$.
+
+Ein Anfangswertproblem, bei dem die Anfangswerte für $x=0$ als
+Funktion $g(y)$ festgelegt sind, also
+\[
+u(0,y)=g(y),
+\]
+legt auch die
+partiellen Ableitungen $\partial_y u(0,y)=g'(y)$ fest.  Die partielle
+Differentialgleichung schränkt damit ein, welche möglichen Ableitungen
+$\partial_xu(0,y)$ möglich sind. Oft wird dies nicht eindeutig sein,
+die Steigung in $x$-Richtung kann also verschiedene Werte annehmen,
+es kann verschiedene Lösungsfunktionen geben. Ähnlich wie bei der
+Lösung gewöhnlicher Differentialgleichungen ist zu jedem Wert
+aus der bereits bekannten partiellen Ableitung $\partial_yu(x,y)$
+die Steigung $\partial_xu(x,y)$ bestimmt, es ist somit plausibel, dass
+sich die Lösung ähnlich wie bei der Lösung gewöhnlicher Differentialgleichungen
+entwickeln lässt. In voller Allgemeinheit ist dies nicht ganz einfach,
+und für unsere Zwecke auch nicht notwendig, denn alle wesentlichen
+Eigenschaften lassen sich an dem einfacheren Fall der quasilinearen
+partielle Differentialgleichung auch beobachten.
+
+
