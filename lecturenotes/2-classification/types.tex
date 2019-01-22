@@ -1,45 +1,54 @@
 %
-% types.tex -- XXX
+% types.tex --
 %
-% (c) 2008 Prof Dr Andreas Mueller
+% (c) 2019 Prof Dr Andreas Mueller
 %
-\section{Spezielle Typen von partiellen Differentialgleichungen\label{klassifikation:spezielletypen}}
-\rhead{Spezielle PDGL}
-Für einige spezielle Typen von Differentialgleichungen werden wir
-die Frage nach Existenz und Eindeutigkeit einer Lösung beantworten
-können, und manchmal sogar eine explizite Lösung angeben können.
-Dazu gehören die linearen und die quasilinearen partiellen
-Differentialgleichungen, die in diesem Abschnitt beschrieben werden.
+\section{Special types of partial differential equations
+\label{klassifikation:spezielletypen}}
+\rhead{Special PDE}
+For a couple of special types of partial differential equations we will
+be able to answer the question regarding existence and uniqueness of 
+solutions.
+In some cases we will even be able to give explicit formulas for the solutions.
+Linear and quasilinear partial differential equations are part of this
+very limited set of equations.
+This section is devoted to describing them.
 
-\subsection{Lineare partielle Differentialgleichungen\label{klassifikation:linear}}
-Die bisher vorgestellten Differentialgleichungen sind also alle lineare
-Ausdrücke in den ersten und zweiten Ableitungen, man könnte sie in der
+\subsection{Linear partial differential equations\label{klassifikation:linear}}
+The differential equations proposed so far were all linear expressions in
+the first and second derivatives.
+In the most general form, we can write them as
 Form
 \begin{align*}
 \sum_{i,j=1}^n a_{ij}(x)\frac{\partial}{\partial x_i} \frac{\partial}{\partial x_j}\psi(x)
 +\sum_{i=1}^na_i(x)\frac{\partial}{\partial x_i}\psi(x)&=f(x)
 \\
 \sum_{i,j=1}^n a_{ij}(x)\partial_i \partial_j\psi(x)
-+\sum_{i=1}^na_i(x)\partial_i\psi(x)&=f(x)
++\sum_{i=1}^na_i(x)\partial_i\psi(x)&=f(x).
 \end{align*}
-Die Gleichung heisst homogen, wenn $f=0$ ist.
+We call such an equation {\em homogeneous} if $f=0$.
+To every linear partial differential equation of this form we can construct
+the associated homogeneous equation by setting $f=0$.
 
-Damit diese Probleme überhaupt eine Lösung haben, müssen noch 
-Randbedingungen hinzugefügt werden.
-Auch diese lassen sich in der Form linearer Gleichungen zwischen den 
-Funktionswerten und den Normalableitungen von $\psi$ auf dem Rand des
-Gebietes gegeben:
+In order for this problem to have a solution, we have to add boundary
+conditions.
+As we have learned, these too can be written as linear combinations
+of function values and normal derivatives of $\psi$ on the boundary
+of the domain:
 \begin{align*}
 a\psi(x)+
 b\frac{\partial}{\partial n}\psi(x)
 &=g(x)\quad\forall x\in\gamma\\
 a\psi(x)+b\partial_n\psi(x)&=g(x)\quad\forall x\in\gamma
 \end{align*}
-Die Randbedingungen heissen homogen, wenn $g=0$ ist.
+The boundary conditions are called {\em homogeneous} if $g=0$.
+To every set of boundary conditions we can construct the associated
+set of homogeneour boundary conditions by setting $g=0$.
 
-Sind $\psi_1$ und $\psi_2$ zwei Lösungen der homogenen Gleichungen und der
-homogenen Randbedingungen, dann ist auch $\alpha_1\psi_1+\alpha_2\psi_2$
-Lösungen der homogenen Gleichung under homogenen Randbedingungen:
+If $\psi_1$ and $\psi_2$ are two solutions of a homogeneous linear partial
+differential equation with homogeneous boundary conditions, then
+a linear combination $\alpha_1\psi_1+\alpha_2\psi_2$ is a solution
+as well:
 \begin{align*}
 &\sum_{i,j=1}^n a_{ij}(x)\partial_i \partial_j
 (\alpha_1\psi_1(x)+\alpha_2\psi_2(x))
@@ -78,34 +87,46 @@ a(\alpha_1\psi_1(x) +\alpha_2\psi_2(x))
 \psi_2(x))
 =0\quad\forall x\in\gamma
 \end{align*}
-Die Lösungen einer homogenen partiellen Differentialgleichung
-bilden also einen Vektorraum. Insbesondere lassen sich beliebige
-Lösungen der inhomogenen Differentialgleichung dadurch finden, dass
-man eine partikuläre Lösung $\psi_p$ der homogenen Differentialgleichung
-findet, und dazu eine beliebige Lösung der homogenen Differentialgleichung
-$\psi_h$ hinzuaddiert.
+This means that the solutions of a homogeneous linear
+partial differential equation with homogeneous boundary conditions
+form a vector space.
+The well known properties of solutions of linear systems of equations
+apply to the solution space as well.
+In particular, to find any solution of the inhomogeneous partial
+differential equation we simply have to produce a single solution
+$\psi_p$ called a particular solution of the inhomogeneous equation
+and add solutions of the homogeneous equation to it.
+Knowledge of the solution space of the homogeneous equation transfers
+to knowledge of the structure of the solution set of any inhomogeneous
+version of the equation.
 
-\subsection{Quasilineare partielle Differentialgleichungen erster Ordnung\label{klassifikation:quasilinear}}
-Einen interessanten Spezialfall bilden die quasilinearen PDGL erster
-Ordnung. Sie sind nicht unbedingt linear, aber die partiellen
-Ableitungen erster Ordnung kommen nur linear vor. Die Funktion
+\subsection{Quasilinear partial differential equations of first order
+\label{klassifikation:quasilinear}}
+A very interesting special case are the quasilinear partial differential
+equations of first order.
+They are not necessarily linear, but the first order derivatives appear only
+linearly.
+The function
 $
 F(x,y,u,p,q)
 $
-ist also linear in $p$ und $q$. Die Variablen $x$ und $y$ sowie die
-gesuchte Funktion können daher nur in den Koeffizienten der
-Variablen $p$ und $q$ vorkommen, $F$ muss von der Form
+is therefore linear in $p$ und $q$.
+The variables $x$ and $y$ and the placeholder $u$ for the unknown
+function can only appear in coefficients of the variables $p$ and $q$.
+Thus $F$ must have the form
 \[
-F(x,y,u,p,q)=a(x,y,u)p+b(x,y,u)q+c(x,y,u)
+F(x,y,u,p,q)=a(x,y,u)p+b(x,y,u)q-c(x,y,u).
 \]
-sein. Eine quasilineare Differentialgleichung in zwei Variablen
-hat also die Form
+The negative sign in front of $c$ is chosen for consistency with the
+theory to be developed in the next chapter.
+A quasilinear partial differential equation of first order therefore
+has the form
 \[
 a(x,y,u(x,y))\frac{\partial u}{\partial x}+b(x,y,u(x,y))\frac{\partial u}{\partial y}
 =c(x,y,u(x,y)).
 \]
-Für mehr Variablen $x_1,\dots,x_n$ gilt analog, dass eine quasilineare
-Differentialgleichung die Form
+For more than $2$ variables, we can similarly conclude that equation must
+be of the form
 \[
 a_1(x_1,\dots,x_n,u)\frac{\partial u}{\partial x_1}
 +
@@ -113,34 +134,33 @@ a_2(x_1,\dots,x_n,u)\frac{\partial u}{\partial x_2}
 +\dots
 +
 a_n(x_1,\dots,x_n,u)\frac{\partial u}{\partial x_n}
-=c(x_1,\dots,x_n,u)
+=c(x_1,\dots,x_n,u).
 \]
-hat.
 
-Natürlich lassen sich auch quasilineare partielle Differentialgleichungen
-höherer Ordnung definieren, in einer solchen Differentialgleichung
-kommen zwar höheren partielle Ableitungen vor, aber immer nur linear,
-man kann sie also immer in der Form schreiben:
+Quasilinear partial differential equations of higher order can also be
+defined.
+In such an equation, higher derivatives may show up, but they can only
+show up linearly.
+This means that the equation can be written in the form
 \[
 \sum_{\bf k} a_{\bf k}(x,y,u)\partial_{\bf k} u(x,y) = 0,
 \]
-worin die Funktionen $a_{\bf k}(x,y,u)$ nur für endlich viele
-Multiindizes ${\bf k}$ von $0$ verschieden sind.
+where the functions $a_{\bf k}(x,y,u)$ are nonzero for only finitely
+many multiindices ${\bf k}$.
 
-\subsection{Nichtlineare Gleichungen\label{klassifikation:nichtlinear}}
-Die bisher vorgestellten Beispiele von partiellen Differentialgleichungen
-sind alle linear. Viele Gleichungen der Physik sind jedoch
-nicht linear.  Berühmtestes Beispiel sind die Gleichungen, die
-die Strömung eines Gases beschreiben. Bereits Leonhard Euler hat 
-für die Strömung eines idealen Gases ein System von partiellen
-\index{Dichte}
-\index{Druck}
-Differentialgleichungen gefunden für die Dichte $\varrho$, den Druck
-$p$ und die Strömungsgeschwindigkeit $\vec v$, alle drei sind Funktionen
-\index{Stromungsgeschwindigkeit@Str\ömungsgeschwindigkeit}
-von allen drei Raumkoordinaten und der Zeit. Die wichtigste davon
-ist die Eulersche Gleichung:
-\index{Eulersche Gleichung}
+\subsection{Nonlinear equations
+\label{klassifikation:nichtlinear}}
+The partial differential equations from applications presented so far
+were linear.
+However, many problems from physics are not linear.
+Most notably the equations that govern the flow of a fluid.
+Already Leonhard Euler has formulated a system of partial differential
+equations for the flow of an incompressible gas.
+It connects density $\varrho$, pressure $p$ and the velocity vector
+$\vec{v}$, all three being functions of position and time, with the
+each other and their derivatives at every point in space.
+The most important of these equations is Euler's equation:
+\index{Euler's equation}
 \begin{align*}
 \frac{\partial \vec v}{\partial t}
 +(\vec v\cdot \nabla)\vec v
@@ -149,12 +169,12 @@ ist die Eulersche Gleichung:
 \frac{\partial v_i}{\partial t}
 +\sum_{j=1}^3v_j\frac{\partial v_i}{\partial x_j}
 =
--\frac1{\varrho}\frac{\partial p}{\partial x_i}
+-\frac1{\varrho}\frac{\partial p}{\partial x_i}.
 \end{align*}
-Diese Gleichung kann nicht linear sein, weil im zweiten Term
-Produkte von $v_j$ mit Ableitungen von $v_i$ vorkommen.
-Berücksichtigt man auch noch die Zähigkeit, wird die Gleichung
-noch komplizierter:
+This equation cannot be linear, products of $v_j$ and derivatives of $v_i$
+appear in the second term.
+
+Adding viscosity makes the equations even more complicated:
 \[
 \varrho\left(
 \frac{\partial\vec v}{\partial t}
@@ -166,18 +186,15 @@ noch komplizierter:
 \operatorname{grad}\operatorname{div}\vec v
 \]
 
-In einer Dimension bleibt von dieser Gleichung nur noch eine Komponente
-$u(t,x)$ übrig, für die eine Gleichung der ungefähren Form
+In one dimension, there is not much left, just a single velocity component
+$u(t,x)$, for which the equation essentially has the Form
 \[
 \frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}
 =\eta\frac{\partial^2u}{\partial x^2}
 \]
-gelten muss (wir haben den Druckgradienten vernachlässigt und
-$\varrho = 1$ angenommen). Diese Gleichung wurde von
-Johannes Martinus Burgers ausgiebig studiert, und heisst
-daher Gleichung von Burgers.
-Eine Lösung des Anfangswertproblems der Gleichung von Burgers kann 
-in expliziter Form gefunden werden, wir beschreiben diese in Kapitel
-\ref{chapter-nichtlinear}.
-
-
+(we have neglected the pressure gradient and assumed $\varrho=1$).
+This equation has been studied extensively by Johannes Martinus Burgers
+and is thus called Burgers' equation.
+It exhibits many common features of nonlinear partial differential equations.
+Solutions can be found in explicit form, as we will indicate in the next
+chapter.

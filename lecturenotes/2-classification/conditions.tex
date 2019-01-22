@@ -1,5 +1,5 @@
 %
-% conditions.tex -- XXX
+% conditions.tex --
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
@@ -251,16 +251,8 @@ F(x,y,u(x,y), \partial_x u, \partial_y u)=0
 \]
 between function and partial derivatives.
 For not too complicated functions $F(x,y,u,p,q)$ we can solve for
-$p$.
-
-%
-% XXX
-% XXX
-%
-
-nach $p$ auflösbar sein, und zwar sogar auf dem Rand, also für
-$x\to 0$. Gibt es eine Lösung $u(x,y)$ des Cauchy-Problems, dann
-ist 
+$p$, in many cases up to the boundary.
+If $u(x,y)$ is a solution of the Cauchy problem, then
 \begin{align*}
 0&=
 F(x,y,u(x,y), \partial_x u(x,y), \partial_y u(x,y)
@@ -272,133 +264,147 @@ F(x,y,u(x,y), \partial_x u(x,y), \partial_y u(x,y)\\
 &=F(0,y,u(x,y),\partial_x u(0,y), \partial_y u(0,y))
 \\
 &=
-F(0,y,g(y),\partial_x u(0,y), g'(y))
+F(0,y,g(y),\partial_x u(0,y), g'(y)).
 \end{align*}
-Da wir von der Funktion $F$ angenommen haben, dass sie sich
-nach $p$ auflösen lässt, ist also $\partial_x u(0,y)$ durch
-die Anfangsbedingungen und die Gleichung ebenfalls festgelegt.
+Since we have assumed that the equation $F=0$ can be solved 
+for $p$, we conclude that 
+$\partial_x u(0,y)$
+is already defined by the initial conditions.
 
-Das Cauchy-Problem für eine Differentialgleichung erster Ordnung
-muss als nur Anfangswerte entlang einer Geraden vorgeben, Ableitungen
-sind nicht nötig, da sie durch die Funktionswerte und die Gleichung
-bereits festgelegt sind.
+The Cauchy problem for a partial differential equation of first order
+only has to specify initial values along a straight line or more generally
+a curve.
+Boundary conditions for the derivatives are not necessary, as they can
+be obtained from the equation.
 
-Statt der Werte entlang der $y$-Achse könnten wir auch nur den
-Wert in einem Punkt sowie die Ableitungen
-in diese Richtung vorgeben, zum Beispiel in der Form
+Instead of specifying the values along the $y$-axis, we could give values
+in a point on the boundary the derivative in a direction tangential to
+the boundary all the way along the boundary.
+To fix ideas, assume that point is $(0,0)$ and the direction of the
+boundary is the $y$-axis.
+Then we would give 
 \begin{align*}
 u(0,0)&=u_0\\
 \frac{\partial u}{\partial y}(0,y)&=h(y).
 \end{align*}
-Dies liefert jedoch nichts neues, denn die Funktion $g(y)=u(0,y)$
-wird durch die gewöhnliche Differentialgleichung
+This does not lead to a new type problem, because by integrating
+the ordinary differential equation
 \[
 g'(y)=\frac{\partial u}{\partial y}(0,y)=h(y)
 \]
-für die unbekannte Funktion $g(y)$
-mit der Anfangsbedinung $g(0)=u_0$ bestimmt.
-Indem man diese Gleichung löst, führt man Anfangsbedingungen
-mit Ableitungen entlang der $y$-Achse auf gewöhnliche
-Anfangswerte zurück.
+for the unknown function $g(y)$ with initial condition $g(0)=u_0$
+we can recover the initial values $g(y)$.
+This again confirms that for this type of equation specifying 
+initial values along a section of the boundary is the basic problem
+that we need to be able to solve.
 
-\subsubsection{Partielle Differentialgleichungen zweiter Ordnung}
-Für eine gewöhnliche Differentialgleichung zweiter Ordnung müssen
-zusätzliche Anfangsbedingungen spezifiziert werden, typischerweise
-die erste Ableitung.
+\subsubsection{Partial differential equations of second order}
+For an ordinary differential equation of second order we need to specify
+to items as initial conditions.
+Typically these will be an initial value and an initial first derivative.
 
-Für eine partielle Differentialgleichung zweiter
-Ordnung wird man entsprechend zu den Anfangswerten $g(y)$ die Werte
-der ersten Ableitungen hinzunehmen wollen.
-Wie wir im vorangegangenen Abschnitt gesehen haben, sind die partiellen
-Ableitungen in $y$-Richtung durch die Anfangsbedingung $g(y)$ bereits
-festgelegt. Nur die erste Ableitung in $x$-Richtung kann noch
-vorgegeben werden. Die Anfangsbedingung kann also so formuliert
-werden:
+For a partial differential equation of second order we thus expect 
+similarly the we will have to specify first order derivatives on the
+boundary in addition to boundary values.
+As we have shown in the preceding sections, the first order derivatives
+along the boundary are already known as soon as the boundary values are
+fixed.
+So boundary conditions can really only specify derivatives in the direction
+normal to the boundary.
+We therefore have the following two types of boundary conditions:
 \begin{align}
-&\text{Dirichlet-Randbedingung:}&
+&\text{Dirichlet boundary conditions:}&
 u(0,y)&=g(y)&
 \label{klassifikation:dirichlet-randbedingung}
 \\
-&\text{Neumann-Randbedingung:}&
+&\text{Neumann boundary conditions:}&
 \frac{\partial u}{\partial x}(0,y)&=h(y)
 \label{klassifikation:neumann-randbedingung}
 \end{align}
 
-\subsubsection{Beliebige Anfangskurve}
-Im allgemeinen Fall sind die Randwerte nicht auf einer Koordinatenachse
-vorgegeben. Es gibt sogar Fälle, wo dies gar nicht möglich ist,
-ein Beispiel wird in \ref{unloesbar} gezeigt.
-Die Festlegung von Werten entlang der der $y$-Achse entspricht
-der Forderung, dass die Lösungsfläche durche eine bestimmte Kurve
-verlaufen muss, die als Parameterdarstellung $y\mapsto (0,y,g(y))$
-hat. Die Verallgemeinerung das allgemeine Cauchy-Problem:
+\subsubsection{Arbitrary initial curve}
+In general the boundary of a domain is more complicated than just 
+a coordinate axis.
+Fixing values along the $y$-axis means requesting that the solution
+surface contains a curve that projects to the $y$ axis.
+A parametrization of the curve would be $y\mapsto (0,y,g(y))$.
 
-\begin{problem}[Cauchy-Problem] Sei $\gamma$ eine Kurve im Raum und
-$F(x,y,u,\partial_xu,\partial_yu)=0$ eine PDGL. Eine Funktion $u(x,y)$
-heisst eine Lösung des Cauchy-Problems mit Anfangskurve $\gamma$, wenn
-$\gamma$ im Graphen von $u$ enthalten ist.
+The generalization of this idea is the Cauchy problem:
+
+\begin{problem}[Cauchy Problem]
+Let $\gamma$ bi a curve in space and 
+$F(x,y,u,\partial_xu,\partial_yu)=0$ a partial differential equation.
+A function $u(x,y)$ is a solution of the Cauchy problem with initial
+curve $\gamma$ if the graph of $u$ contains $\gamma$.
 \end{problem}
 
-Durch die Wahl eines geeigneten Koordinatensystems kann aber immer
-erreicht werden, dass in der Umgebung eines einzelnen Randpunktes
-dieses Situation vorliegt.
-Die Richtung der $x$-Achse ist dann die Normale auf die Randkurve oder
-Randfläche.
-Die Ableitung entlang der $x$-Achse ist daher eigentlich eine Ableitung
-in Normalenrichtung, wir schreiben dafür
+For each point on the boundary, we can choose a coordinate system such
+that the $y$-direction is tangential to the boundary while the $x$-axis
+is normal on the boundary.
+Then the derivatives we may specify in addition to the boundary
+values is just the derivative with respect to $x$.
+This derivative is just a directional derivative in a direction normal
+to the boundary, we write it
 \[
 \frac{\partial u}{\partial n}
 \]
-und nennen sie die Normalableitung.
-Bei der eben beschriebenen Wahl des Koordinatensystems kann man
-die Normalableitung mit Hilfe der Formel
+and call it the normal derivative.
+With the choice of coordinate system as describe above, the normal
+derivative can be computed using the formula
 \[
 \frac{\partial u}{\partial n}
-=\frac{\partial u}{\partial x}
+=\frac{\partial u}{\partial x}.
 \]
-berechnen.
 
-Ist $n$ der Normalenvektor auf die Kurve (oder Fläche für $n=3$), auf
-der die Randwerte vorgegeben sind, dann kann die Normalableitung mit 
-Hilfe der Richtungsableitung berechnet werden, es ist
+If $n$ is the normal vector of a curve ($n=2$) or a surface ($n=3$),
+on which boundary conditions are prescribed, then the normal derivative
+can be computed using the directional derivative:
 \[
 \frac{\partial u}{\partial n}=D_nu = n\cdot \operatorname{grad} u.
 \]
 
-\subsection{Allgemeines Randwertproblem\label{klassifikation:allgemeines-randwertproblem}}
-Bei partiellen Differentialgleichungen hat der Definitionsbereich einen
-weit grösseren Einfluss auf die Lösung als bei gewöhnlichen
-Differentialgleichungen. Das in den voranstehenden Abschnitten
-diskutierte Cauchy-Problem erlaubt zunächst zu beurteilen, welche
-Art von Randbedingungen sinnvoll ist. 
-So haben Wir gesehen, dass Randwerte in folgenden Formen vorgegeben
-werden können: 
+\subsection{General boundary value problem
+\label{klassifikation:allgemeines-randwertproblem}}
+For partial differential equations the topology of the domain has much
+greater influence on the solvability than with ordinary differential
+equations, where the topology of the domain is exceedingly simple.
+The Cauchy problem discussed in the preceding sections helps us understand
+what types of boundary conditions are meaningful.
+We have seen that in general, boundary conditions are of the following types:
 \begin{itemize}
-\item Als Werte entlang des Randes des Definitionsgebietes der
-Differentialgleichung, also in der Form
+\item
+Values along the boundary of the domain in the form
 \[
 u(x)=g(x)\quad \forall x\in\partial G\subset \mathbb R^n.
 \]
-Diese Randbedingungen heissen Dirichlet-Randbedingungen.
-\item Als Werte der Normalableitung auf dem
-Rand, geschrieben
+These are called {\em Dirichlet} boundary conditions.
+\item
+Values of the normal derivative along the boundary, written as
 \[
 \frac{\partial u}{\partial n}(x)=h(x)\quad\forall x\in\partial G\subset \mathbb R^n.
 \]
-Dieser Randbedingungen heissen Neumann-Randbedingungen.
-\item Als Kombination von Funktionswerten und Ableitungen: es ist
-möglich, auf verschiedenen Teilen des Randes Randwerte oder Normalableitungen
-vorzugeben, es ist aber auch möglich, eine Linearkombination
-von Randwerten und Normalableitungen vorzugeben.
+These are {\em Neumann} boundary conditions.
+\item
+Linear combinations of values and normal derivatives along the 
+bounary.
 \end{itemize}
-Dies genügt jedoch noch nicht, zu entscheiden, ob durch diese
-Bedingungen die Lösungen eindeutig festgelegt sind.
-Dazu ist ein vertieftere Theorie nötig. Während bei den gewöhnlichen
-Differentialgleichungen eine relativ einfache Methode (Picard-Iteration)
-unter relativ milden Voraussetzungen zu beweisen  erlaubt, dass
-gewöhnliche Differentialgleichungen zu gegebenen Anfangswerten eine
-eindeutig bestimmte Lösung haben, wenigstens für eine gewisses Zeitinterval,
-ist dieser Beweis für partielle Differentialgleichungen ungleich schwieriger.
-Für gewisse Typen von partiellen Differentialgleichungen ist dies jedoch
-möglich, einige davon werden in den kommenden Kapiteln behandelt.
+A nice example for mixed boundary conditions is the wave equation of
+a vibrating string.
+For $t=0$ we specify initial values and initial $t$-derivatives which happen
+to be normal derivatives.
+These normal derivatives are not needed on the two ends of the interval
+for $t>0$.
+So we have two boundary conditions: boundary values along the complete
+boundary and normal derivatives times the characteristic function of
+the bottom boundary.
+
+But this is not enough to decide which boundary conditions are needed
+to fix the solution of the equation.
+For this a more in depth theory is required.
+This is in stark contrast to the situation for ordinary differential
+equations where the Picard-Iteration method guarantees existence and
+uniqueness of solutions under very mild conditions on the differential
+equation.
+We tackle this difficult problem for different types of differential
+equations in the following chapters.
 
