@@ -1,38 +1,43 @@
 %
-% lpde.tex -- XXX
+% lpde.tex -- why linear pdes?
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\section{Separation für lineare partielle Differentialgleichungen}
-Die Grundidee des Separationsverfahrens liefert eine Familie von Funktionen,
-von ein paar Integrationskonstanten abhängen. Vorgegeben sind auf dem
-Rand aber beliebige Funktionen, es ist im Allgemeinen nicht möglich,
-durch richtige Wahl von wenigen Parametern beliebige Funktionen zu erhalten.
-Des Separationsverfahren in der bisherigen Form kann also ein
-beliebiges Randwertproblem noch nicht lösen.
+\section{Separation for linear partial differential equations}
+The base idea of the separation method produces a family of functions
+that depend an some integration and separation constants.
+On the boundary we are usually given some arbitrary functions.
+In general it will be impossible to tune these few constants to
+values the reproduce the boundary functions.
+This basic version of the separation method thus is incapable of
+solving a general partial differential equation due to the lack
+of flexibility in the set of solutions found.
 
-Nehmen wir an, es müsse die Differentialgleichung $Lu=f$ auf dem
-Gebiet $\Omega$ mit Randwerte $g(x)$ für $x\in\partial \Omega$
-gelöst werden.
-Wir haben nur dann eine Chance, aus den bisherigen Resultaten eine 
-vollständige Lösung des Problems zu erhalten, wenn wir in der
-Lage sind, solche Teillösungen zu einer vollständigen Lösung
-zu kombinieren. Dazu sind aber im allgemeinen zusätzliche
-Bedingungen an die Differentialgleichung nötig. Linearität der
-Differentialgleichung ist, was wir hier verwenden wollen:
+This problem changes if different solutions can be combined into new ones.
+Linear combinations of solutions introduce a large set of additional
+parameters to tune the solution.
+In particular, Fourier theory shows that linear combinations of
+basic functions can be tuned to approximate just about any periodic
+function.
+However, linear combinations of solutions are in general no longer
+solutions the equation, except for linear partial differential
+equations.
+This is expressed in the following theorem.
 
-\begin{satz}Sind $u_1$ und $u_2$ Lösungen einer homogenen linearen partiellen
-Differentialgleichung, dann sind auch $u_1+u_2$ und $\lambda u_1$ für
-$\lambda\in\mathbb R$ Lösungen
+\begin{satz}
+If $u_1$ and $u_2$
+are solutions of a homogeneous linear partial differential equation,
+then $u_1+u_2$ and $\lambda u_1$ with $\lambda\in\mathbb R$ are also
+solutions.
 \end{satz}
 
-\begin{proof}[Beweis]
-Die Differentialgleichung
+\begin{proof}
+The differential equation
 \[
 F(x_1,\dots,x_2,u,\frac{\partial u}{\partial x_1},\dots)=0
 \]
-ist linear in $u$ und den Ableitungen, man darf also Summen und Vielfache
-in $u$ und den Ableitungen aus der Funktion herausziehen:
+is linear in $u$ and its derivatives, so we can expand sums and
+pull factors from inside $F$:
 \begin{align*}
 F(x_1,\dots,x_2,u_1+u_2,\frac{\partial u_1}{\partial x_1}+\frac{\partial u_2}{\partial x_1},\dots)
 &=
@@ -47,35 +52,33 @@ F(x_1,\dots,x_2,\lambda u_1,\frac{\partial \lambda u_1}{\partial x_1},\dots)
 F(x_1,\dots,x_2,u_1,\frac{\partial u_1}{\partial x_1},\dots)
 =0
 \end{align*}
-Die Linearkombinationen von $u_1$ und $u_2$ sind also auch Lösungen.
+Thus linear combinations of $u_1$ and $u_2$ are solutions too.
 \end{proof}
 
-Um die Differentialgleichung zu lösen, kann man also versuchen, mit
-dem bisherigen Separationsverfahren möglichst viele Lösungen zu
-$u_1$, $u_2$, $u_3,\dots$ zu finden, und diese dann zu einer Gesamtlösung
-zu kombinieren
+Linear cominations allow us to first find as many different solutions
+$u_1$, $u_2$, $u_3,\dots$ and then to use suitable coefficients $a_k$
+to combine them into a solution
 \[
 u(x)=\sum_{i=1}^\infty a_ku_k
 \]
-mit geeigneten Koeffizienten $a_k$, die so zu wählen sind, dass die
-Randbedingungen erfüllt sind.
+that also satisfies the boundary conditions.
 
-Inhomogene lineare partielle Differentialgleichungen kann man mit diesem
-Verfahren ebenfalls lösen. Dazu findet man zunächst eine partikuläre
-Lösung $u_p$, welche die inhomogenen Differentialgleichung löst, ohne
-allerdings korrekte Randwerte zu liefern.
-Das ursprüngliche Separationsverfahren kann hierbei hilfreich sein.
-Dann verwendet man das skizzierte Verfahren für homogene lineare
-partielle Differentialgleichungen für modifizierte Randwerte $g-u_p$ auf
-$\partial\Omega$ um eine Lösung der homogenen Gleichung $u_h$ zu finden.
-Die Summe $u=u_p+u_h$ ist dann eine Lösung der inhomogenen Gleichung
-mit Randwerten $u_p + (g-u_p)=g$, also ein Lösung des ursprünglichen
-Problems.
+Inhomogeneous linear partial differential equations can be solved using
+this method too.
+As pointed out in chapter~\ref{chapter:terminology and notation},
+we first have to find a particular soltion
+$u_p$ which solves the inhomogeneous differential equation independently
+of any boundary conditions.
+The separation method, can helpful for this too.
+Then the problem is reduced to finding a solutions $u_h$ to the homogeneous
+equations with boundary condition $g-u_p$ on $\partial\Omega$.
+Using the separation method, we can build up $u_h$ as a linear combination
+of solutions.
 
-Die Bestimmung der Koeffizienten $a_k$ für die gefundene Familie
-von Teillösungen führt oft auf die Fourier-Theorie, oder allgemeiner
-auf orthogonale Funktionenfamilien. Solche Teillösungen haben oft eine
-unmittelbare physikalische Bedeutung, zum Beispiel treten sie auf als
-Schiwngungsmoden (in der Mechanik oder Elektrotechnik) oder als
-Elektronenzustände in der Quantenmechanik.
+The coefficients $a_k$ for the linear combination often lead us into
+Fourier theory or some generalization of it.
+Such partial solutions often have immediate physical significance.
+In mechanical or electrical engineering they appear as vibration modes,
+in quantum mechanics they are energy states.
+
 

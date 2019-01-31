@@ -1,15 +1,15 @@
 %
-% ode.tex -- XXX
+% ode.tex -- ordinary differential equations
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\section{Separation der Variablen für gewöhnliche Differentialgleichungen}
-Die Differentialgleichung 
+\section{Separation of Variables for ordinary differential equations}
+The differential equation
 \begin{equation}
 y'-xy=0
 \label{separation:ode}
 \end{equation}
-kann mit Separation der Variablen gelöst werden:
+can be solved using separation of variables:
 \begin{align*}
 \frac{dy}{dx}&=xy\\
 \frac1y\,dy&=x\,dx\\
@@ -17,39 +17,44 @@ kann mit Separation der Variablen gelöst werden:
 \log|y|&=\frac12x^2+C\\
 y&=y_0e^{\frac12x^2}
 \end{align*}
-Das Verfahren beruht auf dem Prinzip, auf jeder Seite der Gleichung
-nur eine Variable zu haben.
-Dabei zerlegt man sogar die Ableitung $dy/dx$, was man ja eigentlich
-gar nicht darf.
-Die Separation führt die Lösung der Differentialgleichung auf die
-Berechnung zweier Integrale zurück, also eigentlich auf die
-Lösung einer besonders einfachen Differentialgleichung der Form $y'=f(x)$
-mit Lösung $y(x)=\int f(x)\,dx$.
-Diese Form der Lösung sagt uns auch genau, was wir an Anfangsbedingungen
-brauchen.
-Ist $y_0$ der Wert der Lösung an der Stelle $x_0$, dann liefert
-das Integral die Lösungsfunktion
+The method is based on the principle to have only a single variable
+on either side of the equation.
+Even the derivative is formally decomposed as a fraction $dy/dx$, which
+isn't really meaningful but justified by the success of the method.
+This reduces the solution of the differential equation to the computation
+of two integrals, i.~e.~the solution of the particularly simple
+differential equation $y'=f(x)$ with solution $y(x)=\int f(x)\,dx$..
+This solution also tells us what kind of initial conditions we need
+for the solution to be uniquely determined.
+If $y_0$ is the value of the solution at $x=x_0$, then the solution is
 \[
 y(x)=\int_{x_0}^xf(\xi)\,d\xi + y_0.
 \]
 
-So einfach wird es für partielle Differentialgleichungen nicht sein.
-Insbesondere für die an sich schon etwas ``anrüchige'' Operationen,
-den Differentialquotienten $dy/dx$ auseinanderzureissen gibt es keinerlei
-Entsprechung bei partiellen Ableitungen.
-Unter geeigneten Voraussetzungen an das Gebiet und die Differentialgleichung
-ist es aber immer noch denkbar, dass man die Variablen trennen kann,
-also 
+Of course the process will not be quite as simple when we transition
+to partial differential equations.
+In particular the suspicious operation to separate the differentials
+of $dy/dx$ has no counterpart for more than one independent variable.
+However, depending on the shape of the domain, it might still be possible
+to separate the variables and to transform the equation into the form
 \[
-\text{Funktionen/Ableitungen nur mit $x$} = \text{Funktionen/Ableitungen nur mit $y$}
+\text{functions/derivatives only involving $x$}
+=
+\text{functions/derivatives only involving $y$}
 \]
-Da die linke Seite nur von $x$ abhängt, die rechte aber nur von $y$, müssen
-beide Seiten konstant sein, die partielle Differentialgleichung zerfällt
-in eine linke {\em gewöhnliche} Differentialgleichung für eine Funktion von
-$x$ und eine rechte {\em gewöhnliche} Differentialgleichung für $y$.
-
-Da wir über gewöhnliche Differntialgleichungen Bescheid wissen, sollte
-es uns so möglich sein, eine partielle Differentialgleichung zu lösen
-und herzuleiten, welche Art von Randwerten vorgegeben werden müssen, damit
-die Differentialgleichung eindeutig lösbar ist.
+Since the left hand side only depends on $x$ while the right hand side
+depends only on $y$, both sides must be constant.
+So we can write
+\begin{align*}
+\text{functions/derivatives only involving $x$} &= \mu
+\\
+\text{functions/derivatives only involving $y$} &= \mu
+\end{align*}
+with a new constant $\mu$ that has to be determined later.
+This means that we have succeeded to reduce the partial differential
+equation to two ordinary differential equations.
+Since we know ``all'' about ordinary differential equations, we should
+no be in a position to solve the partial differential equation and
+to determine what kinds of boundary values are needed to make the
+solution unique.
 

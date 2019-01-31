@@ -1,23 +1,21 @@
 %
-% idea.tex -- XXX
+% idea.tex -- idea of the method
 %
 % (c) 2008 Prof Dr Andreas Mueller
-% $Id: c02-separation.tex,v 1.3 2008/09/13 23:01:45 afm Exp $
 %
 
-\section{Idee des Verfahrens}
-Oft hat man aus dem Anwendungsgebiet, aus dem eine partielle
-Differentialgleichung stammt, Hinweise darauf, wie die Lösungsfunktion
-von {\em einer} der unabhängigen Variablen abhängt.
-Dann kann man Versuchen, die Lösung als Produkt oder Summe von
-solchen ``vermuteten'' Funktionen darzustellen.
+\section{Idea of the method}
+In applications one often has some indications from the application
+domain what the solution function will most probably look like, or one
+is looking for a very particular type of solution.
+In partuclar, it may be known how the solution depends on one of the
+variables up to a factor depending only on the other variable.
+In these situations one can try to write the solution as a product
+or sum of functions that depend on only one variable.
 
-\index{Ansatz}
-\index{Separationsansatz}
-Aber selbst wenn man nichts über die Lösung weiss, kann man 
-versuchen, die Lösung als Summe oder Produkt von Funktionen darzustellen,
-die nur von jeweils einer Variablen abhängen. Als Beispiel versuchen
-wir die lineare Differentialgleichung 
+Even if one knows nothing about the solution, one can still try such
+an {\em ansatz}, as the following example tries to illustrate.
+Let's attempt to solve the partial differetnial equation
 \begin{equation}
 \frac1x
 \frac{\partial u}{\partial x}
@@ -26,12 +24,12 @@ wir die lineare Differentialgleichung
 \frac{\partial u}{\partial y}
 =\frac1{y^2}
 ,
-\qquad x>1, y>1
+\qquad x>1, y>1,
 \label{separation:beispiel1}
 \end{equation}
-zu lösen, wobei wir die Randbedingungen für den Moment ignorieren.
-Wir versuchen, die Lösung als Summe von zwei Funktionen darzustellen,
-welche nur von $x$ bzw.~$y$ abhängen, also
+ignoring the boundary conditions for the time being.
+We try to represent the solution as a sum of two functions which depend
+on one of $x$ and $y$ only.
 \begin{equation}
 u(x,y)=X(x)+Y(y)
 \quad\Rightarrow\quad
@@ -42,72 +40,83 @@ u(x,y)=X(x)+Y(y)
 \end{cases}
 \label{separation:beispiel1:ansatz}
 \end{equation}
-Setzt man dies in die Differentialgleichung (\ref{separation:beispiel1})
-ein, erhalten wir die Gleichung
+Substituting this into the differential equation
+(\ref{separation:beispiel1})
+gives the new equation
 \[
 \frac{X'(x)}{x}+\frac{Y'(y)}{y}=\frac1{y^2}
 \]
-oder
+or
 \begin{equation}
 \frac{X'(x)}{x}
 =\frac1{y^2}
 -\frac{Y'(y)}{y}.
 \label{separation:beispiel1:separiert}
 \end{equation}
-Die Form (\ref{separation:beispiel1:separiert}) hat eine besondere
-Eigenschaft: die Variable $x$ kommt nur auf der linken Seite vor,
-die Variable $y$ nur auf der rechten. Setzt man für $y$ irgend
-einen Wert ein, verändert sich die rechte Seite nicht mehr,
-die linke Seite muss also für alle $x$ den gleichen Wert geben.
-Lässt man jetzt wieder das $y$ varieren, muss sich auch auf der rechten
-Seite immer der gleiche Wert ergeben. Wir nennen den gemeinsamen Wert
-$k$, und bekommen zwei gewöhnliche Differentialgleichungen
-für $X(x)$ und $Y(y)$:
+The Form (\ref{separation:beispiel1:separiert}) has a distinct property:
+the variable $x$ only appears on the left side, the variable $y$ only on
+the right.
+If we fix some value $y$, the right hand side cannot change, so the left
+hand side must not depend on $x$.
+Conversely, if we fix $x$, then the left side cannot change any more,
+and thus the right hand side cannot change either.
+We conclude that both sides must be the same constant.
+Calling this constant $k$ we find the two ordinary differential equations
 \begin{align}
 \frac{X'(x)}{x}&=k
 &
 k&=\frac1{y^2}-\frac{Y'(y)}{y}
 \label{separation:beispiel1:separiertedgl}
 \end{align}
-Die linke Differentialgleichung ist einfach zu lösen:
+for $X(x)$ and $Y(y)$.
+
+The differential equation for $X$ is easy to solve:
 \begin{align*}
 X'(x)&=kx\quad\Rightarrow\quad X(x)=
 \frac12kx^2+C_x.
 \end{align*}
-Die rechte Differentialgleichung ist nur leicht komplizierter:
+The right equation is only slightly more complicated:
 \begin{align*}
 Y'(y)=\frac1y-ky
 \quad\Rightarrow\quad
 Y(y)=\int\frac1y-ky\,dy=
 \log y-\frac12ky^2+C_y.
 \end{align*}
-Diese beiden Lösungen können wir jetzt wieder zu einer Lösung der
-ursprünglichen Differentialgleichung zusammensetzen:
+We can now combine these functions into a solution of the initial
+differential equation:
 \begin{equation}
 u(x,y)=
 \frac12kx^2+
 \log y-\frac12ky^2+C.
 \label{separation:beispiel1:loesung}
 \end{equation}
-Wir haben damit eine unendliche Familie von Lösungen der
-Differentialgleichung gefunden, für jedes Paar $(k,C)$ von
-Parametern liefert die Formel (\ref{separation:beispiel1:loesung})
-eine Lösung.
-Dazu müssen wir in irgend einer Weise die Randbedingungen verwenden.
-Damit haben wir eine Skizze für das Lösungsverfahren mit Separation:
+By varying the parameters $k$ and $C$, formula
+(\ref{separation:beispiel1:loesung}) gives an infinite family of
+solutions of the partial differential equation.
+
+The values of the constants need to be determined by boundary conditions
+in a manner to be studied later.
+
+Let's summarize the method so far:
 \begin{enumerate}
-\item Finde einen Lösungsansatz aus Funktionen, die nur von einer
-Variablen abhängen.
-\item Setze in die Differentialgleichung ein und separiere die Terme
-so, dass zwei Variablen jeweils nur auf einer Seite vorkommen. Dann
-hängen beide Seiten nicht mehr von dieser Variablen ab, jede Seite
-ist eine Differentialgleichung mit weniger Variablen.
-\item Löse die Teildifferentialgleichungen, und setze daraus 
-Lösungen zusammen. 
-\item Verwende die Randbedingungen, um eine Lösung zu finden.
+\item
+Choose an {\em ansatz} from functions that depend from disjoint
+sets of variables.
+\item
+Substitute into the partial differential equation and separate terms
+involving the separate sets of variables.
+The two sides of the equation depend on disjoint sets of variables
+und must therefore be constant.
+\item 
+Split the equation into two coupled equations, each with a
+different set of independent variables.
+\item
+Solve each equation individually.
+\item
+Put solutions together using the boundary conditions.
 \end{enumerate}
-Wie man unschwer erkennen kann, ist weniger die Lösung der
-einzelnen Teildifferentialgleichungen das Problem, sondern der letzte
-Schritt. In den folgenden Abschnitten zeigen wir an Beispielen, wie
-dies möglich ist.
+As may suspected, the problem most of the time is not the solution
+of the individual equations but rather the last step.
+In the following sections we want to illustrate how this can be
+done in a variety of examples.
 
