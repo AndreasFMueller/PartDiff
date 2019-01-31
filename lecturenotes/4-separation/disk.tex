@@ -3,62 +3,63 @@
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\section{Kreisgebiet}
-\rhead{Kreisgebiet}
-\index{Kreisgebiet}
-\index{Kreisscheibe}
-In diesem Abschnitt betrachten wir eine Kreisscheibe
+\section{Disk domain}
+\rhead{Disk domain}
+In this section, we attempt to solve the wave equation on the
+disk shaped domain
 \[
 G=\{(x,y)\in\mathbb R^2|x^2+y^2 < R\}
 \]
-mit Radius $R$ als Definitionsbereich. Da sich dieses Gebiet durch
-eine Streckung um den Faktor $\frac1R$ immer auf einen Einheitskreis
-abbilden lässt, können wir ohne Verlust an Allgemeinheit vorausetzen,
-dass $R=1$ ist.
+with radius $R$.
+Such a domain can always be reduced to a circular domain with radius
+$R=1$ by a simple homothety.
+It is therefore no loss of generality to assume $R=1$ in the following.
 
-Ein Kreisgebiet tritt zum Beispiel beim Problem auf, die Schwingungen
-einer kreisförmigen Membran zu berechnen, wie sie bei einer Kesselpauke
-vorkommen. Nach den Ergebnissen des ersten Kapitels suchen wir nach einer
-Funktion $u$, welche auf $G$ die Gleichung
+A disk shaped domain appears e.~g.~when the vibrations of the membrane of
+a drum or a microphone.
+According to the results of section~\ref{separating time}, we are looking
+for a function of time and location in $G$
 \[
-\frac1{a^2}\frac{\partial^2 u}{\partial t^2}=\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}
+\frac1{a^2}\frac{\partial^2 u}{\partial t^2}
+=
+\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}
 \]
-erfüllt. Wie bei der Schwingung der einer rechteckigen Platte
-wird daraus mit dem Ansatz $ u(x,y,t)=u(x,y)\cdot T(t)$ ein
-Eigenwertproblem:
+As before, this reduces to the eigenvalue problem
 \begin{align*}
 T''(t)&=-a^2\lambda^2 T(t)\\
-\Delta u(x,y)&=-\lambda^2u(x,y)
+\Delta u(x,y)&=-\lambda^2u(x,y).
 \end{align*}
-Das Poissonproblem ist der Spezialfall $\lambda=0$.
-\index{Poissonproblem}
+In the specials case $\lambda=0$, this happens to be the Poisson problem.
 
-\subsection{Polarkoordinaten}
-\index{Polarkoordinaten}
-Offenbar sind Polarkoordinaten speziell gut an das Problem angepasst, 
-eine Randbedingung lässt sich zum Beispiel durch eine Funktion beschreiben,
-welche nur vom Polarwinkel abhängt.
-Eine schwingende kreisförmite Membran führt also auf die partielle
-Differentialgleichung
+\subsection{Polar coordinates}
+\index{Polar coordinates}
+Polar coordinates are obviously much more adapted to this problem than
+rectangular coordinates, mainly because the boundary of the domain
+is so much easier in polar coordinates.
+The boundary values on the circle can be described as a function
+of the argument $\varphi$ only.
+Assuming the speed of sound $c=1$ to simplify the computations, we
+get the differential equation
 \[
 \frac{\partial^2u(r,\varphi)}{\partial t^2}=\Delta u(r,\varphi)
 \]
-mit der Randbedingung
+with boundary conditions
 \[
-u(R,\varphi)=0,\qquad\varphi\in[0,2\pi],
+u(1,\varphi)=0,\qquad\varphi\in[0,2\pi].
 \]
-wobei wie oben $R$ der Radius der Membran ist.
 
-Damit das Problem auf einem Kreisgebiet in Polarkoordinaten behandelt
-werden kann,
-brauchen wir einen Ausdruck für $\Delta u$ in Polarkoordinaten.
+We need an expression for the Laplace operator in polar coordinates.
+We start with the definition
 \begin{align}
 x&=r\cos\varphi\\
 y&=r\sin\varphi
 \label{polarkoordinaten}
 \end{align}
-Um die Ableitungen nach $x$ und $y$ durch Ableitungen $\varphi$ und $r$ zu
-ersetzen, leiten wir (\ref{polarkoordinaten}) nach $x$ und $y$ ab:
+for polar coordinates.
+We have to convert derivatives with respect to $x$ and $y$
+into derivatives with respect to $r$ and $\varphi$.
+With this goal in mind wit compute the equations
+\eqref{polarkoordinaten} with respect to $x$ and $y$:
 \begin{align*}
 1&=
 \frac{\partial r}{\partial x}\cos\varphi
@@ -76,7 +77,7 @@ ersetzen, leiten wir (\ref{polarkoordinaten}) nach $x$ und $y$ ab:
 \frac{\partial r}{\partial y}\sin\varphi
 +r\cos\varphi \frac{\partial\varphi}{\partial y}
 \end{align*}
-In Matrixschreibweise ist dies
+In matrix notation, this is
 \begin{align*}
 \begin{pmatrix}1\\0\end{pmatrix}
 &=
@@ -100,10 +101,12 @@ r\frac{\partial \varphi}{\partial x}
 r\frac{\partial \varphi}{\partial y}
 \end{pmatrix}
 \end{align*}
-Die $2\times2$ Matrix ist eine Drehmatrix, die Inverse findet man, indem man
-$\varphi$ durch $-\varphi$ ersetzt. Die Multiplikation auf der linken Seite
-ergibt jeweils die erste bzw. zweite Spalte der Drehmatrix zum
-Winkel $\varphi$:
+This 
+$2\times2$ matrix is a rotation matrix, the inverse can be found
+by replacing $\varphi$ by $-\varphi$ or simply by taking the
+transpose, as for any orthogonal matrix $A$, $A^{-1}=A^t$.
+By multiplying out, we get terms for the following expressions for
+the derivatives of polar coordinates with respect to $x$ and $y$
 \begin{align*}
 \cos\varphi
 &=\frac{\partial r}{\partial x}
@@ -125,11 +128,10 @@ r\frac{\partial\varphi}{\partial y}
 &\Rightarrow\quad
 \frac{\partial\varphi}{\partial y}&=\frac1r\cos\varphi
 \end{align*}
-Mit diesen Formeln können wir jetzt die höheren Ableitungen
-von $u$ nach  $x$ und $y$ durch Ableitungen nach $r$ und $\varphi$
-ersetzen.
+We can use these to also compute higher derivatives by
+iterating them.
 
-Die partiellen Ableitungen von $\varphi$ nach $x$ und $y$ sind
+To compute partial derivatives of $u$ we use the chain rule
 \begin{align*}
 \frac{\partial u}{\partial x}
 &=
@@ -159,7 +161,7 @@ Die partiellen Ableitungen von $\varphi$ nach $x$ und $y$ sind
 \frac{\partial u}{\partial\varphi}
 \frac1r\cos\varphi
 \end{align*}
-Die zweiten Ableitungen sind
+The second derivatives similarly become
 \begin{align*}
 \frac{\partial^2u}{\partial x^2}
 &=
@@ -274,9 +276,8 @@ Die zweiten Ableitungen sind
 +\frac{\partial^2u}{\partial \varphi^2}\frac1{r^2}\cos^2\varphi
 -\frac{\partial u}{\partial \varphi}\frac1{r^2}\sin\varphi\cos\varphi
 \end{align*}
-\index{Laplace-Operator!in Polarkoordinaten}
-Die Summe dieser zwei Terme ist die gesucht Darstellung des Laplace-Operators
-in Polarkoordinaten:
+Adding these two terms gives the representation of the Laplace operator
+in polar coordinates that we have been looking for:
 \begin{align*}
 \frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}
 &=
@@ -287,16 +288,15 @@ in Polarkoordinaten:
 &=
 \left(\frac1r\frac{\partial}{\partial r}r\frac{\partial}{\partial r}+\frac1{r^2}\frac{\partial^2}{\partial \varphi^2}\right)u
 \end{align*}
-Darstellungen des Laplace-Operators in weiteren Koordinatensystemen können
-in jeder einigermassen vollständigen Formelsammlung gefunden werden.
+Formulae for the Laplace operator in many different coordinate systems
+can be found in any reasonably complete reference.
 
-\subsection{Separation der Ortsvariablen}
-Die Lösung $u(r,\varphi)$ des Eigenwertproblems setzen wir wieder
-als Produkt einer Funktion
-$R(r)$
-nur von  $r$ und einer Funktion $\Phi(\varphi)$ nur von $\varphi$ an.
-Mit der im vorangegangenen Abschnitt gefundenen Formel für den Laplace-Operator
-in Polarkoordinaten erhalten wir jetzt die Gleichungen
+\subsection{Separating the location variables}
+The solution $u(r,\varphi)$ of the eigenvalue problem is again attempted
+as the product of a funcktion $R(r)$ of $r$ only and a funktion
+$\Phi(\varphi)$ of $\varphi$ only.
+Using the formula for the Laplace operator, the differential equation
+in polar coordinates becomes
 \begin{align*}
 \Delta u=
 \biggl(R''(r) + \frac1rR'(r)\biggr)\Phi(\varphi)
@@ -306,40 +306,45 @@ in Polarkoordinaten erhalten wir jetzt die Gleichungen
 \\
 \frac{r^2R''(r)+rR'(r)}{R(r)}+\lambda^2 r^2&=-\frac{\Phi''(\varphi)}{\Phi(\varphi)}
 \end{align*}
-Da die rechte Seite nur von $\varphi$ abhängt, die linke Seite aber nur von $r$,
-müssen beide Seiten konstant sein, wir nennen diese Konstante $\mu^2$.
-Damit sind die Variablen separiert:
+The right hand side depends only on $\varphi$, the left hand side only on $r$,
+so, again, both sides need to be constant.
+We call the constant $\mu^2$.
+These completes the separation of the variables:
 \begin{align}
 \Phi''(\varphi)+\mu^2\Phi(\varphi)&=0\label{phigleichung}\\
 r^2R''(r)+rR'(r)+(\lambda^2 r^2-\mu^2)R(r)&=0\label{rgleichung}
 \end{align}
 
-\subsection{Lösung der separierten Differentialgleichungen}
-Die allgemeine Lösung der Gleichung (\ref{phigleichung}) ist
+\subsection{Solution of the separated equations}
+The general solution of the equation \eqref{phigleichung} is
 \[
 \Phi(\varphi)=A\cos\mu\varphi +B\sin\mu\varphi.
 \]
-Dies ist nur dann $2\pi$-periodisch, wenn $\mu$ eine ganze
-Zahl ist, also $\mu=k$ mit $k\in\mathbb Z$.
+Because $\varphi$ and $\varphi+2\pi$ describe the same points in the domain,
+$\Phi$ must be $2\pi$-periodic, which only happens if
+$\mu$ is an integer multiple of $2\pi$.
+So we write $\mu_k = 2\pi k$ with $k\in\mathbb Z$.
 
-Die Gleichung (\ref{rgleichung}) für $R$ bekommt damit die Form
+The equation \eqref{rgleichung} for $R(r)$ now becomes the form
 \[
 r^2R''(r)+rR'(r)+(\lambda^2 r^2-k^2)R(r)=0,
 \]
-sie ist verwandt mit der Besselschen Differentialgleichung.
-Die Funktion $P(\varrho)=R(\varrho/\lambda)=R(r)$ hat die Ableitungen
+it is related to Bessel's equation in the following way.
+The function
+$P(\varrho)=R(\varrho/\lambda)=R(r)$ has solutions
 \begin{align*}
 \varrho P'(\varrho)&=\frac{\varrho}{\lambda}R'(\varrho/\lambda)=rR'(r)\\
 \varrho^2 P''(\varrho)&=\frac{\varrho^2}{\lambda^2}R'(\varrho/\lambda)=r^2R''(r)
 \end{align*}
+and solves Bessel's equation
 und erfüllt somit die Besselsche Differentialgleichung
 \[
 \varrho^2P''(\varrho)+\varrho P'(\varrho)+(\varrho^2-k^2)P(\varrho).
 \]
-Lösungen der Besselschen Differentialgleichungen sind die Besselfunktionen
+The solutions of Bessel's equation are the Bessel functions
 \[
 P(\varrho)=J_{\pm k}(\lambda r)=R(r)
 \]
-Wie bei der rechteckigen Membran kann die allgemeine Lösung jetzt aus
-den Teillösungen zusammengesetzt werden.
+As for a rectangular membrane, the general solution must now be
+linearly combined from partial solutions
 
