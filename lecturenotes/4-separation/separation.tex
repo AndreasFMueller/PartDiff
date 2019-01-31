@@ -1,36 +1,37 @@
 %
-% separation.tex -- XXX
+% separation.tex
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\lhead{Separation der Variablen}
+\lhead{Separation of Variables}
 \rhead{}
-\chapter{Separation der Variablen\label{chapter-separation}}
-\index{Stroboskop}
-\index{Eigenschwingung}
-\index{stehende Welle}
+\chapter{Separation of Variables\label{chapter-separation}}
+\index{Stroboscope}
+\index{standing Wave}
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.8\hsize]{../common/graphics/stringvibrlarge-10-06-06.jpg}
 \end{center}
-\caption{Schwingende Saite (Bild von A.~Davidhazy, http://people.rit.edu/andpph/)
+\caption{
+Vibrating string
+(Image by A.~Davidhazy, http://people.rit.edu/andpph/)
 \label{separation:schwingendesaite}}
 \end{figure}
-Beleuchtet man eine schwingende Saite mit einem Stroboskop mit der
-Frequenz der Eigenschwingung, scheint die Saite stillzustehen. 
-In periodischen Zeit\-ab\-stän\-den sieht die Lösung der Wellengleichung
-also gleich aus.
-Misst man andererseits die Auslenkung der Saite
-an einer Stelle in Abhängigkeit von der Zeit, beobachtet man
-eine harmonische Schwingung, die sich mit Hilfe von $\sin$- und
-$\cos$-Funktionen beschreiben lässt. Man kann also vermuten,
-dass die Lösung der Wellengleichung der schwingenden Saite
-ein Produkt
+Lighting a vibrating string with a stroboscope at the frequency of the
+string makes the string seemingly stand still.
+The shape of the solution of the wave equation thus is the same
+at periodically recurring points in time.
+Measuring the elongation's dependence on time, it turns out to be
+a harmonic oscillation which can be described using sine and cosine
+functions.
+This leads to the conjecture that the solution can be written as 
+a product
 \[
 u(x,t)=X(x)\cdot\sin\omega t\quad\text{oder}\quad X(x)\cdot\cos\omega t.
 \]
-ist. Ziel dieses Kapitels ist, diese Idee zu einem Lösungsverfahren
-weiterzuentwickeln und auf einige Differentialgleichungen anzuwenden.
+The goal of this chapter is to develop this idea into a solution
+algorithm that is applicable to a suitably large class of partial
+differential equations.
 
 \input{4-separation/ode.tex}
 \input{4-separation/idea.tex}
@@ -40,28 +41,25 @@ weiterzuentwickeln und auf einige Differentialgleichungen anzuwenden.
 \input{4-separation/initial.tex}
 \input{4-separation/summary.tex}
 
-\section{Zusammenfassung: das Wichtigste in Kürze}
+\section{Summary}
 \begin{enumerate}
 \item
-Durch einen geeigneten Ansatz lassen sich einige partielle
-Differentialgleichung in über Konstanten gekoppelte gewöhnliche
-Differentialgleichungen zerlegen.
+Using a suitable {\em ansatz}, a partial differential equation can be
+decomposed into a set of coupled ordinary differential equations.
 \item
-Die Wahl des Lösungsansatzes wird durch die Geometrie des Gebietes
-(Koordinatensystem) und die Art der Differentialgleichung bestimmt.
+The choice of ansatz is essential predicated on the geometry of the
+domain, in particular on the coordinate system and the type of equation.
 \item
-Für lineare Differentialgleichung lassen sich aus den durch Separation
-gefundenen Teil\-lö\-sungen Lösungen der ursprünglichen Differentialgleichung
-linear kombinieren.
+For linear partial differential equations, the partial solutions found
+by the previous steps can be linearly combined to give more solutions
+of the initial partial differential equation.
 \item
-Die zentrale Idee des Verfahrens ist, dass in einer Gleichung,
-in der die eine Seite nur von $x$, die ander aber nicht von $x$
-abhängt, beide Seiten konstant sein müssen.
+The central idea of the method is that an equation, where one side
+depends only on $x$ and the other side only on $y$ can only be constant.
 \item
-Im Falle von partiellen Differentialgleichungen zweiter Ordnung, die
-sich häufig mit einem Produktansatz behandeln lassen, führt die
-Separation das ursprüngliche Problem auf ein Eigenwertproblem mit
-weniger Variablen.
+In the case of partial differential equations of second order,
+which can very often be treated using a product ansatz, the separation
+usually leads to an eigenvalue problem with fewer variables.
 \end{enumerate}
 
 \input{4-separation/tsunami.tex}
