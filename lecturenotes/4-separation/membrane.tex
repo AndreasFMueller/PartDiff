@@ -3,108 +3,110 @@
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\section{Schwingende rechteckige Membran}
-\rhead{Rechteckige Membran}
-\index{Membran!rechteckig}
-Wir betrachten die Schwingung einer rechteckigen Membran, die am Rande
-des Gebietes
+\section{Vibrating rectangular membrane}
+\rhead{Rectangular Membrane}
+Let's consider the vibration of a rectangulare membrane fixed on
+the boundary of the domain
 \[
-R=\{(x,y)\,|\,0\le x\le a,0\le y\le b\} =(0,a)\times(0,b)
+R=\{(x,y)\,|\,0\le x\le a,0\le y\le b\} =(0,a)\times(0,b).
 \]
-eingespannt ist. Zur Zeit $t=0$ sei die Form der Membran durch die
-Funktion $f(x,y)$ gegeben.
-Für beliebige Zeit $t\ge 0$ wird sie beschrieben durch eine Funktion $u(x,y,t)$,
-welche der Differentialgleichung
+At time $t=0$, the shape of the membrane is given by a function
+$f(x,y)$ defined on $R$.
+For arbitrary times $t\ge 0$ it is described by a function $u(x,y,t)$ 
+with differential equation
 \[
 \frac1{c^2}\frac{\partial^2u}{\partial t^2}=\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}
 \]
-genügt mit den Anfangsbedingungen
+and satisfies the boundary conditions
 \begin{align*}
 u(x,y,0)&=f(x,y)\quad\forall 0\le x\le a,0\le y\le b,
 \\
 \frac{\partial}{\partial t}u(x,y,0)&=g(x,y)\quad\forall 0\le x\le a,0\le y\le b
 \end{align*}
-und den Randbedingungen
+at time $t=0$ and
 \begin{align*}
 u(0,y,t)&=0&u(a,y,t)&=0&\forall t\ge 0,0\le y\le b,\\
 u(x,0,t)&=0&u(x,b,t)&=0&\forall t\ge 0,0\le x\le a.
 \end{align*}
+around the boundary of $R$.
 
-\subsection{Separation der Zeit}
-\index{Separation}
-Nach der in der Einleitung motivierten Idee suchen wir Lösungen also
-Produkt einer Funktion $T(t)$, die nur von der Zeit abhängt, und einer Funktion
-$\varphi(x,y)$, welche nur vom Ort abhängt, also
+\subsection{Separating Time}
+We want to separate variable $t$ from the rest of the variables.
+According to the ideas expanded in the introduction to this chapter,
+we try to stuff the time dependence into a separate function $T(t)$,
+and the dependence on $x$ an $y$ in $\varphi(x,y)$.
+We thus use the ansatz
 \[
 u(x,y,t)=T(t)\cdot\varphi(x,y).
 \]
-Leider kann ein einzelnes solches Produkt nicht alle Anfangsbedingungen
-erfüllen. Wäre dies nämlich möglich, müsste $\varphi(x,y)\sim f(x,y)$
-sein und alle Teile der Membran würden im Gleichtakt hin und her schwingen.
-Simulationen oder physikalische Experimente zeigen aber, dass es
-Anfangsbedingungen gibt, bei denen die Teile der Membran gegenläufig
-schwingen.
+It will obviously not be possible to describe every vibrating membrane
+with just one such function.
+We thus expect to find a sufficiently large set of partial solutions
+that will allow us to tune a linear combination to also satisfy the 
+initial conditions.
 
-Anderseits, muss die Lösung auf jeden Fall die Randbedingung erfüllen,
-es muss also gelten
+
+In any event, the boundary conditions along $\partial R$ do not depend
+on time, so we need that the function $\varphi$ satisfies the following
+boundary conditions:
 \begin{align*}
 \varphi(0,y)&=0&\varphi(a,y)&=0&0\le y\le b\\
 \varphi(x,0)&=0&\varphi(x,b)&=0&0\le x\le a
 \end{align*}
-Setzen wir diesen Ansatz für $u$ in der Wellengleichung ein,
-erhalten wir
+
+Now let's substitute the ansatz for $u$ into the wave equation.
+We obtain:
 \[
 \frac1{c^2}T''(t)\varphi(x,y)=T(t)\left(
 \frac{\partial^2\varphi}{\partial x^2}
 +
 \frac{\partial^2\varphi}{\partial y^2}
-\right)
+\right).
 \]
-Wir suchen eine Funktion $u$, die nicht identisch verschwindet,
-es gibt also einige Zeitpunkte $t$ und Orte $(x,y)$, an denen $T(t)$
-und $\varphi(x,y)$ nicht verschwinden. An diesen Stellen kann man die
-Gleichung umformen in
+We are looking for a function $u$ that does not vanish identically,
+thus points where $T$ vanishes are isolated.
+Also the points where $\varphi(x,y)$ vanishes form a set of area $0$,
+so in most points, it is perfectly OK to devide by $T(t)$ and
+$\varphi(x,y)$.
+This turns the equation into
 \begin{equation}
 \frac1{c^2}\frac{T''(t)}{T(t)}
 = \frac1{\varphi(x,y)}\left( \frac{\partial^2\varphi}{\partial x^2}
 + \frac{\partial^2\varphi}{\partial y^2} \right)
 \label{separiertMembran}
 \end{equation}
-Die rechte Seite hängt nur
-vom Ort ab, darf sich also nicht ändern, wenn man die Zeit $t$ variert.
-Als Funktion der Zeit muss die linke Seite eine Konstante sein,
-es gibt also ein $k$ mit der Eigenschaft
+The right hand side depends only on $(x,y)$, the left hand side only on $t$.
+According to the basic principle of the separation method, both sides
+must be constant.
+There is therefore a $k$ with the property
 \[
 \frac1{c^2}\frac{T''(t)}{T(t)}=k
 \qquad\Leftrightarrow\qquad
 T''(t)=k T(t).
 \]
-Diese gewöhnliche Differentialgleichung hat Lösungen der Form 
-$e^{\pm\sqrt{k}t}$ für positives $k$. Für negatives $k$ sind $\sin\sqrt{k}t$ 
-und $\cos\sqrt{k}t$ Lösungen.
-Aus physikalischer Sicht sind nur Lösungen mit Schwingungscharakter sinnvoll,
-wir können daher annehmen, dass $k<0$.
-Ein solches $k$ lässt sich in der Form $k=-\lambda^2$ schreiben.
-Es gibt also ein $\lambda$ mit der Eigenschaft
+This is an ordinary differential equation of second order with solutions
+in the form
+$e^{\pm\sqrt{k}t}$ for positive $k$.
+For negative $k$, $\sin\sqrt{k}t$ and $\cos\sqrt{k}t$ are solutions.
+From the point of view of physics only solutions with oscillating
+character are meaningful, we thus may assume that $k<0$, so we can
+write $k=-\lambda^2$ for some $\lambda$.
+The differential equation can thus also be written as
 \[
 \frac1{c^2}\frac{T''(t)}{T(t)}=-\lambda^2
 \]
-oder
+or
 \[
 T''(t)=-c^2\lambda^2 T(t).
 \]
-Dies ist eine gewöhnliche Differentialgleichung zweiter Ordnung, welche mit
-bekannten Methoden gelöst werden kann.
-Die allgemeine Lösung dieser Gleichung ist von der Form
+The solutions are linear combinations 
 \[
 A\cos c\lambda t+B\sin c\lambda t.
 \]
 
-\subsection{Reduktion auf ein Eigenwertproblem}
-\index{Eigenwertproblem}
-Die linke Seite von (\ref{separiertMembran}) hängt nur von der Zeit ab, darf sich
-also nicht ändern, wenn man $x$ oder $y$ variert. Als Funktion des Ortes
-muss die rechte Seite also ebenfalls konstant sein:
+\subsection{Reduction to an eigenvalue problem}
+The right hand side of \eqref{separiertMembran}
+also must be the constant $-\lambda^2$:
 \begin{align*}
 \frac1{\varphi(x,y)}\left(
 \frac{\partial^2\varphi}{\partial x^2}
@@ -114,62 +116,76 @@ muss die rechte Seite also ebenfalls konstant sein:
 \frac{\partial^2\varphi}{\partial x^2}
 +
 \frac{\partial^2\varphi}{\partial y^2}
-=\Delta\varphi
+=
+\Delta\varphi
 &=-\lambda^2
 \varphi(x,y)
 \end{align*}
-Die gesuchte Funktion $\varphi$ ist also ein Eigenvektor des linearen
-Operators $\Delta$ zum Eigenwert $-\lambda^2$.
-Nur die Eigenwerte des Operator $\Delta$ kommen also für die
-Zeitabhängigkeitsgleichung in Frage.
+The function $\varphi$ is thus an eigenvector of the linear 
+oeprator $\Delta$ with eigenvalue $-\lambda^2$.
+This limits the possible frequencies $\lambda$ to the eigenvalues
+of the operator $\Delta$.
 
-\subsection{Separation von $x$ und $y$}
-\index{Separation}
-Für das Eigenwertproblem können wir erneut den Separationsansatz
+\subsection{Separation of $x$ and $y$}
+% XXX
+We once more try the separation ansatz
 \[
 \varphi(x,y)=X(x)\cdot Y(y)
 \]
-versuchen.
-Einsetzen in die Differentialgleichung ergibt
+for the eigenvalue problem.
+Substituted into the differential equation it becomes
 \begin{align*}
 X''(x)Y(x)+X(x)Y''(y)&=-\lambda^2 X(x)Y(y)
 \\
-\frac{X''(x)}{X(x)}+\frac{Y''(y)}{Y(y)}&=-\lambda^2
+\frac{X''(x)}{X(x)}+\frac{Y''(y)}{Y(y)}&=-\lambda^2.
+\intertext{%
+Each of the fractions only depends on one variable, which allows us to separate
+the variables as in
+}
+\frac{X''(x)}{X(x)}&=-\frac{Y''(y)}{Y(y)}-\lambda^2
 \end{align*}
-Jeder der Brüche hängt nur von jeweils einer Variable ab, was nur
-möglich ist, wenn beide Terme konstant sind. Damit ist das Problem
-reduziert auf zwei Gleichungen
+We conclude that both sides must be constant.
+We write these constants separately as
 \begin{align*}
 X''(x)&=-\lambda_1^2X(x)\\
 Y''(y)&=-\lambda_2^2Y(y)\\
-\lambda_1^2+\lambda_2^2&=\lambda^2
+\lambda_1^2+\lambda_2^2&=\lambda^2.
 \end{align*}
-Die allgemeinen Lösungen dieser Gleichungen, die auch die Randbedingung
-bei $x=0$ bzw.~$y=0$ erfüllt, sind
+This is justified by the fact that we are looking for solutions
+that vanish at the boundary, where exponential functions would
+not vanish.
+The boundary conditions even force us to reject the cosine solutions
+of these equations, so we are left with the sine functions
 \begin{align*}
 X(x)&=A\sin \lambda_1x\\
 Y(y)&=B\sin \lambda_2y
 \end{align*}
-Die Randbedingungen für $x=a$ und $y=b$ können nur erfüllt werden,
-wenn $\lambda_1a$ und $\lambda_2b$ Vielfache von $\pi$ sind, also
+which satisify the boundary condition for $\varphi$ at the left and
+bottom boundaries of the rectangle $R$.
+
+The boundary conditions at the other boundaries $x=a$ and $y=b$ can
+only be satisfied if $\lambda_1a$ and $\lambda_2b$ are multiples of
+$\pi$, so there must be integers $k$ and $l$ such that
 \[
 \lambda_1=\frac{k\pi}a
 \qquad
-\text{und}
+\text{and}
 \qquad
 \lambda_2=\frac{l\pi}b
 \]
-Die möglichen Werte von $\lambda$ sind also
+The possible values for $\lambda$ thus are
 \[
 \lambda_{kl}^2=\left(\frac{k^2}{a^2} + \frac{l^2}{b^2}\right)\pi^2,\qquad k,l\in\mathbb Z
 \]
-Damit kann man jetzt die allgemeine Lösung des Schwingungsproblems aus den
-Teillösungen
+The general solution must no be linearly combined from the partial
+solutions
 \[
 \varphi_{kl}(x,y)=\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y
 \]
-für das Eigenwertproblem
-und den Teillösungen
+of the eigenvalue problem.
+Furthermore, the general time dependent solution must be linearly
+combined from the these solutions multiplied by solutions for $T$
+with $\lambda^2=\lambda_1^2 + \lambda_2^2$, i.~e.
 \[
 u_{kl}(x,y,t)
 =
@@ -177,28 +193,26 @@ u_{kl}(x,y,t)
 B_{kl}\sin c\lambda_{kl} t)
 \sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y
 \]
-für das zeitabhängige Problem
-zu einer allgemeinen Lösung
+The most general solution has the form
 \begin{equation}
 u(x,y,t)=\sum_{k,l}
 (A_{kl}\cos c\lambda_{kl} t+
 B_{kl}\sin c\lambda_{kl} t)
-\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y
+\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y.
 \label{allgemeineloesung}
 \end{equation}
-zusammensetzen.
 
-\subsection{Anfangsbedingungen}
-\index{Anfangsbedingungen}
-Die allgemeine Lösung muss jetzt auch noch die Anfangsbedingung erfüllen:
+\subsection{Initial conditions}
+The solution constructed so far satifies the boundary conditions along
+the boundary of $R$, but not yet at $t=0$
+This initial conditions can now also be expressed in terms of the
+coefficients $A_{kl}$ and $B_{kl}$:
 \begin{align*}
 \sum_{k,l}A_{kl}
 \sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y&=f(x,y)\\
 \sum_{k,l}B_{kl}c\lambda_{kl}
 \sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y&=g(x,y)\\
 \end{align*}
-Die Koeffizienten $A_{kl}$ und $B_{kl}$ können in einfachen Fällen mit
-Koeffizientenvergleich und im Allgemeinen mit Hilfe der Theorie
-der Fourierreihen berechnet werden.
-\index{Fourierreihe}
+In some cases, one can explicitly find the coefficients using Fourier
+theory.
 
