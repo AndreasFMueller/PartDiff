@@ -4,52 +4,43 @@
 % (c) 2011 Prof Dr Andreas Mueller, Hochschule Rapperswil
 %
 
-\section{Anwendung: Wellenausbreitung auf einer Kugel oder der Tsunami von 2011}
+\section{Application: Wave propagation on a sphere or the tsunami of 2011}
 \index{Tsunami}
-\index{Wellenausbreitung!auf der Kugeloberfl\äche}
-Am 11.~März 2011 löste ein Erdbeben der Stärke 9 im japanischen
-Meer, das Sendai Erdbeben, einen Tsunami aus, der grosse Küstengebiete
-\index{Sendai Erdbeben}
-\index{Fukushima}
-Japans verwüstete, über
-15000 Tote forderte und Unfälle in mehreren Kernkraftwerken
-auslöste, wovon der Unfall in Fukushima-Daichi mit einer
-teilweisen Kernschmelze der schwerwiegendste war.
-Tsunamis sind von Erdbeben ausgelöste Wellen, die im offenen
-Meer unscheinbar sind, aber wegen der mit kleiner werdender Wassertiefe
-geringeren Ausbreitungsgeschwindigkeit in Küstennähe grosse
-Amplituden erreichen können. Die Ausbreitung solcher Wellen
-kann natürlich mit partiellen Differentialgleichungen modelliert
-und berechnet werden. Die Abbildungen \ref{tsunamiausbreitung}
-und \ref{tsunamienergie}
-zeigt die mit einem Computer berechnete Ausbreitung des vom
-Sendai-Erdbeben erzeugten Tsunami durch den Pazifik.
-Dieses Modell berücksichtigt offenbar die Topographie des
-Meeresbodens.
+On march 11 2011, an magnitude 9 earthquake in the japanese sea,
+somtimes also referred to as the Sendai earthquake, triggered a 
+tsunami that devastated large areas of the coast of the japanese
+Fukushima province.
+More than 15000 people were killed and multiple nuclear plants
+were impacted, of which the the Fukushima-Daichi plant with a
+a partial core meltdown was the most serious.
+Tsunamis are waves triggered by earthquakes.
+They are hardly noticeable in the open ocean and travel quite fast
+but grow dramatically when the approach shallow waters near the coast.
+The propagation of waves can modelled with a wave equation as has
+been presented in chapter~\ref{chapter:examples}, but usually with
+a propagation speed dependent on the depth of the ocean.
+Figures \ref{tsunamiausbreitung} and \ref{tsunamienergie}
+show the propagation of the wave caused by the Sendai earthquake
+computed with the help of a computer.
+It is obvious that the topography of the sea floor has a significant
+influence on the propagation.
 
-Eine direkte Berechnung der Wellenausbreitung mit der bisher
-gelernten Theorie ist natürlich nicht möglich, dazu müsste
-Topographie und Küstenlinie des Pazifik im Detail bekannt
-sein. Als vereinfachtes
-Modell können wir jedoch versuchen, die Wellenausbreitung auf
-einer Kugeloberfläche zu verstehen, dies entspricht einer 
-kugelförmigen Erde, die mit einem Meer konstanter Tiefe bedeckt
-ist.
-\index{Meer}
+This makes a manual computation of the wave propagation almost
+impossible, we would have to completely model the ocean floor and
+the details of the coastline.
+As a simplified model, we can try to understand the propagation of a
+wave on an ocean covering a sphere with constant depth.
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=\hsize]{../common/graphics/sendainoaa}
 \end{center}
-\caption{Ausbreitung des vom Sendai-Erdbeben vom 11.~März 2011 
-ausgelösten Tsunami durch den Pazifik nach einer Simulation der NOAA.
-\index{Pazifik}
-\index{NOAA}
-Hawai und andere Inseln reduzieren die Wassertiefe und damit die
-Ausbreitungsgeschwindigkeit und verzögern damit die Ausbreitung
-der Welle. Ebenfalls deutlich beobachtbar ist die Abschattung 
-der Welle durch grosse Hindernisse wie Neuseeland.
-\index{Neuseeland}
+\caption{
+Propagation of the tsunami caused by the Sendai earthquake on march 11 2011
+based on a simulation by NOAA.
+Hawai and other islands reduce the depth and thus the speed of propagation
+of the wave.
+Also apparent the shadowing of the wave due to obstacles like New Zealand.
 \label{tsunamiausbreitung}}
 \end{figure}
 
@@ -57,45 +48,49 @@ der Welle durch grosse Hindernisse wie Neuseeland.
 \begin{center}
 \includegraphics[width=\hsize]{../common/graphics/sendaienergy}
 \end{center}
-\caption{Amplitude des Tsunami vom 11.~März 2011.
-Man beachte, dass durch die Wahl der Kartenprojektion 
-die Grosskreise, entlang derer sich die Wellen ausbreiten,
-zu S-Kurven gebogen werden. In Küstennähe nimmt die
-Amplitude wegen der abnehmenden Wassertiefe und der damit
-reduzierten Ausbreitungsgeschwindigkeit zu.
+\caption{
+Amplitude of the tsuname of march 11 2011.
+Note that the great circles along which the waves propagate are mapped
+to S-shaped durves.
+Close to the coast the amplitude increases because of the reduced depth
+and thus reduced velocity.
 \label{tsunamienergie}}
 \end{figure}
 
+\subsection{Coordinates and boundary conditions}
+We are interested in a wave originating in a single point, the
+epicenter of the earthquake.
+The solution in the idealized situation will necessarily be rotationally
+symmetric around the axis through the epicenter.
 
-\subsection{Koordinaten und Randbedingungen}
-Es interessieren uns nur die von einem Punkt aus erzeugte Welle,
-so wie dies bei einem Erdbeben der Fall ist. Die Lösung muss
-notwendigerweise rotationssymmetrisch sein um eine Achse, die
-durch den Ausgangspunkt verläuft. 
+We use spherical coordinates $(r,\vartheta,\varphi)$.
+$\vartheta$ is the latitude measured from the north pole which will
+also be the epicenter.
+$\varphi$ is the longitude, a rotationally symmetric wave will not
+depend on $\varphi$.
+We can also neglect the $r$, as we consider only what happens at the
+surface.
+We therefore set $r=1$.
 
-Als Koordinatensystem auf einer Kugel verwenden wir Kugelkoordinaten
-$(r,\vartheta,\varphi)$. $\vartheta$ ist die geographische Breite
-vom Nordpol gemessen, der auch gleich der Ausgangspunkt der
-Welle sein soll. $\varphi$ ist die geographische Länge, wir
-suchen jedoch eine Lösung, die von der geographischen Breite
-unabhängig ist. Ebenso interessiert uns der Radius $r$ nicht,
-da wir uns auf die Kugeloberfläche beschränken wollen, wir
-setzen daher $r=1$.
-
-Gesucht ist also eine Funktion $u(t,\vartheta)$, welche die
-Anfangsbedingungen
+We are looking for a function
+$u(t,\vartheta)$ satisfying initial conditions
 \begin{align*}
 u(0,\vartheta)&=F(\vartheta)\\
-\frac{\partial}{\partial t}u(0,\vartheta)&=G(\vartheta)
+\frac{\partial}{\partial t}u(0,\vartheta)&=G(\vartheta).
 \end{align*}
-erfüllen müssen.
 
-\subsection{Wellengleichung auf der Kugeloberfläche}
-Die Wellengleichung auf der Kugeloberfläche entsteht als 
-Einschränkung der dreidimensionalen Wellengleichung
+\subsection{Wave equation on the surface of a sphere}
+The wave equation on the surface of a sphere can be obtained
+by restricting the three dimensional wave equation
 \[
 \frac1{c^2} \frac{\partial^2}{\partial t^2}u =\Delta u.
 \]
+to the surface of the sphere.
+We assume that units are chosen so that $c=1$, which amounts
+to setting the time unit to time it takes for the wave to travel
+one earth radius.
+
+
 Wir nehmen an, dass die Einheiten so gewählt worden sind,
 dass $c=1$ in diesen Einheiten gilt (dies erreicht man zum
 Beispiel, wenn man als Längeneinheit die in einer Zeiteinheit
