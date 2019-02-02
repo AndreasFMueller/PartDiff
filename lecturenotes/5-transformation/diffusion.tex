@@ -1,46 +1,46 @@
 %
-% diffusion.tex -- XXX
+% diffusion.tex -- 
 %
 % (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
 %
 \section{Diffusion}
 \rhead{Diffusion}
-Wir betrachten jetzt die Diffusionsgleichung auf der Halbebene
+We now consider the diffusion equation in the half plane
 $(t,x)\in[0,\infty)\times \mathbb R$
 \[
 \partial_tu-\partial_x^2u=f(t,x)
 \]
-mit den Anfangsbedingungen
+with initial condition
 \[
 u(0,x)=g(x)\quad \forall x\in\mathbb R.
 \]
-Wir wenden jetzt die jeweils an den Definitionsbereich angepasste
-Transformation durch.
+We apply the transforms suited to the particular domain of definition.
 
-\subsection{Fouriertransformation}
-Die Fouriertransformation für eine Funktion $g(x)$ von $x$ ist
+\subsection{Fourier transform}
+The Fourier transform or a function $g(x)$ defined on $\mathbb R$ is
+defined as
 \[
 \hat g(k)=\frac1{\sqrt{2\pi}}\int_{\mathbb R}g(x)e^{-ikx}\,dx.
 \]
-Die Fouriertransformation macht aus den gegebenen Gleichungen
+The Fourier transform turns the diffusion equation and the initial
+condition into
 \begin{align*}
 \partial_t \hat u(t,k)+k^2\hat u(t,k)&=\hat f(t,k)\\
 \hat u(0,k)&=\hat g(k)
 \end{align*}
 
-\subsection{Laplace-Transformation}
-In $t$-Richtung wenden wir eine Laplace-Transformation an
+\subsection{Laplace transform}
+In $t$-direction, we apply the Laplace transform to get
 \[
 -\hat u(0,k)+(s+k^2){\cal L}\hat u(s,k)={\cal L}\hat f(s,k)
 \]
-Diese Gleichung kann nach ${\cal L}\hat u(s,k)$ auflösen:
+This equation can be solved for ${\cal L}\hat u(s,k)$:
 \[
 {\cal L}\hat u(s,k)=\frac{\hat u(0,k)+{\cal L}\hat f(s,k)}{s+k^2}
 \]
 
-\subsection{Lösung des Anfangswertproblems}
-Durch Rücktransformation können jetzt auch die Lösungen wieder
-gewonnen werden.
+\subsection{Solution of the initial value problem}
+The reverse transforms can now be used to recover the solution
 \begin{align*}
 \hat u(t,k)&={\cal L}^{-1}
 \frac{\hat u(0,k)+{\cal L}\hat f(s,k)}{s+k^2}
