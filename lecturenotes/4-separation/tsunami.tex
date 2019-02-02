@@ -90,13 +90,13 @@ We assume that units are chosen so that $c=1$, which amounts
 to setting the time unit to time it takes for the wave to travel
 one earth radius.
 
+We can assume that the units are chosen in such a way that 
+the $c=1$.
+This can be accomplished by taking the radius of the earth as the
+unit of length and the time it takes for the wave to travel one
+earth radius as the unit of time.
 
-Wir nehmen an, dass die Einheiten so gewählt worden sind,
-dass $c=1$ in diesen Einheiten gilt (dies erreicht man zum
-Beispiel, wenn man als Längeneinheit die in einer Zeiteinheit
-zurückgelegte Strecke verwendet).
-Der Laplace-Operator muss in Kugelkoordinaten ausgedrückt werden,
-\index{Laplace-Operator!in Kugelkoordinaten}
+The Laplacian must be expressedin spherical coordinates,
 \[
 \Delta u
 =
@@ -116,7 +116,7 @@ u
 \frac{\partial}{\partial\vartheta}
 u
 \]
-Die Wellengleichung lautet jetzt also noch
+The wave equation now turns into
 \begin{equation}
 \frac{\partial^2u}{\partial t^2}=
 \frac1{\sin\vartheta}
@@ -128,12 +128,12 @@ u=0.
 \end{equation}
 
 \subsection{Separation}
-Für die Lösung der Wellengleichung (\ref{tsunami-gleichung}) machen
-wir jetzt den üblichen Separationsansatz:
+For the solution of the wave equation \eqref{tsunami-gleichung}
+we now use the separation ansatz:
 \[
 u(t,\vartheta)=T(t)\Theta(\vartheta),
 \]
-und setzen ihn in die Differentialgleichung ein:
+and substitute it into the differential equation:
 \[
 T''(t)\Theta(\vartheta)=
 T(t)
@@ -142,11 +142,10 @@ T(t)
 \sin\vartheta
 \frac{d}{d\vartheta}\Theta(\vartheta)
 \]
-Da wir eine Lösung suchen, die nicht überall verschwindet,
-dürfen wir annehmen, dass $T$ und $\Theta$ ausser an einzelnen
-Punkten nicht verschwinden, dass wir also ``meistens'' durch
-$T(t)\Theta(\vartheta)$ teilen dürfen. Damit erreichen wir
-die gewünschte Trennung der Variablen:
+Since we are looking for a solution that does not vanish identically,
+we may assume that $T(t)$ and $\Theta(\vartheta)$ only vanish in isolated
+points so that we can divide by $T(t)\Theta(\vartheta)$ almost everywhere.
+This allows us to separate the variables we were looking for:
 \begin{equation}
 \frac{T''(t)}{T(t)}
 =
@@ -154,12 +153,12 @@ die gewünschte Trennung der Variablen:
 \frac1{\sin\vartheta}
 \frac{d}{d\vartheta}
 \sin\vartheta
-\frac{d}{d\vartheta}\Theta(\vartheta)
+\frac{d}{d\vartheta}\Theta(\vartheta).
 \label{tsunami-separiert}
 \end{equation}
-Die linke Seite ist nur von $t$ abhängig, die rechte nur von $\vartheta$,
-diese Gleichung kann also nur erfüllt sein, wenn beide seiten konstant
-sind.  Wir erhalten also zwei Gleichungen
+The left hand side depends only on $t$, the right hand side only on
+$\vartheta$.
+This implies that the both sides are constant, giving us two coupled equations
 \begin{align}
 T''(t)&=mT(t)
 \label{tsunami:zeitabh}
@@ -171,34 +170,33 @@ T''(t)&=mT(t)
 &=m\Theta(\vartheta).
 \label{tsunami:winkelabh}
 \end{align}
-Es ist jetzt also zu ermitteln, für welche Werte von $m$ die beiden
-Gleichungen Lösungen haben. Dann können für diese Werte von $m$ 
-Lösungen der partiellen Differentialgleichung zusammengebaut werden,
-mit denen sich dann beliebige Lösungen durch Überlangerungen
-erfüllen lassen müssen.
+We now have to figure out which values $m$ for which both equations
+can have solutions with reasonable boundary conditions which we
+then can use to superimpose arbitrary solutions.
 
-\subsection{Zeitabhängigkeit}
-Die Zeitabhängigkeit (\ref{tsunami:zeitabh}) ist eine gewöhnliche
-Schwingungsdifferentialgleichung.
-Die Lösungen sollten Schwingungscharakter haben, was nur zutrifft, wenn
-$m<0$ ist. Die allgemeine Lösung ist dann
+\subsection{Time dependence}
+The time dependence equation \eqref{tsunami:zeitabh} is an ordinary
+oscillation equation.
+The solutions must have oscillatory character, which is only possible
+for $m<0$.
+The general solution then becomes
 \[
 T_m(t)=a_m\cos\sqrt{-m}t+b_m\sin\sqrt{-m}t
 \]
 
-\subsection{Winkelabhängigkeit}
-Die Differentialgleichung (\ref{tsunami:winkelabh}) für $\Theta$
-ist in dieser Form etwas unhandlich.
-Daher ersetzen wir $\Theta(\vartheta)$ durch eine
-Funktion $y(x)$ mit Hilfe der Substitution $x=\cos\vartheta$.
-Die Ableitung nach $\vartheta$ kann mit Hilfe der Kettenregel
-in eine Ableitung nach $x$ umgewandelt werden:
+\subsection{Angular dependency}
+The differential equation \eqref{tsunami:winkelabh} for $\Theta$
+is a little bit unwieldy.
+By replacing $\Theta(\vartheta)$ by a function $y(x)$
+using the substitution $x=\cos\vartheta$.
+The derivative with respect to $\vartheta$ can be converted into
+a derivative with respect to $x$ using the chain rule:
 \[
 \frac{d}{d\vartheta}\Theta(\vartheta)
 =\frac{dy(x)}{dx}\frac{dx}{d\vartheta}
 =-\sin\vartheta \frac{d}{dx} y(x)
 \]
-Setzt man dies in die Differentialgleichung ein, wird sie zu
+Using this in the differential equation, we obtain
 \begin{align*}
 \frac1{\sin\vartheta}
 (-\sin{\vartheta})\frac{d}{dx}\sin\vartheta (-\sin\vartheta)
@@ -210,17 +208,18 @@ Setzt man dies in die Differentialgleichung ein, wird sie zu
 &=
 \frac{d}{dx}(1-x^2)\frac{d}{dx}y(x).
 \end{align*}
-Die gesuchten Funktionen sind also Lösungen der Differentialgleichung
+The function we are looking for is therefore a solution of the
+differential equation
 \begin{equation}
 \frac{d}{dx}(1-x^2)\frac{d}{dx}y(x)
 =
 my(x)
 \label{tsunamieigenwertproblem}
 \end{equation}
-Die Funktionen $y(x)$ müssen im ganzen Interval $[-1,1]$ definiert
-sein. Dies ist nicht unbedingt selbstverständlich, wie schon der Fall
-$m=0$ zeigt. In diesem Fall kann man die Differntialgleichung
-durch zweimaliges Integrieren lösen:
+The function $y(x)$ must be defined in the entire interval $[-1,1]$.
+This isn't automatic, as one can see already in the case $m=0$.
+In that case, the differential equation can be integrating 
+twice:
 \begin{align*}
 \frac{d}{dx}(1-x^2)\frac{d}{dx}y(x)&=0\\
 (1-x^2)\frac{d}{dx}y(x)&=C\\
@@ -230,18 +229,18 @@ y(x)&=C\int\frac{dx}{1-x^2}\\
 &=-\frac{C}2\log(1-x)+\frac{C}2\log(1+x) +D\\
 &=\frac{C}2\log\frac{1+x}{1-x} + D
 \end{align*}
-An beiden Intervallenden wächst die Funktion über alle Grenzen,
-es sei denn es sei $C=0$.
+At both interval ends, the function increases beyond bounds
+unless $C=0$.
 
-Mit Sicherheit auf dem ganzen Interval definiert wären Polynome,
-wir könnten also einen Ansatz
+Polynomials would certainly be well defined on the whole interval,
+so we attempt to solve the equation with a function of the form
 \[
-y(x)=a_0+a_1+a_2x^2+\dots a_nx^n
+y(x)=a_0+a_1+a_2x^2+\dots a_nx^n.
 \]
-probieren. Setzt man dies in die Differentialgleichung ein und
-behält nur die Terme vom Grad $x^n$, bekommt man auf der rechten
-Seite von (\ref{tsunamieigenwertproblem}) $ma_nx^n$, auf
-der linken Seite
+Substituting this in the differential equation and keeping only
+terms of degree $n$, i.~e.~with $x^n$, we get  $ma_nx^n$
+on the right side of \eqref{tsunamieigenwertproblem}.
+On the left side we get
 \[
 -\frac{d}{dx}x^2\frac{d}{dx}a_nx^n
 =
@@ -251,28 +250,31 @@ der linken Seite
 =
 -n(n+1)a_nx^n
 \]
-Damit folgt: $m=-n(n+1)$, nur für solche Werte kann
-(\ref{tsunamieigenwertproblem}) ein Polynom vom Grad $n$ als Lösung
-haben. Die Differentialgleichung wird jetzt zu
+It follows that $m=-n(n+1)$, the equation \eqref{tsunamieigenwertproblem}
+can only be solved with a polynomial of degree $n$ for precisely those
+values ov $m$.
+The differential equation now becomes
 \begin{equation}
 \frac{d}{dx}(1-x^2)\frac{d}{dx}y(x)+n(n+1)y(x)=0
 \label{legendredgl}
 \end{equation}
 
-\subsection{Legendre-Polynome}
-\index{Legendre-Polynom}
-Die Differentialgleichung (\ref{legendredgl}) ist die Differentialgleichung
-der Legendre-Polynome.
-Das Legendre-Polynom $P_n(x)$ ist eine polynomiale Lösung von
-(\ref{legendredgl}) mit $P_n(1)=1$.
-Dies legt aber die Funktion nicht fest, es sind weitere Bedingungen
-nötig. Daher wird verlangt, dass die Polynome auch orthogonal
-sein sollen, also die Bedingung
+\subsection{Legendre polynomials}
+The differential equation \eqref{legendredgl} is known as the differential
+equation for the legendre polynomials.
+The legendre polynomail $P_n(x)$ is a polynomial solution of
+\eqref{legendredgl} with boundary condition $P_n(1)=1$.
+However, this condition does not yet uniquely determine the function.
+The additional condition is imposed that the polynomials also be
+orthogonal in the sense that
 \[
-\int_{-1}^1 P_k(x)P_l(x)\,dx=0\quad\text{für $k\ne l$}
+\int_{-1}^1 P_k(x)P_l(x)\,dx=0\quad\text{für $k\ne l$}.
 \]
-erfüllen. Damit werden die Polynome eindeutig.
-Die ersten sechs Legendre-Polynome sind
+This allows to construct a theory similar to fourier theory for
+approximation of functions in the interval $[-1,1]$.
+This then determines the polynomials uniquely.
+
+The first six Legendre polynomials are
 \begin{align*}
 P_0(x)&=1\\
 P_1(x)&=x\\
@@ -281,20 +283,22 @@ P_3(x)&=\frac12(5x^3-3x)\\
 P_4(x)&=\frac18(35x^4-30x^2+3)\\
 P_5(x)&=\frac18(63x^5-70x^3+15x)
 \end{align*}
-Ausserdem gilt
+Furthermore we have
 \[
 \int_{-1}^1 P_k(x)^2\,dx = \frac{2}{2k+1}.
 \]
-Da man 
-jede Funktion auf dem Interval $[-1,1]$ mit Polynomen approximieren kann,
-kann man auch jede Funktion durch Linearkombinationen von Legendre-Polynomen
-$P_n(x)$ schreiben. 
 
-Die Koeffizienten kann man mit Hilfe eines Integrals finden. Setzt man
+The basic monomials $x^n$ can recovered by linear combinations of Legendre
+polynomials, thus every function on $[-1,1]$ that can be approximated by
+polynomials can also be approximated by Legendre polynomials $P_n(x)$.
+
+Similarly to Fourier theory, the coefficients can be found using an
+integral.
+For
 \[
 f(x)=\sum_{k\ge 0} c_k P_k(x)
 \]
-und berechnet man das Integral
+the integrals
 \[
 \int_{-1}^1 f(x)P_l(x)\,dx
 =
@@ -302,60 +306,62 @@ und berechnet man das Integral
 =
 \frac{2c_k}{2k+1}
 \]
-folgt
+imply that
 \[
 c_k=\frac{2k+1}{2}\int_{-1}^1P_k(x)f(x)\,dx.
 \]
-Die Koeffizienten $c_k$ sind sozusagen die ``Legendre-Koeffizienten''
-der Entwicklung der Funktion $f(x)$ nach Legendre-Polynomen,
-analog zu den Fourier-Koeffizienten auf einem Interval.
+The coefficients $c_k$ are ``Legendre-coefficients'', they represent
+the function $f(x)$ as a Legendre polynomial just as Fourier coefficients
+represent periodic functions.
 
-\subsection{Anfangsbedingungen}
-\index{Anfangsbedingungen}
-Unter Verwendung der Legendre-Polynome kann man jetzt die Wellengleichung
-zu beliebigen Anfangsbedingungen lösen.
-Die Lösung der Differentialgleichung muss von der Form sein
+\subsection{Initial conditions}
+\index{Initial conditions}
+Using the Legendre polynomials, we can now solve the wave equation for
+arbitrary initial contitions.
+The solution must have the form
 \[
 u(t, x)=\sum_{k=0}^{\infty}(a_k\cos \lambda_k t+b_k\sin\lambda_k t)P_k(x),
 \]
-wobei $\lambda_k=\sqrt{k(k+1)}$.
-Die Koeffizienten müssen aus der Anfangsbedingung, also aus den 
-Funktionen $F(\vartheta)=f(x)$ und $G(\vartheta)=g(x)$ bestimmt werden.
-Die Anfangsbedingung für $u(t,x)$ ergibt
+with $\lambda_k=\sqrt{k(k+1)}$.
+The coefficients must be determined from initial conditions, i.~e.~from
+the functions $F(\vartheta)=f(x)$ and $G(\vartheta)=g(x)$.
+The initial condition for $u(t,x)$ gives
 \begin{align*}
 u(0,x)
 &=\sum_{k=0}^{\infty} a_kP_k(x)=f(x)
 \end{align*}
-Für $\partial_tu(t,x)$ ergibt sich entsprechend
+For the partial derivative $\partial_tu(t,x)$ we similarly get
 \begin{align*}
 \frac{\partial}{\partial t}u(0,x)
 &=\sum_{k=0}^{\infty} \lambda_k b_kP_k(x)=g(x)
 \end{align*}
-Die Koeffizienten $a_k$ und $b_k$ kann man mit
+The coefficients $a_k$ and $b_k$ can be computed by
 \begin{align*}
 a_k&=
 \frac{2k+1}{2}\int_{-1}^1 P_k(x)f(x)\,dx
 \\
 b_k&=
-\frac{2k+1}{2\lambda_k}\int_{-1}^1P_k(x)f(x)\,dx
+\frac{2k+1}{2\lambda_k}\int_{-1}^1P_k(x)f(x)\,dx.
 \end{align*}
-berechnen.
 
-\subsection{Punktquelle}
+\subsection{Point source}
 \begin{figure}
 \begin{center}
 \includegraphics[width=\hsize]{../common/graphics/tsunami0}
 \end{center}
-\caption{Näherungslösung für $N=25$ und $t=0$\label{tsunami0}}
+\caption{Approximate solution for $N=25$ and $t=0$\label{tsunami0}}
 \end{figure}
 \begin{figure}
 \begin{center}
 \includegraphics[width=\hsize]{../common/graphics/tsunami50}
 \end{center}
-\caption{Näherungslösung für $N=25$ und $t=1$\label{tsunami50}}
+\caption{Approximate solution for $N=25$ and $t=1$\label{tsunami50}}
 \end{figure}
-
-Wir wählen jetzt eine spezielle Anfangsbedingung:
+We now choose initial conditions that are supposed to approximate
+what happens for an earthquake.
+In a small neighborhood, the function is very large, but zero everywhere
+else, but there is no initial velocity.
+Thus we postulate that
 \begin{align*}
 f_\varepsilon(x)&=\begin{cases}
 \frac1{\varepsilon}&\qquad 1-\varepsilon<x\le 1\\
@@ -364,23 +370,21 @@ f_\varepsilon(x)&=\begin{cases}
 \\
 g(x)&=0
 \end{align*}
-In einer kleinen Umgebung des Nordpoles ist der Wert 
-$\frac1{\varepsilon}$, also sehr gross, in allen anderen Punkten $0$.
-Offenbar sind die $b_k=0$, und es bleiben nur die 
-$a_k$ zu berechnen. Dazu gilt:
+This allows to compute the coefficients.
+The $b_k$ vanish, only the $a_k$ remain to be computed:
 \begin{align*}
 a_k(\varepsilon)&=\frac{2k+1}{2}\int_{-1}^1P_k(x)f_\varepsilon(x)\,dx
 \\
 &=\frac{2k+1}{2}\int_{1-\varepsilon}^1P_k(x)\frac1{\varepsilon}\,dx
 \end{align*}
-Da uns nur der Grenzwert $\varepsilon\to 0$ interessiert, gehen wir
-zur Grenze über
+We are mainly interested in the situation where $\varepsilon$ is
+very small, so we take the limit $\varepsilon\to 0$
 \begin{align*}
 \lim_{\varepsilon\to 0} a_k(\varepsilon)
 &=
 \frac{2k+1}{2}\lim_{\varepsilon\to 0}\frac1{\varepsilon}\int_{1-\varepsilon}^1P_k(x)\,dx
 \end{align*}
-Mit einer Stammfunktion $I_k(x)$ von $P_k(x)$ wird dies zu
+Using the antiderivative $I_k(x)$ of $P_k(x)$ this becomes
 \begin{align*}
 \lim_{\varepsilon\to 0} a_k(\varepsilon)
 &=
@@ -388,16 +392,15 @@ Mit einer Stammfunktion $I_k(x)$ von $P_k(x)$ wird dies zu
 \\
 &=\frac{2k+1}{2}I_k'(1)=\frac{2k+1}{2}P_k(1)=\frac{2k+1}{2}
 \end{align*}
-Als Lösung bekommt man damit formal
+Formally, the solution thus is
 \begin{equation}
 u(t,x)
 =
 \sum_{k=0}^\infty \frac{2k+1}{2}P_k(x) \cos \sqrt{k(k+1)}t.
 \end{equation}
-Leider ist diese Reihe nicht konvergent, was angesichts der sehr
-speziellen Anfangsbedingungen auch nicht zu erwarten war.
-Wenn man sie aber nach $N$ Termen abbricht, und mit $\frac1{N^2}$ 
-normiert, erhält man eine Lösungsfunktion die ein ungefähres
-Bild für die Wellenausbreitung ergibt.
-In den Abbildungen \ref{tsunami0} und \ref{tsunami50} wurde die Reihe nach 25 Termen
-abgebrochen.
+Unfortunately, this series does not converge, which is not too
+surprising given the very special initial conditions.
+If we take only $N$ terms and renomarmlize with the factor $\frac1{N^2}$,
+we get an approximate idea for the wave propagation.
+Figures \ref{tsunami0} and \ref{tsunami50} show the series terminated 
+after $25$ terms.
