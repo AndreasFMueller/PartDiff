@@ -1,47 +1,47 @@
 %
-% characteristics.tex -- XXX
+% characteristics.tex -- 
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\section{Charakteristiken}
-\rhead{Charakteristiken}
-\subsection{Ein unlösbares Cauchy-Problem}
-Wir untersuchen jetzt, unter welchen Voraussetzungen sich das Cauchy-Problem
-für eine hyperbolische partielle Differentialgleichung eindeutig lösen lässt.
-Um besser zu verstehen, was dabei schief gehen kann, betrachten wir die
-hyperbolische partielle Differentialgleichung
+\section{Characteristics}
+\rhead{Characteristics}
+\subsection{An unsolvable Cauchy problem}
+We want to study the circumstances under which the Cauchy problem
+for a hyperbolic partial differential equation can be solved
+uniquely.
+To better understand what can go wrong, we study the hyperbolic
+partial differential equation
 \[
 \partial_x\partial_y u=0,
 \]
-und geben die Anfangswerte die
+and specify the initial conditions
 \begin{align*}
 u(0,y)&=u_0(y)
 \\
-\partial_xu(0,y)&=v_0(y)
+\partial_xu(0,y)&=v_0(y).
 \end{align*}
-vor.
-Aus der Differentialgleichung schliessen wir, dass $\partial_y u$
-nicht von $x$ abhängt. Somit kann auch $u$ nicht von $x$ abhängen,
-die Anfangsbedingung für $\partial_xu(0,y)$ ist also redundant,
-sie kann nur erfüllt werden, wenn $v_0(y)=0$.
-Die Lösung ist $u(x,y)=u_0(y)$.
+From the differential equation we conclude that $\partial_y u$
+does not depend on $x$.
+This means that $u$ cannot depend on $x$ either, so the boundary
+condition for $\partial_xu(0,y)$ is redundant, $v_0$ must vanish
+and the solution is $u(x,y)=u_0(y)$.
 
-Da aber auch $\partial_x\partial_yu=\partial_y\partial_xu$, ist auch
-$u(x,y)=g(x)$ eine Lösung der Differentialgleichung. Da diese
-Lösung nicht von $y$ abhängt, kann auch die Anfangsbedingung $u(0,y)=u_0(y)$
-nicht erfüllt werden. Offenbar ist das Cauchy-Problem nicht lösbar, wenn die
-Funktionswerte und Ableitungen auf der Geraden $x=0$ vorgegeben werden.
-Ursache dafür ist, dass aus der Differentialgleichung nicht alle zweiten
-Ableitungen bestimmt werden können. Die zweite partielle Ableitung
-nach $\partial_x^2u(0,y)$ ist unbestimmt.
+But because the partial derivatives commute,
+$\partial_x\partial_yu=\partial_y\partial_xu$, by the same
+argument we also find that $u$ does not depend on $y$, so both functions
+$u_0$ and $v_0$ must be constants.
+In particular, the cauche problem cannot be solved if these
+functions are not constants.
+The reason for this pathology not all the second derivatives can be
+determined from the initial data, the second derivative with respect
+to $x$ is undefined.
 
-\subsection{Streifen}
-Das Cauchy-Problem kann also nur dann lösbar sein, wenn die Funktionswerte
-und die ersten partiellen Ableitungen entlang einer Kurve
-auch alle zweiten Ableitungen eindeutig bestimmen.
-Wir versuchen daher
-diejenigen Kurven zu bestimmen, auf denen dies nicht möglich ist.
-Wir gehen aus von der Differentialgleichung
+\subsection{Characteristic strip}
+The Cauchy problem can only be solved if the values and the
+first partial derivatives on the initial curve uniquely determine 
+all the second order derivatives.
+We try to find those curves where this is not possible.
+We start with the differential equation
 \begin{equation}
 a\frac{\partial^2 u}{\partial x^2}
 +
@@ -57,9 +57,9 @@ fu
 =g,
 \label{charequation}
 \end{equation}
-Da wir vor allem an den zweiten Ableitungen interessiert sind, bringen
-wir alle anderen Terme auf die rechte Seite, und kürzen die neue
-rechte Seite mit $h$ ab:
+Because we are interested in the second order derivatives,
+we bring all the other terms to the right hand side and
+abbreviate the new right hand side as $h$:
 \begin{equation}
 a\frac{\partial^2 u}{\partial x^2}
 +
@@ -77,10 +77,9 @@ fu
 =h.
 \notag
 \end{equation}
-Ausserdem betrachten wir eine Kurve
+We consider this along the curver
 $t\mapsto(x(t),y(t))$.
-Entlang der Kurve sind die Anfangswerte
-und die partiellen Ableitungen
+We assume that we have initial values and first partial derivatives
 \begin{equation}
 \left.
 \begin{aligned}
@@ -89,45 +88,48 @@ u(x(t),y(t))&=u(t)\\
 \frac{\partial u}{\partial y}(x(t),y(t)) &= q(t)
 \end{aligned}
 \qquad
-\right\}
+\right\}.
 \label{charanfangs}
 \end{equation}
-vorgegeben. Diese Vorgaben nennt man einen {\em Streifen}
-(Abbildung~\ref{skript:streifen}).
+We call this type of data a {\em strip}
+(Figure~\ref{skript:streifen}).
 
 \begin{figure}
 \centering
 \includegraphics[width=\hsize]{../common/3d/streifen0.png}
-\caption{Ein Streifen besteht aus der Vorgabe von Anfangskurve (rot)
-und Tangentialbenen.
-Die grüne Fläche ist Lösungsfläche der Wellengleichung mit 
-dem Streifen als Anfangsbedingung.
+\caption{A strip consists of the values and tangent planes
+along a curve (red).
+The green surface is a solution of the wave equation with the
+data of the strip as initial data.
 \label{skript:streifen}}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=\hsize]{../common/3d/streifen2.png}
-\caption{Entlang der gemeinsamen roten Kurve haben die beiden
-Lösungsflächen der Wellengleichung verschiedene Tangentialebenen,
-also verschiedene Streifen. 
-Der Streifen legt die Lösung eindeutig fest.
+\caption{Along the common red curve both solution surfaces have
+the same initial values, but different tangent planes, so the
+have different strips.
 \label{skript:streifen:eindeutig}}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=\hsize]{../common/3d/streifen1.png}
-\caption{Charakteristiken sind nicht geeignet als Anfangskurven,
-weil ein Streifen entlang einer Charakteristik die Lösungsfläche
-nicht eindeutig zu bestimmen braucht. Die Abbildung zeigt zwei Lösungen
-der Wellengleichung, die sich in dem roten Streifen berühren.
+\caption{Characteristics are those curves that cannot be used to
+define a strip that would uniquely determine the solution surface.
+The graph shows two solution of the wave equation with the same
+strip: they go through the same curve and they have the same
+tangent planes, but the differ in the curvature perpendicular to the
+initial curve.
+This means that the second order derivatives are not determined by
+the equation and the strip data.
 \label{skript:streifen:zweideutig}}
 \end{figure}
 
-Die Funktionen $u(t)$, $p(t)$ und $q(t)$ sind nicht ganz willkürlich.
-Leitet man nämlich die erste der Gleichungen (\ref{charanfangs}) nach
-$t$ ab, findet man
+The functions $u(t)$, $p(t)$ and $q(t)$ are not completely arbitrary.
+By deriving the first equation \eqref{charanfangs} with respect to $t$,
+we find
 \[
 \dot{u}(t)=\frac{d}{dt}u(t)
 =
@@ -137,24 +139,22 @@ $t$ ab, findet man
 +
 \frac{\partial u}{\partial y}(x(t), y(t))\frac{d}{dt}y(t).
 \]
-Die partiellen Ableitungen sind aber ebenfalls in (\ref{charanfangs})
-vorgegeben, es muss also die Beziehung
+Since the partial derivatives are also given in \eqref{charanfangs},
+we must also have the relation
 \begin{equation}
-\dot{u}(t)= p(t)\dot{x}(t) + q(t)\dot{y}(t)
+\dot{u}(t)= p(t)\dot{x}(t) + q(t)\dot{y}(t).
 \label{cauchydatarestriction}
 \end{equation}
-gelten.
 
-\subsection{Charakteristiken}
-Die Vorgabe eines Streifens bestimmt die Lösung einer hyperbolischen
-partiellen Differentialgleichung meistens eindeutig.
-In Abbildung~\ref{skript:streifen:eindeutig} zeigt zwei verschiedene
-Lösungen der Wellengleichung, die entlang der $t$-Achse zwar die
-gleiche Anfangskurve, aber verschiedene Tangentialebenen und damit
-verschiedene Streifen haben.
+\subsection{Characteristic curves}
+Specifying the data of a strip often determines the hyperbolic
+partial differential equation uniquely.
+In figure~\ref{skript:streifen:eindeutig} two different solutions
+are shown that have the same initial curve but different tangent
+planes, so the have different strips along this curve.
 
-Leitet man die letzten zwei Gleichungen von (\ref{charanfangs}) nach $t$ ab,
-erhält man
+Deriving the last two equations of \eqref{charanfangs} with respect to $t$,
+gives the system of linear equations
 \[
 \begin{linsys}{3}
 \dot p(t)
@@ -172,8 +172,8 @@ erhält man
 \partial_y\partial_yu(x(t),y(t))\,\dot y(t)
 \end{linsys}
 \]
-Zusammen mit der Differentialgleichung haben wir also die folgenden
-drei Gleichungen für die rot hervorgehobenen zweiten partiellen Ableitungen:
+Together with the differential equation we have now three lienar equations
+to determine the second partial differential equations:
 \[
 \begin{linsys}{4}
 a{\color{red}\displaystyle\frac{\partial^2 u}{\partial x^2}}
@@ -206,8 +206,8 @@ g-dp(t)-eq(t)-fu\\
 & &
 \end{linsys}
 \]
-Dieses lineare Gleichungssystem für die zweiten partiellen Ableitungen
-hat die Koeffizientenmatrix
+This linear system of equations for the second order derivatives
+has the coefficient matrix
 \[
 \begin{pmatrix}
 a&2b&c\\
@@ -215,8 +215,8 @@ a&2b&c\\
 0&\dot x(t)&\dot y(t)
 \end{pmatrix}.
 \]
-Es ist genau dann nicht oder nicht eindeutig lösbar, wenn die Determinante
-verschwindet
+The system of equation is not or not uniquely solvable if the
+determinant vanishes, i.~e.
 \begin{align*}
 0&=\left|\begin{matrix}
 a&2b&c\\
@@ -228,25 +228,29 @@ a&2b&c\\
 \end{align*}
 
 \begin{definition}
-Die Charakterisitiken einer Differentialgleichung der Form (\ref{charequation})
-sind die Kurven $t\mapsto(x(t),y(t))$, für die die Anfangswerte (\ref{charanfangs})
-die zweiten partiellen Ableitungen nicht eindeutig bestimmen.
+The characteristics of a differential equation of the form
+\eqref{charequation}
+are the curves
+$t\mapsto(x(t),y(t))$, for which the initial data 
+\eqref{charanfangs} does not determine the second partial
+derivatives uniquely.
 \end{definition}
 
 \begin{satz}
 \label{charakteristikendgl}
-Die Charakteristiken einer partiellen Differentialgleichung (\ref{charequation})
-erfüllen  die Differentialgleichung
+The characteristics of a partial differential equation
+\eqref{charequation}
+solves the differential equation
 \[
 a\dot y(t)^2-2b\dot x(t)\dot y(t)+c\dot x(t)^2=0.
 \]
 \end{satz}
 
-\subsection{Charakteristische Streifen}
-Wir wählen jetzt eine Charakteristik $t\mapsto(x(t),y(t))$.
-Uns interessiert nur der Fall, in dem es unendlich viele
-Lösungen für die zweiten Ableitungen gibt. Dieser tritt dann
-ein, wenn auch die Determinanten
+\subsection{Characteristic strip}
+We shoose a characteristic $t\mapsto(x(t),y(t))$.
+We are only interestedin the case where there are infinitely
+many possible values for the second derivative.
+This case happens when the determinants
 \[
 \left|
 \begin{matrix}
@@ -274,61 +278,59 @@ a&2b&h\\
 \end{matrix}
 \right|
 \]
-verschwinden, wobei $h=g-dp(t)-eq(t)-fu(x(t),y(t))$.
-Es genügt dabei, eine einzige Determinante zu wählen,
-wir wählen die zweite:
+all vanish, where $h=g-dp(t)-eq(t)-fu(x(t),y(t))$.
+It suffices the select a single one of those determinants,
+we choose the second:
 \begin{align*}
 a\dot p(t)\dot y(t)-h\dot x(t)\dot y(t)+c\dot x(t)\dot q(t)&=0
 \end{align*}
-Zusammen mit der Bedingung~(\ref{cauchydatarestriction})
-%\[
-%\dot u=p(t)\dot x(t)+q(t)\dot y(t)
-%\]
-haben wir jetzt drei Gleichungen, welche die Grössen 
-$x$, $y$, $u$, $p$ und $q$ erfüllen müssen, damit die zweiten
-Ableitungen auf unendlich viele Arten bestimmt sind.
+
+Together with the condition~\eqref{cauchydatarestriction}
+we now have three equations that the functions
+$x$, $y$, $u$, $p$ and $q$ must satisfy for the second
+derivatives to not be determined uniquely by the initial data.
 
 \begin{definition}
-Ein Streifen entlang einer Charakteristik, der zusätzlich die
-Bedingung 
+A strip along a characteristic which satisfies
 \[
 a\dot p(t)\dot y(t)-h\dot x(t)\dot y(t)+c\dot x(t)\dot q(t)=0
 \]
-erfüllt, heisst ein {\em charakteristischer Streifen}.
+is called a {\em characteristic strip}.
 \end{definition}
 
-Es ist also möglich, dass sich Integralflächen einer Differentialgleichung
-in einer Kurve schneiden, dort sogar berühren, aber trotzdem verschieden
-sind. Notwendigerweise bilden die Tangentialebenen
-entlang der Schnittkurve einen charakteristischen Streifen.
+Thus it is also possible, that the integral surfaces of a partial
+differential equation touch along a curve, but are different
+nevertheless.
+By necessity, the tangent planes along the intersection curve form
+a characteristic strip.
 
 \begin{satz}
 \label{skript:satz:charakteristiken}
-Berühren sich zwei verschiedene Integralflächen entlang einer
-Kurve, dann stellen diese Kurve zusammen mit den zugehörigen Tangentialebenen
-einen charakteristischen Streifen dar.
+If two different integral surfaces touch along a curve,
+then this curve together with the tangent planes form a characteristic strip.
 \end{satz}
 
-Abbildung~\ref{skript:streifen:zweideutig} zeigt zwei Lösungen der
-Wellengleichung, die sich entlang einer Charakteristik berühren.
-Nach Satz~\ref{skript:satz:charakteristiken} ist der rote Streifen ein
-charakteritischer Streifen.
+Figure~\ref{skript:streifen:zweideutig} shows two solutions of the wave
+equation that touch along a characteristic.
+From theorem~\ref{skript:satz:charakteristiken} the red strip is a 
+characteristic strip.
 
-\begin{proof}[Beweis]
-Offenbar gibt es mindestens zwei Lösungen der Differentialgleichung
-durch die gegebene Kurve, die ausserdem die gleichen Tangentialebenen
-haben. Die Kurve und die Tangentialebenen bestimmen die Lösung nicht
-eindeutig, sie bilden also einen charakteristischen Streifen.
+\begin{proof}
+Apparently there are at least two different solutions of the
+partial differential equation that contain the curve which in
+addition have the same tangent planes.
+The curve and the tangent planes do not determine the solution
+uniquely, so the form a characteristic strip.
 \end{proof}
 
-\subsection{Beispiele}
-\subsubsection{Wellengleichung}
-Die Charakteristiken der Wellengleichung
+\subsection{Examples}
+\subsubsection{Wave equation}
+The characteristics of the wave equation
 \begin{equation}
 \partial_t^2u-a^2\partial_x^2u=0
 \label{hyperbolisch:wellengleichung}
 \end{equation}
-sind Kurven $s\mapsto(t(s),x(s))$, die die Gleichung
+are the curves $s\mapsto(t(s),x(s))$, that satisify the equation
 \begin{align*}
 \left(
 \frac{dx(s)}{ds}\right)^2-a^2\left(\frac{dt(s)}{ds}\right)^2&=0
@@ -338,45 +340,44 @@ sind Kurven $s\mapsto(t(s),x(s))$, die die Gleichung
 \pm a\frac{dt(s)}{ds}
 \\
 \Rightarrow
-\frac{dx}{dt}=\pm a
+\frac{dx}{dt}=\pm a.
 \end{align*}
-erfüllen. Dies sind Geraden mit der Steigung $\pm a$.
+This are straight lines with slope $\pm a$.
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.8\hsize]{../common/images/char-2.pdf}
 \end{center}
-\caption{Charakteristiken der
-Wellengleichung~(\ref{hyperbolisch:wellengleichung})
+\caption{Characteristics of the wave
+equation~(\ref{hyperbolisch:wellengleichung})
 \label{hyp:wellen}}
 \end{figure}
-Abbildung~\ref{hyp:wellen} zeigt die Charakteristiken.
+Figure~\ref{hyp:wellen} shows the characteristics.
 
-\subsubsection{Die Gleichung $\partial_x\partial_yu=0$} Die Bedingung für die
-Charakteristiken lautet in diesem Fall
+\subsubsection{The equation $\partial_x\partial_yu=0$}
+The condition for the characteristics in this case is
 \[
 -\dot x(t)\dot y(t)=0
 \]
-Eine der Ableitungen muss also verschwinden, was nur für Kurven
-möglich ist, die parallel zur $x$- oder $y$-Achse verlaufen.
-Die Abbildung \ref{hyp:dxdy} zeigt die Charakteristiken.
+One of the derivatives must disappear, which is only possible for
+curves that are parallel to the $x$- or the $y$-axis.
+Figure~\ref{hyp:dxdy} shows these characteristics
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.8\hsize]{../common/images/char-3.pdf}
 \end{center}
-\caption{Charakteristiken der hyperbolischen
-partiellen Differentialgleichung
+\caption{characteristics of the hyperbolic partial differential equation
 $\partial_x\partial_yu=0$.
 \label{hyp:dxdy}}
 \end{figure}
 
-\subsubsection{Gekrümmte Charakteristiken}
-Die partielle Differentialgleichung
+\subsubsection{Curved characteristics}
+The partial differential equation
 \begin{equation}
 \partial_t^2u-x^2\partial_x^2u=0
 \label{hyperbolisch:gekruemmt}
 \end{equation}
-ist für $x\ne 0$ hyperbolisch.
-Ihre Charakteristiken erfüllen die Gleichung
+is hyperbolic for $x\ne 0$.
+The characteristics satisfy the equation
 \begin{align*}
 x'(s)^2-x^2t'(s)^2&=0
 \\
@@ -388,70 +389,72 @@ t&=\pm\log x+C
 \\
 x&=x_0e^{\pm t}
 \end{align*}
-Die Charakteristiken sind also Exponentialkurven. In Abbildung \ref{hyp:exp}
-sind die Charakteristiken für das positive Zeichen rot eingezeichnet, die
-Charakteristiken für das negative Zeichen dagegen grün.
+The characteristics are exponential curves.
+In figure \ref{hyp:exp}
+the characteristics for the positive sign are drawn in red,
+the characteristics for the negative sign green.
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.8\hsize]{../common/images/hypexp-1.pdf}
 \end{center}
-\caption{Charakteristiken der für $x\ne 0$ hyperbolischen
-partiellen Differentialgleichung~(\ref{hyperbolisch:gekruemmt}).
+\caption{Characteristics for $x\ne 0$ for the hyperbolic partial
+differential equation~\eqref{hyperbolisch:gekruemmt}.
 \label{hyp:exp}}
 \end{figure}
 
-Diese Gleichung beschreibt die Wellenausbreitung in einem Medium,
-in dem die Wellengeschwindigkeit mit grösser werdendem $x$ ebenfalls
-zunimmt. Die Exponentialkurven deuten an, wie die Wellenbewegung nach ``aussen''
-immer schneller wird.
+This equation describes a wave equation in a medium in which
+the wave velocity increases with increasing $x$.
+The exponential curves suggest that becomes faster when moving ``out''.
 
-\subsection{Charakteristiken für elliptische und parabolische PDGL}
-Die oben entwickelte Theorie der Charakteristiken kann selbstverständlich
-auch auf elliptische und hyperbolische PDGL angewendet werden.
-Im elliptischen Fall hat die Differentialgleichung der Charakteristiken
+\subsection{Characteristics of elliptic or parabolic partial differential
+equations}
+The theory about the characteristics developed above can also be
+applied to elliptic or hyperbolic partial differential equations.
+
+In the elliptic case, the differential equation of the characteristics
 \[
 a\dot y(t)^2-2b\dot x(t)\dot y(t)+c\dot x(t)^2=0
 \]
-gar keine Lösung, da der Ausdruck nur dann verschwindet, wenn $\dot x(t)=0$
-und $\dot y(t)=0$.
+does not have any solutions, as the expression only vanishes only for
+$\dot x(t)=0$ and $\dot y(t)=0$.
 
-Für parabolische PDGL wird der Ausdruck bei Wahl eines geeigneten
-Koordinatensystems zu
+For parabolic partial differential equations the characteristic
+equation becomes in a suitable coordinate system
 \[
--\kappa t'(s)^2=0
+-\kappa t'(s)^2=0.
 \]
-dies ist nur möglich, wenn $t$ konstant ist. Die Charakteristiken
-sind in diesem Falle also Geraden parallel zur $x$-Achse.
-Tatsächlich ist es mit der Differentialgleichung und
-den Anfangsbedingungen alleine nicht
-möglich, die zweite Ableitung nach $t$ entlang einer solchen Geraden
-zu bestimmen.
+This can only hold true if $t$ is constant.
+The characteristics in this case are straight lines parallel
+to the $x$-axis.
+In fact it is not possible to determine the second derivative
+with respect to $t$ for initial data along a line parallel
+to the $x$-axis.
 
-\subsection{Einige interessante Sätze}
+\subsection{Some interesting theorems}
 
-\begin{satz}Jede Integralfläche kann mit einer Schar
-charakteristischer Streifen bedeckt werden.
+\begin{satz}
+Every integral surfaces can be covered with a set of characteristic
+strips.
 \end{satz}
 
-\begin{proof}[Beweis]
-Sei $u$ eine Lösung der Differentialgleichung, die die Integralfläche beschreibt.
-Die Differentialgleichung von Satz \ref{charakteristikendgl}
-beschreibt in jedem Punkt des Definitionsbereichs zwei Kurven $t\mapsto(x(t),y(t))$,
-offenbar kann man den Definitionsbereich mit einer Schar solcher Kurven
-überdecken.
-Setzen wir diese Kurven in $u(x,y)$, $\partial_xu(x,y)$
-und $\partial_yu(x,y)$ ein, erhalten wir eine Schar von charakteristischen
-Streifen.
+\begin{proof}
+Let $u$ be the solution of a partial differential equation.
+The differential equation in theorem~\ref{charakteristikendgl}
+describes two curves $t\mapsto(x(t),y(t))$ in every point of the domain.
+Obviously it is possible to cover the solution surface by such curves.
+By substituting these curves into $u(x,y)$, $\partial_xu(x,y)$
+and $\partial_yu(x,y)$ we get a set of characteristic strips
+as claimed.
 \end{proof}
 
-\begin{satz}Überdeckt eine Schar charakteristischer Streifen
-eine Fläche $S$, gegeben durch eine Funktion $u(x,y)$, und hat
-diese Funktion stetige Ableitungen bis zur zweiten Ordnung,
-dann ist $u$ eine Lösung der Differentialgleichung.
+\begin{satz}
+If a set of characteristic strips covers a surface $S$ defined
+by the function $u(x,y)$ and this function has continuous 
+second derivatives then $u$ is a solution of the differential equation.
 \end{satz}
 
-\begin{proof}[Beweis]
-Die charakteristischen Streifen erfüllen die Gleichungen
+\begin{proof}
+The characteristic strips satisfy the equations
 \begin{equation}
 \begin{gathered}
 a\dot y(t)^2-2b\dot x(t)\dot y(t)+c\dot x(t)^2=0,
@@ -462,7 +465,7 @@ a\dot p(t)\dot y(t)-h\dot x(t)\dot y(t)+c\dot x(t)\dot q(t)=0,
 \end{gathered}
 \label{alle}
 \end{equation}
-Nennen wir die zweiten Ableitungen von $u$ entlang einer Charakteristik
+Let's call the second derivatives of $u$ along a cahracteristic curve
 \begin{align*}
 R&=\partial_x^2u(x(t),y(t)),
 \\
@@ -470,31 +473,31 @@ S&=\partial_x\partial_yu(x(t),y(t)),
 \\
 T&=\partial_y^2u(x(t),y(t)),
 \end{align*}
-können wir schreiben
+We can write
 \begin{align*}
-\dot p(t)&=R(t)\dot x(t)+S(t)\dot y(t)\qquad\text{und}\\
+\dot p(t)&=R(t)\dot x(t)+S(t)\dot y(t)\qquad\text{and}\\
 \dot q(t)&=S(t)\dot x(t)+T(t)\dot y(t)
 \end{align*}
-Setzen wir dies in die zweite Gleichung von (\ref{alle}) ein, erhalten wir
+If we substitute this in the second equation of \eqref{alle}, then we get
 \begin{align*}
 a(R\dot x+S\dot y)\dot y-h\dot x\dot y+c\dot x(S\dot x+T\dot y)&=0
 \\
 \Rightarrow \qquad(aR-h+cT)\dot x\dot y+aS\dot y^2 +cS \dot x^2&=0.
 \end{align*}
-Multiplizieren wir die erste Gleichung von (\ref{alle}) mit $S$ und subtrahieren
-sie, erhalten wir
+Multiplying the first equation of
+\eqref{alle} by $t$ and subtract it we get
 \[
 (aR+2bS+cT-h)\dot x\dot y=0.
 \]
-Ausgeschrieben ist der Klammerfaktor
+Writing the parenthesis out is
 \[
 a\partial_x^2u+2b\partial_x\partial_yu+c\partial_y^2u-h=0
 \]
-Also die ursprüngliche Differentialgleichung.
+Which is the original differential equation.
 \end{proof}
-Dieser Satz besagt, dass man die hyperbolische Differentialgleichung dadurch
-lösen kann, dass man charakteristische Streifen sucht. Dazu genügt
-es aber, ein System von gewöhnlichen Differentialgleichungen
-für die Funktion $x$, $y$, $p$, $q$, $R$, $S$ und $T$
-zu lösen.
+This theorem teaches that the hyperbolic partial differential equation
+can be solved by looking for characteristic strips.
+for this it suffices the solve ordinary differential equations for the
+functions $x$, $y$, $p$, $q$, $R$, $S$ and $T$.
+
 

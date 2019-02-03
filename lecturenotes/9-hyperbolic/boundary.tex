@@ -1,46 +1,46 @@
 %
-% boundary.tex -- XXX
+% boundary.tex -- 
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\section{Welche Randwerte beeinflussen die Lösung in einem Punkt?}
+\section{Which boundary points influence a solution in point?}
 \begin{figure}
 \centering
 \includegraphics{../common/images/kausal-1.pdf}\qquad\qquad%
 \includegraphics{../common/images/kausal-2.pdf}
-\caption{Randwerte und Punkte des Gebietes, die Einfluss auf einen
-Funktionswert der Lösung haben.
-Bei einer elliptischen Differentialgleichung $\Delta u=f$
+\caption{Boundary values of the domain that influence the values of the
+solution in a point.
+For an elliptic differential equation $\Delta u=f$
 (links)
-hängt jeder Funktionswert von jedem Randwert und von jedem Wert der
-Funktion $f$ ab.
-Die Lösung einer quasilinearen partiellen Differentialgleichung  (rechts)
-im Punkt $x$ hängt vom Randwert im Anfangspunkt $x_0$ einer Charaketeristik
-ab, die durch $x$ verläuft.
+the function values depend on all boundary values and on any value
+of the function $f$.
+The solution of a quasilinear partial differential equation (right)
+in the point $x$ depends on the initial point $x_0$ of a characteristic
+through $x$.
 \label{einflussmenge1}}
 \end{figure}
 \begin{figure}
 \centering
 \includegraphics{../common/images/kausal-3.pdf}\qquad\qquad%
 \includegraphics{../common/images/kausal-4.pdf}
-\caption{Randwerte und Punkte des Gebietes, die Einfluss auf einen
-Funktionswert der Lösung haben.
-Die Lösung einer parabolischen partiellen Differentialgleichung
-zur Zeit $t$ hängt von allen Werten $t'<t$ ab.
-Bei einer hyperbolischen partiellen Differentialgleichung beinflussen 
-nur die Funktionswerte innerhalb eines vom Punkt $x$ ausgehenden Kegels
-von Charakteristiken den Wert der Lösung im Punkt $x$.
+\caption{Boundary values and points of the domain that influence
+the value of a solution.
+The solution of a parabolic partial differential equation
+at time $t$ depends on all values for times $t'<t$.
+For a hypberbolic partial differential equation only the function
+values inside a cone emanating back in time from a point $x$ 
+influence the value in that point.
 \label{einflussmenge2}}
 \end{figure}
-Mit der entwickelten Theorie ist es jetzt möglich, einen Antwort auf die
-Frage zu geben, welche Punkte auf dem Rand oder auch im Inneren des Gebietes
-einen Einfluss auf die Lösung einer partiellen Differentialgleichung
-der Form $Lu=f$ haben.
+The theory developed so far allows to give an answer to the question
+which points on the boundary or in the interior of the domain have
+an influence the solution of the partial differential equation
+$Lu=f$.
 
-Im Kapitel~\ref{chapter-elliptisch} haben wir für die Lösung einer
-elliptischen partiellen Differentialgleichung eine Formel angegeben,
-die $u(x)$ aus allen Randwerten $g$ und der Funktion $f$ in allen 
-inneren Punkten berechnet:
+In chapter~\ref{chapter-elliptisch} we have found a formula for the solution
+of an elliptic partial differential equation, which computes the 
+values in the interior as an function of the values on the boundary
+and all values of $f$ in the interior:
 \[
 u(x)
 =
@@ -48,28 +48,29 @@ u(x)
 +
 \int_{\partial\Omega} \operatorname{grad}_\xi G(x,\xi)g(\xi)\,d\xi.
 \]
-Eine Änderung von $g$ in irgend einem Punkt des Randes wird im allgemeinen
-Die Lösung $u(x)$ verändern, ebenso eine beliebige Änderung von $f$
-(Abbildung~\ref{einflussmenge1}, links).
+A change in $g$ anywhere on the boundary or change of $f$ anywhere in the
+interior will change the solution everywhere
+(figure~\ref{einflussmenge1}, left).
 
-Im Gegensatz dazu wurde im Kapitel~\ref{chapter-geometrie} gezeigt, 
-dass die Lösung einer quasilinearen partiellen Differentialgleichung
-erster Ordnung im Punkt $x$ nur vom Wert der Anfangsbedingung im Anfangspunkt
-derjenigen Charakteristik abhängt, die durch $x$ verläuft
-(Abbildung~\ref{einflussmenge1}, rechts).
+By contrast, in chapter~\ref{chapter-geometrie} it was shown that
+the the value of a solution of quasilinar aprtial differential
+equation of first degree in a point $x$ only depends on the the values on
+the characteristic that runs through $x$
+(figure~\ref{einflussmenge1}, right).
 
-Die Lösung einer parabolischen partiellen Differentialgleichungen 
-kann ebenfalls mit Hilfe einer Greenschen Funktion ausgedrückt werden.
-Die Formel~(\ref{green-parabolisch}) zeigt, dass die Werte $u(t,x)$
-im Allgemeinen von allen Randwerten $g(t',\xi)$ und $f(t',\xi)$
-mit $t'<t$ abhängt (Abbildung~\ref{einflussmenge2}, links).
+The solution of a parabolic paratial differential equation can also be
+expressed using Green's function.
+Formula~(\ref{green-parabolisch}) shows, that the values $u(t,x)$
+in general depend on all boundary values
+$g(t',\xi)$ and internal values $f(t',\xi)$
+with $t'<t$ (figure~\ref{einflussmenge2}, left).
 
-Die Charakteristischen Flächen (Kurven) beantworten die entsprechende
-Frage für eine hyperbolische partielle Differentialgleichung.
-Die charakteristischen Flächen (Kurven), die durch den Punkte $x$ verlaufen,
-definieren einen Kegel.
-Der Wert $u(x)$ der Lösung im Punkt $x$ hängt ab von den
-Funktionswerten der rechten Seite der Gleichung und den Randwerten
-in diesem Kegel
-(Abbildung~\ref{einflussmenge2}, rechts).
+The characteristic surfaces (curves) answer this question for hyperbolic
+partial differential equations.
+The characteristic surfaces (curves) that go through a point $x$
+define a cone.
+The value of $u(x)$ of the solution in the point $x$ depends on the
+function values of the right hand side of the equation and the boundary values
+the the past cone
+(figure~\ref{einflussmenge2}, right).
 

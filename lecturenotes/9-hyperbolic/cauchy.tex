@@ -1,38 +1,44 @@
 %
-% cauchy.tex -- XXX
+% cauchy.tex -- 
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\section{Das Cauchy-Problem in höheren Dimensionen}
-\rhead{Das Cauchy-Problem}
-Im letzten Abschnitt haben wir Anfangswerte auf der Geraden $t=0$
-vorgegeben, damit waren auch gleichzeitig die Ableitungen 
-$\partial_x u(0,x)$ festgelegt. Ausserdem hatten wir mit der Funktion $v_0$
-die Ableitungen $\partial_t u(0,x)$ vorgegeben.
-Der Graph der Lösungsfunktion ist ein Fläche, eine sogenante
-Integralfläche der Differentialgleichung. Die Anfangsbedingung
-definiert eine Kurve $x\mapsto(x,0,u_0(x))$, die Integralfläche muss
-durch diese Kurve gehen.
-Durch die zwei Ableitungen ist zudem in jedem Punkt der Kurve
-eine Tangentialebene an die Integralfläche vorgegeben.
+\section{The Cauchy problem in higher dimensions}
+\rhead{The Cauchy problem}
+In the last section we have given initial values on the straight line
+$t=0$ which also fixed the initial values for $\partial_x u(0,x)$.
+In addition, by specifying $v_0$ the normal derivative 
+$\partial_t u(0,x)$ is given.
+The graph of the solution function is a surface, called an integral
+surface of the differential equation.
+The initial conditions define a curve $x\mapsto(x,0,u_0(x))$,
+the solution surface must contain this curve.
+By specifying the normal derivative, in each point of the initial
+curve we also specify a tangent plane.
 
-Wie das Beispiel zeigt, ist die Lösungsfläche durch Vorgabe einer Kurve und
-und der Tangentialebenen in jedem Punkt der Kurve bestimmt ist.
-Etwas allgemeiner besteht das Cauchy-Problem darin, eine Integralfläche
-zu finden, die durch eine beliebige Kurve geht, und ausserdem in jedem Punkt
-der Kurve eine bestimmte Tangentialebene hat. Diese Vorgaben nennt man
-einen ``Streifen'' (Abbildung~\ref{skript:streifen}).
-Eine partielle Differentialgleichung für eine Funktion $u(t,x,y)$
-von drei Variablen kann zum Beispiel dadurch festgelegen werden,
-dass man Funktionswerte $u(t,x,y)=u_0(x,y)$ zur Zeit $t=0$ festlegt.
-Dadurch sind auch die Ableitungen $\partial_x u(0,x,y)=\partial_xu_0(x,y)$
-und $\partial_y u(0,x,y)=\partial_y u_0(x,y)$ bestimmt. Die Lösung wird
-aber erst eindeutig bestimmt sein, wenn auch die Ableitung in $t$-Richtung
-vorgegeben ist, zum Beispiel in der Form $\partial_t(0,x,y)=v_0(x,y)$.
+As the example shows, the solution is determined uniquely by specifying
+the initial curve and an initial sheaf of tangent planes.
+More generally, the Cauchy problem consists in finding an integral
+surface that contains a given curve and also, at each point of the curve,
+has a given tangent plane.
+This type of initial data is called an initial ``strip''
+(see figure~\ref{skript:streifen}).
 
-Allgemeiner besteht das Cauchy-Problem darin, eine Lösung zu finden
-die entlang einer beliebigen Fläche im $(t,x,y)$-Raum vorgegebene
-Werte annimmt. Ausserdem muss die Richtungsableitungen in eine Richtung
-senkrecht auf die Fläche (Normalableitung) ebenfalls vorgegebene Werte annehmen.
+The solution of a partial differential equation for the function $u(t,x,y)$
+of three variables cannot be uniquely determined by specifying
+the initial values $u(t,x,y)=u_0(x,y)$ at time $t=0$.
+This already fixes the partial derivatives
+$\partial_x u(0,x,y)=\partial_xu_0(x,y)$
+and $\partial_y u(0,x,y)=\partial_y u_0(x,y)$
+in the $x$ and $y$ direction.
+The solution will only be determined if we specify in addition the normal
+derivative, e.~g.~in the form
+$\partial_t(0,x,y)=v_0(x,y)$.
+This means that the initial data implies initial values in all points
+with $t=0$ 
+and all derivatives in each point of $t=0$.
 
+More generally, the Cauchy problem is to find a solution that assumes
+given values on a surface in $(t,x,y)$-space and 
+given normal derivatives on the same surface.
 
