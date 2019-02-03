@@ -1,66 +1,70 @@
 %
-% unique.tex -- XXX
+% unique.tex -- 
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\section{Eindeutigkeit der Lösung}
-Wir untersuchen jetzt die Frage, ob die Lösung des 
-Dirichlet-Problems (\ref{elliptisch:laplaceequation}) und
-(\ref{dirichletrandbedingung}), sollte sie existieren, eindeutig ist.
-Seien also $u_1$ und $u_2$ zwei Lösungen des Problems. Die Differenz
-$u=u_1-u_2$ erfüllt dann
+\section{Uniqueness of a solution}
+We now study the question whether the solution of the Dirichlet problem
+\eqref{elliptisch:laplaceequation} and \eqref{dirichletrandbedingung},
+if they exist, is unique.
+
+Let $u_1$ and $u_2$ be two solutions of the problem.
+The difference satisfies
 \[
 \begin{aligned}
 \Delta u&=\Delta u_1-\Delta u_2=f-f=0&&\text{in $\Omega$,}\\
-u&=u_1-u_2=g-g=0&&\text{auf $\partial\Omega$.}
+u&=u_1-u_2=g-g=0&&\text{on $\partial\Omega$.}
 \end{aligned}
 \]
-$u$ ist also eine Lösung des homogenen Problems mit homogenen
-Randbedingungen.
+$u$ is a solution of the homogeneous problem with homogeneous 
+boundary conditions.
 
-Diese Beobachtung trifft natürlich auch zu für jeden anderen
-Differentialoperator der Form
+This observation holds true for any other linear partial differential
+operator of the form
 \[
 L=\sum_{i,j}a_{ij}\partial_i\partial_j+\sum_i b_i\partial_i.
 \]
-Um die Eindeutigkeit der Lösung zu verstehen, muss man also verstehen,
-ob das homogene Problem mit homogenen Randbedingungen eine
+Uniqueness of solutions is thus equivalent to uniqueness of solutions
+of the homogeneous problem with homogeneous boundary conditions.
+This follows from the following theorem:
 eindeutige Lösung hat. Dies wiederum folgt aus dem folgenden Satz.
 
-\begin{satz}[Maximum-Prinzip für elliptische Operatoren]
+\begin{satz}[Maximum principle for elliptic operators]
 \label{maximumprinzip}
-Ist $L$ ein elliptischer Differentialoperator auf einem zusammenhängenden
-und beschränkten Gebiet $\Omega$,
-und $u$ eine Lösung von $Lu=0$,
-dann nimmt $u$ sein Maximum und Minimum auf dem Rand an.
+If $L$ is an elliptic differential operator on a connected and
+bounded domain $\Omega$, and $u$ is a solution $Lu=0$, then $u$ takes
+its maximum and minimum on the boundary of $\Omega$.
 \end{satz}
 
-Die Bedingung, dass das Gebiet $\Omega$ beschränkt sein muss, ist
-wesentlich.
-Die Funktion $u(x,y)=x$ ist harmonisch, $\Delta x=0$, und auf
-dem Rand des Gebietes $\Omega=\{(x,y)\,|\,x>0\}$, nämlich
-der $y$-Achse nimmt, gilt $u(0,y)=0$.
-Es gibt also mehr als eine Lösung des Dirichletproblems mit
-homogenen Randbedingungen für dieses Gebiet.
+The condition that the domain $\Omega$ needs to be bounded is essential.
+The function $u(x,y)=x$ is harmonic, $\Delta x=0$, on the domain
+$\Omega=\{(x,y)\,|\,x>0\}$, and it vanishes on the boundary, which is
+the $y$-axis, where we have $u(0,y)=0$.
+So this $u$ is a solution of the Poisson problem with homogeneous
+Dirichlet boundary conditions with homogeneous boundary conditions, 
+but it does not take a maximum anywhere.
 
-Auch der Zusammenhang des Gebietes ist wesentlich.  Definieren wir
-die Funktion 
+The connectedness of the domain es essential too.
+Define the function
 \[
-u(x)=n\qquad\text{für $2^{-n} < x < \frac{3}{2}2^{-n}$},
+u(x)=n\qquad\text{für $2^{-n} < |x| < \frac{3}{2}2^{-n}$},
 \]
-dann ist $\Delta u=0$, da aber die Werte von $u$ unbeschränkt sind,
-wird auch kein Maximum angenommen.
+then $\Delta u=0$, it is constant on rings around the origin and hence
+$u$ is harmonic.
+The values of $u$ are not bounded as there are infinitely many disjoint
+rings.
+In particular, there is no maximum.
 
-\begin{proof}[Beweisidee]
-Wir führen den Beweis mit Hilfe eines Widerspruchs. Wir nehmen
-an, $u$ nehme in einem inneren Punkt $x$ des Gebietes $\Omega$ ein
-Maximum an.
+\begin{proof}[Proof idea]
+We prove the theorem with the help of a constradiction.
+We assume that $u$ takes a maximum in some interior point $x$
+in $\Omega$.
 
-Wir dürfen annehmen, dass die Matrix $a_{ij}$ diagonal ist,
-und dass,
-da $L$ elliptisch ist, die Diagonalelement $a_{ii}=\lambda_i$
-alle positiv sind. Da das Maximum in $x$ angenommen wird, muss
-mindestens eine zweite Ableitungen negativ sein:
+We may assume that the matrix $a_{ij}$ is diagonal that, as $L$
+is elliptic, that $a_{ii}=\lambda_i$ are all positive.
+As $u$ has a maximum in $x$, all first order derivatives vanish
+in $x$ and at least one of the second derivatives
+must be nagative:
 \[
 \frac{\partial^2u}{\partial x_i^2}
 \le 0
@@ -73,86 +77,86 @@ mindestens eine zweite Ableitungen negativ sein:
 \quad
 Lu<0
 \]
-Der Widerspruch zeigt, dass es kein inneres Maximum geben kann.
+This contradiction shows that there cannot be a maximum in the
+interior of the domain.
 
-Dies ist jedoch kein Beweis, weil es keinen Grund gibt, warum
-nicht alle zweiten Ableitungen von $u$ im Punkt $x$ verschwinden
-könnten. Wir geben einen vollständigen Beweis am Ende dieses
-Abschnittes.
+However, this is unfortunately not a proof.
+There is no reason why not all second derivatives of $\partial^2_{x_i} u$ 
+could be zero.
+We give a complete proof at the end of this section.
 \end{proof}
 
 \begin{satz}
-Es gibt höchstens eine Lösung der Gleichung
+There is at most one solution of
 $Lu=f$ 
-mit Randbedingung
+with boundary conditions
 $u_{|\partial\Omega}=g$.
 \end{satz}
 
-\begin{proof}[Beweis]
-Seien $u_1$ und $u_2$ Lösungen, dann ist $u=u_1-u_2$ eine Lösung 
-von $Lu=0$ mit Randbedingungen $u_{|\partial\Omega}=0$. Nach Satz
-\ref{maximumprinzip} nimmt $u$ sein Maximum und sein Minimum auf dem Rand an,
-es gilt
-also $0\le u\le 0$ in ganz $\Omega$.
-Daher ist $u=0$ oder $u_1=u-2$,
-zwei verschiedene Lösungen kann es also nicht geben.
+\begin{proof}
+Let $u_1$ und $u_2$ be solutions, then $u=u_1-u_2$ is a solution of
+$Lu=0$ with boundary conditions $u_{|\partial\Omega}=0$.
+According to theorem \ref{maximumprinzip} $u$ takes its maximum and
+minimum on the boundary, so $0\le u\le 0$ in $\Omega$.
+Consequently $u=0$ or $u_1=u-2$, it is therefore impossible that
+there are two different solutions.
 \end{proof}
 
 {\small
-\subsubsection{Ein Beweis des Maximum-Prinzips}
-Im Folgenden wollen wir wie versprochen einen vollständigen Beweis für das
-Maximumprinzip angeben. Der wesentliche Punkt in der Beweisidee
-war, dass $Lu=0$, wir aber bei einem Maximum (inkorrekterweise)
-auf $Lu<0$ schliessen wollten. Dabei erlaubt unsere Method nur zu
-schliessen, dass $Lu\le 0$.
-Unser Argument beweist also nur die folgende Aussage:
+\subsubsection{A proof of the maximum principle}
+In the following we give a complete proof promised for the maximum principle.
+The essential point of the proof idea was that $Lu=0$ but in an internal
+maximum we could conclude $Lu<0$.
+But the method we employed was only real capable of concluding that
+$Lu\le 0$.
+Our argument so far only proofs the following statement:
 \begin{satz}
 \label{maximumgt}
-Ist $L$ ein elliptischer Differentialoperator auf einem zusammenhängenden
-und beschränkten Gebiet $\Omega$,
-und $u$ eine Funktion mit der Eigenschaft $Lu>0$,
-dann nimmt $u$ sein Maximum auf dem Rand an.
+If $L$ is an elliptic differential operator on a connected and
+bounded domain $\Omega$ and $u$ a function with the property $Lu>0$, then
+$u$ takes a maximum on the boundary.
 \end{satz}
 
-Daraus kann man jetzt aber auch folgern:
+This allows us to conclude:
 \begin{satz}
-Ist $L$ ein elliptischer Differentialoperator auf einem zusammenhängenden
-und beschränkten Gebiet $\Omega$,
-und $u$ eine Funktion mit der Eigenschaft $Lu\ge0$,
-dann nimmt $u$ sein Maximum auf dem Rand an.
+If $L$ is an elliptic differential operator on a conneted and
+bounded domain $\Omega$ and $u$ is a function with $Lu\ge > 0$,
+then $u$ takes its maximum on the boundary.
 \end{satz}
 
-\begin{proof}[Beweis]
-Wir dürfen wie in der bereits oben skizzierten Beweisidee annehmen,
-dass im betrachteten Punkt $x$ die Koeffizientenmatrix $(a_{ij})$
-diagonal ist und alle $a_{ii}$ positiv sind.
-
-Wir betrachten die Funktion $u_{\varepsilon}=u-\varepsilon e^{\lambda x_1}$.
-Es gilt
+\begin{proof}
+As in the proof sketch, we may assume that in the point $x$ the 
+coefficient matrix $(a_{ij})$ is diagonal with all diagonal elements
+positive.
+Let $u_{\varepsilon}$ be the function
+$u_{\varepsilon}=u-\varepsilon e^{\lambda x_1}$.
+We get
 \begin{align*}
 Lu_{\varepsilon}&=Lu-\varepsilon L(e^{\lambda x_1})\\
 &=Lu-\varepsilon(a_{11}\lambda^2+b_1\lambda)e^{\lambda x_1}
 \end{align*}
-Da $a_{11}>0$ gilt, wird das quadratische Polynom $a_{11}\lambda^2+b_1\lambda$
-für genügend grosses $\lambda$ positiv, und damit 
+Because $a_{11}>0$,
+the quadratic polynomial $a_{11}\lambda^2+b_1\lambda$ will be positive
+for sufficnently large $\lambda$.
+Thus
 \[
 Lu_{\varepsilon}= Lu-\varepsilon(a_{11}\lambda^2+b_1\lambda)e^{\lambda x_1}<0
 \]
-für jedes beliebige $\varepsilon$. Nach Satz \ref{maximumgt} wird das Maximum
-von $u_\varepsilon$ also auf dem Rand angenommen.
-Im Grenzübergang $\varepsilon\to 0$ ist $u^\varepsilon\to u$, also
-muss auch $u$ das Maximum auf dem Rand annehmen.
+for every $\varepsilon$.
+According to theorem \ref{maximumgt},
+the maximum of $u_\varepsilon$ is reached on the boundary.
+
+In the limit $\varepsilon\to 0$ we have $u^\varepsilon\to u$, so
+$u$ too must reach a maximum on the boundary.
 \end{proof}
 
-Setzt man $-u$ in den eben bewiesenen Satz, folgt das Minimumprinzip:
-\index{Minimumprinzip}
+Applying this theorem to the function $-u$, the minimum principle follows:
 \begin{satz}
-Ist $L$ ein elliptischer Differentialoperator auf einem zusammenhängenden
-und beschränkten Gebiet $\Omega$,
-und $u$ eine Funktion mit der Eigenschaft $Lu\le0$,
-dann nimmt $u$ sein Maximum auf dem Rand an.
+If $L$ is an elliptic differential operator on a connected and
+bounded domain $\Omega$ and $u$ a function with $Lu\le 0$, then
+$u$ takes a minimum on the boundary.
 \end{satz}
 
-Für Lösungen von $Lu=0$ folgt dann der Satz \ref{maximumprinzip}.
+For solutions of $Lu=0$ the theorem \ref{maximumprinzip} follows.
 }
 

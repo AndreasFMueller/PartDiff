@@ -1,39 +1,40 @@
 %
-% mean.tex -- XXX
+% mean.tex -- 
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\section{Mittelwerteigenschaft harmonischer Funktionen}
-\rhead{Mittelwerteigenschaft}
-Harmonische Funktionen haben eine Eigenschaft, die über das Maximumprinzip
-für elliptische Operatoren hinausgeht.
-Das Maximumprinzip sagt, dass die Werte der Lösung einer homogenen
-elliptischen partiellen Differentialgleichung zwischen den
-Extremwerten auf dem Rand liegen.
-Die Mittelwerteigenschaft sagt darüber hinaus, dass die Funktionswerte
-(geeignete) Mittelwerte der Randwerte sind.
+\section{The mean value property of harmonic functions}
+\rhead{Mean value property}
+Harmonic funtion have a property that transcends the maximum principle
+for elliptic operators.
+The maximum principle says that the solution of a homogeneous elliptic
+partial differential equation is bounded above and below by the
+extreme values on the boundary.
+The mean value property in addition says that the value in some
+point is actually the mean of all the values in small circle
+around the point.
 
-\subsection{Mittelwerteigenschaft}
-In diesem Abschnitt wollen wir illustrieren, dass
-Werte von harmonischen Funktionen in einem Punkt
-Mittelwerte der Funktionswerte auf einer Kugel um den gegebenen Punkt sind.
+\subsection{Mean value property}
+In this section we are going to illustrate that the values of harmonic
+functions are means of the values of the function on a sphere around 
+the point.
 
-\begin{satz}[Mittelwerteigenschaft]
-Sei $u$ eine harmonische Funktion im Gebiet $\Omega$ und $x_0\in\Omega$.
-%\marginpar{\tiny Mittelwerteigenschaft harmonischer Funktionen}
-Sei $r$ so klein, dass die Kugel mit Radius $r$ um den Punkt $x_0$
-ebenfalls in $\Omega$ enthalten ist. Dann gilt
+\begin{satz}[Mean value property]
+Let $u$ bi a harmonic function on $\Omega$ and $x_0\in\Omega$.
+If $r$ is small enough so that the sphere with radius $r$ in $x_0$
+fits inside the domain $\Omega$.
+Then
 \[
 u(0)=\frac1{\mu(S^{n-1}_r)}\int_{S^{n-1}_r}u(x)\,d\mu(x).
 \]
 \end{satz}
-\begin{proof}[Beweis]
-Wir können ohne Beschränkung der Allgemeinheit annehmen, dass $x_0=0$.
-Wegen 
+\begin{proof}
+Without loss of generality, we can assume that $x_0=0$.
+Then
 \[
 \Delta u=\operatorname{div}\operatorname{grad}u
 \]
-folgt aus dem Satz von Gauss
+follows from Gauss' theorem
 \begin{align*}
 0&=\int_{B_r^n}\Delta u\,d\mu(x)
 \\
@@ -41,7 +42,7 @@ folgt aus dem Satz von Gauss
 \\
 &=\int_{S_r^{n-1}} \operatorname{grad}u\cdot dn
 \end{align*}
-Andererseits ist 
+On the other hand
 \begin{align*}
 \frac{d}{dr}\frac{1}{\mu(S_r^{n-1})}\int_{S_r^{n-1}} u(x)\,d\mu(x)
 &=
@@ -54,22 +55,22 @@ Andererseits ist
 &=
 \frac1{\mu(S_1^{n-1})}\int_{S_1^{n-1}}\operatorname{grad}u(xr)\cdot dn=0
 \end{align*}
-Der Mittelwert hängt also nicht vom Radius ab. Da aber wegen
-der Stetigkeit von $u$ im Punkt $0$ auch
+The mean value does not depend on the radius.
+By continuity
 \[
 \lim_{r\to 0}\frac1{\mu(S_r^{n-1})}\int_{S_r^{n-1}}u(x)\,d\mu(x)=u(0)
 \]
-folgt die Behauptung.
+so the claim follows.
 \end{proof}
 
-Man kann die Mittelwerteigenschaft auch dafür verwenden, das Dirichlet-Problem
-auf einem Ball zu lösen:
+We can use the mean value property to solve the Poisson problem with
+Dirichlet boundary values for a ball.
 
-\begin{satz}[Poisson-Formel]
-\index{Poisson-Formel}
-Sei $g$ eine stetige Funktion auf dem Rand der $n$-dimensio\-nalen
-%\marginpar{\tiny Poisson-Formel}
-Einheitskugel, dann ist
+\begin{satz}[Poisson-Formela]
+\index{Poisson-Formela}
+Let $g$ be a continuous function on the boundary of an $n$-dimensional
+unit sphere.
+Then
 \[
 u(x)=\begin{cases}
 \displaystyle \frac{1-|x|^2}{\mu(S^{n-1})}
@@ -77,65 +78,47 @@ u(x)=\begin{cases}
 g(x)&\qquad |x|=1
 \end{cases}
 \]
-eine harmonische Funktion mit Randwerten $u_{|S_1^{n-1}}=g$.
+is a harmonic function with boundary values $u_{|S_1^{n-1}}=g$.
 \end{satz}
 
-\subsection{Maximumprinzip und Mittelwerteigeschaft}
-\rhead{Maximumprinzip}
-\index{Maximumprinzip}
-\begin{satz}[Maximumprinzip]Ist die Funktion $u$ auf dem Gebiet
-%\marginpar{\tiny Maximumprinzip für harmonische Funktionen}
-$\Omega$ harmonisch, und nimmt sie in einem inneren Punkt $x\in\Omega$
-ein Maximum an, dann ist $u$ konstant.
+\subsection{Maximum principle and mean value proeprty}
+\begin{satz}[Maximum principle]
+If the function $u$ on the domain
+$\Omega$
+is harmonic and assumes a maximum in an interior point,
+then $u$ is constant.
 \end{satz}
 
-\begin{proof}[Beweis]
-Sei $x_0\in\Omega$ der innere Punkt, in dem die Funktion $u$
-ihr Maximum annimmt. Dann ist auch eine kleine Kugel mit Radius
-$r$ in $\Omega$ enthalten, deren Oberfläche wir mit $K_r$
-bezeichen. Falls $u$ nicht konstant ist, gibt
-es eine Zahl $\varepsilon > 0$ und 
-ein Teilgebiet $S\subset K_r$ nicht verschwindenden Volumnes $\mu(S)$,
-auf welchem die Funktionswerte
-mindestens $\varepsilon$ kleiner sind, also
-\[
-u(x)<u(x_0)-\varepsilon\quad\text{für $x\in S$}
-\]
-Der Funktionswert in $x_0$ ist aber der Mittelwert der Funktionswerte
-über die Kugeloberfläche, also
-\begin{align*}
-u(x_0)
-&=
-\frac1{\mu(K_r)}\int_{K_r}u(x)\,d\mu(x)
-\\
-&=\frac1{\mu(K_r)}\int_Su(x)\,d\mu(x)+\frac1{\mu(K_r)}\int_{K_r\setminus S}u(x)\,d\mu(x)
-\\
-&\le \frac1{\mu(K_r)}\int_S u(x_0)\,d\mu(x)+\frac1{\mu(K_r)}\int_{K_r\setminus S}u(x_0)-\varepsilon\,d\mu(x)
-\\
-&\le \frac1{\mu(K_r)}u(x_0)\mu(S)+\frac1{\mu(K_r)}(u(x_0)-\varepsilon)\mu(K_r\setminus S)
-\\
-&=
-u(x_0)-\varepsilon\frac{\mu(S)}{\mu(K_r)}<u(x_0)
-\end{align*}
-Ein solches Teilgebiet $S$ kann es daher nicht geben, der Funktionswert
-von $u$ muss auf der ganzen Kugel identisch sein.
+\begin{proof}
+Let $x_0\in\Omega$ be the interior point where $u$ takes the maximum.
+If $u$ is not constant, the set of points $x$ where $u(x)=u(x_0)$ is
+closed and at same time it is not the whole of $\Omega$.
+So there is a point $x$ with $u(x)=u(x_0)$ and at the same time
+in every neighborhood of $x$ we will find points where the value of
+$u$ is strictly smaller.
+Since $\Omega$ is open, there is some small sphere of radius $r$
+around $x$ that is completely contained in $\Omega$.
+We denote the surface of this sphere by $K_r$.
+We know that there are points on $K_r$ where $u$ is strictly smaller
+than $u(x_0)$.
+This implies that the mean value of $u$ over $K_r$ will also be
+strictly smaller than $u(x_0)$, contradicting the mean value property.
+This contradiction shows that $u$ must be constant.
 \end{proof}
 
-Aus dem Maximum-Prinzip folgt auch, dass eine beliebige Funktion, die
-%\marginpar{\tiny Funktionen mit Mittelwerteigenschaft sind harmonisch}
-die Mittelwerteigenschaft hat, auch harmonisch ist. Ist $u$ ein
-Funktion, die die Mittelwerteigenschaft hat, dann kann man mit der
-Poisson-Formel eine Funktion $v$ innerhalb eines Balles konstruieren,
-welche auf der Oberfläche des Balles mit $u$ übereinstimmt.
-Die Differenz ist dann eine Funktion, die ebenfalls die Mittelwerteigenschaft
-hat, aber auch auf dem Rand des Balles verschwindet. Da die Differenz
-nach dem Maximumprinzip
-im Inneren das Balles nicht grösser sein kann als auf dem Rand,
-muss $u=v$ sein. Da $v$ harmonisch ist, ist auch $u$ harmonisch.
+The maximum principle imples that any function that has the
+mean value property is also harmonic.
+For if $u$ has the mean value property and $v$ is harmonic with
+the same boundary values as $u$, then the difference $u-v$ is 
+function that satisfies the maximum principle with boundary
+values $0$.
+Consequently $u-v=0$, so $u$ and $v$ are the same und $u$ is also
+harmonic.
 
-Die Analogie zum eindimensionalen Fall ist ebenfalls durchführbar.
-%\marginpar{\tiny Maximumprinzip gilt auch im eindimensionalen Musterproblem}
-Ist $u$ eine Funktion von einer Variablen mit $u''=0$, dann ist
-$u$ linear, also $u(x)=ax+b$. Hat $u(x)$ ein Maximum im Inneren
-des Definitionsbereichs, folgt $u'(x)=a=0$, also ist $u(x)=b$ konstant.
+This works in one dimension too.
+A ``harmonic'' function in one dimension is just a linear function
+$u(x)=ax+b$.
+If $u(x)$ has a maximum in the interior, then $u(x)$ the derivative
+has to be $0$ in that interior point, which implies $a=0$ and $u(x)=b$
+constant.
 

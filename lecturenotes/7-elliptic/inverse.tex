@@ -1,72 +1,81 @@
 %
-% inverse.tex -- XXX
+% inverse.tex -- 
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\section{Gibt es einen zu $\Delta$ inversen Operator?}
-Um das Problem $\Delta u=f$ zu lösen, müsste man einfach einen
-inversen Operator $\Delta^{-1}$ kennen, dann wäre die gesuchte
-Lösung $u=\Delta^{-1}f$. Dies ist natürlich zu schön, um wahr
-zu sein, aber die folgenden zwei Beispiele sollen illustrieren,
-dass für elliptische Operatoren
-mindestens etwas Ähnliches durchaus im Bereich des Möglichen
-liegen könnte.
+\section{Does there exist an operator inverse to $\Delta$?}
+We want to solve the problem $\Delta u=f$.
+If we had a inverse operator $\Delta^{-1}$, we could use it to
+find the solution $u=\Delta^{-1}f$.
+This dream is to good to be true, but the examples below 
+illustrate that for elliptic operator there is at least a partial
+realization of it.
 
-\subsection{Ableitung und Integration}
-Die Gleichung in einer Dimension
+\subsection{Derivative and Integration}
+The equation 
 \[
 u''(x)=f(x)
 \]
-kann direkt mit Hilfe von Integrationen gelöst werden. Dazu muss
-man nur eine Stammfunktion $F$ von $f$ finden, also $F' = f$ und
-weiter eine Stammfunktion $u$ von $F$, dann gilt
-$u''(x)=F'(x)=f(x)$. Trotzdem ist $u$ noch keine Lösung, denn 
-sie erfüllt die Randbedingungen noch nicht.
+in one dimension can be solved by simple integration.
+To this effect we need to find an antiderivative $F$ of $f$, i.~e.~$F'=f$
+and then an antiderivative $u$ of $F$.
+In spite of $u''(x)=F'(x)=f(x)$, $u$ need no be a solution because
+it does not satisfy the boundary conditions.
 
-\subsection{Lineare Gleichungen}
-Man kann sich vorstellen, dass durch Diskretisation aus der 
-Differentialgleichung $u''=f$ auf dem Interval $[a,b]$ ein lineares Gleichungssystem
-$Au=f$ entsteht. Die Komponenten der Vektoren $u$ und $f$ sind dabei
-Werte von $u$ und $f$ an ausgewählten Punkten. Und es ist nicht
-abwegig, dass es eine inverse Matrix $G$ geben könnte, mit der man
-die Lösung $u=Gf$ finden könnte.
+\subsection{Linear equations}
+By discretization the differential equation $u''=f$ on the interval
+$[a,b]$ can be turned into a linear system of equations of
+the form $Au=f$.
+The components of $u$ and $f$ are values of the functions of $u$ and $f$
+in selected points of the domain.
+And since we have seen that the solution is unique for elliptic operators,
+there should be an inverse Matrix $G$ that can be used to find the
+solution $u=Gf$.
 
-Das Matrizenprodukt ist
+The matrix product is
 \[
 \sum_{j}g_{ij}f_j = u_i,
 \]
-und auch die $g_{ij}$ könnte man als Werte einer Funktion $G(x,y)$
-betrachten. Die Summe ist dann nur der diskrete Fall eines Integrals,
-man könnte also auf die Idee kommen, dass
-die Lösung $u$ mit einer Formel der Form
-\[
-u(x)=\int_a^b G(x,\xi)f(\xi)\,d\xi
-\]
-gefunden werden kann. Auch dies wird noch nicht funktionieren,
-weil wiederum die Randbedingung nicht berücksichtigt wurde.
+and the $g_{ij}$ can also be considred to be values of a function $G(x,y)$
+defined in particular points of $\Omega\times\Omega$.
 
-\subsection{Randbedingungen}
-Die Randbedingungen sollten ebenfalls linear in das Problem eingehen.
-Im eindimensionalen Problem haben wir nur zwei Punkte auf dem Rand,
-also müssten sie einen Beitrag der Form
+If the points used for discretization come closer together, the sum
+can ultimately better be approximated by an integral of the form
 \[
-K(x,a) g(a) + K(x,b)g(b)
+u(x)=\int_a^b G(x,\xi)f(\xi)\,d\xi.
 \]
-beitragen. Besteht der Rand dagegen aus vielen Punkten, würde dies
-wieder zu einer grossen Summe
+So we are left with the question whether there actually exists such
+a function $G(x,\xi)$.
+However, there is no guarantee that this will be a solution, as
+the boundary conditions may not be satisfied.
+
+\subsection{Boundary conditions}
+The boundary conditions also enter linearly into the problem.
+In the one dimensional problem we have two points on the boundary
+so we expect a contribution of the form
+\[
+K(x,a) g(a) + K(x,b)g(b),
+\]
+where $K(x,\xi)$ is another function defined on $x\in [a,b]$ and
+$\xi \in\{a,b\}=\partial[a,b]$.
+If the boundary is more complicated and consists of multiple points,
+the contribution increases to a sum
 \[
 \sum_{i}K(x,a_i)g(a_i),
 \]
-wobei die Punkte $a_i$ auf dem Rand liegen. In der Grenze erwartet man
-als für die Randwerte einen zweiten Beitrag
+where all the points $a_i$ are on the boundary.
+Again, with the boundary becoming a curve or surface, the
+contribution of the boundary values must be computed with
+the help of an integral
 \[
 \int_{\partial\Omega}K(x,\xi)g(\xi)\,d\xi
 \]
-in Form eines Kurven- oder Oberflächenintegrals über den Rand des
-Gebietes.
-Wir suchen daher eine allgmeine Lösung des Problems in der Form
+over the boundary of the domain.
+So we expect a solution in the form
 \begin{equation}
 u(x)=\int_{\Omega} G(x,\xi)f(\xi)\,d\xi + \int_{\partial\Omega} K(x,\xi)g(\xi)\,d\xi.
 \label{greenformula}
 \end{equation}
+The goal of the subsequent sections is to show that in some cases,
+such a function actually exists.
 

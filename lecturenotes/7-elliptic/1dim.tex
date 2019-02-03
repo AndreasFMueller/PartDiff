@@ -1,70 +1,69 @@
 %
-% 1dim.tex -- XXX
+% 1dim.tex -- 
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\section{Das eindimensionale Problem}
-\rhead{Der eindimensionale Fall}
-Zum Beweis, dass das im vorangegangenen Abschnitt angedeutete Programm 
-tatsächlich durchführbar ist,
-betrachten wird das eindimensionale Problem
+\section{The one-dimensional problem}
+\rhead{The one-dimensional case}
+As a demonstration that the program sketched in the previous section
+may actually be implemented, we consider the one dimensional problem
 \[
 u''(x)=f(x)
 \]
-mit der Randbedingung
+on the interval $[0,1]$ with boundary conditions
 \[
 u(0)=a,\quad u(1)=b.
 \]
-Ziel ist, die Funktion $G$ zu finden.
+The goal is to find the function $G(x,\xi)$.
 
-Die Lösung dieses Problems wird in der Theorie der gewöhnlichen
-%\marginpar{\tiny Lösung des gewöhnlichen Randwertproblems als Leitlinie
-%für den mehrdimensionalen Fall}
-Differential\-gleichungen behandelt, wir wollen hier die allgemeine
-Lösung jedoch so darstellen, dass sie als Leitlinie für die
-Entwicklung einer Lösung für das mehrdimensionale Problem dienen
-kann.
-\subsection{Partikuläre Lösung}
-Ein Lösung der Gleichung kann sofort gefunden werden, die Stammfunktion
-liefert die Lösung
+THe solution of this problem usually is treated in the theory of
+ordinary differential equations.
+Here we would slightly modify the presentation in such a way
+that it leads to $G$ and is more easily generalizable to 
+multiple independent variables.
+
+\subsection{Particular solution}
+It is easy to find a particular solution, just take an antiderivative
+of $f$ as in
 \begin{align*}
 u_p'(x)&=\int_0^xf(\xi)\,d\xi,
 \\
-u_p(x)&=\int_0^xu_p'(\eta)\,d\eta=\int_0^x\int_0^\eta f(\xi)\,d\xi\,d\eta
+u_p(x)&=\int_0^xu_p'(\eta)\,d\eta=\int_0^x\int_0^\eta f(\xi)\,d\xi\,d\eta.
 \end{align*}
-diese erfüllt aber die Randbedingung nicht.
-Die gesuchte Lösung muss aber eine Summe der partikulären Lösung 
-und einer Lösung der homogenen Gleichung
+However, this solution does not satisfy the boundary conditions.
+For this we have to add a suitable solution of the homogeneous
+equation
 \[
-u_p''(x) + u_h''(x)=f(x)\quad\Rightarrow\quad u_h''(x)=0
+u_p''(x) + u_r''(x)=f(x)\quad\Rightarrow\quad u_r''(x)=0
 \]
-sein, mit der Randbedingungen
+with boundary conditions
 \begin{align*}
-u_h(0)&=a-u_p(0)=a\\
-u_h(1)&=b-u_p(1)=b-\int_0^1\int_0^\eta f(\xi)\,d\xi\,d\eta
+u_r(0)&=a-u_p(0)=a\\
+u_r(1)&=b-u_p(1)=b-\int_0^1\int_0^\eta f(\xi)\,d\xi\,d\eta
 \end{align*}
 
-\subsection{Das homogene Problem}
-Das homogene Problem
+\subsection{The homogeneous problem}
+The homogeneous problem
 \[
 u''(x)=0
 \]
-kann mit den Standardverfahren gelöst werden. Die allgemeine
-Lösung hat die Form $Ax+B$, die Konstanten müssen so gewählt werden,
-dass die Randbedingungen erfüllt sind, also
+is even easier to solve.
+The general solution is $Ax+B$, and the constants have to chosen
+so that the boundary conditions hold, i.~e.
 \begin{align*}
 A\cdot 0+B&=a\qquad\Rightarrow&B&=a\\
 A\cdot 1+B&=b\qquad\Rightarrow&A&=b-a
 \end{align*}
-also $u(x)=(b-a)x+a=(1-x)a+xb$.
+which leads to $u(x)=(b-a)x+a=(1-x)a+xb$.
 
-\subsection{Allgemeine Lösung}
-Im vorliegenden Fall sollte $u_h$ den rechten Randwert $b-\int_0^1\int_0^\eta f(\xi)\,d\xi\,d\eta$
-annehmen, also
+\subsection{General solution}
+In the present example, $u_r$ is expected to take the boundary value
+$b-\int_0^1\int_0^\eta f(\xi)\,d\xi\,d\eta$
+für $x=1$, i.~e.
 \[
 u_r(x)=(1-x)a+x\left(b-\int_0^1\int_0^\eta f(\xi)\,d\xi\,d\eta\right).
 \]
-Damit wird die vollständige Lösung
+The complete solution thus becomes
 \begin{align}
 u(x)&=u_p(x)+u_r(x)\notag
 \\
@@ -94,18 +93,20 @@ f(\xi)\,d\xi\,d\eta
 f(\xi)\,d\xi
 \label{1dimgreen}
 \end{align}
-Darin ist $\vartheta(t)$ die Stufenfunktion
+By $\vartheta(t)$ we mean the step function
 \[
 \vartheta(t)=\begin{cases}
 0&\qquad t<0\\
-1&\qquad t\ge 0
+1&\qquad t\ge 0,
 \end{cases}
 \]
-Die Funktion $\vartheta(x-\xi)$ verschwindet, sobald $\xi$ grösser wird
-als $x$, da dann $x-\xi<0$ gilt.
+also called the Heaviside function.
+The function $\vartheta(x-\xi)$ vanishes as soon as $\xi$ surpasses
+$x$ because in that case $x-\xi<0$.
 
-Das innere Integral in (\ref{1dimgreen}) kann vollständig berechnet
-werden:
+We now have to convert the expression \eqref{1dimgreen} into a form
+that exhibits Green's function $G$.
+The inner integral of \eqref{1dimgreen} can easily be done:
 \begin{align*}
 \int_0^1(\vartheta(x-\eta)-x)\vartheta(\eta-\xi)\,d\eta
 &=
@@ -117,7 +118,7 @@ werden:
 &=
 \int_\xi^1\vartheta(x-\eta)\,d\eta-(1-\xi)x
 \end{align*}
-Das erste Integral muss mit einer Fallunterscheidung berechnet werden:
+The second integral requires a distinction of two possible cases:
 \begin{align*}
 \int_\xi^1\vartheta(x-\eta)\,d\eta
 &=
@@ -128,29 +129,35 @@ Das erste Integral muss mit einer Fallunterscheidung berechnet werden:
 \\
 &=(x-\xi)\vartheta(x-\xi)
 \end{align*}
-Insgesamt finden wir also für das innere
-Integral die Funktion
+All together we find the following function for the inner integral.
 \[
 G(x,\xi)=(x-\xi)\vartheta(x-\xi)-x(1-\xi).
 \]
-Man kann diese Funktion auch mit Hilfe der Betragsfunktion
-schreiben.
-Die Funktion $x\mapsto h(x,\xi)$ ist an der Stelle $\xi$ nicht 
-differenzierbar, links und rechts davon ist $h$ jedoch linear
+It is also possible to write this function using the 
+absolute value function
+The partial function $x\mapsto h(x,\xi)$ is not differentiable at $\xi$
+but on both sides it is the linear function
 \[
 G(x,\xi)=\begin{cases}
 (x-\xi)-x(1-\xi)=\xi(x-1)&\qquad x>\xi\\
 x(\xi-1)&\qquad x<\xi
 \end{cases}
 \]
-Also sollte in der Form $a|x-\xi|+bx+c$ geschrieben
-werden können, nach etwas Rechnung findet man.
+we want to write this in the form $c|x-\xi|+dx+e$, which requires
+some computation for the coefficients $c$, $d$ and $e$.
+The result turns out to be
 \[
-G(x,\xi)={\textstyle \frac12}|x-\xi|-({\textstyle \frac12}-\xi)x-{\textstyle\frac12}\xi.
+G(x,\xi)
+=
+{\textstyle \frac12}|x-\xi|-({\textstyle \frac12}-\xi)x-{\textstyle\frac12}\xi.
 \]
-Der zweite und dritte Term auf der rechten Seite bilden eine lineare
-Funktion, die zur zweiten Ableitung nichts beiträgt. Die Ableitung
-des ersten Teils ist eine Stufenfunktion mit Stufenhöhe $1$:
+The second and third terms on the right hand side is a linear function
+of $x$ which does not contribute anything to the second derivative.
+So outside the point $x=\xi$, the second derivative of $G$ with respect 
+to $x$ vanishes.
+
+The derivative of the first term is a step function with step
+height $1$:
 \[
 \frac{\partial}{\partial x}({\textstyle \frac12}|x-\xi|)
 =
@@ -158,46 +165,48 @@ des ersten Teils ist eine Stufenfunktion mit Stufenhöhe $1$:
 -
 {\textstyle\frac12},
 \]
-und die Ableitung davon ist eine $\delta$-Funktion
+and the derivative of this is the $\delta$ function
 \[
 \frac{\partial^2}{\partial x^2}({\textstyle \frac12}|x-\xi|)
 =
 \delta(x-\xi).
 \]
-Der wesentliche Teil ist also die Funktion
+Thus the essential part is the function
 \begin{equation}
-\sigma(x,\xi)=\frac12|x-\xi|.\label{n1sigma}
+\sigma(x,\xi)=\frac12|x-\xi|.
+\label{n1sigma}
 \end{equation}
 
-\subsection{Greensche Funktion}
+\subsection{Green's function}
 \begin{figure}
 \begin{center}
 \includegraphics[width=\hsize]{../common/3d/green.jpg}
 \end{center}
-\caption{Darstellung der Greenschen Funktion $G(x,\xi)$
-für das Problem $u''=f$ auf
-dem Interval $[0,1]$ als Fläche über dem Quadrat $(x,\xi)\in[0,1]^2$.
-Für jeden Wert von $\xi$ ist die partielle Funktion $x\mapsto G(x,\xi)$
-eine Lösung der Differentialgleichung $u''=\delta_\xi$ zu den Randbedingungen
-$u(0)=u(1)=0$.
+\caption{Graph of Green's function $G(x,\xi)$ for the problem $u''=f$ 
+on the interval $[0,1]$ as a surface over the square $(x,\xi)\in[0,1]^2$.
+For each value $\xi$ the partial function
+$x\mapsto G(x,\xi)$ is a solution of the differential equation
+$u''=\delta_\xi$ with boundary condition $u(0)=u(1)=0$.
 \label{elliptisch:green3dflaeche}}
 \end{figure}
 \begin{figure}
 \begin{center}
 \includegraphics{../common/images/green-1.pdf}
 \end{center}
-\caption{Partielle Funktionen $x\mapsto G(x,\xi)$ der Greensche Funktion
-des Problems $u''=f$ mit Randbedingungen $u(0)=u(1)=0$ für
-verschiedene Werte von $\xi$.
+\caption{Partial function $x\mapsto G(x,\xi)$ of Green's function
+for the problem $u''=f$ with boundary conditions 
+$u(0)=u(1)=0$ for various values of $\xi$.
 \label{elliptisch:green1schar}}
 \end{figure}
 
-Die bis jetzt gefundenen Formeln für die Lösung $u(x)$
-in Form eines Doppelintegrals haben noch
-nicht die gewünschte Form eines einfachen Integrals.
-Dies kann mit der Funktion $h$ korrigiert werden.
-Die Funktion $x\mapsto h(x,\xi)=(x-\xi)\vartheta(x-\xi)$ hat die Randwerte
-$0$ und $1-\xi$, also hat die Funktion
+The formular for the solution $u(x)$ we have found writes the solution
+as a double integral, but this is not the form we are looking for.
+We want the solution as a simple integral over $[0,1]$ with integrand
+$G(x,\xi) f(\xi)$.
+
+We can use the function $h$ to fix this.
+The partial function $x\mapsto h(x,\xi)=(x-\xi)\vartheta(x-\xi)$ has boundary
+values $0$ and $1-\xi$, so the function
 \[
 G(x,\xi)
 =
@@ -207,65 +216,66 @@ G(x,\xi)
 x(\xi-1)&\qquad x<\xi
 \end{cases}
 \]
-die Randwerte $0$.
-$G$ erfüllt
+has both boundary values equal to $0$.
+$G$ satisfies
 \[
 \frac{\partial^2}{\partial x^2}G(x,\xi)=\delta(x-\xi)
 \]
-und
+and
 \[
 G(0,\xi)=G(1,\xi)=0.
 \]
-Eine Lösung der Differentialgleichung lässt sich damit
-als 
+A solution of the differential equation can thus be written as
 \[
-u(x)=\int_0^1G(x,\xi)f(\xi)\,d\xi+a(1-x)+bx
+u(x)=\int_0^1G(x,\xi)f(\xi)\,d\xi+a(1-x)+bx.
 \]
-finden.
 
-Der eindimensionale Fall zeigt also, dass man man zu dem Operator $D^2u=f$
-mit der Funktion $G$ eine Inverse konstruieren kann.
+The ondimensional case shows that for the operator  $D^2$ and the
+equation $D^2u=f$
+we can actually find a function $G(x,\xi)$ that takes the role 
+of an inverse.
 
-Die Abbildungen \ref{elliptisch:green3dflaeche} und
-\ref{elliptisch:green1schar} zeigen die Greensche Funktion $G(x,\xi)$.
-Die partiellen Funktionen $x\mapsto G(x,\xi)$ sind jeweils Lösungen
-des Problems $u''=\delta_\xi$ mit Randwerten $u(0)=u(1)=0$.
-In den Abbildungen sind die partiellen Funktionen für eine Anzahl
-von Werten $\xi$ hervorgehoben.
+Figures~\ref{elliptisch:green3dflaeche} and \ref{elliptisch:green1schar}
+show Green's function $G(x,\xi)$.
+The partial functions 
+$x\mapsto G(x,\xi)$ are solutions of the problem
+$u''=\delta_\xi$ with boundary conditions $u(0)=u(1)=0$.
+In both figures, the partial functions are highlighted for 
+a number of special values $\xi$.
 
 \begin{beispiel}
-Die Differentialgleichung
+The differential equation
 \[
 y''=\cos 3\pi x.
 \]
-hat die Lösung
+has the solution
 \[
 y(x)=-\frac1{9\pi^2}(\cos 3\pi x + 2x - 1),
 \]
-die man auch mit der Greenschen Funktion berechnen kann:
+which we can also find using Green's function:
 \[
 y(x)=\int_0^1 G(x,\xi)\cos 3\pi\xi\,d\xi.
 \]
-In Abbildung
-\ref{elliptisch:green-beispiele}
-ist $f(x)=\cos 3\pi x$ durch eine Summe von einigen $\delta$-Distribution
-approximiert worden (blau).
-Die zugehörige Lösung ist jeweils rot eingezeichnet, sie hat
-Knicke bei den $\delta$-Funktionen. 
-Bei grösser werdender Zahl von $\delta$-Funktionen unterscheidet sich
-das Integral $\int G(x,\xi)f(\xi)\,d\xi$ kaum mehr von der Lösung.
+In figure~\ref{elliptisch:green-beispiele}
+the right hand side $f(x)=\cos 3\pi x$ is approximated as a linear
+combination of $\delta$-distributions (blue).
+The associated solution is shown in red, it has kinks at each 
+contributing $\delta$-function.
+Increasing the number of $\delta$ functions produces better approximations
+of the solution.
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.7\hsize]{../common/graphics/green-1.pdf}\\
 \includegraphics[width=0.7\hsize]{../common/graphics/green-324.pdf}\\
 \includegraphics[width=0.7\hsize]{../common/graphics/green-1082.pdf}
 \end{center}
-\caption{Lösung (rot) von $y''=f$ für die Approximation der Funktion $f$
-durch eine Summe von $\delta$-Distributionen (blau).
+\caption{Solution (red) of $y''=f$ and for an approximation of $f$ by
+$\delta$-distributions (blue).
 \label{elliptisch:green-beispiele}}
 \end{figure}
 
-Eine Animation der Berechnung der Lösung $y(x)$ mit der Greenschen
-Funktion ist auch auf Youtube zu finden: \url{http://www.youtube.com/watch?v=Wpi7Gf7V2HY}
+An animation for the computation of $y(x)$ using Green's function
+can be found on Youtube:
+\url{http://www.youtube.com/watch?v=Wpi7Gf7V2HY}
 \end{beispiel}
 

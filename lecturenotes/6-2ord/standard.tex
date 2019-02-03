@@ -1,5 +1,5 @@
 %
-% standard.tex -- XXX
+% standard.tex -- 
 %
 % (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
 %
@@ -124,39 +124,37 @@ These rules are of course only true if
 $a_{ij}$ and $b_i$ are constants.
 Otherwise we get additional terms from the derivatives of the coefficients.
 
-% XXX
-
-\subsection{Einfluss der Terme erster Ordnung
+\subsection{Influence of first order terms
 \label{einfluss-terme-erster-ordnung}}
-Wir wollen zeigen, dass für die Frage, welche Randwerte wo einen
-Einfluss auf die Lösung haben, für die Koeffizienten $b_i$ nicht
-von Bedeutung sind.
+We want to show that the coefficients $b_i$ are of no importance to
+the question, where boundary values need to be specified in order
+for a particular linear partial differential equation problem
+of second order to be well posed.
 
-Bei einer gewöhnlichen Differentialgleichung zweiter Ordnung beschreibt
-der Koeffizient der ersten Ableitung die Dämpfung, die zu exponentieller
-Abnahme der Amplitude führt.
-Indem man die Lösung mit Hilfe eines Exponentialfaktors wieder verstärkt,
-kann man die Dämpfung zum Verschwinden bringen, und klarer machen,
-ob Schwingungslösungen oder exponentiell abfallende Lösungen vorliegen.
+For an ordinary differential equation of second order, the first
+order terms describe damping, which leads to exponentially decaying
+amplitude.
+By enhancing the solution with the help of an exponential factor,
+we can counteract the damping and thus make clear whether we see
+exponentiall decaying solutions or oscillatory solutions.
 
-Dasselbe gilt für die Lösung $u(x)$ der Differentialgleichung
-(\ref{operator2ordnung}).
-Wir betrachen die Funktion
+A similar statement holds true for the solution $u(x)$
+of the partial differential equation
+\eqref{operator2ordnung}.
+To find this statement, let's consider the function
 \[
 v(x)=e^{k\cdot x} u(x),
 \qquad
-k\cdot x = \sum_{i=1}^n k_ix_i \quad(\text{Skalarprodukt})
+k\cdot x = \sum_{i=1}^n k_ix_i \quad(\text{scalar product})
 \]
-und suchen eine partielle Differentialgleichung, die $v$ genau dann löst,
-wenn $u$ die Differentialgleichung
-(\ref{operator2ordnung}) löst.
+and look for a partial differential equation for $v$.
 
-Dazu berechnen wir die Wirkung des Differentialoperators, der nur 
-aus den zweiten Ableitungen besteht:
+To this effect we compute the action of the part $M$ of the differential
+operator consisting only of the second order terms of $L$:
 \[
 M=\sum_{i,j=1}^n a_{ij}\frac{\partial^2}{\partial x_i\,\partial x_j}.
 \]
-Seine Wirkung auf der Funktion $v$ ist
+It's action on $v$ is
 \begin{align*}
 Mv
 &=
@@ -188,30 +186,31 @@ e^{k\cdot x}
 \sum_{i,j=1}^n a_{ij}k_ik_ju
 \biggr)
 \end{align*}
-Im letzten Schritt haben wir verwendet, dass wir die Laufvariablen
-in der zweiten Summe beliebig umbenennen können.
+In the last step we have used that we can rename the index of summation
+however we want.
 
-Jetzt nutzen wir die Möglichkeit, die Koeffizienten $k_i$ für unsere
-Zwecke geeignet zu wählen.
-Wir versuchen zu erreichen, dass der mittlere Term genau dem Term 
-der ersten Ableitungen in (\ref{operator2ordnung}) entspricht.
-Dazu muss gelten
+Now we use the freedom to choose the coefficients $k_i$.
+We want to ensure that the middle term exactly matches the
+first order derivatives in \eqref{operator2ordnung}.
+For this wee need
 \begin{equation}
 b_j=2\sum_{i=1}^n a_{ij}k_i
 \label{bequation}
 \end{equation}
-Falls die Matrix $A$ der Koeffizienten $a_{ij}$ regulär ist, lässt
-sich dieses lineare Gleichungssystem lösen, es gilt
+If the matrix $A$ with coefficients $a_{ij}$ is regular, we can
+solve this linear system of equations.
+We obtain
 \[
 k=
 {A^t}^{-1}
 \frac{b}2.
 \]
-Schreiben wir ausserdem
+If we write
 \[
 \alpha = \sum_{i,j=1}^n a_{ij}k_ik_j,
 \]
-dann folgt, dass die Gleichung $Lu=f$ genau dann erfüllt ist, wenn
+it follows that the equation
+$Lu=f$ holds precisely when
 \begin{align}
 Mv
 &=
@@ -227,65 +226,67 @@ e^{k\cdot x}
 e^{k\cdot x}Lu + (\alpha -c)v
 \notag
 \\
-(M-(\alpha - c))v&=e^{k\cdot x}Lu=e^{k\cdot x}f.
+(M-(\alpha - c))v&=e^{k\cdot x}Lu=e^{k\cdot x}f
 \label{reducedoperator}
 \end{align}
-Die Gleichung (\ref{operator2ordnung}) wird also genau dann von der
-Funktion $u$ gelöst, wenn die Funktion $v(x)=e^{k\cdot x}u(x)$ 
-die Gleichung (\ref{reducedoperator}) löst.
-Auch wird die Lösung $u$ der Gleichung (\ref{operator2ordnung})
-im Punkt $x$ 
-genau dann durch eine Änderung der Randbedingung verändert, 
-wenn die gleiche Änderung der Randbedingung die Lösung $v$ 
-der Gleichung (\ref{reducedoperator}) im selben Punkt verändert.
+holds.
+The equation \eqref{operator2ordnung} has a solution $u$ precisely
+when function $v(x)=e^{k\cdot x}u(x)$  is a solution of the equation
+\eqref{reducedoperator}.
+The solution $u$ of the equation \eqref{operator2ordnung} in the point $x$
+is changed by a change in the boundary condition precisely when the solution
+$v$ of the equation \eqref{reducedoperator} also changes.
 
-Zusammenfassend können wir daher sagen, dass falls die Matrix der
-Koeffizienten $a_{ij}$ regulär ist, oder mindestens das Gleichungssystem
-(\ref{bequation}) lösbar ist, für die Beantwortung der Anfangs
-dieses Kapitels gestellten Fragen die Terme der ersten Ableitungen
-ignoriert werden können.
-Falls $a_{ij}$ nicht regulär ist, dann lassen sich die Terme der
-ersten Ableitungen nicht alle wegtransformieren.
+In summary, if the matrix $a_{ij}$ is regular, or more generally if the
+system of equations \eqref{bequation} has a solution, then we can
+ignore the first order terms as far as the questions at the beginning
+of this chapter are concerned.
 
-\subsection{Symbolmatrix}
-Da die zweiten Ableitungen untereinandern vertauschen, also 
+If $a_{ij}$ is not regular, then the first order terms may not all
+be removed.
+
+\subsection{Symbol matrix}
+Because the second order derivatives do not depend on the order
+of differentiation,
 \[
 \frac{\partial^2}{\partial x_i\,\partial x_j}
 =
 \frac{\partial^2}{\partial x_j\,\partial x_i},
 \]
-sind die Koeffizienten $a_{ij}$ und $a_{ji}$ voneinander abhängig.
-Insbesondere kann man zusätzlich verlangen, dass $a_{ij}=a_{ji}$,
-dass also die Matrix $A$ symmetrisch ist.
+the coeficients are 
+$a_{ij}$ and $a_{ji}$ are interdependent.
+In particular, we can additionally require that $a_{ij}=a_{ji}$,
+which means that the matrix $A$ be symmetric.
 
-\begin{definition}Ist $L$ ein linearer Differentialoperator zweiter Ordnung
+\begin{definition}
+If $L$ is the linear partial differential operator of second order
+defined by
 \[
 Lu=\sum_{i,j=1}^na_{ij}\frac{\partial u}{\partial x_i\,\partial x_j},
 \]
-dann heisst die symmetrische Matrix
-$(a_{ij})$ das Symbol des Operators.
+then the matrix $(a_{ij})$ is called the symbol of the operator
 \end{definition}
 
-Im Abschnitt~\ref{einfluss-terme-erster-ordnung} haben wir gesehen,
-dass die Terme mit ersten Ableitungen wegtransformiert werden können,
-wenn die Gleichung 
+In section~\ref{einfluss-terme-erster-ordnung} we have seen how to
+transform the equation to make the first order derivatives to
+disappear if the equation
 \[
 Ak=\frac{b}2
 \]
-lösbar ist.
-Wenn $A$ nicht regulär ist, dann kann $b$ nur dann wegtransformiert werden,
-wenn $b$ im Bild der Matrix $A$ liegt.
-Vektoren senkrecht zum Bild können dagegen nicht wegtransformiert werden.
-Falls also $b\perp \operatorname{im} A$, dann ist
+has a solution.
+If $A$ is not regular, then $b$ can be removed if and only if $b$ is in 
+the image of the matrix $A$.
+Vectors orthognal to the image can be transformed away.
+If $b\perp \operatorname{im} A$, then 
 \[
 b\cdot Ax=(A^tb)\cdot x\;\forall x
 \qquad\Rightarrow\qquad
 Ab=0,
 \]
-ein Vektor $b$ im Kern von $A$ kann also nicht wegtransformiert werden.
+a vector $b$ in the kernel of $A$ cannot be removed.
 
 \begin{beispiel}
-Als Beispiel betrachten wir den Operator 
+As an example consider the operator
 \[
 L
 =
@@ -293,7 +294,7 @@ L
 +
 \sum_{i=1}^nb_i\frac{\partial}{\partial x_i}
 \]
-mit der Symbolmatrix
+with the symbol matrix
 \[
 A=\begin{pmatrix}
       0&      0& \dots&0\\
@@ -302,15 +303,14 @@ A=\begin{pmatrix}
       0&      0&\dots &1
 \end{pmatrix}
 \]
-Der Vektor $e_1$ ist im Kern von $A$, also lässt sich die erste
-Ableitung nach $x_1$ nicht wegtransformieren, die einfachste
-Form, die wir für diesen Operator erreichen können ist daher
+The vector $e_1$ is in the kernel of $A$, so the first order derivative
+with respect to $x_1$ cannot be transformed away.
+The simplest form for the operator that we can achieve is thus
 \[
 \sum_{i=2}^n\frac{\partial^2}{\partial x_i^2}
 +
 \frac{\partial}{\partial x_1}.
 \]
-Dies ist der Operator, den wir für die Wärmeleitungsgleichung
-kennengelernt haben.
+This is the operator we have seen in the heat equation.
 \end{beispiel}
 

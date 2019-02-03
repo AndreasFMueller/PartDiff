@@ -1,17 +1,14 @@
 %
-% elliptic.tex -- XXX
+% elliptic.tex -- 
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\chapter{Elliptische Differentialgleichungen\label{chapter-elliptisch}}
-\index{Differentialgleichung!partielle!elliptische}
-\lhead{Elliptische PDGL}
-In diesem Kapitel untersuchen wir Lösungen elliptischer Differentialgleichungen
-und entdecken dabei die Mittelwerteigenschaft
-harmonischer Funktionen sowie die Greensche Funktion, mit der sich für
-die Lösung des Randwertproblems eine Formel aufstellen lässt.
-\index{Mittelwerteigenschaft}
-\index{Greensche Funktion}
+\chapter{Elliptic partial differential equations\label{chapter-elliptisch}}
+In this chapter we study the solutions of elliptic partial differential
+equations and discover the maximum-minimum principle as well as the
+the mean value property of harmonic functions.
+At the end of the chapter we describe Green's function, which allows
+to give a formula for the the solution of a boundary value problem.
 
 \input{7-elliptic/intro.tex}
 \input{7-elliptic/unique.tex}
@@ -21,26 +18,31 @@ die Lösung des Randwertproblems eine Formel aufstellen lässt.
 \input{7-elliptic/mean.tex}
 \input{7-elliptic/generalizations.tex}
 
-\section{Zusammenfassung: das Wichtigste in Kürze}
+\section{Summary}
 \begin{enumerate}
-\item Die Differentialgleichung $\Delta u=f$ ist der prototypische
-elliptische partielle Differentialgleichung.
-\item Lösungen homogener elliptischer partieller Differentialgleichungen,
-insbesondere auch von $\Delta u=0$, erfüllen das Maximumprinzip:
-Maximum und Minimum von $u$ liegen auf dem Rand des Gebietes.
-\item Die Lösung einer elliptischen Differentialgleichung auf einem
-beschränkten Gebiet mit Randwertvorgaben entlang des gesamten Randes
-ist eindeutig.
-\item Eine gut gestellte elliptische partielle Differentialgleichung hat
-eine Greensche Funktion, d.~h.~eine Lösung der Differentialgleichung
-$\Delta G(x,\xi)=\delta_\xi$ für jeden Punkt $\xi\in\Omega$.
-\item Mit Hilfe der Greenschen Funktion lässt sich die Lösung
-der Differentialgleichung mittels eines Integrals über das Gebiet
-berechnen.
-\item Harmonische Funktionen sind Lösungen der Gleichung $\Delta u=0$.
-\item Harmonische Funktionen haben die Mittelwerteigenschaft: Funktionswerte
-in einem Punkt sind Mittelwerte der Funktionswerte auf einer Kugel
-um den Punkt.
+\item
+The differential equation $\Delta u=f$ is the prototypical elliptic
+partial differential equation.
+\item
+Solutions of a homogeneous elliptic partial differential equation,
+in particular the equation $\Delta u=0$, satisfy the maximum principle:
+minimum and maximum of $u$ lie on the boundary of the domain.
+\item
+The solutions of elliptic partial differential equation with boundary
+values along the boundary of bounded domain are unique.
+\item
+A well posed elliptic differential equation has  has a Green's function,
+i.~e.~a solution of the differential equation
+$\Delta G(x,\xi)=\delta_\xi$ for every point in $\xi\in\Omega$.
+\item
+The Green's function can be used to solve the inhomogeneous equation
+by means of an integral over the domain.
+\item
+Harmonic functions are solutions of the equation $\Delta u=0$.
+\item
+Harmonic functions have the mean value property: the value of a harmonic
+function in a point is the mean of the function values on a sphere around
+the point.
 \end{enumerate}
 
 
