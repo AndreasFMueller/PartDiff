@@ -1,41 +1,43 @@
 %
-% eigenfunctions.tex -- XXX
+% eigenfunctions.tex -- 
 %
 % (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
 %
-\section{Eigenfunktionen und Lösungen der Wärmeleitungsgleichung}
-\index{Eigenfunktion}
-\rhead{Eigenfunktionen}
-Im vorangegangenen Kapitel haben wir das Problem
+\section{Eigenfunctions and solutions of the heat equation}
+\rhead{Eigenfunctions}
+In the previous chapter we have studied the problem
 \begin{align*}
 \Delta u&=f&&\text{in $\Omega$}\\
-u&=g&&\text{auf $\partial\Omega$}
+u&=g&&\text{on $\partial\Omega$}
 \end{align*}
-studiert und dabei festgestellt, dass es ähnlich wie bei Matrixgleichungen
-$Ax=b$ eine Art Inverse gibt, welche durch die Greensche Funktion
-bereitgestellt wird. Sogar formal war die Lösung analog einer Matrixgleichung,
-die Rolle der Matrix mit zwei Indizes übernahm eine Funktion mit zwei
-Variablen, statt einer Summe war ein Integral zu bilden.
+and found that similarly to matrix equations $Ax=b$ Green's function is a kind
+of inverse.
+Formally, the solution is similar to a matrix equation in the sense
+that we just had to replace the sums used in matrix operations by
+integrals.
 
-Für eine parabolische PDGL tritt die Zeitentwicklung hinzu. In
-ein Matrixproblem übersetzt geht es darum, einen zeitlich
-veränderlichen Vektor $x(t)$ zu finden, dessen Ableitung mit einer
-Matrixgleichung $\dot x=Ax$ berechnet werden kann. Wir versuchen daher,
-die Lösung dieser Art von Matrix-Differentialgleichung auf das
-Wärmeleitungsproblem anzuwenden.
+For a parabolic differential equation we have to add time development.
+In the framework of a matrix problem, we would have to solve the
+equation $\dot x = Ax$, which can be solved by the matrix
+exponential function.
+The latter is most elegantly computed using eigenvectors, so the
+natural questions arises whether we can solve the heat equation
+using the eigenvectors of the associated elliptic problem.
 
-\subsection{Systeme gewöhnlicher DGL erster Ordnung}
-Das einer homogenen parabolischen linearen PDGL äquivalente Problem
-ist ein homogenes System
-von linearen gewöhnlichen Differentialgleichungen für eine vektorwertige Funktion
-$t\mapsto x(t)\in\mathbb R^n$.
-Ein solches System ist gegeben durch eine Matrix $A$ und die Gleichung
+This section intends to substantiate this plan.
+
+\subsection{Systems of ordinary differential equation}
+The problem analogous to a parabolic partial differential equation
+is a ordinary homogeneous linear differential equation for a vector valued
+function $t\mapsto x(t)\in\mathbb R^n$.
+Such a system can be stated as
 \[
-\frac{d}{dt}x(t)=Ax(t).
+\frac{d}{dt}x(t)=Ax(t)
 \]
-\index{Diagonalform}
-Hätte die Matrix $A$ Diagonalform, könnte die allgemeine Lösung 
-sofort angegeben werden:
+with some constant Matrix $A$.
+
+If tthe matrix $A$ was diagonal, the general solution could be given
+immediately as
 \[
 A=\begin{pmatrix}
 \lambda_1&\dots&0\\
@@ -51,16 +53,17 @@ x_1(0)e^{\lambda_1t}
 x_n(0)e^{\lambda_nt}
 \end{pmatrix}.
 \]
-Unter gewissen Voraussetzungen an die Matrix $A$ kann man $n$
-orthonormierte Eigenvektoren
-\index{Eigenvektoren!orthonormiert}
-$e_1,\dots,e_n$ finden. Nimmt man einen solchen Vektor als
-Anfangsbedingung, ist die Lösung $e_ie^{\lambda_it}$. Schreibt man die
-Anfangsbedingung in den Eigenvektoren, z.~B.
+Under certain conditions on the matrix $A$ we can find a set of
+orthonormal eigenvectors $e_1,\dots,e_n$.
+By using such a vector as initial condition, we get the solution
+$e_ie^{\lambda_it}$.
+Writing the initial condition as a linear combination
 \[
-x(0)=\sum_{i=1}^n(e_i \cdot x(0))e_i,
+x(0)=\sum_{i=1}^n(e_i \cdot x(0))e_i
 \]
-kann man die Lösung der Differentialgleichung sofort hinschreiben:
+of these eigenvectors,
+We can immediately write the solution of the differential equation
+as a linear combination
 \begin{equation}
 x(t)=\sum_{i=1}^n
 e^{\lambda_i t}
@@ -68,7 +71,8 @@ e^{\lambda_i t}
 .
 \label{development}
 \end{equation}
-Tatsächlich ergibt Einsetzen in die beiden Seiten der Differentialgleichung
+of the basic solutions.
+In fact, substituting this into the differential equation gives
 \begin{align*}
 \frac{d}{dt}x(t)&=\sum_{i=1}^n\lambda_ie^{\lambda_i t}(e_i\cdot x(0))e_i
 \\
@@ -76,29 +80,22 @@ Ax(t)
 &=\sum_{i=1}e^{\lambda_it}(e_i\cdot x(0))Ae_i
 =\sum_{i=1}e^{\lambda_it}(e_i\cdot x(0))\lambda_i e_i
 \end{align*}
-Damit haben wir die Lösungen des homogenen Differentialgleichungssystems
-gefunden.
+So for a homogeneous differential equation, eigenvectors immediately
+immediately give us the solution.
 
-\subsection{Variation der Konstanten}
-\index{Variation der Konstanten}
-Das Verfahren der Variation der Konstanten erlaubt, eine inhomogene
-Differentialgleichung erster Ordnung zu lösen, also
+\subsection{Variation of constants}
+The method of variation of constant allows to solve a inhomogeneous
+differential equation of first order
 \[
 \frac{d}{dt}x(t)-Ax(t)=f(t),
 \]
-wobei $f$ eine vektorwertige Funktion ist.
-Die allgemeine Lösung der homogenen Gleichung war
+for a vector valued function $f$.
+For this the constants in the general solution for the homogeneous 
+equation are replaced by functions that depend on $t$:
 \[
-\sum_{i=0}^nc_ie^{\lambda_i t}e_i,
+x(t)=\sum_{i=1}^nc_i(t)e^{\lambda_it}e_i.
 \]
-wobei $c_i=(e_i\cdot x(0))$ war.
-Das Verfahren der Variation der Konstanten schreibt vor, die Konstanten
-$c_i$ durch Funktionen $c_i(t)$ zu ersetzen,
-\[
-x(t)=\sum_{i=1}^nc_i(t)e^{\lambda_it}e_i,
-\]
-und in die Differentialgleichung
-einzusetzen, also
+Substituting this into the differential equation gives
 \begin{align*}
 \sum_{i=1}^n\dot c_i(t)e^{\lambda_it}e_i
 +
@@ -111,16 +108,17 @@ f(t)
 &=
 f(t)
 \end{align*}
-Bildet man das Skalarprodukt mit $e_i$, ergibt sich 
+By taking the scalar product with the eigenvectors
+$e_i$, we get.
 \[
 \dot c_i(t)e^{\lambda_i t}=(e_i\cdot f(t)).
 \]
-Wir kürzen die rechte Seite mit $f_i(t)=e_i\cdot f(t)$ ab.
-Dann ist
+Abbreviating the right hand side using
+$f_i(t)=e_i\cdot f(t)$, turns this into
 \[
 c_i(t)=c_i(0)+\int_0^te^{-\lambda_i \tau}f_i(\tau)\,d\tau
 \]
-und für die Lösung
+and the solution becomes
 \begin{align*}
 x(t)&=
 \sum_{i=1}^n
@@ -135,7 +133,7 @@ x(0)
 \sum_{i=1}^n
 e^{\lambda_i(t- \tau)}(e_i\cdot f(\tau))\biggr)e_i\,d\tau
 \end{align*}
-Man kann dies durch Einsetzen nachprüfen:
+One can verify this directly:
 \begin{align*}
 \frac{d}{dt}x(t)
 &=
@@ -145,34 +143,30 @@ Man kann dies durch Einsetzen nachprüfen:
 \sum_{i=1}^n(e_i\cdot f(t))e_i=f(t)
 \end{align*}
 
-\subsection{Eigenwerte und Eigenvektoren}
-\index{Eigenwert}
-\index{Eigenvektor}
-Ist das Gebiet $\Omega$ beschränkt mit nicht zu ``kompliziertem'' Rand,
-kann man für zeigen, dass eine Folge $u_i(x)$
-von Eigenfunktionen zu jedem Eigenwert $\lambda_i$ existiert,
-\index{Eigenfunktion}
-die das Dirichlet-Problem mit homogenen
-Randbedingungen löst, also
+\subsection{Eigenvalues and eigenvectors}
+Assume now that the domain $\Omega$ is bounded and does not have a 
+boundary too complicated, so that there is a sequence of eigenfunctions
+$u_i(x)$ of the Laplace operator with eigenvalue $\lambda_i$
+with homogeneous boundary conditions, i.~e.
 \[
 \Delta u_i=\lambda_iu_i,\qquad u_{i|\partial\Omega} = 0.
 \]
-Ausserdem kann man diese Lösungen so skalieren, dass sie ``Betrag'' 1 haben:
+In addition, we can scale these solutions so that the have 
+$L^2$-norm $1$:
 \[
 \int_{\Omega}|u_i(\xi)|^2\,d\xi=1
 \]
-und ausserdem orthogonal aufeinander stehen:
+The general theory even guarantees that the are orthogonal:
 \[
 \int_{\Omega}u_i(\xi)u_j(\xi)\,d\xi=0\qquad\forall i\ne j.
 \]
-\index{orthogonale Funktionen}
 
-Verwendet man $u_i$ als ein Faktor in einem Separationsansatz für
-die parabolische Gleichung
+We now use these functions in a separation ansatz
+$u(x,t)=u_i(x)\cdot T(t)$ for the parabolic equation
 \[
 \partial_tu=\kappa\Delta u,
 \]
-erhält man für die Gleichung
+and get the equation
 \begin{align*}
 \partial_t (T(t)u_i(t))-\kappa\Delta(T(t)u_i(t))&=0
 \\
@@ -184,16 +178,17 @@ T'(t)u_i(t)-\kappa T(t)\lambda_i u_i(t)&=0
 \\
 \Rightarrow\qquad T(t)=Ce^{\kappa\lambda_it}
 \end{align*}
-Für solche Anfangsbedingungen kann also die Lösung sofort angegeben
-werden.
-\subsection{Die inhomogene Gleichung}
-Das Verfahren der Variation der Konstanten kann auch für partielle
-Differentialgleichungen durchgeführt werden. Wir setzen die Lösung
-an als
+In particular, for initial conditions that are eigenvalues we
+immediately get a solution for the parabolic problem.
+
+\subsection{The inhomogeous equation}
+The process of variation of constants cann also be used for partial
+differential equations.
+We write the solution as
 \[
 u(t,x)=\sum_{i=0}^\infty c_i(t) e^{\kappa\lambda_i t}u_i(x)
 \]
-Einsetzen in die Differentialgleichung ergibt
+and substitute into the differential equation
 \begin{align*}
 \sum_{i=0}^\infty \dot c_i(t)e^{\kappa\lambda_it}u_i(x)
 +\kappa\sum_{i=0}^\infty c_i(t)\kappa\lambda_i e^{\lambda_it}u_i(x)
@@ -203,13 +198,13 @@ Einsetzen in die Differentialgleichung ergibt
 \sum_{i=0}^\infty \dot c_i(t)e^{\kappa\lambda_it}u_i(x)
 &=f(t,x)
 \end{align*}
-Skalarprodukt mit $u_i$ ergibt
+The scalar product with $u_i$ then gives
 \begin{align*}
 \dot c_i(t)&= e^{-\kappa\lambda_it}\int_{\Omega}u_i(\xi)f(t,\xi)\,d\xi
 \\
 c_i(t)&=c_i(0)+\int_0^te^{-\kappa\lambda_i\tau}\int_{\Omega}u_i(\xi)f(\tau,\xi)\,d\xi\,d\tau
 \end{align*}
-und für die partikuläre Lösung
+and the particular solution
 \begin{align*}
 u(t,x)&=
 \sum_{i=0}^\infty
@@ -217,17 +212,16 @@ u_i(x)
 \int_0^t
 e^{\kappa\lambda_i(t-\tau)}\int_{\Omega}u_i(\xi)f(\tau,\xi)\,d\xi\,d\tau
 \end{align*}
-Die Greensche Funktion für das Wärmeleitungsproblem mit
-Dirichlet-Randbedinungen kann also auch als
+Green's function for the heat equation with Dirichlet boundary conditions
+can thus be written as
 \[
 G(t,x,\tau,\xi)
 =
 \sum_{i=0}^\infty
 e^{\kappa\lambda_i (t-\tau)}
 u_i(x)
-u_i(\xi)
+u_i(\xi).
 \]
-geschrieben werden. Die Lösung des parabolischen Problems ist damit
-auf die Lösung des elliptischen Eigenwertproblems reduziert worden.
-
+So we have reduced the solution of the parabolic problem to the
+elliptic problem.
 

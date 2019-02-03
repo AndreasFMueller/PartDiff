@@ -1,20 +1,20 @@
 %
-% minmax.tex -- XXX
+% minmax.tex -- 
 %
 % (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
 %
-\section{Maximum-Minimum-Prinzip}
-\index{Maximumprinzip}
-\rhead{Maximum-Prinzip}
-In der Theorie der elliptischen PDGL war die Mittelwerteigenschaft
-der Ausgangspunkt für den Beweis des Maximumprinzips. Obwohl
-diese Eigenschaft bei den 
-Lösungen der Wärmeleitungsgleichung nicht mehr erfüllt ist,
-gilt für sie ein Maximum-Minimum-Prinzip.
-\begin{satz}[Maximum-Minimum-Prinzip für die Wärmeleitungsgleichung]
-Sei $\Omega$ ein beschränktes Gebiet und
-$u$ eine Funktion auf $[0,T]\times\Omega$.
-Weiter sei
+\section{The maximum principle}
+\rhead{maximum principle}
+In the theory of elliptic partial differential equations, the mean
+value property was one of the starting points for proving the
+maximum principle.
+The mean value property no longer holds for the heat equation,
+but there is still a maximum principle.
+
+\begin{satz}[Maximum principle for the heat equation]
+Let $\Omega$ be a bounded domain and 
+$u$ a function on $[0,T]\times\Omega$.
+Further let
 \begin{align*}
 M_{\partial \Omega}&:=\max\{u(t,x)\,|\,x\in\partial\Omega, t\in[0,T]\}
 &
@@ -30,14 +30,14 @@ M&:=\max\{M_0,M_{\partial\Omega}\}
 &
 m&:=\min\{M_0,M_{\partial\Omega}\}
 \end{align*}
-Falls $u$ die homogene
-Wärmeleitungsgleichung erfüllt, also $\partial_tu-\kappa\Delta u=0$,
-gilt
+If $u$ solves the homogeneous heat equation 
+$\partial_tu-\kappa\Delta u=0$,
+then
 \[
-m\le u(t,x)\le M\quad\forall(t,x)\in[0,T]\times\bar\Omega.
+m\le u(t,x)\le M\quad\forall(t,x)\in[0,T]\times\bar\Omega
 \]
+holds.
 \end{satz}
-Wie bei den elliptischen partiellen Differentialgleichungen folgt, dass
-die das homogene Anfangs- und Randwert-Problem der Wärmeleitungsgleichung
-nur eine Lösung hat.
+As for elliptic partial differential equations it follows that
+the boundary value problem for the heat equation has a unique solution.
 

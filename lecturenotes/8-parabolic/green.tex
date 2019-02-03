@@ -1,15 +1,14 @@
 %
-% green.tex -- XXX
+% green.tex -- 
 %
 % (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
 %
-\section{Greensche Funktion}
-\index{Greensche Funktion}
-\rhead{Greensche Funktion}
-Wir wollen jetzt die singulären Lösungen $K$ zu einer Lösung des Problems
-mit homogenen Randbedingungen erweitern.
-Wie beim Laplace-Problem suchen wir jetzt eine Funktion $J(t,x,\tau,\xi)$,
-welche wie $K$ die Differentialgleichungen erfüllt, also
+\section{Green's function}
+\rhead{Green's function}
+We want to extend the singular solutions $K$ to a complete solution 
+of the problem with homogeneous boundary conditions.
+To this end we are looking for a function
+$J(t,x,\tau,\xi)$ that solves the same differential equation as $K$, i.~e.
 \begin{align*}
 \partial_t J-\kappa\Delta_xJ&=0
 &
@@ -18,19 +17,18 @@ welche wie $K$ die Differentialgleichungen erfüllt, also
 \\
 J&=0&J&=0&t<\tau
 \end{align*}
-und ausserdem die Randbedingung 
+but has boundary conditions
 \begin{align*}
 J(t,x,\tau,\xi)&=-K(t,x,\tau,\xi)&&x\in\partial\Omega
 \end{align*}
-Falls dieses Problem immer eine Lösung hat, nennen wir die
-Summe
+If this problem has a solution, we call the sum
 \[
 G(t,x,\tau,\xi)=K(t,x,\tau,\xi)+J(t,x,\tau,\xi)
 \]
-wieder die Greensche Funktion für das Wärmeleitungsproblem
-mit Dirichlet-Rand\-bedingungen. Und ebenfalls analog wie bei elliptischen
-partiellen Differentialgleichungen kann man eine Lösungsformel
-angeben
+the Green's function for the heat equation with Dirichlet boundary
+conditions.
+In analogy with  elliptic partial differential equations it is possible
+to construct a solution formula
 \begin{align}
 u(t,x)&=
 \int_0^t\int_{\Omega}G(t,x,\tau,\xi)f(\tau,\xi)\,d\xi\,d\tau
@@ -44,7 +42,5 @@ G(t,x,\tau,\xi)\operatorname{grad}_\xi u
 -u\operatorname{grad}_\xi G(t,x,\tau,\xi)\cdot dn\,d\tau
 \label{green-parabolisch}
 \end{align}
-
-Selbstverständlich kann die Theorie wie bei elliptischen Gleichungen
-auch für Neumann-Randbedingungen verfeinert werden.
+It is also possible to extend the theory to Neumann boundary conditions.
 
