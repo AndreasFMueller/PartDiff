@@ -1,0 +1,126 @@
+%
+% a-einleitung.tex
+%
+% (c) 2008 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\lhead{Introduction}
+\chapter*{Introduction}
+\index{mechanics!classical}
+\index{electrodynamics}
+\index{population dynamics}
+Ordinary differential equations are used in classical mechanics,
+in electrodynamics, in population dynamics and more generally in any
+application where the rate of change of a variable depends und the current
+values of the same variable.
+\index{point mass}
+\index{Newton's law}
+A point mass at coordinate $x$ changes its position according to 
+Newton's law
+\[
+ma=m\ddot x=F.
+\]
+If the force $F$ depends on the position of the mass, as e.~g.~in the
+case of a weight suspended from a spring, we get a differential equation
+for the time dependent position $x(t)$:
+\[
+m\frac{d^2}{dt^2}x(t)=F(x(t)).
+\]
+Classical analysis proves theorems that show that we can expect such
+a differential equation to have a unique solution for each
+initial condition under relatively mild assumptions on the function $F$.
+Only slight additional work is required for differential equations 
+for a vector valued function.
+
+\index{fields!electrical}
+\index{temperature distribution}
+\index{pressure}
+\index{gas}
+\index{flow}
+\index{fluid}
+To describe electrical fields, temperature distributions, pressure
+in a gas or flow velocity in a fluid, we need to determine functions 
+that do not only depend on a single time variable, but also on additional
+variables like position.
+In addition, the rate of change depending on position may also influence
+the development.
+
+The deflection of a vibrating string is a function $f(x,t)$, where $x$ is
+the position along the string and $t$ is time.
+For each point $t_0$ in time, the shape of the string is different and
+described by the function $x\mapsto f(x,t_0)$.
+Any hope that it might be possible to derive a differential equation
+for the motion of point on the string in isolation is quickly dashed
+by the simple observation, that the force acting on such point
+increases if neightboring points are deviate more from a straight line.
+This means that the acceleration of a point on the string depends on 
+the curvature.
+We therefore expect an equation that links the second time derivative of $f$
+to the second spacial derivative.
+The equation we will later derive has the form
+\begin{align*}
+a^2\frac{\partial^2}{\partial x^2}f&= \frac{\partial^2}{\partial t^2}f.
+\end{align*}
+If we are able to solve such a partial differential equation,
+we will be able to predict the shape of the string for every point in
+time.
+Equivalently, we will be able to predict the movement $t\mapsto f(x_0,t)$
+for every point $x_0$ on the string.
+\index{differential equation!partial}
+
+\index{Differentialgleichung!gew\"ohnliche}
+The theory of ordinary differential equations shows that the equation
+by itself does not determine the solution.
+Additional data in the form of initial or boundary conditions has to be
+specified.
+Partial differential equations will not be different in that regard.
+The theory thus has to provide answers to the following questions:
+\begin{enumerate}
+\item
+How do we have to formulate the differential equation in order to ensure
+that a solution will be well defined?
+\item
+What properties will the solution have?
+What does the solution look like close to the boundary, does it remain
+continuous or differentiable, does it increase beyond any limit?
+\item
+How can we compute solutions numerically?
+\end{enumerate}
+This course tries to give some basics answers to these questions.
+It has two parts.
+The first part deals with the theoretical basics.
+It teaches how to set up a problem involving partial differential equations
+so that conclusions about existence and uniqueness of solutions are possible.
+In some cases, we will even be able to find a solution in closed form.
+This, however, will be rather the exception than the rule.
+The second part then strives to actually compute these solutions using
+a computer algorithm.
+
+The present lecture notes cover the first part of the course.
+They are structured as follows:
+\begin{enumerate}
+\item
+Examples of partial differential equations.
+The most important partial differential equations from mechanics,
+thermodynamics and electrodynamics are presented.
+They serve as prototypical examples in later chapters to illustrate
+and apply the theoretical insights.
+\item
+Method of separation of variables.
+\item
+Solutions using integral transforms.
+\item
+Classification of partial differential equations of second order.
+These equations turn out to be of utmost practical importance, but
+they arise in 3 distinctly different types with very different properties
+and which require vastly different solution methods.
+\item
+Elliptic partial differential equations.
+\item
+Parabolic partial differential equations.
+\item
+Hyperbolic partial differential equations.
+\item
+Some nonlinear partial differential equations.
+\end{enumerate}
+
+

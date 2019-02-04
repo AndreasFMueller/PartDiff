@@ -1,0 +1,44 @@
+%
+% cauchy.tex -- 
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{The Cauchy problem in higher dimensions}
+\rhead{The Cauchy problem}
+In the last section we have given initial values on the straight line
+$t=0$ which also fixed the initial values for $\partial_x u(0,x)$.
+In addition, by specifying $v_0$ the normal derivative 
+$\partial_t u(0,x)$ is given.
+The graph of the solution function is a surface, called an integral
+surface of the differential equation.
+The initial conditions define a curve $x\mapsto(x,0,u_0(x))$,
+the solution surface must contain this curve.
+By specifying the normal derivative, in each point of the initial
+curve we also specify a tangent plane.
+
+As the example shows, the solution is determined uniquely by specifying
+the initial curve and an initial sheaf of tangent planes.
+More generally, the Cauchy problem consists in finding an integral
+surface that contains a given curve and also, at each point of the curve,
+has a given tangent plane.
+This type of initial data is called an initial ``strip''
+(see figure~\ref{skript:streifen}).
+
+The solution of a partial differential equation for the function $u(t,x,y)$
+of three variables cannot be uniquely determined by specifying
+the initial values $u(t,x,y)=u_0(x,y)$ at time $t=0$.
+This already fixes the partial derivatives
+$\partial_x u(0,x,y)=\partial_xu_0(x,y)$
+and $\partial_y u(0,x,y)=\partial_y u_0(x,y)$
+in the $x$ and $y$ direction.
+The solution will only be determined if we specify in addition the normal
+derivative, e.~g.~in the form
+$\partial_t(0,x,y)=v_0(x,y)$.
+This means that the initial data implies initial values in all points
+with $t=0$ 
+and all derivatives in each point of $t=0$.
+
+More generally, the Cauchy problem is to find a solution that assumes
+given values on a surface in $(t,x,y)$-space and 
+given normal derivatives on the same surface.
+

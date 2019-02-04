@@ -1,0 +1,152 @@
+%
+% burgers.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil 
+%
+\section{Gleichung von Burgers\label{burgers}}
+\rhead{Burgers Gleichung}
+Als Beispiel einer nichtlinearen Gleichung betrachten wir die Gleichung
+von Burgers in der Form
+\[
+\partial_t u=\partial_x^2u+u\partial_xu
+\]
+und zeigen ein paar Möglichkeiten, wie solche Gleichungen
+gelöst werden können.
+
+\subsection{Koordinatentransformationen}
+Koordinatentransformationen können helfen, die Eigenschaften der
+Lösungen einer partiellen Differentialgleichung zu ergründen.
+
+Sie $u(t,x)$ eine Lösung der Burgers Gleichung. Dann sind auch
+zeitlich und örtlich verschobenen Kopien
+\[
+w(t,x)=u(t+C_4, x+C_3)
+\]
+der Funktion $u$ Lösungen.
+Streckt man hingegen die $x$-Achse mit dem Faktor $C_1$, ersetzt
+also $x$ durch $C_1x$, dann
+muss man auch die $t$-Achse entsprechend korrigieren, also $t$
+durch $C_1^2t$ ersetzen. Setzt man
+\[
+w(t,x)=u(C_1^2t,C_1x)
+\]
+in die Burgers Gleichung ergibt
+\[
+C_1^2\partial_t w(t,x)=C_1^2\partial_xw(t,x)+C_1w\partial_xw(t,x)
+\]
+was offenbar die Gleichung nicht löst. Erst die Funktion $C_1w(t,x)$
+erfüllt die Gleichung, denn damit wird die Differentialgleichung zu
+\[
+C_1^3\partial_t w(t,x)=C_1^3\partial_xw(t,x)+C_1^3w\partial_xw(t,x)
+\]
+Aus einer zeitabhängigen Verschiebung von $u$ in der Form
+\[
+w(t,x)=u(t,x+C_2t)
+\]
+kann ebenfalls eine Lösung gewonnen werden:
+\begin{align*}
+\partial_t w(t,x)&=\partial_t u(t,x+C_2t)+C_2\partial_x u(t,x+C_2t)
+\\
+\partial_x w(t,x)&=\partial_x u(t,x+C_2t)
+\\
+\partial_x^2 w(t,x)&=\partial_x^2 u(t,x+C_2t)
+\end{align*}
+eingesetzt in die Differentialgleichung ergibt die Gleichung
+\[
+\partial_t u(t,x+C_2t)+C_2\partial u(t,x+C_2t)
+=
+u(t,x+C_2t)\partial_xu(t,x+C_2t)
++
+\partial_x^2 u(t,x+C_2t)
+\]
+die jedoch wegen des zweiten Terms auf der linken Seite nicht erfüllt
+sein kann. Addiert man aber zu $w$ noch die Konstante $C_2$, ergibt sich
+aus dem nichtlinearen Term auf der rechten Seite zusätzlich
+\[
+C_2\partial_xu(t,x+C_2t),
+\]
+so dass also
+\[
+w(t,x)=u(t,x+C_2t)+C_2
+\]
+eine Lösung der Burgers Gleichung ist.
+
+\subsection{Stationäre Lösung}
+Hat die Burgers Gleichung stationäre Lösungen? Eine stationäre Lösung ist
+eine Lösung, die nicht von der Zeit abhängt, also
+$u(t,x)=u(x)$.
+Eine stationäre Lösung muss die gewöhnliche
+Differentialgleichung
+\[
+u''(x)+u(x)u'(x)=0
+\]
+erfüllen. Der zweite Term ist bis auf einen Faktor die Ableitung
+des Quadrates $u(x)^2$. Durch die Substitution $u(x)=y(x/2)$ kann man
+die Differentialgleichung in die Form
+\begin{align*}
+\frac14y''(x)+\frac12y(x)y'(x)&=0
+\\
+y''(x)+2y(x)y'(x)&=0&\Rightarrow&\qquad y''(x)+\frac{d}{dx}(y(x)^2)=0
+\end{align*}
+bringen.
+Dies ist die Ableitung der Gleichung
+\[
+y'(x)+y^2(x)=B,
+\]
+die mit Separation gelöst werden kann:
+\begin{align*}
+\frac{dy}{dx}&=B-y^2\\
+\int\frac{dy}{B-y^2}&=x+A
+\end{align*}
+Für $B>0$  findet man das Integral in Formelsammlungen als
+\[
+\frac1{\sqrt{B}}\operatorname{ar}\tanh \frac{y}{\sqrt{B}}=x+A
+\]
+Nach $y$ aufgelöst findet man also
+\begin{align*}
+y(x)&=\sqrt{B}\tanh(\sqrt{B}(x+A))
+\end{align*}
+Durch Einsetzen findet man jetzt auch die Lösung
+\begin{align*}
+u(x)&=
+\sqrt{B}\tanh\left(\sqrt{B}\left(\frac{x}2+A\right)\right)
+\end{align*}
+Da die genauen Werte der Integrationskonstanten bedeutungslos sind, können
+wir die Lösung auch als
+\[
+u(x)= 2A \tanh (Ax+B) 
+\]
+schreiben.
+
+Mit Hilfe der Koordinatentransformation findet man jetzt weitere Lösungen
+der Gleichung
+\[
+u(t,x)=
+2A \tanh (A(x+\lambda t)+B) +\lambda.
+\]
+
+\subsection{Spezielle Lösungen}
+Aus der physikalischen Motivation für die Gleichung lassen sich auch
+einige spezielle Lösungen ableiten.
+Nimmt die Geschwindigkeit linear zu, dann bleibt dies über die Zeit auch
+so, aber die Steigung der Geschwindigkeitszunahme wird sich ändern.
+Die Funktion
+\[
+u(t,x)=\frac{A-x}{B+t}
+\]
+sollte daher
+eine Lösung sein. Tatsächlich findet man durch Einsetzen
+\begin{align*}
+\partial_t u(t,x)&=-\frac{A-x}{(B+t)^2}
+\\
+\partial_x u(t,x)&=-\frac{1}{B+t}
+\\
+\partial_x^2 u(t,x)&=0
+\\
+u(t,x)
+\partial_xu(t,x)&=-\frac{A-x}{(B+t)^2}
+\end{align*}
+Da die zweiten Ableitungen nach $x$ verschwinden,
+zeigen die erste und letzte Gleichung, dass die Burgers-Gleichung
+erfüllt ist.
+

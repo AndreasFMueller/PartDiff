@@ -1,0 +1,531 @@
+%
+% jacobi.tex -- Anwendung: Hamilton-Jacobi-Formulierung der Mechanik 
+%
+% (c) 2012 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Application: Hamiltoian Mechanics\label{hamilton-mechanik}}
+In the examples so far, a product was the ansatz of choice, because
+that allowed to satisfy boundary conditions most easily.
+This section illustrates a problem where a sum ansatz is very successful
+because there are no boundary conditions to satisfy.
+Another interesting feature if this application is that the
+equation is simple enough that the first separation step is 
+always successful.
+
+\subsection{Motivation}
+\index{Newtonsche Gesetze}
+\index{Planeten}
+\index{Satelliten}
+Newtons laws of motion predict the motions of planets and satellites
+with supreme preciosion.
+A body of mass $m$ with time dependent coordinates $\vec{x}(t)$
+subject to position dependent force $\vec{F}(\vec{c})$ follows a
+trajectory that is a solution of the ordinary differential equation
+\begin{equation}
+m\frac{d^2}{dt^2}\vec x(t)=\vec F(\vec x(t)).
+\label{jacobi:newton}
+\end{equation}
+Starting at the initial point $\vec{x}_0$ with initial velocity
+$\vec{v}_0$, we can always find the trajectory at least numerically.
+
+But this approach has some practically important drawbacks.
+In many cases, the force law is not completely known.
+Satellites in low earth orbit, at most a few 100 kilometers, are subject
+to drag by the very tenuous atmosphere.
+Their trajectories decay over time, but it is very difficult to model.
+To this day it is very difficult to predict when a satellite will burn
+up in the atmosphere and where it will crash on the ground.
+
+Similarly, the perihelion of the orbit of planet mercury advances
+ever so slightly, an effect that is not explained in newtonian mechanics
+but predicted by Einstein's theory of relativity.
+The equations of general relativity are excedingly complicated.
+
+Both these problems illustrate the common situation where one knows
+the most imporatant effects and can even solve the equation in closed
+form for these cases, but in reality there are small additional
+forces that have to be considered, like drag or relativistic effects.
+In this situation, it may be useful to express the take the solution
+of the unperturbed system, which will undoubtedly contain some integration
+constants, and vary those constants to model the perturbation forces.
+
+\begin{beispiel}
+As an example, let's consider a horizontal pool table.
+The movement of the pool ball is determined by the initial
+point $\vec{x}_0$ and the initial velocity $\vec{v}_0$.
+The ball will continue to roll in direction ov $\vec{v}_0$, but
+its velocity will slowly decrease until it stops.
+The solution of the equations of motion thus is a function
+$t\mapsto \vec x(t, \vec x_0, \vec v_0))$,
+describing the trajectory for every conceivable initial contion.
+
+What happens if we no longer assume the table to be horizontal?
+There will be an additional force acting on the ball in the
+direction of steepest descent of the table.
+If the slope of the table is very small, then deviation from
+$\vec x(t,\vec x_0,\vec v_0))$ will be very small.
+If we didn't know about the additional force, then observation
+of the motion at some particular point $t$ in time would let
+as believe that the ball started in a different place and with
+a different velocity.
+We could compensate could the deviation by changing the parameters
+$\vec x_0$ and $\vec v_0$ slightly.
+So the solution on the slightly sloped table can be described by the
+solution function of the horizontal table with slowly varying
+initial conditions $\vec x_0(t)$ and $\vec v_0(t)$ to compensate
+for the slope.
+\end{beispiel}
+
+The advantage of such a description is that perturbations can
+be visualized by the physically meaningful parameters of the
+trajectory.
+The trajectory computation stays simple, because we have a
+formular for it, we only have to change parameters.
+We don't have to numerically integrate the solution, improving
+the overall stability of our method.
+
+Orbits of satellites are much more complicated.
+While it is almost impossible to compare orbits specified
+by initial points and initial velocities, there is a small set
+of geometrically interesting parameters like the inclination of
+the plane of the orbit, the excentricity of the orbit and so on
+that perfectly describe basic keplerian orbits in an intuitive way.
+Describing perturbations of the orbit as slow changes these
+parameters makes the solution much easier.
+Using this technique it is possible to model the solar system
+over millions of years, track the changes e.~g.~in the excentricity
+of earth's orbits and the inclination of earth's axis and thus
+understand the Milankovic cycles of ice ages.
+
+The task that remains is to find suitable parameters to describe
+the orbits:
+
+\begin{aufgabe}
+\label{jacobi:aufgabe}
+Find a set of parameters 
+$Q_i$ and $P_i$ so,
+so that every trajectory can be written in the form
+\begin{equation}
+x_i(t) = x_i(t,Q_1,\dots,Q_n,P_1,\dots,P_n).
+\label{jacobi:aufgabekurve}
+\end{equation}
+\end{aufgabe}
+
+\begin{beispiel}
+Let's examine again the example of the pool ball but assume now that
+there is no friction.
+Then the solution to the equations of motion is
+\begin{equation}
+\begin{aligned}
+x(t)&=x_0 + tv_{x0},\\
+y(t)&=y_0 + tv_{y0}.
+\end{aligned}
+\label{jacobi:linear}
+\end{equation}
+This is already a solution close to the task we have set, as every 
+possible trajectory actually is parametrized by some suitable values
+of $\vec{x}_0$ and $\vec{v}_0$.
+
+However, we can do better.
+We can choose coordinates $Q_i$ and $P_i$ such that all 
+the $P_i$ are energies and all the $Q_i$ are times, and these
+energies and times have a intuitive significance for the
+problem at hand.
+The idea is that we already know that energy is conserved, so
+we can expect the $P_i$ to be constants of motion.
+
+We use  the following terms for the $P_i$
+\begin{equation*}
+\begin{aligned}
+P_x&=\frac12mv_x^2,&
+P_y&=\frac12mv_y^2
+\end{aligned}
+\end{equation*}
+These are the contributions to the total kinetic energy by the
+motiobn in $x$- and $y$-direction.
+As the ball rolls without friction, they are conserved.
+
+The terms $Q_x$ and $Q_y$ need to be chosen in such a way that
+the equations
+\eqref{jacobi:linear}
+describe the actual trajectory.
+By solving \eqref{jacobi:aufgabekurve} for $Q_i$, we find
+\begin{equation*}
+\begin{aligned}
+Q_x&=-\frac{x_0}{v_{0x}},\\
+Q_y&=-\frac{y_0}{v_{0y}}.
+\end{aligned}
+\end{equation*}
+The numbers $-Q_x$ and $-Q_y$ therefore are the times at which the pool
+ball crosses the $x$- and $y$-axes respectively.
+It is obvious that they are constants, so we have a set of parameters
+$Q_i$ and $P_i$ that are particularly well suited to describe the
+trajectory.
+\end{beispiel}
+
+The more difficult question is whether every mechanical system
+allows a solution as described in problem \ref{jacobi:aufgabe}.
+The answer is yes, and the method to find it happends to
+be a very special partial differential equation that can often
+be solved using the separation method.
+
+\subsection{Hamilton-Jacobi formalism}
+\index{Hamilton-Jacobi formalism}
+In the hamiltonian description of mechanics, one starts with an
+expression $H(x_i, p_i)$ for the total energy in terms of positions
+and momenta, called the hamilton function or hamiltonian.
+In the example problem, the hamiltonian is
+\begin{equation}
+H(x_i,p_i)=\frac1{2m}(p_x^2+p_y^2).
+\label{jacobi:hamilton:funktion}
+\end{equation}
+The link between coordinates and impulses is then given by the
+hamiltonian differential equations of motion:
+\begin{align}
+\frac{d}{dt}x_i&=\frac{\partial H}{\partial p_i}
+&\Rightarrow
+\qquad \dot x_i&=\frac{p_i}{m}=v_i
+\label{jacobi:hamilton:geschwindigkeit}
+\\
+\frac{d}{dt}p_i&=-\frac{\partial H}{\partial x_i}
+&\Rightarrow
+\qquad
+\dot p_i&=m\ddot x_i=0
+\label{jacobi:hamilton:newton}
+\end{align}
+The first set of equations
+\eqref{jacobi:hamilton:geschwindigkeit}
+links momenta to coordinates.
+The second equation \eqref{jacobi:hamilton:newton} corresponds to
+Newton's second law and says in this particular case that there
+is no force acting on the ball.
+By adding a potential $V(x)$ to the hamiltionan
+\eqref{jacobi:hamilton:funktion}, the second equation becomes
+\[
+m\ddot x_i=-\frac{\partial V}{\partial x_i} = F_i(x),
+\]
+which is exactly Newton's second law for the force derived from 
+the potential.
+
+Hamilton found out that every other set of $Q_i$ and $P_i$ is just as
+suitable to describe the system, as long as the equations
+\eqref{jacobi:hamilton:geschwindigkeit} and \eqref{jacobi:hamilton:newton}
+continue to hold.
+Jacobi and Hamilton have devised a method to find a coordinate
+transformation with rather special properties.
+
+\begin{satz}
+\label{jacobi:satz}
+A solution to the problem \eqref{jacobi:aufgabe} can be found from 
+a function $S(x_i, t)$, which solves the partial differential equation
+\begin{equation}
+\frac{\partial S}{\partial t}
+=
+H\biggl(
+x_i,
+\frac{\partial S}{\partial x_i}
+\biggr)
+\label{jacobi:hamilton:dgl}
+\end{equation}
+Such a solution function necessarily contains some integration constants
+$P_i$.
+The partial derivatives of $S$ with respect to $P_i$ are the new coordinates
+\begin{equation}
+Q_i=\frac{\partial S}{\partial P_i}.
+\label{jacobi:hamilton:impuls}
+\end{equation}
+The equations \eqref{jacobi:hamilton:impuls} contain the coordinates 
+$x_i$ in addition to the $P_i$, $Q_i$ and time $t$.
+By solving for the variables $x_i$, we can find the trajectory as 
+a vector of functions
+\[
+x_i(t,Q_i,P_i).
+\]
+\end{satz}
+Thus the parameters $(Q_i,P_i)$
+describe all the possible trajectories.
+Two trajectories can simply be be compared for all times by comparing the
+$Q_i$ and $P_i$.
+If they are close, the trajectories are close too.
+
+A proof of this theorem is outside the scope of this course, but we
+would like to show using some examples how this formalism allows to
+solve the equations of motion using the separation method.
+
+\subsection{Energy conservation}
+The following special case is of particular importance.
+In a closed system, energy is conserved.
+Consequently, the hamiltonian $H$ does not depend on time.
+
+We now substitute a separation ansatz the form
+\[
+S(t,x_i)=S_0(t)+S_1(x_1)+\dots+S_n(x_n).
+\]
+into the Hamilton-Jacobi equation and get
+\[
+S_0'(t)=H(S_1'(x_1),\dots, S_n'(x_n)).
+\]
+The left hand side only depends on $t$.
+On the right hand side, $t$ does not appear, which means that we have
+managed to separate $t$ from the variables $x_1,\dots,x_n$.
+In particular, both sides have to be constant, this constant
+of course being the total energy of the system.
+Let's call this constant $P_1$.
+
+Because the derivative of $S$ with respect to $t$ is constant, we
+now already know that $S$ must be of the form
+\[
+S(t,x_i)=P_1t + \bar S(x_i)
+\]
+where $\bar S(x_i)$ is a new function that does not depend on time.
+Using this representation, we can find new formulae for the 
+coordinates $Q_i$
+\begin{align*}
+Q_1&=\frac{\partial S}{\partial P_1}=t+\frac{\partial \bar S(x_i)}{\partial P_1},
+\\
+Q_i&=\frac{\partial \bar S}{\partial P_i},\qquad i>1
+\end{align*}
+The equations for $Q_i$ with $i>1$ do not contain time,
+they only describe the shape trajetory depending on the parameters
+$Q_1,\dots,Q_n,P_1,\dots,P_n$.
+The first equation is the only one that contains the time.
+It's second term doesn't contain time either, but only the location
+coordinates.
+This means that $x_i$ only depend on 
+\[
+t-Q_1,Q_2,\dots,Q_n, P_1,\dots,P_n.
+\]
+Thus instead of the form \eqref{jacobi:aufgabekurve} there also is a 
+solution in the form
+\[
+x_i(t)=x_i(t-Q_1,Q_2, \dots,Q_n,P_1,\dots,P_n).
+\]
+
+For a point mass in three dimension we can conclude that we can
+always describe a trajectory using 6 parameters
+$Q_1,Q_2,Q_3,P_1,P_2,P_3$, where the Parameter $Q_1$ has 
+the meaning of the point of traversal of a geometrically well defined
+point on the trajectory.
+For planetary trajectories, this is typically the time the plant
+travels through perihelion.
+
+\subsection{Examples}
+\subsubsection{Motion without external forces}
+We refer back to the hamiltonian
+\[
+H(p_x, p_y)=\frac1{2m}(p_x^2+p_y^2).
+\]
+We have to solve the Hamilton-Jacobi equation \eqref{jacobi:hamilton:dgl}
+\[
+\frac1{2m}\biggl(
+\biggl(\frac{\partial S}{\partial x}\biggr)^2
++
+\biggl(\frac{\partial S}{\partial y}\biggr)^2
+\biggr)=\frac{\partial S}{\partial t}
+\]
+for the function $S(t,x,y)$.
+We use the separation ansatz
+\[
+S(t,x,y)=S_1(x)+S_2(y) + S_3(t).
+\]
+Substituting it into the differential equation gives
+\begin{equation}
+\frac1{2m}( S_1'(x)^2+S_2'(y)^2)=S_3'(t).
+\label{jacobi:kraeftefrei:sep1}
+\end{equation}
+The left hand side does not depend on $t$, the right hand side only
+depends on $t$, so we both sides must be constant, we call the
+constant $P_1$.
+This allows us to write $S_3$  as
+\[
+S_3(t)=P_1t
+\]
+up to some integration constants for the function $S$.
+So we have solved \eqref{jacobi:aufgabe} for the variable $t$.
+
+Let's now study the right hand side of \eqref{jacobi:kraeftefrei:sep1}.
+We can separate the equation using the constant $P_1$:
+\[
+\frac1{2m} S_1'(x)^2
+=
+P_1-\frac1{2m}S_2'(y)^2.
+\]
+The left hand side depends only on $x$, the right hand side only on $y$,
+thus both sides are constant.
+We call this constant $P_2$ and find the solution
+\[
+S_1(x)
+=
+\sqrt{2mP_2}x.
+\]
+This now also allows us to determine $S_2$, which turns out to be
+\[
+\frac1{2m} S_2'(y)^2
+=P_1-P_2,
+\]
+from which we derive the solution
+\[
+S_2(y)
+=
+\sqrt{2m(P_1-P_2)}y.
+\]
+We combine these partial solutions to a solution of the Hamilton-Jacobi
+differential equation:
+\[
+S(x,y,t)=
+P_1t
++
+\sqrt{2mP_2}x
++
+\sqrt{2m(P_1-P_2)}y
+\]
+According to theorem~\ref{jacobi:satz} the coordinates that should be used
+are
+\begin{align*}
+Q_1&=\frac{\partial S}{\partial P_1}
+=
+t + \sqrt{\frac{m}{2(P_1-P_2)}}y,\\
+Q_2&=\frac{\partial S}{\partial P_2}
+=
+\sqrt{\frac{m}{2P_2}}x
+-
+\sqrt{\frac{m}{2(P_1-P_2)}}y
+\end{align*}
+We now can solve for $x$ and $y$ and thus express the trajectory
+in terms of the $Q_i$ and $P_i$ and time $t$:
+\begin{align*}
+x&=\sqrt{\frac{2P_2}{m}}(Q_1+Q_2-t)\\
+y&=\sqrt{\frac{2(P_1-P_2)}{m}}(Q_1-t).
+\end{align*}
+These are precisely the ones we expected for uniform motion.
+The velocity is the derivative with respect to time, so
+\begin{align*}
+v_x
+&=
+\sqrt{\frac{2P_2}{m}}
+&\Rightarrow&&
+P_2&=\frac{mv_x^2}2
+\\
+v_y
+&=
+\sqrt{\frac{2(P_1-P_2)}{m}}
+&\Rightarrow&&
+P_1&=P_2+\frac{mv_y^2}2=\frac{m}2(v_x^2+v_y^2)=\frac12mv^2
+\end{align*}
+The physical meaning of $P_1$ is the kinetic energy of the system
+while $P_2$ is the kinetic energy contributed by the motion component
+in the $x$-direction.
+
+\subsubsection{The cannonball problem}
+By adding a gravitational potential to the previous problem we
+get the cannonball problem.
+A cannonball is shot from some initial point $(x_0,y_0)$  with
+initial velocity $(v_{x0},v_{y0})$ and it is well known that 
+it travels along parabolic arc.
+This problem can be solved by the method of Hamilton and Jacobi.
+
+The total energy get's an additional term, the potential energy,
+so the hamiltonian of the new system is
+\[
+H(x,y,t)=\frac1{2m}(p_x^2+p_y^2)+mgy.
+\]
+The Hamilton-Jacobi differential equation now becomes
+\[
+\frac1{2m}\biggl(
+\biggl(\frac{\partial S}{\partial x}\biggr)^2
++
+\biggl(\frac{\partial S}{\partial y}\biggr)^2
+\biggr)
++mgy=\frac{\partial S}{\partial t} 
+\]
+The same separation ansatz as before again leads to
+\[
+\frac1{2m}(S_1'(x)^2+S_2'(y)^2)+mgy=S_3'(t),
+\]
+from which we once more conclude that $S_3'(t)=P_1$ is constant.
+
+We can also separate $x$ and $y$:
+\begin{align*}
+\frac1{2m}S_1'(x)^2&=P_1-\frac1{2m}S_2'(y)^2-mgy
+%\\
+%\frac1{\sqrt{2m}}S_1'(x)&=\sqrt{P_3-\frac1{2m}S_2'(y)^2+mgy}
+\end{align*}
+The left hand side depends only on $y$, the right only on $x$, so
+both are again constant, we call this constant $P_2$ and obtain the solution
+$S_1=\sqrt{2mP_2} x$.
+
+The right hand side can also be solved:
+\begin{align*}
+P_2&=
+P_1-\frac1{2m}S_2'(y)^2-mgy
+\\
+\frac1{2m}S_2'(y)^2
+&=
+P_1-P_2-mgy
+\\
+S_2'(y)&=\sqrt{
+2m(P_1-P_2-mgy)
+}
+\\
+S_2(y)
+&=
+-\frac1{3m^2g}\bigl(2m(P_1-P_2-mgy)\bigr)^{\frac32}
+\end{align*}
+This completes the solution:
+\[
+S(x,y,t)=P_1t+\sqrt{2mP_2}x
+-
+\frac1{3m^2g}\bigl(2m(P_1-P_2-mgy)\bigr)^{\frac32}
+\]
+The coordinates that we should use are now the partial derivatives
+of $S$ with respect to the $P_i$.
+We get one after the other as
+\begin{equation}
+\begin{aligned}
+Q_1=\frac{\partial S}{\partial P_1}
+&=
+t-
+\frac1{g}\sqrt{\frac{2(P_1-P_2-mgy)}{m}}
+\\
+Q_2=\frac{\partial S}{\partial P_2}
+&=
+\sqrt{\frac{m}{2P_1}}x
++
+\frac1{g}\sqrt{\frac{2(P_1-P_2-mgy)}{m}}
+\end{aligned}
+\label{jacobi:aufloesung}
+\end{equation}
+The first equation can be solved for $y$:
+\begin{equation}
+y=
+\frac{P_1-P_2}{mg}-\frac{g}{2}(Q_1-t)^2
+\label{jacobi:quadratisch}
+\end{equation}
+The altitude $y$ thus depends quadratically on time and $Q_1$ is
+the time of highest altitude, the time of apogee, which is certainly
+a geometricall well defined point on the trajectory.
+
+The solution for $x$ becomes easier if we first take the some
+of the two equations
+\eqref{jacobi:aufloesung}:
+\begin{align*}
+Q_1+Q_2&=t+\sqrt{\frac{m}{2P_1}}x\\
+x&=\sqrt{\frac{2P_1}{m}}(Q_1+Q_2-t)
+\end{align*}
+The $x$-coordinate increases linearly with time.
+The velocity is
+\[
+v_x=\sqrt{\frac{2P_1}{m}}\quad\Rightarrow\quad P_1=\frac{mv_x^2}2,
+\]
+$P_1$ again is the contribution to total energy of the horizontal
+motion component.
+$Q_2$ indicates the point in time when the $x$ coordinate vanishes.
+
+At time $t=Q_1$, the quadratic term in \eqref{jacobi:quadratisch} vanishes
+and the equation can be simplified to
+\[
+mgy + P_2=P_1.
+\]
+Da $P_2$ die kinetische Energie der Horizontalbewegung ist, und $mgy$
+die potentielle Energie, ist $P_1$ wie erwartet die Gesamtenergie.
+

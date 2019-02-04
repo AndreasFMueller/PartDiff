@@ -1,0 +1,66 @@
+%
+% separation.tex
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\lhead{Separation of Variables}
+\rhead{}
+\chapter{Separation of Variables\label{chapter-separation}}
+\index{Stroboscope}
+\index{standing Wave}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\hsize]{../common/graphics/stringvibrlarge-10-06-06.jpg}
+\end{center}
+\caption{
+Vibrating string
+(Image by A.~Davidhazy, http://people.rit.edu/andpph/)
+\label{separation:schwingendesaite}}
+\end{figure}
+Lighting a vibrating string with a stroboscope at the frequency of the
+string makes the string seemingly stand still.
+The shape of the solution of the wave equation thus is the same
+at periodically recurring points in time.
+Measuring the elongation's dependence on time, it turns out to be
+a harmonic oscillation which can be described using sine and cosine
+functions.
+This leads to the conjecture that the solution can be written as 
+a product
+\[
+u(x,t)=X(x)\cdot\sin\omega t\quad\text{oder}\quad X(x)\cdot\cos\omega t.
+\]
+The goal of this chapter is to develop this idea into a solution
+algorithm that is applicable to a suitably large class of partial
+differential equations.
+
+\input{4-separation/ode.tex}
+\input{4-separation/idea.tex}
+\input{4-separation/lpde.tex}
+\input{4-separation/membrane.tex}
+\input{4-separation/disk.tex}
+\input{4-separation/initial.tex}
+\input{4-separation/summary.tex}
+
+\section{Summary}
+\begin{enumerate}
+\item
+Using a suitable {\em ansatz}, a partial differential equation can be
+decomposed into a set of coupled ordinary differential equations.
+\item
+The choice of ansatz is essential predicated on the geometry of the
+domain, in particular on the coordinate system and the type of equation.
+\item
+For linear partial differential equations, the partial solutions found
+by the previous steps can be linearly combined to give more solutions
+of the initial partial differential equation.
+\item
+The central idea of the method is that an equation, where one side
+depends only on $x$ and the other side only on $y$ can only be constant.
+\item
+In the case of partial differential equations of second order,
+which can very often be treated using a product ansatz, the separation
+usually leads to an eigenvalue problem with fewer variables.
+\end{enumerate}
+
+\input{4-separation/tsunami.tex}
+\input{4-separation/jacobi.tex}

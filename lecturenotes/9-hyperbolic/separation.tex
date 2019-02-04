@@ -1,0 +1,53 @@
+%
+% separation.tex -- 
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Separation}
+We apply the wave equation to a domain of the form
+$\Omega = G\times(0,\infty)$ where $G$ is a spacial domain.
+By way of example the twodimensional shape of the membrane of drum
+does not change while it is being played.
+In this case, it is possible to use separation.
+The hyperbolic partial differential equation
+\[
+\frac1{a^2}\frac{\partial^2 u}{\partial t^2}=\Delta u
+\]
+can be attacked with the ansatz $u(x,t)=\varphi(x)\cdot T(t)$ and be 
+separated into two differential equations
+\begin{gather*}
+\begin{aligned}
+\frac1{a^2}T''(t)\varphi(x)&=T(t)\Delta \varphi(x)\\
+\frac1{a^2}\frac{T''(t)}{T(t)}&=\frac{\Delta\varphi(x)}{\varphi(x)}=\lambda\\
+\end{aligned}
+\\
+\Rightarrow\qquad
+T''(t)=\lambda a^2T(t)\qquad\text{und}\qquad\Delta \varphi=\lambda\varphi.
+\end{gather*}
+The equation for $T$ is an ordinary oscillator equation and does
+not pose any problems regarding existence and uniqueness of solutions.
+If $T(0)$ and $T'(0)$ are given, the solutoin can be written down
+for arbitrary $t$.
+
+The second equation $\Delta \varphi-\lambda\varphi=0$ is an elliptic
+eigenvalue problem that we have discussed in chapter~\ref{chapter-elliptisch}.
+For example we have seen that elliptic partial differential equations
+on connected and bounded domains have unique solutions if boundary
+values are specified along the complete boundary.
+
+We can derive from this that hyperbolic problems have a solution if
+we know $u(x,0)$ and $\partial_tu(x,0)$ for $x\in G$.
+This matches the intuition gained from the example of the drum.
+
+This method fails in cases where the shape of the spacial domain.
+An example would be a trombone which works by changing the
+``domain''. 
+Of course, nature apparently has no problem solving that more 
+difficult wave equation, as the trombone player manages to play
+complicated tunes without having to study the theory of the
+wave equation first.
+
+This simple situation changes radically if the shape changes faster than
+the speed of sound, which of course never happens for a trombone.
+In this case, we will get shak waves which will be studied later.
+

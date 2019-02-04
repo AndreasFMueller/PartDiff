@@ -1,0 +1,101 @@
+%
+% particular.tex -- 
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Particular solution}
+\rhead{Particular solution}
+To solve the problem posed at the beginning of this chapter, we can
+proceed in a similar way as for the elliptic problem.
+First we need special solutions for the case that solve the heat
+equation for $\delta$-functions as right hand sides, but without
+necessarily respecting boundary values.
+
+By some tedious computation one can show that for $0<\tau<t$
+the expression
+\[
+\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)
+\]
+solves the heat equation.
+The function
+\begin{equation}
+K(t-\tau, x-\xi)
+=
+\vartheta(t-\tau)
+\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)
+\label{parabolischsingulaer}
+\end{equation}
+thus has the desired properties:
+
+\begin{satz}
+The funcion $K$ satisifes the heat equation
+\begin{align*}
+\partial_tK-\kappa\Delta_xK&=0&&(\tau, \xi)\ne(t,x)
+\\
+\lim_{t\to\tau^+}K(t-\tau, x-\xi)&=\delta(x-\xi),
+\end{align*}
+where the limit is taken in the weak sense.
+
+With repsect to the coordinates $(\tau,\xi)$ we have
+\begin{align*}
+-\partial_{\tau} K-\kappa\Delta_{\xi}K&=0\qquad(\tau,\xi)\ne(t,x)
+\\
+\lim_{\tau\to t^-}K(t-\tau, x-\xi)&=\delta(x-\xi)
+\end{align*}
+\end{satz}
+
+A particular solution of th eproblem can be found using the integrals
+\begin{align*}
+u(t,x)
+&=
+\int_\Omega\int_0^\infty
+K(t-\tau,x-\xi)f(\tau,\xi)
+\,d\tau\,d\xi
+\\
+&=
+\int_\Omega\int_0^\infty
+\vartheta(t-\tau)\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)
+f(\tau,\xi)
+\,d\tau\,d\xi
+\\
+&=
+\int_\Omega\int_0^t
+\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)
+f(\tau,\xi)
+\,d\tau\,d\xi
+\end{align*}
+Substituting this into the heat equation gives
+\begin{align*}
+(\partial_t-\kappa\Delta)u
+&=
+\int_\Omega\int_0^t
+(\partial_t-\kappa\Delta)\biggl[
+\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)\biggr]
+f(\tau,\xi)
+\,d\tau\,d\xi
+\\
+&\quad+
+\lim_{\tau\to t-}
+\int_\Omega
+\frac1{(4\pi\kappa(t-\tau))^{\frac{n}2}}
+\exp\biggl(-\frac{|x-\xi|^2}{4\kappa(t-\tau)}\biggr)
+f(t,\xi)
+\,d\xi
+\end{align*}
+The first integral vanishes because the expression in brackets
+satisfies the heat equation for $0<\tau<t$, which means that it
+is annihilated by $\partial_t-\kappa\Delta$.
+The part of the integrand in front of $f(t,\xi)$ in the second integral
+is an approximation of the $\delta$-function at $x$, so its limit 
+is $f(x,t)$.
+Combining this tells us
+\[
+(\partial_t-\kappa\Delta)u=f,
+\]
+as claimed.
+

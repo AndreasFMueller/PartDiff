@@ -1,0 +1,56 @@
+%
+% hyperbolic.tex -- 
+%
+% (c) 2008 Prof Dr Andreas Mueller
+% $Id: c06-hyperbolisch.tex,v 1.3 2008/10/31 08:04:16 afm Exp $
+%
+\chapter{Hyperbolic partial differential equations
+\label{chapter-hyperbolisch}}
+\lhead{Hyperbolic equations}
+\rhead{}
+In this chapter we discus the wave equation as a very prominent
+example of a hypberbolic equation.
+Just like in the parabolic case the time coordinate has special
+significance.
+The wave equation also is a kind of equation of motion, but of second
+order, and thus more similar to the equations we are used to from
+mechanics.
+
+While a change in initial conditions or boundary conditions 
+influences the solution everywhere, the wave equation behaves
+very differently in that such changes propagate with finite speed.
+For each point in the domain there are points that can be affected
+by a change of the value in the point and others that don't notice
+the change.
+The interfaces between these domains are an important aspect that
+helps understanding the solutions.
+
+To get close to a solution we start with the one dimensional case
+and we will find a solution as a superposition of waves that travel in
+both directions.
+We then embark on a study how initial conditions influence the solutions.
+Asking which initial conditions lead to a well posed problem the
+leads us to the concept of characteristics.
+
+\input{9-hyperbolic/separation.tex}
+\input{9-hyperbolic/waves.tex}
+\input{9-hyperbolic/cauchy.tex}
+\input{9-hyperbolic/characteristics.tex}
+\input{9-hyperbolic/discontinuities.tex}
+\input{9-hyperbolic/higherdim.tex}
+\input{9-hyperbolic/boundary.tex}
+
+\section{Summary}
+\begin{enumerate}
+\item
+The solution surface of a hyperbolic partial differential equation can be
+covered by characteristic strips.
+\item
+Discontinuities or other singularities propagate along characteristics.
+\item
+As for quasilinear partial differential equations of first order,
+characteristics can be used to determine which boundary values or
+normal derivatives need to be specified for a hyperbolic problem to
+be well posed.
+\end{enumerate}
+

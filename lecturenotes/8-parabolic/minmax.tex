@@ -1,0 +1,43 @@
+%
+% minmax.tex -- 
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{The maximum principle}
+\rhead{maximum principle}
+In the theory of elliptic partial differential equations, the mean
+value property was one of the starting points for proving the
+maximum principle.
+The mean value property no longer holds for the heat equation,
+but there is still a maximum principle.
+
+\begin{satz}[Maximum principle for the heat equation]
+Let $\Omega$ be a bounded domain and 
+$u$ a function on $[0,T]\times\Omega$.
+Further let
+\begin{align*}
+M_{\partial \Omega}&:=\max\{u(t,x)\,|\,x\in\partial\Omega, t\in[0,T]\}
+&
+m_{\partial \Omega}&:=\min\{u(t,x)\,|\,x\in\partial\Omega, t\in[0,T]\}
+\\
+M_0&:=
+\max\{u(0,x)\,|\,x\in\Omega\}
+&
+m_0&:=
+\min\{u(0,x)\,|\,x\in\Omega\}
+\\
+M&:=\max\{M_0,M_{\partial\Omega}\}
+&
+m&:=\min\{M_0,M_{\partial\Omega}\}
+\end{align*}
+If $u$ solves the homogeneous heat equation 
+$\partial_tu-\kappa\Delta u=0$,
+then
+\[
+m\le u(t,x)\le M\quad\forall(t,x)\in[0,T]\times\bar\Omega
+\]
+holds.
+\end{satz}
+As for elliptic partial differential equations it follows that
+the boundary value problem for the heat equation has a unique solution.
+

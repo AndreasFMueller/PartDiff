@@ -1,0 +1,122 @@
+%
+% idea.tex -- idea of the method
+%
+% (c) 2008 Prof Dr Andreas Mueller
+%
+
+\section{Idea of the method}
+In applications one often has some indications from the application
+domain what the solution function will most probably look like, or one
+is looking for a very particular type of solution.
+In partuclar, it may be known how the solution depends on one of the
+variables up to a factor depending only on the other variable.
+In these situations one can try to write the solution as a product
+or sum of functions that depend on only one variable.
+
+Even if one knows nothing about the solution, one can still try such
+an {\em ansatz}, as the following example tries to illustrate.
+Let's attempt to solve the partial differetnial equation
+\begin{equation}
+\frac1x
+\frac{\partial u}{\partial x}
++
+\frac1y
+\frac{\partial u}{\partial y}
+=\frac1{y^2}
+,
+\qquad x>1, y>1,
+\label{separation:beispiel1}
+\end{equation}
+ignoring the boundary conditions for the time being.
+We try to represent the solution as a sum of two functions which depend
+on one of $x$ and $y$ only.
+\begin{equation}
+u(x,y)=X(x)+Y(y)
+\quad\Rightarrow\quad
+\begin{cases}
+\quad{\displaystyle \frac{\partial u}{\partial x}}&=X'(x)\\
+\\
+\quad{\displaystyle \frac{\partial u}{\partial y}}&=Y'(y)\\
+\end{cases}
+\label{separation:beispiel1:ansatz}
+\end{equation}
+Substituting this into the differential equation
+(\ref{separation:beispiel1})
+gives the new equation
+\[
+\frac{X'(x)}{x}+\frac{Y'(y)}{y}=\frac1{y^2}
+\]
+or
+\begin{equation}
+\frac{X'(x)}{x}
+=\frac1{y^2}
+-\frac{Y'(y)}{y}.
+\label{separation:beispiel1:separiert}
+\end{equation}
+The Form (\ref{separation:beispiel1:separiert}) has a distinct property:
+the variable $x$ only appears on the left side, the variable $y$ only on
+the right.
+If we fix some value $y$, the right hand side cannot change, so the left
+hand side must not depend on $x$.
+Conversely, if we fix $x$, then the left side cannot change any more,
+and thus the right hand side cannot change either.
+We conclude that both sides must be the same constant.
+Calling this constant $k$ we find the two ordinary differential equations
+\begin{align}
+\frac{X'(x)}{x}&=k
+&
+k&=\frac1{y^2}-\frac{Y'(y)}{y}
+\label{separation:beispiel1:separiertedgl}
+\end{align}
+for $X(x)$ and $Y(y)$.
+
+The differential equation for $X$ is easy to solve:
+\begin{align*}
+X'(x)&=kx\quad\Rightarrow\quad X(x)=
+\frac12kx^2+C_x.
+\end{align*}
+The right equation is only slightly more complicated:
+\begin{align*}
+Y'(y)=\frac1y-ky
+\quad\Rightarrow\quad
+Y(y)=\int\frac1y-ky\,dy=
+\log y-\frac12ky^2+C_y.
+\end{align*}
+We can now combine these functions into a solution of the initial
+differential equation:
+\begin{equation}
+u(x,y)=
+\frac12kx^2+
+\log y-\frac12ky^2+C.
+\label{separation:beispiel1:loesung}
+\end{equation}
+By varying the parameters $k$ and $C$, formula
+(\ref{separation:beispiel1:loesung}) gives an infinite family of
+solutions of the partial differential equation.
+
+The values of the constants need to be determined by boundary conditions
+in a manner to be studied later.
+
+Let's summarize the method so far:
+\begin{enumerate}
+\item
+Choose an {\em ansatz} from functions that depend from disjoint
+sets of variables.
+\item
+Substitute into the partial differential equation and separate terms
+involving the separate sets of variables.
+The two sides of the equation depend on disjoint sets of variables
+und must therefore be constant.
+\item 
+Split the equation into two coupled equations, each with a
+different set of independent variables.
+\item
+Solve each equation individually.
+\item
+Put solutions together using the boundary conditions.
+\end{enumerate}
+As may suspected, the problem most of the time is not the solution
+of the individual equations but rather the last step.
+In the following sections we want to illustrate how this can be
+done in a variety of examples.
+

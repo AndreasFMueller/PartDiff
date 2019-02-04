@@ -1,0 +1,72 @@
+%
+% geometry.tex -- 
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\chapter{Geometry of partial differential equations of first order\label{chapter-geometrie}}
+\lhead{Geometry of solutions}
+\begin{figure}
+\begin{center}
+\includegraphics[width=\hsize]{../common/images/ode-1.pdf}
+\end{center}
+\caption{direction field of the ordinary differential equation 
+$y'=-\frac16y+e^{-\frac{x}6}\cos x$ \label{geometrie:ode}}
+\end{figure}
+The direction field of an ordinary differential equation is a very
+convenient way to build an intuition about the solutions of an equation
+(figure~\ref{geometrie:ode}).
+The solution curve is tangent to directions specified by the differential
+equation.
+
+
+The solution of partial differential equation with two independent variables
+can be visualized as a surface.
+Is there concept similar to the direction field of a differential equation
+that helps us imagine the solutions?
+
+The first idea that comes to mind is a field of tangent planes.
+Such a field would fix the first derivatives individually.
+What a partial differential equation does, however, is to only fix a
+combination of first derivatives.
+We have to look for a more complicated answer.
+
+\input{3-geometry/curves.tex}
+\input{3-geometry/singularities.tex}
+\input{3-geometry/boundary.tex}
+
+
+\section{Summary}
+\begin{enumerate}
+\item
+The generalization of direction field from the theory of ordinary
+differential equations is a sheaf of planes.
+The graph of the solution function must have a tangent plane in the 
+sheaf for every point.
+\item
+The planes of the sheaf have a common vector, called the axis of the sheaf,
+or informally in these notes the ``red'' vector.
+\[
+\begin{pmatrix}
+a(x,y,u)\\
+b(x,y,u)\\
+c(x,y,u)
+\end{pmatrix}.
+\]
+Integral curves of this vector field are called characteristics
+or informally ``red'' curves.
+\item
+The solution surface of a quasilinear partial differential equation
+is covered by characteristics that all go through the initial curve
+(informally the ``green'' curve).
+\item
+To find the solution function, eliminate the parameter of the initial
+curve and the of the characteristics.
+\item
+Characteristics are those curves that are not suitable as initial
+curves.
+This characterization will be comes useful in
+chapter~\ref{chapter-hyperbolisch}.
+\item
+With the help of characteristics it is possible to decide which boundary
+conditions are necessary in order for a problem to be well posed.
+\end{enumerate}

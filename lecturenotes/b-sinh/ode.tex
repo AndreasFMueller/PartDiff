@@ -1,0 +1,109 @@
+%
+% ode.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\section{Differentialgleichungen zweiter Ordnung}
+Das Standardverfahren für die Lösung einer gewöhnlichen linearen
+Differentialgleichung mit konstanten Koeffizienten
+\[
+a_2y''+ a_1y'+a_0y=0
+\]
+schreibt vor, dass man erst die Nullstellen $\lambda_{1,2}$
+des charakteristischen Polynoms
+\[
+p(\lambda)=a_2\lambda^2+a_1\lambda+a_0
+\]
+finden muss.
+Die allgemeine Lösung der Differentialgleichung ist dann
+eine Linearkombination
+\[
+y(x)=
+A_1 e^{\lambda_1t}
++
+A_2 e^{\lambda_2t},
+\]
+die Konstanten $A_1$ und $A_2$ sind aus den Anfangswerten zu bestimmen.
+Sinde $y_0$ und $v_0$ der Anfangswert und die Anfangsableitung, dann
+findet man das lineare Gleichungssystem
+%\newcolumntype{\linsysR}{>{$}r<{$}}
+%\newcolumntype{\linsysL}{>{$}l<{$}}
+%\newcolumntype{\linsysC}{>{$}c<{$}}
+%\newenvironment{linsys}[1]{%
+%\begin{tabular}{*{#1}{\linsysR@{\;}\linsysC}@{\;}\linsysR}}%
+%{\end{tabular}}
+\[
+\begin{linsys}{3}
+         A_1&+&         A_2&=&y_0\phantom{.}\\
+\lambda_1A_1&+&\lambda_2A_2&=&v_0.
+\end{linsys}
+\]
+Besonders einfach wird die Bestimmung jedoch für die Differentialgleichung
+\[
+y''+k^2 y=0.
+\]
+Dann sind die $\lambda_{1,2}=\pm\sqrt{-k^2}$ imaginär, und man kann statt
+der Exponentiallösungen auch den Ansatz
+\[
+y(x)=A\cos kx+B\sin kx
+\]
+verwenden.
+Da der Wert von $\sin kx$ bei $x=0$ verschwindet, und die Ableitung von
+$\cos kx$ ebenfalls, ist die Bestimmung der Konstanten viel einfacher:
+\[
+A=y_0
+\qquad\text{und}\qquad
+B=\frac1kv_0,
+\]
+oder
+\begin{equation}
+y(x)=y_0\cos kx + \frac{v_0}{k}\sin kx
+\label{hyp:loesung}
+\end{equation}
+
+Für die analoge Differentialgleichung $y''-k^2y=0$ geht dies nicht.
+Die Nullstellen des charakteristischen Polynoms sind hier 
+$\lambda_{1,2}=\pm k$, und es führt nichts an dem linearen Gleichungssystem
+\[
+\begin{linsys}{3}
+ A_1&+& A_2&=&y_0\\
+kA_1&-&kA_2&=&v_0
+\end{linsys}
+\]
+vorbei.
+Die Lösung kann allerdings zum Beispiel mit dem Determinantenverfahren
+ziemlich direkt gefunden werden:
+\begin{align*}
+A_1
+&=
+\frac{\left|\begin{matrix}y_0&1\\v_0&-k\end{matrix}\right|}{\left|\begin{matrix}1&1\\k&-k\end{matrix}\right|}
+=
+\frac{-ky_0+v_0}{-2k},
+&
+A_2
+&=
+\frac{\left|\begin{matrix}1&y_0\\k&v_0\end{matrix}\right|}{\left|\begin{matrix}1&1\\k&-k\end{matrix}\right|}
+=\frac{v_0-ky_0}{-2k}.
+\end{align*}
+Damit kann man jetzt die Lösung auch in diesem Fall hinschreiben:
+\begin{align}
+y(x)
+&=
+A_1e^{kx}+A_2e^{-kx}
+=
+\frac12\biggl(
+\frac{ky_0-v_0}k e^{kx}
++
+\frac{-v_0+ky_0}k e^{-kx}
+\biggr)
+\notag
+\\
+&=
+y_0\frac{e^{kx}+e^{-kx}}2
++\frac{v_0}{k}\frac{e^{kx}-e^{-kx}}2.
+\label{hyp:hyperbelfunktionen}
+\end{align}
+Die Erfüllung der Anfangsbedingung könnte also auch in diesem Falle
+sehr einfach sein, wenn man nicht die Funktionen $e^{\pm kx}$ verwenden
+würde, sondern deren Linearkombinationen wie in (\ref{hyp:hyperbelfunktionen}).
+

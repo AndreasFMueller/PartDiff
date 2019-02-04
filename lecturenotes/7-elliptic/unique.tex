@@ -1,0 +1,162 @@
+%
+% unique.tex -- 
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Uniqueness of a solution}
+We now study the question whether the solution of the Dirichlet problem
+\eqref{elliptisch:laplaceequation} and \eqref{dirichletrandbedingung},
+if they exist, is unique.
+
+Let $u_1$ and $u_2$ be two solutions of the problem.
+The difference satisfies
+\[
+\begin{aligned}
+\Delta u&=\Delta u_1-\Delta u_2=f-f=0&&\text{in $\Omega$,}\\
+u&=u_1-u_2=g-g=0&&\text{on $\partial\Omega$.}
+\end{aligned}
+\]
+$u$ is a solution of the homogeneous problem with homogeneous 
+boundary conditions.
+
+This observation holds true for any other linear partial differential
+operator of the form
+\[
+L=\sum_{i,j}a_{ij}\partial_i\partial_j+\sum_i b_i\partial_i.
+\]
+Uniqueness of solutions is thus equivalent to uniqueness of solutions
+of the homogeneous problem with homogeneous boundary conditions.
+This follows from the following theorem:
+eindeutige Lösung hat. Dies wiederum folgt aus dem folgenden Satz.
+
+\begin{satz}[Maximum principle for elliptic operators]
+\label{maximumprinzip}
+If $L$ is an elliptic differential operator on a connected and
+bounded domain $\Omega$, and $u$ is a solution $Lu=0$, then $u$ takes
+its maximum and minimum on the boundary of $\Omega$.
+\end{satz}
+
+The condition that the domain $\Omega$ needs to be bounded is essential.
+The function $u(x,y)=x$ is harmonic, $\Delta x=0$, on the domain
+$\Omega=\{(x,y)\,|\,x>0\}$, and it vanishes on the boundary, which is
+the $y$-axis, where we have $u(0,y)=0$.
+So this $u$ is a solution of the Poisson problem with homogeneous
+Dirichlet boundary conditions with homogeneous boundary conditions, 
+but it does not take a maximum anywhere.
+
+The connectedness of the domain es essential too.
+Define the function
+\[
+u(x)=n\qquad\text{für $2^{-n} < |x| < \frac{3}{2}2^{-n}$},
+\]
+then $\Delta u=0$, it is constant on rings around the origin and hence
+$u$ is harmonic.
+The values of $u$ are not bounded as there are infinitely many disjoint
+rings.
+In particular, there is no maximum.
+
+\begin{proof}[Proof idea]
+We prove the theorem with the help of a constradiction.
+We assume that $u$ takes a maximum in some interior point $x$
+in $\Omega$.
+
+We may assume that the matrix $a_{ij}$ is diagonal that, as $L$
+is elliptic, that $a_{ii}=\lambda_i$ are all positive.
+As $u$ has a maximum in $x$, all first order derivatives vanish
+in $x$ and at least one of the second derivatives
+must be nagative:
+\[
+\frac{\partial^2u}{\partial x_i^2}
+\le 0
+\quad
+\Rightarrow
+\quad
+\sum_{i}\lambda_i \frac{\partial^2u}{\partial x_i^2} \le 0
+\quad
+\Rightarrow
+\quad
+Lu<0
+\]
+This contradiction shows that there cannot be a maximum in the
+interior of the domain.
+
+However, this is unfortunately not a proof.
+There is no reason why not all second derivatives of $\partial^2_{x_i} u$ 
+could be zero.
+We give a complete proof at the end of this section.
+\end{proof}
+
+\begin{satz}
+There is at most one solution of
+$Lu=f$ 
+with boundary conditions
+$u_{|\partial\Omega}=g$.
+\end{satz}
+
+\begin{proof}
+Let $u_1$ und $u_2$ be solutions, then $u=u_1-u_2$ is a solution of
+$Lu=0$ with boundary conditions $u_{|\partial\Omega}=0$.
+According to theorem \ref{maximumprinzip} $u$ takes its maximum and
+minimum on the boundary, so $0\le u\le 0$ in $\Omega$.
+Consequently $u=0$ or $u_1=u-2$, it is therefore impossible that
+there are two different solutions.
+\end{proof}
+
+{\small
+\subsubsection{A proof of the maximum principle}
+In the following we give a complete proof promised for the maximum principle.
+The essential point of the proof idea was that $Lu=0$ but in an internal
+maximum we could conclude $Lu<0$.
+But the method we employed was only real capable of concluding that
+$Lu\le 0$.
+Our argument so far only proofs the following statement:
+\begin{satz}
+\label{maximumgt}
+If $L$ is an elliptic differential operator on a connected and
+bounded domain $\Omega$ and $u$ a function with the property $Lu>0$, then
+$u$ takes a maximum on the boundary.
+\end{satz}
+
+This allows us to conclude:
+\begin{satz}
+If $L$ is an elliptic differential operator on a conneted and
+bounded domain $\Omega$ and $u$ is a function with $Lu\ge > 0$,
+then $u$ takes its maximum on the boundary.
+\end{satz}
+
+\begin{proof}
+As in the proof sketch, we may assume that in the point $x$ the 
+coefficient matrix $(a_{ij})$ is diagonal with all diagonal elements
+positive.
+Let $u_{\varepsilon}$ be the function
+$u_{\varepsilon}=u-\varepsilon e^{\lambda x_1}$.
+We get
+\begin{align*}
+Lu_{\varepsilon}&=Lu-\varepsilon L(e^{\lambda x_1})\\
+&=Lu-\varepsilon(a_{11}\lambda^2+b_1\lambda)e^{\lambda x_1}
+\end{align*}
+Because $a_{11}>0$,
+the quadratic polynomial $a_{11}\lambda^2+b_1\lambda$ will be positive
+for sufficnently large $\lambda$.
+Thus
+\[
+Lu_{\varepsilon}= Lu-\varepsilon(a_{11}\lambda^2+b_1\lambda)e^{\lambda x_1}<0
+\]
+for every $\varepsilon$.
+According to theorem \ref{maximumgt},
+the maximum of $u_\varepsilon$ is reached on the boundary.
+
+In the limit $\varepsilon\to 0$ we have $u^\varepsilon\to u$, so
+$u$ too must reach a maximum on the boundary.
+\end{proof}
+
+Applying this theorem to the function $-u$, the minimum principle follows:
+\begin{satz}
+If $L$ is an elliptic differential operator on a connected and
+bounded domain $\Omega$ and $u$ a function with $Lu\le 0$, then
+$u$ takes a minimum on the boundary.
+\end{satz}
+
+For solutions of $Lu=0$ the theorem \ref{maximumprinzip} follows.
+}
+

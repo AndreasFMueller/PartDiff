@@ -1,0 +1,57 @@
+%
+% domains.tex -- 
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Transforms with more general types of domains}
+Integral transforms are useful to help partial differential equations,
+but only if the transform matches the domain:
+\begin{center}
+\begin{tabular}{cl}
+Domain&Transform\\
+\hline
+$[0,\infty)$&Laplace transform\\
+$\mathbb R$&Fourier transform\\
+$[-\pi,\pi]$&Fourier series
+\end{tabular}
+\end{center}
+The separation method has shown how this technique can be generalized.
+We illustrated the basic principle for the heat equation on a domain
+$G\subset \mathbb R^n$.
+The differential equation is
+\[
+\partial_t u(t,x)=\Delta u(t,x)
+\]
+for $(t,x)\in [0,\infty)\times G$ with initial conditions
+\[
+u(0,x)=u_0(x) \quad x\in G
+\]
+and boundary conditions
+\[
+au(t,x)+b\partial_nu(t,x)=0\quad (t,x)\in[0,\infty)\times \partial G.
+\]
+Chapter~\ref{chapter-separation} suggests that we can find a family
+of functions
+$u_k(x)$ which are eigenfunctions of the Laplace operator
+\[
+\Delta u_k=\lambda_k u_k
+\]
+and satisfy homogeneous boundary conditions.
+It also turns out that these functions can be used to expand any
+function on $G$ into a series
+\[
+u_0(x)=\sum_{k=1}^\infty a_ku_k(x).
+\]
+No we can immediately write down the solution to the heat equation:
+\[
+u(t,x)=\sum_{k=1}e^{-\lambda_kt}u_k(x)
+\]
+Apparently, the functions $u_k$ take over the role the functions
+$e^{ikx}$ had in the Fourier theory.
+
+Modern mathematics knows a theory of harmonic analysis on so called
+Lie groups, which generalize and unify Laplace transform and Fourier
+transform and which allow to handle more general domains.
+As an example, expansions on $n$-dimensional spheres are possible
+using so called spherical functions.
+

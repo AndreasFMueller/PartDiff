@@ -1,0 +1,200 @@
+%
+% types.tex --
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Special types of partial differential equations
+\label{klassifikation:spezielletypen}}
+\rhead{Special PDE}
+For a couple of special types of partial differential equations we will
+be able to answer the question regarding existence and uniqueness of 
+solutions.
+In some cases we will even be able to give explicit formulas for the solutions.
+Linear and quasilinear partial differential equations are part of this
+very limited set of equations.
+This section is devoted to describing them.
+
+\subsection{Linear partial differential equations\label{klassifikation:linear}}
+The differential equations proposed so far were all linear expressions in
+the first and second derivatives.
+In the most general form, we can write them as
+Form
+\begin{align*}
+\sum_{i,j=1}^n a_{ij}(x)\frac{\partial}{\partial x_i} \frac{\partial}{\partial x_j}\psi(x)
++\sum_{i=1}^na_i(x)\frac{\partial}{\partial x_i}\psi(x)&=f(x)
+\\
+\sum_{i,j=1}^n a_{ij}(x)\partial_i \partial_j\psi(x)
++\sum_{i=1}^na_i(x)\partial_i\psi(x)&=f(x).
+\end{align*}
+We call such an equation {\em homogeneous} if $f=0$.
+To every linear partial differential equation of this form we can construct
+the associated homogeneous equation by setting $f=0$.
+
+In order for this problem to have a solution, we have to add boundary
+conditions.
+As we have learned, these too can be written as linear combinations
+of function values and normal derivatives of $\psi$ on the boundary
+of the domain:
+\begin{align*}
+a\psi(x)+
+b\frac{\partial}{\partial n}\psi(x)
+&=g(x)\quad\forall x\in\gamma\\
+a\psi(x)+b\partial_n\psi(x)&=g(x)\quad\forall x\in\gamma
+\end{align*}
+The boundary conditions are called {\em homogeneous} if $g=0$.
+To every set of boundary conditions we can construct the associated
+set of homogeneour boundary conditions by setting $g=0$.
+
+If $\psi_1$ and $\psi_2$ are two solutions of a homogeneous linear partial
+differential equation with homogeneous boundary conditions, then
+a linear combination $\alpha_1\psi_1+\alpha_2\psi_2$ is a solution
+as well:
+\begin{align*}
+&\sum_{i,j=1}^n a_{ij}(x)\partial_i \partial_j
+(\alpha_1\psi_1(x)+\alpha_2\psi_2(x))
++\sum_{i=1}^na_i(x)\partial_i
+(\alpha_1\psi_1(x)+\alpha_2\psi_2(x))
+\\
++
+\alpha_1
+&\sum_{i,j=1}^n a_{ij}(x)\partial_i \partial_j
+\psi_1(x)
++
+\alpha_1
+\sum_{i=1}^na_i(x)\partial_i
+\psi_1(x)
+\\
++
+\alpha_2
+&\sum_{i,j=1}^n a_{ij}(x)\partial_i \partial_j
+\psi_2(x)
++
+\alpha_2
+\sum_{i=1}^na_i(x)\partial_i
+\psi_2(x)
+=0
+\end{align*}
+oder für die Randbedingung
+\begin{align*}
+a(\alpha_1\psi_1(x) +\alpha_2\psi_2(x))
+\;+&b\partial_n
+(\alpha_1\psi_1(x) +\alpha_2\psi_2(x))\\
+=\alpha_1(a\psi_1(x)
+\;+&b\partial_n
+\psi_1(x))\\
++\;\alpha_2(a\psi_2(x)
+\;+&b\partial_n
+\psi_2(x))
+=0\quad\forall x\in\gamma
+\end{align*}
+This means that the solutions of a homogeneous linear
+partial differential equation with homogeneous boundary conditions
+form a vector space.
+The well known properties of solutions of linear systems of equations
+apply to the solution space as well.
+In particular, to find any solution of the inhomogeneous partial
+differential equation we simply have to produce a single solution
+$\psi_p$ called a particular solution of the inhomogeneous equation
+and add solutions of the homogeneous equation to it.
+Knowledge of the solution space of the homogeneous equation transfers
+to knowledge of the structure of the solution set of any inhomogeneous
+version of the equation.
+
+\subsection{Quasilinear partial differential equations of first order
+\label{klassifikation:quasilinear}}
+A very interesting special case are the quasilinear partial differential
+equations of first order.
+They are not necessarily linear, but the first order derivatives appear only
+linearly.
+The function
+$
+F(x,y,u,p,q)
+$
+is therefore linear in $p$ und $q$.
+The variables $x$ and $y$ and the placeholder $u$ for the unknown
+function can only appear in coefficients of the variables $p$ and $q$.
+Thus $F$ must have the form
+\[
+F(x,y,u,p,q)=a(x,y,u)p+b(x,y,u)q-c(x,y,u).
+\]
+The negative sign in front of $c$ is chosen for consistency with the
+theory to be developed in the next chapter.
+A quasilinear partial differential equation of first order therefore
+has the form
+\[
+a(x,y,u(x,y))\frac{\partial u}{\partial x}+b(x,y,u(x,y))\frac{\partial u}{\partial y}
+=c(x,y,u(x,y)).
+\]
+For more than $2$ variables, we can similarly conclude that equation must
+be of the form
+\[
+a_1(x_1,\dots,x_n,u)\frac{\partial u}{\partial x_1}
++
+a_2(x_1,\dots,x_n,u)\frac{\partial u}{\partial x_2}
++\dots
++
+a_n(x_1,\dots,x_n,u)\frac{\partial u}{\partial x_n}
+=c(x_1,\dots,x_n,u).
+\]
+
+Quasilinear partial differential equations of higher order can also be
+defined.
+In such an equation, higher derivatives may show up, but they can only
+show up linearly.
+This means that the equation can be written in the form
+\[
+\sum_{\bf k} a_{\bf k}(x,y,u)\partial_{\bf k} u(x,y) = 0,
+\]
+where the functions $a_{\bf k}(x,y,u)$ are nonzero for only finitely
+many multiindices ${\bf k}$.
+
+\subsection{Nonlinear equations
+\label{klassifikation:nichtlinear}}
+The partial differential equations from applications presented so far
+were linear.
+However, many problems from physics are not linear.
+Most notably the equations that govern the flow of a fluid.
+Already Leonhard Euler has formulated a system of partial differential
+equations for the flow of an incompressible gas.
+It connects density $\varrho$, pressure $p$ and the velocity vector
+$\vec{v}$, all three being functions of position and time, with the
+each other and their derivatives at every point in space.
+The most important of these equations is Euler's equation:
+\index{Euler's equation}
+\begin{align*}
+\frac{\partial \vec v}{\partial t}
++(\vec v\cdot \nabla)\vec v
+=-\frac1{\varrho}\operatorname{grad}p
+\\
+\frac{\partial v_i}{\partial t}
++\sum_{j=1}^3v_j\frac{\partial v_i}{\partial x_j}
+=
+-\frac1{\varrho}\frac{\partial p}{\partial x_i}.
+\end{align*}
+This equation cannot be linear, products of $v_j$ and derivatives of $v_i$
+appear in the second term.
+
+Adding viscosity makes the equations even more complicated:
+\[
+\varrho\left(
+\frac{\partial\vec v}{\partial t}
++
+(\vec v\cdot\nabla)\vec v
+\right)
+=
+-\operatorname{grad}p+\eta\Delta \vec v+\left(\zeta+\frac{\eta}3\right)
+\operatorname{grad}\operatorname{div}\vec v
+\]
+
+In one dimension, there is not much left, just a single velocity component
+$u(t,x)$, for which the equation essentially has the Form
+\[
+\frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}
+=\eta\frac{\partial^2u}{\partial x^2}
+\]
+(we have neglected the pressure gradient and assumed $\varrho=1$).
+This equation has been studied extensively by Johannes Martinus Burgers
+and is thus called Burgers' equation.
+It exhibits many common features of nonlinear partial differential equations.
+Solutions can be found in explicit form, as we will indicate in the next
+chapter.

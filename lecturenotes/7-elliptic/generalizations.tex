@@ -1,0 +1,71 @@
+%
+% generalizations.tex
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Generalizations}
+\rhead{Generalizations}
+The methods presented in this chapter can be generalized in various
+directions.
+
+\subsection{Neumann boundary conditions}
+\index{Neumann boundary conditions}
+The Poisson problem with Dirichlet boundary conditions was solved
+using Green's function
+$G(x,\xi)$ which, as a function of $x$ satisfies homogeneous
+Dirichlet boundary conditions
+\[
+G(x,\xi)=0\quad\forall x\in\partial\Omega.
+\]
+If we construct a Green's function which satisfies homogenous 
+Neumann boundary conditions
+\[
+\frac{\partial}{\partial n}G(x,\xi)=0\quad\forall x\in\partial\Omega,
+\]
+then what remains from the profe of theorem \ref{dirichletloesung}
+is the formula
+\begin{align*}
+u(x)&=\int_{\Omega}G(x,\xi)f(\xi)\,d\mu(\xi)+\int_{\partial\Omega}G(x,\xi)\operatorname{grad}u(\xi)\cdot dn
+\end{align*}
+For homgeneous Neumann boundary conditions
+$\partial_n u=g$, one can replace that by
+\begin{align*}
+u(x)&=\int_{\Omega}G(x,\xi)f(\xi)\,d\mu(\xi)+\int_{\partial\Omega}G(x,\xi)g(\xi)\,d\mu(\xi)
+\end{align*}
+So for Neumann boundary conditions there also is a Green's function
+which solves the Neumann boundary value problem for arbitrary 
+boundary values.
+
+\subsection{More general operators}
+Green's function can be constructed under suitable conditions
+for the coefficients of the operator also for arbitrary
+elliptic operators
+\[
+Lu=\biggl(\sum_{i,j}a_{ij}\frac{\partial^2}{\partial x_i\partial x_j}
++\sum_ib_i\frac{\partial}{\partial x_i} +c\biggr)u
+\]
+of second order.
+
+\subsection{Abstract solution}
+The principles in this chapter can be summarized and generalized as 
+follows.
+Given an elliptic operator $L$ and an additional operator $B$ which
+extracts the boundary values from $u$.
+For any function $u$ on $\bar\Omega$ the function $Bu$ is defined on
+$\partial\Omega$.
+The boundary value problem then can be stated as 
+\begin{align*}
+Lu&=f(x)&&x\in\Omega
+\\
+Bu&=g(x)&&x\in\partial\Omega
+\end{align*}
+and can be solved by some integral formular of the form
+\[
+u(x)
+=
+\int_\Omega G(x,\xi)f(\xi)\,d\mu(\xi)
++
+\int_{\partial \Omega}K(x,\xi)g(\xi)\,d\mu(\xi).
+\]
+The functions $G$ and $K$ allow the operators $L$ and $B$ to be inverted.
+

@@ -1,0 +1,47 @@
+%
+% canonical.tex -- 
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Canonical Form}
+\rhead{Canonical Form}
+For linear partial differential equations with constant coefficients,
+i.~e.~equations where the $a_{ij}$ do not depend on the location or time,
+a rotation of the coordinate system can be found that turns the coefficent
+matrix into a diagonal matrix.
+Rescaling the axis even allows to get the diagonal elements in $\{0,\pm1\}$.
+This raises the question whether something similar is also possible with
+more general, i.~e.~location dependen coefficients.
+
+In two dimensions, we can find a suitable coordinate system using the
+following idea.
+In every point $(x,y)$ there are two vectors $\vec e_+$ und $\vec e_-$
+which are eigenvectors for the larger and the smaller eigenvalue of the
+coefficent matrix $A$ respectively.
+At least if the eigenvalues are different, these vector fields can be
+constructed in a continuous manner.
+And because $A$ is symmetric, the two vectors are orthogonal everywhere.
+
+Now construct solution curves for each vector field.
+Each set of curves is parametrized by a parameter, call them $\xi$ and $\eta$.
+Each point of the plane is identified by a curve from each set that
+run through the point and thus by the coordinates $\xi$ und $\eta$.
+In these coordinates, the matrix $A$ gets diagonal form.
+
+This idea does not generalize to three dimensions.
+Additional conditions on the vector fields of eigenvectors are needed.
+
+But it is still possible to achieve diagonal form in any point of the
+domain.
+By continuity, the differential equation will be in approximate diagonal
+form in any neighborhood of the point.
+This is sufficient to study the local behavior of the solutions.
+Consequently it is sufficient to study the behavior of the solutions
+of the following standard differential equations:
+\begin{align*}
+\Delta u&=0&&\text{elliptic}\\
+\partial_tu&=k\Delta u&&\text{parabolic}\\
+\partial_t^2u&=a^2\Delta u&&\text{hyperbolic}\\
+\end{align*}
+which is precisely what we are going to to in the following three chapters.
+

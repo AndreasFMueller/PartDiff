@@ -7,7 +7,7 @@
 \documentclass[a4paper,12pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{german}
+%\usepackage{german}
 \usepackage{times}
 \usepackage{geometry}
 \geometry{papersize={210mm,297mm},total={160mm,240mm},top=31mm,bindingoffset=15mm}
@@ -47,11 +47,11 @@ Partial Differential Equations}
 \begin{flushright}
 \vspace{30pt}
 \LARGE
-Andreas M"uller
+Andreas Müller
 \end{flushright}
 \vspace*{\stretch{2}}
 \begin{center}
-Hochschule f"ur Technik, Rapperswil, 2008-2018
+Hochschule für Technik, Rapperswil, 2008-2019
 \end{center}
 \end{titlepage}
 \hypersetup{
@@ -60,31 +60,29 @@ Hochschule f"ur Technik, Rapperswil, 2008-2018
     linkcolor=blue
 }
 \tableofcontents
-\newtheorem{satz}{Satz}[chapter]
+\newtheorem{satz}{Theorem}[chapter]
 \newtheorem{problem}[satz]{Problem}
-\newtheorem{hilfssatz}[satz]{Hilfssatz}
+\newtheorem{hilfssatz}[satz]{Lemma}
 \newtheorem{definition}[satz]{Definition}
-\newtheorem{annahme}[satz]{Annahme}
-\newtheorem{aufgabe}[satz]{Aufgabe}
-\newenvironment{beispiel}[1][Beispiel]{%
+\newtheorem{annahme}[satz]{Assumption}
+\newtheorem{aufgabe}[satz]{Task}
+\newenvironment{beispiel}[1][Example]{%
 \begin{proof}[#1]%
 \renewcommand{\qedsymbol}{$\bigcirc$}
 }{\end{proof}}
 \mainmatter
-\input a-intro.tex
-%\input beispiele.tex
-%\input klassifikation.tex
-%\input geometrie.tex
-%\input separation.tex
-%\input tsunami.tex
-%\input jacobi.tex
-%\input transformation.tex
-%\input pdgl2ord.tex
-%\input elliptisch.tex
-%\input parabolisch.tex
-%\input hyperbolisch.tex
+\input{0-intro.tex}
+\input{1-examples/examples.tex}
+\input{2-classification/classification.tex}
+\input{3-geometry/geometry.tex}
+\input{4-separation/separation.tex}
+\input{5-transformation/transformation.tex}
+\input{6-2ord/pdgl2ord.tex}
+\input{7-elliptic/elliptic.tex}
+\input{8-parabolic/parabolic.tex}
+\input{9-hyperbolic/hyperbolic.tex}
+\input{a-nonlinear/nonlinear.tex}
 \appendix
-%\input anhangsinh.tex
-%\input nichtlinear.tex
+\input{b-sinh/sinh.tex}
 \input lecturenotes.ind
 \end{document}

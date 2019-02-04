@@ -1,0 +1,87 @@
+%
+% classification.tex
+% 
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\chapter{Terminology and Notation
+\label{chapter:terminology and notation}}
+\lhead{Terminology and notaion}
+Partial differential equations are equations for an unknown function of
+several variables, linking values of the function to its partial
+derivatives.
+In this chapter, we write the function always as $u(x_1,\dots,x_n)$
+and the independent variables as $x_1,\dots,x_n$.
+\[
+u\colon \mathbb R^n\to\mathbb R:(x_1,\dots,x_n)\mapsto u(x_1,\dots,x_n).
+\]
+We will abbreviate points of the domain of definition of such a function
+as $x=(x_1,\dots,x_n)$.
+We have to clarify the following aspects:
+\begin{compactenum}
+\item What is a partial differential equation exactly?
+\item Where is it defined?
+\item How do we formulate boundary conditions and initial conditions?
+\item What types of partial equations are there?
+\end{compactenum}
+
+\input{2-classification/equations.tex}
+\input{2-classification/domains.tex}
+\input{2-classification/conditions.tex}
+\input{2-classification/solutions.tex}
+\input{2-classification/types.tex}
+\input{2-classification/notation.tex}
+
+\section{Summary}
+\begin{enumerate}
+\item
+A partial differential equation is a function $F$ of the independent
+variables, of the function $u$ and of the partial derivatives of $u$.
+\item
+The order of a partial differential equation is the order of the
+highest order partial derivative.
+\item
+In two dimensions, a partial differential equation of first order can
+always be described by a function $F(x,y,u,p,q)$.
+The variables $p$ and $q$ are place holders for the first partial
+derivatives of $u$:
+\[
+F\biggl(
+x,y, u,
+\frac{\partial u}{\partial x},
+\frac{\partial u}{\partial y}
+\biggr)=0.
+\]
+\item
+A partial differential equation can always be reduced to a system
+of partial differential equations of first order.
+(\ref{klassifikation:umwandlung}).
+\item
+Linear partial differential equations are have $F$ depend on function 
+$u$ and the derivatives only linearly.
+In two dimension, this means that $F(x,y,u,p,q)$ is linear in
+$u$, $p$ and $q$.
+\item
+A quasilinear partial differential equation is linear in all
+partial derivatives, but not necessarily in the function $u$ itself.
+(\ref{klassifikation:quasilinear}).
+\item
+The domain $\Omega$ where a differential equation is defined
+has a significant influence on the solution
+(\ref{klassifikation:gebiete}).
+\item
+The solution becomes well defined only after suitable boundary conditions
+have been specified
+(\ref{klassifikation:randbedingungen}). 
+\item
+For partial differential equations of first order we expect to specify
+values of the function on part of the boundary (Cauchy problem).
+\item
+For partial differential equations of second order we expect to
+specify values (Dirichlet boundary conditions)
+and or normal derivatives (Neumann boundary conditions).
+\item
+A solution of a partial differential equation is a function defined
+on the closure of the domain, that satisfies the differential equation
+in the domain and boundary conditions on the boundary.
+(\ref{klassifikation:loesung}).
+\end{enumerate}

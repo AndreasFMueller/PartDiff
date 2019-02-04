@@ -1,0 +1,316 @@
+%
+% standard.tex -- 
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Standard form}
+\rhead{Standard form}
+In the form (\ref{operator2ordnung})
+the differential equation is defined by the choice of coefficients
+$(a_{ij})$, $b_i$ and $c$.
+They can also be functions of the independen variables $x_i$.
+
+However, not all the coefficients are equally imporant in influencing
+the character of the solutions.
+A change of coordinates will also change the coefficients.
+We can expect that suitable transformations will be able to turn
+most coefficients to zero, so that only very few coefficients remain
+that then determine the character of the solutions.
+So the first step taken in this section is to find out how a change
+of coordinates changes the coefficients.
+The nexst step then is to find out what properties are invariant
+under coordinate transformation.
+
+\subsection{Linear transformation of the coordinates
+\label{lineare-transformation}}
+A coordinate transformation
+\[
+x_i=\sum_{j}t_{ij}x_j'
+\]
+transforms the derivates according to the chain rule
+\[
+\frac{\partial u}{\partial x'_j}
+=
+\sum_{i=1}^n
+\frac{\partial x_i}{\partial x'_j} \frac{\partial u}{\partial x_i}
+=
+\sum_{i=1}^nt_{ij}\frac{\partial u}{\partial x_i}.
+\]
+We can derive from this how the coefficients $b_i$ will be transformed.
+We denote the coefficients of the first derivatives in
+(\ref{operator2ordnung}) expressed in $x_i'$-coordinate by $b_i'$.
+In both coordinate systems, the first derivative terms have to agree, so
+we have
+\[
+\sum_{i=1}^n b_i\frac{\partial u}{\partial x_i}
+=
+\sum_{i=1}^n b_i'\frac{\partial u}{\partial x_i'}
+=
+\sum_{i,j=1}^n b_i't_{ji}\frac{\partial u}{\partial x_j}
+=
+\sum_{j,i=1}^n b_j't_{ij}\frac{\partial u}{\partial x_i}.
+\]
+But this only works if
+\[
+b_i = \sum_{j=1}^n t_{ij}b_j'.
+\]
+If we denote the matrix inverse to the matrix $(t_{ij})$ by $(t'_{ij})$,
+then rule that expresses the $b_i'$ by $b_i$ becomes
+\[
+b_j'=\sum_{i=1}^n t'_{ji}b_i.
+\]
+
+Let $T$ denote the matrix with coefficients $t_{ij}$ and let $b$
+denote the vector of coefficients $b_i$.
+Similarly for $t_{ij}'$ and $b_i'$.
+Then we can write the coordinate transformation in matrix form as
+\[
+b=Tb'
+\qquad\Rightarrow\qquad
+b'=T^{-1}b=T'b.
+\]
+
+In a similar fashion we can treat the second derivatives.
+First we compute the derivatives using the chain rule:
+\[
+\frac{\partial}{\partial x_i'}\frac{\partial}{\partial x_j'} u
+=
+\frac{\partial}{\partial x_i'}
+\sum_{k=1}^nt_{kj}\frac{\partial}{\partial x_k}u
+=
+\sum_{k,l=1}^nt_{li}t_{kj}\frac{\partial}{\partial x_l}\frac{\partial}{\partial x_k}u.
+\]
+In transformed coordinates, we must get the analogous expression
+with coefficients $a'_{ij}$, so we have
+\begin{align*}
+\sum_{i,j=1}^n
+a'_{ij}\frac{\partial}{\partial x_i'}\frac{\partial}{\partial x_j'} u
+&=
+\sum_{i,j=1}^n
+a_{ij}'
+\sum_{k,l=1}^n
+t_{li}t_{kj}\frac{\partial}{\partial x_l}\frac{\partial}{\partial x_k}u.
+=
+\sum_{k,l=1}^n
+\biggl(
+\sum_{i,j=1}^n
+a_{ij}'
+t_{li}t_{kj}
+\biggr)
+\frac{\partial}{\partial x_l}\frac{\partial}{\partial x_k}u
+\\
+&=
+\sum_{i,j=1}^n
+\underbrace{
+\biggl(
+\sum_{k,l=1}^n
+a_{lk}'
+t_{il}t_{jk}
+\biggr)}_{\textstyle a_{ij}}
+\frac{\partial}{\partial x_i}\frac{\partial}{\partial x_j}u.
+\end{align*}
+Thus the coefficients
+$a_{ij}$ are transformed according to
+\[
+a_{ij}=\sum_{k,l=1}^n t_{il}a_{lk}'t_{jk},
+\]
+or in matrix form
+\[
+A=TA'T^t
+\qquad\Rightarrow\qquad
+A'=T'AT'^t.
+\]
+These rules are of course only true if 
+$a_{ij}$ and $b_i$ are constants.
+Otherwise we get additional terms from the derivatives of the coefficients.
+
+\subsection{Influence of first order terms
+\label{einfluss-terme-erster-ordnung}}
+We want to show that the coefficients $b_i$ are of no importance to
+the question, where boundary values need to be specified in order
+for a particular linear partial differential equation problem
+of second order to be well posed.
+
+For an ordinary differential equation of second order, the first
+order terms describe damping, which leads to exponentially decaying
+amplitude.
+By enhancing the solution with the help of an exponential factor,
+we can counteract the damping and thus make clear whether we see
+exponentiall decaying solutions or oscillatory solutions.
+
+A similar statement holds true for the solution $u(x)$
+of the partial differential equation
+\eqref{operator2ordnung}.
+To find this statement, let's consider the function
+\[
+v(x)=e^{k\cdot x} u(x),
+\qquad
+k\cdot x = \sum_{i=1}^n k_ix_i \quad(\text{scalar product})
+\]
+and look for a partial differential equation for $v$.
+
+To this effect we compute the action of the part $M$ of the differential
+operator consisting only of the second order terms of $L$:
+\[
+M=\sum_{i,j=1}^n a_{ij}\frac{\partial^2}{\partial x_i\,\partial x_j}.
+\]
+It's action on $v$ is
+\begin{align*}
+Mv
+&=
+\sum_{i,j=1}^na_{ij}
+\frac{\partial}{\partial x_i}
+\frac{\partial}{\partial x_j} e^{k\cdot x}u
+\\
+&=
+e^{k\cdot x}
+\biggl(
+\sum_{i,j=1}^na_{ij}
+\frac{\partial^2 u}{\partial x_i\,\partial x_j}
++
+\sum_{i,j=1}^n a_{ij}k_i\frac{\partial u}{\partial x_j}
++
+\sum_{i,j=1}^n a_{ij}k_j\frac{\partial u}{\partial x_i}
++
+\sum_{i,j=1}^n a_{ij}k_ik_ju
+\biggr)
+\\
+&=
+e^{k\cdot x}
+\biggl(
+\sum_{i,j=1}^na_{ij}
+\frac{\partial^2 u}{\partial x_i\,\partial x_j}
++
+2\sum_{i,j=1}^n a_{ij}k_i\frac{\partial u}{\partial x_j}
++
+\sum_{i,j=1}^n a_{ij}k_ik_ju
+\biggr)
+\end{align*}
+In the last step we have used that we can rename the index of summation
+however we want.
+
+Now we use the freedom to choose the coefficients $k_i$.
+We want to ensure that the middle term exactly matches the
+first order derivatives in \eqref{operator2ordnung}.
+For this wee need
+\begin{equation}
+b_j=2\sum_{i=1}^n a_{ij}k_i
+\label{bequation}
+\end{equation}
+If the matrix $A$ with coefficients $a_{ij}$ is regular, we can
+solve this linear system of equations.
+We obtain
+\[
+k=
+{A^t}^{-1}
+\frac{b}2.
+\]
+If we write
+\[
+\alpha = \sum_{i,j=1}^n a_{ij}k_ik_j,
+\]
+it follows that the equation
+$Lu=f$ holds precisely when
+\begin{align}
+Mv
+&=
+e^{k\cdot x}\biggl(
+\sum_{i,j=1}^n a_{ij}\frac{\partial^2}{\partial x_i\,\partial x_j}u
++\sum_{i=1}^n b_i\frac{\partial u}{\partial x_i}+\alpha u
+\biggr)
+\\
+&=
+e^{k\cdot x}
+(L+\alpha -c)u
+=
+e^{k\cdot x}Lu + (\alpha -c)v
+\notag
+\\
+(M-(\alpha - c))v&=e^{k\cdot x}Lu=e^{k\cdot x}f
+\label{reducedoperator}
+\end{align}
+holds.
+The equation \eqref{operator2ordnung} has a solution $u$ precisely
+when function $v(x)=e^{k\cdot x}u(x)$  is a solution of the equation
+\eqref{reducedoperator}.
+The solution $u$ of the equation \eqref{operator2ordnung} in the point $x$
+is changed by a change in the boundary condition precisely when the solution
+$v$ of the equation \eqref{reducedoperator} also changes.
+
+In summary, if the matrix $a_{ij}$ is regular, or more generally if the
+system of equations \eqref{bequation} has a solution, then we can
+ignore the first order terms as far as the questions at the beginning
+of this chapter are concerned.
+
+If $a_{ij}$ is not regular, then the first order terms may not all
+be removed.
+
+\subsection{Symbol matrix}
+Because the second order derivatives do not depend on the order
+of differentiation,
+\[
+\frac{\partial^2}{\partial x_i\,\partial x_j}
+=
+\frac{\partial^2}{\partial x_j\,\partial x_i},
+\]
+the coeficients are 
+$a_{ij}$ and $a_{ji}$ are interdependent.
+In particular, we can additionally require that $a_{ij}=a_{ji}$,
+which means that the matrix $A$ be symmetric.
+
+\begin{definition}
+If $L$ is the linear partial differential operator of second order
+defined by
+\[
+Lu=\sum_{i,j=1}^na_{ij}\frac{\partial u}{\partial x_i\,\partial x_j},
+\]
+then the matrix $(a_{ij})$ is called the symbol of the operator
+\end{definition}
+
+In section~\ref{einfluss-terme-erster-ordnung} we have seen how to
+transform the equation to make the first order derivatives to
+disappear if the equation
+\[
+Ak=\frac{b}2
+\]
+has a solution.
+If $A$ is not regular, then $b$ can be removed if and only if $b$ is in 
+the image of the matrix $A$.
+Vectors orthognal to the image can be transformed away.
+If $b\perp \operatorname{im} A$, then 
+\[
+b\cdot Ax=(A^tb)\cdot x\;\forall x
+\qquad\Rightarrow\qquad
+Ab=0,
+\]
+a vector $b$ in the kernel of $A$ cannot be removed.
+
+\begin{beispiel}
+As an example consider the operator
+\[
+L
+=
+\sum_{i=2}^n\frac{\partial^2}{\partial x_i^2}
++
+\sum_{i=1}^nb_i\frac{\partial}{\partial x_i}
+\]
+with the symbol matrix
+\[
+A=\begin{pmatrix}
+      0&      0& \dots&0\\
+      0&      1& \dots&0\\
+\vdots &\vdots &\ddots&\vdots\\
+      0&      0&\dots &1
+\end{pmatrix}
+\]
+The vector $e_1$ is in the kernel of $A$, so the first order derivative
+with respect to $x_1$ cannot be transformed away.
+The simplest form for the operator that we can achieve is thus
+\[
+\sum_{i=2}^n\frac{\partial^2}{\partial x_i^2}
++
+\frac{\partial}{\partial x_1}.
+\]
+This is the operator we have seen in the heat equation.
+\end{beispiel}
+

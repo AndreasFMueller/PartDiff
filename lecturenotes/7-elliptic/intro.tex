@@ -1,0 +1,77 @@
+%
+% intro.tex -- 
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Introduction}
+\rhead{Introduction}
+In previous chapters, the differential equation were defined an
+very specific domains, e.~g.~rectangles, disk, strips, half planes or
+the whole of $\mathbb R^n$.
+However, the applications demand that elliptic partial differential
+equations can be solved on arbitrary domains.
+This will no longer be possible manually or in closed for, but at
+least we can decide whether the solution is uniquely determined.
+Without this assurance, we can not expect a numerical method to
+return a stable solution.
+
+\subsection{Laplace equation}
+To better understand the properties of solutions of elliptic linear
+partial differetnial equations, we study the Laplace equation
+on a domain $\Omega\subset\mathbb R^n$
+\begin{align}
+\Delta u&=f &&\text{in $\Omega$}
+\label{elliptisch:laplaceequation}
+\\
+\intertext{with Dirichlet boundary conditions}
+u&=g && \text{on $\partial\Omega$},
+\label{dirichletrandbedingung}
+\\
+\intertext{Neumann boundary conditions}
+\frac{\partial u}{\partial n}&=g && \text{auf $\partial\Omega$}
+\\
+\intertext{or mixed boundary conditions}
+\alpha u + \beta\frac{\partial u}{\partial n}&=g && \text{on $\partial\Omega$.}
+\label{elliptisch:gemischt}
+\end{align}
+A soluton of the is a twice continuously differentiable function
+on $\Omega$ which can be continuously extended to $\bar\Omega$
+and satisfies the boundary conditions on the boundary $\partial\Omega$.
+For simplicity we consider only Dirichlet boundary conditions
+\eqref{dirichletrandbedingung}.
+
+From the general theory of linear partial differential equations
+we derive that we have to proceed as follows to get a solution:
+\begin{enumerate}
+\item
+First we need a particular solution $u_p$ of the Poisson equation
+\eqref{elliptisch:laplaceequation}.
+\item
+Given $u_p$ the problem is reduced to find a solution
+Mit $u_p$ reduziert sich das Problem darauf, eine Lösung
+$u_r=u-u_p$ of the homogeneous equation $\Delta u_r=0$ which
+satisfies the boundary condition
+\[
+u_r=g-u_p
+\]
+on $\partial\Omega$.
+\item
+Additional soluions of the problem differ from the solution
+just found by a function $u_h$ which satisfies
+$\Delta u_h=0$ in $\Omega$ and $u_h=0$ on $\partial\Omega$.
+\end{enumerate}
+We will show in this chapter that the solutions of such problems
+are unique and that the only possible solution is $v=0$.
+In addition we will present formulae for particular solutions as well
+als for solutions of the homogeneous problem.
+
+\subsection{Harmonic functions}
+\index{harmonic functions}
+Considering the importance of the solutions of the homogeneous problem
+we give them a special name:
+
+\begin{definition}
+A twice constinuously differentiable function $u$ on the domain $\Omega$
+is called harmonic if $\Delta u=0$.
+\end{definition}
+

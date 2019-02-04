@@ -1,0 +1,44 @@
+%
+% pdgl2ord.tex -- Klassifikation linearer PDGL zweiter Ordnung
+%
+% (c) 2016 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\chapter{Partial differential equations of second order\label{chapter-2ordnung}}
+\lhead{Second Order partial differential equations}
+Linear partial differential equations of second order have the form
+\begin{equation}
+\sum_{i,j=1}^na_{ij}\frac{\partial^2}{\partial x_i\,\partial x_j} u
++
+\sum_{i=1}^nb_i\frac{\partial}{\partial x_i} u+cu=f.
+\label{operator2ordnung}
+\end{equation}
+All the examples in chapter
+\ref{chapter-beispiele}
+match this template.
+In spite of the superficial similarities, the solutions to these problems
+exhibited completely different behaviour.
+der Beispielgleichungen grundsätzlich verschiedenes Verhalten.
+\begin{itemize}
+\item The wave equation has solutions that propagate with finite 
+velocity.
+A change in initial conditions is noticed only after some delay in more
+distant points of the domain.
+\item
+Changes in the boundary conditions of the heat equation affect the solution
+for later times instantaneously, they propagate with infinite speed through
+the domain, but they don't affect the past.
+\item
+Changing the initial conditions of the poisson problem
+$\Delta \varphi=f$,
+changes the solution immediately everyhwere in the domain.
+\end{itemize}
+In this chapter we will classify partial differential equations of
+second order.
+The goal is to show that any linear partial differential differential
+equation of second order falls into one of those three categories.
+
+\input{6-2ord/standard.tex}
+\input{6-2ord/types.tex}
+\input{6-2ord/canonical.tex}
+\input{6-2ord/splitting.tex}
+

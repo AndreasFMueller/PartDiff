@@ -1,0 +1,84 @@
+%
+% lpde.tex -- why linear pdes?
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{Separation for linear partial differential equations}
+The base idea of the separation method produces a family of functions
+that depend an some integration and separation constants.
+On the boundary we are usually given some arbitrary functions.
+In general it will be impossible to tune these few constants to
+values the reproduce the boundary functions.
+This basic version of the separation method thus is incapable of
+solving a general partial differential equation due to the lack
+of flexibility in the set of solutions found.
+
+This problem changes if different solutions can be combined into new ones.
+Linear combinations of solutions introduce a large set of additional
+parameters to tune the solution.
+In particular, Fourier theory shows that linear combinations of
+basic functions can be tuned to approximate just about any periodic
+function.
+However, linear combinations of solutions are in general no longer
+solutions the equation, except for linear partial differential
+equations.
+This is expressed in the following theorem.
+
+\begin{satz}
+If $u_1$ and $u_2$
+are solutions of a homogeneous linear partial differential equation,
+then $u_1+u_2$ and $\lambda u_1$ with $\lambda\in\mathbb R$ are also
+solutions.
+\end{satz}
+
+\begin{proof}
+The differential equation
+\[
+F(x_1,\dots,x_2,u,\frac{\partial u}{\partial x_1},\dots)=0
+\]
+is linear in $u$ and its derivatives, so we can expand sums and
+pull factors from inside $F$:
+\begin{align*}
+F(x_1,\dots,x_2,u_1+u_2,\frac{\partial u_1}{\partial x_1}+\frac{\partial u_2}{\partial x_1},\dots)
+&=
+F(x_1,\dots,x_2,u_1,\frac{\partial u_1}{\partial x_1},\dots)
+\\
+&+
+F(x_1,\dots,x_2,u_2,\frac{\partial u_2}{\partial x_1},\dots)=0
+\\
+F(x_1,\dots,x_2,\lambda u_1,\frac{\partial \lambda u_1}{\partial x_1},\dots)
+&=
+\lambda
+F(x_1,\dots,x_2,u_1,\frac{\partial u_1}{\partial x_1},\dots)
+=0
+\end{align*}
+Thus linear combinations of $u_1$ and $u_2$ are solutions too.
+\end{proof}
+
+Linear cominations allow us to first find as many different solutions
+$u_1$, $u_2$, $u_3,\dots$ and then to use suitable coefficients $a_k$
+to combine them into a solution
+\[
+u(x)=\sum_{i=1}^\infty a_ku_k
+\]
+that also satisfies the boundary conditions.
+
+Inhomogeneous linear partial differential equations can be solved using
+this method too.
+As pointed out in chapter~\ref{chapter:terminology and notation},
+we first have to find a particular soltion
+$u_p$ which solves the inhomogeneous differential equation independently
+of any boundary conditions.
+The separation method, can helpful for this too.
+Then the problem is reduced to finding a solutions $u_h$ to the homogeneous
+equations with boundary condition $g-u_p$ on $\partial\Omega$.
+Using the separation method, we can build up $u_h$ as a linear combination
+of solutions.
+
+The coefficients $a_k$ for the linear combination often lead us into
+Fourier theory or some generalization of it.
+Such partial solutions often have immediate physical significance.
+In mechanical or electrical engineering they appear as vibration modes,
+in quantum mechanics they are energy states.
+
+

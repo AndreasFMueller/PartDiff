@@ -1,0 +1,48 @@
+Die reelle Funktion $u(x,y)$ ist auf dem Quadrat
+\[
+\Omega = [0, 1] \times [0,1]
+\]
+definiert. Sie erfüllt im Innern von $\Omega$ die Poissongleichung
+\[
+ \Delta u(x,y) = 1
+\]
+und auf dem Rand von $\Omega$ die Bedingungen
+\[
+u(x,y) = 0.
+\]
+
+\vspace{2mm}
+
+Gesucht ist eine Approximation der Werte von $u$ in den vier Punkten von $\Omega$
+\[
+(1/3,1/3), \qquad  (2/3,1/3), \qquad (1/3,2/3), \qquad  (2/3,2/3).
+\]
+Benutzen Sie hierzu geeignete Finite Volumina.  
+
+\begin{loesung}
+Mit 
+\[
+\tilde u_1 = \tilde u(1/3,1/3),
+\quad
+\tilde u_2 = \tilde u(2/3,1/3),
+\quad
+\tilde u_3 = \tilde u(1/3,2/3),
+\quad
+\tilde u_4 = \tilde u(1/3,2/3), 
+\]
+sowie 
+\[
+A = \left[\begin{array}{rrrr} 
+-4 & 1  & 1 & 0 \\
+ 1 & -4 & 0 & 1 \\
+ 1 & 0 & -4 & 1 \\ 
+ 0 & 1 & 1  & -4 \end{array}\right]
+\qquad
+\text{und}
+\qquad
+\underline{b} =  \left(\begin{array}{r} 1/6 \\ 1/6 \\ 1/6 \\ 1/6 \end{array}\right) 
+\]
+gilt $A \cdot \underline{\tilde u} = \underline{b}$.
+Es folgt $\underline{\tilde u} = (-1/12, -1/12, -1/12, -1/12).$
+\end{loesung}
+

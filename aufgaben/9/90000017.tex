@@ -1,23 +1,22 @@
 Betrachten Sie die Differentialgleichung
 \begin{equation}
-\cos x
 \frac{\partial^2 u}{\partial x^2}
 +
-2\sin x
+2
 \frac{\partial^2 u}{\partial x\partial y}
 -
-\cos x
+e^{-x}
 \frac{\partial^2 u}{\partial y^2}
 =
 0
-\label{90000016:dgl}
+\label{90000017:dgl}
 \end{equation}
 auf dem Gebiet
 \begin{equation}
 \Omega
 =
 \left\{(x,y)\,\left|\, 0<x<1\wedge 0 <y<1\right.\right\}
-\label{90000016:gebiet}
+\label{90000017:gebiet}
 \end{equation}
 mit den Randbedingungen
 \[
@@ -25,7 +24,7 @@ u(x,0) = f(x)
 \qquad\text{und}\qquad
 u(0,y) = g(y)
 \]
-mit glatten Funktionen $f(x)$ und $g(y)$.
+mit glatten Funktionen $f(x)$ und $g(y)$, die ausserdem $f(0)=g(0)$ erfüllen.
 Ist das Problem gut gestellt?
 
 \begin{hinweis}
@@ -41,89 +40,74 @@ ob das Problem gut gestellt ist.
 \begin{figure}
 \centering
 \includeagraphics[]{char.pdf}
-\caption{Charakteristiken der Differentialgleichung~\eqref{90000016:dgl}
+\caption{Charakteristiken der Differentialgleichung~\eqref{90000017:dgl}
 im Gebiet $\Omega$.
 Die grünen Charakteristiken überdecken nicht das ganze Gebiet.
-\label{90000016:char}}
+\label{90000017:char}}
 \end{figure}
 Das Symbol des Differentialoperators  ist die Matrix
 \[
 A
 =
-\begin{pmatrix} \cos x & \sin x\\ \sin x & -\cos x \end{pmatrix}
+\begin{pmatrix} 1 & 1\\ 1 & -e^{-x} \end{pmatrix}
 \qquad\Rightarrow\qquad
 \det A
 =
--\cos^2 x -\sin^2 x = -1 < 0,
+-1 -e^{-x} < -1 < 0,
 \]
 insbesondere ist der Operator hyperbolisch.
 
 Um zu bestimmen, ob das Problem gut gestellt ist, müssen wir daher die
-Charaketeristiken bestimmen.
+Charakteristiken bestimmen.
 Beide Charakteristikenscharen, die von den Randwerten ausgehen, müssen das
 ganze Gebiet überdecken, damit das Problem gut gestellt ist.
 
 Die Charakteristiken erfüllen die Differentialgleichung
 \begin{align*}
-\cos x \cdot \dot y^2
+\dot y^2
 -
-2\sin x\cdot \dot x \dot y
+2 \cdot \dot x \dot y
 -
-\cos x \cdot \dot x^2
+e^{-x}\cdot \dot x^2
 &=
 0
 \\
 (y')^2
--2\tan x\cdot y'
--1
+-2\cdot y'
+-e^{-x} 
 =
 0
 \end{align*}
 Diese Gleichung kann mit der Lösungsformel für quadratische Gleichungen
 aufgelöst werden, man findet
 \begin{equation}
-y' = \tan x\pm \sqrt{\tan^2 x+1}.
-\label{90000016:ableitung}
+y' = 1 \pm \sqrt{1+e^{-x}}.
+\label{90000017:ableitung}
 \end{equation}
 Daraus kann man ablesen, dass die Steigung der Charakteristiken nicht von
 $y$ abhängt, sondern nur von $x$.
+Zu jedem der Vorzeichen in \eqref{90000017:ableitung} gibt es eine Schar
+von Charakteristiken, die sich nur durch eine Verschiebung in $y$-Richtung
+unterscheiden.
 
-Für das positive Vorzeichen in \eqref{90000016:ableitung} ist die
+Für das positive Vorzeichen in \eqref{90000017:ableitung} ist die
 Ableitung $y' > 0$, für das negative Vorzeichen ist $y'<0$.
 Die eine Schar von Charakteristiken verläuft daher von links oben
 nach rechts unten, die andere Schar verläuft von links unten nach
 rechts oben.
-Der Verlauf der Charakteristiken ist in Abbildung~\ref{90000016:char}
+Der Verlauf der Charakteristiken ist in Abbildung~\ref{90000017:char}
 dargestellt.
 
-Die fallenden Charakteristiken (in Abbildung~\ref{90000016:char} grün
+Die fallenden Charakteristiken (in Abbildung~\ref{90000017:char} grün
 dargestellt), die vom linken Rand des Gebietes
-ausgehen, können nicht das ganze Gebiet überdecken, somit ist das
+ausgehen, können nicht das ganze Gebiet überdecken, das hellgrün
+hinterlegte Teilgebiet wird nicht abgedeckt, somit ist das
 Problem nicht gut gestellt.
 \end{loesung}
 
 \begin{diskussion}
-Die Abbildung~\ref{90000016:char} suggeriert, dass die beiden
-Charakteristiken-Scharen orthogonal sind.
-Schreiben wir
-\[
-y'_\pm(x)
-=
-\tan x\pm \sqrt{\tan^2 x+1},
-\]
-dann ist tatsächlich das Produkt der beiden Steigungen
-\begin{align*}
-y_+'(x)\cdot y'_-(x)
-&=
-(\tan x + \sqrt{\tan^2 x+1})
-(\tan x - \sqrt{\tan^2 x+1})
-=
-\tan^2x - (\tan^2x+1)
-=
--1.
-\end{align*}
-Diese Bedingung ist gleichbedeutend damit, dass die beiden Kurven
-orthogonal sind.
+Wenn man $\Omega$ auf den ganzen ersten Quadranten ausdehnt, überdecken
+die Charakteristiken das ganze Gebiet.
 \end{diskussion}
 
 \begin{bewertung}

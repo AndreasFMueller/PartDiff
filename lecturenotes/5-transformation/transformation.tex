@@ -1,0 +1,41 @@
+%
+% transformation.tex -- 
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\chapter{Transformation}
+\lhead{Transformation}
+The Laplace transform famously provides a very successful method
+to solve initial value problems for ordinary linear differential equations.
+On the other hand, our most successful methods to solve partial differential
+equations have always reduced the problem to ordinary differential
+equations and solved them.
+So there is some hope that a suitable extension of the method of the
+Laplace transform should also help us solve partial differential
+equations.
+This chapter shows how integral transforms like the Laplace transform,
+Fourier transform or Fourier series can be made useful in solving
+partial differential equations.
+
+\input{5-transformation/intro.tex}
+\input{5-transformation/laplace.tex}
+\input{5-transformation/heat.tex}
+\input{5-transformation/diffusion.tex}
+\input{5-transformation/domains.tex}
+
+\section{Summary}
+\begin{enumerate}
+\item
+The transform from functions to Fourier series converts
+partial derivatives into algebraic terms and partial differential
+equations into ordinary differential equations for the
+fourier coefficients.
+\item
+Integral transforms have the potential of converting partial differential
+equations into a family of partial differential equations with fewer
+variables or ordinary differential equations.
+\item
+Integral transforms and reverse transforms can deliver formulae for the
+solutions of partial differential equations and in addition answer
+the question, for which boundary conditions the problem is well posed.
+\end{enumerate}

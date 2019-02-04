@@ -1,0 +1,51 @@
+%
+% diffusion.tex -- 
+%
+% (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
+%
+\section{Diffusion}
+\rhead{Diffusion}
+We now consider the diffusion equation in the half plane
+$(t,x)\in[0,\infty)\times \mathbb R$
+\[
+\partial_tu-\partial_x^2u=f(t,x)
+\]
+with initial condition
+\[
+u(0,x)=g(x)\quad \forall x\in\mathbb R.
+\]
+We apply the transforms suited to the particular domain of definition.
+
+\subsection{Fourier transform}
+The Fourier transform or a function $g(x)$ defined on $\mathbb R$ is
+defined as
+\[
+\hat g(k)=\frac1{\sqrt{2\pi}}\int_{\mathbb R}g(x)e^{-ikx}\,dx.
+\]
+The Fourier transform turns the diffusion equation and the initial
+condition into
+\begin{align*}
+\partial_t \hat u(t,k)+k^2\hat u(t,k)&=\hat f(t,k)\\
+\hat u(0,k)&=\hat g(k)
+\end{align*}
+
+\subsection{Laplace transform}
+In $t$-direction, we apply the Laplace transform to get
+\[
+-\hat u(0,k)+(s+k^2){\cal L}\hat u(s,k)={\cal L}\hat f(s,k)
+\]
+This equation can be solved for ${\cal L}\hat u(s,k)$:
+\[
+{\cal L}\hat u(s,k)=\frac{\hat u(0,k)+{\cal L}\hat f(s,k)}{s+k^2}
+\]
+
+\subsection{Solution of the initial value problem}
+The reverse transforms can now be used to recover the solution
+\begin{align*}
+\hat u(t,k)&={\cal L}^{-1}
+\frac{\hat u(0,k)+{\cal L}\hat f(s,k)}{s+k^2}
+\\
+u(t,x)&={\cal F}^{-1}{\cal L}^{-1}
+\left(\frac{\hat u(0,k)+{\cal L}\hat f(s,k)}{s+k^2}\right)(t,x)
+\end{align*}
+

@@ -1,0 +1,52 @@
+Die reelle Funktion $u(x)$ ist auf dem Intervall
+\[
+\Omega = [0, 1]
+\]
+definiert. Sie erfüllt im Innern von $\Omega$ die Differentialgleichung 
+\[
+u''(x) + 1 = 0
+\]
+und auf dem Rand von $\Omega$ die Randbedingungen 
+\[
+u(0) = 0,
+\quad
+u(1) = 0.
+\]
+Gesucht ist eine Approximationsfunktion $\tilde u(x)$ für $u(x)$.
+
+Benutzen Sie Finite Elemente. Benutzen Sie die Maschen
+\[
+[0,0.25],
+\quad
+[0.25, 0.75],
+\quad
+[0.75, 1]
+\]
+und lineare Formfunktionen.
+
+\begin{loesung}
+Mit 
+\[
+R
+=
+\left[\begin{array}{rr} -6 & 2 \\ 2 & -6 \end{array}\right]
+\qquad
+\text{und}
+\qquad
+\underline{b} =  \left(\begin{array}{r} 3/8 \\ 3/8 \end{array}\right)
+\]
+gilt  
+\[
+A \cdot \underline{\tilde u} = \underline{b}.
+\]
+Hierbei ist
+\[
+\underline{\tilde u} \approx (u(1/4), u(3/4)).
+\]
+Es folgt 
+\[
+\underline{\tilde u} = (-3/32, -3/32).
+\qedhere
+\]
+\end{loesung}
+

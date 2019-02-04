@@ -1,0 +1,103 @@
+%
+% summary.tex -- XXX
+%
+% (c) 2019 Prof Dr Andreas Mueller
+%
+\section{The Separation Algorithm}
+From these examples, we can derive a more general description of the
+separation method.
+A partial differential equation with independent variables
+$x_1,\dots,x_n$ is to be decomposed into two
+differential equations with fewer variables.
+This decomposition is repeated until only one variable remains,
+at which point we have an ordinary differential equation.
+Some of the boundary conditions become boundary conditions for
+these simpler differential equations.
+
+In order to be able to satisfy the remaining boundary conditions,
+we need to be able to form linear combinations, which only works
+for linear partial differential equations.
+In the following, we therefore assume that the partial differential
+equation is linear.
+
+We want to separate the variable $x_1$ in a partial differential
+equation with independent variables $x_1,\dots,x_n$.
+We proceed as follows.
+\begin{enumerate}
+\item
+Choose an ansatz for the solution $u$ of the partial differential equation
+in the form of a product:
+\[
+u(x_1,\dots,x_n)=X_1(x_1)u_1(x_2,\dots,x_n).
+\]
+\item
+Substitute the ansatz into the differential equation.
+\item
+With some luck, the terms involving $x_1$ can be brought to
+left hand side and all terms involving the other variables to
+the right hand side.
+It is acceptable to device by $u$ because we assume that $u$ is not
+identically $u$ and such a solution will only vanish on a set of
+volumen $0$, everywhere else it will satisfy the equation.
+The equation now has the form
+\[
+F(x_1,X_1,X_1',\dots,X_1^{(n)})
+=
+G(x_2,\dots,x_n,u_1,\partial_2u_1,\dots\partial_nu_n,\dots).
+\]
+\item
+Since the left hand side only depends on $x_1$, the right hand side
+only on $x_2,\dots,x_n$, both sides must be constant.
+This splits the equation into two simpler equations
+\begin{equation}
+\begin{aligned}
+F(x_1, X_1,X_1',\dots, X_1^{(n)})&=k\\
+G(x_2,\dots,x_n,u_1,\partial_2u_1,\dots\partial_nu_n,\dots)&=k,
+\end{aligned}
+\label{separiert}
+\end{equation}
+where $k$ is a new constant.
+Some homogeneous boundary conditions may be used at this point to
+restrict the set of valid $k$ values.
+
+The first of these equations is an ordinary differential equation.
+The second is an ordinary differential equation if $n=2$, otherwise
+the process can be repeated to break the equation further down until
+only ordinary equations remain.
+
+\item
+If
+$X_1(k,x_1)$ and $u_1(k,x_2,\dots,x_n)$ are solutions of \eqref{separiert},
+then
+\[
+u_k(x_1,\dots,x_n)=X_1(k,x_1)u_1(k,x_2,\dots,x_n)
+\]
+are solutions of the original partial differential equation.
+The general solution then is the linear combination
+\[
+u(x_1,\dots,x_n)=
+\sum_{k}
+a_k
+u_k(x_1,\dots,x_n)=X_1(k,x_1)u_1(k,x_2,\dots,x_n),
+\]
+where the sum is taken over all possible $k$ values.
+\item
+To satisfy the boundary conditions, the coefficients $a_k$ now need to
+be determined.
+\end{enumerate}
+The method may break down in the following places:
+\begin{itemize}
+\item
+In step 3 it is assumed that separation is possible.
+This is not automatically guaranteed, but in many practical cases it
+is possible to force separability by choosing a suitable coordinate
+system.
+\item
+In step 6 it is assumed that the boundary conditions can be
+represented as a linear combination of the boundary values of
+the functions $u_k$.
+This may turn out to be a difficult problem, as indicated by the
+fact that we have to summon the highly nontrivial Fourier theory
+for our examples.
+\end{itemize}
+
