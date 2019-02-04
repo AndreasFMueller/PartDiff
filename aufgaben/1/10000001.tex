@@ -1,20 +1,20 @@
-Sei $f(x)$ eine zweimal stetig differenzierbare Funktion auf $\mathbb R$.
-Rechnen Sie nach, dass die Funktionen
+Let $f(x)$ be a twice continuously differentiable function on $\mathbb R$.
+Check that the functions
 \[
 u_+(t,x)=f(x+at)
 \qquad
-\text{und}
+\text{and}
 \qquad
 u_-(t,x)=f(x-at)
 \]
-Lösungen der Wellengleichung
+are solutions of the wave equation
 \[
-\frac{\partial^2 u}{\partial x^2}=\frac1{a^2}\frac{\partial^2 u}{\partial t^2}
+\frac{\partial^2 u}{\partial x^2}=\frac1{a^2}\frac{\partial^2 u}{\partial t^2}.
 \]
-sind.
 
 \begin{loesung}
-Man muss die partiellen Ableitungen von $f(x-at)$ berechnen:
+We need the partial derivatives of each of the functions
+$f(x\pm at)$, which we compute as follows:
 \begin{align*}
 \frac{\partial}{\partial x}u_{\pm}(t,x)
 &=f'(x\pm at)
@@ -26,14 +26,15 @@ Man muss die partiellen Ableitungen von $f(x-at)$ berechnen:
 &=\pm af'(x\pm at)
 \\
 \frac{\partial^2}{\partial t^2}u_{\pm}(t,x)
-&=a^2f''(x\pm at)
+&=a^2f''(x\pm at).
 \end{align*}
-Setzt man dies in die Wellengleichung ein, findet man
+Substituting that into the wave equation gives
 \[
 \frac{\partial^2}{\partial x^2}u_{\pm}(t,x)
 -\frac1{a^2}\frac{\partial^2}{\partial t^2}u_{\pm}(t,x)
 =f''(x\pm at)
--\frac1{a^2} a^2f''(x\pm at)=0
+-\frac1{a^2} a^2f''(x\pm at)=0,
 \]
-somit sind die $u_{\pm}(t,x)$ Lösungen der Wellengleichung.
+thus the functions $u_{\pm}(t,x)$ are both solutions of the
+wave equation.
 \end{loesung}
