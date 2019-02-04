@@ -1,41 +1,44 @@
 %
-% hyp.tex -- XXX
+% hyp.tex -- 
 %
 % (c) 2015 Prof Dr Andreas Müller, Hochschule Rapperswil
 %
-\section{Hyperbolische Funktionen}
+\section{Hyperbolic functions}
+\lhead{Hyperbolic functions}
 \begin{figure}
 \centering
 \includegraphics{../common/images/hf-1.pdf}
-\caption{Graphen der Funktionen $x\mapsto\cosh x$ (blau)
-und $x\mapsto\sinh x$ (rot)
+\caption{Graphs of the functions 
+$x\mapsto\cosh x$ (blue)
+and $x\mapsto\sinh x$ (red)
 \label{hyp:graphen}}
 \end{figure}
-Die hyperbolischen Funktionen sind durch
+The hyperbolic function are defined as
 \[
 \sinh x =\frac{e^x-e^{-x}}2
-\qquad\text{und}\qquad
-\cosh x = \frac{e^x+e^{-x}}2
+\qquad\text{and}\qquad
+\cosh x = \frac{e^x+e^{-x}}2.
 \]
-definiert.
-Abbildung~\ref{hyp:graphen} zeigt die Graphen der beiden Funktionen.
-Auf den ersten Blick haben diese Definitionen nichts mit den bekannten
-trigonometrischen Funktionen zu tun, die Namen sinus hyperbolicus für
-$\sinh$ und cosinus hyperbolicus für $\cosh$ scheinen ungerechtfertigt.
+Figure~\ref{hyp:graphen} shows graphs of those two functions.
+At first sight these definitions have nothing to do with trigonometric
+functions, the names {\em sinus hyperbolicus} for $\sinh x$ and
+{\em cosinus hyperbolicus} for $\cosh x$ seem unjustified.
 
-\subsection{Komplexe Definition der trigonometrischen Funktionen}
-Aus der Euler-Formel
+\subsection{Complex definition of the trigonometric functions}
+From the Euler-formula
 \[
 e^{it}=\cos t+i\sin t
 \]
-lässt sich auch eine Definition der trigonometrischen Funktionen
-ableiten. Dazu wendet man die Euler-Formel auf $t$ und $-t$ an:
+a complex definition for the trigonometric functions can be derived
+as follows.
+Using the Euler-formula for $t$ and $-t$ we get
 \begin{align*}
 \cos t+i\sin t&=e^{it}\\
-\cos t-i\sin t&=e^{-it}
+\cos t-i\sin t&=e^{-it}.
 \end{align*}
-Dieses Gleichungssystem kann man mit der Additionsmethode nach den
-Funktionen $\cos t$ und $\sin t$ auflösen. Man findet:
+This is a system of linear equations which can be solved
+for the functions $\cos t$ and $\sin t$ using the addition method.
+We find
 \begin{align*}
 \cos t
 &=
@@ -43,78 +46,77 @@ Funktionen $\cos t$ und $\sin t$ auflösen. Man findet:
 &
 \sin t
 &=
-\frac{e^{it}-e^{-it}}{2i}
+\frac{e^{it}-e^{-it}}{2i}.
 \end{align*}
-Die trigonometrischen Funktionen können also auf eine Art definiert werden,
-die der Definition der hyperbolischen Funktionen völlig analog ist.
-Der einzige Unterschied ist ein Faktor $i$ hie und da.
-Wir erwarten daher, dass die hyperbolischen Funktionen Eigenschaften
-haben, die den Eigenschaften der trigonometrischen Funktionen völlig
-analog sind.
-Mehr als ein verändertes Vorzeichen hie und da erwarten wir nicht.
+The trigonometric functions can thus be defined in a way very similar
+to the hyperbolic functions.
+The only difference is a factor $i$ here and there.
+Thus it is reasonable to expect that the hyperbolic functions
+have many properties completely analogous to properties of the
+trigonometric functions, with may be a sign change here and there.
 
-
-\subsection{Geometrie}
-Die trigonometrischen Funktionen entstanden aus dem Bedürfnis, 
-rechtwinklige Dreiecke berechnen zu können.
-Abstrahiert man diese bis auf Ähnlichkeit, geht es nur noch um rechtwinklige
-Dreiecke, die mindestens eine Seite der Länge $1$ haben.
-Diese kann man auf die gewohnte Art am Einheitskreis illustrieren.
-Die Beziehung 
+\subsection{Geometry}
+The trigonometric functions stem from the desire to compute right
+triangles.
+More precisely, the trigonometric functions compute right triangles
+where one side has length $1$.
+This is usually illustrated by identifying the values of the
+trigonometric functions as line segments in a unit circle.
+This is possible thanks to the well known identity
 \[
 \sin^2t+\cos^2t=1
 \]
-für die trigonometrischen Funktionen erlauben dann, den Einheitskreis als
+which implies that the function
 \[
 t\mapsto (\cos t,\sin t)
 \]
-zu parametrisieren.
+parametrizes the unit circle.
 
 \begin{figure}
 \centering
 \includegraphics{../common/images/hf-2.pdf}
-\caption{Die Kurve mit der Parameterdarstellung
-$t\mapsto (\cosh t, \sinh t)$ ist eine ``Einheits-Hyperbel'' (rot) mit 
-Asymptoten $y=\pm x$ (blau).
+\caption{The curve with the parametrization
+$t\mapsto (\cosh t, \sinh t)$ is a ``unit hyperbola'' (red) with 
+asymptotes
+$y=\pm x$ (blue).
 \label{anhang:hyperbel}}
 \end{figure}
-Die hyperbolischen Funktionen parametrisieren in der Form
+The hyperbolic functions define a map
 \[
 t\mapsto (\cosh t, \sinh t)
 \]
-natürlich auch eine Kurve in der Ebene.
-Um herauszufinden, welcher Kurve das sein könnte, berechnen wir die 
-Quadrate der hyperbolischen Funktionen:
+which is of course in the plane.
+To find out what type of curve this could be, we compute the
+squares of these functions:
 \begin{align}
 \sinh^2 t&=\frac14(e^{2t}-2+e^{-2t}),
 \\
 \cosh^2 t&=\frac14(e^{2t}+2+e^{-2t}).
 \label{hyp:definition}
 \end{align}
-Sie stimmen bis auf den mittleren Term überein.
-Die Differenz ist 
+Up to the middle term, the are identical.
+Their difference is
 \[
 \cosh^2t - \sinh^2t=1,
 \]
-die hyperbolischen Funktionen $x=\cosh t$ und $y=\sinh t$
-beschreiben also eine Kurve mit der Gleichung
+so the hyperbolic functions describe a curve with the equation
 \[
 x^2-y^2=1.
 \]
-Dies ist eine Hyperbel mit Asymptoten $y=\pm x$
-(Abbildung~\ref{anhang:hyperbel}).
-Damit ist die Bezeichnung als hyperbolische Funktionen gerechtfertigt.
+This is a hyperbola with asymptotes $y=\pm x$
+(figure~\ref{anhang:hyperbel}).
+This justifies that we call these functions hyperbolic functions.
 
-\subsection{Additionstheoreme}
-Gibt es auch ein Additionstheorem für die hyperbolischen Funktionen?
-Wenn die Analogie zu den trigonometrischen Funktionen durchführbar ist,
-dann müssten die Additionstheoreme ungefähr die Form
+\subsection{Addition theorems}
+Is there an addition formular for hyperbolic functions?
+If the analogy to trigonometric functions works, we would expect 
+formulae like
 \begin{align*}
 \sinh(a+b)&=\sinh a\cosh b + \cosh a\sinh b,\\
-\cosh(a+b)&=\cosh a\cosh b - \sinh a\sinh b
+\cosh(a+b)&=\cosh a\cosh b - \sinh a\sinh b,
 \end{align*}
-haben, mit einem abweichenden Vorzeichen hie und da.
-Um dies nachzuprüfen, verwenden wir die Definition und rechnen
+with some different signs here and there.
+To verify this, we use the definition and compute
 \begin{align*}
 \sinh a\cosh b + \cosh b\sinh b
 &=
@@ -143,27 +145,26 @@ Um dies nachzuprüfen, verwenden wir die Definition und rechnen
 &=
 \frac14(2e^{a-b}+2e^{-a+b})
 =
-\frac12(e^{a-b}+e^{-a+b})=\cosh(a-b)
+\frac12(e^{a-b}+e^{-a+b})=\cosh(a-b).
 \end{align*}
-aus.
-Die Vermutung betreffend der korrekten Form der Additionstheoreme
-war also richtig im Falle von $\sinh(a+b)$, für $\cosh(a+b)$ muss
-allerdings ein Vorzeichen gewechselt werden.
-Die korrekte Form der Additionstheoreme ist
+The conjecture regarding the addition theorems was correct in the cause
+of $\sinh(a+b)$, but for $\cos(a+b)$ we had to change a sign.
+The correct form of the addition formulae is
 \begin{align*}
 \sinh(a\pm b)&=\sinh a\cosh b \pm \cosh a\sinh b,\\
 \cosh(a\pm b)&=\cosh a\cosh b \pm \sinh a\sinh b.
 \end{align*}
 
-\subsection{Ableitungen}
-In der Analysis lernt man, die Ableitungen der trigonometrischen Funktionen
-aus den Additionstheoremen abzuleiten.
-Da die Additionstheoreme der hyperbolischen Funktionen mit den 
-Additionstheoremen bis auf ein Vorzeichen übereinstimmen, sollten
-auch die Ableitungsregeln bis auf ein Vorzeichen mit den Ableitungsregeln
-der trigonometrischen Funktionen übereinstimmen. 
-Natürlich können wir aus der Definition (\ref{hyp:definition}) die
-Ableitungen auch direkt berechnen:
+\subsection{Derivatives}
+In analysis one learns to derive formulae for the derivatives of the
+trigonomtric functions from the addition theorems.
+Since the addition theorems for hyperbolic functions are so similar
+up the a sign, the the rules for the derivatives should look just the
+same, up to a sign.
+
+We can also find the derivatives directly from the definition
+\eqref{hyp:definition} by applying the derivation rules for the
+exponential function:
 \begin{align*}
 \frac{d}{dx}\cosh x
 &=
@@ -177,19 +178,19 @@ Ableitungen auch direkt berechnen:
 =
 \frac12(e^x+e^{-x})=\cosh x
 \end{align*}
-Die Ableitungen sind also sogar noch ein bisschen einfacher, da sie sich
-schon ab der zweiten Ableitung wiederholen.
-Die zweiten Ableitungen sind bereits wieder die ursprünglichen Funktionen
+Thus the derivatives are even simpler, as they start to repeat already
+at the second derivative.
+The second derivative already is the original function
 \begin{align*}
 \sinh''x&=\sinh x
 &
 \cosh''x&=\cosh x.
 \end{align*}
 
-\subsection{Werte für Argument 0}
-Die Werte der trigonometrischen Funktionen und ihrer ersten Ableitungen
-im Nullpunkt und die entsprechenden Werte für die hyperbolischen
-Funktionen sind ebenfalls völlig analog:
+\subsection{Values for argument $0$}
+The values of the trigonometric functions and their first derivatives
+at the origin and the respective values for the hyperbolic
+functions also are very similar:
 \begin{center}
 \begin{tabular}{|l|>{$}c<{$}>{$}c<{$}|>{$}c<{$}>{$}c<{$}|}
 \hline
@@ -201,21 +202,22 @@ Ableitung          &  1   &  0   &   1   &   0   \\
 \end{tabular}
 \end{center}
 
-\subsection{Lösung von Differentialgleichungen}
-Die Werte für Argument $0$ sind genau die Eigenschaften,
-welche die Erfüllung der Anfangsbedingung
-einer Differentialgleichung so einfach gemacht haben.
-Die Differentialgleichung 
+\subsection{Solving differential equations}
+The values for argument $0$ are precisely the properties
+that make satisfying the initial values of a differential 
+equation so simple.
+The differential equation
 \[
 y''-k^2y=0
 \]
-mit Anfangsbedingungen
+with initial conditions
 \[
-y(0)=y_0\qquad\text{und}\qquad y'(0)=v_0
+y(0)=y_0\qquad\text{and}\qquad y'(0)=v_0
 \]
-hat die Lösung
+has solution
 \[
 y(x)=y_0\cosh kx +\frac{v_0}{k}\sinh kx,
 \]
-in völliger Analogie zu (\ref{hyp:loesung}).
+in complete analogy to
+\eqref{hyp:loesung}.
 

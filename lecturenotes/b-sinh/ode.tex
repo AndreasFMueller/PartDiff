@@ -1,78 +1,76 @@
 %
-% ode.tex -- XXX
+% ode.tex -- 
 %
 % (c) 2019 Prof Dr Andreas Müller, Hochschule Rapperswil
 %
-\section{Differentialgleichungen zweiter Ordnung}
-Das Standardverfahren für die Lösung einer gewöhnlichen linearen
-Differentialgleichung mit konstanten Koeffizienten
+\section{Differential equations of second order}
+\lhead{Differential equations of second order}
+The standard method to solve ordinary differential equations
+with constant coefficients like
 \[
 a_2y''+ a_1y'+a_0y=0
 \]
-schreibt vor, dass man erst die Nullstellen $\lambda_{1,2}$
-des charakteristischen Polynoms
+prescribes that first the zeros $\lambda_{1,2}$ of the characteristic
+polynomial
 \[
 p(\lambda)=a_2\lambda^2+a_1\lambda+a_0
 \]
-finden muss.
-Die allgemeine Lösung der Differentialgleichung ist dann
-eine Linearkombination
+need to be found.
+The general solution of the differential equation then is a linear
+combination
 \[
 y(x)=
 A_1 e^{\lambda_1t}
 +
 A_2 e^{\lambda_2t},
 \]
-die Konstanten $A_1$ und $A_2$ sind aus den Anfangswerten zu bestimmen.
-Sinde $y_0$ und $v_0$ der Anfangswert und die Anfangsableitung, dann
-findet man das lineare Gleichungssystem
-%\newcolumntype{\linsysR}{>{$}r<{$}}
-%\newcolumntype{\linsysL}{>{$}l<{$}}
-%\newcolumntype{\linsysC}{>{$}c<{$}}
-%\newenvironment{linsys}[1]{%
-%\begin{tabular}{*{#1}{\linsysR@{\;}\linsysC}@{\;}\linsysR}}%
-%{\end{tabular}}
+the constants $A_1$ and $A_2$ are to be determined from the initial
+conditions.
+If $y_0$ and $v_0$ are the initial value and the initial derivative,
+then find the linear system of equations
 \[
 \begin{linsys}{3}
          A_1&+&         A_2&=&y_0\phantom{.}\\
-\lambda_1A_1&+&\lambda_2A_2&=&v_0.
+\lambda_1A_1&+&\lambda_2A_2&=&v_0
 \end{linsys}
 \]
-Besonders einfach wird die Bestimmung jedoch für die Differentialgleichung
+for the coefficients $A_1$ and $A_2$.
+This becomes particularly easy to solve for the differential equation
 \[
 y''+k^2 y=0.
 \]
-Dann sind die $\lambda_{1,2}=\pm\sqrt{-k^2}$ imaginär, und man kann statt
-der Exponentiallösungen auch den Ansatz
+Then the characteristic values are $\lambda_{1,2}=\pm\sqrt{-k^2}$ imaginary,
+and instead of the exponential functions we can use the trigonometric
+functions
 \[
-y(x)=A\cos kx+B\sin kx
+y(x)=A\cos kx+B\sin kx.
 \]
-verwenden.
-Da der Wert von $\sin kx$ bei $x=0$ verschwindet, und die Ableitung von
-$\cos kx$ ebenfalls, ist die Bestimmung der Konstanten viel einfacher:
+The value of $\sin kx$ vanishes at $x=0$ just as the derivative
+of $\cos kx$.
+The remaining equations give the constants $A$ and $B$ immediately as
 \[
 A=y_0
 \qquad\text{und}\qquad
 B=\frac1kv_0,
 \]
-oder
+or
 \begin{equation}
 y(x)=y_0\cos kx + \frac{v_0}{k}\sin kx
 \label{hyp:loesung}
 \end{equation}
 
-Für die analoge Differentialgleichung $y''-k^2y=0$ geht dies nicht.
-Die Nullstellen des charakteristischen Polynoms sind hier 
-$\lambda_{1,2}=\pm k$, und es führt nichts an dem linearen Gleichungssystem
+This does not work for the analogous differential equation
+$y''-k^2y=0$, which has a different sign.
+The zeros of the characteristic polynomial are $\lambda_{1,2}=\pm k$,
+and this leads to the linear system of equations
 \[
 \begin{linsys}{3}
  A_1&+& A_2&=&y_0\\
-kA_1&-&kA_2&=&v_0
+kA_1&-&kA_2&=&v_0.
 \end{linsys}
 \]
-vorbei.
-Die Lösung kann allerdings zum Beispiel mit dem Determinantenverfahren
-ziemlich direkt gefunden werden:
+The solution can be found using the determinant method, which is
+capable of giving formulae for the solutions:
 \begin{align*}
 A_1
 &=
@@ -85,7 +83,7 @@ A_2
 \frac{\left|\begin{matrix}1&y_0\\k&v_0\end{matrix}\right|}{\left|\begin{matrix}1&1\\k&-k\end{matrix}\right|}
 =\frac{v_0-ky_0}{-2k}.
 \end{align*}
-Damit kann man jetzt die Lösung auch in diesem Fall hinschreiben:
+This now allows to write down the solutions in this case:
 \begin{align}
 y(x)
 &=
@@ -103,7 +101,7 @@ y_0\frac{e^{kx}+e^{-kx}}2
 +\frac{v_0}{k}\frac{e^{kx}-e^{-kx}}2.
 \label{hyp:hyperbelfunktionen}
 \end{align}
-Die Erfüllung der Anfangsbedingung könnte also auch in diesem Falle
-sehr einfach sein, wenn man nicht die Funktionen $e^{\pm kx}$ verwenden
-würde, sondern deren Linearkombinationen wie in (\ref{hyp:hyperbelfunktionen}).
+It turns out that satisfying the initial conditions becomes simple
+even in this case provided we do not use the functions $e^{\pm kx}$
+but instead their linear components \eqref{hyp:hyperbelfunktionen}.
 
