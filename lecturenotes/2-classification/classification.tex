@@ -5,11 +5,11 @@
 %
 \chapter{Terminology and Notation
 \label{chapter:terminology and notation}}
-\lhead{Terminology and notaion}
+\lhead{Terminology and notation}
 Partial differential equations are equations for an unknown function of
 several variables, linking values of the function to its partial
 derivatives.
-In this chapter, we write the function always as $u(x_1,\dots,x_n)$
+In this chapter, we write the unknown function always as $u(x_1,\dots,x_n)$
 and the independent variables as $x_1,\dots,x_n$.
 \[
 u\colon \mathbb R^n\to\mathbb R:(x_1,\dots,x_n)\mapsto u(x_1,\dots,x_n).
@@ -34,8 +34,9 @@ We have to clarify the following aspects:
 \section{Summary}
 \begin{enumerate}
 \item
-A partial differential equation is a function $F$ of the independent
-variables, of the function $u$ and of the partial derivatives of $u$.
+A partial differential equation is specified by a function $F$
+of the independent variables, of the function $u$ and of placeholders
+for the partial derivatives of $u$.
 \item
 The order of a partial differential equation is the order of the
 highest order partial derivative.
@@ -56,12 +57,16 @@ A partial differential equation can always be reduced to a system
 of partial differential equations of first order.
 (\ref{klassifikation:umwandlung}).
 \item
-Linear partial differential equations are have $F$ depend on function 
+\index{linear}
+\index{partial differential equation!linear}
+Linear partial differential equations are have $F$ depend on the function 
 $u$ and the derivatives only linearly.
 In two dimension, this means that $F(x,y,u,p,q)$ is linear in
 $u$, $p$ and $q$.
 \item
-A quasilinear partial differential equation is linear in all
+A {\em quasilinear} partial differential equation is linear in all
+\index{quasilinear}
+\index{partial differential equation!quasilinear}
 partial derivatives, but not necessarily in the function $u$ itself.
 (\ref{klassifikation:quasilinear}).
 \item

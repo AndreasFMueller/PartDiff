@@ -5,6 +5,7 @@
 %
 \section{Boundary conditions\label{klassifikation:randbedingungen}}
 \rhead{Boundary conditions}
+\index{boundary conditions}
 As with ordinary differential equations it is not enough to 
 specify the partial differential equation to determine the
 solution.
@@ -20,7 +21,8 @@ y''+p(x)y'+q(x)y=0
 \]
 on the interval
 $[0,1]$,
-we need two additional conditions, e.~g.
+we need two additional conditions, any of the following types of conditions
+will do:
 \begin{itemize}
 \item the values $y(0)$ and $y'(0)$ (initial conditions)
 \item the values $y(0)$ und $y(1)$ (boundary conditions)
@@ -33,8 +35,19 @@ we need two additional conditions, e.~g.
 \end{itemize}
 
 \begin{beispiel}
+\begin{figure}
+\centering
+\includegraphics{2-classification/images/mismatch.pdf}
+\caption{Specifying derivatives at both ends of the interval for the
+differential equation $y''=0$ leads to a contradiction.
+The boundary value $y'(0)=0$ means that the solution must be a straight
+line with slope $0$, but the boundary value $y'(1)=1$ forces a straight
+line with slope $1$.
+There is no way to reconcile these conditions.
+\label{boundary:mismatch}}
+\end{figure}
 Even for an linear ordinary differential equation of second order
-not every combiation of boundary values will allow a solution.
+not every combination of boundary values will allow a solution.
 The equation
 \[
 y''=0
@@ -44,19 +57,21 @@ Consequently the solution is a straight line with equation $y=Ax+B$.
 In particular, the slope must be equal at both ends of the interval.
 The boundary values
 \[
-y'(0)=0\qquad y'(1)=1,
+y'(0)=0\qquad\text{and}\qquad y'(1)=1,
 \]
-thus lead to a problem that has no solution.
+thus lead to a problem that has no solution (see
+figure~\eqref{boundary:mismatch}).
 \end{beispiel}
 
 \subsection{Boundary values for partial differential equations\label{klassifikation:randwerte-pde}}
 Specifying the boundary values for partial differential equations
 becomes much more complicated.
-To develope some intuition for this task, let's look again at the
+To develop some intuition for this task, let's look again at the
 vibrating string.
 \begin{figure}
 \begin{center}
-\includegraphics{../common/images/randwerte-1.pdf}
+%\includegraphics{../common/images/randwerte-1.pdf}
+\includegraphics{2-classification/images/wave.pdf}
 \end{center}
 \caption{boundary values for the wave equation for a vibrating string.
 The domain is colored light red, the boundary is red, the boundary
@@ -94,7 +109,8 @@ also know the values of the first derivative with respect to $x$, it is
 \frac{\partial }{\partial x}u(x,0) = f'(x)
 \]
 We no longer have the option to specify this derivative.
-So the only derivative is the one with respect to $t$, or in the direction
+So the only derivative we can reasonably specify on the boundary
+is the one with respect to $t$, or in the direction
 orthogonal to the boundary.
 
 It turns out that these boundary conditions do in fact uniquely
@@ -105,7 +121,11 @@ much more complicated for general domains.
 \subsubsection{General Discussion}
 Right from the start we don't even know on which part of the boundary
 we should try to specify boundary conditions.
-In principle we can use any part of the boundary.
+In principle we can use any part of the boundary, but it may happen
+that we may not be able to choose boundary values on all of the boundary
+freely.
+Values on some part of the boundary may already define the values on
+other parts of the boundary.
 
 In addition, we have to decide whether to involve derivatives of the
 unknown function, which we have already seen cannot be specified
@@ -137,11 +157,16 @@ They are computed using the directional derivative
 \[
 D_{\vec v}u(x_1,\dots,x_k)=\vec v\cdot\operatorname{grad}u
 \]
-for vectors $v$ in the tangent plane.
+for vectors $\vec{v}$ in the tangent plane.
 The only derivative not known yet is the derivative in the direction
 orthogonal to the tangent plane.
-If we call $\vec{n}$ the normal vector of the tangent plane, then the
-derivative in this direction is
+
+\begin{definition}
+\label{definition:normal-derivative}
+Let $\vec{n}$ be the normal vector of a tangent plane of the boundary
+of a domain $\Omega$, then the {\em normal derivative}
+\index{normal derivative}
+is the directional derivative
 \[
 \frac{\partial u}{\partial n}
 =
@@ -149,7 +174,8 @@ derivative in this direction is
 =
 \vec{n}\cdot \operatorname{grad}u .
 \]
-This is called the normal derivative of $u$ in the point $x$.
+in the direction of $\vec{n}$
+\end{definition}
 
 \begin{beispiel}
 Let $\Omega=\{(x,y)\in\mathbb R^2\,|\,x^2+y^2<1\}$ be the unit disk.
@@ -159,8 +185,15 @@ in each point on the unit circle.
 
 The outside normal in the point $(x,y)$ is
 \[
-\vec n=\begin{pmatrix}x\\y\end{pmatrix}.
+\vec n=\begin{pmatrix}x\\y\end{pmatrix}
 \]
+\begin{figure}
+\centering
+\includegraphics{2-classification/images/disk.pdf}
+\caption{Outside normal of disk shaped domain
+\label{conditions:outside-normal}}
+\end{figure}
+(see figure~\ref{conditions:outside-normal}).
 The derivative of a function $u(x,y)$
 in this direction then is
 \[
@@ -180,10 +213,18 @@ x\cdot 3x^2y+y\cdot x^3=
 \end{beispiel}
 
 \begin{beispiel}
+\begin{figure}
+\centering
+\includegraphics{2-classification/images/oblique.pdf}
+\caption{Normal derivative on the boundary of the domain
+$\Omega=\{(x,y)\,|\, x+y<0\}$
+\label{conditions:oblique}}
+\end{figure}
 Find the normal derivative of the function
 $x^2-y^2$
 on the boundary of the domain
-$\Omega=\{(x,y)\in\mathbb R^2\,|\,y+x>0\}$.
+$\Omega=\{(x,y)\in\mathbb R^2\,|\,y+x<0\}$
+(see figure~\ref{conditions:oblique}).
 
 The domain has the straight line
 $y=-x$ as boundary, which has the vector
@@ -209,8 +250,9 @@ In the point $(x,-x)$ on the boundary the normal derivative becomes
 
 \subsection{Particular Cases\label{klassifikation:randwerte-speziell}}
 \subsubsection{The Cauchy problem\label{klassifikation:cauchy-problem}}
+\index{Cauchy problem}
 The boundary of a domain usually consists of many more than just a few
-points, usualy of curves and surfaces.
+points, usually of curves and surfaces.
 To better understand the problem of specifying boundary conditions
 we look more closely at the case of a function $u(x,y)$ of two independent
 variables.
@@ -230,14 +272,14 @@ initial value.
 By analogy, we expect that should be able to solve a partial differential
 equation of first order on the domain $\{x>0\}$ with only boundary values
 on the $y$-axis.
-Thus we assume that 
+Thus we expect that 
 \[
 u(0,y)=g(y)
 \]
 uniquely determines the solution.
 
-We assume that $g$ is continuously differentiable.
-Then
+If we assume that $g$ is continuously differentiable,
+then
 \[
 \frac{\partial u}{\partial y}(0, y)=g'(y),
 \]
@@ -264,7 +306,7 @@ F(x,y,u(x,y), \partial_x u(x,y), \partial_y u(x,y)\\
 &=F(0,y,u(x,y),\partial_x u(0,y), \partial_y u(0,y))
 \\
 &=
-F(0,y,g(y),\partial_x u(0,y), g'(y)).
+F(0,y,g(y),\underbrace{\partial_x u(0,y)}_{\displaystyle p}, g'(y)).
 \end{align*}
 Since we have assumed that the equation $F=0$ can be solved 
 for $p$, we conclude that 
@@ -275,7 +317,7 @@ The Cauchy problem for a partial differential equation of first order
 only has to specify initial values along a straight line or more generally
 a curve.
 Boundary conditions for the derivatives are not necessary, as they can
-be obtained from the equation.
+be obtained from the differential equation.
 
 Instead of specifying the values along the $y$-axis, we could give values
 in a point on the boundary the derivative in a direction tangential to
@@ -303,7 +345,7 @@ For an ordinary differential equation of second order we need to specify
 to items as initial conditions.
 Typically these will be an initial value and an initial first derivative.
 
-For a partial differential equation of second order we thus expect 
+For a {\em partial differential equation} of second order we thus expect 
 similarly the we will have to specify first order derivatives on the
 boundary in addition to boundary values.
 As we have shown in the preceding sections, the first order derivatives
@@ -321,6 +363,10 @@ u(0,y)&=g(y)&
 \frac{\partial u}{\partial x}(0,y)&=h(y)
 \label{klassifikation:neumann-randbedingung}
 \end{align}
+\index{Dirichlet boundary conditions}
+\index{boundary conditions!Dirichlet}
+\index{Neumann boundary conditions}
+\index{boundary conditions!Neumann}
 
 \subsubsection{Arbitrary initial curve}
 In general the boundary of a domain is more complicated than just 
@@ -362,6 +408,7 @@ can be computed using the directional derivative:
 \[
 \frac{\partial u}{\partial n}=D_nu = n\cdot \operatorname{grad} u.
 \]
+(See definition~\ref{definition:normal-derivative})
 
 \subsection{General boundary value problem
 \label{klassifikation:allgemeines-randwertproblem}}
@@ -394,11 +441,11 @@ For $t=0$ we specify initial values and initial $t$-derivatives which happen
 to be normal derivatives.
 These normal derivatives are not needed on the two ends of the interval
 for $t>0$.
-So we have two boundary conditions: boundary values along the complete
+So we find two types boundary conditions: boundary values along the complete
 boundary and normal derivatives times the characteristic function of
 the bottom boundary.
 
-But this is not enough to decide which boundary conditions are needed
+Unfortunately, this is not enough to decide which boundary conditions are needed
 to fix the solution of the equation.
 For this a more in depth theory is required.
 This is in stark contrast to the situation for ordinary differential
@@ -407,4 +454,5 @@ uniqueness of solutions under very mild conditions on the differential
 equation.
 We tackle this difficult problem for different types of differential
 equations in the following chapters.
-
+But first we must define what it means to have a solution of a partial
+differential equation.

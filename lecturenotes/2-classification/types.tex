@@ -15,18 +15,29 @@ very limited set of equations.
 This section is devoted to describing them.
 
 \subsection{Linear partial differential equations\label{klassifikation:linear}}
+\index{linear}
+\index{partial differential equation!linear}
 The differential equations proposed so far were all linear expressions in
 the first and second derivatives.
 In the most general form, we can write them as
 Form
-\begin{align*}
+\begin{align}
 \sum_{i,j=1}^n a_{ij}(x)\frac{\partial}{\partial x_i} \frac{\partial}{\partial x_j}\psi(x)
 +\sum_{i=1}^na_i(x)\frac{\partial}{\partial x_i}\psi(x)&=f(x)
+&&\text{in $\Omega$}
+\label{types:lpde}
 \\
+\text{or}\qquad
 \sum_{i,j=1}^n a_{ij}(x)\partial_i \partial_j\psi(x)
 +\sum_{i=1}^na_i(x)\partial_i\psi(x)&=f(x).
-\end{align*}
-We call such an equation {\em homogeneous} if $f=0$.
+&&\text{in $\Omega$}
+\notag
+\end{align}
+\begin{definition}
+\label{definition:homogeneous-equation}
+The linear partial differential equation~\eqref{types:lpde}
+is called {\em homogeneous} if $f=0$.
+\end{definition}
 To every linear partial differential equation of this form we can construct
 the associated homogeneous equation by setting $f=0$.
 
@@ -35,13 +46,23 @@ conditions.
 As we have learned, these too can be written as linear combinations
 of function values and normal derivatives of $\psi$ on the boundary
 of the domain:
-\begin{align*}
+\begin{align}
 a\psi(x)+
 b\frac{\partial}{\partial n}\psi(x)
-&=g(x)\quad\forall x\in\gamma\\
-a\psi(x)+b\partial_n\psi(x)&=g(x)\quad\forall x\in\gamma
-\end{align*}
-The boundary conditions are called {\em homogeneous} if $g=0$.
+&=g(x)
+&&\forall x\in\partial \Omega
+\label{types:lpde-boundary}
+\\
+\text{or}\qquad
+a\psi(x)+b\partial_n\psi(x)&=g(x)
+&&\forall x\in\partial \Omega
+\end{align}
+\begin{definition}
+\label{definition:homogeneous-boundary}
+The boundary conditions
+\eqref{types:lpde-boundary}
+are called {\em homogeneous} if $g=0$.
+\end{definition}
 To every set of boundary conditions we can construct the associated
 set of homogeneour boundary conditions by setting $g=0$.
 
@@ -74,7 +95,7 @@ as well:
 \psi_2(x)
 =0
 \end{align*}
-oder für die Randbedingung
+or for the boundary conditions
 \begin{align*}
 a(\alpha_1\psi_1(x) +\alpha_2\psi_2(x))
 \;+&b\partial_n
@@ -85,7 +106,7 @@ a(\alpha_1\psi_1(x) +\alpha_2\psi_2(x))
 +\;\alpha_2(a\psi_2(x)
 \;+&b\partial_n
 \psi_2(x))
-=0\quad\forall x\in\gamma
+=0\quad\forall x\in\partial\Omega
 \end{align*}
 This means that the solutions of a homogeneous linear
 partial differential equation with homogeneous boundary conditions
@@ -102,6 +123,8 @@ version of the equation.
 
 \subsection{Quasilinear partial differential equations of first order
 \label{klassifikation:quasilinear}}
+\index{quasilinear}
+\index{partial differential equation!quasilinear}
 A very interesting special case are the quasilinear partial differential
 equations of first order.
 They are not necessarily linear, but the first order derivatives appear only
@@ -150,6 +173,8 @@ many multiindices ${\bf k}$.
 
 \subsection{Nonlinear equations
 \label{klassifikation:nichtlinear}}
+\index{nonlinear}
+\index{partial differential equation!nonlinear}
 The partial differential equations from applications presented so far
 were linear.
 However, many problems from physics are not linear.
@@ -171,7 +196,7 @@ The most important of these equations is Euler's equation:
 =
 -\frac1{\varrho}\frac{\partial p}{\partial x_i}.
 \end{align*}
-This equation cannot be linear, products of $v_j$ and derivatives of $v_i$
+This equation cannot be linear, as products of $v_j$ and derivatives of $v_i$
 appear in the second term.
 
 Adding viscosity makes the equations even more complicated:
@@ -186,8 +211,9 @@ Adding viscosity makes the equations even more complicated:
 \operatorname{grad}\operatorname{div}\vec v
 \]
 
-In one dimension, there is not much left, just a single velocity component
-$u(t,x)$, for which the equation essentially has the Form
+If we reduce the problem to one spacial dimension,
+not much is left: just a single velocity component
+$u(t,x)$, for which the equation essentially has the form
 \[
 \frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}
 =\eta\frac{\partial^2u}{\partial x^2}
@@ -195,6 +221,8 @@ $u(t,x)$, for which the equation essentially has the Form
 (we have neglected the pressure gradient and assumed $\varrho=1$).
 This equation has been studied extensively by Johannes Martinus Burgers
 and is thus called Burgers' equation.
+\index{Burgers' equation}
+\index{Burgers, Martinus}
 It exhibits many common features of nonlinear partial differential equations.
 Solutions can be found in explicit form, as we will indicate in the next
 chapter.

@@ -5,6 +5,19 @@
 %
 \rhead{Domains}
 \section{Domains\label{klassifikation:gebiete}}
+\label{domain}
+\begin{figure}
+\centering
+\includegraphics{2-classification/images/domain.pdf}
+\caption{Interior points and boundary points of a domain.
+The point $P$ is an interior point of $\Omega$ because there is a
+small radius $\varepsilon$ such that the ball with radius $\varepsilon$
+centered in $P$ is contained in $\Omega$.
+The point $Q$ is on the boundary because however small the radius
+$\varepsilon$ is chosen, the ball centered in $Q$ always contains some
+points in $\Omega$ and some points outside of $\Omega$.
+\label{domain:figure}}
+\end{figure}
 In the theory of ordinary differential equations, we always look for a function
 of a single variable, the domain of definition is always an interval.
 A solution is fixed by values and derivatives at the endpoints of the interval.
@@ -30,10 +43,12 @@ The derivative is the limit
 \]
 where $\Delta x$ is any small vector.
 This implies that the differential equation only makes sense in a
-domain of definition that contains a small ball around every point.
+domain of definition that contains a small ball around every point
+(see figure~\ref{domain:figure}).
 
 \begin{definition}
-A domain
+\label{definition:domain}
+A {\em domain}
 $\Omega\subset \mathbb R^n$ is an {\em open} subset of
 $\mathbb R^n$, i.~e.~every point 
 $(x_1,\dots,x_n)\in\Omega$
@@ -76,9 +91,16 @@ Thus $\Omega_2$ is not open and is therefore not a domain.
 
 The difference between the two sets $\Omega_1$ and $\Omega_2$ is
 obviously that $\Omega_2$ contains part of the boundary too.
-The boundary of a set consists of the points with the property that
+
+\begin{definition}
+\label{definition:boundary}
+The {\em boundary} $\partial M$ of a set $M\subset\mathbb R^n$
+consists of the points with the property that
 any ball around such a point contains points of the set and of its
 complement.
+\end{definition}
+\index{boundary}
+
 There are no boundary points of $\Omega_1$ contained in $\Omega_1$
 but all boundary points of $\Omega_2$ are also in $\Omega_2$.
 Domains are sets that do not contain any of their boundary points.
@@ -90,8 +112,10 @@ Domains are sets that do not contain any of their boundary points.
 \end{beispiel}
 
 \begin{definition}
+\label{definition:interior}
 If $M\subset\mathbb R^n$ is any subset of $\mathbb R^n$,
-then $\mathring M$ denotes the interior of $M$, the set of all interior
+then $\mathring M$ denotes the {\em interior} of $M$, the set of all interior
+\index{interior}
 points, i.~e.~the points with the property that also a small neighborhood
 is contained in $M$.
 The set of all boundary points is written $\partial M$ and $\bar M$
