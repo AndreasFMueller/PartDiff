@@ -5,6 +5,7 @@
 %
 \rhead{Beam equation}
 \section{Beam equation}
+\index{beam}
 In the derivation of the differential equation of a string we
 have used that fact that the string does not resist to being
 bent.
@@ -22,33 +23,40 @@ and to a property derived from the cross section of the beam,
 namely the second moment $I$%
 \footnote{The definition of $I$ is not relevant for the present
 discussion.}.
+\index{second moment}
 
 A segment of length $\Delta x$ of a beam with linear mass density $m$
 therefore experiences the following force components:
 \begin{enumerate}
 \item
 Restoring forces caused by the stresses in the beam:
-$-EI\frac{\partial^4}{\partial^4 x}w(t,x)\Delta x$
+\index{stress}
+$\displaystyle -EI\frac{\partial^4}{\partial^4 x}w(t,x)\Delta x$
 \item
 Damping
-$-b\frac{\partial}{\partial t}w(t,x)\Delta x$
+\index{damping}
+$\displaystyle -b\frac{\partial}{\partial t}w(t,x)\Delta x$
 \item
 Exterior forces, e.~g.~loads on the beam:
 $q(x,t)\Delta x$
 \end{enumerate}
-By Newton's law, these forces musst sum up to
+By Newton's law, these forces must sum up to mass times acceleration or
 \[
-m\Delta x\frac{\partial^2}{\partial^2 t}w(t,x).
+m\Delta x\cdot \frac{\partial^2}{\partial^2 t}w(t,x).
 \]
 By going to the limit $\Delta x\to 0$ once more we get
-\begin{align*}
+\begin{align}
 m\frac{\partial^2}{\partial^2t}w(t,x)
 &=-EI\frac{\partial^4}{\partial^4x}w(t,x)-b\frac{\partial}{\partial t}w(t,x)+q(t,x)
+\notag
 \\
+\Leftrightarrow\quad
 EI\frac{\partial^4}{\partial^4x}w(t,x)
 +b\frac{\partial}{\partial t}w(t,x)
 +m\frac{\partial^2}{\partial^2t}w(t,x)
 &=q(t,x)
-\end{align*}
+\label{examples:beam-equation}
+\end{align}
 The motion of a beam therefore follows a partial differential equation.
+
 

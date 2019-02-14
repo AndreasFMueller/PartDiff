@@ -1,4 +1,4 @@
-Bestimmen Sie den Rand der folgenden Gebiete
+Determine the boundary of the following domains
 \begin{teilaufgaben}
 \item
 $\Omega=\{(x,y)\in\mathbb R^2\,|\, x^2+y^2<25\}$.
@@ -9,21 +9,26 @@ $\Omega=\{(x,y)\in\mathbb R^2\,|\, |x|+|y|<1\}$.
 \begin{loesung}
 \begin{teilaufgaben}
 \item
-$\Omega$ ist die Kreisscheibe mit Radius $5$, der Rand ist die Menge
+$\Omega$ is a disk with radius $5$, so the boundary is
+the circle with radius $5$:
 \[
 \partial\Omega=\{(x,y)\in\mathbb R^2\,|\, x^2+y^2=25\},
 \]
-als ein Kreis mit Radius $5$ (Abbildung \ref{20000003:fig} links).
+(figure \ref{20000003:fig} right).
 \item
-Da $|x|=|-x|$ und $|y|=|-y|$ muss $\Omega$ symmetrisch bezüglich
-Spiegelungen an der $x$- und $y$-Achse sein. Es genügt daher,
-den Teil im ersten Quadranten zu bestimmen.  Ein Punkt $(x,y)$
+Since $|x|=|-x|$ and $|y|=|-y|$ we conclude that $\Omega$ is symmetric
+with respect to reflectoins at the $x$- and $y$-axes.
+It thus suffices to find the part of the boundary in the first quadrant.
+A point $(x,y)$ in the first quadrant is in $\Omega$ precisely
+if $x+y<1$ or $y<1-x$.
+These are the points below the straight line $y=1-x$.
 im ersten Quadranten ist genau dann in $\Omega$, wenn $x+y<1$ ist,
 also $y<1-x$. Es gehören also alle Punkte ``unter'' der Geraden
-$y=1-x$ dazu. $\Omega$ besteht also aus den Punkten des
-Quadrates mit den Ecken $(1,0)$, $(0,1)$, $(-1,0)$ und $(0,-1)$,
-und der Rand $\partial\Omega$ ist der Rand dieses Quadrates
-(Abbildung \ref{20000003:fig} rechts).
+$y=1-x$ dazu.
+So $\Omega$ is the interior of the square with corners
+$(1,0)$, $(0,1)$, $(-1,0)$ and $(0,-1)$,
+and the boundary $\partial\Omega$ is (the boundary of) this square
+(figure \ref{20000003:fig} right).
 \qedhere
 \end{teilaufgaben}
 \begin{figure}
@@ -32,7 +37,7 @@ und der Rand $\partial\Omega$ ist der Rand dieses Quadrates
 \qquad
 \includeagraphics[]{graphs-2}
 \end{center}
-\caption{Gebiete und Rand für Aufgabe \ref{20000003} a) (links)
-und b) (rechts)\label{20000003:fig}}
+\caption{Domains and boundary for problem \ref{20000003} a) (left)
+and b) (right)\label{20000003:fig}}
 \end{figure}
 \end{loesung}

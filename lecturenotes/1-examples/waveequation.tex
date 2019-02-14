@@ -17,10 +17,10 @@ well as the waves on the surface of a lake.
 \subsection{The differential equation of a vibrating string}
 \index{string}
 Let a thin string with linear mass density $\mu$ be mounted between
-the points $x=0$ and $x=l$.
+the points $x=0$ and $x=l$ (figure~\ref{saite}).
 The force $F$ at the end points of the string maintains its tension.
 We ask for a partial differential that describes the motion of a
-string after we bring it into a certain shape and let it go at time $t=0$
+string after we bring it into a certain shape and let it go at time $t=0$.
 
 The state of the string at any time can be described by a function
 $u(x,t)$, which measures the deflection of the string from the straight
@@ -39,12 +39,12 @@ This is the situation of the guitar player who plucks a string and then
 lets it go.
 Mathematically we can formulate this as the initial condition
 \[
-u(x,t) = f(x)\qquad 0 < x < l.
+u(x,0) = f(x)\qquad 0 < x < l.
 \]
 A piano however works differently, at $t=0$ it imparts a certain velocity
 profile on the string, or in mathematical form
 \[
-\frac{partial}{\partial t}u(0,x) = g(x),\qquad 0<x<l.
+\frac{\partial}{\partial t}u(0,x) = g(x),\qquad 0<x<l.
 \]
 
 \begin{figure}
@@ -69,7 +69,7 @@ This component turns out to be
 F\frac{\partial u}{\partial x}(x+\Delta x)-F\frac{\partial u}{\partial x}(x).
 \]
 Since the acceleration of the string segment is
-$\frac{\partial^2u}{\partial t^2}$
+$\displaystyle\frac{\partial^2u}{\partial t^2}$
 we obtain the equation of motion
 \begin{align*}
 \mu\Delta x\frac{\partial^2u}{\partial t^2}(x)&=
@@ -80,15 +80,19 @@ F\frac{\partial u}{\partial x}(x+\Delta x)-F\frac{\partial u}{\partial x}(x)\\
 \end{align*}
 By going to the limit 
 $\Delta x\to 0$ we obtain the partial differential equation
-\[
+\begin{equation}
 \frac{\partial^2u}{\partial t^2}=\frac{F}{\mu}\frac{\partial^2u}{\partial x^2}.
-\]
+\label{examples:wave-equation}
+\end{equation}
+This is the wave equation.
 The coefficient
 $\frac{F}{\mu}$
+in \eqref{examples:wave-equation}
 has the dimension of a velocity squared, it is the velocity by which waves
 propagate along the string.
 
 \subsection{The differential equation of an organ pipe}
+\index{organ pipe}
 The analysis of the vibrating string carries over almost unchanged
 to a pipe organ (or any other wind instrument).
 The deflection of the string is replaced by a deviation of the pressure.
@@ -97,7 +101,8 @@ We then obtain the wave equation
 \frac{\partial^2p}{\partial t^2}=
 a^2\frac{\partial^2p}{\partial x^2}
 \]
-Again, $a$ is the speed of sound.
+Again, $a$ is the velocity by which pressure changes propagate in
+the medium, i.~e.~the speed of sound.
 
 The boundary conditions, however, turn out to be more complicated and more
 interesting.
@@ -105,22 +110,30 @@ If the end of the pipe is closed, then the air cannot move at this end.
 Because movement of the air in the pipe is always associated with pressure
 differences, we conclude that there cannot be a pressure gradient at the
 end of the pipe in this case.
-This leads to the so called Neumann boundary condition
+This leads to the so called {\em Neumann boundary condition}
+\index{Neumann boundary conditions}
 \[
-\frac{\partial}{\partial x}p(x_0,t) = 0\qquad t>0.
+\frac{\partial}{\partial x}p(x_0,t) = 0\qquad \text{for $t>0.$}
 \]
-If the pipe is open, then there is nothing that keeps the air in the pipe,
-air can move freely, and the pressure is always as the surrounding air.
-This leads to the so called Dirichlet boundary condition
+
+On the other hand, if the pipe is open, then there is nothing that keeps
+the air in the pipe, air can move freely, and the pressure is always equal
+to that the surrounding air.
+This leads to the so called {\em Dirichlet boundary condition}
+\index{Dirichlet boundary conditions}
 \[
-u(x_0,t)=0\qquad t>0.
+u(x_0,t)=0\qquad \text{for $t>0.$}
 \]
 
 \subsection{Wave equation in two and three dimensions}
 In analogy with the differential equation of a string we can derive the
 equation of motion of a membrane fixed around its perimeter.
-Let $G$ be a domain in $\mathbb R^2$, and let $\gamma\subset G$ be
-the boundary curve of the domain, i.~e.~$\gamma = \partial G$.
+\index{membrane}
+Let $G$ be a two-dimensional domain\footnote{The precise definition of
+the term {\em domain} will be given later.}
+in $\mathbb R^2$ describing the shape
+of the membrane, and let $\gamma=\partial G\subset G$ be
+the boundary curve of the domain.
 Then the deviation of the membrane from zero position is a function
 \[
  u \colon G\times \mathbb R_{t \ge 0}\to\mathbb R\colon (x,y,t)\mapsto  u (x,y,t)
@@ -128,22 +141,29 @@ Then the deviation of the membrane from zero position is a function
 The membrane is fixed at the boundary, so $u$ has to satisfy the
 boundary conditions
 \[
- u (x,y,t)=0\qquad \forall (x,y)\in\gamma,\quad t\ge 0.
+ u (x,y,t)=0\qquad \forall (x,y)\in\partial G,\quad t\ge 0.
 \]
-The function satisfies the differential equation
+The function satisfies the partial differential equation
 \[
 \frac{\partial^2 u }{\partial t^2}
 =
 c^2\left(\frac{\partial^2 u }{\partial x^2}
 +
-\frac{\partial^2 u }{\partial y^2}\right).
+\frac{\partial^2 u }{\partial y^2}\right)
+\qquad\text{in $G$.}
 \]
-The solution is only determined, if we know the initial shape of the
+The solution is only determined if we know the initial shape of the
 membrane and its velocity. 
 This leads to the initial conditions
-\[
- u (x,y,0)=f(x,y)\qquad \forall (x,y)\in G.
-\]
+\begin{equation}
+\left.
+\begin{aligned}
+ u (x,y,0)&=f(x,y)
+\frac{\partial}{\partial t} u(x,y,0)=g(x,y)
+\end{aligned}
+\right\}\qquad
+\forall (x,y)\in G.
+\end{equation}
 
 In three dimensions, the wave equation becomes
 \[
@@ -162,6 +182,8 @@ $u(x,y,z,t) = 0$ for points
 $(x,y,z)\in \partial G$ on the boundary surface of $G$.
 
 \subsection{The Laplace operator\label{beispiele:laplaceoperator}}
+\index{Laplace operator}
+\index{laplacian}
 In all the problems discussed so far, the Laplace operator,
 also called laplacian,
 \[
@@ -170,18 +192,19 @@ also called laplacian,
 \begin{cases}
 \displaystyle
 \frac{\partial^2}{\partial x^2}
-+\frac{\partial^2}{\partial y^2}&\qquad\text{2 Dimensionen}\\
++\frac{\partial^2}{\partial y^2}&\qquad\text{two dimensions}\\
 \\
 \displaystyle
 \frac{\partial^2}{\partial x^2}
 +\frac{\partial^2}{\partial y^2}
-+\frac{\partial^2}{\partial z^2}&\qquad\text{3 Dimensionen}
++\frac{\partial^2}{\partial z^2}&\qquad\text{three dimensions}
 \end{cases}
 \]
 appeared.
-In fact, up to a constant factor, this is the only linear operator involving
-only second derivatives that is invariant with arbitrary rotations of the
-coordinate system.
-This means that this is the only operator that can have a physical
-meaning independent of the choice of coordinate system.
+In fact, up to a constant factor, it turns out that this is the only
+linear operator involving only second derivatives that is invariant
+with respect to arbitrary rotations of the coordinate system.
+This means that for a problem that is rotationally symmetrc, this is
+the only operator that can have a physical meaning independent
+of the choice of coordinate system.
 

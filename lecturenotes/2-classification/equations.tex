@@ -3,9 +3,10 @@
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\rhead{Differential equations}
-\section{Differential equations\label{klassifikation:differentialgleichungen}}
-A partial differntial equation links values 
+\rhead{Partial differential equations}
+\section{Partial differential equations%
+\label{klassifikation:differentialgleichungen}}
+A partial differential equation links values 
 $u(x_1,\dots,x_n)$
 to the values of partial derivatives
 \begin{equation}
@@ -24,7 +25,8 @@ to the values of partial derivatives
 In the case of a single independent variable, there is only a single
 derivative of each order.
 For $n$ independent variables, the number of derivatives of order $k$
-increases to $n^k$.
+increases to $n^k$, although many of the mixed derivatives will be
+equal.
 
 We have a partial differential equation as soon as we know how to
 link the various derivatives.
@@ -32,7 +34,7 @@ In the example of the wave equation of the form
 \begin{equation}
 \frac{\partial^2 u}{\partial x_1^2}
 -
-c^2\frac{\partial^2 u}{\partial x_2^2},
+c^2\frac{\partial^2 u}{\partial x_2^2} = 0,
 \label{wellengleichung-tform}
 \end{equation}
 we have combine the second derivatives 
@@ -69,7 +71,7 @@ or on other derivatives.
 And the dependence could be more complicated than just linear as
 in this example.
 
-More generally, a partial differential equation is tiven by a function
+More generally, a partial differential equation is given by a function
 \[
 F(x_1,\dots,x_n,u,\dots\text{variables for partial derivatives of $u$}\dots).
 \]
@@ -83,9 +85,37 @@ A often used convention for the variables is to name the variables that
 stand for first derivatives as $p_i$ and variables that stand for second
 derivatives as $t_{ij}$.
 
+\begin{beispiel}
+We want to find the function $F$ for the heat equation
+\[
+\frac{\partial u}{\partial t}=\kappa\frac{\partial^2 u}{\partial x^2}.
+\]
+First we have to identify the independent variables: let's write 
+$x_1$ for $t$ and $x_2$ for $x$.
+Then the equation becomes
+\[
+\frac{\partial u}{\partial x_1}
+=
+\frac{\partial^2u}{\partial x_2^2}.
+\]
+Now we have to define variables for the partial derivatives.
+In accordance with a convention which we will adopt later, we write
+\[
+p_1 = \frac{\partial u}{\partial x_1}
+\qquad\text{and}\qquad
+t_{22} = \frac{\partial u}{\partial x_2^2}.
+\]
+With these definitions, the function $F$ becomes
+\[
+F(p_1, t_{22})= p_1 - \kappa t_{22}.
+\qedhere
+\]
+\end{beispiel}
+
 \subsection{Order\label{klassifikation:ordnung}}
-\index{Order}
-As for ordinary differential equations, the order is the order of the
+\index{order}
+As for ordinary differential equations, the {\em order} of a partial
+differential equation is the order of the
 highest derivative that appears in the differential equation.
 
 \subsubsection{Partial differential equations of first order}
@@ -119,7 +149,7 @@ In the first chapter we have seen that partial differential equations of
 first order are of prime importance.
 Such a partial differential equation contains first and second derivatives.
 Since the solution function must be differentiable, the second derivatives
-do not depend on the order in which the are executed, i.~e.
+do not depend on the order in which they are executed, i.~e.
 \[
 \frac{\partial^2 u}{\partial x_i\partial x_j}
 =
@@ -150,7 +180,7 @@ correspond to the following functions:
 \begin{align*}
 F(t_{11},\dots,t_{nn})&=t_{11}-a^2(t_{22}+\dots+t_{nn})&&\text{wave equation}
 \\
-F(p_1,t_{22},\dots,t_{nn})&=p_1-a^2(t_{22}+\dots+t_{nn})&&\text{heat equation}
+F(p_1,t_{22},\dots,t_{nn})&=p_1-\kappa(t_{22}+\dots+t_{nn})&&\text{heat equation}
 \\
 F(t_{11},\dots,t_{nn})&=t_{11}+\dots+t_{nn}&&\text{Poisson problem}
 \end{align*}
@@ -163,14 +193,17 @@ The usual notation
 \frac{\partial^k u}{\partial x_{i_1}\partial x_{i_2}\dots\partial x_{i_k}}
 \]
 quickly becomes cumbersome.
-The only information needed is the numbers of the variables with respect
+The only information needed are the indices of the variables with respect
 to which the derivative is taken, not even the order is necessary.
 The notation of multiindices that we summarize in this section takes
 this into account.
 \begin{definition}
 We call
-${\bf k}=(k_1,\dots,k_n)$ a multiindex of length $n$.
-The degree of this multiindex is $|{\bf k}|=k_1+\dots+k_n$.
+${\bf k}=(k_1,\dots,k_n)$ a {\em multiindex} of length $n$.
+\end{definition}
+
+\begin{definition}
+The {\em degree} of this multiindex is $|{\bf k}|=k_1+\dots+k_n$.
 \end{definition}
 With this notation, we can write terms that often appear in multivariate
 analysis much more compactly:
@@ -190,7 +223,7 @@ f(x_1,\dots,x_n)=\sum_{\mathbf k}a_{\mathbf k}x^{\mathbf k},
 where $a_{\mathbf k}\in\mathbb R$ are the coefficients of the power series.
 
 A partial differential equation of order $m$ with $n$ independent variables
-no corresponds to a fucntion
+now corresponds to a function
 \begin{align*}
 F&\colon \mathbb R^n\times \mathbb R^{\{{\mathbf k}|\,|{\mathbf k}|\le m\}} \to \mathbb R
 \\
@@ -236,7 +269,7 @@ F\biggl(x,y_0,y_1,y_2,\dots,\frac{dy_{n-1}}{dx}\biggr)&=0
 \end{aligned}
 \label{classification:reduced}
 \end{equation}
-By setting $y_0=0$ we find
+By setting $y_0=y$ we find
 $y_k=y^{(k)}$ for each $k$, and by substituting that into the last
 equation, we recover the original differential equation
 $F(x,y,y',y'',\dots,y^{(n)})=0$.
@@ -247,13 +280,13 @@ Now consider the partial differential equation of second order with
 the two independent variables $x$ and $y$
 \[
 F\biggl(x,y,u,\frac{\partial u}{\partial x},\frac{\partial u}{\partial y},
-\frac{\partial^2 u}{\partial x^2},\frac{\partial^2 u}{\partial x\partial y},
+\frac{\partial^2 u}{\partial x^2},\frac{\partial^2 u}{\partial x\,\partial y},
 \frac{\partial^2u}{\partial y^2}\biggr)=0.
 \]
 Following the method for ordinary differential equations, we need new
-functions that stand for the derivatives, e.~g.~$p(x,y)$ und $q(x,y)$.
+functions that stand for the derivatives, we call them $p(x,y)$ und $q(x,y)$.
 We have to express that these functions are in fact partial
-derivatives of the function $u$, this gives us the two new partial
+derivatives of the function $u$, this gives us the two additional partial
 differential equations
 \[
 p=\frac{\partial u}{\partial x},\qquad q=\frac{\partial u}{\partial y}.
@@ -261,11 +294,11 @@ p=\frac{\partial u}{\partial x},\qquad q=\frac{\partial u}{\partial y}.
 We can also express the second partial derivatives using these variables:
 \begin{align*}
 \frac{\partial^2 u}{\partial x^2}&=\frac{\partial p}{\partial x}\\
-\frac{\partial^2 u}{\partial x\partial y}&=\frac{\partial p}{\partial y}=\frac{\partial q}{\partial x}\\
+\frac{\partial^2 u}{\partial x\,\partial y}&=\frac{\partial p}{\partial y}=\frac{\partial q}{\partial x}\\
 \frac{\partial^2 u}{\partial y^2}&=\frac{\partial q}{\partial y}
 \end{align*}
 Since we consider $p$ and $q$ as independent functions, and not as
-derivates of the same function, it is not automatically clear that 
+derivatives of the same function, it is not automatically clear that 
 the mixed derivatives are the same, so we have to add the equation
 \[
 \frac{\partial p}{\partial y}
@@ -284,42 +317,14 @@ Thus we have reduced a partial differential equations of second order
 to a system of partial differential equations of first order for 
 the three unknown functions $u$, $p$ and $q$.
 
-%\subsection{*Umwandlung einer Gleichung beliebiger Ordnung\label{klassifikation:beliebigeordnung}}
-%Sei jetzt eine partielle Differentialgleichung $m$-ter Ordnung
-%gegeben. Sie hat die Gestalt
-%\[
-%F\bigl(
-%x_1,\dots,x_n, u, \frac{\partial u}{\partial x_1},\dots,\frac{\partial u}{\partial x_n},\frac{\partial^2u}{\partial x_1^2},\frac{\partial^2 u}{\partial x_1\partial x_2},\dots,\frac{\partial^2u}{\partial x_n^2},\dots
-%\bigr)=0
-%\]
-%wobei als Argumente Ableitungen mit Multiindizes ${\mathbf k}$ mit
-%$|{\mathbf k}|\le m$ vorkommen. Daraus kann man jetzt ein System von
-%partiellen Differentialgleichungen machen, indem man für jeden
-%Multiindex $|{\mathbf k}|$ mit $|{\mathbf k}|\le m$ eine zusätzliche
-%Funktion $p_{\mathbf k}$ einführen. In die Funktion können wir
-%dann statt der Ableitungen von $u$ die Funktionen $p_{\mathbf k}$
-%einsetzen.
-%\[
-%F\bigl(
-%x_1,\dots,x_n, u, p_1,\dots,p_n,p_{(2,0,\dots)},p_{(1,1,\dots)},
-%\dots,p_{(0,\dots,0,2)},\dots, \frac{\partial p_{\mathbf k}}{\partial x_i})
-%\bigr)=0,
-%\]
-%wobei nur Ableitungen erster Ordnung vorkommen, also nur Ableitungsterme
-%mit $|{\mathbf k}|\le m$.
-%Dazu kommt aber eine ganze Menge von neuen Gleichungen,
-%welche sagen, dass die die $p_{\mathbf k}$ eigentlich Ableitungen sind:
-%\[
-%\frac{\partial}{\partial x_i}p_{\mathbf k}=p_{{\mathbf k} + (0,\dots,1,\dots,0)}\quad\forall i\;\forall{\mathbf k}(|{\mathbf k}|<m),
-%\]
-%wobei die $1$ an der $i$-ten Stelle steht. Dazu kommen Gleichungen
-%die besagen, dass die gemischten Ableitungen vertauscht werden können.
-%Sei ${\mathbf k}$ ein Multiindex, und sei ${\mathbf k}'$ ein Multiindex,
-%aus dem ${\mathbf k}$ entsteht, wenn man an der Stelle $i$ eins addiert.
-%Ebenso sei ${\mathbf k}''$ ein Multiindex, aus dem ${\mathbf k}$ entsteht,
-%wenn man an der Stellen $j$ eins addiert. Für jede solche Konstellation
-%erhält man eine zusätzliche Gleichung:
-%\[
-%\frac{\partial}{\partial x_i}p_{{\mathbf k}'}=\frac{\partial}{\partial x_j}p_{{\mathbf k}''},
-%\]
-%denn beide Terme stehen ja eigentlich für $\partial_{\mathbf k}u$.
+It becomes obvious that this reduction procedure leads to an inflation of
+new unknown functions and additional equations for all the mixed
+derivatives.
+So while the reduction to first order is the primary method to make
+ordinary differential equations amenable to numeric solutions with the
+help of computers, this procedure is hardly useful for the numeric
+solution of partial differential equations.
+The solution algorithms for second order partial differential equations
+discussed in the second part of this course do not use it and instead
+are based on the properties of these equations.
+

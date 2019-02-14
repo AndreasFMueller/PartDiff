@@ -1,12 +1,12 @@
-Die Lösung einer Differentialgleichung ist erst bestimmt, wenn
-die Randbedingungen vollständig festgelegt sind. In dieser Aufgabe
-studieren Sie, wie sich die Lösungen ändern, wenn man die Randbedingungen
-ändert. Gegeben ist die gewöhnliche Differentialgleichung
+The solution of a differential equation is only determined if
+complete boundary conditions are specified.
+In this problem you study how the solution changes if the boundary
+conditions change.
+Solve the differential equation
 \[
-y''(x)=1.
+y''(x)=1
 \]
-Lösen Sie die Gleichung im Interval $[0,1]$
-unter den folgenden Randbedingungen:
+on the interval $[0,1]$ with the following boundary conditions:
 \begin{teilaufgaben}
 \item $y(0)=0, y(1)=1$
 \item $y(0)=0, y'(1)=-1$
@@ -15,26 +15,26 @@ unter den folgenden Randbedingungen:
 \end{teilaufgaben}
 
 \begin{loesung}
-Zunächst finden wir die allgemeine Lösung dieser Gleichung.
-Dazu muss die Lösung der homogenen Gleichung gefunden werden,
-also von $y''=0$. Lineare Funktionen erfüllen diese Gleichung.
-Die allgemeine Lösung der homogenen Gleichung ist also
+As a common first step we determine the general solution of the
+equation which we then apply the each of the partial problem cases.
+
+We first lookfor the solution of the homogeneous equation
+$y''=0$.
+Linear functions satisfy this equation, so the general solution of
+the homogeneous problem is
 \[
 y_h(x)=Ax+B.
 \]
-Jetzt wird noch eine partikuläre Lösung der inhomogenen
-Gleichung benötigt, ein solche ist aber einfach zu
-erraten:
+A particular solution is easy to guess, we can use
 \[
 y_p(x)=\frac12x^2\Rightarrow y_p'(x)=x\Rightarrow y_p''(x)=1.
 \]
-Die allgemeine Lösung der Differentialgleichung ist also
+The general solution of the differential equation now becomes
 \[
-y(x)=\frac12x^2+Ax+B, \text{\quad mit\quad} y'(x)=x+A
+y(x)=\frac12x^2+Ax+B, \text{\quad mit\quad} y'(x)=x+A.
 \]
-Die Funktionswerte und Ableitungen am linken und rechten
-Rand des Intervals sind
-\begin{center}
+The values and derivatives of the solution at the interval ends are
+\begin{center} 
 \begin{tabular}{|c|cc|}
 \hline
 &0&1\\
@@ -44,52 +44,49 @@ $y'$&$A$&$A+1$\\
 \hline
 \end{tabular}
 \end{center}
-Mit diesen Resultaten ist es jetzt leicht, die Teilaufgaben anzupacken:
+With these results, the problem parts a)--d) are now easy to tackle:
 \begin{teilaufgaben}
-%\item Wir erhalten die Bedingungen
-%\begin{align*}
-%B&=1\\
-%A&=1
-%\end{align*}
-%also die Lösung $y(x)=\frac12x^2+x+1.$
-\item Wir erhalten die Bedingungen
+\item
+We get the conditions
 \begin{align*}
 B&=0\\
 \frac12+A+B&=1
 \end{align*}
-woraus wir sofort $B=0$ und $A=\frac12$ ablesen, also
+from which we derivce $B=0$ and $A=\frac12$, which gives
 \[
-y(x)=\frac12x(x+1).
+y(x)=\frac12x(x+1)
 \]
-Die Korrektheit dieser Lösung kann durch Einsetzen sofort
-verifiziert werden.
-\item In diesem Fall lauten die Bedingungen
+as the solution.
+The solution can easily be verified by substituting into the
+original differential equation and the boundary conditions.
+\item
+In this case, the conditions are
 \begin{align*}
 B&=0\\
 A+1&=-1\\
 \end{align*}
-woraus $B=0$ und $A=-2$ folgt, also
+from which we conclude $B=0$ and $A=-2$, giving
 \[
 y(x)=\frac12x^2-2x.
 \]
 \item
-Bedingungen:
+Conditions:
 \begin{align*}
 A&=0\\
 \frac12+A+B&=1
 \end{align*}
-was $A=0$ und $B=\frac12$ zur Folge hat, also
+which implies $A=0$ and $B=\frac12$ or
 \[
 y(x)=\frac12(x^2+1).
 \]
-\item In diesem Fall werden die Bedingungen
+\item In this case the conditions are
 \begin{align*}
 A&=1\\
 A+1&=-1
 \end{align*}
-Bildet man die Differenz dieser beiden Gleichungen
-erhält man $-1=2$, was offensichtlich falsch ist. Diese
-Randbedingungen lassen sich also nicht erfüllen.
+The difference of these two equations is $-1=2$, which is obviously wrong.
+This means that the boundary conditions cannot be met simultaneously,
+and that there cannot be a solution.
 \qedhere
 \end{teilaufgaben}
 \end{loesung}

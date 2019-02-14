@@ -5,10 +5,14 @@
 %
 \rhead{Heat equation}
 \section{Heat equation}
+\index{heat equation}
 The heat equation is a prototype for a so called parabolic differential
 equation.
+\index{parabolic}
 Such equations are also used to describe diffusion processes.
 The Schrödinger equation, the basis of quantum mechanics, is also of this type.
+\index{Schrödinger equation}
+\index{quantum mechanics}
 
 We derive the heat equation for the one dimensional case.
 We examine a rod of length $l$ between $x$-coordinates $0$ and $l$
@@ -21,11 +25,17 @@ We expect to solve this problem using a partial differential equation.
 The heat that flows in a time interval $\Delta t$ through the rod at
 coordinate $x$ is proportional to the temperature gradient at that point.
 The amount of heat flowing into the section  of the rod between
-$x$ and $x+\Delta x$ is therefore proprtional to
+$x$ and $x+\Delta x$ is therefore proportional to
 \[
-\frac{\partial T}{\partial x}(x+\Delta x)-\frac{\partial T}{\partial x}(x).
+\underbrace{
+\frac{\partial T}{\partial x}(x+\Delta x)}
+_{\parbox{4cm}{\raggedright\centering heat flow into segment through $x+\Delta x$}}
+-
+\underbrace{\frac{\partial T}{\partial x}(x).}_{\parbox{3.2cm}{\raggedright
+\centering
+heat flow out of segment through $x$}}
 \]
-This additional heat lets the temperature if the segment rise, depending
+This additional heat lets the temperature of the segment rise, depending
 on the heat capacity of the material.
 The volume of the segment is $\Delta x$, the temperature change is smaller
 when the volume is larger.
@@ -37,11 +47,13 @@ It becomes
 \frac{1}{\Delta x}
 \biggl(
 \frac{\partial T}{\partial x}(x+\Delta x)-\frac{\partial T}{\partial x}(x).
-\biggr) \Delta t.
+\biggr) \Delta t,
 \]
+Where $\kappa$ combines the various physical constants involved into
+a single proportionality factor.
 Dividing by $\Delta t$ and going to the limits $\Delta t\to 0$
 and $\Delta x\to 0$ leads to
-\[
+\begin{equation}
 \lim_{\Delta t\to 0}\frac{\Delta T}{\Delta t}
 =
 \frac{\partial T}{\partial t}
@@ -49,7 +61,8 @@ and $\Delta x\to 0$ leads to
 \kappa
 \lim_{\Delta x\to 0}\frac1{\Delta x}\left(\frac{\partial T}{\partial x}(x+\Delta x)-\frac{\partial T}{\partial x}(x)\right)
 =\kappa\frac{\partial^2T}{\partial x^2}.
-\]
+\label{examples:heat-equation}
+\end{equation}
 
 Again we have to specify suitable initial and boundary conditions.
 As initial condition we already have found
@@ -68,4 +81,22 @@ In particular, requiring
 \]
 means that no heat flows through the ends of the rod, the rod is
 thermally isolated from its environment.
+
+A particularly interesting case arises when we ask for a stationary
+temperature distribution.
+This is the equilibrium distribution a system reaches after sufficiently
+long time.
+Since in this case the partial derivative with respect to time 
+vanishes, the temperature distribution satisfies
+$\Delta T=0$, so we are back to the Poisson problem.
+
+So far, we have not considered heat sources in the interior.
+This situation models what happens inside the food in a microwave oven: the
+microwave radiation is absorbed by the food and heats it up locally.
+This can be modelled by adding an additional term on the right hand
+side of the heat equation \eqref{examples:heat-equation}.
+For the stationary distribution, we are back to the inhomgeneous Poisson
+problem.
+
+
 

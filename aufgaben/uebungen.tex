@@ -26,12 +26,12 @@
 %nothing
 }
 \NewEnviron{loesung}{%
-\begin{proof}[L"osung]%
+\begin{proof}[Solution]%
 \renewcommand{\qedsymbol}{$\bigcirc$}
 \BODY
 \end{proof}}
 \NewEnviron{diskussion}{
-\begin{proof}[Diskussion]
+\begin{proof}[Discusson]
 \renewcommand{\qedsymbol}{}
 \BODY
 \end{proof}
@@ -42,7 +42,7 @@
 \RenewEnviron{diskussion}{\relax}
 }
 \def\bewertungen{
-\RenewEnviron{bewertung}{\begin{proof}[Bewertung]
+\RenewEnviron{bewertung}{\begin{proof}[Valuation]
 \renewcommand{\qedsymbol}{}
 \BODY
 \end{proof}}
@@ -51,7 +51,7 @@
 % Hinweis
 \newenvironment{hinweis}{%
 \renewcommand{\qedsymbol}{}
-\begin{proof}[Hinweis]}{\end{proof}}
+\begin{proof}[Hint]}{\end{proof}}
 % Aufgabe aus der Sammlung wiedergeben
 \newcounter{problemcounter}[chapter]
 \def\aufgabepath{./}

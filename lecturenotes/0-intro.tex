@@ -40,12 +40,13 @@ for a vector valued function.
 To describe electrical fields, temperature distributions, pressure
 in a gas or flow velocity in a fluid, we need to determine functions 
 that do not only depend on a single time variable, but also on additional
-variables like position.
-In addition, the rate of change depending on position may also influence
-the development.
+variables like position and velocity.
+In addition, the rate of change over time of these quantities may also depend
+on the rate of change with respect to spacial displacements.
 
 The deflection of a vibrating string is a function $f(x,t)$, where $x$ is
 the position along the string and $t$ is time.
+\index{string}
 For each point $t_0$ in time, the shape of the string is different and
 described by the function $x\mapsto f(x,t_0)$.
 Any hope that it might be possible to derive a differential equation
@@ -56,7 +57,8 @@ This means that the acceleration of a point on the string depends on
 the curvature.
 We therefore expect an equation that links the second time derivative of $f$
 to the second spacial derivative.
-The equation we will later derive has the form
+The equation we will later derive is the wave equation, it has the form
+\index{wave equation}
 \begin{align*}
 a^2\frac{\partial^2}{\partial x^2}f&= \frac{\partial^2}{\partial t^2}f.
 \end{align*}
@@ -107,18 +109,27 @@ and apply the theoretical insights.
 \item
 Method of separation of variables.
 \item
-Solutions using integral transforms.
+Solutions using integral transforms like the Laplace transform or the 
+Fourier transform.
+\index{Laplace transform}
+\index{Fourier transform}
 \item
 Classification of partial differential equations of second order.
 These equations turn out to be of utmost practical importance, but
-they arise in 3 distinctly different types with very different properties
+they arise in three distinctly different types with very different properties
 and which require vastly different solution methods.
 \item
 Elliptic partial differential equations.
 \item
-Parabolic partial differential equations.
+Parabolic partial differential equations with the heat equation as the
+prime example.
+\index{parabolic}
+\index{heat equation}
 \item
-Hyperbolic partial differential equations.
+Hyperbolic partial differential equations with the wave equation as the
+prime example.
+\index{hyperbolic}
+\index{wave equation}
 \item
 Some nonlinear partial differential equations.
 \end{enumerate}

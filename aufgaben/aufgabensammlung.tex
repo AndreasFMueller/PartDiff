@@ -1,13 +1,13 @@
 %
-% skript.tex -- Skript zur Vorlesung Mathematische Grundlagen der Informatik
+% aufgabensammlung.tex -- exercise collection
 %               gehalten an der Hochschule Rapperswil im Wintersemester 09
 %
-% (c) 2009 Prof. Dr. Andreas Mueller, HSR
+% (c) 2009-2019 Prof. Dr. Andreas Mueller, HSR
 %
 \documentclass[a4paper,12pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{german}
+%\usepackage{german}
 \usepackage{times}
 \usepackage{geometry}
 \geometry{papersize={210mm,297mm},total={160mm,240mm},top=31mm,bindingoffset=15mm}
@@ -36,7 +36,7 @@
 \makeindex
 \begin{document}
 \pagestyle{fancy}
-\lhead{Aufgabensammlung}
+\lhead{Exercise collection}
 \rhead{}
 \frontmatter
 \newcommand\HRule{\noindent\rule{\linewidth}{1.5pt}}
@@ -46,19 +46,19 @@
 \vspace*{2pt}
 \begin{flushright}
 {\Huge
-Partielle Differentialgleichungen\\
+Partial differential equations\\
 \bigskip
-Aufgabensammlung}
+Exercise collection}
 \end{flushright}
 \HRule
 \begin{flushright}
 \vspace{30pt}
 \LARGE
-Andreas M"uller
+Andreas Müller
 \end{flushright}
 \vspace*{\stretch{2}}
 \begin{center}
-Hochschule f"ur Technik, Rapperswil, 2008-2017
+Hochschule für Technik, Rapperswil, 2008-2019
 \end{center}
 \end{titlepage}
 \hypersetup{
@@ -66,9 +66,9 @@ Hochschule f"ur Technik, Rapperswil, 2008-2017
 	linktoc=all,
 	linkcolor=blue
 }
-\rhead{Inhaltsverzeichnis}
+\rhead{Contents}
 \tableofcontents
-\newenvironment{beispiel}[1][Beispiel]{%
+\newenvironment{beispiel}[1][Example]{%
 \begin{proof}[#1]%
 \renewcommand{\qedsymbol}{$\bigcirc$}
 }{\end{proof}}
@@ -77,42 +77,43 @@ Hochschule f"ur Technik, Rapperswil, 2008-2017
 \setboolean{loesungen}{true}
 \aufgabetoplevel{./}
 
-\chapter{Einf"uhrende  Beispiele}
-\rhead{Einf"uhrende Beispiele}
+\chapter{Introductory examples}
+\rhead{Introductory examples}
 \input 1.tex
-\chapter{Begriffe und Klassifikation}
-\rhead{Begriffe und Klassifikation}
+\chapter{Terminology and Notation}
+\rhead{Terminology and Notation}
 \input 2.tex
-\chapter{Geometrie der partiellen Differentialgleichungen erster Ordnung}
-\rhead{PDGL erster Ordnung}
+\chapter{Geometry of partial differential equations of first order
+\label{chapter:separation}}
+\rhead{PDE of first order}
 \input 3.tex
-\chapter{Separation der Variablen\label{chapter:separation}}
+\chapter{Separation of Variables\label{chapter:separation}}
 \rhead{Separation}
 \input 4.tex
-\chapter{Transformationsmethode}
+\chapter{Transformation}
 \rhead{Transformation}
-Einige Aufgaben aus dem Kapitel~\label{chapter:separation}
-k"onnen auch mit der Transformationsmethode gel"ost werden.
-Sie tauchen daher in diesem Kapitel nochmals auf.
+Some problems from chapter~\ref{chapter:separation}
+can also be solved with the transform method.
+They are shown again in this chapter with an alternative solution.
 \bigskip
 
 \input 5.tex
-\chapter{Partielle Differentialgleichungen zweiter Ordnung}
-\rhead{PDGL zweiter Ordnung}
+\chapter{Partial differential equations of second order}
+\rhead{PDE of second order}
 \input 6.tex
-\chapter{Elliptische partielle Differentialgleichungen}
-\rhead{Elliptische PDGL}
+\chapter{Elliptic partial differential equations}
+\rhead{Elliptic PDE}
 \input 7.tex
-\chapter{Parabolische partielle Differentialgleichungen}
-\rhead{Parabolische PDGL}
+\chapter{Parabolic partial differential equations}
+\rhead{Parabolic PDE}
 \input 8.tex
-\chapter{Hyperbolische partielle Differentialgleichungen}
-\rhead{Hyperbolische PDGL}
+\chapter{Hyperbolic partial differential equations}
+\rhead{Hyperbolic PDE}
 \input 9.tex
 %\chapter{Nichtlineare partielle Differentialgleichungen}
 %\rhead{Nichtlineare PDGL}
 %\input a.tex
-\chapter{Pr"ufungsaufgaben zur Numerik}
-\rhead{Numerik der PDGL}
+\chapter{Exam problems for PDE}
+\rhead{Numerics of PDE}
 \input b.tex
 \end{document}
