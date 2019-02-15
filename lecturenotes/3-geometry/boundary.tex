@@ -4,6 +4,7 @@
 % (c) 2019 Prof Dr Andreas Mueller
 %
 \section{Boundary conditions}
+\index{boundary conditions!for quasilinear partial differential equations of first order}
 The method of characteristics allows us to find out on which parts of the
 boundary we have to specify boundary conditions to make the solution
 unique.
@@ -65,6 +66,7 @@ corner of the square.
 The last situation is very common, the solution we find here is
 differentiable outside of a set of measure zero.
 This is called a {\em weak} solution of the differential equation.
+\index{weak solution}
 
 \begin{figure}
 \begin{center}
@@ -96,7 +98,14 @@ characteristic emanating from $(0,0)$ is not guaranteed.
 
 \begin{figure}
 \centering
-\includegraphics[width=\hsize]{../common/3d/knick.jpg}
+\begin{tikzpicture}[>=latex]
+\node at (0,0) {%
+\includegraphics[width=0.9\hsize]{../common/3d/knick.jpg}%
+};
+\node at (7,-2.4) {$x$};
+\node at (-7.2,-1) {$y$};
+\node at (-3.7,3) {$z$};
+\end{tikzpicture}
 \caption{The solution of the differential
 equation~(\ref{geometrie:knickbeispiel}),
 with boundary values along the left and bottom sides of the square

@@ -4,14 +4,17 @@
 % (c) 2019 Prof Dr Andreas Mueller
 %
 \section{Development of singularities}
+\index{singularity}
 The solution of a partial differential equation depends crucially
 on the geometry of the characteristics.
 If the projections onto the $x$-$y$-plane of two characteristics 
 meet, the solution can no longer be unique.
-The solution is only unique if characteristics don't intersect.
+The solution is only unique if the projections of the characteristics
+to the $x$-$y$-plane don't intersect.
 Otherwise singularities will develop.
 
 As an example we consider the nonlinear equation of Burgers
+\index{Burgers' equation}
 \begin{equation}
 \frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}=0.
 \label{wellenichtlinear}
@@ -70,7 +73,7 @@ The larger $g(x_0)$, the more the integral curve veers off to the right.
 Large values of the initial condition will thus overtake the smaller
 values, creating jump singularities.
 
-At tiem t$t$, the solution has parametrization
+At time $t$, the solution has parametrization
 \[
 x_0\mapsto (g(x_0)t+x_0,g(x_0)).
 \]
@@ -79,9 +82,15 @@ It becomes obvious that for sufficiently large time $t$ the solution
 surface can not longer be the graph of a function $u(t,x)$.
 
 \begin{figure}
-\begin{center}
-\includegraphics[width=\hsize]{../common/graphics/welle.jpg}
-\end{center}
+\centering
+\begin{tikzpicture}[>=latex]
+\node at (0,0) {%
+\includegraphics[width=0.97\hsize]{../common/graphics/welle.jpg}%
+};
+\node at (1.1,-2.9) {$x$};
+\node at (1.3,2.8) {$t$};
+\node at (-7.6,2.4) [right] {$u(t,x)$};
+\end{tikzpicture}
 \caption{Solution of the partial differential equation
 \eqref{wellenichtlinear} developing a singularity \label{g}}
 \end{figure}

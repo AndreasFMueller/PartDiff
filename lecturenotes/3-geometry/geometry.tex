@@ -1,9 +1,10 @@
 %
-% geometry.tex -- 
+% geometry.tex -- Geometry of QLPDE 1rd order
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\chapter{Geometry of partial differential equations of first order\label{chapter-geometrie}}
+\chapter{Geometry of partial differential equations of first order%
+\label{chapter-geometrie}}
 \lhead{Geometry of solutions}
 \begin{figure}
 \begin{center}
@@ -13,22 +14,24 @@
 $y'=-\frac16y+e^{-\frac{x}6}\cos x$ \label{geometrie:ode}}
 \end{figure}
 The direction field of an ordinary differential equation is a very
+\index{direction field}
 convenient way to build an intuition about the solutions of an equation
 (figure~\ref{geometrie:ode}).
 The solution curve is tangent to directions specified by the differential
 equation.
 
 
-The solution of partial differential equation with two independent variables
-can be visualized as a surface.
-Is there concept similar to the direction field of a differential equation
-that helps us imagine the solutions?
-
+The solution of a partial differential equation with two independent
+variables, which is the situation we will restrict ourselves to in
+this chapter, can be visualized as a surface.
+Is there a concept similar to the direction field of an ordinary
+differential equation that helps us visualize the solutions?
 The first idea that comes to mind is a field of tangent planes.
+\index{tangent plane}
 Such a field would fix the first derivatives individually.
-What a partial differential equation does, however, is to only fix a
-combination of first derivatives.
-We have to look for a more complicated answer.
+What a partial differential equation does, however, is to only fix an
+often linear combination of first derivatives.
+We have to accept a more complicated answer.
 
 \input{3-geometry/curves.tex}
 \input{3-geometry/singularities.tex}
@@ -64,7 +67,7 @@ curve and the of the characteristics.
 \item
 Characteristics are those curves that are not suitable as initial
 curves.
-This characterization will be comes useful in
+This characterization will become even more useful in
 chapter~\ref{chapter-hyperbolisch}.
 \item
 With the help of characteristics it is possible to decide which boundary
