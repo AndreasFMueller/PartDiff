@@ -3,8 +3,8 @@
 %
 % (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil 
 %
-\section{Linearisierung}
-\rhead{Linearisierung}
+\section{Linearization}
+\rhead{Linearization}
 In einigen Fällen sind Lösungen einer nichtlinearen PDGL gesucht, die 
 nur wenig von einer bekannten Lösung abweichen. Beispielsweise ändert
 ein stromlinienförmig gebautes Flugzeug bei hoher Geschwindigkeit die
@@ -13,7 +13,7 @@ nichtlinearen Gleichung eine lineare Gleichung für die Abweichung
 von der bekannten Lösung abzuleiten. Dieses Verfahren wird oft auch
 Störungstheorie genannt.
 
-\subsection{Das allgemeine Vorgehen}
+\subsection{General procedure}
 Der Einfachheit halber führen wir das Verfahren nur für Gleichungen
 erster Ordnung in zwei Variablen durch. Eine solche PDGL kann mit Hilfe
 einer Funktion $F(x,y,u,p,q)$ von fünf Variablen geschrieben werden als
@@ -124,7 +124,7 @@ Jede Lösung der nichtlinearen Gleichung gibt also Anlass zu Lösungen
 in ``unmittelbarer'' Nähe, welche aus der linearisierten Gleichung
 gefunden werden können.
 
-\subsection{Linearisierung von PDGL zweiter Ordnung}
+\subsection{Linearization of partial differential equations of second order}
 Eine PDGL zweiter Ordnung ist gegeben durch eine Funktion von neun
 Variablen
 \[
@@ -211,7 +211,7 @@ F(0,x,y,u(x,y), \partial_xu(x,y),\partial_yu(x,y),
 \partial_y^2u(x,y))\cdot \partial_y^2v(x,y)
 \end{align*}
 
-\subsection{Linearisierung der Burgers Gleichung}
+\subsection{Linearization of Burgers' equation}
 Wir wenden das Linearisierungsverfahren auf die Gleichung von Burgers an.
 Wir schreiben sie zur leichteren Übertragbarkeit der Formeln
 mit $x$ und $y$ als unabhängige Variablen anstellen von $x$ und $t$,
@@ -260,7 +260,7 @@ lautet sie
 =0,
 \]
 
-\subsubsection{Konstante Geschwindigkeit}
+\subsubsection{Constant velocity}
 Die konstante Funktion $u(t,x)=c$ ist eine Lösung der nichtlinearen
 Gleichung. Die linearisierte Gleichung wird damit zu
 \[
@@ -301,7 +301,7 @@ In die PDGL eingesetzt erhalten wir
 \end{align*}
 Die Funktion $w$ ist also eine Lösung der Wärmeleitungsgleichung.
 
-\subsubsection{Lösungen der linearisierten Gleichung}
+\subsubsection{Solution of the linearized equation}
 Die Wärmeleitungsgleichung hat die Standardlösungen
 \[
 w(t,x)=\frac1{\sqrt{t}}e^{-\frac{(x-\xi)^2}{4t}},
@@ -343,7 +343,7 @@ v(t,x)=\frac1{\sqrt{t}}e^{-\frac{(x-\xi+ct)^2}{4t}}
 \]
 oder Überlagerungen derselben in Frage.
 
-\subsubsection{Stabilität der Strömung}
+\subsubsection{Stability of the flow}
 Die im vorangegangenen Abschnitt abgeleiteten Lösung der linearisierten
 Gleichung lässt sich auch so interpretieren: eine kleine Störung zur Zeit
 $t=0$ wird Anlass zu einem mit Geschwindigkeit $c$ nach links
@@ -362,7 +362,7 @@ Alternativ könnte man auch mit dem Maximumprinzip argumentieren: Extremwerte
 sind in der Anfangsbedingung zu finden, eine Störung muss also mit der
 Zeit immer schwächer werden.
 
-\subsubsection{Ansteigende Geschwindigkeit}
+\subsubsection{Increasing velocity}
 Wir untersuchen diese Gleichung noch für den Fall der bereits 
 früher untersuchten speziellen Lösung 
 \[
