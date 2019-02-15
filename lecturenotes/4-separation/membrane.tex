@@ -5,13 +5,13 @@
 %
 \section{Vibrating rectangular membrane}
 \rhead{Rectangular Membrane}
-Let's consider the vibration of a rectangulare membrane fixed on
+Let's consider the vibration of a rectangular membrane fixed on
 the boundary of the domain
 \[
 R=\{(x,y)\,|\,0\le x\le a,0\le y\le b\} =(0,a)\times(0,b).
 \]
 At time $t=0$, the shape of the membrane is given by a function
-$f(x,y)$ defined on $R$.
+$f(x,y)$ defined on $R$, the initial velocity is given by $g(x,y)$.
 For arbitrary times $t\ge 0$ it is described by a function $u(x,y,t)$ 
 with differential equation
 \[
@@ -43,13 +43,12 @@ u(x,y,t)=T(t)\cdot\varphi(x,y).
 \]
 It will obviously not be possible to describe every vibrating membrane
 with just one such function.
-We thus expect to find a sufficiently large set of partial solutions
+We thus hope to find a sufficiently large set of partial solutions
 that will allow us to tune a linear combination to also satisfy the 
 initial conditions.
 
-
 In any event, the boundary conditions along $\partial R$ do not depend
-on time, so we need that the function $\varphi$ satisfies the following
+on time, so we require that the function $\varphi$ satisfies the following
 boundary conditions:
 \begin{align*}
 \varphi(0,y)&=0&\varphi(a,y)&=0&0\le y\le b\\
@@ -68,13 +67,13 @@ We obtain:
 We are looking for a function $u$ that does not vanish identically,
 thus points where $T$ vanishes are isolated.
 Also the points where $\varphi(x,y)$ vanishes form a set of area $0$,
-so in most points, it is perfectly OK to devide by $T(t)$ and
+so in most points it is perfectly OK to devide by $T(t)$ and
 $\varphi(x,y)$.
 This turns the equation into
 \begin{equation}
 \frac1{c^2}\frac{T''(t)}{T(t)}
 = \frac1{\varphi(x,y)}\left( \frac{\partial^2\varphi}{\partial x^2}
-+ \frac{\partial^2\varphi}{\partial y^2} \right)
++ \frac{\partial^2\varphi}{\partial y^2} \right).
 \label{separiertMembran}
 \end{equation}
 The right hand side depends only on $(x,y)$, the left hand side only on $t$.
@@ -91,7 +90,7 @@ in the form
 $e^{\pm\sqrt{k}t}$ for positive $k$.
 For negative $k$, $\sin\sqrt{k}t$ and $\cos\sqrt{k}t$ are solutions.
 From the point of view of physics only solutions with oscillating
-character are meaningful, we thus may assume that $k<0$, so we can
+character are meaningful, we thus may assume that $k<0$, which we can
 write $k=-\lambda^2$ for some $\lambda$.
 The differential equation can thus also be written as
 \[
@@ -179,7 +178,7 @@ The possible values for $\lambda$ thus are
 \[
 \lambda_{kl}^2=\left(\frac{k^2}{a^2} + \frac{l^2}{b^2}\right)\pi^2,\qquad k,l\in\mathbb Z
 \]
-The general solution must no be linearly combined from the partial
+The general solution can now be linearly combined from the partial
 solutions
 \[
 \varphi_{kl}(x,y)=\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y
@@ -193,7 +192,7 @@ u_{kl}(x,y,t)
 =
 (A_{kl}\cos c\lambda_{kl} t+
 B_{kl}\sin c\lambda_{kl} t)
-\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y
+\sin \frac{k\pi}{a}x\sin\frac{l\pi}{b}y.
 \]
 The most general solution has the form
 \begin{equation}

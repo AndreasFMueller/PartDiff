@@ -3,12 +3,12 @@
 %
 % (c) 2012 Prof Dr Andreas Mueller, Hochschule Rapperswil
 %
-\section{Application: Hamiltoian Mechanics\label{hamilton-mechanik}}
+\section{Application: Hamiltonian Mechanics\label{hamilton-mechanik}}
 In the examples so far, a product was the ansatz of choice, because
 that allowed to satisfy boundary conditions most easily.
 This section illustrates a problem where a sum ansatz is very successful
 because there are no boundary conditions to satisfy.
-Another interesting feature if this application is that the
+Another interesting feature of this application is that the
 equation is simple enough that the first separation step is 
 always successful.
 
@@ -17,9 +17,9 @@ always successful.
 \index{Planeten}
 \index{Satelliten}
 Newtons laws of motion predict the motions of planets and satellites
-with supreme preciosion.
+with supreme precision.
 A body of mass $m$ with time dependent coordinates $\vec{x}(t)$
-subject to position dependent force $\vec{F}(\vec{c})$ follows a
+subject to a position dependent force $\vec{F}(\vec{c})$ follows a
 trajectory that is a solution of the ordinary differential equation
 \begin{equation}
 m\frac{d^2}{dt^2}\vec x(t)=\vec F(\vec x(t)).
@@ -30,9 +30,9 @@ $\vec{v}_0$, we can always find the trajectory at least numerically.
 
 But this approach has some practically important drawbacks.
 In many cases, the force law is not completely known.
-Satellites in low earth orbit, at most a few 100 kilometers, are subject
-to drag by the very tenuous atmosphere.
-Their trajectories decay over time, but it is very difficult to model.
+Satellites in low earth orbit, no more than a few 100 kilometers above
+the surface of the earth, are subject to drag by the very tenuous atmosphere.
+Their trajectories decay over time, but this process is very difficult to model.
 To this day it is very difficult to predict when a satellite will burn
 up in the atmosphere and where it will crash on the ground.
 
@@ -42,7 +42,7 @@ but predicted by Einstein's theory of relativity.
 The equations of general relativity are excedingly complicated.
 
 Both these problems illustrate the common situation where one knows
-the most imporatant effects and can even solve the equation in closed
+the most important effects and can even solve the equation in closed
 form for these cases, but in reality there are small additional
 forces that have to be considered, like drag or relativistic effects.
 In this situation, it may be useful to express the take the solution
@@ -68,7 +68,7 @@ If we didn't know about the additional force, then observation
 of the motion at some particular point $t$ in time would let
 as believe that the ball started in a different place and with
 a different velocity.
-We could compensate could the deviation by changing the parameters
+We could compensate for the deviation by changing the parameters
 $\vec x_0$ and $\vec v_0$ slightly.
 So the solution on the slightly sloped table can be described by the
 solution function of the horizontal table with slowly varying
@@ -77,8 +77,8 @@ for the slope.
 \end{beispiel}
 
 The advantage of such a description is that perturbations can
-be visualized by the physically meaningful parameters of the
-trajectory.
+be better understood as variations of the physically meaningful
+parameters of the trajectory.
 The trajectory computation stays simple, because we have a
 formular for it, we only have to change parameters.
 We don't have to numerically integrate the solution, improving
@@ -109,6 +109,7 @@ so that every trajectory can be written in the form
 x_i(t) = x_i(t,Q_1,\dots,Q_n,P_1,\dots,P_n).
 \label{jacobi:aufgabekurve}
 \end{equation}
+Some of the parameters are expected to be constant or slowly varying.
 \end{aufgabe}
 
 \begin{beispiel}
@@ -142,7 +143,7 @@ P_y&=\frac12mv_y^2
 \end{aligned}
 \end{equation*}
 These are the contributions to the total kinetic energy by the
-motiobn in $x$- and $y$-direction.
+motion in $x$- and $y$-direction.
 As the ball rolls without friction, they are conserved.
 
 The terms $Q_x$ and $Q_y$ need to be chosen in such a way that
@@ -207,7 +208,7 @@ m\ddot x_i=-\frac{\partial V}{\partial x_i} = F_i(x),
 which is exactly Newton's second law for the force derived from 
 the potential.
 
-Hamilton found out that every other set of $Q_i$ and $P_i$ is just as
+Hamilton found that every other set of $Q_i$ and $P_i$ is just as
 suitable to describe the system, as long as the equations
 \eqref{jacobi:hamilton:geschwindigkeit} and \eqref{jacobi:hamilton:newton}
 continue to hold.
@@ -257,7 +258,7 @@ The following special case is of particular importance.
 In a closed system, energy is conserved.
 Consequently, the hamiltonian $H$ does not depend on time.
 
-We now substitute a separation ansatz the form
+We now substitute a separation ansatz in the form
 \[
 S(t,x_i)=S_0(t)+S_1(x_1)+\dots+S_n(x_n).
 \]
@@ -286,7 +287,7 @@ Q_1&=\frac{\partial S}{\partial P_1}=t+\frac{\partial \bar S(x_i)}{\partial P_1}
 Q_i&=\frac{\partial \bar S}{\partial P_i},\qquad i>1
 \end{align*}
 The equations for $Q_i$ with $i>1$ do not contain time,
-they only describe the shape trajetory depending on the parameters
+they only describe the shape of the trajetory depending on the parameters
 $Q_1,\dots,Q_n,P_1,\dots,P_n$.
 The first equation is the only one that contains the time.
 It's second term doesn't contain time either, but only the location
@@ -424,7 +425,7 @@ initial velocity $(v_{x0},v_{y0})$ and it is well known that
 it travels along parabolic arc.
 This problem can be solved by the method of Hamilton and Jacobi.
 
-The total energy get's an additional term, the potential energy,
+The total energy gets an additional term, the potential energy,
 so the hamiltonian of the new system is
 \[
 H(x,y,t)=\frac1{2m}(p_x^2+p_y^2)+mgy.
@@ -436,7 +437,7 @@ The Hamilton-Jacobi differential equation now becomes
 +
 \biggl(\frac{\partial S}{\partial y}\biggr)^2
 \biggr)
-+mgy=\frac{\partial S}{\partial t} 
++mgy=\frac{\partial S}{\partial t}.
 \]
 The same separation ansatz as before again leads to
 \[
@@ -446,7 +447,7 @@ from which we once more conclude that $S_3'(t)=P_1$ is constant.
 
 We can also separate $x$ and $y$:
 \begin{align*}
-\frac1{2m}S_1'(x)^2&=P_1-\frac1{2m}S_2'(y)^2-mgy
+\frac1{2m}S_1'(x)^2&=P_1-\frac1{2m}S_2'(y)^2-mgy.
 %\\
 %\frac1{\sqrt{2m}}S_1'(x)&=\sqrt{P_3-\frac1{2m}S_2'(y)^2+mgy}
 \end{align*}
@@ -469,7 +470,7 @@ S_2'(y)&=\sqrt{
 \\
 S_2(y)
 &=
--\frac1{3m^2g}\bigl(2m(P_1-P_2-mgy)\bigr)^{\frac32}
+-\frac1{3m^2g}\bigl(2m(P_1-P_2-mgy)\bigr)^{\frac32}.
 \end{align*}
 This completes the solution:
 \[
@@ -479,7 +480,7 @@ S(x,y,t)=P_1t+\sqrt{2mP_2}x
 \]
 The coordinates that we should use are now the partial derivatives
 of $S$ with respect to the $P_i$.
-We get one after the other as
+We get one by one as
 \begin{equation}
 \begin{aligned}
 Q_1=\frac{\partial S}{\partial P_1}
@@ -491,14 +492,14 @@ Q_2=\frac{\partial S}{\partial P_2}
 &=
 \sqrt{\frac{m}{2P_1}}x
 +
-\frac1{g}\sqrt{\frac{2(P_1-P_2-mgy)}{m}}
+\frac1{g}\sqrt{\frac{2(P_1-P_2-mgy)}{m}}.
 \end{aligned}
 \label{jacobi:aufloesung}
 \end{equation}
 The first equation can be solved for $y$:
 \begin{equation}
 y=
-\frac{P_1-P_2}{mg}-\frac{g}{2}(Q_1-t)^2
+\frac{P_1-P_2}{mg}-\frac{g}{2}(Q_1-t)^2.
 \label{jacobi:quadratisch}
 \end{equation}
 The altitude $y$ thus depends quadratically on time and $Q_1$ is
@@ -526,6 +527,7 @@ and the equation can be simplified to
 \[
 mgy + P_2=P_1.
 \]
-Da $P_2$ die kinetische Energie der Horizontalbewegung ist, und $mgy$
-die potentielle Energie, ist $P_1$ wie erwartet die Gesamtenergie.
+Since $P_2$ is the kinetic energy contributed by the horizontal motion
+component and  $mgy$ is the potential energy, $P_1$ again is as
+expected the total energy.
 

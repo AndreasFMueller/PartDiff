@@ -4,6 +4,7 @@
 % (c) 2019 Prof Dr Andreas Mueller
 %
 \section{The Separation Algorithm}
+\rhead{Separation algorithm}
 From these examples, we can derive a more general description of the
 separation method.
 A partial differential equation with independent variables
@@ -36,9 +37,9 @@ Substitute the ansatz into the differential equation.
 With some luck, the terms involving $x_1$ can be brought to
 left hand side and all terms involving the other variables to
 the right hand side.
-It is acceptable to device by $u$ because we assume that $u$ is not
+It is acceptable to divide by $u$ because we assume that $u$ is not
 identically $u$ and such a solution will only vanish on a set of
-volumen $0$, everywhere else it will satisfy the equation.
+volume $0$, everywhere else it will satisfy the equation.
 The equation now has the form
 \[
 F(x_1,X_1,X_1',\dots,X_1^{(n)})
@@ -62,8 +63,8 @@ restrict the set of valid $k$ values.
 
 The first of these equations is an ordinary differential equation.
 The second is an ordinary differential equation if $n=2$, otherwise
-the process can be repeated to break the equation further down until
-only ordinary equations remain.
+the process can be repeated to break the equation down further until
+only ordinary differential equations remain.
 
 \item
 If

@@ -17,14 +17,15 @@ It is therefore no loss of generality to assume $R=1$ in the following.
 
 A disk shaped domain appears e.~g.~when the vibrations of the membrane of
 a drum or a microphone.
-According to the results of section~\ref{separating time}, we are looking
-for a function of time and location in $G$
+According to the results of section~\ref{subsection:separating time},
+we are looking for a function of time and location in $G$.
+The wave equation
 \[
 \frac1{a^2}\frac{\partial^2 u}{\partial t^2}
 =
 \frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}
 \]
-As before, this reduces to the eigenvalue problem
+as before reduces to the eigenvalue problem
 \begin{align*}
 T''(t)&=-a^2\lambda^2 T(t)\\
 \Delta u(x,y)&=-\lambda^2u(x,y).
@@ -35,7 +36,7 @@ In the specials case $\lambda=0$, this happens to be the Poisson problem.
 \index{Polar coordinates}
 Polar coordinates are obviously much more adapted to this problem than
 rectangular coordinates, mainly because the boundary of the domain
-is so much easier in polar coordinates.
+is so much easier to describe in polar coordinates.
 The boundary values on the circle can be described as a function
 of the argument $\varphi$ only.
 Assuming the speed of sound $c=1$ to simplify the computations, we
@@ -58,7 +59,7 @@ y&=r\sin\varphi
 for polar coordinates.
 We have to convert derivatives with respect to $x$ and $y$
 into derivatives with respect to $r$ and $\varphi$.
-With this goal in mind wit compute the equations
+With this goal in mind we differentiate the equations
 \eqref{polarkoordinaten} with respect to $x$ and $y$:
 \begin{align*}
 1&=
@@ -102,7 +103,7 @@ r\frac{\partial \varphi}{\partial y}
 \end{pmatrix}
 \end{align*}
 This 
-$2\times2$ matrix is a rotation matrix, the inverse can be found
+$2\times2$ matrix is a rotation matrix, its inverse can be found
 by replacing $\varphi$ by $-\varphi$ or simply by taking the
 transpose, as for any orthogonal matrix $A$, $A^{-1}=A^t$.
 By multiplying out, we get terms for the following expressions for
@@ -129,7 +130,7 @@ r\frac{\partial\varphi}{\partial y}
 \frac{\partial\varphi}{\partial y}&=\frac1r\cos\varphi
 \end{align*}
 We can use these to also compute higher derivatives by
-iterating them.
+iterating the procedure.
 
 To compute partial derivatives of $u$ we use the chain rule
 \begin{align*}
@@ -293,7 +294,7 @@ can be found in any reasonably complete reference.
 
 \subsection{Separating the location variables}
 The solution $u(r,\varphi)$ of the eigenvalue problem is again attempted
-as the product of a funcktion $R(r)$ of $r$ only and a funktion
+as the product of a function $R(r)$ of $r$ only and a function
 $\Phi(\varphi)$ of $\varphi$ only.
 Using the formula for the Laplace operator, the differential equation
 in polar coordinates becomes
@@ -309,7 +310,7 @@ in polar coordinates becomes
 The right hand side depends only on $\varphi$, the left hand side only on $r$,
 so, again, both sides need to be constant.
 We call the constant $\mu^2$.
-These completes the separation of the variables:
+This completes the separation of the variables:
 \begin{align}
 \Phi''(\varphi)+\mu^2\Phi(\varphi)&=0\label{phigleichung}\\
 r^2R''(r)+rR'(r)+(\lambda^2 r^2-\mu^2)R(r)&=0\label{rgleichung}
@@ -337,7 +338,6 @@ $P(\varrho)=R(\varrho/\lambda)=R(r)$ has solutions
 \varrho^2 P''(\varrho)&=\frac{\varrho^2}{\lambda^2}R'(\varrho/\lambda)=r^2R''(r)
 \end{align*}
 and solves Bessel's equation
-und erfüllt somit die Besselsche Differentialgleichung
 \[
 \varrho^2P''(\varrho)+\varrho P'(\varrho)+(\varrho^2-k^2)P(\varrho).
 \]
@@ -346,5 +346,5 @@ The solutions of Bessel's equation are the Bessel functions
 P(\varrho)=J_{\pm k}(\lambda r)=R(r)
 \]
 As for a rectangular membrane, the general solution must now be
-linearly combined from partial solutions
+linearly combined from partial solutions.
 
