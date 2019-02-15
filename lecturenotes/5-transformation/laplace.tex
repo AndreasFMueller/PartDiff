@@ -10,7 +10,9 @@ This section contains a short crash course to present the most important
 ideas of the Laplace transform and its application to the solution
 of ordinary differential equation.
 The key here is that the Laplace transform converts derivatives into
-much more easily solved algebraic equations.
+much more easily solved algebraic operations.
+This turns partial differential equations into partial differential equations
+with fewer derivatives or even ordinary differential equations.
 Their solution can then be transformed back to give a solution of the
 original differential equation.
 
@@ -91,7 +93,7 @@ s({\cal L}x)(s)-x(0)+p({\cal L}x)(s)=({\cal L}f)(s).
 \label{laplace:transformeddgl}
 \end{equation}
 We have to determine $x$, so we first solve the
-equation~\eqref{laplace:transformeddgl} for $mathcal{L}x$ and
+equation~\eqref{laplace:transformeddgl} for $\mathcal{L}x$ and
 then try to transform back.
 
 Solving form $(\mathcal{L}x)(x)$ gives
@@ -109,7 +111,7 @@ and thus
 \[
 ({\cal L}x)(s)
 =
-\frac{q}{s(s+p)}=\frac{q}{p}\frac{1}{s}-\frac{q}{p}\frac{1}{s+p}
+\frac{q}{s(s+p)}=\frac{q}{p}\frac{1}{s}-\frac{q}{p}\frac{1}{s+p}.
 \]
 Both terms on the right can be dealt with by the examples
 above.
@@ -129,7 +131,7 @@ where $u$ is defined for $t\ge 0$, $x\ge 0$ and we require the
 boundary conditions
 \begin{align*}
 u(x,0)&=0\qquad x>0\\
-u(0,t)&=0\qquad t>0\\
+u(0,t)&=0\qquad t>0.
 \end{align*}
 The Laplace transform of the differential equation with respect to
 the variable $t$ is
@@ -139,7 +141,7 @@ s({\cal L}u)(s,x)-u(0,x)+x\frac{\partial}{\partial x}({\cal L}u)(s,x)
 \frac{x}{s}.
 \label{laplace:transformedpde}
 \end{equation}
-The transform has made the time derivative disappear, instead it has
+The transform has made the time derivative disappear, it has
 turned into multiplication by $s$.
 For each $s$, the \eqref{laplace:transformedpde} is an ordinary
 differential equationfor the function $x\mapsto ({\cal L}u)(s,x)$

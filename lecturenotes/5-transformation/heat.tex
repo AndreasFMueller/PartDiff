@@ -8,9 +8,9 @@
 We now consider the heat equation on a piece of wire formed into
 a circle with given initial temperatures.
 In polar coordinates, the temperature distribution can be considered
-as a function on the interval $[-\pi,\pi]$, and can also be considered
+a function on the interval $[-\pi,\pi]$, and can also be considered
 a $2\pi$-periodic function on $\mathbb R$.
-Thus we are solve the heat equation
+Thus we are to solve the heat equation
 \begin{align*}
 \partial_t u(t,x)&=\partial_x^2 u(t,x) &&\forall(t,x)\in\mathbb R\times[-\pi,\pi]\\
 \intertext{with initial conditions}
@@ -29,7 +29,7 @@ Applying the transform to the original differential equation gives
 &=\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx}\partial_x^2 u(t,x)\,dx
 \notag
 \\
-\partial_t\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx} u(t,x)\,dx
+\partial_x\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx} u(t,x)\,dx
 &=
 \frac1{2\pi}
 \underbrace{
@@ -56,11 +56,11 @@ k^2\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx} u(t,x)\,dx
 k^2\frac1{2\pi}\int_{-\pi}^{\pi}e^{-ikx} u(t,x)\,dx
 \notag
 \\
-\partial_t\hat u(t,k)&=-k^2 \hat u(t,k)
+\partial_x\hat u(t,k)&=-k^2 \hat u(t,k)
 \label{fouriertransformiert}
 \end{align}
-The partial differential equation transforms into a set of ordinary
-differential equation for $t\ge 0$.
+The partial differential equation transforms into a family of ordinary
+differential equation parametrized by $t\ge 0$.
 
 \subsection{Laplace transform}
 We now apply the Laplace transform to the equation
@@ -77,9 +77,9 @@ s\int_0^{\infty}\hat u(t,k)e^{-st}\,dt
 &=
 -k^2{\cal L}\hat u(s,k)
 \\
-\hat u(0,k)-s{\cal L}\hat u(s,k)&=k^2{\cal L}\hat u(s,k).
+\hat u(0,k)-s{\cal L}\hat u(s,k)&=k^2{\cal L}\hat u(s,k)
 \\
-{\cal L}\hat u(s,k)&=\frac{\hat u(0,k)}{s+k^2}
+{\cal L}\hat u(s,k)&=\frac{\hat u(0,k)}{s+k^2}.
 \end{align*}
 
 \subsection{Reverse transform}
@@ -90,13 +90,13 @@ formally get
 \begin{align*}
 \hat u(t,k)&={\cal L}^{-1}\left(\frac1{s+k^2}\right)\hat u(0,k)
 \\
-&=e^{-k^2t}\hat u(0,k)
+&=e^{-k^2t}\hat u(0,k).
 \end{align*}
 The second step is reversing the Fourier transform by summing the
 Fourier series
 \begin{align*}
 u(t,x)&=\sum_{k\in\mathbb Z}e^{-k^2t}\hat u(0,k)e^{ikx}
 \\
-&=\sum_{k\in\mathbb Z}\hat u(0,k)e^{ikx-k^2t}
+&=\sum_{k\in\mathbb Z}\hat u(0,k)e^{ikx-k^2t}.
 \end{align*}
 
