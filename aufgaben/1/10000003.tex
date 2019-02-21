@@ -6,10 +6,10 @@ $T(t,x)=T(x)$ no longer depends on time.
 Find this temperature distribution.
 
 \begin{loesung}
-The temperature distribution $T(x)$ must satisfy the wave equation
+The temperature distribution $T(x)$ must satisfy the heat equation
 \[
 \frac{\partial}{\partial t}T(t,x)=
-a^2\frac{\partial^2}{\partial x^2}T(t,x).
+\kappa\frac{\partial^2}{\partial x^2}T(t,x).
 \]
 Stationarity means that the solution does not depend on time or that
 the partial derivative with respect to $t$ vanishes as in
@@ -19,7 +19,7 @@ the partial derivative with respect to $t$ vanishes as in
 So $T(x)$ is a twice continuously differentiable function that 
 satisfies
 \[
-a^2T''(x)=0.
+\kappa T''(x)=0.
 \]
 This equation has the general solutions
 \[
