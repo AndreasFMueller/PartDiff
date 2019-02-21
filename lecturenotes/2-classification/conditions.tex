@@ -229,21 +229,35 @@ $\Omega=\{(x,y)\in\mathbb R^2\,|\,y+x<0\}$
 The domain has the straight line
 $y=-x$ as boundary, which has the vector
 \[
-\vec n=\begin{pmatrix}1\\1\end{pmatrix}
+\vec n=\frac{1}{\sqrt{2}}\begin{pmatrix}1\\1\end{pmatrix}
 \]
-as normal.
-The directional derivative of $u$ in this direction in direction $\vec{n}$
+as its unit normal.
+The directional derivative of $u$ in this direction 
 in the point $(x,y)$ is
 \[
-D_{\vec n}u(x,y)=\vec n\cdot\operatorname{grad}u
-=\begin{pmatrix}1\\1\end{pmatrix}\cdot\begin{pmatrix}2x\\-2y\end{pmatrix}
-=2x-2y
+D_{\vec n}u(x,y)
+=
+\vec n\cdot\operatorname{grad}u
+=
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}1\\1\end{pmatrix}\cdot\begin{pmatrix}2x\\-2y\end{pmatrix}
+=
+\sqrt{2}( x-y)
 \]
 In the point $(x,-x)$ on the boundary the normal derivative becomes
 \[
 \frac{\partial u}{\partial n}
 =
-2x+2x=4x.
+\frac{1}{\sqrt{2}}
+\frac{\partial u}{\partial x}
++
+\frac{1}{\sqrt{2}}
+\frac{\partial u}{\partial x}
+=
+\sqrt{2}(
+x+x)
+=
+2\sqrt{2}x.
 \qedhere
 \]
 \end{beispiel}
