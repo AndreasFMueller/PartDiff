@@ -3,7 +3,10 @@
 #
 # (c) 2019 Prof Dr Andreas Müller, Hochschule Rapperswil
 #
-all:	circular.pdf rays.pdf
+all:	circular.pdf rays.pdf directionfield.pdf
+
+directionfield.pdf:	directionfield.tex
+	pdflatex directionfield.tex
 
 circular.pdf:	circular.tex
 	pdflatex circular.tex
