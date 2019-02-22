@@ -1,40 +1,50 @@
-Betrachten Sie das Cauchy-Problem für die Differentialgleichung
+Consider the Cauchy problem for the partial diffrential equation
 \begin{equation}
 y\frac{\partial u}{\partial x}+x\frac{\partial u}{\partial y}=0
 \label{30000006:1}
 \end{equation}
-und die Randbedingung $u(0,y)=y^2$.
-Sie kann offenbar auf dem Gebiet $\Omega_+=\{ (x,y)\in\mathbb R^2\,|\, x > 0\}$
-oder auf dem Gebiet $\Omega_-=\{(x,y)\in\mathbb R^2\,|\, x <0\}$ betrachtet
-werden. Man kann aber auch eine Lösung in jedem dieser Gebiet zu einer
-Lösung in $\Omega_+\cup\Omega_-=\mathbb R^2$ zusammensetzen. In diesem
-Sinne ist es auch sinnvoll, von einer Anfangsbedingung für
-\eqref{30000006:1} im Gebiet $\Omega=\mathbb R^2$ zu sprechen.
+with boundary conitions $u(0,y)=y^2$.
+It could be considered on the domain
+$\Omega_+=\{ (x,y)\in\mathbb R^2\,|\, x > 0\}$
+or on the domain
+$\Omega_-=\{(x,y)\in\mathbb R^2\,|\, x <0\}$,
+both wit a boundary condition specified on the $y$-axis.
+But solutions on those domains can be stitched together to give a solution
+in all of $\mathbb R^2=\overline{\Omega_+\cup\Omega_-}$ with the single
+initial data along the $y$-axis.
+It thus makes sense to talk about a solution of 
+\eqref{30000006:1} in the domain $\Omega=\mathbb R^2$.
 \begin{teilaufgaben}
-\item Bestimmen Sie die Charakteristiken.
-\item Welcher Teil der $x$-$y$-Ebene wird von Charakteristiken überdeckt,
-die von der $y$-Achse ausgehen?
-\item Lösen Sie das Cauchy-Problem. Überprüfen sie die Lösung durch
-Einsetzen in die Differentialgleichung.
-\item Betrachten Sie die Funktion
+\item
+Find the characteristics.
+\item
+Which part of the $x$-$y$-plane is covered by characteristics that emanate
+from the $y$-axis?
+\item
+Solve the Cauchy problem.
+Verify your solution by substituting into the partial differential equation
+\eqref{30000006:1}.
+\item
+Consider the function
 \[
 v(x,y)=\begin{cases}
 u(x,y)&\qquad |y|\ge |x|\\
-(x^2-y^2)^2&\qquad |y|<|x|
+(x^2-y^2)^2&\qquad |y|<|x|.
 \end{cases}
 \]
-Rechnen Sie nach, dass diese Funktion ebenfalls die Differentialgleichung
-erfüllt
-die aber offenbar von $u(x,y)$ verschieden ist (zum Beispiel ist
-$u(1,0)=-1$ und $v(1,0)=1$). Ist sie eine Lösung?
+Obviously, $u(x,y)$ and $v(x,y)$ are different, e.~g.~$u(1,0)=-1$
+and $v(1,0)=1$.
+Verify that the function $v(x,y)$ also is a solution of the partial
+differential equation which is different from $u(x,y)$.
+Is it a solution?
 \end{teilaufgaben}
 
 \begin{loesung}
-Die Anfangsbedingung in dieser Aufgabe ist auf der $y$-Achse vorgegeben.
-Zur Vermeidung von Verwechslungen bezeichnen wir die $y$-Werte auf
-der $y$-Achse wieder mit $y_0$, ähnlich wie in Aufgabe \ref{30000001}.
-Die Methode der Charakteristiken wird also Funktionen $x(y_0,t)$,
-$y(y_0,t)$ und $u(y_0,t)$ derart, dass die Differentialgleichungen
+The initial condition in this problem is specified on the $y$-axis.
+To prevent confusions, we will such an initial point by $y_0$, similar
+to what we did in problem \ref{30000001}.
+The method of characteristics will find functions $x(y_0,t)$,
+$y(y_0,t)$ and $u(y_0,t)$ such that the partial differential equation
 \begin{equation}
 \begin{aligned}
 \dot x(y_0, t)&=y\\
@@ -43,29 +53,30 @@ $y(y_0,t)$ und $u(y_0,t)$ derart, dass die Differentialgleichungen
 \end{aligned}
 \label{30000002:chareq}
 \end{equation}
-erfüllt sind mit den Anfangsbedingungen 
+is satisfied with initial conditions
 \begin{align*}
 x(y_0, 0)&=0\\
 y(y_0, 0)&=y_0\\
-u(y_0, 0)&=f(y_0)
+u(y_0, 0)&=f(y_0),
 \end{align*}
-wobei $f(y_0)$ die Anfangsfunktion entlang der $y$-Achse ist.
+where $f(y_0)$ gives the Cauchy initial values along the $y$-axis.
 \begin{teilaufgaben}
 \item
-Aus der Gleichung \eqref{30000002:chareq} kann man ablesen,
-dass alle Charakteristiken parallel zur $x$-$y$-Ebene verlaufen.
-Man kann also, um die Frage zu beantworten, nur die Differentialgleichungen
-für die beiden Funktionen $x$ und $y$ lösen.
+From equation \eqref{30000002:chareq} we can read off that the characteristics
+are all parapllel to the $x$-$y$-plane.
+Thus to find the characteristics, we can solve the equations for $x$ and $y$
+independently of $u$.
 
-Leitet man die erste
-Gleichung ab und setzt die zweite Gleichung ein, erhält man die
-die Differentialgleichung
+Deriving the first equation and substituting it in the second equation
+gives the ordinary differential equation
 \[
 \ddot x(t)=x(t)
 \]
-mit den Lösungen $x(t)=a\cosh t$ und $x(t)=b\sinh t$.
-Da wir Kurven
-suchen, die auf der $y$-Achse im Punkt $(0,y_0)$ beginnen, muss
+with solutions
+$x(t)=a\cosh t$ and $x(t)=b\sinh t$.
+We are looking for curves that emanate from points $(0,y_0)$ from
+the $y$-axis, we have to take the $\sinh$-function for the solution,
+giving
 \[
 \begin{pmatrix}
 x(t)\\y(t)
@@ -75,49 +86,49 @@ y_0
 \begin{pmatrix}
 \sinh t\\
 \cosh t
-\end{pmatrix}
+\end{pmatrix}.
 \]
-sein.
-Diese Funktionen erfüllen die Gleichung $y^2-x^2=y_0^2$, sie stellen
-also Hyperbeln durch die Punkte $(0,y_0)$ dar.
+This function satisfies the equation $y^2-x^2=y_0^2$, it thus
+parameterices hyperbolas through the points $(0,y_0)$.
 \item
-Die Lösungskurven sind Hyperbeln mit den Asymptoten $y=\pm x$, die
-Charaketerisitiken können die Asymptoten nicht überschreiten, es wird
-also nur der Bereich $\{(x,y)|\;|x|<|y|\}$ der $x$-$y$-Ebene überdeckt.
+The solution curves are hyperbolas with asymptotes $y=\pm x$,
+the characteristics cannot cross the asymptotes, so only the part
+$\{(x,y)|\;|x|<|y|\}$ of the $x$-$y$-plane is covered by these
+characteristics.
 \item
-Die Gleichung für $u$ liefert $u(y_0, t)=y_0^2$.
-Nach dem zweiten Schritt in der Methode der Charakteristiken
-müssen wir jetzt $t$ und $y_0$ aus den Gleichungen
+The equation for $u$ gives $u(y_0, t)=y_0^2$.
+The second step in the method of characteristics requires that the
+variables $t$ and $y_0$ be eliminated from the equations
 \begin{align*}
 x&=y_0\sinh t\\
 y&=y_0\cosh t\\
-u&=y_0^2
+u&=y_0^2.
 \end{align*}
-eliminieren. Für die hyperbolischen Funktionen gilt
+For the hyperbolic functions we have
 \[
 y^2-x^2=y_0^2(\cosh^2t-\sinh^2t)=y_0^2.
 \]
-Setzen wir dies in der dritten Gleichung ein, erhalten wir
+Substituting this in the third equation gives the solution
 \[
 u(x,y)=y^2-x^2.
 \]
-Tatsächlich kann man durch Ableiten nachrechnen
+In fact, by computing the derivatives, we get
 \begin{align*}
 \frac{\partial u}{\partial x}&=-2x\\
 \frac{\partial u}{\partial y}&=2y\\
 \Rightarrow
 y\frac{\partial u}{\partial x}+x\frac{\partial u}{\partial y}&=-2xy+2xy=0,
 \end{align*}
-Die Differentialgleichung ist also erfüllt.
+so the differential equation is satisfied.
 \item
-Die Ableitungen für $|x|>|y|$ sind
+The deriviatives for $|x|>|y|$ are
 \begin{align*}
 \frac{\partial v}{\partial x}
 &=2(x^2-y^2)2x\\
 \frac{\partial v}{\partial x}
 &=2(x^2-y^2)(-2y)
 \end{align*}
-Daraus bekommen wir
+This implies
 \[
 y\frac{\partial v}{\partial x}
 +
@@ -126,31 +137,30 @@ x \frac{\partial v}{\partial x}
 4xy(x^2-y^2)
 -4xy(x^2-y^2)=0,
 \]
-$v$ erfüllt also die Differentialgleichung.
-Trotzdem ist es keine
-Lösung, denn die Ableitungen passen an der Nahtstelle nicht zusammen.
-Auf der Geraden $x=y$ gilt nämlich:
+so $v$ satisifies the partial differential equation.
+In spite of this, $v$ is not a solution, because the pieces do not
+fit together diffrentiably along the  lines $y=\pm x$.
+On the line $x=y$, we have
 \begin{align*}
 \frac{\partial}{\partial x}(y^2-x^2)&=-2x\\
-\frac{\partial}{\partial x}(x^2-y^2)^2&=2(x^2-y^2)2x=0
+\frac{\partial}{\partial x}(x^2-y^2)^2&=2(x^2-y^2)2x=0.
 \end{align*}
-für $x>0$ sind die Ableitungen also verschieden.
+In particular, for $x>0$, the derivatives are different.
 \end{teilaufgaben}
 
-Man kann für diese Differentialgleichung für geeignete Anfangsbedingungen
-verschiedene Lösungen konstruieren. Seien $f$ und $g$ irgendwelche
-differenzierbaren Funktionen mit $f(0)=g(0)$ und $f'(0)=g'(0)=0$,
-und betrachten wir die Funktion
+One can easily construct many different solutions for this equation.
+Let $f$ and $g$ be differentiable functions with $f(0)=g(0)$
+and $f'(0)=g'(0)=0$, and consider the function
 \[
 u(x,y)=\begin{cases}
 f(y^2-x^2)&\qquad |y|\ge|x|\\
-g(x^2-y^2)&\qquad |y|\le|x|
+g(x^2-y^2)&\qquad |y|\le|x|.
 \end{cases}
 \]
-An der Nahtstelle passen die Werte zusammen, wenn $|x|=|y|$ ist $x^2-y^2$,
-d.~h.~$f(y^2-x^2)=f(0)=g(0)=g(x^2-y^2)$, es spielt also keine Rolle, welche
-der Definitionen man wählt.
-Auch die Ableitungen passen zusammen:
+The values fit together along $|x|=|y|$, because then $x^2-y^2=0$,
+i.~e.~$f(y^2-x^2)=f(0)=g(0)=g(x^2-y^2)$, so it does not matter which
+definition we choose.
+This even is true for the derivatives:
 \begin{align*}
 \frac{\partial}{\partial x}f(y^2-x^2)&=-2xf'(y^2-x^2)=-2xf'(0)=0
 \\
@@ -160,29 +170,23 @@ Auch die Ableitungen passen zusammen:
 \\
 \frac{\partial}{\partial y}g(x^2-y^2)&=-2yg'(y^2-x^2)=-2yg'(0)=0
 \end{align*}
-Die Funktion $u$ ist also stetig differenzierbar.
-Eingesetzt in die Differentialgleichung ergibt sich
+This means that $u$ is continuously differentiable.
+Substituting it into the differential equation gives
 \[
 y\partial_xu+x\partial_yu
 =
 \begin{cases}
 -yf'(y^2-x^2)2x+xf'(y^2-x^2)2y=0&\qquad |y|>|x|\\
-yg'(x^2-y^2)2x-xg'(x^2-y^2)2y=0&\qquad |y|<|x|
+yg'(x^2-y^2)2x-xg'(x^2-y^2)2y=0&\qquad |y|<|x|,
 \end{cases}
 \]
-Sie ist also eine Lösung. Sie erfüllt die Anfangsbedingung
-$u(0,y)=f(y^2)$, für jede beliebige Funktion $g$. Das Cauchyproblem
-ist also nicht eindeutig lösbar.
+which means it is a solution.
+It satisfies the initial condition $u(0,y)=f(y^2)$ for every function $g$.
+By choosing different functions $g$ subject to the conditions noted,
+we can construct arbitrarily many solutions.
 
-Ursache dafür ist natürlich, dass man von der $y$-Achse aus mit
-Charakteristiken nur den Bereich $|y|\ge |x|$ erreichen kann.
-Die Lösung mit Charakteristiken kann die Unterschiedlichen Lösungen
-im Bereich $|y|<|x|$ gar nicht ``sehen''.
-Die Funktion $u$ erfüllt entlang der $x$-Achse eine Anfangsbedingung
-der Form $u(x,0)=g(x^2)$, diese Werte beeinflussen die Lösung aber
-nur im Bereich $|y|<|x|$. Sofern die Lösungen an der Nahtstelle
-zusammenpassen, was durch $f'(0)=g'(0)=0$ sichergestellt wird,
-kann man also die Lösung unendlich viele Lösungen dieses Cauchy-Problems
-finden.
+The reason for this is of course that the characteristics emanating from
+the $y$-axis cover only the domain with $|y|> |x|$.
+The part $|y|<|x|$ is ``invisible'' to these characteristics.
 \end{loesung}
 
