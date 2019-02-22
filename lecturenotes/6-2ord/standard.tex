@@ -3,14 +3,13 @@
 %
 % (c) 2019 Prof Dr Andreas Mueller, Hochschule Rapperswil
 %
-\section{Standard form}
-\rhead{Standard form}
+\section{Standard form of the differential operator}
+\rhead{Standard form of the differential operator}
 In the form (\ref{operator2ordnung})
 the differential equation is defined by the choice of coefficients
 $(a_{ij})$, $b_i$ and $c$.
-They can also be functions of the independen variables $x_i$.
-
-However, not all the coefficients are equally imporant in influencing
+They can also be functions of the independent variables $x_i$.
+However, not all the coefficients are equally important in influencing
 the character of the solutions.
 A change of coordinates will also change the coefficients.
 We can expect that suitable transformations will be able to turn
@@ -18,16 +17,16 @@ most coefficients to zero, so that only very few coefficients remain
 that then determine the character of the solutions.
 So the first step taken in this section is to find out how a change
 of coordinates changes the coefficients.
-The nexst step then is to find out what properties are invariant
+The next step then is to find out what properties are invariant
 under coordinate transformation.
 
 \subsection{Linear transformation of the coordinates
 \label{lineare-transformation}}
-A coordinate transformation
+A linear coordinate transformation
 \[
 x_i=\sum_{j}t_{ij}x_j'
 \]
-transforms the derivates according to the chain rule
+transforms the derivatives according to the chain rule
 \[
 \frac{\partial u}{\partial x'_j}
 =
@@ -114,7 +113,7 @@ $a_{ij}$ are transformed according to
 \[
 a_{ij}=\sum_{k,l=1}^n t_{il}a_{lk}'t_{jk},
 \]
-or in matrix form
+or in matrix notation
 \[
 A=TA'T^t
 \qquad\Rightarrow\qquad
@@ -127,7 +126,7 @@ Otherwise we get additional terms from the derivatives of the coefficients.
 \subsection{Influence of first order terms
 \label{einfluss-terme-erster-ordnung}}
 We want to show that the coefficients $b_i$ are of no importance to
-the question, where boundary values need to be specified in order
+the question where boundary values need to be specified in order
 for a particular linear partial differential equation problem
 of second order to be well posed.
 
@@ -184,7 +183,7 @@ e^{k\cdot x}
 2\sum_{i,j=1}^n a_{ij}k_i\frac{\partial u}{\partial x_j}
 +
 \sum_{i,j=1}^n a_{ij}k_ik_ju
-\biggr)
+\biggr).
 \end{align*}
 In the last step we have used that we can rename the index of summation
 however we want.
@@ -226,6 +225,7 @@ e^{k\cdot x}
 e^{k\cdot x}Lu + (\alpha -c)v
 \notag
 \\
+\Rightarrow\qquad
 (M-(\alpha - c))v&=e^{k\cdot x}Lu=e^{k\cdot x}f
 \label{reducedoperator}
 \end{align}
@@ -241,9 +241,9 @@ In summary, if the matrix $a_{ij}$ is regular, or more generally if the
 system of equations \eqref{bequation} has a solution, then we can
 ignore the first order terms as far as the questions at the beginning
 of this chapter are concerned.
-
 If $a_{ij}$ is not regular, then the first order terms may not all
-be removed.
+be removed, as is the case in the heat equation.
+We will return to this problem in the example on page~\pageref{heatexample}.
 
 \subsection{Symbol matrix}
 Because the second order derivatives do not depend on the order
@@ -286,6 +286,7 @@ Ab=0,
 a vector $b$ in the kernel of $A$ cannot be removed.
 
 \begin{beispiel}
+\label{heatexample}
 As an example consider the operator
 \[
 L

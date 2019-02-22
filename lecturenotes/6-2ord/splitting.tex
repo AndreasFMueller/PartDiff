@@ -20,9 +20,9 @@ Because the equation is linear, we can attempt to build the solution
 as a linear combination of functions that each partially solve the
 problem.
 
-In a firs step, we try to solve the equation without regard to the
+In a first step, we try to solve the equation without regard to the
 boundary conditions.
-We call such a solution $u_p$, it solves
+We call such a solution a particular solution and denote it $u_p$, it solves
 \begin{equation}
 Lu_p=f\qquad\text{in $\Omega$.}
 \label{pdgl2ord:up}
@@ -62,7 +62,7 @@ We should be able to find such solutions from $u_p+u_r$ by adding
 an additional term $u_h$.
 This term must not destroy what we have accomplished with the first
 two steps,
-it thereforem ust satisfy the equations
+it therefore must satisfy the equations
 \begin{equation}
 \begin{aligned}
 L(u_p+u_r+u_h)&=f+Lu_h&&\Rightarrow&Lu_h&=0&&\text{in $\Omega$}\\
