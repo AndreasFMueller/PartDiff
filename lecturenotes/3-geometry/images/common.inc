@@ -294,7 +294,7 @@ mesh {
 		C - 0.5 * dirx + 0.5 * diry
 	}
 	pigment {
-		color Red
+		color rgb<0.8,0.6,0.8>
 	}
 	finish {
 		specular 0.9

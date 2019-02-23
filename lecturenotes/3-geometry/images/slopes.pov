@@ -1,5 +1,5 @@
 //
-// normal.pov -- 
+// slopes.pov -- 
 //
 // (c) 2019 Prof Dr Andreas Müller, Hochschule Rapperswil
 //
@@ -8,11 +8,18 @@
 #include "../../common/common.inc"
 #include "parameters.inc"
 
-#declare show_grid = true;
 #declare show_surface = true;
-#declare show_normal = true;
-#declare show_lines = true;
+#declare show_grid = true;
 #declare show_center = true;
+#declare show_lines = true;
+#declare show_red = true;
+#declare show_legs = true;
+#declare show_tangent = true;
+
+#declare xmin = 1;
+#declare xmax = 2;
+#declare ymin = 1;
+#declare ymax = 2;
 
 #include "common.inc"
 
