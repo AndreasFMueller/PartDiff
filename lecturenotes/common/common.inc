@@ -3,6 +3,9 @@
 //
 // (c) 2018 Prof Dr Andreas Müller, Hochschule Rapperswil
 //
+global_settings {
+        assumed_gamma 1
+}
 
 //
 // draw a right angle quarter circle at point <o> with legs <v1> and <v2> and 
