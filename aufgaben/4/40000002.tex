@@ -1,9 +1,9 @@
-Lösen Sie die partielle Differentialgleichung
+Solve the partial differential equation
 \[
 \frac{\partial^2}{\partial x^2}u+\frac{\partial^2}{\partial y^2}u
 +2\frac{\partial }{\partial y}u+u=0
 \]
-auf dem Gebiet $0 < x < \pi$, $y > 0$ mit den Randbedingungen
+on the domain $0 < x < \pi$, $y > 0$ with boundary conditions
 \[
 u(0,y)=u(\pi,y)=0
 \quad
@@ -12,48 +12,50 @@ u(x,0)=\sin x,\quad \frac{\partial }{\partial n}u(x,0)=\sin 3x
 \]
 
 \begin{loesung}
-Ein Separationsansatz $u(x,y)=X(x)Y(y)$ liefert
+The separation ansatz $u(x,y)=X(x)Y(y)$ gives
 \begin{align*}
 X''(x)Y(y)+X(x)Y''(y)+2X(x)Y'(y)+X(x)Y(y)&=0
 \\
 \frac{Y''(y)+2Y'(y)+Y(y)}{Y(y)}
 &=
--\frac{X''(x)}{X(x)}
+-\frac{X''(x)}{X(x)}.
 \end{align*}
-Daraus folgen die beiden gewöhnlichen Differentialgleichungen
+We derive the ordinary differential equations
 \begin{align*}
 X''(x)&=-\lambda X(x)\\
-Y''(y)+2Y'(y)+(1-\lambda)Y(y)&=0
+Y''(y)+2Y'(y)+(1-\lambda)Y(y)&=0.
 \end{align*}
-Die erste Gleichung hat für positives $\lambda$ die Lösungen
-$\sin\sqrt{\lambda}x$, diese erfüllen die Randbedingung für $x=0$
-und $x=\pi$ aber nur, wenn $\sqrt{\lambda}$ eine Ganzzahl ist, also
-$\lambda=n^2$. Für negatives $\lambda$ gibt es keine Lösung,
-die die Randbedingungen respektiert. Daher wird die zweite Gleichung
+For positive $\lambda$, the first equation has the solution
+$\sin\sqrt{\lambda}x$, which satisfies the boundary condition for $x=0$,
+but for $x=\pi$ it does so only if $\sqrt{\lambda}$ is an integer, so
+$\lambda=n^2$.
+For negative $\lambda$, there is no solution that respects the bounary
+condition.
+Therefore the second equation reduces to
 \[
-Y''(y)+2Y'(y)+(1-n^2)Y(y)=0
+Y''(y)+2Y'(y)+(1-n^2)Y(y)=0.
 \]
-Dies ist eine lineare Differentialgleichung mit konstanten
-Koeffizienten, die mit dem üblichen Verfahren gelöst werden
-kann. Das charakteristische Polynom ist
+This is a linear differential equation with constant coefficients,
+which can be solved using one of the well known methods.
+The characteristic polynomial is
 \[
 \omega^2+2\omega+(1-n^2)=0,
 \]
-es hat die Nullstellen
+it has the zeros
 \[
 \omega_{\pm}=-1\pm{\sqrt{1-(1-n^2)}}=-1\pm n.
 \]
-Die allgmeine Lösung lautet also
+The general solution is
 \[
 u_n(x,y)=(a_{n,+}e^{(-1+n)y}+a_{n,-}e^{(-1-n)y})\sin nx.
 \]
-Die Exponentialfaktoren lassen sich aber eleganter
-mit den hyperbolischen Funktionen ausdrücken:
+The exponential factors can be more elegantly expressed by hyperbolic
+functions:
 \[
 u_n(x,y)=(a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx.
 \]
-Tatsächlich kann man nachrechen, dass diese Funktionen
-tatsächlich Lösungen sind. Die Ableitungen sind
+Indeed, we can verify that these functions are in fact solutions.
+Its derivatives are
 \begin{align*}
 \frac{\partial}{\partial x}u_n(x,y)
 &=
@@ -75,11 +77,9 @@ n(a_n\sinh ny+b_n\cosh ny)e^{-y}\sin nx
 -2n(a_n\sinh ny+b_n\cosh ny)e^{-y}\sin nx
 \\
 &\qquad
-+n^2(a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx
-\\
++n^2(a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx.
 \end{align*}
-Setzt man diese in die Differentialgleichung
-ein, ergibt sich
+By substituting this in the differential equation, we get
 \begin{align*}
 -n^2 (a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx&\\
 +(a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx&\\
@@ -92,37 +92,37 @@ n(a_n\sinh ny+b_n\cosh ny)e^{-y}\sin nx
 )&\\
 +
 (a_n\cosh ny+b_n\sinh ny)e^{-y}\sin nx
-&=0
+&=0.
 \end{align*}
-In dieser Form ist die Anfangsbedingung etwas übersichtlicher
-zu erfüllen, weil  $\sinh n0=0$ und $\cosh n0=1$. Die Normalableitung
-am Rand $y=0$ ist die Ableitung in Richtung $y$, also
+In this form, the initial conditions are a bit more transparent to
+satifisfy, because $\sinh n0=0$ and $\cosh n0=1$.
+The normal derivative on the boundary $y=0$ is the derivative in the
+direction $y$, so
 \begin{align*}
 u_n(x,0)&=a_n\sin nx
 \\
-\frac{\partial}{\partial n}u_n(x,0)&=(-a_n+nb_n)\sin nx
+\frac{\partial}{\partial n}u_n(x,0)&=(-a_n+nb_n)\sin nx.
 \end{align*}
-Man kann also zunächst aus den Werten für $y=0$ das $a_n$
-ermitteln, und dann mit Hilfe der Normalableitungen für $y=0$
-daraus die $b_n$.
+So from the boundary values for $y=0$ we can determine $a_n$ and from
+the values of the normal derivative for $y=0$ we get $b_n$.
 
-Im vorliegenden Fall ist $a_1=1$ der einzige $a$-Koeffizient,
-der nicht verschwindet. Andererseits braucht man zur Erfüllung
-der Bedingung an die Ableitung den Fall $n=3$. Es folgt
+In the present case, $a_1=1$ is the only $a$-coefficient that does
+not vanish.
+To satisfy the boundary conditions for the normal derivative, we need $n=$.
+It follows that
 \begin{align*}
 a_1&=1&&\\
 -a_1+1\cdot b_1&=0&\Rightarrow\quad b_1&=1\\
 a_3&=0&&\\
--a_3+3b_3&=1&\Rightarrow\quad b_3&=\frac13
+-a_3+3b_3&=1&\Rightarrow\quad b_3&=\frac13.
 \end{align*}
-Offenbar ist die gesuchte Lösung also
+So the solution we are looking for is
 \[
 u(x,y)=e^{-y}(\sin x \cosh y +
 \sin x\sinh y
 +
 \frac13\sin 3x \sinh 3y),
 \]
-wie man auch durch Nachrechnen zum Beispiel mit einem Computeralgebrasystem
-überprüfen kann.
+which we can also verify e.~g.~using a computer algebra system.
 \end{loesung}
 
