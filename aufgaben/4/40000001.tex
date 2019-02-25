@@ -1,85 +1,86 @@
-Betrachten Sie die partielle Differentialgleichung
+Consider the partial differential equation
 \[
 \frac1{1-x^2}\frac{\partial^2 u}{\partial x^2}
 -
 \frac{\partial^2 u}{\partial t^2}=0
 \]
-auf dem Gebiet
+on the domain
 \[
 \Omega=\{(x,t)\,|\, x\in (-1,1), t>0\}
 \]
-mit Anfangsbedingungen
+with boundary conditions
 \begin{align*}
 u(t,-1)&=u(t,1)=0&t&>0\\
 u(0,x)&=1-x^2&x&\in[-1,1]\\
 \frac{\partial}{\partial t}u(0,x)&=0&x&\in[-1,1]\\
 \end{align*}
 \begin{teilaufgaben}
-\item Ist sie elliptisch, parabolisch oder hyperbolisch?
-\item Führen Sie die Differentialgleichung mit Hilfe eines
-Separationsansatzes in ein System von gewöhnlichen
-Differentialgleichungen über. Lösen Sie mindestens eine der
-gewöhnlichen Differentialgleichungen.
+\item
+Is this partial differential equation elliptic, parabolic and hyperbolic?
+\item
+Use a separation ansatz to convert the partial differential equation
+into a system of ordinary differential equations.
+Solve at least one of the ordinary differential equations.
 \end{teilaufgaben}
 
 \begin{loesung}
 \begin{teilaufgaben}
 \item
-Die Symbolmatrix des Differentialoperators ist
+The symbol matrix of the differential operator is
 \[
 \begin{pmatrix}
 \frac1{1-x^2}&0\\0&-1
 \end{pmatrix}.
 \]
-Da sie diagonal ist, können die Eigenwerte von der Diagonalen
-abgelesen werden. Sie haben verschiedenes Vorzeichen, wegen
-$-1<x<1$ ist nämlich $1-x^2>0$. Also ist die Differentialgleichung
-hyperbolisch.
+As this is a diagonal matrix, the eigenvalues can be read off the diagonal.
+They have different signs because $-1<x<1$ implies $1-x^2 >0$.
+Therefore the partial differential equation is hyperbolic.
 \item
-Wir verwenden einen Separationsansatz der Form
+We use the separation ansatz
 \[
 u(t,x)=T(t)\cdot X(t).
 \]
-Eingesetzt in die Differentialgleichung ergibt sich
+Substituted into the partial differential equation gives
 \[
-\frac1{1-x^2}T(t)X''(x)-T''(t)X(x)=0
+\frac1{1-x^2}T(t)X''(x)-T''(t)X(x)=0.
 \]
-Nach Division durch $T(t)X(t)$ erhalten wir
+After dividing by 
+$T(t)X(t)$ we get
 \begin{equation}
-\frac1{1-x^2}\frac{X''(x)}{X(x)}=\frac{T''(t)}{T(t)}
+\frac1{1-x^2}\frac{X''(x)}{X(x)}=\frac{T''(t)}{T(t)},
 \label{40000001:separiert}
 \end{equation}
-womit die Variablen $x$ und $t$ erfolgreich separiert sind.
+which successfully separates the variables $x$ and $t$.
 
-Jede Seite von \eqref{40000001:separiert} muss konstant sein. Wäre die
-Konstante postiv, erhielten wir aus der Gleichung für $T$ exponentiell
-anwechsende Lösungen, was für eine Wellengleichung nicht passt, wir
-können also annehmen, dass die Konstante nicht positiv ist.
-Daher nennen wir sie $-\omega^2$.
+Each side of \eqref{40000001:separiert} must be constant.
+If the constant were positive, we would exponentially increasing
+solutions, which does not fit the wave equation.
+We can therefore assume that the constant is not positive
+and write it as $-\omega^2$.
 
-Für $T$ ergibt sich die Gleichung
+For $T$ we get the ordinary differential equation
 \[
 T''(t)=-\omega^2 T(t)
 \]
-mit der allgemeinen Lösung
+with the general solution
 \[
 T(t)=A\cos\omega t+B\sin\omega t.
 \]
-Aus der Anfangsbedingung $\partial_t u(0,x)=0$ folgt jedoch, dass
-$T'(0)=0$ sein muss, also
+From the boundary condition $\partial_t u(0,x)=0$ it follows, that
+$T'(0)=0$ or
 \[
 T'(0)=-A\omega\sin\omega \cdot 0+B\omega\cos\omega\cdot 0=B\omega=0.
 \]
-Da also $B=0$, ist die einzig mögliche Lösung
+As $B=0$, the only remaining solution is
 \[
 T(t)=A\cos\omega t.
 \]
-Die Gleichung für $X$ ist
+The equation for $X$ is
 \[
 X''+\omega^2(1-x^2)X=0
 \]
-ist nicht so einfach lösbar, die Lösungen heissen die parabolischen
-Zylinderfunktionen.
+and it is not so easily solvable.
+The solutions are known as the parabolic zylinder functions. 
 \qedhere
 \end{teilaufgaben}
 \end{loesung}
