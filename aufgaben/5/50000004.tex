@@ -1,80 +1,81 @@
-Lösen Sie die Wellengleichung
+Solve the wave equation
 \[
 \frac{\partial^2 u}{\partial t^2}=\frac{\partial^2 u}{\partial x^2}
 \]
-für eine zwischen $x=0$ und $x=\pi$ gespannte Saite,
-die zur Zeit $t=0$ in Ruhelage ist, aber die Geschwindigkeit
+for a string mounted between $x=0$ and $x=\pi$,
+which is in the zero position at time $t=0$, but has velocity
 \[
 \frac{\partial u}{\partial t}(0, x)
 =
-\sin^3 x=\frac34\sin x-\frac14\sin 3x
+\sin^3 x=\frac34\sin x-\frac14\sin 3x.
 \]
-hat.
 
 \begin{hinweis}
-Eine Lösung mit Separation dieser Aufgabe ist in \ref{40000004}
-dargestellt, verwenden Sie hier die Transformationsmethode bzw.~Fourierreihen.
+A solution of this problem using the separation method is shown in 
+problem \ref{40000004}.
+Use the transformation method or Fourier series to solve the equation.
 \end{hinweis}
 
 \begin{loesung}
-Die Fourier-Transformation
-von Funktionen auf dem Interval $[0,\pi]$, die am Rande
-des Intervals verschwinden, ist die Entwicklung in eine Fourier-Sinus-Reihe,
-also die Transformation 
-\[u(t,x) \mapsto \hat u(t, k)= C\int_0^{\pi} u(t,x)\sin kx\, dx\]
-mit einer geeigneten Normierungskonstanten $C$, die im vorliegenden
-Fall allerdings unwichtig ist (weil die Berechnung der Fourierreihe
-im Hinweis bereits durchgeführt ist).
+The Fourier transform of functions on the interval $[0,\pi]$ that vanish
+at the ends of the interval, is the Fourier sine series, i.~e.~the
+transformation
+\[
+u(t,x) \mapsto \hat u(t, k)= C\int_0^{\pi} u(t,x)\sin kx\, dx
+\]
+with suitable normalization constants $C$, which happens to be less important
+for the present solution.
 
-Die Transformation der Differentialgleichung 
+The transformation for the differential equation is
 \begin{equation}
 \frac{\partial^2}{\partial t^2}\hat u(t,k)
 =-k^2\hat u(t,k)
 \label{gleichungfueruk}
 \end{equation}
-Die Fouriertransformation der Anfangsbedingung ist
+The initial condition transforms to
 \begin{align}
 \hat u(0,k)&=0\label{40000004:anfbedu}\\
 \frac{\partial}{\partial t}\hat u(0,k)&=
 \begin{cases}
 \frac34&\qquad k= 1\\
 -\frac14&\qquad k= 3\\
-0&\qquad \text{sonst}
+0&\qquad \text{otherwise}
 \end{cases}
 \label{40000004:anfbedudot}
 \end{align}
-Die Gleichung
+The equation
 \eqref{gleichungfueruk}
-ist eine gewöhnliche Differentialgleichung für jeden
-einzelnen Fourierkoeffizienten, mit allgemeiner Lösung
+is an ordinary differential equation for each Fourier coefficient
+with general solution
 \[
-\hat u(t,k)=A_k\cos kt+B_k\sin kt
+\hat u(t,k)=A_k\cos kt+B_k\sin kt.
 \]
-Darin sind die Koeffizienten $A_k$ und $B_k$ aus den Anfangsbedingungen
-\eqref{40000004:anfbedu} und \eqref{40000004:anfbedudot} zu bestimmen:
+
+The coefficients $A_k$ and $B_k$ can be determined from the boundary
+conditions \eqref{40000004:anfbedu} and \eqref{40000004:anfbedudot}:
 \begin{align*}
 \hat u(0,k)&=A_k=0\\
 \partial_t \hat u(0,k)&=kB_k=
 \begin{cases}
 \frac34&\qquad k= 1\\
 -\frac14&\qquad k= 3\\
-0&\qquad \text{sonst}
+0&\qquad \text{otherwise}
 \end{cases}
 \end{align*}
-Insbesondere gilt
+In particular we get
 \[
-B_1=\frac34,\qquad B_3=-\frac1{12}
+B_1=\frac34,\qquad B_3=-\frac1{12}.
 \]
-Damit sind die zeitabhängigen Fourierkoeffizienten $\hat u(t,k)$ bestimmt:
+We thus know the time dependent Fourier coefficients $\hat u(t,k)$:
 \[
 \hat u(t,k)=
 \begin{cases}
 \frac34\sin t &\qquad k= 1\\
 -\frac1{12}\sin 3t&\qquad k= 3\\
-0&\qquad \text{sonst}
+0&\qquad \text{otherwise}
 \end{cases}
 \]
-Summiert man die Fourier-Reihe, ergibt sich
+Summing the Fourier series gives the solution
 \[
 u(t,x)=\sum_{k>0}\hat u(t,k) \sin kx
 = \frac34\sin x \sin t -\frac1{12}\sin 3x \sin 3t.
