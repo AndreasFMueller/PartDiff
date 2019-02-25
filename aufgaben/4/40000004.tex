@@ -1,45 +1,45 @@
-Lösen Sie die Wellengleichung
+Solve the wave equation
 \[
 \frac{\partial^2 u}{\partial t^2}=\frac{\partial^2 u}{\partial x^2}
 \]
-für eine zwischen $x=0$ und $x=\pi$ gespannte Saite,
-die zur Zeit $t=0$ in Ruhelage ist, aber die Geschwindigkeit
+for a string mounted between $x=0$ ynd $x=\pi$, which at time $t=0$
+is in the rest position but has velocity
 \[
 \frac{\partial u}{\partial t}(0, x)
 =
-\sin^3 x=\frac34\sin x-\frac14\sin 3x
+\sin^3 x=\frac34\sin x-\frac14\sin 3x.
 \]
-hat.
 
 \begin{hinweis}
-Diese Aufgabe kann auch mit der Transformationsmethode gelöst werden,
-siehe dazu die Aufgabe \ref{50000004}.
+This problem can also be solved using the transformation method, see
+problem~\ref{50000004}.
 \end{hinweis}
 
 \begin{loesung}
-Die Separation der Wellengleichung in $u(t,x)=T(t)X(x)$ ergibt die
-zwei Gleichungen
+Substituting the separation ansatz 
+$u(t,x)=T(t)X(x)$ in the original equation gives the two equations
 \[
 X''(x)=-\mu X(x)\qquad\text{und}\qquad T''(t)=-\mu T(t),
 \]
-welche als Lösungen die Funktionen
+which have solution functions
 \begin{align*}
 X(x)&=\sin\sqrt{\mu}x & T(t)=\sin\sqrt{\mu}t\\
-X(x)&=\cos\sqrt{\mu}x & T(t)=\cos\sqrt{\mu}t
+X(x)&=\cos\sqrt{\mu}x & T(t)=\cos\sqrt{\mu}t,
 \end{align*}
-haben, wobei $\mu$ eine positive Zahl sein muss.
+where $\mu$ must be a positive number.
 
-Die Randbedingungen für $x=0$ und $x=\pi$ können allerdings nur
-für die Funktionen $\sin\sqrt{\mu}x$ erfüllt werden, und auch nur dann,
-wenn $\sqrt{\mu}$ eine ganze Zahl ist. Die allgmeine Lösung der Gleichung
-hat daher die Form
+The boundary conditions for $x=0$ and $x=\pi$ can only be satisfied for
+the functions $\sin\sqrt{\mu}x$ and also only if $\sqrt{\mu}$ is an
+integer.
+The general solution of the equation therefore has the form
 \[
 u(t,x)
 =
 \sum_{n=1}^\infty a_n\sin nx \sin nt+\sum_{n=1}^\infty b_n\sin nx\cos nt
 \]
-Darin müssen die Koeffizienten $a_n$ und $b_n$ mit Hilfe der 
-Anfangsbedingung zur Zeit $t=0$ bestimmt werden. Man hat
+The coefficients $a_n$ and $b_n$ still need to be determined using the
+boundary condition for $t=0$.
+We have
 \begin{align*}
 u(0,x)&=
 \sum_{n=1}^\infty b_n\sin nx
@@ -51,15 +51,15 @@ u(0,x)&=
 \sum_{n=1}^\infty a_nn\sin nx
 \\
 &=
-\sin^3 x=\frac34\sin x-\frac14\sin 3x
+\sin^3 x=\frac34\sin x-\frac14\sin 3x.
 \end{align*}
-Daraus folgt durch Vergleich der Koeffizienten
+It follows by comparing coefficients that
 \begin{align*}
 a_1&=\frac34\\
 a_3&=-\frac{1}{12}\\
-a_k&=0\qquad\text{für $k\ne 1,3$}
+a_k&=0\qquad\text{for $k\ne 1,3$.}
 \end{align*}
-Damit ist die Lösung der Differentialgleichung
+Thus the differential equation has the solution
 \[
 u(t,x)
 = \frac34\sin x \sin t -\frac1{12}\sin 3x \sin 3t.
