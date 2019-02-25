@@ -1,19 +1,19 @@
-Lösen Sie die Differentialgleichung
+Solve the partial differential equation
 \[
 \frac{\partial u}{\partial x}+y\frac{\partial u}{\partial y}=0
 \]
-auf dem Gebiet $\Omega=\{(x,y)\,|\, x> 0\}$ mit der Randbedingung
+on the domain
+$\Omega=\{(x,y)\,|\, x> 0\}$ with boundary values
 \[
 u(0,y)=g(y)=y^2.
 \]
 
 \begin{loesung}
-Dies ist eine quasilineare partielle Differentialgleichung
-erster Ordnung, die mit Hilfe von Charakteristiken gelöst werden
-kann.
-Die Anfangskurve ist entlang der $y$-Achse vorgegeben, wir bezeichnen
-die zugehörigen $y$-Werte mit $y_0$.
-Das Differentialgleichungssytem für die  Charaketersistiken ist
+This is a quasilinear partial differential equation of first order
+which can be solved using the method of characteristics.
+The initial curve is given over the $y$-axis, we again denote the
+$y$-values on the boundary by $y_0$.
+The differential equation for the characeristics is
 \[
 \left.
 \begin{aligned}
@@ -25,54 +25,55 @@ Das Differentialgleichungssytem für die  Charaketersistiken ist
 \begin{aligned}
 x(y_0,t)&=t+C\\
 y(y_0,t)&=De^t\\
-u(y_0,t)&=u_0
+u(y_0,t)&=u_0.
 \end{aligned}
 \]
-Die Anfangsbedingungen verlangen, dass
+The initial conditions requires that
 \begin{align*}
 x(y_0,0)&=0&\Rightarrow&&C&=0\\
 y(y_0,0)&=y_0&\Rightarrow&&D&=y_0\\
-u(y_0,0)&=y_0^2&\Rightarrow&&u_0&=y_0^2
+u(y_0,0)&=y_0^2&\Rightarrow&&u_0&=y_0^2.
 \end{align*}
-Jetzt müssen wir die Variablen $y_0$ und $t$ aus den Gleichungen
+Now we have to eliminate the variables $y_0$ and $t$ from the equations
 \begin{align*}
 x&=t\\
 y&=y_0e^t\\
-u&=y_0^2
+u&=y_0^2.
 \end{align*}
-eliminieren. Setzt man die erste und die letzte Gleichung in die
-quadrierte zweite ein, erhält man
+Substituting the first and the last equation in the squared second
+equation, we find
 \[
 y^2=ue^{2x}\qquad\Rightarrow\quad u=y^2e^{-2x}.
 \]
 
-Alternative Lösung mit einem Separationsansatz: Man kann die DGL auch
-mit einem Separationsansatz lösen. Dazu schreibt man $u(x,y)=X(x)Y(y)$
-und setzt in die Differentialgleichung ein:
+Here is an alternative solution with a separation ansatz:
+Assume the solution can be written as a product $u(x,y)=X(x)Y(y)$
+and subsitute this into the partial differential equation:
 \begin{align*}
 X'(x)Y(y)+yX(x)Y(y)&=0\\
-\Rightarrow\qquad \frac{X'(x)}{X(x)}&=-y\frac{Y'(y)}{Y(y)}
+\Rightarrow\qquad \frac{X'(x)}{X(x)}&=-y\frac{Y'(y)}{Y(y)}.
 \end{align*}
-Da die eine Seite nur von $x$, die andere nur von $y$ abhängt, müssen
-beide Seiten konstant sein, so erhält man zwei gewöhnliche
-Differentialgleichungen
+The left side depends only on $x$, the right side depends only on $y$,
+so both sides must be constant, we call the constant $c$.
+This leads to the two ordinary differential equations
 \begin{align*}
 X'(x)&=cX(x)&\Rightarrow\qquad X(x)&=K_1e^{cx}\\
 Y'(y)&=\frac{c}{y}Y(y)&\Rightarrow\qquad Y(y)&=K_2y^{-c}
 \end{align*}
-Die zweite Gleichung wurde mit Hilfe von Separation gelöst.
-Die Anfangsbedingung für $x=0$ kann offenbar erfüllt werden,
-wenn $c=-2$, dann ist die Lösung gefundene Teillösung
+The second equation can be solved using separation (for ordinary
+differential equations).
+The initial condition for $x=0$ can easily be satisfied if
+$c=-2$, this gives the partial solution
 \[
 u(x,y)=Ke^{-2x}y^2,
 \]
-die Anfangsbedinung für $x$ ist aber nur dann erfüllt, wenn
+The initial condition for $x$ is only satisfied  if
 \[
 u(0,y_0)=Ky_0^2=g(y_0)\quad\Rightarrow\quad K=1,
 \]
-also ist die endgültige Lösung wie bei der ersten Lösung
+so the final solution is just as found previously
 \[
-u(x,y)=e^{-2x}y^2
+u(x,y)=e^{-2x}y^2.
 \qedhere
 \]
 \end{loesung}
