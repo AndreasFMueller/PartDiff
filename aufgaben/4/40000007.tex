@@ -1,4 +1,4 @@
-In der geometrischen Optik spielt die sogenannte Eikonal-Gleichung
+In geometric optics, the so called eiconal equation
 \begin{equation}
 \biggl( \frac{\partial u}{\partial x}\biggr)^2
 +
@@ -7,19 +7,17 @@ In der geometrischen Optik spielt die sogenannte Eikonal-Gleichung
 n(x,y)^2
 \label{40000007:eikonal}
 \end{equation}
-eine wichtige Rolle.
-Eine Lösung $u(x,y)$ beschreibt die
-Ausbreitung einer Welle in einem Medium mit der optischen
-Dichte  $n(x,y)$, dabei sind Kurven gleicher Werte von $u(x,y)$
-die Kurven gleicher Phase, entsprechen also den Wellenfronten.
-Insbesondere steht der Gradient von $u$ immer senkrecht auf
-der Wellenfront, zeigt also in Richtung der Lichtausbreitung.
+plays an important role.
+The solution $u(x,y)$ describes the propagation of a wave in an optical
+medium with optical density $n(x,y)$.
+The level curves of $u(x,y)$ are curves of equal phase of wave fronts.
+In particular, the gradient of $u$ is always orthogonal to the wave front,
+it follows the direction of travel of the wave.
 \begin{teilaufgaben}
 \item
-Lösen Sie die Gleichung
-\eqref{40000007:eikonal} mit Hilfe eines Separationsansatzes
-der Form $u(x,y)=X(x) + Y(y)$
-für 
+Solve the equation
+\eqref{40000007:eikonal}
+using a separation ansatz of the form $u(x,y)=X(x) + Y(y)$ for 
 \[
 n(x,y)=
 \begin{cases}n_1&\qquad x< 0\\
@@ -27,40 +25,44 @@ n_2&\qquad x>0.
 \end{cases}
 \]
 \item
-Berechnen Sie die Winkel $\alpha_1$ und $\alpha_2$ zwischen den Gradienten
-Ihrer Lösung und der $x$-Achse für $x<0$ und $x>0$. Bestimmen Sie 
+Compute the angles
+$\alpha_1$ and $\alpha_2$
+between the gradients of your solution and the $x$-axis for $x<0$ and
+$x>0$.
+Find 
 $\sin\alpha_1/\sin\alpha_2$.
 \end{teilaufgaben}
 
 \begin{loesung}
-In unserem Fall hängt $n$ nicht von $y$ ab, ist also eigentlich
-nur eine Funktion $n(x,y)=n(x)$ von $x$.
+In this case $n$ does does not depend on $y$, so it is just a function
+of the form $n(x,y)=n(x)$ of $x$ alone.
 \begin{teilaufgaben}
 \item
-Wir verwenden den Separationsansatz
+We use the separation ansatz
 \[
 u(x,y)=X(x) + Y(y).
 \]
-Einsetzen in die Differentialgleichung
-\eqref{40000007:eikonal} ergibt in separierter Form
+Substituting into the partial differential equation
+\eqref{40000007:eikonal} gives the separated form
 \[
 n(x)^2-X'(x)^2=Y'(y)^2.
 \]
-Die linke Seite hängt nur von $x$ ab, die rechte nur von $y$,
-also müssen beide konstant sein.
-Wir nennen die gemeinsame Konstante, die offenbar positiv sein
-muss, $\lambda^2$.
-Für $Y(y)$ finden wir die Differentialgleichung
+The left hand side only depends on $x$, the right hand side only depends
+on $y$, so both sides must be constant.
+We call the common constant, which obviously must be positive, 
+$\lambda^2$.
+For 
+$Y(y)$
+we find the ordinary differential equation
 \[
 Y'(y)=\lambda \qquad\Rightarrow\qquad Y(y)=\lambda y+ C_y.
 \]
-Für $X(x)$ ergibt sich dagegen
+On the other, the equation for $X(x)$ is
 \[
 X'(x)=\sqrt{n(x)^2-\lambda^2}.
 \]
-Jetzt müssen wir die Fälle $x<0$ und $x>0$ unterscheiden.
-In jedem dieser Fälle ist $n(x)$ konstant, es gilt dort
-also
+No we have to distinguish the cases $x<0$ and $x>0$.
+In each case $n(x)$ is constant, so we have
 \[
 X'(x)=\sqrt{n_i^2-\lambda^2}
 \qquad
@@ -68,29 +70,31 @@ X'(x)=\sqrt{n_i^2-\lambda^2}
 \qquad
 X(x)=x\sqrt{n_i^2-\lambda^2} + C_x.
 \]
-Die Lösung ist also
+Thus the solution is
 \[
-u(x,y)=\lambda y + x\sqrt{n_i^2-\lambda^2} + C
+u(x,y)=\lambda y + x\sqrt{n_i^2-\lambda^2} + C,
 \]
-wobei für $x<0$ der Wert $n_1$ für $n_i$ zu nehmen ist.
-Die Konstanten $C_x$ und $C_y$ haben wir in eine Konstante $C$
-zusammengefasst\footnote{Diese Konstaten ist weder für die Anwendung noch
-für das im nächsten Schritt angestrebte Ziel notwendig. In der Anwendung
-bedeutet $u$ die Phase einer Welle, eine additive Konstante ist also nichts
-anderes als eine Phasenverschiebung der Welle um den selben Betrag
-im ganzen Gebiet. Im nächsten Schritt wird der Gradient von $u$ untersucht,
-wodurch die Konstante $C$ erst recht wegfällt.}.
+where we have to take the value $n_1$ for $n_i$ in the case $x<0$
+and $n_2$ in the case $x>0$.
+We have collected the constants
+$C_x$ and $C_y$ in a single new constant\footnote{This constant
+is not imporant for the next steps or for the applications.
+In applications, $u$ is the phase of the wave, an additive constant
+is just a physically unimportant global phase shift.
+In the next step we want to study the gradient of $u$, which is not
+affected by the constant $C$.}
+$C$.
 \item
-Der Gradient ist
+The gradient is
 \[
 \operatorname{grad}u(x,y)
 =
 \begin{pmatrix}
 \sqrt{n_i^2-\lambda^2}\\
 \lambda
-\end{pmatrix}
+\end{pmatrix}.
 \]
-Für den Winkel zwischen $x$-Achse und Gradient gilt
+For the angle between $x$-axis and gradient we find
 \[
 \tan\alpha_i
 =
@@ -98,24 +102,25 @@ Für den Winkel zwischen $x$-Achse und Gradient gilt
 =
 \frac1{\sqrt{\frac{n_i^2}{\lambda^2}-1}}.
 \]
-Das ist gleichbedeutend mit
+This is equivalent to
 \[
 \sin\alpha_i=\frac{\lambda}{n_i}.
 \]
-Daraus folgt jetzt
+We conclude that
 \[
 \frac{ \sin\alpha_1}{\sin\alpha_2}=\frac{n_2}{n_1},
 \]
-dies ist das Brechungsgesetz von Snellius.
+this is Snell's law.
 \qedhere
 \end{teilaufgaben}
 \end{loesung}
 
 \begin{diskussion}
-Die Lösung $u(x,y)$ der Eikonalgleichung ist die Phase einer Welle
-$A(x,y)e^{iu(x,y)}$ in einer Näherung für sehr kleine Wellenlänge.
-Die Eikonalgleichung kann aus den elektromagnetischen Feldgleichungen
-abgleitet werden.
-In dieser Näherung sind Beugungseffekte nicht beobachtbar, und das
-Brechungsgesetz gilt exakt.
+The solution of the eiconal equation is the phase of a wave of the
+form
+$A(x,y)e^{iu(x,y)}$ in an approximation for very short wave lengths.
+The eiconal equation can be derived from the electromagnetic field
+equations (Maxwell's equations).
+In this approximation, diffraction effects are not visible and the
+law of refraction (Snell's law) is valid exactly.
 \end{diskussion}
