@@ -1,4 +1,4 @@
-Führen Sie die Lösung des partiellen Differentialgleichung
+Reduce the problem of solving the partial differential equation
 \[
 x^2\frac{\partial^2 u}{\partial x^2}
 +x\frac{\partial u}{\partial x}
@@ -6,45 +6,48 @@ x^2\frac{\partial^2 u}{\partial x^2}
 +y\frac{\partial u}{\partial y}
 =\lambda u
 \]
-auf dem Gebiet
+on the domain
 $\Omega=(1,2)\times(1,2)=\{ (x,y)\in\mathbb R^2\,|\, 1<x,y<2\}$
-mit den Randbedingungen $u=0$ auf $\partial\Omega$
-mit Hilfe eines Separationsansatzes auf gewöhnliche Differentialgleichungen
-zurück.
+with boundary conditions
+$u=0$ on $\partial\Omega$
+to a set of problems for ordinary differential equations using a
+separation ansatz.
 
 \begin{hinweis}
-Vergessen Sie Anfangs-/Randbedingungen für die gewöhnlichen
-Differentialgleichungen nicht.
+Don't forget the initial conditions for the ordinary differential
+equations.
+You are not required to actually solve the differential equations.
 \end{hinweis}
 
 \begin{loesung}
-Wir verwenden den Ansatz $u(x,y)=X(x)Y(y)$ und setzen dies in die
-Differentialgleichung ein:
+We use the ansatz
+$u(x,y)=X(x)Y(y)$ and substitute it into the partial differential
+equation:
 \[
 x^2X''(x)Y(y)
 +xX'(x)Y(y)
 +y^2X(x)Y''(y)
-+yX(x)Y'(y)=\lambda X(x)Y(y)
++yX(x)Y'(y)=\lambda X(x)Y(y).
 \]
-Division durch $X(x)Y(y)$ ergibt
+Dividing by $X(x)Y(y)$ gives
 \[
 x^2\frac{X''(x)}{X(x)}
 +x\frac{X'(x)}{X(x)}
 +y^2\frac{Y''(y)}{Y(y)}
-+y\frac{Y'(y)}{Y(y)}=\lambda
++y\frac{Y'(y)}{Y(y)}=\lambda.
 \]
-Schafft man alle Terme in $y$ auf die rechte Seite, ergibt sich
+By moving the terms with $y$ to the right hand side, we get
 \[
 x^2\frac{X''(x)}{X(x)}
 +x\frac{X'(x)}{X(x)}
 =
 \lambda
 -y^2\frac{Y''(y)}{Y(y)}
--y\frac{Y'(y)}{Y(y)}
+-y\frac{Y'(y)}{Y(y)}.
 \]
-Da die linke Seite nur von $x$ abhängt, die rechte Seite aber nur
-von $y$, sind beide Seiten Konstanten, also gelten die
-Gleichungen
+As the left hand side only depends on $x$ and the right hand side only
+on $y$, both sides must be constant.
+Naming the constant $\mu$, the equations become
 \begin{align*}
 x^2\frac{X''(x)}{X(x)}
 +x\frac{X'(x)}{X(x)}&=\mu
@@ -56,28 +59,28 @@ y^2\frac{Y''(y)}{Y(y)}
 +y\frac{Y'(y)}{Y(y)}&=\lambda-\mu
 &\Rightarrow&
 &
-y^2Y''(y)+yY'(y)+(\mu-\lambda) Y(y)&=0
+y^2Y''(y)+yY'(y)+(\mu-\lambda) Y(y)&=0.
 \end{align*}
-mit den Randbedingungen
+with boundary conditions
 \begin{align*}
 X(1)&=0&Y(1)&=0\\
 X(2)&=0&Y(2)&=0
 \end{align*}
-Die Differentialgleichungen sind übrigens eulersche Differentialgleichungen,
-sie können mit einer geeigneten Transformation in lineare
-Differentialgleichungen mit konstanten Koeffizienten umgeformt werden.
+The ordinary differential equations happen to be Euler equations,
+which can be transformed to linear differential equations with constant
+coefficients using a suitable transformation.
 \end{loesung}
 
 \begin{diskussion}
-Möglicherweise verwirren die Randbedingungen etwas.
-Man erwartet doch bei einer gewöhnlichen Differentialgleichung, dass
-man die Lösung durch Linearkombination so zusammenbauen muss, dass die
-Randbedingungen erfüllt sind.
-Die dazu benötigten Koeffizienten findet man typischerweise mit einem
-linearen Gleichungssystem, welches für die vorliegenden Randbedingungen
-nur eine Lösung hat: die Nulllösung.
-Man muss sich aber daran erinnern, dass in diesem Problem noch zwei weitere
-Parameter $\lambda$ und $\mu$ vorkommen, die so gewählt werden können,
-dass die Randbedingungen auch für eine Lösung erfüllt sind, die nicht
-identisch verschwindet.
+The boundary conditions may be a little bit confusing.
+For ordinary differential equations, one expects to linearly combine
+the solutions in such a way that the boundary conditions are satisfied.
+The necessary coefficients are usually found from a linear system of
+equations that arises when the general solution is substituted into
+the boundary conditions.
+In the present case, however, there is only the zero solution of
+the linear system of equations.
+But we have to remember that the problem has two more parameters
+$\lambda$ and $\mu$ that can be chosen in such a way that the 
+solution does not identically vanish.
 \end{diskussion}
