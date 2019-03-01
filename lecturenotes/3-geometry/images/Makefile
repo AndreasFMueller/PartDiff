@@ -8,7 +8,8 @@ all:	circular.pdf rays.pdf directionfield.pdf \
 	normal.jpg surface.jpg slopes.jpg normalcomp.jpg \
 	plane30.jpg plane110.jpg planes.jpg \
 	coneplanes.jpg \
-	planefield.jpg
+	planefield.jpg \
+	nondifferentiable.pdf underdetermined.pdf overdetermined.pdf
 
 directionfield.pdf:	directionfield.tex
 	pdflatex directionfield.tex
@@ -77,6 +78,15 @@ conemovie.timestamp:	conemovie.pov cone.inc
 	mkdir conemovie
 	povray +A0.1 $(POVRAYOPTIONS) -Oconemovie/p conemovie.ini
 	touch conemovie.timestamp
+
+underdetermined.pdf:	underdetermined.tex
+	pdflatex underdetermined.tex
+
+overdetermined.pdf:	overdetermined.tex
+	pdflatex overdetermined.tex
+
+nondifferentiable.pdf:	nondifferentiable.tex
+	pdflatex nondifferentiable.tex
 
 
 
