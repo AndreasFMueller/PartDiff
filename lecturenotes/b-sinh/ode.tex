@@ -27,14 +27,14 @@ A_2 e^{\lambda_2t},
 the constants $A_1$ and $A_2$ are to be determined from the initial
 conditions.
 If $y_0$ and $v_0$ are the initial value and the initial derivative,
-then find the linear system of equations
+then the linear system of equations
 \[
 \begin{linsys}{3}
-         A_1&+&         A_2&=&y_0\phantom{.}\\
+         A_1&+&         A_2&=&y_0\\
 \lambda_1A_1&+&\lambda_2A_2&=&v_0
 \end{linsys}
 \]
-for the coefficients $A_1$ and $A_2$.
+can be used to find the coefficients $A_1$ and $A_2$.
 This becomes particularly easy to solve for the differential equation
 \[
 y''+k^2 y=0.
@@ -62,10 +62,10 @@ y(x)=y_0\cos kx + \frac{v_0}{k}\sin kx
 This does not work for the analogous differential equation
 $y''-k^2y=0$, which has a different sign.
 The zeros of the characteristic polynomial are $\lambda_{1,2}=\pm k$,
-and this leads to the linear system of equations
+which leads to the linear system of equations
 \[
 \begin{linsys}{3}
- A_1&+& A_2&=&y_0\\
+ A_1&+& A_2&=&y_0\phantom{.}\\
 kA_1&-&kA_2&=&v_0.
 \end{linsys}
 \]
@@ -103,5 +103,5 @@ y_0\frac{e^{kx}+e^{-kx}}2
 \end{align}
 It turns out that satisfying the initial conditions becomes simple
 even in this case provided we do not use the functions $e^{\pm kx}$
-but instead their linear components \eqref{hyp:hyperbelfunktionen}.
+but instead the factors of $y_0$ and $v_0/k$ in~\eqref{hyp:hyperbelfunktionen}.
 
