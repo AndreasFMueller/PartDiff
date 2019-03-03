@@ -9,6 +9,18 @@ u(0,y)=g(y)=y^2.
 \]
 
 \begin{loesung}
+\begin{figure}
+\centering
+\begin{tikzpicture}[>=latex]
+\node at (0,0) {\includeagraphics[width=16cm]{solution.jpg}};
+\node at (2,10.9) {$z$};
+\node at (-3.3,-10) {$x$};
+\node at (7.9,-8.5) {$y$};
+\end{tikzpicture}
+\caption{Solution surface with Cauchy initial curve (green) and
+characteristics (red) for problem~\ref{30000004}
+\label{30000004:solutionfigure}}
+\end{figure}
 This is a quasilinear partial differential equation of first order
 which can be solved using the method of characteristics.
 The initial curve is given over the $y$-axis, we again denote the
@@ -72,8 +84,11 @@ The initial condition for $x$ is only satisfied  if
 u(0,y_0)=Ky_0^2=g(y_0)\quad\Rightarrow\quad K=1,
 \]
 so the final solution is just as found previously
-\[
+\begin{equation}
 u(x,y)=e^{-2x}y^2.
-\qedhere
-\]
+\label{30000004:solution}
+\end{equation}
+Figure~\ref{30000004:solutionfigure} shows the solution surface as the
+graph of \eqref{30000004:solution} together 
+with the Cauchy initial curve and the characteristics.
 \end{loesung}
