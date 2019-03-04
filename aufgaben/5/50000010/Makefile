@@ -13,7 +13,7 @@ $(domain_FILES): domain.mp
 	done
 
 loes.png:	loes.pov 
-	../../../povray -A0.1 -R20 -W3840 -H2160 loes.pov
+	povray -D +A0.1 -R20 -W3840 -H2160 loes.pov
 
 loes.jpg:	loes.png
 	convert -extract 3690x1563+48+387 loes.png -resize 50% \

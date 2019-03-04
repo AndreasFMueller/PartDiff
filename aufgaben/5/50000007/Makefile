@@ -16,7 +16,7 @@ w = 3840
 h = 2160
 
 loes.png:	loes.pov
-	../../../povray -A0.1 -R20 -W$(w) -H$(h) loes.pov
+	povray -D +A0.1 -R20 -W$(w) -H$(h) loes.pov
 
 loes.jpg:	loes.png
 	convert -extract 1626x1740+987+318 loes.png -resize 50% \

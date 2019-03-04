@@ -19,5 +19,4 @@ waerme.jpg:	waerme.png
 		-density 300 -units PixelsPerInch waerme.jpg
 
 waerme.png:	waerme.pov
-	../../../povray -A0.1 -R20 -W3840 -H2160 waerme.pov
-	#../../../povray -A0.1 -R20 -W384 -H216 waerme.pov
+	povray -D +A0.1 -R20 -W3840 -H2160 waerme.pov

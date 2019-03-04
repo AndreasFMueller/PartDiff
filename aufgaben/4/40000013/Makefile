@@ -13,7 +13,7 @@ $(domain_FILES): domain.mp
 	done
 
 loes.png:	loes.pov Makefile
-	../../../povray -A0.1 -R20 -W3840 -H2160 loes.pov
+	povray -D +A0.1 -R20 -W3840 -H2160 loes.pov
 
 loes.jpg:	loes.png
 	convert -extract 2911x1600+615+226 loes.png -resize 50% \

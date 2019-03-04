@@ -4,7 +4,7 @@
 all:	loes.jpg
 
 loes.png:	loes.pov 
-	../../../povray -A0.1 -R20 -W3840 -H2160 loes.pov
+	povray -D +A0.1 -R20 -W3840 -H2160 loes.pov
 
 loes.jpg:	loes.png
 	convert -extract 2082x1986+1002+129 loes.png -resize 50% \

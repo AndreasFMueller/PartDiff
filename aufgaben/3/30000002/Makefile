@@ -9,4 +9,4 @@ solution.jpg:	solution.png
 	convert -extract 1080x1510+0+178 solution.png \
 		-density 300 -units PixelsPerInch solution.jpg
 solution.png:	solution.pov
-	povray +A0.1 -H1920 -W1080 -Osolution.png solution.pov
+	povray -D +A0.1 -H1920 -W1080 -Osolution.png solution.pov
