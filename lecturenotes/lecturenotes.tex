@@ -71,6 +71,7 @@ Hochschule für Technik, Rapperswil, 2008-2019
 \begin{proof}[#1]%
 \renewcommand{\qedsymbol}{$\bigcirc$}
 }{\end{proof}}
+\allowdisplaybreaks
 \mainmatter
 \input{0-intro.tex}
 \input{1-examples/examples.tex}
@@ -85,5 +86,11 @@ Hochschule für Technik, Rapperswil, 2008-2019
 \input{a-nonlinear/nonlinear.tex}
 \appendix
 \input{b-sinh/sinh.tex}
+\vfill
+\pagebreak
+\ifodd\value{page}\else\null\clearpage\fi
+\lhead{Index}
+\rhead{}
+\addcontentsline{toc}{chapter}{\indexname}
 \input lecturenotes.ind
 \end{document}
