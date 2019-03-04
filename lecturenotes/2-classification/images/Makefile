@@ -22,12 +22,12 @@ mismatch.pdf:	mismatch.tex
 	pdflatex mismatch.tex
 
 cauchy.png:	cauchy.pov scene.inc
-	povray +A0.1 -W1920 -H1080 -Ocauchy.png cauchy.pov 
+	povray -D +A0.1 -W1920 -H1080 -Ocauchy.png cauchy.pov 
 cauchy.jpg:	cauchy.png
 	convert -extract 1400x1080+260+0 cauchy.png \
 		-density 300 -units PixelsPerInch cauchy.jpg
 cauchycurve.png:	cauchycurve.pov scene.inc
-	povray +A0.1 -W1920 -H1080 -Ocauchycurve.png cauchycurve.pov 
+	povray -D +A0.1 -W1920 -H1080 -Ocauchycurve.png cauchycurve.pov 
 cauchycurve.jpg:	cauchycurve.png
 	convert -extract 1400x1080+260+0 cauchycurve.png \
 		-density 300 -units PixelsPerInch cauchycurve.jpg
