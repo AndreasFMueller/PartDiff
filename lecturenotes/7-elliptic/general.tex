@@ -4,12 +4,15 @@
 % (c) 2019 Prof Dr Andreas Mueller
 %
 \section{The general case}
+\rhead{The general case}
 We now want to solve the general case of the problem
-\begin{align*}
+\[
+\begin{aligned}
 \Delta u&=f&&\text{in $\Omega$}\\
 u&=g&&\text{auf $\partial\Omega$}
-\end{align*}
-using an integral formular of the kind
+\end{aligned}
+\]
+using an integral formula of the kind
 \eqref{greenformula}.
 Following the one dimensional case, we are looking for a particular
 solution $G(x,\xi)$ for the problem with a $\delta$-distribution on
@@ -20,7 +23,7 @@ problem using an integral formular.
 \subsection{A particular solution}
 \rhead{Particular solution}
 The one-dimensional sample problem suggests that there is a function
-$\sigma(x,\xi)$, which allows to find a partcular solution of the
+$\sigma(x,\xi)$, which allows to find a particular solution of the
 Laplace equation using the integral
 \begin{equation}
 u_p(x)=\int_\Omega \sigma(x,\xi)  f(\xi)\,d\xi.
@@ -31,7 +34,7 @@ we just require that $\Delta u=f$ holds.
 
 The solution $\sigma$ does not have to depend on the shape of the domain,
 as it does not have to respect any boundary conditions,
-but it will change with $n$.
+but it will change with the dimension $n$.
 If we choose the right hand side $f$ to be a $\delta$ distribution in the
 point $y$, then
 \[
@@ -72,12 +75,11 @@ $\mu(S_r^1)=2\pi r$, which implies
 \[
 u'(r)=\frac1{2\pi r}\quad\Rightarrow\quad u(r)=\frac1{2\pi}\log|r|.
 \]
-Tne $n\ge 3$ we get
+For $n\ge 3$ we get
 \[
 u'(r)=\frac1{\mu(S^{n-1})}r^{1-n}\quad\Rightarrow\quad u(r)=\frac1{\mu(S^{n-1})}\cdot \frac1{2-n}r^{2-n}.
 \]
-},
-for $n=1$ we already have determined this function in \eqref{n1sigma}, as
+}
 \begin{equation}
 \sigma(x,\xi)=
 \begin{cases}
@@ -97,15 +99,15 @@ for $n=1$ we already have determined this function in \eqref{n1sigma}, as
 &\qquad \text{für $n\ge 3$}
 \end{cases}
 \end{equation}
+For $n=1$ we already have determined this function in \eqref{n1sigma}.
 By carefully performing all these derivatives we can verify
 that these functions are in fact solutions and that
 \eqref{singulaereloesunglaplace} is particular solution of
 Laplace equation.
 
 \subsection{Green's function}
-\rhead{Green's function}
 The propsed $\sigma$ is of course not the only function for which
-the formulat \eqref{singulaereloesunglaplace} will give a particular solution.
+the formula \eqref{singulaereloesunglaplace} will give a particular solution.
 By adding any function $h(x,\xi)$ which is harmonic as a function of $x$
 the integral
 \[
@@ -117,10 +119,12 @@ In particular we can choose $h(x,\xi)$ in such a way that
 the partial function
 $x\mapsto h(x,\xi)$
 solves the boundary value problem
-\begin{align*}
+\[
+\begin{aligned}
 \Delta_x h(x,\xi)&=0&&x\in\Omega\\
 h(x,\xi)&=\sigma(x,\xi)&&x\in\partial\Omega.
-\end{align*}
+\end{aligned}
+\]
 The function $h$ then has the same boundary values as $\sigma$.
 Consequently the difference $\sigma(x,\xi)-h(x,\xi)$ is a function
 that vanishes on the boundary $\partial\Omega$.
@@ -147,14 +151,14 @@ but does not provide a method to obtain it.
 Green's function deends only on the shape of the domain, not on
 the actual boundary condtions.
 Since there are domains where the Poisson problem with Dirichlet
-boundary conditions cannot be solve in a unique way, the theorem
-needs to require this.
+boundary conditions cannot be solved in a unique way, the theorem
+needs to require this as a precondition.
 
-Green's function for the Poisson problem solves the Problem
+Green's function for the Poisson problem solves the problem
 not only for homogeneous ($g=0$) boundary conditions, sondern
 for any boundary values $g\ne 0$:
 
-\begin{satz}[Solution of Poisson wroblem with Dirichlet boundary conditions]
+\begin{satz}[Solution of Poisson problem with Dirichlet boundary conditions]
 \label{dirichletloesung}
 If $G$ is Green's function for the Poisson problem with Dirichlet
 boundary values on the domain $\Omega$, then
@@ -169,6 +173,12 @@ is the solution for the same problem with arbitrary boundary values
 \eqref{dirichletrandbedingung}.
 \end{satz}
 
+Note that is very much in line with what we have found for the one
+dimensional case.
+The terms of \eqref{elliptic:greendiff} containing the derivatives
+of $G$ can be considered as the integral of the gradient of $G$
+over the bounary of the interval, which would be computed as a sum
+of the values in the boundary points.
 
 \begin{proof}
 We already know that the integral over $\Omega$ is a solution of the

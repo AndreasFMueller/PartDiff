@@ -5,8 +5,8 @@
 %
 \section{The mean value property of harmonic functions}
 \rhead{Mean value property}
-Harmonic funtion have a property that transcends the maximum principle
-for elliptic operators.
+Harmonic functions have a property that is even stronger than
+the maximum principle for elliptic operators.
 The maximum principle says that the solution of a homogeneous elliptic
 partial differential equation is bounded above and below by the
 extreme values on the boundary.
@@ -18,16 +18,29 @@ around the point.
 In this section we are going to illustrate that the values of harmonic
 functions are means of the values of the function on a sphere around 
 the point.
+\begin{figure}
+\centering
+\includegraphics{7-elliptic/images/meanvalue.pdf}
+\caption{Mean value property of a harmonic function.
+The surface represents a harmonic function. 
+The mean value along each of the red circles gives the same value,
+namely the function value in the yellow center point $C$.
+\label{elliptic:meanvalue:image}}
+\end{figure}
 
 \begin{satz}[Mean value property]
-Let $u$ bi a harmonic function on $\Omega$ and $x_0\in\Omega$.
+Let $u$ be a harmonic function on $\Omega$ and $x_0\in\Omega$.
 If $r$ is small enough so that the sphere with radius $r$ in $x_0$
-fits inside the domain $\Omega$.
-Then
+fits inside the domain $\Omega$,
+then
 \[
 u(0)=\frac1{\mu(S^{n-1}_r)}\int_{S^{n-1}_r}u(x)\,d\mu(x).
 \]
 \end{satz}
+
+The proof of this statement requires some techniques from multivariate
+analysis, in particular Gauss' divergence theorem.
+
 \begin{proof}
 Without loss of generality, we can assume that $x_0=0$.
 Then
@@ -40,7 +53,7 @@ follows from Gauss' theorem
 \\
 &=\int_{B_r^n}\operatorname{div}\operatorname{grad}u\,d\mu(x)
 \\
-&=\int_{S_r^{n-1}} \operatorname{grad}u\cdot dn
+&=\int_{S_r^{n-1}} \operatorname{grad}u\cdot dn.
 \end{align*}
 On the other hand
 \begin{align*}
@@ -53,12 +66,12 @@ On the other hand
 \,d\mu(x)
 \\
 &=
-\frac1{\mu(S_1^{n-1})}\int_{S_1^{n-1}}\operatorname{grad}u(xr)\cdot dn=0
+\frac1{\mu(S_1^{n-1})}\int_{S_1^{n-1}}\operatorname{grad}u(xr)\cdot dn=0.
 \end{align*}
 The mean value does not depend on the radius.
 By continuity
 \[
-\lim_{r\to 0}\frac1{\mu(S_r^{n-1})}\int_{S_r^{n-1}}u(x)\,d\mu(x)=u(0)
+\lim_{r\to 0}\frac1{\mu(S_r^{n-1})}\int_{S_r^{n-1}}u(x)\,d\mu(x)=u(0),
 \]
 so the claim follows.
 \end{proof}

@@ -16,7 +16,7 @@ u(0)=a,\quad u(1)=b.
 \]
 The goal is to find the function $G(x,\xi)$.
 
-THe solution of this problem usually is treated in the theory of
+The solution of this problem usually is treated in the theory of
 ordinary differential equations.
 Here we would slightly modify the presentation in such a way
 that it leads to $G$ and is more easily generalizable to 
@@ -45,16 +45,18 @@ u_r(1)&=b-u_p(1)=b-\int_0^1\int_0^\eta f(\xi)\,d\xi\,d\eta
 \subsection{The homogeneous problem}
 The homogeneous problem
 \[
-u''(x)=0
+u_r''(x)=0
 \]
 is even easier to solve.
 The general solution is $Ax+B$, and the constants have to chosen
 so that the boundary conditions hold, i.~e.
-\begin{align*}
+\[
+\begin{aligned}
 A\cdot 0+B&=a\qquad\Rightarrow&B&=a\\
 A\cdot 1+B&=b\qquad\Rightarrow&A&=b-a
-\end{align*}
-which leads to $u(x)=(b-a)x+a=(1-x)a+xb$.
+\end{aligned}
+\]
+which leads to $u_r(x)=(b-a)x+a=(1-x)a+xb$.
 
 \subsection{General solution}
 In the present example, $u_r$ is expected to take the boundary value
@@ -93,6 +95,20 @@ f(\xi)\,d\xi\,d\eta
 f(\xi)\,d\xi
 \label{1dimgreen}
 \end{align}
+\begin{figure}
+\centering
+\begin{tikzpicture}[>=latex,scale=2]
+\draw[->,line width=0.7pt] (0,-0.1)--(0,1.5) coordinate[label={$\vartheta(t)$}];
+\draw[->,line width=0.7pt] (-3.1,0)--(3.5,0) coordinate[label={$t$}];
+\draw[color=red,line width=1pt] (-3,0)--(0,0);
+\draw[color=red,line width=1pt] (3,1)--(0,1);
+\draw[color=red,line width=0.3pt] (0,0)--(0,1);
+\draw[line width=0.7pt] (-0.05,1)--(0.05,1);
+\node at (-0.05,1) [left] {$1$};
+\end{tikzpicture}
+\caption{Graph of the step function or Heaviside function $\vartheta(t)$
+\label{elliptic:graph:stepfunction}}
+\end{figure}
 By $\vartheta(t)$ we mean the step function
 \[
 \vartheta(t)=\begin{cases}
@@ -100,7 +116,8 @@ By $\vartheta(t)$ we mean the step function
 1&\qquad t\ge 0,
 \end{cases}
 \]
-also called the Heaviside function.
+also called the Heaviside function (see
+figure~\ref{elliptic:graph:stepfunction}).
 The function $\vartheta(x-\xi)$ vanishes as soon as $\xi$ surpasses
 $x$ because in that case $x-\xi<0$.
 
@@ -116,9 +133,9 @@ The inner integral of \eqref{1dimgreen} can easily be done:
 \int_\xi^1\vartheta(x-\eta)\,d\eta-\int_\xi^1x\,d\eta
 \\
 &=
-\int_\xi^1\vartheta(x-\eta)\,d\eta-(1-\xi)x
+\int_\xi^1\vartheta(x-\eta)\,d\eta-(1-\xi)x.
 \end{align*}
-The second integral requires a distinction of two possible cases:
+The second integral requires the distinction of two possible cases:
 \begin{align*}
 \int_\xi^1\vartheta(x-\eta)\,d\eta
 &=
@@ -127,23 +144,23 @@ The second integral requires a distinction of two possible cases:
 0&\qquad x\le \xi
 \end{cases}
 \\
-&=(x-\xi)\vartheta(x-\xi)
+&=(x-\xi)\vartheta(x-\xi).
 \end{align*}
 All together we find the following function for the inner integral.
 \[
 G(x,\xi)=(x-\xi)\vartheta(x-\xi)-x(1-\xi).
 \]
 It is also possible to write this function using the 
-absolute value function
+absolute value function.
 The partial function $x\mapsto h(x,\xi)$ is not differentiable at $\xi$
-but on both sides it is the linear function
+but on either side of $\xi$, it is a linear function
 \[
 G(x,\xi)=\begin{cases}
 (x-\xi)-x(1-\xi)=\xi(x-1)&\qquad x>\xi\\
-x(\xi-1)&\qquad x<\xi
+x(\xi-1)&\qquad x<\xi.
 \end{cases}
 \]
-we want to write this in the form $c|x-\xi|+dx+e$, which requires
+We want to write this in the form $c|x-\xi|+dx+e$, which requires
 some computation for the coefficients $c$, $d$ and $e$.
 The result turns out to be
 \[
@@ -165,7 +182,7 @@ height $1$:
 -
 {\textstyle\frac12},
 \]
-and the derivative of this is the $\delta$ function
+and the derivative of this is the Dirac $\delta$ function
 \[
 \frac{\partial^2}{\partial x^2}({\textstyle \frac12}|x-\xi|)
 =
@@ -191,7 +208,6 @@ $u''=\delta_\xi$ with boundary condition $u(0)=u(1)=0$.
 \end{figure}
 \begin{figure}
 \begin{center}
-%\includegraphics{../common/images/green-1.pdf}
 \includegraphics{7-elliptic/images/green.pdf}
 \end{center}
 \caption{Partial function $x\mapsto G(x,\xi)$ of Green's function
@@ -200,7 +216,7 @@ $u(0)=u(1)=0$ for various values of $\xi$.
 \label{elliptisch:green1schar}}
 \end{figure}
 
-The formular for the solution $u(x)$ we have found writes the solution
+The formula for the solution $u(x)$ we have found above writes the solution
 as a double integral, but this is not the form we are looking for.
 We want the solution as a simple integral over $[0,1]$ with integrand
 $G(x,\xi) f(\xi)$.
@@ -213,7 +229,7 @@ G(x,\xi)
 =
 (x-\xi)\vartheta(x-\xi)-x(1-\xi)
 =\begin{cases}
-(x-\xi)+x(\xi-1)&\qquad x\le \xi \\
+(x-\xi)+x(\xi-1)&\qquad x\ge \xi \\
 x(\xi-1)&\qquad x<\xi
 \end{cases}
 \]
@@ -227,11 +243,24 @@ and
 G(0,\xi)=G(1,\xi)=0.
 \]
 A solution of the differential equation can thus be written as
-\[
-u(x)=\int_0^1G(x,\xi)f(\xi)\,d\xi+a(1-x)+bx.
-\]
+\begin{align}
+u(x)
+&=
+\int_0^1G(x,\xi)f(\xi)\,d\xi+a(1-x)+bx.
+\notag
+\\
+\intertext{The linear terms on the right hand side can also be written
+using derivatives of the function $G$, which will come in handy later.
+We find}
+&=
+\int_0^1G(x,\xi)f(\xi)\,d\xi
++b\frac{\partial G}{\partial\xi}(x,1)
+-a\frac{\partial G}{\partial\xi}(x,0).
+\label{elliptic:greendiff}
+\end{align}
 
-The ondimensional case shows that for the operator  $D^2$ and the
+The onedimensional case shows that for the operator $D^2$ (twice
+differentiation with respect to $x$) and the
 equation $D^2u=f$
 we can actually find a function $G(x,\xi)$ that takes the role 
 of an inverse.
@@ -247,7 +276,7 @@ a number of special values $\xi$.
 \begin{beispiel}
 The differential equation
 \[
-y''=\cos 3\pi x.
+y''=\cos 3\pi x
 \]
 has the solution
 \[

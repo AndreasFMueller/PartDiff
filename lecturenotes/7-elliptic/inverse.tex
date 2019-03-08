@@ -4,11 +4,12 @@
 % (c) 2019 Prof Dr Andreas Mueller
 %
 \section{Does there exist an operator inverse to $\Delta$?}
+\rhead{Does there exist $\Delta^{-1}$?}
 We want to solve the problem $\Delta u=f$.
-If we had a inverse operator $\Delta^{-1}$, we could use it to
+If we had an inverse operator $\Delta^{-1}$, we could use it to
 find the solution $u=\Delta^{-1}f$.
-This dream is to good to be true, but the examples below 
-illustrate that for elliptic operator there is at least a partial
+This dream is too good to be true, but the examples below 
+illustrate that for elliptic operators there is at least a partial
 realization of it.
 
 \subsection{Derivative and Integration}
@@ -29,8 +30,8 @@ the form $Au=f$.
 The components of $u$ and $f$ are values of the functions of $u$ and $f$
 in selected points of the domain.
 And since we have seen that the solution is unique for elliptic operators,
-there should be an inverse Matrix $G$ that can be used to find the
-solution $u=Gf$.
+there should be an inverse matrix $G$ that can be used to find the
+solution in the form $u=Gf$.
 
 The matrix product is
 \[
@@ -46,7 +47,7 @@ u(x)=\int_a^b G(x,\xi)f(\xi)\,d\xi.
 \]
 So we are left with the question whether there actually exists such
 a function $G(x,\xi)$.
-However, there is no guarantee that this will be a solution, as
+Still, there is no guarantee that this will be a solution, as
 the boundary conditions may not be satisfied.
 
 \subsection{Boundary conditions}
@@ -59,7 +60,7 @@ K(x,a) g(a) + K(x,b)g(b),
 where $K(x,\xi)$ is another function defined on $x\in [a,b]$ and
 $\xi \in\{a,b\}=\partial[a,b]$.
 If the boundary is more complicated and consists of multiple points,
-the contribution increases to a sum
+the contribution generalizes to a sum
 \[
 \sum_{i}K(x,a_i)g(a_i),
 \]
@@ -77,5 +78,5 @@ u(x)=\int_{\Omega} G(x,\xi)f(\xi)\,d\xi + \int_{\partial\Omega} K(x,\xi)g(\xi)\,
 \label{greenformula}
 \end{equation}
 The goal of the subsequent sections is to show that in some cases,
-such a function actually exists.
+such functions actually exists.
 

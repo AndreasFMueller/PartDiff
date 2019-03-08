@@ -14,15 +14,18 @@ The Poisson problem with Dirichlet boundary conditions was solved
 using Green's function
 $G(x,\xi)$ which, as a function of $x$ satisfies homogeneous
 Dirichlet boundary conditions
-\[
-G(x,\xi)=0\quad\forall x\in\partial\Omega.
-\]
-If we construct a Green's function which satisfies homogenous 
-Neumann boundary conditions
-\[
-\frac{\partial}{\partial n}G(x,\xi)=0\quad\forall x\in\partial\Omega,
-\]
-then what remains from the profe of theorem \ref{dirichletloesung}
+\begin{align*}
+G(x,\xi)
+&=
+0\quad\forall x\in\partial\Omega.
+\\
+\intertext{If we construct a Green's function which satisfies homogenous 
+Neumann boundary conditions}
+\frac{\partial}{\partial n}G(x,\xi)
+&=
+0\quad\forall x\in\partial\Omega,
+\end{align*}
+then what remains from the proof of theorem \ref{dirichletloesung}
 is the formula
 \begin{align*}
 u(x)&=\int_{\Omega}G(x,\xi)f(\xi)\,d\mu(\xi)+\int_{\partial\Omega}G(x,\xi)\operatorname{grad}u(\xi)\cdot dn
@@ -54,11 +57,13 @@ extracts the boundary values from $u$.
 For any function $u$ on $\bar\Omega$ the function $Bu$ is defined on
 $\partial\Omega$.
 The boundary value problem then can be stated as 
-\begin{align*}
+\[
+\begin{aligned}
 Lu&=f(x)&&x\in\Omega
 \\
 Bu&=g(x)&&x\in\partial\Omega
-\end{align*}
+\end{aligned}
+\]
 and can be solved by some integral formular of the form
 \[
 u(x)
