@@ -6,10 +6,12 @@
 \section{Eigenfunctions and solutions of the heat equation}
 \rhead{Eigenfunctions}
 In the previous chapter we have studied the problem
-\begin{align*}
+\[
+\begin{aligned}
 \Delta u&=f&&\text{in $\Omega$}\\
 u&=g&&\text{on $\partial\Omega$}
-\end{align*}
+\end{aligned}
+\]
 and found that similarly to matrix equations $Ax=b$ Green's function is a kind
 of inverse.
 Formally, the solution is similar to a matrix equation in the sense
@@ -23,7 +25,6 @@ exponential function.
 The latter is most elegantly computed using eigenvectors, so the
 natural questions arises whether we can solve the heat equation
 using the eigenvectors of the associated elliptic problem.
-
 This section intends to substantiate this plan.
 
 \subsection{Systems of ordinary differential equation}
@@ -54,7 +55,11 @@ x_n(0)e^{\lambda_nt}
 \end{pmatrix}.
 \]
 Under certain conditions on the matrix $A$ we can find a set of
-orthonormal eigenvectors $e_1,\dots,e_n$.
+eigenvectors $e_1,\dots,e_n$.
+In many interesting cases, e.~g.~for symmetric $A$ the eigenvectors
+can even be chosen orthonormal.
+Since this will always be the case in the generalization to partial
+differential equations, we assume orthogonality henceforth.
 By using such a vector as initial condition, we get the solution
 $e_ie^{\lambda_it}$.
 Writing the initial condition as a linear combination
@@ -68,7 +73,6 @@ as a linear combination
 x(t)=\sum_{i=1}^n
 e^{\lambda_i t}
 (e_i\cdot x(0))e_i
-.
 \label{development}
 \end{equation}
 of the basic solutions.
@@ -78,10 +82,10 @@ In fact, substituting this into the differential equation gives
 \\
 Ax(t)
 &=\sum_{i=1}e^{\lambda_it}(e_i\cdot x(0))Ae_i
-=\sum_{i=1}e^{\lambda_it}(e_i\cdot x(0))\lambda_i e_i
+=\sum_{i=1}e^{\lambda_it}(e_i\cdot x(0))\lambda_i e_i.
 \end{align*}
 So for a homogeneous differential equation, eigenvectors immediately
-immediately give us the solution.
+give us the solution.
 
 \subsection{Variation of constants}
 The method of variation of constant allows to solve a inhomogeneous
@@ -97,6 +101,7 @@ x(t)=\sum_{i=1}^nc_i(t)e^{\lambda_it}e_i.
 \]
 Substituting this into the differential equation gives
 \begin{align*}
+&&
 \sum_{i=1}^n\dot c_i(t)e^{\lambda_it}e_i
 +
 \sum_{i=1}^n\lambda_i c_i(t)e^{\lambda_it}e_i
@@ -104,9 +109,10 @@ Substituting this into the differential equation gives
 &=
 f(t)
 \\
+&\Rightarrow&
 \sum_{i=1}^n\dot c_i(t)e^{\lambda_it}e_i
 &=
-f(t)
+f(t).
 \end{align*}
 By taking the scalar product with the eigenvectors
 $e_i$, we get.
@@ -131,7 +137,7 @@ x(0)
 \int_0^t
 \biggl(
 \sum_{i=1}^n
-e^{\lambda_i(t- \tau)}(e_i\cdot f(\tau))\biggr)e_i\,d\tau
+e^{\lambda_i(t- \tau)}(e_i\cdot f(\tau))\biggr)e_i\,d\tau.
 \end{align*}
 One can verify this directly:
 \begin{align*}
@@ -140,7 +146,7 @@ One can verify this directly:
 \sum_{i=1}^n\left.e^{-\lambda_i (t-\tau)}(e_i\cdot f(\tau))e_i \right|_{\tau=t}
 \\
 &=
-\sum_{i=1}^n(e_i\cdot f(t))e_i=f(t)
+\sum_{i=1}^n(e_i\cdot f(t))e_i=f(t).
 \end{align*}
 
 \subsection{Eigenvalues and eigenvectors}
@@ -151,12 +157,13 @@ with homogeneous boundary conditions, i.~e.
 \[
 \Delta u_i=\lambda_iu_i,\qquad u_{i|\partial\Omega} = 0.
 \]
-In addition, we can scale these solutions so that the have 
+In addition, we can scale these solutions so that they have 
 $L^2$-norm $1$:
 \[
 \int_{\Omega}|u_i(\xi)|^2\,d\xi=1
 \]
-The general theory even guarantees that the are orthogonal:
+The general theory even guarantees that the are orthogonal in the sense
+that
 \[
 \int_{\Omega}u_i(\xi)u_j(\xi)\,d\xi=0\qquad\forall i\ne j.
 \]
@@ -176,13 +183,13 @@ T'(t)u_i(t)-\kappa T(t)\lambda_i u_i(t)&=0
 \\
 \frac{T'(t)}{T(t)}&=\kappa\lambda_i
 \\
-\Rightarrow\qquad T(t)=Ce^{\kappa\lambda_it}
+\Rightarrow\qquad T(t)=Ce^{\kappa\lambda_it}.
 \end{align*}
-In particular, for initial conditions that are eigenvalues we
+In particular, for initial conditions that are eigenvectors, we
 immediately get a solution for the parabolic problem.
 
 \subsection{The inhomogeous equation}
-The process of variation of constants cann also be used for partial
+The process of variation of constants can also be used for partial
 differential equations.
 We write the solution as
 \[
@@ -210,7 +217,7 @@ u(t,x)&=
 \sum_{i=0}^\infty
 u_i(x)
 \int_0^t
-e^{\kappa\lambda_i(t-\tau)}\int_{\Omega}u_i(\xi)f(\tau,\xi)\,d\xi\,d\tau
+e^{\kappa\lambda_i(t-\tau)}\int_{\Omega}u_i(\xi)f(\tau,\xi)\,d\xi\,d\tau.
 \end{align*}
 Green's function for the heat equation with Dirichlet boundary conditions
 can thus be written as
