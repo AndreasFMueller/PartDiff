@@ -1,0 +1,31 @@
+%
+% wavechar.tex -- characteristics of the wave equation
+%
+% (c) 2019 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\documentclass[tikz,12pt]{standalone}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\usetikzlibrary{arrows,intersections,math}
+\begin{document}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\begin{tikzpicture}[>=latex]
+
+\begin{scope}
+\clip (-6.5,-0.5) rectangle (6.5,8.5);
+
+\foreach \x in {-10,...,10}{
+\draw[color=red,line width=1pt] ({\x-5},{-10})--({\x+5},{+10});
+\draw[color=darkgreen,line width=1pt] ({\x-5},{+10})--({\x+5},{-10});
+}
+
+\end{scope}
+
+\draw[->,line width=0.7pt] (-6.7,0)--(6.9,0) coordinate[label={$x$}];
+\draw[->,line width=0.7pt] (0,-0.7)--(0,8.7) coordinate[label={right:$y$}];
+
+\end{tikzpicture}
+\end{document}

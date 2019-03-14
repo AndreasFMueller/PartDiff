@@ -1,0 +1,29 @@
+%
+% dxdy.tex -- characteristics of PDE dxdy = 0
+%
+% (c) 2019 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\documentclass[tikz,12pt]{standalone}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\usetikzlibrary{arrows,intersections,math}
+\begin{document}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\begin{tikzpicture}[>=latex]
+
+\foreach \x in {-6,...,6}{
+	\draw[color=red,line width=1pt] (\x,-0.5)--(\x,8.5);
+}
+\foreach \y in {0,...,8}{
+	\draw[color=darkgreen,line width=1pt] (-6.5,\y)--(6.5,\y);
+}
+
+\draw[->,line width=0.7pt] (-6.7,0)--(6.9,0) coordinate[label={$x$}];
+\draw[->,line width=0.7pt] (0,-0.7)--(0,8.7) coordinate[label={right:$y$}];
+
+\end{tikzpicture}
+\end{document}
+

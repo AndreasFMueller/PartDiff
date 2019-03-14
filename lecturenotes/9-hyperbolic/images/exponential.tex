@@ -1,0 +1,35 @@
+%
+% exponential.tex -- example with exponential characteristics
+%
+% (c) 2019 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\documentclass[tikz,12pt]{standalone}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\usetikzlibrary{arrows,intersections,math}
+\begin{document}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\begin{tikzpicture}[>=latex]
+
+\begin{scope}
+\clip (-6.6,-0.2) rectangle (6.5,8.2);
+
+\foreach \s in {-7,-6.8,...,7}{
+	\draw[line width=1pt,color=red]
+		plot[domain=-0.5:8.5,samples=100]
+			({\s*exp(\x/4)},{\x});
+	\draw[line width=1pt,color=darkgreen]
+		plot[domain=-0.5:8.5,samples=100]
+			({\s*exp(\x/4)},{8-\x});
+}
+
+\end{scope}
+
+\draw[->,line width=0.7pt] (-6.7,0)--(6.9,0) coordinate[label={$x$}];
+\draw[->,line width=0.7pt] (0,-0.4)--(0,8.5) coordinate[label={right:$y$}];
+
+\end{tikzpicture}
+\end{document}

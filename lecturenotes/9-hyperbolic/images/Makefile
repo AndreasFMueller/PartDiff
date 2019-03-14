@@ -3,7 +3,8 @@
 #
 # (c) 2019 Prof Dr Andreas Müller, Hochschule Rapperswil
 #
-all:	hyperbolic.pdf parabolic.pdf ql.pdf elliptic.pdf
+all:	exponential.pdf wavechar.pdf dxdy.pdf \
+	hyperbolic.pdf parabolic.pdf ql.pdf elliptic.pdf
 
 elliptic.pdf:	elliptic.tex
 	pdflatex elliptic.tex
@@ -16,3 +17,12 @@ parabolic.pdf:	parabolic.tex
 
 ql.pdf:	ql.tex
 	pdflatex ql.tex
+
+dxdy.pdf:	dxdy.tex
+	pdflatex dxdy.tex
+
+wavechar.pdf:	wavechar.tex
+	pdflatex wavechar.tex
+
+exponential.pdf:	exponential.tex
+	pdflatex exponential.tex
