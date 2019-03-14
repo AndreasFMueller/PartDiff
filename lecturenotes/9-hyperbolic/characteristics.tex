@@ -5,6 +5,27 @@
 %
 \section{Characteristics}
 \rhead{Characteristics}
+The method of characteristics in chapter~\ref{chapter-geometrie} 
+was particularly successful in deciding whether the Cauchy initial
+data was sufficient to determine the solution of a partial differential
+equation.
+It relied heavily on the geometry of characteristic curves, but the
+derivation for their differential equation relied heavily on the fact
+that the equation was of first order.
+
+However the d'Alembert-solution suggests that there is an intimate
+link between hyperbolic partial differential equations and characteristics.
+However, since the equation is now of second order, we have to deal
+with the fact that simple curves will not suffice, prompting an extension
+of the concept to that of a characteristic strip in
+section~\ref{subsection:characteristic-strip}.
+We also expect that the differential equation for the characteristic
+strip, to be derived in section~\ref{subsection:characteristics-curves},
+will be more complicated.
+Nevertheless, the definition of the characteristic curve as one not
+suitable as initial curve will remain unchanged.
+This is the idea we start from in the next section.
+
 \subsection{An unsolvable Cauchy problem}
 We want to study the circumstances under which the Cauchy problem
 for a hyperbolic partial differential equation can be solved
@@ -30,13 +51,13 @@ But because the partial derivatives commute,
 $\partial_x\partial_yu=\partial_y\partial_xu$, by the same
 argument we also find that $u$ does not depend on $y$, so both functions
 $u_0$ and $v_0$ must be constants.
-In particular, the cauche problem cannot be solved if these
+In particular, the Cauchy problem cannot be solved if these
 functions are not constants.
-The reason for this pathology not all the second derivatives can be
+The reason for this pathology is that not all the second derivatives can be
 determined from the initial data, the second derivative with respect
 to $x$ is undefined.
 
-\subsection{Characteristic strip}
+\subsection{Characteristic strip\label{subsection:characteristic-strip}}
 The Cauchy problem can only be solved if the values and the
 first partial derivatives on the initial curve uniquely determine 
 all the second order derivatives.
@@ -88,7 +109,7 @@ u(x(t),y(t))&=u(t)\\
 \frac{\partial u}{\partial y}(x(t),y(t)) &= q(t)
 \end{aligned}
 \qquad
-\right\}.
+\right\}
 \label{charanfangs}
 \end{equation}
 We call this type of data a {\em strip}
@@ -108,7 +129,7 @@ data of the strip as initial data.
 \centering
 \includegraphics[width=\hsize]{../common/3d/streifen2.png}
 \caption{Along the common red curve both solution surfaces have
-the same initial values, but different tangent planes, so the
+the same initial values, but different tangent planes, so they
 have different strips.
 \label{skript:streifen:eindeutig}}
 \end{figure}
@@ -146,7 +167,7 @@ we must also have the relation
 \label{cauchydatarestriction}
 \end{equation}
 
-\subsection{Characteristic curves}
+\subsection{Characteristic curves\label{subsection:characteristics-curves}}
 Specifying the data of a strip often determines the hyperbolic
 partial differential equation uniquely.
 In figure~\ref{skript:streifen:eindeutig} two different solutions
@@ -172,8 +193,8 @@ gives the system of linear equations
 \partial_y\partial_yu(x(t),y(t))\,\dot y(t)
 \end{linsys}
 \]
-Together with the differential equation we have now three lienar equations
-to determine the second partial differential equations:
+Together with the differential equation we have now three linear equations
+to determine the second partial derivatives (colored red)
 \[
 \begin{linsys}{4}
 a{\color{red}\displaystyle\frac{\partial^2 u}{\partial x^2}}
@@ -182,7 +203,7 @@ a{\color{red}\displaystyle\frac{\partial^2 u}{\partial x^2}}
 &+&
 c{\color{red}\displaystyle\frac{\partial^2 u}{\partial y^2}}
 &=&
-h(t)
+h(t)\phantom{.}
 &=&
 g-dp(t)-eq(t)-fu\\
 \dot x(t)
@@ -192,7 +213,7 @@ g-dp(t)-eq(t)-fu\\
 {\color{red}\displaystyle\frac{\partial^2 u}{\partial x\partial y}}
 & &
 &=&
-\dot p(t)
+\dot p(t)\phantom{.}
 & &
 \\
 & &
@@ -202,7 +223,7 @@ g-dp(t)-eq(t)-fu\\
 \dot y(t)
 {\color{red}\displaystyle\frac{\partial^2 u}{\partial y^2}}
 &=&
-\dot q(t)
+\dot q(t).
 & &
 \end{linsys}
 \]
@@ -240,7 +261,7 @@ derivatives uniquely.
 \label{charakteristikendgl}
 The characteristics of a partial differential equation
 \eqref{charequation}
-solves the differential equation
+solve the differential equation
 \[
 a\dot y(t)^2-2b\dot x(t)\dot y(t)+c\dot x(t)^2=0.
 \]
@@ -248,7 +269,7 @@ a\dot y(t)^2-2b\dot x(t)\dot y(t)+c\dot x(t)^2=0.
 
 \subsection{Characteristic strip}
 We shoose a characteristic $t\mapsto(x(t),y(t))$.
-We are only interestedin the case where there are infinitely
+We are only interested in the case where there are infinitely
 many possible values for the second derivative.
 This case happens when the determinants
 \[
@@ -287,7 +308,7 @@ a\dot p(t)\dot y(t)-h\dot x(t)\dot y(t)+c\dot x(t)\dot q(t)&=0
 
 Together with the condition~\eqref{cauchydatarestriction}
 we now have three equations that the functions
-$x$, $y$, $u$, $p$ and $q$ must satisfy for the second
+$x$, $y$, $u$, $p$ and $q$ must satisfy in order for the second
 derivatives to not be determined uniquely by the initial data.
 
 \begin{definition}
@@ -298,7 +319,7 @@ a\dot p(t)\dot y(t)-h\dot x(t)\dot y(t)+c\dot x(t)\dot q(t)=0
 is called a {\em characteristic strip}.
 \end{definition}
 
-Thus it is also possible, that the integral surfaces of a partial
+Thus it is also possible that the integral surfaces of a partial
 differential equation touch along a curve, but are different
 nevertheless.
 By necessity, the tangent planes along the intersection curve form
@@ -320,7 +341,7 @@ Apparently there are at least two different solutions of the
 partial differential equation that contain the curve which in
 addition have the same tangent planes.
 The curve and the tangent planes do not determine the solution
-uniquely, so the form a characteristic strip.
+uniquely, so they form a characteristic strip.
 \end{proof}
 
 \subsection{Examples}
@@ -342,7 +363,7 @@ are the curves $s\mapsto(t(s),x(s))$, that satisify the equation
 \Rightarrow
 \frac{dx}{dt}=\pm a.
 \end{align*}
-This are straight lines with slope $\pm a$.
+These are straight lines with slope $\pm a$.
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.8\hsize]{../common/images/char-2.pdf}
@@ -404,11 +425,11 @@ differential equation~\eqref{hyperbolisch:gekruemmt}.
 
 This equation describes a wave equation in a medium in which
 the wave velocity increases with increasing $x$.
-The exponential curves suggest that becomes faster when moving ``out''.
+The exponential curves suggest that the wave becomes faster when moving ``out''.
 
 \subsection{Characteristics of elliptic or parabolic partial differential
 equations}
-The theory about the characteristics developed above can also be
+The theory of the characteristics developed above can also be
 applied to elliptic or hyperbolic partial differential equations.
 
 In the elliptic case, the differential equation of the characteristics
@@ -430,10 +451,14 @@ In fact it is not possible to determine the second derivative
 with respect to $t$ for initial data along a line parallel
 to the $x$-axis.
 
+We will summarize the information about causality or which points on
+the boundery can influence the solution in which points of the domain
+in section~\ref{section:which-boundary-points}
+
 \subsection{Some interesting theorems}
 
 \begin{satz}
-Every integral surfaces can be covered with a set of characteristic
+Every integral surface can be covered with a set of characteristic
 strips.
 \end{satz}
 
@@ -471,29 +496,29 @@ R&=\partial_x^2u(x(t),y(t)),
 \\
 S&=\partial_x\partial_yu(x(t),y(t)),
 \\
-T&=\partial_y^2u(x(t),y(t)),
+T&=\partial_y^2u(x(t),y(t)).
 \end{align*}
 We can write
 \begin{align*}
 \dot p(t)&=R(t)\dot x(t)+S(t)\dot y(t)\qquad\text{and}\\
-\dot q(t)&=S(t)\dot x(t)+T(t)\dot y(t)
+\dot q(t)&=S(t)\dot x(t)+T(t)\dot y(t).
 \end{align*}
-If we substitute this in the second equation of \eqref{alle}, then we get
+If we substitute this in the second equation of \eqref{alle}, we get
 \begin{align*}
 a(R\dot x+S\dot y)\dot y-h\dot x\dot y+c\dot x(S\dot x+T\dot y)&=0
 \\
 \Rightarrow \qquad(aR-h+cT)\dot x\dot y+aS\dot y^2 +cS \dot x^2&=0.
 \end{align*}
 Multiplying the first equation of
-\eqref{alle} by $t$ and subtract it we get
+\eqref{alle} by $t$ and subtracting it we get
 \[
 (aR+2bS+cT-h)\dot x\dot y=0.
 \]
-Writing the parenthesis out is
+Writing out the parenthesis leads to the equation
 \[
 a\partial_x^2u+2b\partial_x\partial_yu+c\partial_y^2u-h=0
 \]
-Which is the original differential equation.
+which is the original differential equation.
 \end{proof}
 This theorem teaches that the hyperbolic partial differential equation
 can be solved by looking for characteristic strips.

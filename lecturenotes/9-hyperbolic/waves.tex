@@ -3,7 +3,7 @@
 %
 % (c) 2019 Prof Dr Andreas Mueller
 %
-\section{Wave equation one dimension}
+\section{Wave equation in one dimension}
 \rhead{One dimensional wave equation}
 The wave equation in the plane is
 \[
@@ -15,6 +15,15 @@ which we want to solve in the domain
 \]
 The parameter $a$ has the dimension of velocity, it is the
 speed of the wave along the $x$ axis.
+To uniquely determine the solution, we also need initial conditions
+of the form
+\[
+u(x,0) = u_0(x)
+\qquad\text{and}\qquad
+\frac{\partial u}{\partial t} = v_0(x)
+\qquad
+\text{for $x\in\mathbb R$}.
+\]
 
 \subsection{Constant velocity}
 Assume for the time being that $a$ is a constant.
@@ -44,7 +53,7 @@ u(x,t)=u_0(x),\qquad x\in\mathbb R.
 \end{equation}
 To this end we solve the two first order equations
 \eqref{wellelinks} and \eqref{wellerechts} with
-those some initial conditions.
+some as yet unspecified initial conditions.
 
 Both differential equations are quasilinear equations of first order
 for which the method of characteristics can give a solution.
@@ -57,7 +66,7 @@ Their differential equation is
 \\
 \frac{du}{ds}&=0.
 \end{align*}
-The third equation sais that $u$ does not depend on the parameter $s$.
+The third equation says that $u$ does not depend on the parameter $s$.
 The second equation then says that $s$ is equal to $t$ up to an additive
 constant.
 Finally, we can solve the first equation by integrating with respect to $s$.
@@ -66,7 +75,7 @@ In total, we get the solution
 \begin{aligned}
 x(s)&=-as+x_0\\
 t(s)&=s\\
-z(s)&=z_0
+z(s)&=z_0.
 \end{aligned}
 \label{hyperbolisch:quasi1}
 \end{equation}
@@ -85,7 +94,7 @@ The second step in the solution algorithm from chapter~\ref{chapter-geometrie}
 says that the variables $s$ and $x_0$ have to be eliminated
 from~\eqref{hyperbolisch:quasi2}.
 We already have identified $s$ as $t$, so we only need to identify
-$x_0$ as $x_0=x  at$ and substitute that into the last equation to get
+$x_0$ as $x_0=x+at$ and substitute that into the last equation to get
 \begin{equation}
 u(x,t) = u_0(x+at)
 \label{hyperbolisch:quasi3}
@@ -122,10 +131,10 @@ words $V_0'=\frac1av_0$, then from the second equation we derive that
 \[
 u_+(x)-u_-(x)=V_0(x)+c.
 \]
-With this equation we can no solve for $u_+$ and $u_-$ and find:
+With this equation we can now solve for $u_+$ and $u_-$ and find:
 \begin{align*}
-u_+(x)&=\frac12(u_0(x)+V_0(x)+c)\\
-u_-(x)&=\frac12(u_0(x)-V_0(x)-c)
+u_+(x)&=\frac12(u_0(x)+V_0(x)+c),\\
+u_-(x)&=\frac12(u_0(x)-V_0(x)-c).
 \end{align*}
 Thus the solution of the wave equation is
 \begin{align}
@@ -149,7 +158,6 @@ u(x,0)&=u_0(x)\\
 \end{align*}
 In particular, finding a solution for the wave equation is as easy as
 finding an antiderivative of a function along the $x$ axis.
-The problem posed initially in this section is the case
-$v_0(x)=0$.
+
 
 

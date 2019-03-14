@@ -66,7 +66,7 @@ TEXFILES = lecturenotes.tex						\
 	9-hyperbolic/characteristics.tex				\
 	9-hyperbolic/discontinuities.tex				\
 	9-hyperbolic/higherdim.tex					\
-	9-hyperbolic/hyperbolic.tex					\
+	9-hyperbolic/chapter.tex					\
 	9-hyperbolic/separation.tex					\
 	9-hyperbolic/waves.tex						\
 	a-nonlinear/burgers.tex						\
