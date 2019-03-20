@@ -1,4 +1,4 @@
-Wenden Sie die Koordinatentransformation
+Apply the coordinate transform
 \[
 \left.
 \begin{aligned}
@@ -16,19 +16,18 @@ Wenden Sie die Koordinatentransformation
 \end{aligned}
 \right.
 \]
-auf den Operator
+to the operator
 \[
-\frac{\partial^2}{\partial \xi^2}+a\frac{\partial^2}{\partial \eta^2}
+\frac{\partial^2}{\partial \xi^2}+a\frac{\partial^2}{\partial \eta^2}.
 \]
-an.
-Bestimmen Sie dann die Symbolmatrix des neuen Operators, und entscheiden
-Sie, ob der Operator in Abhängikeit von $a$ elliptisch, parabolisch oder
-hyperbolisch ist.
+Then compute the symbol matrix of the new operator and decide
+whether the operator, depending on $a$, is elliptic, parabolic or
+hyperbolic.
 
 \begin{loesung}
-Zunächst brauchen wir Darstellungen der partiellen Ableitungsoperatoren
-nach $\xi$ und $\eta$ ausgedrückt in den Koordinaten $x$ und $y$.
-Die Kettenregel liefert
+First we need a representation of the partial derivative operators
+with respect to $\xi$ and $\eta$ in terms of $x$ and $y$.
+The chain rule gives
 \begin{align*}
 \frac{\partial}{\partial \xi}
 &=
@@ -48,8 +47,8 @@ y\frac{\partial}{\partial y}
 =
 e^{-x} \frac{\partial}{\partial y}
 \end{align*}
-Damit können wir jetzt die zweiten Ableitungen nach $\xi$ und $\eta$ 
-durch Ableitungen nach $x$ und $y$ ausdrücken:
+Using this we can express the second order derivatives with respect
+to $\xi$ and $\eta$ by derivatives with respect to $x$ and $y$:
 \begin{align*}
 \frac{\partial^2}{\partial\xi^2}
 &=
@@ -65,7 +64,7 @@ e^{-x}\frac{\partial}{\partial y}e^{-x}\frac{\partial}{\partial y}
 =
 e^{-2x}\frac{\partial^2}{\partial y^2}
 \end{align*}
-Der zu untersuchende Operator ist jetzt also
+The operator we have to study now becomes
 \begin{align*}
 \frac{\partial^2}{\partial\xi^2}
 +a
@@ -77,36 +76,36 @@ Der zu untersuchende Operator ist jetzt also
 \\
 &=
 \frac{\partial^2}{\partial x^2} - 2y\frac{\partial^2}{\partial x\,\partial y}
-+(y^2+ae^{-2x})\frac{\partial^2}{\partial y^2}+y\frac{\partial}{\partial y}
++(y^2+ae^{-2x})\frac{\partial^2}{\partial y^2}+y\frac{\partial}{\partial y}.
 \end{align*}
-Zur Bestimmung des Symbols kann die erste Ableitung nach $y$ ignoriert werden,
-der verbleibende Operator hat die Symbolmatrix
+To determine the symbol, we can ignore the first order derivatives
+with respect to $y$, the remaining operator has the symbol matrix
 \[
 A=\begin{pmatrix}
 1&-y\\
 -y&y^2+ae^{-2x}
-\end{pmatrix}
+\end{pmatrix}.
 \]
-Determinante und Spur dieser Matrix sind
+Determinant and trace of this matrix are
 \begin{align*}
 \det(A) &= y^2+ae^{-2x}-(-y)^2=ae^{-2x}
 \\
 \operatorname{Spur}A&=1+y^2+ae^{-2x}
 \end{align*}
-Da $e^{-2x}$ immer positiv ist, ist das Vorzeichen der Determinante bestimmt
-durch $a$.
-Wenn also $a<0$ ist, dann ist der Operator hyperbolisch, und für $a>0$
-ist er elliptisch.
-Aus der Spur können wir zusätzlich ablesen, ob die Eigenwerte positiv
-oder negativ sind.
-Sie sind positiv, wenn 
+Since $e^{-2x}$ is always positive, the sign of the determinant is
+entirely determined by $a$.
+If $a<0$, then the operator is hyperbolic, and for $a>0$, the
+operator is elliptic.
+From the trace we can additionally conclude whether the eigenvalues
+are positive or negative.
+They are positive if
 \begin{align*}
 (1+y^2)e^{2x}+a&>0
 \\
 a &> -(1+y^2)e^{2x}.
 \end{align*}
-Falls $a < -(1+y^2)e^{2x}$, dann ist die Spur negativ, und die Eigenwerte
-sind negativ.
+If $a < -(1+y^2)e^{2x}$, then the trace is negative and thus the eigenvalues
+are negative too.
 \end{loesung}
 
 

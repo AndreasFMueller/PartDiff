@@ -1,4 +1,4 @@
-Die partielle Differentialgleichung
+The partial differential equation
 \begin{equation}
 (2-x^2)\frac{\partial^2 u}{\partial x^2}
 +
@@ -8,9 +8,9 @@ Die partielle Differentialgleichung
 =0
 \label{70000008:pdgl}
 \end{equation}
-soll im Gebiet $\Omega=\{(x,y)\,|\, 0< x<1,\; 0<y<1\}$ gelöst
-werden. Auf dem Rand von $\Omega$ soll $u$ die folgenden Werte
-annehmen:
+is to be solved in the domain
+$\Omega=\{(x,y)\,|\, 0< x<1,\; 0<y<1\}$.
+On the boundary of $\Omega$, the following values are given:
 \begin{align*}
 &
 	&u(x,1)&=\sin({\textstyle\frac\pi4}(1-x))
@@ -25,58 +25,63 @@ u(0,y)&=\sin({\textstyle\frac\pi4}y)
 		&&                
 			&&\text{für $0<x<1$}
 \end{align*}
-Bei der numerischen Berechnung der Lösung wird ein Wert
-$u(\frac12,\frac12)=0.72$ gefunden. Kann das sein?
+The numerically computed solution has produced a value
+$u(\frac12,\frac12)=0.72$.
+Is that value plausible?
 
 \begin{hinweis}
-Versuchen Sie nicht, die partielle Differentialgleichung zu lösen.
+Don't try to solve the partial differential equation.
 \end{hinweis}
 
 \begin{loesung}
-Eine Aussage über die Grösse einzelner Werte lässt sich für
-elliptische partielle Differentialgleichungen machen, da für diese das
-Maximumprinzip gilt.
+Such a statement regarding the size of individual values is possible
+for elliptic partial differential equations because their homogenous
+solutions satisify the maximum principle.
 
-Wir prüfen daher zunächst, ob eine elliptische
-partielle Differentialgleichung vorliegt. Dazu benötigen wir die
-Symbolmatrix, die in diesem Fall 
+So we first check whether we do have an elliptic partial differential
+equation.
+For that purpose, we need the symbol matrix, which happens to be
 \[
 A=\begin{pmatrix}
 2-x^2 &x^2y^2\\
 x^2y^2&2-y^2
-\end{pmatrix}
+\end{pmatrix}.
 \]
-ist. Die partielle Differentialgleichung ist elliptisch, wenn die
-beiden Eigenwerte das gleiche Vorzeichen haben, wenn also die Determinante
-dieser Matrix positiv ist:
+The partial differential equation is elliptic if the eigenvalues
+have the same sign, or equivalently if the determinant of the matrix
+is positive:
 \[
 \det A=\underbrace{(2-x^2)}_{> 1}\underbrace{(2-y^2)}_{> 1}-\underbrace{x^4y^4}_{< 1}>0
 \]
-Man beachte dazu, dass im Inneren des Gebietes, und nur dies ist relevant,
-die angegebenen Ungleichungen erfüllt sind, die Determinante ist also
-positiv.
-Daraus folgt, dass die partielle Differentialgleichung \eqref{70000008:pdgl}
-elliptisch ist.
+Please note that in the interior of the domain, and that's the only
+thing that counts, the inequality holds and the determinant is
+positive.
+It follows that the partial differential equation
+\eqref{70000008:pdgl} is elliptic.
 
-Das Maximum-Prinzip besagt, dass die Funktionswerte von $u$ im Inneren
-des Gebietes die Randwerte nicht übersteigen oder unterschreiten
-können. Die Randwerte sind Funktionswerte der Funktion $f(t)=\sin(\frac\pi4t)$
-für $0<t<1$. Da die Funktion $\sin(\frac\pi4t)$ monoton wachsend ist, ist das
-Maximum $\sin\frac\pi4=\frac{\sqrt{2}}2=0.7071067811865$.
-Die Lösung $u$ darf daher im Gebiet $\Omega$ nie grösser als
-$\frac{\sqrt{2}}2$ werden. Der numerisch gefundene Wert im Punkt
-$(\frac12,\frac12)$ widerspricht also dem Maximumprinzip.
+The maximum principle tells us now that the function values of $u$
+in the interior cannot be larger than the boundary values.
+The boundary values are values of the the function
+$f(t)=\sin(\frac\pi4t)$ for $0<t<1$.
+As the function
+$\sin(\frac\pi4t)$ is monotonically increasing, the maximum
+is $\sin\frac\pi4=\frac{\sqrt{2}}2=0.7071067811865$.
+The solution of $u$ thus cannot exceed 
+$\frac{\sqrt{2}}2$ anywhere in $\Omega$.
+Thus the value found numerically for the point
+$(\frac12,\frac12)$ contradicts the maximum principle.
 \end{loesung}
 
 \begin{diskussion}
-Diese Aufgabe ist analog zu \ref{70000005} in der Aufgabensammlung.
+This problem is analogous to
+\ref{70000005} in the problem collection.
 \end{diskussion}
 
 \begin{bewertung}
-Symbolmatrix ({\bf S}) 1 Punkt,
-Determinante und Spur ({\bf D}) 1 Punkt,
-Vorzeichen der Eigenwerte ({\bf V}) 1 Punkt,
-Klassifikation als elliptische PDGL ({\bf E}) 1 Punkt,
-Maximumprinzip ({\bf M}) 1 Punkt,
-Widerspruch zum Maximumprinzip ({\bf W}) 1 Punkt.
+Symbol matrix ({\bf S}) 1 pt,
+determinant and trace ({\bf D}) 1 pt,
+sign of eigenvalues ({\bf V}) 1 pt,
+classification as elliptic PDE ({\bf E}) 1 pt,
+maximum principle ({\bf M}) 1 pt,
+contradiction to the maximum principle ({\bf W}) 1 pt.
 \end{bewertung}

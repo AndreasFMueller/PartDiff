@@ -1,28 +1,31 @@
-Die Funktion $y(x)$ erfülle die Differentialgleichung
+Let the function
+$y(x)$
+satisfy the differential equation
 \begin{equation}
 y''+\beta y' + \gamma y=0.
 \label{60000003:vorgabe}
 \end{equation}
-Setzen Sie $u(x)=e^{k x}y(x)$.
-Wie müssen Sie $k$ und $\alpha$ wählen, damit $u$ Lösung der
-Differentialgleichung
+Now set
+$u(x)=e^{k x}y(x)$.
+How do you have to choose $k$ and $\alpha$ so that $u$ becomes the solution
+fo the differential equation
 \begin{equation}
-u''+\alpha u=0
+u''+\alpha u=0?
 \label{60000003:ziel}
 \end{equation}
-ist?
-Diese Aufgabe illustriert, wie die erste Ableitung in
-\eqref{60000003:vorgabe} mit Hilfe eines Exponentialfaktors $e^{kx}$
-wegtransformiert werden kann.
+This problem illustrates who the first order derivatives in
+\eqref{60000003:vorgabe}
+can be transformed away with the help of an exponential factor
+of the form $e^{kx}$.
 
 \begin{loesung}
-Wir berechnen die Ableitungen von $u$:
+Let's compute the derivatives of $u$:
 \begin{align*}
 u'(x)&=y'(x)e^{kx}+y(x)ke^{kx}\\
 u''(x)&=y''(x)e^{kx}+2y'(x)ke^{kx}+k^2y(x)e^{kx}
 \end{align*}
-Die Differentialgleichung  \eqref{60000003:ziel} wird damit
-zu
+The differential equation 
+\eqref{60000003:ziel} now becomes
 \[
 0
 =
@@ -36,17 +39,18 @@ y''+2k y' +(k^2+\alpha)y
 \bigr)
 e^{kx}
 \]
-Diese Differentialgleichung ist erfüllt wenn $2k=\beta$ und
-$k^2+\alpha=\gamma$, also muss man wählen
+This differential equation is satisfied if 
+$2k=\beta$ and
+$k^2+\alpha=\gamma$, thus we have to choose
 \[
 \begin{aligned}
 k&=\frac{\beta}2
 &
-&\text{und}&
+&\text{and}&
 \alpha=\gamma-k^2=\gamma-\frac{\beta^2}4.
 \end{aligned}
 \]
-Diese Lösung zeigt, dass der Term erster Ordnung in einer gewöhnlichen
-Differentialgleichung wegtransformiert werden kann.
+This solution shows that the first order term of an ordinary differential
+equation can be transformed away.
 \end{loesung}
 

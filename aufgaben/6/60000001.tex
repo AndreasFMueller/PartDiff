@@ -1,6 +1,6 @@
-Teilen Sie die folgenden partiellen Differentialgleichungen
-in elliptische, parabolische und hyperbolische ein und markieren
-Sie auch diejenigen, die nicht in dieses Klassifikationsschema passen.
+Classify the following partial differential equations into elliptic,
+parabolic and hypberbolic and also mark those that don't fit into
+the classification scheme.
 \begin{teilaufgaben}
 \item $\partial_x\partial_y\partial_z u=0$
 \item $\partial_x^2u=\partial_y^2u$
@@ -12,70 +12,75 @@ Sie auch diejenigen, die nicht in dieses Klassifikationsschema passen.
 
 \begin{loesung}
 \begin{teilaufgaben}
-\item Dies ist eine PDGL dritter Ordnung, passt also nicht ins
-Klassifikationsschema.
-\item Dies ist die PDGL
+\item
+This is a partial differential equation of third order, so it des
+not fit into the classification scheme.
+\item
+This is the partial differential equation
 \[
 \frac{\partial^2u}{\partial x^2}-\frac{\partial^2 u}{\partial y^2}=0,
 \]
-die Koeffizientenmatrix der zweiten Ableitungen ist also
+the coefficient matrix of the second derivatives is
 \[
 \begin{pmatrix}
 1&0\\0&-1
-\end{pmatrix}
+\end{pmatrix},
 \]
-welche zwei Eigenwerte mit verschiedenen Vorzeichen hat, diese Gleichung
-ist also hyperbolisch.
-\item Die Koeffizientenmatrix ist
+which has two eigenvalues with different signs.
+Thus this equation is hyperbolic.
+\item
+The symbol matrix is
 \[
 A=\begin{pmatrix}
 1&2\\2&1
 \end{pmatrix}.
 \]
-Die Eigenwerte können mit Hilfe der charakteristischen Gleichung
-gefunden werden:
+The eigenvalues can be found using the characteristic equation:
 \begin{align*}
 \det(A-\lambda E)
 &=
 \left|\begin{matrix} 1-\lambda&2\\2&1-\lambda\end{matrix}\right|
 \\
 &=(1-\lambda)^2-4\\
-&=\lambda^2-2\lambda-3=0
+&=\lambda^2-2\lambda-3=0,
 \end{align*}
-welche die Nullstellen $\lambda_1=3$ und $\lambda_2=-1$ hat.
-Insbesondere ist die Gleichung also hyperbolisch.
+which has zeros
+$\lambda_1=3$ and $\lambda_2=-1$.
+In particular, the equation is hyperbolic.
 \item
-In diesem Fall ist das charakteristische Polynom das selbe wie in
-der vorangegangenen Teilaufgabe, also ist auch diese Differentialgleichung
-hyperbolisch.
-\item Die Koeffizientenmatrix
+In this case the characteristic polynomial is the same as in the
+previous subproblem, so this equation is hyperbolic as well.
+\item
+The symbol matrix
 \[
 \begin{pmatrix}
 1&-\frac12\\
 -\frac12&1
 \end{pmatrix}
 \]
-hat das charakteristische Polynom
+has the characteristic polynomial
 \[
 (1-\lambda)^2-\frac14=\lambda^2-2\lambda-\frac34
 \]
-mit den Nullstellen $\lambda_1=\frac32$ und $\lambda_2=\frac12$,
-diese Gleichung ist also elliptisch.
+with zeros
+$\lambda_1=\frac32$ and $\lambda_2=\frac12$,
+thus it is elliptic.
 \item
-Bringt man alle Terme auf eine Seite, wird daraus die Differentialgleichung
+After moving all terms to one side we get the differential equation
 \[
 \partial_1^2u+\dots\partial_n^2u-\kappa\partial_t^2u=0
 \]
-mit der Koeffizientenmatrix
+with symbol matrix
 \[
 \begin{pmatrix}
 1&0&\dots&0\\
 0&1&\dots&0\\
 \vdots&\vdots&\ddots&\vdots\\
 0&0&\dots&-\kappa\\
-\end{pmatrix}
+\end{pmatrix},
 \]
-also hyperbolisch für $\kappa > 0$ und elliptisch für $\kappa < 0$.
-Für $\kappa=0$ ist die Gleichung parabolisch.
+which is hyperbolic for
+$\kappa > 0$ and elliptic for $\kappa < 0$.
+For $\kappa=0$ the equation is parabolic.
 \end{teilaufgaben}
 \end{loesung}
