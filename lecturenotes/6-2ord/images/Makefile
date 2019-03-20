@@ -12,7 +12,8 @@ all:	problem.jpg							\
 	rproblem.jpg							\
 	rsolution.jpg							\
 	combine.jpg							\
-	solution.jpg 
+	solution.jpg 							\
+	overview.jpg 
 
 problem.png:	problem.pov common.inc
 	povray $(POVRAYOPTIONS) -Oproblem.png problem.pov
@@ -43,4 +44,9 @@ solution.png:	solution.pov common.inc
 	povray $(POVRAYOPTIONS) -Osolution.png solution.pov
 solution.jpg:	solution.png
 	convert $(EXTRACT) solution.png $(DENSITY) solution.jpg
+
+overview.png:	overview.pov common.inc
+	povray $(POVRAYOPTIONS) -Ooverview.png overview.pov
+overview.jpg:	overview.png
+	convert $(EXTRACT) overview.png $(DENSITY) overview.jpg
 

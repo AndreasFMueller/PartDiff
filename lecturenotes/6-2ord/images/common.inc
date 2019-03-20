@@ -73,7 +73,7 @@ union {
 	}
 }
 
-#declare nsteps = 50;
+#declare nsteps = 100;
 
 #declare phistep = pi / nsteps;
 
