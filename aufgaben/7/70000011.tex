@@ -18,12 +18,12 @@ do we need to specify boundary values in order for the the solution $u(x,y)$
 to be uniquely determined in the points with $x>0$ and $x^2 + y^2 = 4$?
 
 \begin{loesung}
-Es ist einfacher, auch das Gebiet in Polarkoordinaten zu schreiben.
-Es gilt
+The domain is more simply described in polar coordinates.
+We have
 \[
 \Omega = \{ (r,\varphi)\,|\, r>1\}.
 \]
-Die Differentialgleichung \eqref{90000015:dgl} hat das Symbol
+The differential equation \eqref{90000015:dgl} has the symbol
 \[
 A
 =
@@ -34,25 +34,24 @@ A
 \qquad\Rightarrow\qquad
 \det A=1>0
 \]
-und ist daher elliptisch.
-Die Lösung einer elliptischen Differentialgleichung in einem bestimmten
-Punkt ist nur dann eindeutig bestimmt, wenn in jedem beliebigen Randpunkt
-Randwerte vorgegeben sind.
-Genau durch diese Eigenschaft unterscheiden sich elliptische
-partielle Differentialgleichungen fundamental von den
-hyperbolischen, bei denen ein durch
-den Verlauf der Charakteristiken bestimmer Teil des Randes bereits die
-Lösung festlegen kann.
+and thus it is elliptic.
+The solution of the differential equation in a given point is uniquely
+determined if boundary values are prescribed for all boundary points.
+This property distinguishes the elliptic partial differential equations
+fundamentally from hyperbolic ones.
+For the latter the characteristics through the point determine the
+part of the boundary that can influence the value of the solution.
 
-Leider ist das nicht gut genug, denn das Gebiet ist in der vorliegenden
-Aufgabe unbeschränkt, während der Satz~7.2 im Skript und damit die davon
-abhängenden Sätze über die Eindeutigkeit der Lösung auch nur für beschränkte
-Gebiete gelten können.
-In der Tat ist die Funktion  $r=\sqrt{x^2+y^2}$ eine Lösung der
-Differentialgleichung, denn
+Unfortunately, this is not enough.
+The domain in this problem is not bounded, but theorem 7.2 in the
+lecture notes and the theorems regarding uniqueness of the solution
+derived from it only hold for bounded domains.
+
+In fact the function $r=\sqrt{x^2+y^2}$ is a solution because
 \[
 \frac{\partial^2 r}{\partial r^2} + \frac{\partial^2 r}{\partial \varphi^2}=0.
 \]
+% XXX
 Man kann also zu jeder Lösung $u$, die die Randbeingung auf dem ganzen Rand
 $r=1$ erfüllt, die Funktion $r$ hinzuaddieren und damit eine Lösung erhalten,
 die die gleiche Randbedingung erfüllt.
