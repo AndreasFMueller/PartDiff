@@ -1,40 +1,40 @@
-In der Vorlesung wurde die Greensche Funktion für das Problem
+In the lectures, Green's function for the problem
 \[
 \begin{aligned}
 \Delta u&= f & &\text{in $\Omega$}\\
        u&= g & &\text{auf $\partial\Omega$}
 \end{aligned}
 \]
-für das eindimensionale Gebiet  $\Omega=[0,1]$ hergeleitet.
-Sie lautet 
+on the one dimensional domain
+$\Omega=[0,1]$ was derived.
+It turned out to be
 \[
 G(x,\xi) = (x-\xi)\vartheta(x-\xi) -x(1-\xi).
 \]
-Verwenden Sie die Greensche Funktion, um das Problem
+Use Green's function to solve the problem
 \[
 \begin{aligned}
 u''(x)& = e^x& &\text{in $(0,1)$}\\
   u(0)& =  20& &\\
-  u(1)& =  16& &
+  u(1)& =  16.& &
 \end{aligned}
 \label{70000010:problem}
 \]
-zu lösen.
 
 \begin{loesung}
-Die Greensche Funktion liefert die Lösung für das
-Problem~\eqref{70000010:problem} über die Formel
+Green's function finds the solution of the problem~\eqref{70000010:problem}
+via the formula
 \begin{equation}
 u(x)
 =
 \int_0^1 G(x,\xi) f(\xi)\,d\xi
 +
-\int_{\partial[0,1]}\frac{\partial G}{\partial \xi} g(\xi)\,dn
+\int_{\partial[0,1]}\frac{\partial G}{\partial \xi} g(\xi)\,dn.
 \label{70000010:green}
 \end{equation}
-(Satz~7.8 im Skript). 
+(Theorem~7.8 in the lecture notes). 
 
-Das linke Integral ist
+The left hand integral is
 \begin{align*}
 \int_0^1 G(x,\xi) f(\xi)\,d\xi
 &=
@@ -50,13 +50,13 @@ Das linke Integral ist
 -
 \int_0^1 x(1-\xi) e^{\xi} \,d\xi.
 \end{align*}
-In diesem Ausdruck kommen die Integranden $e^\xi$ und $\xi e^\xi$ vor,
-die die folgenden Stammfunktionen haben:
+In this expression, the integrands
+$e^\xi$ and $\xi e^\xi$ have the following antiderivatives:
 \begin{align*}
 \int e^\xi\,d\xi&=e^\xi + C\\
 \int \xi e^\xi\,d\xi&=\xi e^\xi - \int e^\xi\,d\xi = (\xi - 1)e^\xi + C.
 \end{align*}
-Dies kann man jetzt verwenden, um die Integrale zu berechnen:
+We can use these to compute the integrals:
 \begin{align*}
 \int_0^1 G(x,\xi) f(\xi)\,d\xi
 &=
@@ -92,32 +92,33 @@ e^x-x-1
 &=
 e^x+x-xe-1.
 \end{align*}
-Diese Funktion erfüllt wie zu erwarten die Randbedingungen nicht, denn
-wenn wir die Werte $x=0$ und $x=1$ einsetzen, erhalten wir
+As expected, this function does not satisfy the boundary conditions.
+When we substitute the values $x=0$ and $x=1$, we get
 \begin{align*}
 \int_0^1 G(0,\xi) f(\xi)\,d\xi
-&=0\qquad\text{und}
+&=0\qquad\text{and}
 \\
 \int_0^1 G(1,\xi) f(\xi)\,d\xi
 &=0.
 \end{align*}
-Die korrekten Randbedingungen werden durch das zweite Integral in
-\eqref{70000010:green} erfüllt, für die wir jedoch erst die
-Ableitung der Greenschen Funktion wenigstens an den Stellen $0$ und $1$
-berechnen müssen:
+The correct boundary conditions are satisfied by the second integral
+in \eqref{70000010:green}.
+To compute it, we first need to find the derivative of Green's function
+at least at the positions $\xi=0$ and $\xi=1$.
+We get
 \begin{align*}
 \frac{\partial G}{\partial\xi}
 &=(-1)\vartheta(x-\xi) - x(-1)
 =\begin{cases}
 -1+x=-(1-x)
-\qquad&\text{für $\xi=0$}
+\qquad&\text{for $\xi=0$}
 \\
 x
-\qquad&\text{für $\xi=1$.}
+\qquad&\text{for $\xi=1$.}
 \end{cases}
 \end{align*}
-Setzt man dies in das zweite Integral der Formel~\eqref{70000010:green} ein,
-erhält man
+Substituting this in the second integral of formula~\eqref{70000010:green},
+we get
 \begin{align*}
 \int_{\partial[0,1]}\frac{\partial G}{\partial \xi} g(\xi)\,dn
 &=
@@ -131,16 +132,17 @@ xg(1) + (1-x)g(0)
 +
 xb.
 \end{align*}
-Das Minuszeichen im zweiten Ausdruck rührt daher, dass die die Normale $n$
-nach aussen zeigen muss, bei $\xi=0$ als in die negative Richtung, $n=-1$.
-Zusammen kann man jetzt die Lösung hinschreiben:
+The minus sign in the second expression stems from the fact that
+the normal $n$ needs to point outward. 
+At $\xi=0$, this is the negative direction, $n=-1$.
+All combined we now can write down the solution:
 \[
 u(x)
 =
 e^x+x(1-e)-1
 +20(1-x)+16x.
 \]
-Zur Kontrolle rechnen wir nach:
+To verify the solution, we compute:
 \begin{align*}
 u'(x)
 &=
@@ -158,6 +160,6 @@ u(1)
 &=
 16,
 \end{align*}
-somit ist $u$ tatsächlich die Lösung des gestellten Problems.
+so $u$ really is the solution of the problem posed.
 \end{loesung}
 
