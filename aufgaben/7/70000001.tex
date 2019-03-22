@@ -1,10 +1,4 @@
-Gegeben ist das Gebiet
-\[
-\Omega=\{
-(x,y)\,|\,\pi < xy < 2\pi, x < \pi,y < \pi
-\}
-\]
-und der Differentialoperator
+The differential operator
 \[
 Lu=
 x^2\frac{\partial^2u}{\partial x^2}
@@ -12,52 +6,64 @@ x^2\frac{\partial^2u}{\partial x^2}
 +y^2\frac{\partial^2u}{\partial y^2}
 +3x^2y^2u.
 \]
+is defined on the domain
+\[
+\Omega=\{
+(x,y)\,|\,\pi < xy < 2\pi, x < \pi,y < \pi
+\}.
+\]
 \begin{teilaufgaben}
-\item Zeichnen Sie das Gebiet $\Omega$.
-\item Ist $L$ elliptisch, hyperbolisch oder parabolisch?
-\item Zeigen Sie, dass $u(x,y)=\sin(xy)$ eine Lösung der
-Differentialgleichung
+\item
+Draw the domain $\Omega$.
+\item
+Is $L$ elliptic, hyperbolic or parabolic?
+\item
+Show that the function $u(x,y)=\sin(xy)$ is a solution of the differentil
+equation
 \[
 Lu=xy\cos(xy)
 \]
-auf dem Gebiet $\Omega$ ist mit Randwerten
+on the domain $\Omega$ with boundary values
 \begin{align*}
-u(x,y)&=0            &&\text{$xy=\pi$ oder $xy=2\pi$},\\
+u(x,y)&=0            &&\text{$xy=\pi$ or $xy=2\pi$},\\
 u(\pi,y)&=\sin(\pi y)&&1\le y\le 2,\\
 u(x,\pi)&=\sin(\pi x)&&1\le x\le 2.
 \end{align*}
-\item Warum ist dies die einzige Lösung im Teilgebiet mit $x>0$, $y>0$?
+\item
+Why is this the only solution in the part of the domain where
+$x>0$, $y>0$?
 \end{teilaufgaben}
 
 \begin{loesung}
 \begin{teilaufgaben}
 \item
-Das Gebiet wird im ersten Quadranten von zwei Hyperbeln und zwei Strecken berandet:
+The domain in the first quadrant is bounded by two hyperbolas and
+two straight line segments:
 \begin{center}
 \includeagraphics[width=0.6\hsize]{bild-1}
 \end{center}
-Es gibt aber auch noch einen Teil im dritten Quadranten, der mit dem Teilgebiet
-im ersten Quadranten nicht verbunden ist. Das Teilgebiet im
-dritten Quadranten ist unbeschränkt, das ganze Gebiet zwischen
-den beiden Hyperbeln ist eingschlossen.
+However, there is another part in the third quadrant, not connected to
+the part in the first quadrant.
+The part of the domain in the third quadrant is unbounded, the entire
+area between the hyperbolas belongs to that part.
 \item
-Die Symbolmatrix ist
+The symbol matrix is
 \[
 A=\begin{pmatrix}
 x^2&\frac12xy\\
 \frac12xy&y^2
 \end{pmatrix}
 \]
-Um zu beurteilen, ob die beiden Eigenwerte gleiches Vorzeichen haben,
-genügt es, die Determinante zu berechnen:
+To decide whether the two eigenvalues have the same sign, it is sufficient
+to compute the determinant:
 \[
 \det(A)=x^2y^2-\frac14x^2y^2=\frac34x^2y^2>0,
 \]
-der Operator ist also elliptisch.
+so the operator is elliptic.
 \item
-Es muss geprüft werden, ob die Differentialgleichung erfüllt ist,
-und ob die Randbedingungen erfüllt sind.
-Die partiellen Ableitungen sind
+We have to check whether the differential equation is satisfied and 
+whether the boundary conditions hold.
+The partial derivatives are
 \begin{align*}
 \frac{\partial u}{\partial x}&=y\cos(xy)
 &
@@ -69,37 +75,38 @@ Die partiellen Ableitungen sind
 &
 \frac{\partial^2 u}{\partial y^2}&=-x^2\sin(xy)
 \end{align*}
-Die Differentialgleichung wird damit zu
+This turns the differential equation into
 \begin{align*}
 Lu&=-x^2y^2\sin(xy)+xy(\cos(xy)-xy\sin(xy))-x^2y^2\sin(xy)+3x^2y^2\sin(xy)\
 \\
 &=xy\cos(xy),
 \end{align*}
-ist also erfüllt.
-Für die Randbedingungen gilt an den gekrümmten Randstücken
+so it holds true.
+The boundary conditions along the curved parts of the boundary are
 \begin{align*}
 xy&=\pi&\Rightarrow\quad u(x,y)&=\sin(xy)=\sin\pi=0\\
-xy&=2\pi&\Rightarrow\quad u(x,y)&=\sin(xy)=\sin2\pi=0
+xy&=2\pi&\Rightarrow\quad u(x,y)&=\sin(xy)=\sin2\pi=0,
 \end{align*}
-und an den geraden Stücken
+along the straight line segments they are
 \begin{align*}
 u(\pi,y)&=\sin(\pi y)
 &u(x,\pi)&=\sin(x\pi),
 \end{align*}
-die Randbedingungen
-sind also auch erfüllt. Damit ist $u$ eine Lösung der PDGL.
+so the boundary conditions also hold.
+Thus $u$ is a solution of the partial differential equation.
 \item
-Für Lösungen elliptischer Differentialgleichungen gilt das Maximumprinzip.
-Ein weitere Lösung $\bar u(x,y)$ der Gleichung ergäbe
-$v=u-\bar u$ mit
-$Lu=0$, wobei $v$ auf dem Rand des Gebietes verschwindet.
-Da $v$ dort das Maximum haben müsste, folgt $v=0$ oder $u=\bar u$,
-es gibt also gar keine andere Lösung.
+The solution of an elliptic partial differential equation is subject to
+the maximum principle.
+Another solution $\bar u(x,y)$ of the equation would lead to
+$v=u-\bar u$ satisfying $Lu=0$, where $v$ vanishes on the boundary.
+But since $v$ would need to have the maximum on the boundary, we 
+conclude that $v=0$ or $u=\bar{u}$.
+Thus there cannot be another solution.
 
-Allerdings gilt dieses Argument nur für beschränkte Gebiete, also nur
-für den Teil im ersten Quadranten. Dort ist die Lösung tasächlich
-eindeutig. Für das Teilgebiet im dritten Quadranten kann es
-jedoch noch weitere Lösungen geben.
+But this argument only works for bounded domains, as e.~g.~the part of
+$\Omega$ in the first quadrant.
+So the solution there actually is unique.
+For the domain in the third quadrant there may be additional solutions.
 \qedhere
 \end{teilaufgaben}
 \end{loesung}
