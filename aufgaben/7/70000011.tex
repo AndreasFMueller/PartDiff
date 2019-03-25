@@ -52,38 +52,41 @@ In fact the function $r=\sqrt{x^2+y^2}$ is a solution because
 \frac{\partial^2 r}{\partial r^2} + \frac{\partial^2 r}{\partial \varphi^2}=0.
 \]
 % XXX
-Man kann also zu jeder Lösung $u$, die die Randbeingung auf dem ganzen Rand
-$r=1$ erfüllt, die Funktion $r$ hinzuaddieren und damit eine Lösung erhalten,
-die die gleiche Randbedingung erfüllt.
-Die Funktion $r$ wächst aber beliebig an.
-Um Eindeutigkeit der Lösung zu garantieren muss man also zusätzlich zur
-Randbedingung bei $r=1$ eine Bedingung für das Verhalten bei sehr grossen $r$
-stellen, zum Beispiel dass die Lösungen für $r\to\infty$ gegen $0$ gehen.
+For each solution $u$ that satisfies the boundary conditions on
+the complete border $r=1$, we can add any of the functions $a(r-1)$, which
+satisfy homogeneous boundary conditions and the homogeneous equation.
+In this manner, we can find infinitely many different solutions
+of the partial differential equation.
 
-Alternativ hätte man argumentieren können, dass die Greensche Funktion 
-die Lösung eindeutig garantieren würde.
-Doch die Greensche Funktion verlangt ja als Voraussetzung ebenfalls,
-dass die Lösung eindeutig sein muss, ist also ebenfalls von einer
-Bedingung im Unendlichen abhängig.
-Diese wird aber meist implizit gegeben, so dass dieses Argument
-tatsächlich funktionieren könnte.
+The problem is that the functions $a(r-1)$ increase beyond all bounds
+for $r\to\infty$.
+To guarantee uniqueness of the solution, we therefore need to add a
+condition that prevents the solution from increasing, e.~g.~by requiring
+that $\lim_{r\to\infty}u=0$.
 
-Ein weiterer Lösungsansatz besteht darin, dass man die Differentialgleichung
-auf dem Gebiet explizit löst.
-Dies ist mit einem Separationsansatz
+Alterantively we could argue that Green's function guarantees uniqueness
+of the solution.
+But the construction of Green's function requires that the solution must
+be unique in the first place.
+This, again depends on a condition at infinity.
+Such a condition is often given implicitely, so that the argument
+could be made to work.
+
+A third attempt at answering the question could be to try to solve
+the equation explictly.
+Use the separation ansatz
 \[
-u(r,\varphi) = R(r) \cdot \Phi(\varphi)
+u(r,\varphi) = R(r) \cdot \Phi(\varphi).
 \]
-möglich.
-Die Separation ergibt die beiden Gleichungen
+The separation gives the equations
 \begin{align*}
 \Phi''(\varphi)&=-\mu^2\Phi(\varphi)
 \\
 R''(r)&=\mu^2R(r).
 \end{align*}
-Darin ist der Wert der Separationskonstanten bereits so gewählt, dass sich
-die Lösung der $\Phi$-Gleichung einfach schreiben lässt.
-Man findet dafür
+The separation are already chosen in such a way that the solutions
+of the $\Phi$-equation can be written in a simple form.
+One finds
 \[
 \Phi(\varphi) =
 \begin{cases}
@@ -91,16 +94,14 @@ Man findet dafür
 \cos\mu\phi
 \end{cases}
 \]
-Dies können jedoch nur Lösungen sein, wenn sie $2\pi$-periodisch sind,
-also muss $\mu$ eine ganze Zahl sein, die wir im Folgenden wieder $n$
-schreiben.
+This can only be a solution, if $\Phi$ is $2\pi$-periodic, so that
+$\mu$ must be an integer, which we will write $n$ in the following.
 
-Für die Funktion $R$ finden wir
+For the function $R(r)$ we find
 \[
 R(r) = e^{\pm nr}.
 \]
-Die Lösung der Differentialgleichung hat also die allgemeine
-Form
+The solution of the differential equation thus has the general form
 \[
 u(r,\varphi)
 =
@@ -110,16 +111,18 @@ u(r,\varphi)
 e^{-nr}(a_n^- \cos n\varphi + b_n^- \sin n\varphi)
 +
 \sum_{n=1}^\infty
-e^{+nr}(a_n^+ \cos n\varphi + b_n^+ \sin n\varphi)
+e^{+nr}(a_n^+ \cos n\varphi + b_n^+ \sin n\varphi).
 \]
-Die Koeffizienten $a_0$, $a_n^\pm$ und $b_n^\pm$ müsssen noch bestimmt
-werden.
-Dies kann auf zwei Arten geschehen.
+The coefficients 
+$a_0$, $a_n^\pm$ and $b_n^\pm$ still need to be determined.
+
+This can be in two different ways.
+
 \begin{enumerate}
-\item Man könnte Funktionswerte von $u$ und von der Normalableitung für
-$r=1$ vorgeben.
-Die Normalableitung fällt mit der Ableitung nach $r$ zusammen.
-Dann wäre nämlich
+\item
+We could specify the values of $u$ and the normal derivatives at $r=1$.
+The normal derivative coincides with the derivative with respect to $r$.
+Given this data,
 \begin{align*}
 u(1,\varphi)
 &=
@@ -129,33 +132,20 @@ u(1,\varphi)
 \\
 \frac{\partial u}{\partial r}(1,\varphi)
 &=
-\sum_{n=1}^\infty ((-na_n^-e^{-n}+na_n^+e^n)\cos n\varphi + (-nb_n^-e^{-n}+nb_n^+e^n)\sin n\varphi)
+\sum_{n=1}^\infty ((-na_n^-e^{-n}+na_n^+e^n)\cos n\varphi + (-nb_n^-e^{-n}+nb_n^+e^n)\sin n\varphi).
 \end{align*}
-Vorgabe dieser Randwerte würde also $a_n^-e^{-n}\pm a_n^+e^n$ und $b_n^-e^{-n}\pm b_n^+e^n$
-festlegen, und damit alle Koeffizienten.
+This boundary data thus determines
+$a_n^-e^{-n}\pm a_n^+e^n$ and $b_n^-e^{-n}\pm b_n^+e^n$
+and hence all coefficients.
 \item
-Man könnte durch eine Bedingung im Unendlichen die Terme der Form $e^{nr}$
-ausschliessen, dadurch würden die Koeffizienten $a_n^+=0$ und $b_n^+=0$.
-Es wären nur noch die Koeffizienten $a_n^-$ und $b_n^-$ zu bestimmen,
-und das wiederum wäre durch vorgabe der Randwerte $u(1,\varphi)$
-machbar.
+We could specify a condition at infinity that exclude the terms of the
+form $e^{nr}$.
+This would lead to the coefficients $a_n^+$ and $b_n^+$ being
+excluded.
+Only the coefficients $a_n^-$ and $b_n^-$ would still need to be
+determined, which could again be done based on boundary values 
+$u(1,\varphi)$.
 \qedhere
 \end{enumerate}
 \end{loesung}
-
-\begin{bewertung}
-Elliptischer Differentialoperator ({\bf E}) 2 Punkte,
-Randwerte müssen auf dem ganzen Rand vorgegeben werden ({\bf R}) 2 Punkte,
-Hinweis auf das Problem mit dem unbeschränkten Gebiet ({\bf U}) 2 Punkte.
-Da der letzte Schritt im Unterricht nur am Rande behandelt wurde, wird der 
-mögliche Wegfall der Punkte {\bf U} durch Anpassung der Notenskala
-kompensiert.
-
-Für den Zugang über die Separationslösung wurden Punkte wie folgt vergeben:
-Separationsansatz ({\bf A}) 1 Punkt,
-Separation ({\bf M}) 1 Punkt,
-Lösung der Separierten Gleichungen ({\bf L}) 1 Punkt,
-Bedingung, dass $n$ ganzzahlig ({\bf N}) sein muss 1 Punkt,
-Schlussfolgerung über nötige Randwertvorgaben ({\bf R}) 2 Punkte.
-\end{bewertung}
 
