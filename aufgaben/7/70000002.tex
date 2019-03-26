@@ -1,42 +1,47 @@
-Aus der Navier-Stokes-Gleichung kann man ableiten, dass die
-Strömungsgeschwindigkeit $v(r,\varphi)$ einer laminaren,
-stationären Strömung einer inkompressiblen Flüssigkeit
-durch ein Rohr mit kreisförmigem Querschnitt mit Radius 1
-die partielle Differentialgleichung
+From the Navier-Stokes-equation one can derive that the
+flow velocity $v(r,\varphi)$ of a laminar stationary flow of an
+incompressible fluid through a tube with circular cross section
+of radius $1$ satisfies the partial differential equation
 \[
 \Delta v=c
 \]
-auf dem in Polarkoordinaten beschriebenen Gebiet des Rohrquerschnittes
+on the tube cross section described in polar coordiantes as the domain
 \[
-\Omega = \{ (r,\varphi)\,|\,0 < r < 1,0 < \varphi < 2\pi\}
+\Omega = \{ (r,\varphi)\,|\,0 < r < 1,0 < \varphi < 2\pi\}.
 \]
-erfüllt.
 \begin{teilaufgaben}
-\item Die Flüssigkeit haftet an der Wand. Formulieren Sie dies
-als Randbedingungen für die Funktion $v(r,\varphi)$
-\item Finden Sie eine Lösung für $v(r,\varphi)$. ({\it Hinweis:}
-die Lösung hängt polynomiell vom Radius ab.)
-\item Ist dies die einzige mögliche Lösung?
+\item
+The fluid attaches to the wall.
+Formulate this as a boundary condition for the function $v(r,\varphi)$.
+\item
+Find a solution for $v(r,\varphi)$.
+({\it Hint:} try a solution that depends polynomially on $r$).
+\item
+Is this the only solution?
 \end{teilaufgaben}
 
 \begin{loesung}
 \begin{teilaufgaben}
-\item Dass die Flüssigkeit an der Wand des Rohres haftet, hat zur
-Folge, dass dort die Geschwindigkeit verschwindet, es ist also
+\item
+If the fluid sticks to the wall, then the flow velocity has to 
+vanish at the bounary.
+This can be written as
 \[
 v(1,\varphi)=0,\qquad\forall 0\le \varphi\le 2\pi.
 \]
-\item Der Laplace-Operator in Polarkoordinaten lautet:
+\item
+The Laplace operator in polar coordinates is
 \[
 \Delta
 =
 \frac1r\frac{\partial}{\partial r}r\frac{\partial}{\partial r}
-+\frac1{r^2}\frac{\partial^2}{\partial\varphi^2}
++\frac1{r^2}\frac{\partial^2}{\partial\varphi^2}.
 \]
-Wir suchen zunächst eine partikuläre Lösung $v_p(r,\varphi)$.
-Wir können davon ausgehen, dass die Lösung rotationssymmetrisch
-sein wird, also $v_p$ gar nicht von $\varphi$ abhängen wird,
-$v_p(r,\varphi)=v_p(r)$. Damit bekommen wir
+We are looking for a particular solution $v_p(r,\varphi)$.
+We can assume that the solution is rotationally symmetric so that
+$v_p$ does not depend on $\varphi$, 
+$v_p(r,\varphi)=v_p(r)$.
+This leads to
 \[
 \Delta v=
 \frac1r\frac{\partial}{\partial r}r
@@ -47,18 +52,16 @@ $v_p(r,\varphi)=v_p(r)$. Damit bekommen wir
 =
 \frac1rv_p'(r)+v_p''(r)=c.
 \]
-Gemäss Hinweis ist ein Polynom gesucht. Für ein Monom $r^k$
-gilt
+Following thae hint, we are looking for a solution in the form of a
+polynomial.
+For a monomial $r^k$ it follows that
 \[
 \left(\frac1r\frac{d}{dr}+\frac{d^2}{dr^2}\right)r^k
 =kr^{k-2}+k(k-1)r^{k-2}
-=k^2 r^{k-2}
+=k^2 r^{k-2}.
 \]
-Das einzige Monom, dessen so berechnete ``Ableitung'' konstant wird, ist
-$r^2$.
-Wir
-setzen also den Ansatz $v(r)=ar^2$
-in die Differentialgleichung ein und berechnen
+THe only monomial that has a constant derivative is $r^2$.
+So we substitute $v(r)=ar^2$ in the differential equation and compute
 \[
 \frac1r2ar+2a
 =
@@ -67,40 +70,36 @@ in die Differentialgleichung ein und berechnen
 \quad
 \Rightarrow
 \quad
-a=\frac{c}{4}
+a=\frac{c}{4}.
 \]
-Diese partikuläre Lösung lautet also
+THis particular differential equation thus turns into
 \[
 v_p(r,\varphi)=\frac{c}{4}r^2.
 \]
-Sie erfüllt allerdings wegen $v_p(1,\varphi)=\frac{c}{4}$ die
-Randbedingung nicht. Wir brauchen daher noch eine
-Lösung $v_h(r,\varphi)$ der Differentialgleichung
+But this function does not satisfy the boundary conditions because of
+$v_p(1,\varphi)=\frac{c}{4}$.
+
+We thus need a solution $v_h(r,\varphi)$ of the homogenous equation
 \[
 \Delta v_h=0
 \]
-mit der Randbedingung $v_h(1,\varphi)=-\frac{c}{4}$. Die konstante
-Funktion
+with boundary condition $v_h(1,\varphi)=-\frac{c}{4}$.
+The constant function
 \[
 v_h(r,\varphi)=-\frac{c}{4}
 \]
-leistet dies. Somit ist die endgültige Lösung:
+does this.
+This gives the final solution
 \[
 v(r,\varphi)=v_p(r,\varphi)+v_h(r,\varphi)=\frac{c}{4}r^2 -\frac{c}{4}=
 \frac{c}{4}(r^2-1).
 \]
-\item Eine elliptische PDGL wie $\Delta u=c$ hat mit vorgegebenen
+\item
+An elliptic partial differential equation like
+$\Delta u=c$ with Dirichelt boundary conditions only has a single 
+solution.
 Dirichlet-Randwerten nur eine Lösung. Zur Erinnerung: Der Grund
 war das Maximum-Prinzip.
-Gäbe es nämlich eine zweite Lösung $\bar v(r,\varphi)$ mit gleichen
-Randwerten, wäre
-$v-\bar v$ eine Lösung der Gleichung
-\[
-\Delta (v-\bar v)=0
-\]
-also eine harmonische Funktion. Die Randwerte von $v-\bar v$ sind $0$.
-Da eine harmonische Funktion das Maximum auf dem Rand annimmt, ist
-$v-\bar v=0$, die  Lösung ist also eindeutig.
 \qedhere
 \end{teilaufgaben}
 \end{loesung}
