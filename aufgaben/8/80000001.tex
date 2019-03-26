@@ -1,50 +1,64 @@
-Die Fokker-Planck Differentialgleichung lautet
+The Fokker-Planck differential equation is
 \[
 \frac{\partial u}{\partial t}
 =
--\frac{\partial u}{\partial x}+\frac{\partial^2u}{\partial x^2},
+-\frac{\partial u}{\partial x}+\frac{\partial^2u}{\partial x^2}.
 \]
-wir wollen Sie auf dem Gebiet
+We want to study it on the domain
 \[
-\Omega=\{(x,t)\,|\,  t \ge 0\}
+\Omega=\{(x,t)\,|\,  t \ge 0\}.
 \]
-studieren.
 \begin{teilaufgaben}
-\item Ist diese Gleichung elliptisch, parabolisch oder hyperbolisch?
-\item Führen Sie Separation durch und finden Sie zwei gewöhnliche
-Differentialgleichungen, mit denen Sie Teillösungen für
-die Fokker-Planck-Gleichung finden können.
-\item Finden Sie alle Teillösungen, für die $u(x,t)$ für $t\to\infty$
-und gewisse $x$ unbeschränkt wächst, und für die ausserdem $u(t,0)=0$ gilt.
+\item
+Is this equation elliptic, parabolic or hyperbolic?
+\item
+Use separation to find two ordinary differential equations by which
+you can then find partial solutions of the Fokker-Planck equation.
+\item
+Find all partial solutions for which $u(x,t)$ increases without bounds
+for $t\to\infty$ and certain $x$ and which in addition satisfy
+$u(t,0)=0$.
 \end{teilaufgaben}
+
+\begin{diskussion}
+The Fockker-Planck equation can be used to describe the time evolution
+of a probability distribution subject to diffusion and drift.
+The solutions we are studying in this problem are precisely not those that
+represent probability distributions, as we are looking for solutions
+that increase without bounds.
+The equation does allow such solutions, it is the choice of
+boundary conditions that makes the difference.
+\end{diskussion}
 
 \begin{loesung}
 \begin{teilaufgaben}
-\item Für die Symbolmatrix sind nur die zweiten Ableitungen massgebend,
-daher ist sie
+\item
+For the symbol matrix, only the second order derivatives are
+used, so it is
 \[
 \begin{pmatrix}
 1&0\\
 0&0
 \end{pmatrix}
 \]
-mit Determinante $0$, also ist die Gleichung parabolisch.
-Insbesondere erwarten wir ein Verhalten der Lösungen wie
-bei der Wärmeleitungsgleichung.
-\item Für die Separation machen wir den Ansatz
+with determinant $0$.
+It follows that the equation is parabolic.
+\item
+In order to separate variables, we use the ansatz
 \[
 u(x,t)=X(x)T(t)
 \]
-und setzen diesen in die Differentialgleichung ein:
+and substitute it into the differential equation:
 \begin{align*}
 X(x)T'(t)&=-X'(x)T(t)+X''(x)T(t)\\
-\frac{T'(t)}{T(t)}&=\frac{-X'(x)+X''(x)}{X(x)}
+\frac{T'(t)}{T(t)}&=\frac{-X'(x)+X''(x)}{X(x)}.
 \end{align*}
-wobei die Division durch $T(t)X(X)$ erlaubt ist, weil
-dieser Ausdruck nur auf einer kleinen Menge verschwindet.
-Da die linke Seite nur von $t$, die rechte aber nur von $x$ abhängt,
-müssen beide Seiten konstant sein, wir nennen die Konstante
-$\mu$. So erhalten wir die zwei gewöhnlichen Differentialgleichungen
+As usual, division by $T(t)X(X)$ is allowed as this expression only
+vanishes an a small set.
+The left hand side depends only on $t$, the right only on $x$, so both
+sides must be constant.
+We call this constatn $\mu$.
+In this way we obtain the two ordinary differential equations
 \begin{align}
 \frac{T'(t)}{T(t)}&=\mu&&\Rightarrow&T'(t)&=\mu T(t)
 \label{80000001:Tgleichung}
@@ -53,33 +67,36 @@ $\mu$. So erhalten wir die zwei gewöhnlichen Differentialgleichungen
 \label{80000001:Xgleichung}
 \end{align}
 \item
-Die Gleichung \eqref{80000001:Tgleichung} kann leicht mit der Exponentialfunktion
-gelöst werden:
+The equation
+\eqref{80000001:Tgleichung}
+can easily be solved using the exponential function, the solution is
 \[
 T(t)=T(0)e^{\mu t}.
 \]
-Dieser Faktor kann nur dann für $t\to\infty$ unbeschränkt wachsen, wenn
-$\mu > 0$. Wir suchen also Lösungen von \eqref{80000001:Xgleichung} für
-positives $\mu$.
-Diese gewöhnliche lineare Differentialgleichung zweiter Ordnung wird
-wie üblich mit Hilfe des charakteristischen Polynoms gelöst, welches
-in diesem Fall lautet
+This factor only grows without bounds for $t\to\infty$ if $\mu>0$.
+Thus we are looking for solutions of \eqref{80000001:Xgleichung} for
+positive $\mu$.
+
+The ordinary differential equation of second order for $X(x)$ can
+can be solved in the usual way using the characteristic polynomial,
+which in this case is
 \[
 \lambda^2-\lambda-\mu=0
 \quad
 \Rightarrow
 \quad
-\lambda_{\pm}(\mu)=\frac12\pm\sqrt{\frac14+\mu}
+\lambda_{\pm}(\mu)=\frac12\pm\sqrt{\frac14+\mu}.
 \]
-Da $\mu > 0$ ist, wird $\lambda_{\pm}(\mu)$ immer reell sein.
-Damit ist die allgmeine Lösung für $X(x)$
+As $\mu>0$, both zeros $\lambda_{\pm}(\mu)$ of the characteristic
+equation will always be real.
+This leads to the general solution
 \[
 X(x)=
 A(\mu)e^{\lambda_+(\mu)x}
 +
-B(\mu)e^{\lambda_+(\mu)x}
+B(\mu)e^{\lambda_+(\mu)x}.
 \]
-Sie soll für $x=0$ verschwinden, also
+For $x=0$, the solution is expected to vanish, i.~e.
 \[
 X(0)=
 A(\mu)e^{\lambda_+(\mu)\cdot 0}
@@ -87,7 +104,8 @@ A(\mu)e^{\lambda_+(\mu)\cdot 0}
 B(\mu)e^{\lambda_+(\mu)\cdot 0}
 =A(\mu)+B(\mu)=0
 \]
-oder $B(\mu)=-A(\mu)$. Damit haben wir
+or $B(\mu)=-A(\mu)$.
+Thus
 \begin{align*}
 X(x)&=A(e^{\lambda_+(\mu)x}-e^{\lambda_-(\mu)x})
 =Ae^{\frac12x}\left(
@@ -98,14 +116,15 @@ e^{-x\sqrt{\frac14+\mu}}
 \\
 &=2Ae^{\frac12x}\sinh x\sqrt{\frac14+\mu}.
 \end{align*}
-Zusammen mit der bereits gefundenen Lösung für $T(t)$ sind also
-die Teillösungen
+Together with the solution $T(t)$ already found abive we get the
+partial solutions
 \[
 u(x,t,\mu)=
 Ce^{\frac12x+\mu t}\sinh x\sqrt{\frac14+\mu}.
 \]
-{\bf Kontrolle:} Zur Kontrolle setzen wir die Lösung $u(x,t,\mu)$
-in die Differentialgleichung ein
+{\bf Verification:}
+To verify ours olution, we substitute the function $u(x,t,\mu)$
+into the partial differential equation and compute
 \begin{align*}
 \frac{\partial}{\partial t}u(x,t,\mu)&=
 \mu Ce^{\frac12x+\mu t}\sinh x\sqrt{\frac14+\mu}
@@ -131,10 +150,11 @@ C\biggl(\frac14+\mu\biggr)e^{\frac12x+\mu t}\sinh x\sqrt{\frac14+\mu}
 &=
 \mu Ce^{\frac12x+\mu t}\sinh x\sqrt{\frac14+\mu}
 =
-\frac{\partial u}{\partial t},
+\frac{\partial u}{\partial t}.
 \end{align*}
-die Funktionen erfüllen also die partielle Differentialgleichung.
-Wegen $\sinh 0=0$ ist auch die Randbedingung trivial erfüllt.
+This shows that the function satisfies the partial differential
+equation in the domain.
+Since $\sinh 0=0$, the boundary conditions hold trivially.
 \qedhere
 \end{teilaufgaben}
 \end{loesung}
