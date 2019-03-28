@@ -1,40 +1,43 @@
-Betrachten Sie die Differentialgleichung
+Consider the partial differential equation
 \[
 y^2\frac{\partial^2 u}{\partial x^2}
 +4y\frac{\partial^2u}{\partial x\partial y}
 +\frac{\partial^2 u}{\partial y^2}=0
 \]
-auf dem Gebiet
+on the domain
 \[
 \Omega = \{ (x,y)\,|\, y >0\}.
 \]
 \begin{teilaufgaben}
-\item Zeigen Sie, dass die Differentialgleichung hyperbolisch ist.
-\item Stellen Sie die Gleichung der Charakteristiken auf.
-\item Die Differentialgleichung der Charakteristiken ist eine
-gewöhnliche Differentialgleichung erster Ordnung für zwei unbekannte
-Funktionen $x(s)$ und $y(s)$, faktorisieren Sie sie mit zwei Faktoren
-der Form
-\[
-(\dot x(s)-ry(s)\dot y(s))\cdot (\dot x(s)-qy(s)\dot y(s)).
-\]
-Bestimmen
-sie die Werte von $r$ und $q$.
 \item
-Finden Sie die Gleichung der Charakteristiken durch
-Lösung der Differentialgleichungen
+Show that the differential equation is hyperbolic.
+\item
+Find the differential equation for the characteristics.
+\item
+The differential equation for the characteristics is an ordinary
+differential equation of first order for two unknown functions
+$x(s)$ and $y(s)$.
+Factorize the equation into two factors of the form
+\[
+(\dot x(s)-ry(s)\dot y(s))\cdot (\dot x(s)-qy(s)\dot y(s)),
+\]
+then determine $r$ and $q$.
+\item
+Find the equation for the characteristics by solving the ordinary
+differential equations
 \begin{align*}
 \dot x(s) - ry(s)\dot y(s)&=0\qquad\text{und}\\
 \dot x(s) - qy(s)\dot y(s)&=0,
 \end{align*}
-verwenden Sie dabei
-$\frac{d}{ds}(y(s)^2)=2y(s)\dot y(s)$.
+use 
+$\frac{d}{ds}(y(s)^2)=2y(s)\dot y(s)$
+in the process.
 \end{teilaufgaben}
 
 \begin{loesung}
 \begin{teilaufgaben}
 \item
-Die Determinante der Symbolmatrix $A$ ist
+The determinante of the symbol matrix $A$ is
 \[
 A=\begin{pmatrix}
 y^2&2y\\
@@ -43,72 +46,75 @@ y^2&2y\\
 \quad\Rightarrow\quad
 \det (A)=y^2-4y^2=-3y^2<0 \quad\text{in $\Omega$},
 \]
-also ist die Gleichung hyperbolisch.
+thus the equation is hyperbolic.
 \item
-Aus den Koeffizienten der Symbolmatrix findet man die Gleichung
-der Charakteristiken
+From the coefficients of the symbol matrix, we can find the equation
 \[
-y(s)^2\dot y(s)^2-4y(s)\dot x(s)\dot y(s)+\dot x(s)^2=0.
+y(s)^2\dot y(s)^2-4y(s)\dot x(s)\dot y(s)+\dot x(s)^2=0
 \]
+for the characteristics.
 \item
-Der Faktorisierungsansatz liefert
+Factorizing as proposed in the problem gives
 \begin{align*}
 0&=(\dot x(s)-ry(s)\dot y(s))(\dot x(s)-qy(s)\dot y(s))
 \\
 &=\dot x(s)^2-(r+q)\dot x(s) y(s)\dot y(s)+rqy(s)^2\dot y(s)^2.
 \end{align*}
-Die Zahlen $r$ und $q$ müssen also die Gleichungen
+The numberes $r$ and $q$ must satisfy the equation
 \begin{align*}
 r+q&=4\\
-rq&=1
+rq&=1.
 \end{align*}
-erfüllen. Setzt man $q=1/r$ in die erste Gleichung ein, bekommt man
+By substituting
+$q=1/r$ in first euqation, we get
 \begin{align*}
 r+\frac1r&=4\\
-r^2-4r+1&=0
+r^2-4r+1&=0.
 \end{align*}
-Diese quadratische Gleichung hat die Lösungen
+This quadratic equation has the solutions
 \[
 r
 =
 2\pm\sqrt{4-1}
 =
 \begin{cases}
-\sqrt{3}+2\\
--\sqrt{3}+2
+\phantom{-}\sqrt{3}+2\phantom{.}\\
+         - \sqrt{3}+2.
 \end{cases}
 \]
 \item
-Die gewöhnliche Differentialgleichung ist
+The ordinary differential equation is
 \[
 \dot x(s)=ry(s)\dot y(s)=\frac{r}{2}\frac{d}{ds}(y(s)^2).
 \]
-Integriert man nach $s$ bekommt man
+Integrating with respect to $s$ gives
 \[
 x(s) + C=\frac{r}{2}y(s)^2.
 \]
-Wegen $y(s)>0$ gilt
+Because of $y(s)>0$, the only possibility for $y$ is
 \[
 y = \sqrt{\frac{2}{r}(x+C)}.
 \]
-Die Charakteristiken erfüllen also Gleichungen der Form
+The characteristics satisfy thus satisfy an equation of the form
 \[
 \frac{r}2y^2-x-C=0,
 \]
-dies sind Parabeln.
+these are parabolas.
 \end{teilaufgaben}
-Es wurde zwar nicht verlangt, die Charakteristiken durch einen
-bestimmten Punkt $(x_0,y_0)$ zu berechnen, hier trotzdem die
-Lösung. Die Charakteristik zu den Faktorn mit $r$ bzw. $q$ haben
-die Konstanten $C_r$ und $C_q$ die Werte
+The problem does not ask to compute the characteristics though a given
+point $(x_0,y_0)$, we nevertheless present a solution for this here.
+For the characteristics for the factors $r$ and $q$ the constants
+$C_r$ and $C_q$ are
 \[
 C_r=\frac{r}{2}y_0^2-x_0
 \qquad
-\text{bzw.}
+\text{and}
 \qquad
-C_q=\frac{q}{2}y_0^2-x_0.
+C_q=\frac{q}{2}y_0^2-x_0
 \]
-Damit werden die Charakteristiken durch $(x_0,y_0)$:
+respectively.
+This means that the characteristics through 
+$(x_0,y_0)$ are
 \begin{align*}
 y&=\sqrt{
 \frac2r(x+C_r)
@@ -120,10 +126,10 @@ y&=\sqrt{
 )
 }
 =\sqrt{y_0^2+\frac2r(x-x_0)}
-\qquad\text{bzw.}
+\qquad\text{and}
 \\
 y&
 =\sqrt{y_0^2+\frac2q(x-x_0)}
-\qedhere
 \end{align*}
+respectively.
 \end{loesung}
