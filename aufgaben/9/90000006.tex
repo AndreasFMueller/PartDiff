@@ -1,71 +1,73 @@
-Betrachten Sie die Differentialgleichung
+Consider the partial differential equation
 \[
 y\partial_x^2u+\partial_y^2u=0
 \]
 \begin{teilaufgaben}
 \item
-Wo ist sie elliptisch bzw.~hyperbolisch?
+Where is this equation elliptic or hyperbolic?
 \item
-Berechnen Sie die charakteristischen Kurven der Differentialgleichung
-im Gebiet $\Omega=\{(x,y)\in\mathbb R^2\,|\,y<0\}$.
+Compute the characteristic curves for the partial differential equation
+in the domain $\Omega=\{(x,y)\in\mathbb R^2\,|\,y<0\}$.
 \item
-Finden Sie die Charakteristiken, die durch den Punkt
-$(1,-1)$ gehen.
+Find the characteristics through the point $(1,-1)$.
 \end{teilaufgaben}
 
 \begin{loesung}
 \begin{teilaufgaben}
 \item
-Die Differentialgleichung hat das Symbol
+The partial differential equation has the symbol
 \[
 A=\begin{pmatrix}y&0\\0&1\end{pmatrix}
 \]
-mit Eigenwerten $y$ und $1$, sie ist also im Gebiet $\{(x,y)\,|\,y>0\}$
-elliptisch und in $\{(x,y)\,|\,y<0\}$ hyperbolisch.
+with eigenvalues
+$y$ and $1$,
+thus it is elliptic in the domain
+$\{(x,y)\,|\,y>0\}$
+and hyperbolic in $\{(x,y)\,|\,y<0\}$.
 
 \item
-Die Richtung $v$ der charakteristischen Kurven erfüllt,
-$v^tAv=0$, also $yv_1^2-v_2^2=0$. Wählt man eine
-Parameterdarstellung $s\mapsto(x(s),y(s))$ für die
-charakteristischen Kurven, ist die Tangentialrichtung
+The direction of the characteristic curves satisfies
+$v^tAv=0$, so $yv_1^2-v_2^2=0$.
+Choosing a parametrization 
+$s\mapsto(x(s),y(s))$ for the characteristic curves, the tangent
+direction
 $v=(x'(s),y'(s))$,
-sie erfüllen also
-die Differentialgleichungen
+satisfies the ordinary differential equation
 \[
 y(y')^2=-(x')^2
 \]
-oder
+or
 \begin{align*}
 \frac{dy}{dx}&=\frac{y'}{x'}=\pm\frac1{\sqrt{-y}}.
 \\
 \int\sqrt{-y}\,dy&=\pm\int \,dx+C
 \end{align*}
-mit den Lösungen
+with solutions
 \begin{align*}
 -\frac23(-y)^{\frac32}&=\pm x+C
 \\
 y&=-\biggl(\frac32(\pm x+C)\biggr)^{\frac23}.
 \end{align*}
 \item
-Für die Lösungskurven, die durch den Punkt $(1,-1)$ gehen,
-muss die Konstante $C$ geeignet bestimmt werden:
+For the solution curves through the point $(1,-1)$
+we have to find a suitable value for the constant $C$:
 \begin{align*}
 -\frac231^{\frac32}&=(\pm1+C)\\
 C&=\mp 1-\frac23
 =\begin{cases}
 -\frac53\\
-\frac13
+\phantom{-}\frac13.
 \end{cases}
 \end{align*}
 \begin{figure}
 \begin{center}
 \includeagraphics[]{domain-1}
 \end{center}
-\caption{Charakteristiken durch $(1,-1)$ der PDGL $y\partial_x^2u+\partial_y^2u=0$ (Aufgabe~\ref{90000006})
+\caption{Characteristics through $(1,-1)$ of the partial differential equation
+$y\partial_x^2u+\partial_y^2u=0$ (problem~\ref{90000006})
 \label{90000006:char}}
 \end{figure}
-Die Graphen der Charakteristiken sind in Abbildung \ref{90000006:char}
-dargestellt.
+Graphs of the characteristics are shown in figure~ \ref{90000006:char}
 \qedhere
 \end{teilaufgaben}
 \end{loesung}
