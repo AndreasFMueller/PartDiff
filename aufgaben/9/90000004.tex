@@ -1,70 +1,79 @@
-Finden Sie alle Lösungen der Wellengleichung
+Find all solutions of the wave equation
 \[
 \partial_t^2u-a^2\partial_x^2u=0
 \]
-in der Halbebene $x>0$ mit Anfangswerten
+in the half plane $x>0$ with initial values
 \[
 u(0,x)=0,\quad x>0
 \]
-und Randwerten
+and boundary conditions
 \[
 u(t,0)=\sin t,\quad t\in\mathbb R.
 \]
 
 \begin{hinweis}
-Es gibt unendlich viele Lösungen.
+There are infinitely many solutions.
 \end{hinweis}
 
 \begin{loesung}
-In der Vorlesung wurde die d'Alembert Lösung der Wellengleichung
-gezeigt. Die allgemeine Lösung der Wellengleichung
-\[
+In the lectures the d'Alembert solution of the wave equation was
+presented.
+It represents the general solution of the wave equation in the form
+\begin{equation}
 u(t,x)
 =
 u_+(x+at)+u_-(x-at),
-\]
-die Funktionen $u_+$ und $u_-$ sind noch zu bestimmen. Es ist klar,
-dass diese Funktionen links und rechts von $0$ völlig verschieden sein
-können.
+\label{90000004:dalembert}
+\end{equation}
+where the functions $u_+$ and $u_-$
+need to be determined from boundary conditions.
+It is clear that the functions can be completely different to the left
+and the right of $0$.
 
-Die Funktion $u_+(x+at)$ beschreibt eine nach links laufende
-Welle. Der Teil der Funktion für negative Argumente kann
-die Lösung im Bereich $x>0$ nie
-beeinflussen, wir können also $u_+(x)=0$ setzen für $x<0$.
+The function $u_+(x+at)$ describes a wave travelling to the left.
+The part for negative arguments cannot influence the solution for $x>0$,
+so we may arbitrarily set $u_+(x)=0$ for $x<0$.
 
-Die Anfangsbedingung für $t=0$ sagt uns, dass
+The initial condition for $t=0$ implies that
 \[
 u_+(x)+u_-(x)=0
 \]
-sein muss für $x>0$. Wir können also zum Beispiel
+for $x>0$.
+Thus we may use
 \[
 u_+(x)=\begin{cases}u_0(x)&\qquad x\ge 0\\
-0&\qquad x<0
+0&\qquad x<0,
 \end{cases}
 \]
-setzen, wobei $u_0$ eine beliebige Funktion ist. Die Funktion $u_-$ muss
-dann passend dazu wie folgt definiert werden:
+where $u_0$ is an arbitrary function.
+The function $u_-$ must now be chosen in such a way that the
+all the boundary conditions hold for the 
+combined solution \eqref{90000004:dalembert}:
 \[
 u_-(x)=\begin{cases}
 -u_0(x)&\qquad x\ge 0\\
-?&\qquad x<0
+?&\qquad x<0.
 \end{cases}
 \]
-Der noch fehlende Teil der Funktion $u_-$ muss jetzt so definiert werden,
-dass auch die zweite Randbedingung erfüllt ist, diese lautet
+The missing part of the function $u_-$ must be defined such that the
+second boundary condition is satisfied.
+This requires
 \[
 u_+(at)+u_-(-at)=\sin t.
 \]
-Schreiben wir $at=y$, oder $t=\frac{y}{a}$, dann liefert diese Bedingung
-für positive $t$ genau den fehlenden Teil der Definition von $u_-$:
+Writing 
+$at=y$ or $t=\frac{y}{a}$
+this condition defines the missing part of the definition of $u_-$
+for positive $t$:
 \[
-u_-(-y)=-u_+(y)+\sin \frac{y}{a}.
+u_-(-y)=-u_+(y)+\sin \frac{y}{a}
 \]
-oder
+or
 \[
 u_-(y)=\begin{cases}
 -u_0(y)&\qquad y\ge 0\\
 -u_0(-y)-\sin{\displaystyle\frac{y}{a}}&\qquad y<0
 \end{cases}
+\qedhere
 \]
 \end{loesung}
