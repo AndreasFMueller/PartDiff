@@ -1,37 +1,40 @@
-Zeigen Sie, dass die partielle Differentialgleichung
+Show that the partial differential equation
 \[
 \partial_x\partial_y u=0
 \]
-auf dem Gebiet $\Omega=\mathbb R^2$ hyperbolisch ist.
-Wie verlaufen die Charakteristiken?
+on the domain $\Omega=\mathbb R^2$ is hyperbolic.
+Find the characteristics.
 
 \begin{loesung}
-Die Symbolmatrix ist
+The symbol matrix is
 \[
-A=\begin{pmatrix}0&\frac12\\\frac12&0\end{pmatrix},
+A=\begin{pmatrix}0&\frac12\\\frac12&0\end{pmatrix}.
 \]
-$A$ hat das charakteristische Polynom
-$\lambda^2-\frac14=(\lambda-\frac12)(\lambda+\frac12)$ mit den Nullstellen
+$A$ has the characteristic polynomial
+$\lambda^2-\frac14=(\lambda-\frac12)(\lambda+\frac12)$
+with zeros
 $\pm\frac12$.
-Dies zeigt, dass die Gleichung hyperbolisch ist.
+This proves that the equation is hyperbolic.
 
-Die Differentialgleichung der Charakteristiken ist
+The differential equation for the characterstics is
 \[
 \dot x\dot y=0,
 \]
-also $\dot x=0$ oder $\dot y=0$. Somit sind die charakteristiken Kurven
-Geraden parallel zu den Koordinatenachsen.
+so $\dot x=0$ or $\dot y=0$.
+Therefore the characteristic curves are parallel to the coordinate
+axes.
 
-Alternativ können die Charakteristiken wie folgt gefunden werden.
-Die Richtungen der Charakteristiken sind diejenigen Vektoren $v$, die
-den Ausdruck $v^tAv$ zu Null machen. Schreibt man
+Alternatively we can find the characteristics as follows:
+The directions of the characteristics are those vectors $v$ that make
+the expression $v^tAv$ vanish.
+If we write the vector $v$ as
 \[
 v=\begin{pmatrix}v_1\\v_2\end{pmatrix},
 \]
-müssen die Komponenten von $v$ die Gleichung
+then the components of $v$ must satisfy the equation
 \[
-v^tAv=v_1v_2=0
+v^tAv=v_1v_2=0,
 \]
-erfüllen, d.~h.~$v_1=0$ oder $v_2=0$. Die Charaketeristiken sind daher
-Geraden parallel zu den Koordinaten-Achsen.
+i.~e.~$v_1=0$ or $v_2=0$.
+The characteristics therefore are parallel to the coordinate axes.
 \end{loesung}
