@@ -91,8 +91,8 @@ streifen0.png:	streifen0.pov
 		streifen0.pov
 
 streifen1:	streifen1.jpg
-streifen1.jpg:	streifen1.png
-	convert streifen1.png -scale 50% -density 300 -units PixelsPerInch streifen1.jpg
+streifen1.jpg:	streifen1.png 
+	convert -extract 904x750+20+18 streifen1.png -density 300 -units PixelsPerInch streifen1.jpg
 streifen1.png:	streifen1.pov
 	povray $(povrayoptions) -W1024 -H768 -Ostreifen1.png \
 		streifen1.pov
