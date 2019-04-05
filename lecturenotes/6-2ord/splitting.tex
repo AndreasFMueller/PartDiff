@@ -89,4 +89,77 @@ Any solution $u_h$ of the homogeneous problem gives an additional
 solution.
 \end{enumerate}
 
+\begin{beispiel}
+\begin{figure}
+\centering
+\includegraphics[width=0.44\hsize]{6-2ord/images/problem.jpg}
+\qquad
+\includegraphics[width=0.44\hsize]{6-2ord/images/particular.jpg}
+\caption{Boundary values and domain (left) and particular solution (right)
+for the example problem~\eqref{2ord:splitexample}
+\label{2ord:splitfigure}}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=0.44\hsize]{6-2ord/images/rproblem.jpg}
+\qquad
+\includegraphics[width=0.44\hsize]{6-2ord/images/rsolution.jpg}
+\caption{Boundary values for $u_r$ (left) and solution $u_r$ (right)
+for the example problem~\eqref{2ord:splitexample}.
+\label{2ord:splitur}}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=0.44\hsize]{6-2ord/images/combine.jpg}
+\qquad
+\includegraphics[width=0.44\hsize]{6-2ord/images/solution.jpg}
+\caption{$u_p$ and $u_r$ (left) for 
+for the example problem~\eqref{2ord:splitexample}
+and the combined final solution (right).
+\label{2ord:splitsol}}
+\end{figure}
+Consider the partial differential equation problem on the unit
+disk $\Omega=\{(x,y)\,|\,x^2+y^2<1\}$
+\begin{align}
+\Delta u &= 4
+\quad\text{in $\Omega$}
+&
+u&=\frac12x+\frac12
+\quad\text{on $\partial\Omega$}
+\label{2ord:splitexample}
+\end{align}
+This problem data is illustrated in figure~\ref{2ord:splitexample} left.
+
+First we have to find a particular solution.
+The function $u_p(x,y)=x^2+y^2$ is such a solution.
+The graph of $u_p$ is illustrated in 
+figure~\ref{2ord:splitexample} on the right.
+Obviously the boundary conditions (pink) are not satisfied.
+
+To fix the boundary conditions, we have to find a solution $u_r$ of the
+homogeneous problem with boundary values 
+\begin{equation}
+u_r
+=
+\frac12x+\frac12-u_p(x,y)
+= 
+\frac12x+\frac12-1
+=
+\frac12x-\frac12.
+\label{2ord:ur}
+\end{equation}
+These boundary values are illustrated as the green curve in 
+figure~\ref{2ord:splitur}.
+The right hand side of~\eqref{2ord:ur} happens to be a solution
+of the homogeneous equation.
+The complete solution then is the sum of the two,
+\[
+u(x,y)
+=
+u_p(x,y)+u_r(x,y)
+=
+x^2 + y^2 + \frac12x-\frac12
+\]
+This is also illustrated in figure~\ref{2ord:splitsol}.
+\end{beispiel}
 
