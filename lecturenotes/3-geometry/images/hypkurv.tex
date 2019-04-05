@@ -18,9 +18,9 @@
 \clip (0,0) rectangle (5,5);
 
 \draw[color=red,line width=1pt] (0,0)--(6,6);
-\foreach \c in {1.2,1.6,...,5}{
-	\draw[color=red,line width=1pt] (0,0)--({6*\c*\c},6);
-	\draw[color=red,line width=1pt] (0,0)--(6,{6*\c*\c});
+\foreach \c in {10,20,...,45}{
+	\draw[color=red,line width=1pt] (0,0)--({7*cos(45-\c)},{7*sin(45-\c)});
+	\draw[color=red,line width=1pt] (0,0)--({7*cos(45+\c)},{7*sin(45+\c)});
 }
 
 \definecolor{darkgreen}{rgb}{0,0.6,0}
