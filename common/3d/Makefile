@@ -85,21 +85,21 @@ streifen:	streifen0 streifen1 streifen2
 	
 streifen0:	streifen0.jpg
 streifen0.jpg:	streifen0.png
-	convert streifen0.png -scale 50% -density 300 -units PixelsPerInch streifen0.jpg
+	convert -extract 930x734+54+8 streifen0.png -density 300 -units PixelsPerInch streifen0.jpg
 streifen0.png:	streifen0.pov
 	povray $(povrayoptions) -W1024 -H768 -Ostreifen0.png \
 		streifen0.pov
 
 streifen1:	streifen1.jpg
-streifen1.jpg:	streifen1.png
-	convert streifen1.png -scale 50% -density 300 -units PixelsPerInch streifen1.jpg
+streifen1.jpg:	streifen1.png 
+	convert -extract 904x750+20+18 streifen1.png -density 300 -units PixelsPerInch streifen1.jpg
 streifen1.png:	streifen1.pov
 	povray $(povrayoptions) -W1024 -H768 -Ostreifen1.png \
 		streifen1.pov
 
 streifen2:	streifen2.jpg
 streifen2.jpg:	streifen2.png
-	convert streifen2.png -scale 50% -density 300 -units PixelsPerInch streifen2.jpg
+	convert -extract 1024x720+0+48 streifen2.png -density 300 -units PixelsPerInch streifen2.jpg
 streifen2.png:	streifen2.pov
 	povray $(povrayoptions) -W1024 -H768 -Ostreifen2.png \
 		streifen2.pov

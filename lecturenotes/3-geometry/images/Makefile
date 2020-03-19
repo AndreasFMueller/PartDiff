@@ -9,7 +9,8 @@ all:	circular.pdf rays.pdf directionfield.pdf \
 	plane30.jpg plane110.jpg planes.jpg \
 	coneplanes.jpg \
 	planefield.jpg \
-	nondifferentiable.pdf underdetermined.pdf overdetermined.pdf
+	nondifferentiable.pdf underdetermined.pdf overdetermined.pdf \
+	hypkurv.pdf
 
 directionfield.pdf:	directionfield.tex
 	pdflatex directionfield.tex
@@ -89,7 +90,8 @@ nondifferentiable.pdf:	nondifferentiable.tex
 	pdflatex nondifferentiable.tex
 
 
-
+hypkurv.pdf:	hypkurv.tex
+	pdflatex hypkurv.tex
 
 
 
