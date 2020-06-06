@@ -1,0 +1,129 @@
+Consider the partial differential equation
+\[
+u\frac{\partial u}{\partial x}
+-
+u\frac{\partial u}{\partial y}
+=
+0
+\]
+on the domain
+$\Omega = \{(x,y)\in\mathbb R^2 \,|\, y < x\}$.
+Find a solution that satisfies the boundary condition $u(x,y) = \sin x$ on
+$\partial\Omega$.
+
+\begin{loesung}
+This is a quasidifferential equation of first order which can be solved
+using the method of characteristics.
+The ordinary differential equations
+\[
+\left.
+\begin{aligned}
+\dot{x}&=u\\
+\dot{y}&=-u\\
+\dot{u}&=0
+\end{aligned}
+\right\}
+\quad\Rightarrow\quad
+\left\{
+\begin{aligned}
+x(t)&=u_0t+x_0\\
+y(t)&=-u_0t+y_0\\
+u(t)&=u_0
+\end{aligned}
+\right.
+\]
+The boundary of the domain $\Omega$ is the straight line $y=x$, so it
+can be parametrized by $x_0$ and $y_0=x_0$.
+\begin{figure}
+\centering
+\includeagraphics[]{domain.pdf}
+\caption{Domain $\Omega$ for the differential equation in
+problem~\ref{30000018}.
+The boundary of the domain is the straight line $y=x$ depicted in green.
+The red lines are projections onto the domain of characteristics
+emanating from the boundary.
+\label{30000018:domain}}
+\end{figure}
+Figure~\ref{30000018:domain} shows the domain and the characteristics
+emanating from the boundary.
+The boundary condition is $u_0=u(x_0,y_0)=\sin x_0$, which leads to 
+the system of equations
+\begin{align*}
+x &= t \sin x_0 + x_0\\
+y &= -t \sin x_0 + x_0\\
+u &= \sin x_0
+\end{align*}
+The sum of the first two equations is
+\[
+x_0 = \frac12(x+y).
+\]
+This allows to eliminate the variable $x_0$.
+
+The difference of the first two equations is
+\[
+x-y=2t\sin x_0 = 2t\sin{\textstyle\frac12}(x+y)
+\qquad\Rightarrow\qquad
+t
+=
+\frac{x-y}2\cdot\frac1{\sin x_0}
+=
+\frac{x-y}2 \cdot\frac1{\sin\frac12(x+y)}.
+\]
+This would allow us to eliminate $t$, if need be.
+However, there is no need for that because $t$
+does not show up on the right hand side of the equation for $u$.
+
+Substituting $\sin x_0$ in the last equation equation gives the solution
+\[
+u(x,y) = \sin{\textstyle\frac12}(x+y).
+\]
+
+To verify this solution, we first check that
+$
+u(x_0,y_0)
+=
+u(x_0,x_0)
+=
+\sin{\textstyle\frac12}(x_0+x_0)
+=
+\sin x_0$,
+so it satisfies the boundary condition.
+The partial derivatives of $u(x,y)$ are
+\[
+\left.
+\begin{aligned}
+\frac{\partial u}{\partial x}
+&=
+\frac12\cos{\textstyle\frac12}(x+y)
+\\
+\frac{\partial u}{\partial y}
+&=
+\frac12\cos{\textstyle\frac12}(x+y)
+\end{aligned}
+\right\}
+\quad\Rightarrow\quad
+u\frac{\partial u}{\partial x}-u\frac{\partial u}{\partial y}
+=
+u\cdot
+\biggl(
+\underbrace{
+\frac12\cos{\textstyle\frac12}(x+y)
+-
+\frac12\cos{\textstyle\frac12}(x+y)
+}_{\displaystyle=0}
+\biggr)
+=
+0,
+\]
+so the differential equation also holds.
+\end{loesung}
+
+\begin{bewertung}
+Equation for characteristics ({\bf E}) 1 point,
+characteristics ({\bf C}) 1 point,
+parametrization of boundary ({\bf P}) 1 point,
+using boundary condition for $u_0$ ({\bf B}) 1 point.
+elimination of $x_0$ ({\bf X}) 1 point,
+solution for $u$ ({\bf U}) 1 point.
+\end{bewertung}
+
