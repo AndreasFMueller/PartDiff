@@ -1,0 +1,184 @@
+For the second order partial differential equation
+\begin{equation}
+-x\frac{\partial u}{\partial t}
++
+\frac{\partial^2 u}{\partial x^2}
+=
+0
+\label{50000017:equation}
+\end{equation}
+on the domain
+\[
+\Omega = \{ (t,x)\in \mathbb R^2 \,|\, \text{$t>0$ and $x>0$}\}
+\]
+boundary conditions
+\[
+\begin{aligned}
+u(0,x) &= 0
+&&&&
+&&\text{for $x>0$}
+\\
+u(t,0) &= e^{-t}
+&&\text{and}&
+\frac{\partial u}{\partial x}(t,0) &= 1
+&&\text{for $t>0$}
+\end{aligned}
+\]
+are given.
+\begin{teilaufgaben}
+\item
+Convert the partial differential equation \eqref{50000017:equation}
+into a family of ordinary differential equations using the
+Laplace transform with respect to the variable $t$.
+\item
+Assume that there are solutions $A(x)$ and $B(x)$ of the
+ordinary differential equation $y''-xy=0$ with
+initial conditions $A(0)=1$, $A'(0)=0$,
+$B(0)=0$, $B'(0)=1$.
+Show that the functions $A(\sqrt{s}x)$ and $B(\sqrt{s}x)$
+are solutions of the ordinary differential equation obtained in a).
+\item
+Express the Laplace transform $\mathcal{L}u(s,x)$ by means of the functions
+$A(x)$ and $B(x)$.
+\end{teilaufgaben}
+
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+The Laplace transform with respect to the variable $t$ turns the differential
+equation into
+\[
+-
+x\biggl(
+-u(0,x) + s(\mathcal{L}u)(s,x)
+\biggr)
++\frac{\partial^2}{\partial x^2} (\mathcal{L}u)(s,x)
+=
+0.
+\]
+Writing $y_s(x) = (\mathcal{L})(s,x)$ simplifies the equation to
+the family of ordinary differential equations
+\begin{equation}
+y_s''(x)  -sxy_s(x) = 0.
+\label{50000017:ode}
+\end{equation}
+The initial conditions $f(t)=e^{-t}$ and $g(t)=1$ also need to be transformed:
+\begin{align*}
+\mathcal{L}f(s)
+&=
+\int_0^\infty e^{-t} e^{-st}\,dt
+=
+\int_0^\infty e^{-t(1+s)} \,dt
+=
+\biggl[
+\frac{-1}{1+s}e^{-t(1+s)}
+\biggr]_0^\infty
+=
+\frac1{1+s}
+\\
+\mathcal{L}g(s)
+&=
+\int_0^\infty 1\cdot e^{-st}\,dt
+=
+\biggl[ -\frac1se^{-st}\biggr]_0^\infty
+=
+\frac1s.
+\end{align*}
+So we have to find solutions $y_s(x)$ of the differential equation
+\eqref{50000017:ode} with initial conditions
+\[
+y_s(x) = \frac1{s+1}
+\qquad
+\text{and}
+\qquad
+y'_s(x) = \frac{1}{s}.
+\]
+\item
+The functions $A(\sqrt{s}x)$ and $B(\sqrt{s}x)$ satisfy
+\begin{align*}
+\frac{d^2}{dx^2}A(\sqrt{s}x)
+-
+sxA(\sqrt{s}x)
+&=
+sA''(\sqrt{s}x)-sxA(\sqrt{s}x)
+=
+s(\underbrace{A''(\sqrt{s}x)-xA(\sqrt{s}x}_{\displaystyle=0})
+=
+0,
+\\
+\frac{d^2}{dx^2}B(\sqrt{s}x)
+-
+sxB(\sqrt{s}x)
+&=
+sB''(\sqrt{s}x)-sxB(\sqrt{s}x)
+=
+s(\underbrace{B''(\sqrt{s}x)-xB(\sqrt{s}x}_{\displaystyle=0})
+=
+0.
+\end{align*}
+The expressions above the curly braces are $0$ because they are just
+the ordinary 
+differential equation $y''-xy=0$ for the functions $A(x)$ and $B(x)$.
+So the functions $A(\sqrt{s}x)$ and $B(\sqrt{s}x)$ are solutions of
+the equation \eqref{50000017:ode}.
+\item
+To find $\mathcal{L}u(s,x)$, we have to linearly combine the
+Functions $A(\sqrt{s}x)$ and $B(\sqrt{s}x)$ in such a way that the
+initial conditions are satisfied for all $s$.
+We use coefficients $a(s)$ and $b(s)$  dependent on $s$ for this purpose
+and write 
+\begin{align*}
+y_s(x)
+&=
+a(s)
+A(\sqrt{s}x) +
+b(s)
+B(\sqrt{s}x).
+\end{align*}
+We substitute $y_s(x)$ into the initial conditions:
+\begin{align*}
+y_s(0) &= a(s) A(0) + b(s) B(0) = a(s) = \frac{1}{s+1}
+\\
+y'_s(0)&= a(s)\sqrt{s}A'(0) + b(s) \sqrt{s}B'(0) = b(s)\sqrt{s} = \frac{1}{s}
+\end{align*}
+so
+\[
+\mathcal{L}u(s,x)
+=
+\frac1{s+1} A(\sqrt{s}x)
++
+\frac{1}{s^{\frac32}} B(\sqrt{s}x)
+\]
+is the solution of the Laplace transformed equation of
+\eqref{50000017:equation}.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{diskussion}
+The function $y''-xy=0$ is also known as Airy's equation.
+The Airy functions $\operatorname{Ai}(x)$ and $\operatorname{Bi}(x)$
+are explicit solutions of Airy's equation, but
+they do not satisfy the initial conditions of the functions $A(x)$ and $B(x)$
+above.
+However, such functions can easily be constructed from the Airy functions.
+\end{diskussion}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item
+Transformed equation ({\bf E}) 1 point,
+transformed boundary values for $f(t)$ ({\bf F}) 1 point,
+transformed boundary values for $g(t)$ ({\bf G}) 1 point,
+\item
+verification that $A(\sqrt{s}x)$ and $B(\sqrt{s}x)$ satisfy Airy's
+equation ({\bf A}) 1 point,
+\item
+use initial condition to determine the linear combination ({\bf I}) 1 point,
+linear combination and solution for Laplace transformed solution ({\bf L})
+1 point.
+\end{teilaufgaben}
+\end{bewertung}
+
+
