@@ -1,0 +1,105 @@
+Consider the partial differential equation
+\begin{equation}
+\frac{\partial^2 u}{\partial x^2}
++
+2\sqrt{2}e^{-x}\frac{\partial^2 u}{\partial x\,\partial y}
++
+e^{-2x}
+\frac{\partial^2 u}{\partial y^2}
+=
+0
+\label{90000019:equation}
+\end{equation}
+on the domain $\mathbb R^2$.
+\begin{teilaufgaben}
+\item
+Is the differential equation elliptic, parabolic or hyperbolic?
+\item
+Do the boundary values and normal derivatives  on the boundary of a
+smaller domain $\Omega_0 = \{(x,y)\in\mathbb R^2\,|\, x > 0\}$
+uniquely determine the solution?
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{figure}
+\centering
+\includeagraphics[]{domain.pdf}
+\caption{Domain and characteristics of the differential equation
+\eqref{90000019:equation}.
+\label{90000019:figure}}
+\end{figure}
+\begin{teilaufgaben}
+\item
+To classify the equation, we determine the symbol matrix and its
+determinant
+\[
+A=\begin{pmatrix}
+1&\sqrt{2}e^{-x}\\
+\sqrt{2}e^{-x}&e^{-2x}
+\end{pmatrix}
+\qquad\Rightarrow\qquad
+\det A
+=
+e^{-2x} - 2e^{-2x}=-e^{-2x} < 0,
+\]
+so the equation is in fact hyperbolic.
+\item
+We have to solve the differential equation for the characteristics, which is
+\[
+\dot{y}^2 -2\sqrt{2}e^{-x} \dot{x}\dot{y} + e^{-2x} \dot{x}^2 = 0
+\qquad\Rightarrow\qquad
+(y')^2 - 2\sqrt{2}e^{-x}y' + e^{-2x}=0.
+\]
+This equation can be factorized into two factors containing $e^{-x}$
+each, but different contants $c_1$ and $c_2$:
+\[
+(y'  - c_1e^{-x})(y' - c_2e^{-x}) = 0.
+\]
+Multiplying out gives
+\[
+(y')^2 -(c_1+c_2) e^{-x} y' + c_1c_2e^{-2x} = 0,
+\]
+so we are looking for two numbers with sum $-2\sqrt{2}$ and product $1$.
+They are the solutions of the quadratic equation
+\[
+c^2 -2\sqrt{2}c + 1=0.
+\]
+The solution formula allows us to find the solutions as
+\[
+c_{1,2} = \sqrt{2}+\pm\sqrt{2-1}=\sqrt{2}\pm 1.
+\]
+In fact, we have
+\begin{align*}
+c_1+c_2 &= \!\sqrt{2}+1+\!\sqrt{2}-1=2\!\sqrt{2}\\
+c_1c_2 &= (\!\sqrt{2}+1)(\!\sqrt{2}-1)=(\!\sqrt{2})^2-1=2-1=1,
+\end{align*}
+as expected.
+We now have the characteristic equations $y'=c_ke^{-x}$, which can easily
+be integrated:
+\[
+y(x) = -c_ke^{-x} + C_k.
+\]
+So the are decaying exponential curves as in figure~\ref{90000019:figure}.
+The curves emanating from the $y$-axis clearly cover all of the domain
+$\Omega_0$, and the boundary is not a characteristic curve, so boundary
+conditions on the $y$-axis do indeed uniquely determine the solution.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item
+Symbol matrix ({\bf A}) 1 point,
+hyperbolic via determinant ({\bf H}) 1 point,
+\item
+differential equation for characteristics ({\bf E}) 1 point,
+factorization ({\bf F}) 1 point,
+characteristics ({\bf C}) 1 point,
+characteristics cover domain $\Omega_0$ so problem is well posed ({\bf W})
+1 point.
+\end{teilaufgaben}
+\end{bewertung}
+
+
+

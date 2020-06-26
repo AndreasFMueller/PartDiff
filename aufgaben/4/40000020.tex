@@ -1,0 +1,185 @@
+The air column in a wind instrument with conical bore can be described
+as a cone with center at the origin where the mouthpiece is located.
+The oboe fits this model quite well, a saxophone also has a conical bore
+although twisted into an S-shape.
+The most suitable coordinate system for this problem is spherical coordinates.
+One can safely assume that the density of the air does not depend on the angles
+$\varphi$ and $\vartheta$, so that it sufficies to model the air
+density $\varrho$ as a function of time and the radius alone, i.~e.~as
+a function $\varrho(t,r)$.
+More precisely, $\varrho(t,r)$ is the density deviation with respect 
+to the density of the air surrounding the instrument.
+The wave equation then becomes
+\begin{equation}
+\frac{\partial^2}{\partial t^2}\varrho
+-
+a^2\biggl(
+\frac{\partial^2}{\partial r^2}
++\frac2r\frac{\partial}{\partial r}
+\biggr)\varrho
+=
+0,
+\label{40000020:equation}
+\end{equation}
+where $a$ is the speed of sound.
+The boundary conditions are 
+\begin{align*}
+\frac{\partial\varrho}{\partial r}(t,0)&=0&&\text{(instrument closed at mouthpiece)}
+\\
+\varrho(t,2\pi)&=0&&\text{(density of surrounding air at the bell of the instrument)}
+\end{align*}
+In addition, initial conditions at $t=0$ are given as
+\[
+\begin{aligned}
+\varrho(0,r) &= f(r)
+&
+&\text{and}&
+\frac{\partial}{\partial t} \varrho(0,r) &= g(r)
+\end{aligned}
+\]
+for $r\in(0,2\pi)$.
+
+\begin{teilaufgaben}
+\item
+Perform separation of variables and find ordinary differential equations
+that can be used to find a solution for this partial differential equation.
+Solve one of those equations.
+\item
+Write the factor $R(r)$ in the separation as $p(r)/r$ and use this
+to simplify the equation for $R(r)$ into an equation for $p(r)$.
+\ifthenelse{\boolean{loesungen}}{
+\item
+Solve the equation for $R(r)$ and determine the possible frequencies
+of the oboe.
+}{}
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+We substitute the separation ansatz $\varrho(t,r)=T(t)R(r)$ in the
+differential equation \eqref{40000020:equation} and get
+\begin{align*}
+T''(t) R(r)
+-a^2
+\biggl(
+T(t)R''(t) + \frac2r T(t)R'(r)
+\biggr)
+&=
+0
+\\
+\frac{T''(t)}{T(t)}
+&=
+a^2
+\biggl(
+R''(t) + \frac2r R'(r)
+\biggr)
+\frac1{R(r)}.
+\end{align*}
+In this equation, $t$ appears only on the left hand side and $r$ appears
+only on the right hand side, the variables are thus separated.
+Accordingly, both sides must be constant, we call the constant $-\mu^2$,
+because we expect oscillatory solutions.
+The equation for $T(t)$ then becomes
+\[
+T''(t) = -\mu^2 T(t)
+\qquad
+\text{with solutions}
+\qquad
+T_\mu(t) = A_\mu \cos \mu t + B_\mu \sin \mu t.
+\]
+The equation for $R(r)$ becomes
+\[
+R''(r) +\frac2r R'(r) + \frac{\mu^2}{a^2} R(r) = 0,
+\]
+which is an ordinary linear differential equation of second
+order with boundary conditions
+\[
+\begin{aligned}
+R'(0)&=0
+&&\text{and}&
+R(2\pi)&=0.
+\end{aligned}
+\]
+\item
+The derivatives of $R(r)=p(r)/r$ are
+\begin{align*}
+R'(r)
+&=
+\frac{rp'(r)-p(r)}{r^2}
+\qquad\text{and}\\
+R''(r)
+&=
+\frac{r^2p''(r) -2rp'(r) + 2p(r)}{r^3}
+.
+\end{align*}
+Substituting these into the differential equation gives
+\begin{align*}
+0=
+R''(r) +\frac2r R'(r) + \frac{\mu^2}{a^2} R(r)
+&=
+\frac{r^2p''(r) -2rp'(r) + 2p(r)}{r^3}
++2
+\frac{rp'(r)-p(r)}{r^2}
++\frac{\mu^2}{a^2}
+\frac{p(r)}{r}
+\\
+&=
+\frac1r\biggl( p''(r) +\frac{\mu^2}{a^2} p(r)\biggr)
+\\
+\Leftrightarrow\qquad
+p''(r)
+&=
+-\frac{\mu^2}{a^2} p(r)
+\qquad\Rightarrow\qquad
+p(r)
+=
+C_\mu \cos\frac{\mu}{a} r + D_\mu \sin\frac{\mu}{a} r
+\end{align*}
+\item
+Thus the solution for $R(r)$ becomes
+\[
+R(r)
+= 
+C_\mu \frac1r \cos\frac{\mu}{a} r + D_\mu \frac1r \sin\frac{\mu}{a} r
+\]
+We have to find the derivative of this function at $r=0$.
+The second term is an even function, so the derivative at $r=0$ is 0.
+The first term does not even have a limit when $r\to 0$, so we conclude
+that $C_\mu=0$.
+
+At $r=2\pi$,
+\[
+R(2\pi)=D_\mu\frac1{2\pi}\sin\frac{\mu}{a}2\pi = 0,
+\]
+so $\frac{\mu}a 2\pi$ must be an integer multiple of $\pi$, or
+\[
+\frac{2\pi}{a}\mu\in\pi\mathbb Z
+\quad\Rightarrow\quad
+\frac{2\mu}{a}\in\mathbb Z
+\quad\Rightarrow\quad
+\mu = \frac{ka}{2}\quad \text{with $k\in\mathbb Z$}.
+\]
+Thus the possible frequencies are integer multiples of $a/2$.
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{diskussion}
+Subproblem c) was not part of the exam
+\end{diskussion}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item
+Separation principle ({\bf S}) 1 point,
+solution for $T(t)$ ({\bf T}) 1 point,
+separated equation for $R(r)$ ({\bf R}) 1 point,
+boundary conditions for $R(r)$  ({\bf B}) 1 point,
+\item
+derivatives of $R(r)=p(r)/r$ ({\bf D}) 1 point,
+separated equation for $p(r)$ ({\bf P}) 1 point.
+\end{teilaufgaben}
+\end{bewertung}
+
+
+

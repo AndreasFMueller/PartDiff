@@ -1,0 +1,154 @@
+Consider the partial differential equation 
+\begin{equation}
+\frac12
+\frac{\partial^2 u}{\partial x^2}
++
+(\sin x + \cos x)\frac{\partial^2 u}{\partial x\,\partial y}
++
+\sin x \cos x
+\frac{\partial^2 u}{\partial y^2}
+=
+0
+\label{90000018:equation}
+\end{equation}
+in the domain $\Omega = \mathbb R^2$.
+\begin{teilaufgaben}
+\item
+Is this differential equation elliptic, parabolic or hyperbolic?
+\item
+Do boundary conditions
+\[
+u(0,y) = f(y)
+\qquad
+\text{and}
+\qquad
+\frac{\partial u}{\partial x}(0,y) = g(y)
+\]
+on the boundary of the smaller domain $\Omega_0 = \{ (x,y)\in\mathbb R^2 \,|\, x>0\}$
+uniquely determine the solution?
+\end{teilaufgaben}
+
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+The symbol matrix of the differential equation \eqref{90000018:equation} is
+\[
+A=\begin{pmatrix}
+\frac12&\frac12(\sin x+\cos x)\\
+\frac12(\sin x+\cos x)&\sin x\cos x
+\end{pmatrix}
+\]
+with determinant
+\begin{align*}
+\det A
+&=
+\frac12\sin x\cos x
+-
+\frac14(\sin x+\cos x)^2
+\\
+&=
+\frac12\sin x\cos x
+-\frac14\sin^2 x -\frac12\sin x\cos x -\frac14 \cos^2 x
+\\
+&=
+-\frac14(\sin^2 x + \cos^2 x) =-\frac14 < 0.
+\end{align*}
+Thus the differential equation is hyperbolic.
+\item
+To find the characteristics, we set up the characteristic equation
+\begin{equation}
+\frac12
+\dot{y}^2 
+-
+(\sin x + \cos x) \dot{x}\dot{y}
++
+\sin x \cos y \cdot \dot{x}^2
+=
+0.
+\label{90000018:chareq}
+\end{equation}
+Dividing by $\dot{x}$ and abbreviating $y'=\dot{y}/\dot{x}$ gives the
+quadratic differential equation
+\[
+\frac12 (y')^2 -(\sin x + \cos x) y' + \sin x \cos x = 0.
+\]
+This quadratic equation has zeros
+\begin{align*}
+y'
+&=
+\sin x +\cos x \pm \sqrt{(\sin x + \cos x)^2 - 4\cdot\frac12 \sin x \cos x}
+\\
+&=
+\sin x + \cos x \pm \sqrt{\sin^2 x + 2 \sin x\cos x + \cos^2 x -2\sin x \cos x}
+\\
+&=
+\sin x +\cos x \pm \sqrt{\sin^2 x + \cos^2 x}
+\\
+&=
+\sin x +\cos x \pm 1
+\end{align*}
+These equations can easily be solved:
+\[
+\begin{aligned}
+y(x) &= -\cos x + \sin x + x + A
+\\
+\text{or}\qquad
+y(x) &= -\cos x + \sin x - x + B
+\end{aligned}
+\]
+with integration constants $A,B\in\mathbb R$.
+\begin{figure}
+\centering
+\includeagraphics[]{char.pdf}
+\caption{Characteristics for the partial differential equation.
+\label{90000018:char}}
+\end{figure}
+So the characteristics are differently yawed $\sin x+\cos x$ curves
+(see figure~\ref{90000018:char}).
+These curves emanating from the $y$-axis obviously cover all of the domain,
+so the problem is well posed.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{diskussion}
+There is an even simpler argument which expempts us from actually computing
+the characteristics.
+The problem is well posed if the boundary nowhere satisfies the characteristic
+equation, i.e. the boundary is not a characteristic anywhere.
+The boundary is characterised by $\dot{x}(t)=0$ and $\dot{y}(t)\ne 0$.
+Substituting this into the characteristic equation~\eqref{90000018:chareq}
+gives
+\[
+\frac12
+\dot{y}^2 
+-
+(\sin x + \cos x) \underbrace{\dot{x}}_{=0}\dot{y}
++
+\sin x \cos y \cdot \underbrace{\dot{x}^2}_{=0}
+=
+\frac12\dot{y}^2
+\ne
+0.
+\]
+Thus the characteristic equation is never satisfied on the boundary
+and we can conclude that the problem is well posed.
+\end{diskussion}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item
+Symbol matrix ({\bf A}) 1 point,
+hyperbolic via determinant ({\bf H}) 1 point,
+\item
+differential equation for characteristics ({\bf E}) 1 point,
+solution for derivative ({\bf D}) 1 point,
+characteristics ({\bf C}) 1 point,
+characteristics cover domain $\Omega_0$ so problem is well posed ({\bf W})
+1 point.
+\end{teilaufgaben}
+\end{bewertung}
+
+
+

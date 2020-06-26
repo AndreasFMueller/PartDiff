@@ -1,0 +1,161 @@
+For the second order partial differential equation 
+\begin{equation}
+x^2 \frac{\partial^2 u}{\partial t^2}
++
+\frac{\partial^2 u}{\partial x^2}
+=
+0
+\label{50000018:equation}
+\end{equation}
+on the domain 
+\[
+\Omega
+= 
+\{ (t,x)\in\mathbb R^2\,|\, t>0 \text{ and } x > 0\}
+\]
+boundary conditions
+\[
+\begin{aligned}
+u(0,x) &= 0 & &\text{and}& \frac{\partial u}{\partial t}(0,x) &= 0 & &\text{for $x>0$}\\
+u(t,0) &= \pi &&\text{and}&\frac{\partial u}{\partial x}(t,0)&=e^{-2t} &&\text{for $t>0$}
+\end{aligned}
+\]
+are given.
+\begin{teilaufgaben}
+\item
+Convert the partial differential equation \eqref{50000018:equation} into
+a family of ordinary differential equations using the Laplace transform.
+\item
+Let $A(x)$ be any differentiable function and let $y(x)=A(\!\sqrt{s}x)$.
+Compute $y(0)$ and $y'(0)$.
+\item
+Now let $A(x)$ be a solution of the ordinary differential equation
+$A''+x^2A=0$, such functions are so called parabolic cylinder functions.
+We know from the theory of ordinary differential equations that there are
+two solutions $A(x)$ and $B(x)$ of $A''+x^2A=0$ with initial conditions
+$A(0)=1$, $A'(0)=0$, $B(0)=0$ and $B'(0)=1$.
+It can then be shown then that functions $x\mapsto A(\!\sqrt{s}x)$
+and $x\mapsto B(\!\sqrt{s}x)$  are solutions of the equation found in a).
+Express the Laplace transform $\mathcal{L}u(s,x)$ by means of the functions
+$A(\!\sqrt{s}x)$ and $B(\!\sqrt{s}x)$.
+\end{teilaufgaben}
+
+\begin{hinweis}
+Don't forget the initial conditions in a).
+In b), you don't have to show that $A(\!\sqrt{s}x)$ is a solution of the
+ordinary differential equation found in a), you can simply assume that.
+\end{hinweis}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+The Laplace transform of the equation \eqref{50000018:equation} is
+\[
+x^2\biggl(
+-u(0,x) -s\frac{\partial u}{\partial t}(0,x) +s^2\mathcal{L}u(s,x)
+\biggr)
++
+\frac{\partial^2}{\partial x^2} (\mathcal{L}u)(s,x)
+=
+0.
+\]
+Substituting the boundary conditions for $t=0$ gives
+\begin{equation}
+x^2s^2\mathcal{L}u(s,x)
++
+\frac{\partial^2}{\partial x^2} (\mathcal{L}u)(s,x)
+=
+0
+\qquad\Rightarrow\qquad
+y_s''(x) + x^2s^2y_s(x)=0
+\label{50000018:ode}
+\end{equation}
+using the customary notation $y_s(x)=(\mathcal{L}u)(s,x)$.
+
+The initial conditions
+$f(t)=\pi$
+and
+$g(t)=e^{-2t}$
+also need to be transformed:
+\begin{align*}
+\mathcal{L}f(s)
+&=
+\int_0^\infty \pi\cdot e^{-st}\,dt
+=
+\biggl[ -\frac{\pi}{s}e^{-st}\biggr]_0^\infty
+=
+\frac{\pi}{s}
+\\
+\mathcal{L}g(s)
+&=
+\int_0^\infty e^{-2t} e^{-st}\,dt
+=
+\int_0^\infty e^{-t(2+s)} \,dt
+=
+\biggl[
+\frac{-1}{2+s}e^{-t(2+s)}
+\biggr]_0^\infty
+=
+\frac1{2+s}.
+\end{align*}
+So we have to find solutions $y_s(x)$ of the differential equation
+\eqref{50000018:ode} with initial conditions
+\[
+y_s(x) = \frac{\pi}{s}.
+\qquad
+\text{and}
+\qquad
+y'_s(x) = \frac1{s+2}
+\]
+\item
+It is clear that $y(0)=A(\!\sqrt{s}\cdot 0)=A(0)$.
+For the derivative, we use the computation above, which showed
+\[
+y'(x) = \frac{d}{dx} A(\!\sqrt{s}x) = \sqrt{s}A'(\!\sqrt{s}x)
+\qquad\Rightarrow\qquad
+y'(0)=\sqrt{s}A'(\!\sqrt{s}\cdot 0)=\sqrt{s}A'(0).
+\]
+\item
+We construct a linear combination 
+\[
+y_s(x) = aA(\!\sqrt{s}x) + b B(\!\sqrt{s}x)
+\]
+and we have to choose $a$ and $b$ in such way that the initial conditions
+are satisfied.
+So we compute the initial values
+\begin{align*}
+y_s(0) &= aA(\!\sqrt{s}0) + bB(\!\sqrt{s}\cdot 0) = aA(0) + bB(0) = a
+&&\Rightarrow& a &= \frac{\pi}s,
+\\
+y_s'(0)&= a\sqrt{s} A'(0) + b\sqrt{s} B'(0) = b\sqrt{s}
+&&\Rightarrow& b &= \frac{1}{\!\sqrt{s}(s+2)}.
+\end{align*}
+This allows us to write the function $y_s(x)$ as
+\[
+y_s(x) = (\mathcal{L}u)(s,x)
+=
+\frac{\pi}{s}
+A(\!\sqrt{s}x)
++
+\frac{1}{\!\sqrt{s}(s+2)}B(\!\sqrt{s}x).
+\qedhere
+\]
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item
+Transformed equation ({\bf E}) 1 point,
+transformed boundary values for $f(t)$ ({\bf F}) 1 point,
+transformed boundary values for $g(t)$ ({\bf G}) 1 point,
+\item
+derivatives ({\bf D}) 1 point,
+\item
+use initial condition to determine the linear combination ({\bf I}) 1 point,
+linear combination and solution for Laplace transformed solution ({\bf L})
+1 point.
+\end{teilaufgaben}
+\end{bewertung}
+
+

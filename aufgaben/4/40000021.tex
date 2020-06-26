@@ -1,0 +1,134 @@
+A siren needs a horn for impedance matching with the surrounding
+atmosphere.
+The shape of the horn determines, among other things, the directional
+characteristics of the emitted sound wave.
+A horn with a narrow but tall opening (taller than the wave length of
+the emitted sound wave) will have a more horizontal emission characteristic
+due to diffraction, which is more suitable for the intended purpose of
+a siren.
+So a wedge shaped horn is tried, which is the domain
+\[
+\Omega = \{ (r,\varphi,z) \;|\; 0 < r < r_0, 0< \varphi <\varphi_0, 0 < z < h\}
+\]
+in cylindrical coordinates, as depicted in the following image.
+\begin{center}
+\includeagraphics[]{siren.pdf}
+\end{center}
+A sound wave can be modelled by the wave equation
+\[
+\frac{\partial^2 \varrho}{\partial t^2} - a^2\Delta \varrho=0.
+\]
+To evaluate this design,
+we are looking for a solution that is independent of $z$ and $\varphi$.
+The boundary conditions are homogeneous Neumann conditions at $r=0$ and 
+homogeneous Dirichlet conditions at $r=r_0$.
+
+\begin{teilaufgaben}
+\item
+Write down the differential equation and boundary conditions needed
+for this problem expressed in the coordinates $t$ and $r$.
+\item
+Perform separation of variables to find ordinary differential equations
+that can be sued to find a solution of the partial differential equation.
+\item
+Solve the time equation.
+\item
+Write the equation for the $r$-dependence as an ordinary, linear, homogeneous
+differential equation and specify the boundary conditions.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+The Laplace operator in cylindrical coordinates is
+\[
+\Delta = 
+\frac{1}{r}\frac{\partial}{\partial r}
+\biggl(r\frac{\partial}{\partial r}\biggr)
++
+\frac1{r^2}\frac{\partial^2}{\partial \varphi^2}
++
+\frac{\partial^2}{\partial z^2}.
+\]
+The last two terms are not needed, because we assume that the solution
+does not depend on $z$ and $\varphi$.
+So the wave equation becomes
+\[
+0
+=
+\frac{\partial^2\varrho}{\partial t^2}
+-
+a^2\frac{\partial}{\partial r}\biggl(r\frac{\partial\varrho}{\partial r}\biggr)
+=
+\frac{\partial^2\varrho}{\partial t^2}
+-
+a^2
+\biggl(
+\frac{\partial\varrho}{\partial r}
++
+r
+\frac{\partial^2\varrho}{\partial r^2}
+\biggr).
+\]
+The boundary condition at the sharp edge of the wedge is
+\[
+\frac{\partial\varrho}{\partial r}(t,0)=0,
+\]
+the one at the opening is
+\[
+\varrho(t, r_0) = 0.
+\]
+\item
+We try the separation ansatz
+\[
+\varrho(t,r) = T(t) \cdot R(r).
+\]
+Substituting this into the differential equation gives
+\[
+T''(t) R(r) - a^2 (R'(r)T(t) + rR''(r)T(t)) = 0.
+\]
+Moving the second term to the right hand side and dividing by $R(r)T(t)$
+gives the separated equation
+\[
+\frac{T''(t)}{T(t)}
+=
+a^2 \frac{R'(r)+rR''(r)}{R(r)}
+=
+-\lambda^2,
+\]
+both sides being constant.
+\item
+The time equation is 
+\[
+T'' = -\lambda^2 T,
+\]
+which is just an oscillation equation with solutions
+$A\cos\lambda t+B\sin\lambda t$.
+\item
+By dividing by $a^2$ and multiplying by $R(r)$ we get the equation
+\[
+rR''(r) + R'(r) +\frac{\lambda^2}{a^2}R(r)=0.
+\]
+The boundary conditions are
+\begin{align*}
+R'(0) &= 0,\\
+R(r_0) &= 0.
+\qedhere
+\end{align*}
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item Differential equation ({\bf E}) 1 point,
+boundary conditions ({\bf B}) 1 point.
+\item
+Substitution ({\bf S}) 1 point,
+separation ({\bf S}) 1 point
+\item
+Solution to time equation ({\bf T}) 1 point.
+\item
+Equation with boundary conditions for $R$ ({\bf R}) 1 point.
+\end{teilaufgaben}
+\end{bewertung}
+

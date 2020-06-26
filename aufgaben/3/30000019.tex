@@ -1,0 +1,108 @@
+Consider the partial differential equation
+\[
+\frac{\partial u}{\partial x} + \frac{\partial u}{\partial y}
+=
+u^2
+\]
+on the domain $\Omega = \{ (x,y)\in\mathbb R^2\,|\, x>0\}$, with
+boundary values
+\[
+u(0,y) = \frac{1}{1+y^2}.
+\]
+\begin{teilaufgaben}
+\item
+Is the solution of this equation uniquely determined close to the
+$y$-axis?
+\item
+Find a solution $u(x,y)$, possibly on a smaller domain than $\Omega$.
+\item
+Find the domain $\Omega_0\subset\Omega$ on which your solution is defined.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{figure}
+\centering
+\includeagraphics[]{domain.pdf}
+\caption{Domain on which the solution \eqref{30000019:solution} is
+well defined.
+The green lines are characteristics.
+\label{30000019:figure}}
+\end{figure}%
+This is a nonlinear but quasilinear partial differential equation of first
+order, it can be solved using the the method of characteristics.
+The ordinary differential equations
+\begin{align*}
+\dot{x} &= 1 &&\Rightarrow& x&=s + x_0 = s\\
+\dot{y} &= 1 &&\Rightarrow& y&=s + y_0 = x + y_0&&\Rightarrow&y_0&=y-x\\
+\dot{u} &= u^2
+\end{align*}
+\begin{teilaufgaben}
+\item
+To decide whether the problem is well posed we only have to know whether
+the characteristics cover the whole domain.
+But the characteristics are straight lines of slope $1$, these lines
+cover a neighborhood of the $y$-axis, so we can conclude that the
+solution is unique there, as long as the solution of the third equation 
+exists.
+\item
+To find the solution, we need to solve the last equation.
+This can be done using the method of separation of variables.
+The equation is equivalent to
+\begin{align*}
+\int\frac{du}{u^2} &= \int \,ds
+&&\Rightarrow&
+-\frac1{u} &= s + C
+&&\Rightarrow&
+u = -\frac{1}{s+C} = -\frac{1}{s-1/u_0} = -\frac{1}{s-(1+y_0^2)}.
+\end{align*}
+To find the solution, we have to eliminate $y_0$ from these equations.
+But from the second equation we get $y_0=y-x$ so the solution becomes
+\begin{equation}
+u = -\frac{1}{x-(1+(y-x)^2)}.
+\label{30000019:solution}
+\end{equation}
+We see the solution of the equation blows up eventually.
+The blow-up happens later if the inital value is smaller.
+\item
+The solution is only defined as long as the denominator in
+\eqref{30000019:solution}
+does not vanish.
+By considering the solution along the characteristic, we can consider $y_0$
+to be a constant and can decide how much we can increase $x$ until the
+solution blows up.
+This happens when 
+\[
+0=x-(1+y_0^2)
+\qquad\Rightarrow\qquad
+x=1+y_0^2.
+\]
+So the right hand boundary of the domain is parametrized by
+\[
+y_0 \mapsto (1+y_0^2,y_0+1+y_0^2).
+\]
+This is the red parabola in figure~\ref{30000019:figure}.
+Alternatively we can write the curve as 
+\[
+y=
+x+
+\pm
+\sqrt{x-1}
+\]
+for $x\ge 0$.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item
+Equations for the characteristics ({\bf E}) 1 point,
+solutions for the equations ({\bf S}) 1 point,
+decision regarding well posedness close to the axis ({\bf W}) 1 point.
+\item
+Solution for $u$ ({\bf U}) 1 point,
+use initial condition ({\bf I}) 1 point.
+\item
+Find the domain ({\bf $\Omega_0$}) 1 point.
+\end{teilaufgaben}
+\end{bewertung}
