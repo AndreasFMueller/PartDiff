@@ -58,11 +58,11 @@ So the wave equation becomes
 =
 \frac{\partial^2\varrho}{\partial t^2}
 -
-a^2\frac{\partial}{\partial r}\biggl(r\frac{\partial\varrho}{\partial r}\biggr)
+a^2\frac1r\frac{\partial}{\partial r}\biggl(r\frac{\partial\varrho}{\partial r}\biggr)
 =
 \frac{\partial^2\varrho}{\partial t^2}
 -
-a^2
+\frac{a^2}{r}
 \biggl(
 \frac{\partial\varrho}{\partial r}
 +
@@ -85,14 +85,14 @@ We try the separation ansatz
 \]
 Substituting this into the differential equation gives
 \[
-T''(t) R(r) - a^2 (R'(r)T(t) + rR''(r)T(t)) = 0.
+T''(t) R(r) - \frac{a^2}r\bigl(R'(r)T(t) + rR''(r)T(t)\bigr) = 0.
 \]
 Moving the second term to the right hand side and dividing by $R(r)T(t)$
 gives the separated equation
 \[
 \frac{T''(t)}{T(t)}
 =
-a^2 \frac{R'(r)+rR''(r)}{R(r)}
+a^2 \frac{R'(r)+rR''(r)}{rR(r)}
 =
 -\lambda^2,
 \]
@@ -105,9 +105,9 @@ T'' = -\lambda^2 T,
 which is just an oscillation equation with solutions
 $A\cos\lambda t+B\sin\lambda t$.
 \item
-By dividing by $a^2$ and multiplying by $R(r)$ we get the equation
+By dividing by $a^2$ and multiplying by $rR(r)$ we get the equation
 \[
-rR''(r) + R'(r) +\frac{\lambda^2}{a^2}R(r)=0.
+rR''(r) + R'(r) +\frac{\lambda^2}{a^2}rR(r)=0.
 \]
 The boundary conditions are
 \begin{align*}
