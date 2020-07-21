@@ -10,7 +10,8 @@ all:	circular.pdf rays.pdf directionfield.pdf \
 	coneplanes.jpg \
 	planefield.jpg \
 	nondifferentiable.pdf underdetermined.pdf overdetermined.pdf \
-	hypkurv.pdf
+	hypkurv.pdf \
+	burgers.jpg burgers-jump.jpg
 
 directionfield.pdf:	directionfield.tex
 	pdflatex directionfield.tex
@@ -94,4 +95,17 @@ hypkurv.pdf:	hypkurv.tex
 	pdflatex hypkurv.tex
 
 
+burgers.png:	burgers.pov burgers.inc
+	povray $(POVRAYOPTIONS) -Oburgers.png burgers.pov
+burgers.jpg:	burgers.png Makefile
+	convert -extract 1920x860+0+183 burgers.png -density 300 \
+		-units PixelsPerInch burgers.jpg
+
+#POVRAYOPTIONS = -D +A0.1 -W640 -H360
+
+burgers-jump.png:	burgers-jump.pov burgers.inc
+	povray $(POVRAYOPTIONS) -Oburgers-jump.png burgers-jump.pov
+burgers-jump.jpg:	burgers-jump.png Makefile
+	convert -extract 1920x860+0+183 burgers-jump.png -density 300 \
+		-units PixelsPerInch burgers-jump.jpg
 
