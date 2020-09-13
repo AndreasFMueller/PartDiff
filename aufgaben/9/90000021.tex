@@ -1,0 +1,107 @@
+Consider the partial differential operator
+\begin{equation}
+L
+=
+\frac{\partial^2}{\partial x^2}
+-2x(1-y)\frac{\partial^2}{\partial x\,\partial y}
+-4x^2y\frac{\partial^2}{\partial y^2}
+\label{90000021:operator}
+\end{equation}
+in the domain $\Omega=\{(x,y)\in\mathbb R^2\;|\; x>0\wedge y>0\}$.
+\begin{teilaufgaben}
+\item
+Is the operator $L$ elliptic, parabolic or hyperbolic?
+\item
+If $L$ is elliptic, find a solution of $Lu=1$ with boundary $u=0$
+on $\partial\Omega$.
+\item
+If $L$ is parabolic, find the arrow of time.
+\item
+If $L$ is hyperbolic, determine the characteristics of $L$.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{figure}
+\centering
+\includeagraphics[]{domain.pdf}
+\caption{Characteristics of the hyperbolic differential operator 
+\eqref{90000021:operator}.
+Characteristics $y=x^2+C$ are shown in red,
+characteristids $De^{-x^2}$ are shown in green.
+\label{90000021:char}}
+\end{figure}
+\begin{teilaufgaben}
+\item
+The symbol matrix is
+\[
+A
+=
+\begin{pmatrix}
+1&-x(1-y)\\
+-x(1-y)&-4x^2y
+\end{pmatrix}
+\qquad\Rightarrow\qquad
+\det A
+=
+-4x^2y -x^2(1-y)^2
+=
+-x^2((1-y)^2 + 4y).
+\]
+For $y>0$ and $x>0$ as in the given domain $\Omega$, this expression is
+always negative, implying that $L$ is hyperbolic.
+Note that for $x=0$ the determinant vanishes, which in
+figure~\ref{90000021:char} 
+\item
+$L$ is not elliptic.
+\item
+$L$ is not parabolic.
+\item
+The equation for the characteristics is
+\begin{align*}
+\dot{y}^2 +2x(1-y)\dot{x}\dot{y} -4x^2 y\dot{x}^2 &= 0
+\\
+\Rightarrow\qquad
+y'^2 +2x(1-y) y' -4x^2y &= 0.
+\end{align*}
+We have to solve this quadratic equation for $y'$ to get easier to
+solve differential equations for $y$:
+\begin{align*}
+y'
+&=
+x(1-y) \pm \sqrt{ x^2(1-y)^2 + 4x^2y}
+=
+x(1-y) \pm x \sqrt{ 1+2 y +y^2}
+\\
+&=
+x(1-y) \pm x(1+y)
+=
+\begin{cases}
+\phantom{-}2x& \\
+-2xy&
+\end{cases}
+\end{align*}
+So we have to solve the two differential equations
+\begin{align*}
+y'&=2x &&\text{and}& y'&=-2xy
+\intertext{with solutions}
+y'&=x^2+C &&\text{and}& \int\frac{dy}{y} &= \int -2x\,dx + \operatorname{const}
+\\
+  &       &&          & \log y &= -x^2 + \operatorname{const}
+\\
+  &       &&          & y &= De^{-x^2}.
+\end{align*}
+The characteristics are thus standard parabolas shifted vertically
+and scaled Gauss curves.
+Figure~\ref{90000021:char} shows the characteristics.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+Symbol matrix ({\bf S}) 1 point,
+determinant and conclusion that $L$ is hyperbolic ({\bf H}) 1 point,
+equation for characteristics ({\bf C}) 1 point,
+factorization into two equations and solution ({\bf S}) 2 points,
+discussion of boundary points ({\bf B}) 1 point.
+\end{bewertung}
+

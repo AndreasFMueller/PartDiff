@@ -1,0 +1,136 @@
+Consider the partial differential operator
+\begin{equation}
+L
+=
+-y
+\frac{\partial^2}{\partial x^2}
+-
+(1-y)
+\frac{\partial^2}{\partial x\,\partial y}
++
+\frac{\partial^2}{\partial y^2}
+\label{90000020:operator}
+\end{equation}
+in the domain $\Omega=\{(x,y)\in\mathbb R^2\;|\; y > e^{-x}\}$.
+\begin{teilaufgaben}
+\item
+Is the operator $L$ elliptic, parabolic or hyperbolic?
+\item
+If $L$ is elliptic, find a solution of $Lu=1$ with boundary $u=0$
+on $\partial\Omega$.
+\item
+If $L$ is parabolic, find the arrow of time.
+\item
+If $L$ is hyperbolic, determine the characteristics of $L$.
+Do the characteristics intersect the boundary of $\Omega$ in precisely
+one point?
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{figure}
+\centering
+\includeagraphics[]{domain.pdf}
+\caption{Characteristics of the hyperbolic differential operator 
+\eqref{90000020:operator}.
+Characteristics $y=-x+C$ with $C>1$ are shown in green, 
+characteristics $y=\sqrt{2x+D}$ are shown in red.
+The green characteristics intersect the boundary twice.
+\label{90000020:char}}
+\end{figure}
+\begin{teilaufgaben}
+\item
+The symbol matrix is
+\[
+A
+=
+\begin{pmatrix}
+-y&\frac12(y-1)\\
+\frac12(y-1)&1
+\end{pmatrix}
+\qquad\Rightarrow\qquad
+\det A
+=
+-y -\frac14(y-1)^2
+\]
+Since $y>0$ in $\Omega$, the determinant is always negative,
+implying that $L$ is hyperbolic.
+\item
+$L$ is not elliptic.
+\item
+$L$ is not parabolic.
+\item
+The equation for the characteristics is
+\begin{align*}
+-y \dot{y}^2 -(y-1)\dot{x}\dot{y} +\dot{x}^2 &= 0
+\\
+\Rightarrow\qquad
+-y y'^2 - (y-1) y' + 1 &= 0.
+\end{align*}
+We have to solve this quadratic equation for $y'$ to get easier to
+solve differential equations for $y$:
+\begin{align*}
+y'
+&=
+\frac{y-1}{-2y} \pm \sqrt{\frac{(y-1)^2}{4y^2}+y}
+=
+\frac{1-y}{2y} \pm \sqrt{\frac{y^2-2y +1-4y}{4y^2}}
+=
+\frac{1-y}{2y} \pm \sqrt{\frac{y^2+2y +1}{4y^2}}
+\\
+&=
+\frac{1-y}{2y} \pm \frac{1+y}{2y}
+=
+\begin{cases}
+\displaystyle\frac1y& \\[5pt]
+-1&
+\end{cases}
+\end{align*}
+So we have to solve the two differential equations
+\begin{align*}
+y'&=-1 &&\text{and}& y'&=\frac{1}{y}
+\intertext{with solutions}
+y&=-x+C &&\text{and}& 2yy' &= 2
+\\
+ &      &&          &   y^2&= 2x + D
+\\
+ &      &&          &   y  &= \sqrt{2x + D}
+\end{align*}
+The characteristics are thus straight lines of slope $-1$ and 
+shifted root curves.
+
+Note that the square root curves are only defined for $x>-D/2$
+Not every parameter value is possible for $C$.
+The boundary curve intersects the $y$-axis with slope $-1$ and
+because the second derivative of the boundary curve is positive,
+the domain $\Omega$ is always entirely above that tangent line in
+any point of the boundary.
+$C$ is the intercept of the characteristic $y=-x+C$, thus $C=1$ is
+the smallest acceptable value for $C$ is $1$.
+
+We have to find out whether the characteristics intersect the boundary 
+precisely once.
+The root curves are always monotonously increasing, while the boundary
+curve is montonously decreasing.
+Thus the can only intersect exactly once.
+
+Whatever the value of $C$, the characteristic always intersects
+the $x$-axis at $x=-C$.
+Since the boundary of the domain lies above the $x$-axis, it must
+intersect the characteristic at some $x<C$.
+Similarly, the boundary curve increases exponentially as $x\to-\infty$,
+while the characteristic only increases linearly.
+Thus there must be an intersection point with negative $x$.
+This means that every $-x+C$ characteristics intersects the boundary
+twice except when $C=1$, when it intersects precisely once.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+Symbol matrix ({\bf S}) 1 point,
+determinant and conclusion that $L$ is hyperbolic ({\bf H}) 1 point,
+equation for characteristics ({\bf C}) 1 point,
+factorization into two equations and solution ({\bf S}) 2 points,
+discussion of boundary points ({\bf B}) 1 point.
+\end{bewertung}
+
