@@ -1,0 +1,159 @@
+Consider the partial differential equation
+\begin{equation}
+x \frac{\partial u}{\partial x}
++
+\frac{\partial^2 u}{\partial y^2}
+=
+-\frac14
+u
+\label{40000023:eqn}
+\end{equation}
+on the domain 
+\[
+\Omega
+=
+\{
+(x,y)\in\mathbb R^2
+\;|\;
+0<x<1\wedge 0<y<\pi
+\}.
+\]
+Find a solution with boundary conditions
+\[
+\begin{aligned}
+u(x,0) &= 0 &&\text{and}& u(x,\pi) &= 0 &&\text{for} &x&\in(0,1)
+\\
+u(0,y) &= 0 &&\text{and}& u(1,y) &= f(y) &&\text{for} &y&\in(0,\pi).
+\end{aligned}
+\]
+where $f(x)$ is a triangle function with the Fourier series
+\begin{align*}
+f(x)
+&=\begin{cases}
+\displaystyle\frac{2x}{\pi}&\displaystyle\qquad 0\le x < \frac{\pi}2\\[10pt]
+\displaystyle\frac{2(\pi - x)}{\pi}&\displaystyle\qquad \frac{\pi}2\le x < \pi
+\end{cases}
+\\
+&=
+\frac{8}{\pi^2}
+\biggl(
+\sin x - \frac1{3^2} \sin3x + \frac1{5^2}\sin5x - \frac1{7^2} \sin 7x + \dots
+\biggr)
+=
+\frac{8}{\pi^2}
+\sum_{k=1}^\infty \frac{(-1)^{k+1}}{(2k+1)^2} \sin (2k+1)x.
+\end{align*}
+
+\begin{hinweis}
+For the dependence of the solution on $x$, try an ansatz of the form
+$X(x)=x^r$ and note that only solutions with $r>0$ can be used.
+\end{hinweis}
+
+\begin{loesung}
+\begin{figure}
+\centering
+\begin{tikzpicture}[>=latex,thick]
+\node at (0,0) {\includeagraphics[width=16.8cm]{solution.jpg}};
+\node at (8.3,-1.4) {$x$};
+\node at (-8.3,-0.4) {$y$};
+\node at (5.7,2.6) {$z$};
+\end{tikzpicture}
+\caption{Solution surface of the differential equation
+\eqref{40000023:eqn}
+\label{40000023:surface}}
+\end{figure}
+We use separation with the ansatz $u(x,y)=X(x)Y(y)$.
+Substituting the ansatz into the equation gives
+\[
+x X'(x) Y(y) + X(x) Y''(y) = -\frac14 X(x)Y(y).
+\]
+Dividing by $X(x)Y(y)$ allows to separate the equation:
+\[
+x \frac{X'(x)}{X(x)} + \frac14 = - \frac{Y''(y)}{Y(y)}
+\]
+Since the left hand side only depends on $x$ and the right hand side only
+depends on $y$, both have to be constant, we call the common constant
+$\mu^2$.
+We then obtain the two equations
+\begin{align*}
+xX'(x)&=(-{\textstyle\frac14}+\mu^2) X(x)
+&&\text{and}
+&
+Y''(y) &= -\mu^2 Y(y)
+\intertext{with homogeneous boundary conditions}
+X(0)&=0
+&&\text{and}
+&
+Y(0)&=Y(\pi)=0.
+\end{align*}
+The equation for $Y(y)$ has solutions $\sin(\mu y)$ and $\cos(\mu y)$.
+The boundary conditions only leave $Y_k(y)=\sin ky$ where $k$ is an
+integer $k>0$.
+Note that $k=0$ gives the trivial solution in which we are not
+interested.
+
+For the equation for $X(x)$ we try solutions of the form $X(x)=x^r$.
+Substituting this into the equation gives
+\[
+x rx^{r-1} = (-{\textstyle\frac14} + k^2) x^r
+\]
+which is only possible if $r = -\frac14 + k^2=(k+\frac12)(k-\frac12)$.
+We thus obtain the functions
+\[
+X_k(x) = x^{-{\textstyle\frac14}+k^2}
+\]
+for the dependency of $x$.
+
+Combining the factors we get solutions
+\[
+u_k(x,y) = X_k(x) Y_k(y) = x^{{\textstyle-\frac14}+k^2} \sin(ky)
+\]
+which trivially satisfies the homogeneous boundary conditions.
+We have to build a linear combination that also satisfies the 
+boundary condition for $x=1$, i.~e.
+\begin{align*}
+u(x,y)
+&=
+\sum_{k=1}^\infty a_k x^{-\frac14+k^2}\sin ky 
+\\
+\Rightarrow\qquad
+u(1,y)
+&=
+\sum_{k=1}^\infty a_k \sin ky = f(y)
+=
+\frac{8}{\pi^2}
+\sum_{j=1}^\infty
+\frac{(-1)^{j+1}}{(2j+1)^2}
+\sin (2j+1)y
+\\
+\Rightarrow\qquad
+a_k&=\begin{cases}
+\displaystyle\frac{8(-1)^{\frac{k-1}2}}{\pi^2k^2}&\qquad \text{$k$ odd}\\[10pt]
+0&\qquad\text{otherwise}.
+\end{cases}
+\end{align*}
+by comparing coefficients.
+Thus the solution we are looking for is
+\[
+u(x,y)
+=
+\frac{8}{\pi^2}\sum_{j=1}^\infty (-1)^{j+1}x^{-\frac14+(2j+1)^2}\sin (2j+1) y.
+\]
+Figure~\ref{40000023} shows the graph of the solution $u(x,y)$.
+\end{loesung}
+
+\begin{bewertung}
+Separation ansatz ({\bf S}) 1 point,
+separated equations ({\bf E}) 1 point,
+solution of the equation for $Y(y)$ using homogeneous boundary conditions
+({\bf Y}) 1 point,
+solution of the equation for $X(x)$ ({\bf X}) 1 point,
+using nonhomogeneous boundary conditions to determine coefficients ({\bf C})
+1 point,
+solution ({\bf U}) 1 point.
+\end{bewertung}
+
+
+
+
+

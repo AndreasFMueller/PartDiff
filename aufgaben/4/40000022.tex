@@ -1,0 +1,180 @@
+Consider the partial differential equation
+\begin{equation}
+x^2 \frac{\partial^2 u}{\partial x^2}
++
+\frac{\partial^2 u}{\partial y^2}
+=
+-\frac14
+u
+\label{40000022:eqn}
+\end{equation}
+on the domain 
+\[
+\Omega
+=
+\{
+(x,y)\in\mathbb R^2
+\;|\;
+0<x<1\wedge 0<y<\pi
+\}.
+\]
+Find a solution with boundary conditions
+\[
+\begin{aligned}
+u(x,0) &= 0 &&\text{and}& u(x,\pi) &= 0 &&\text{for} &x&\in(0,1)
+\\
+u(0,y) &= 0 &&\text{and}& u(1,y) &=\sin 2y &&\text{for} &y&\in(0,\pi).
+\end{aligned}
+\]
+
+\begin{hinweis}
+For the dependence of the solution on $x$, try an ansatz of the form
+$X(x)=x^r$
+and note that only solutions with $r>0$ can be used.
+\end{hinweis}
+
+\begin{loesung}
+\begin{figure}
+\centering
+\begin{tikzpicture}[>=latex,thick]
+\node at (0,0) {\includeagraphics[width=16.8cm]{solution.jpg}};
+\node at (8.2,-0.9) {$x$};
+\node at (-8.1,0.2) {$y$};
+\node at (5.6,3.4) {$z$};
+\end{tikzpicture}
+\caption{Solution surface of the differential equation
+\eqref{40000022:eqn}
+\label{40000022:surface}}
+\end{figure}
+We use separation with the ansatz $u(x,y)=X(x)Y(y)$.
+Substituting the ansatz into the equation gives
+\[
+x^2 X''(x) Y(y) + X(x) Y''(y) = -\frac14X(x) X(x) Y(y).
+\]
+Dividing by $X(x)Y(y)$ allows to separate the equation:
+\[
+x^2 \frac{X''(x)}{X(x)} + \frac{1}{4} = - \frac{Y''(y)}{Y(y)}.
+\]
+Since the left hand side only depends on $x$ and the right hand side only
+depends on $y$, both have to be constant, we call the common constant
+$\mu^2$.
+We then obtain the two equations
+\begin{align*}
+x^2X''(x)&=(-{\textstyle\frac{1}{4}}+\mu^2) X(x)
+&&\text{and}
+&
+Y''(y) &= -\mu^2 Y(y)
+\intertext{with homogeneous boundary conditions}
+X(0)&=0
+&&\text{and}
+&
+Y(0)&=Y(\pi)=0.
+\end{align*}
+The equation for $Y(y)$ has solutions $\sin(\mu y)$ and $\cos(\mu y)$.
+The boundary conditions only leave $Y_k(y)=\sin ky$ where $k$ is an
+integer $k>0$.
+Note that $k=0$ gives the trivial solution in which we are not
+interested.
+
+For the equation for $X(x)$ we try solutions of the form $X(x)=x^r$.
+Substituting this into the equation gives
+\[
+x^2 r(r-1)x^{r-2} = \bigl(-{\textstyle\frac{1}{4}} + k^2\bigr) x^r
+\]
+which is only possible if $r(r-1) = (1 + k^2)$.
+There are two solutions corresponding to 
+the solutions of the quadratic equation
+\[
+r^2-r -(k^2-{\textstyle\frac14}) = 0
+\qquad\Rightarrow\qquad
+r_{\pm}
+=
+\frac{1}{2}\pm\sqrt{\frac14+\biggl(k^2-\frac14\biggr)}
+=
+\frac12\pm k.
+\]
+Since $k>0$ is an integer, it ist at least $1$ and one of the solutions,
+namely $r_-$ is always negative.
+As only positive $r$ can be used, we conclude that $r_+=\frac12+k$ 
+gives the solution $X_k(x) = x^{\frac12+k}$ we are interested in.
+
+Combining the factors we get solutions
+\[
+u_k(x,y) = X_k(x) Y_k(y) = x^{\frac12+k} \sin(ky)
+\]
+which trivially satisfies the homogeneous boundary conditions.
+We have to build a linear combination that also satisfies the 
+boundary condition for $x=1$, i.~e.
+\begin{align*}
+u(x,y)
+&=
+\sum_{k=1}^\infty a_k x^{\frac12+k}\sin ky 
+\\
+\Rightarrow\qquad
+u(1,y)
+&=
+\sum_{k=1}^\infty a_k \sin ky = \sin 2y
+\\
+\Rightarrow\qquad
+a_k&=\begin{cases}
+1&\qquad k=2\\
+0&\qquad\text{otherwise}.
+\end{cases}
+\end{align*}
+by comparing coefficients.
+Thus the solution we are looking for is
+\[
+u(x,y) = x^{\frac52}\sin 2y.
+\]
+We verify that this is in fact a solution by substituting it into the
+original equation. 
+The partial derivatives
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
+\frac52x^{\frac32}\sin 2y
+&
+\frac{\partial u}{\partial y}
+&=
+2x^{\frac52} \cos 2y
+\\
+\frac{\partial^2u}{\partial x^2}
+&=
+\frac52\cdot\frac32 x^{\frac12}\sin 2y
+&
+\frac{\partial^2u}{\partial y^2}
+&=
+-4x^{\frac52}\sin 2y
+\end{align*}
+substituted into the partial differential equation~\eqref{40000022:eqn}
+give
+\[
+x^2\frac{\partial^2u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}
+=
+x^2
+\frac52\cdot\frac32 x^{\frac12}\sin 2y
+-4x^{\frac52}\sin 2y
+=
+\biggl(\frac{15}4-\frac{16}{4}\biggr)
+x^{\frac52}\sin 2y
+=
+-\frac14 x^{\frac52}\sin 2y = -\frac14u.
+\]
+This verifies the solution.
+\end{loesung}
+
+\begin{bewertung}
+Separation ansatz ({\bf S}) 1 point,
+separated equations ({\bf E}) 1 point,
+solution of the equation for $Y(y)$ using homogeneous boundary conditions
+({\bf Y}) 1 point,
+solution of the equation for $X(x)$ ({\bf X}) 1 point,
+using nonhomogeneous boundary conditions to determine coefficients ({\bf C})
+1 point,
+solution ({\bf U}) 1 point.
+\end{bewertung}
+
+
+
+
+
