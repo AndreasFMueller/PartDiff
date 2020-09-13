@@ -1,0 +1,103 @@
+The partial differential equation
+\begin{equation}
+x\frac{\partial^2 u}{\partial t^2}
++\frac{\partial u}{\partial x}
+=
+e^{-t}
+\end{equation}
+on the domain
+\[
+\Omega
+=
+\{ (t,x)\in\mathbb R^2 \;|\;
+t>0\text{ and } x > 0\}
+\]
+with boundary conditions
+\[
+\begin{aligned}
+u(0,x)&=2 &&\text{and}& \frac{\partial u}{\partial t}(0,x) &= 3
+&&\text{for $x>0$}
+\\
+u(t,0)&=1 &&\text{and}&                                    &   
+&&\text{for $t>0$}
+\end{aligned}
+\]
+Use the Laplace transform with respect to the variable $t$ to convert this
+problem into a family of ordinary differential equations and initial
+conditions.
+
+\begin{hinweis}
+The solution of the family of ordinary differential equations is not required.
+\end{hinweis}
+
+\begin{loesung}
+The Laplace transform of the right hand side of the differential equation
+was computed during the lecture and is
+\[
+\mathcal{L}\frac{1}{\exp}(s)
+=
+\int_0^\infty e^{-t}e^{-st}\,dt
+=
+\int_0^\infty e^{-t(s+1)}\,dt
+=
+\biggl[-\frac1{s+1}e^{-t(s+1)}\biggr]_0^\infty
+=
+\frac{1}{s+1}.
+\]
+This means that the Laplace transform of the differential equation is
+\begin{align*}
+x\mathcal{L}\frac{\partial^2u}{\partial t^2}
++
+\mathcal{L}\frac{\partial u}{\partial x}
+&=
+\frac1{s+1}
+\\
+x\biggl(
+-\frac{\partial u}{\partial t}(0,x)
+-su(0,x)
++s^2\mathcal{L}u(s,x)
+\biggr)
++\frac{\partial}{\partial x}\mathcal{L}u(s,x)
+&=
+\frac1{s+1}
+\\
+-3x-2sx+xs^2\mathcal{L}u(s,x)
++\frac{\partial}{\partial x}\mathcal{L}u(s,x)
+&=
+\frac1{s+1}
+\end{align*}
+Furthermore, we have to compute the Laplace transforms for the boundary
+condition at $x=0$:
+\[
+\mathcal{L}1(s)
+=
+\int_0^\infty 1\cdot e^{-st}\,dt
+=
+\biggl[ -\frac1s e^{-st}\biggr]_0^\infty = \frac1s.
+\]
+Writing $\mathcal{L}u(s,x)=y_s(x)$, we get the family of differential
+equations
+\begin{align*}
+y_s'(x)
++
+xs^2\,y_s(x)
+&=
+\frac1{s+1}+3x+2sx
+\intertext{with the initial condition}
+y_s(0)
+&=
+\frac{1}{s}
+\end{align*}
+at $x=0$.
+\end{loesung}
+
+\begin{bewertung}
+Laplace transform of second derivative ({\bf D}) 1 point,
+usage of initial values in time ({\bf T}) 1 point,
+Laplace transform of $e^{-t}$ ({\bf X}) 1 point,
+Laplace transform of $1$ ({\bf 1}) 1 point,
+transformed equation ({\bf E}) 1 point,
+transformed initial conditions ({\bf I}) 1 point.
+\end{bewertung}
+
+

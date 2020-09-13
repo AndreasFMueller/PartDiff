@@ -1,0 +1,71 @@
+The Mellin transform is an integral transform applicable to functions
+defined on $\mathbb R^+$ defined by
+\[
+(Mf)(\mu)
+=
+\int_0^\infty f(x) x^\mu\,dx.
+\]
+\begin{teilaufgaben}
+\item
+Compute the Mellin transform of a derivative $f'(x)$ and relate it to the
+Mellin transform of $f$.
+\item
+Apply the Mellin transform to the differential equation
+\[
+f'(x)+f(x)=0.
+\]
+\item
+We are looking for a function $f(x)$ that decays quickly enough so that
+all the integrals exist for $\mu>0$.
+Use this information to simplify the equation obtained in b).
+\item
+What type of equation do you get?
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+We use partial integration to compute the Mellin transform of $f'(x)$
+\begin{align*}
+(Mf')(\mu)
+&=
+\int_0^\infty f'(x)x^\mu\,dx
+=
+\biggl[ f(x)x^\mu \biggr]_0^\infty
+-
+\mu
+\int_0^\infty f(x)x^{\mu-1}\,dx
+\\
+&=
+\biggl[ f(x)x^\mu \biggr]_0^\infty
+-
+\mu \,Mf(\mu-1)
+\end{align*}
+\item
+Applying the Mellin transform to the differential equation gives
+\begin{align*}
+(Mf')(\mu) + (Mf)(\mu)
+&=
+\bigl[f(x)x^\mu\bigr]_0^\infty - \mu (Mf)(\mu-1) + (Mf)(\mu) = 0
+\end{align*}
+\item
+The condition means that the first term on the right hand side must
+vanish, so the equation is now
+\[
+- \mu (Mf)(\mu-1) + (Mf)(\mu) = 0
+\qquad\Rightarrow\qquad
+(Mf)(\mu) = \mu (Mf)(\mu-1).
+\]
+\item
+The equation is a difference equation and does no longer contain
+any derivatives.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+
+
+
+
+
+
