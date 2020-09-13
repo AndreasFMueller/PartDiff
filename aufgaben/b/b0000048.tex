@@ -1,0 +1,56 @@
+The real function $u(x)$ is defined on the interval
+\[
+\Omega = [0, 1].
+\]
+The function satisfies in $\Omega$ the differential equation
+\[
+u''(x) + 2 = 0
+\]
+and on the boundary of $\Omega$  the conditions
+\[
+u(0) = 1, \quad u(1) = 1.
+\]
+Determine an approximation function $\tilde u(x)$ for $u(x)$.
+
+\bigskip
+
+Apply the finite element method. 
+
+\bigskip
+
+Use the meshes
+\[
+[0,0.25], \quad
+[0.25, 0.75], \quad
+[0.75, 1]
+\]
+and linear shape functions.
+
+\begin{loesung}
+Set
+\[
+\underline{\tilde u} \approx (u(1/4), u(3/4))
+\]
+as well as 
+\[
+A
+=
+\left[\begin{array}{rr} -6 & 2 \\
+2 & -6
+\end{array}\right]
+\quad \text{and} \quad
+\underline{b}
+=
+\left(\begin{array}{r} -3/4-4 \\
+-3/4-4 \end{array}\right).
+\]
+Then
+\[
+A \cdot \underline{\tilde u} = \underline{b}.
+\]
+Therefore
+\[
+\underline{\tilde u} = (19/16, 19/16).
+\]
+\end{loesung}
+

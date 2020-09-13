@@ -1,0 +1,154 @@
+% quaslinieares problem
+Consider the partial differential equation
+\begin{equation}
+\frac{\partial u}{\partial x} + \frac{\partial u}{\partial y} = \frac{1}{3u^2}
+\label{30000021:eqn}
+\end{equation}
+in the domain $\Omega = \{(x,y)\in\mathbb R^2\;|\; y<-x\}$. 
+Find a solution that satisfies the boundary condition $u(x,y)=\sin x$ on
+$\partial\Omega$.
+
+\begin{loesung}
+\begin{figure}
+\centering
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\begin{tikzpicture}[>=latex]
+\fill[color=red!10] (-4,4)--(4,-4)--(-4,-4)--cycle;
+\begin{scope}
+\clip (-4,-4) rectangle (4,4);
+\foreach \x in {-3,...,3}{
+	\draw[color=darkgreen,line width=1.4pt] (\x,{-\x})--({\x-5},{-\x-5});
+}
+\end{scope}
+\draw[color=red,line width=1.4pt] (-4,4)--(4,-4);
+\draw[->] (-4.1,0)--(4.3,0) coordinate[label={$x$}];
+\draw[->] (0,-4.1)--(0,4.3) coordinate[label={right:$y$}];
+\node at (-2,-2) [above left] {$\Omega$};
+\node at (-2,2) [above right] {$\partial\Omega$};
+\end{tikzpicture}
+\caption{Domain of definition for the partial differential equation
+\eqref{30000021:eqn}
+\label{3000021:domain}}
+\end{figure}
+\begin{figure}
+\centering
+\begin{tikzpicture}[>=latex,thick]
+\node at (0,0) {\includeagraphics[width=\hsize]{solution.jpg}};
+\node at (-8.3,-1) {$x$};
+\node at (0.2,-2.5) {$y$};
+\node at (-0.6,2.7) {$z$};
+\end{tikzpicture}
+\caption{Solution surface for problem~\ref{30000021}.
+\label{30000021:graph}}
+\end{figure}
+This is a quasidifferential equation of first order which can be solved
+using the method of characteristics.
+The ordinary differential equations for the characteristics and their
+solutions are
+\begin{equation}
+\left.
+\begin{aligned}
+\dot x &= 1
+\\
+\dot y &= 1
+\\
+\dot u &= \frac1{3u^2}
+\end{aligned}
+\;
+\right\}
+\quad\Rightarrow\quad
+\left\{
+\;
+\begin{aligned}
+x(t) &= t + x_0
+\\
+y(t) &= t + y_0
+\\
+u(t) &=\sqrt[3]{t+u_0^3}
+\end{aligned}
+\right.
+\label{30000020:char}
+\end{equation}
+Only the differential equation for $u$ is a little more complicated,
+but it can easily be solved using separation:
+\[
+\dot{u}=\frac1{3u^2}
+\quad\Rightarrow\quad
+3u^2\dot u = 1
+\quad\Rightarrow\quad
+\frac{d}{dt}u^3=1
+\quad\Rightarrow\quad
+u^3 = t+C.
+\]
+Since $u$ must take the value $u_0=\sin^3x_0$ for $t=0$,
+the value $C=u_0^3=\sin^3x_0$ has to be chosen.
+
+The integration constants $x_0$, $y_0$ and $u_0$ must now determined
+using the boundary conditions.
+Points on the boundary are of the form $(x_0,-x_0)$, so $y_0=-x_0$.
+The first two equations in \eqref{30000020:char} give
+\begin{align*}
+x-y &= t+x_0 - (t -x_0) = 2x_0
+&&\Rightarrow&
+x_0 &= \frac{x-y}2,
+\\
+x+y &= t+x_0 +(t-x_0) = 2t
+&&\Rightarrow&
+t&=\frac{x+y}2.
+\end{align*}
+Using $u_0 = \sin^3 x_0$, we can write the solution:
+\[
+u(x,y)
+=
+\sqrt[3]{t+u_0^2}
+=
+\sqrt[3]{\frac{x+y}2 + \sin^3\frac{x-y}2}.
+\]
+We verify this result and start with the boundary condition:
+\[
+u(x_0,-x_0)
+= 
+\sqrt[3]{\frac{x_0-x_0}2 + \sin^3\frac{x_0-(-x_0)}2}
+=
+\sin x_0.
+\]
+The partial differential equation also holds:
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
+\frac{1}{u(x,y)^2} \frac13
+\frac{\partial}{\partial x} \biggl(
+\frac{x+y}2 + \sin^3\frac{x-y}2
+\biggr)
+=
+\frac{1}{3u(x,y)^2} \biggl(
+\frac12 + 3\sin^2\frac{x-y}2\cos\frac{x-y}2
+\biggr)
+\\
+\frac{\partial u}{\partial y}
+&=
+\frac{1}{u(x,y)^2} \frac13
+\frac{\partial}{\partial y} \biggl(
+\frac{x+y}2 + \sin^3\frac{x-y}2
+\biggr)
+=
+\frac{1}{3u(x,y)^2} \biggl(
+\frac12 - 3\sin^2\frac{x-y}2\cos\frac{x-y}2
+\biggr)
+\\
+\Rightarrow\qquad
+\frac{\partial u}{\partial x} + \frac{\partial u}{\partial y}
+&=
+\frac{1}{3u^2}
+\end{align*}
+in $\Omega$.
+\end{loesung}
+
+\begin{bewertung}
+Differential equation for characteristiscs ({\bf D}) 1 point,
+solutions for $x(t)$ and $y(t)$ ({\bf XY}) 1 point,
+solution for $u(t)$ ({\bf U}) 1 point,
+boundary or $x_0$-$y_0$-dependence ({\bf B}) 1 point,
+boundary condition ({\bf C}) 1 point,
+solution ({\bf S}) 1 point.
+\end{bewertung}

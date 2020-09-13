@@ -1,0 +1,59 @@
+The function $u(x,t)$ is defined on the strip 
+\[
+\Omega = [0, \pi] \times [0,\infty).
+\]
+The function $u(x,t)$ satisfies in $\Omega$ the wave equation
+\[
+u_{xx}(x,t) = u_{tt}(x,t)
+\]
+and on the boundary of $\Omega$ the conditions 
+\[
+u(0,t) = u(\pi,t) = 0
+\]
+as well as
+\[
+u(x,0) = \sin(x)^4
+\qquad\mbox{and} \qquad
+u_t(x,0) = \sin(x)^2.
+\]
+
+Determine approximate values for $u$ in the three points for $\Omega$
+\[
+(\pi/4,2), \qquad
+(\pi/2,2), \qquad
+(3 \cdot \pi/4,2)
+\]
+by the method of finite differences. Use the leapfrog method with 
+\[
+\Delta x = \pi/4 \quad \text{and} \quad  \Delta t = 1.
+\]
+
+\begin{loesung}
+One has
+\[
+\tilde u(\pi/4,0) = 1/4,
+\tilde u(\pi/2,0) = 1,
+\tilde u(3 \cdot \pi/4,0) = 1/4
+\]
+and
+\[
+\tilde u(\pi/4,1) = 7/4,\quad
+\tilde u(\pi/2,1) = 0,\quad
+\tilde u(3 \cdot \pi/4,1) = 7/4.
+\]
+With $r = 4/\pi$ one has
+\[
+\tilde u(x, 2)
+=
+r^2 \cdot \tilde u(x - \pi/4, 1)
++ 2 \cdot (1 - r^2) \cdot \tilde u(x,1) + r^2 \cdot \tilde u(x + \pi/4, 1)
+- \tilde u(x,0).
+\]
+Therefore
+\[
+\tilde u(\pi/4,2) = -2.424,\quad
+\tilde u(\pi/2,2) = 4.674,\quad
+\tilde u(3 \cdot \pi/4,2) = -2.424.
+\]
+\end{loesung}
+

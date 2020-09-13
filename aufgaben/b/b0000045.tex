@@ -1,0 +1,61 @@
+A plane cartesian coordinate system is given.
+The circle $\Omega$ is centred at its origin $(0,0)$ and has a radius of
+$r = 5$.  
+The function $u(x,y)$ is defined on the circle 
+$\Omega$. 
+
+\bigskip
+
+The function $u(x,y)$ satisfies in $\Omega$ Poissons's equation
+\[
+\Delta u(x,y) + x \cdot y = 0
+\]
+and on the boundary of $\Omega$ the Dirichlet condition $u(x,y) = 0.$
+
+\bigskip
+Determine approximate values for $u$ in the four points of $\Omega$ 
+\[
+(3,3), \quad
+(-3,3), \quad
+(-3,-3), \quad
+(3,-3)
+\]
+by the method of finite differences. 
+
+
+\begin{loesung}
+Set
+$\tilde u_1 = \tilde u(3,3),
+\tilde u_2 = \tilde u(-3,3),
+\tilde u_3 = \tilde u(-3,-3),
+\tilde u_4 = \tilde u(3,-3)$
+as well as
+\[
+A
+=
+\left[
+\begin{array}{rrrr}
+-14 & 1 & 0 & 1 \\
+1 & -14 & 1 & 0 \\
+0 & 1 & -14 & 1 \\
+1 & 0 & 1 & -14
+\end{array}
+\right]
+\quad \text{and} \quad
+\underline{b}
+=
+\left(
+\begin{array}{r}
+-189 \\
+ 189 \\
+-189 \\
+ 189
+\end{array}
+\right).
+\]
+Then 
+\[
+A \cdot \underline{\tilde u} = \underline{b}.
+\]
+Therefore $\underline{\tilde u} = ( 189/16, -189/16, 189/16, -189/16)$.
+\end{loesung}

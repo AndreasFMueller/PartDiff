@@ -1,0 +1,39 @@
+The real function $u(x)$ is defined on the interval
+\[
+\Omega = [0, 1].
+\]
+The function satisfies in $\Omega$ the differential equation
+\[
+u''(x) + x = 0
+\]
+and on the boundary of $\Omega$  the conditions
+\[
+u(0) = 0, \quad u(1) = 0.
+\]
+Determine an approximation function $\tilde u(x)$ for $u(x)$.
+
+Apply a) the method of Galerkin and b) the method of Gauss. 
+
+\begin{loesung}
+Use in a) and b) the same ansatz
+\[
+u(x) = a \cdot (x - x^2).
+\]
+a) One has
+\[
+\int_0^1 (a \cdot (x - x^2)'' + x) \cdot (x - x^2) \ dx = 0.
+\]
+Therefore $a = 1/4$ and
+\[
+u(x) = (x - x^2)/4.
+\]
+b) One has
+\[
+\frac{d}{da} \int_0^1 (a \cdot (x - x^2)'' + x)^2 \ dx = 0.
+\]
+Therefore $a = 1/4$ and
+\[
+u(x) = (x - x^2)/4.
+\qedhere
+\]
+\end{loesung}

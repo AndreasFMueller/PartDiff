@@ -1,0 +1,35 @@
+A plane cartesian coordinate system is given.
+The function $u(x,y)$ is defined on the square
+\[
+[0,3] \times [0,3].
+\]
+The function $u(x,y)$ satisfies in $\Omega$ Poissons's equation
+\[
+\Delta u(x,y) + x \cdot y = 0
+\]
+and on the boundary of $\Omega$ the Dirichlet condition $u(x,y) = 0.$
+
+Determine approximate values for $u$ in the four points of $\Omega$ 
+\[
+(1,1), \quad  (2,1), \quad (1,2), \quad (2,2).
+\]
+by the method of finite differences. 
+
+\begin{loesung}
+Set
+$
+\tilde u_1 = \tilde u(1,1), \tilde u_2 = \tilde u(2,1),
+\tilde u_3 = \tilde u(1,2), \tilde u_4 = \tilde u(2,2)
+$
+as well as
+\[
+A = \left[\begin{array}{rrrr} -4 & 1 & 1 & 0 \\ 1 & -4 & 0 & 1 \\ 1 & 0 &
+  -4 & 1 \\ 0 & 1 & 1 & -4 \end{array}\right] \quad \text{and} \quad
+  \underline{b} =  \left(\begin{array}{r} -1 \\ -2 \\ -2 \\ -4 \end{array}\right).
+\]
+Then 
+\[
+A \cdot \underline{\tilde u} = \underline{b}.
+\]
+Therefore $\underline{\tilde u} = ( 19/24, 26/24, 26/24, 37/24)$.
+\end{loesung}

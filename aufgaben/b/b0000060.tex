@@ -1,0 +1,49 @@
+\begin{teilaufgaben}
+\item
+The function $u(x)$ is defined on the interval $\Omega = [0, 1].$
+The function satisfies in $\Omega$ 
+\[
+u''(x) + u(x) = x
+\]
+and $u(0) = 0, \  u(1) = 0$ on the boundary of $\Omega$.  
+Determine an approximation function $\tilde u(x)$ for $u(x)$
+with the method of Galerkin.
+Use the ansatz $\tilde u(x) = a \cdot x \cdot (x-1).$
+\item
+b) The function $u(x)$ is defined on the interval $\Omega = [0, 3].$
+The function satisfies in $\Omega$ 
+\[
+- u''(x) = x
+\]
+and $u(0) = 0, \  u(3) = 0$ on the boundary of $\Omega$.  
+Determine the values of an approximation function $\tilde u(x)$ for
+$u(x)$ at the nodal points by linear finite elements with $h = 1$.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+(3 points) Set
+\[
+B = 9/30
+\qquad\text{and} \qquad
+b = -1/12.
+\]
+Then $B \cdot {a} = {b}.$ Therefore $a = 5/18$ and
+$\tilde u(x) = 5/18 \cdot (x^2 - x)$.
+\item
+(3 points) Set
+\[
+R
+=
+\left[\begin{array}{rr} 2 & -1  \\ -1 & 2  \end{array}\right]
+\qquad\text{and}\qquad
+\underline{r}
+=
+\left(\begin{array}{r} 1 \\ 2 \end{array}\right).
+\]
+Then $R \cdot \underline{a} = \underline{r}$.
+Therefore $\underline{a} = (4/3,5/3)$.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}

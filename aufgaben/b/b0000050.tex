@@ -1,0 +1,51 @@
+A plane cartesian coordinate system is given.
+The function $u(x,t)$ is defined on the strip 
+\[
+\Omega = [0, 4] \times [0,\infty)
+\]
+The function $u(x,t)$ satisfies in $\Omega$ the heat equation
+\[
+u_{t}(x,t) = u_{xx}(x,t)
+\]
+and on the boundary of $\Omega$ the conditions 
+\[
+u(0,t) = u(4,t) = 0
+\]
+as well as
+\[
+u(x,0) = 4 \cdot x - x^2.
+\]
+
+Determine approximate values for $u$ in the three points for
+$\Omega$
+\[
+(1,2), \quad  (2,2), \quad (3,2)
+\]
+by the Richardson method with 
+\[
+\Delta x = 1 \quad \text{and} \quad  \Delta t = 1.
+\]
+
+\begin{loesung}
+One has
+\[
+\tilde u(1,0) = 3,\quad \tilde u(2,0) = 4,\quad \tilde u(3,0) = 3.
+\]
+Since $r = 1$ one has
+\[
+\underline{\tilde u}^{n+1}
+=
+C \cdot \underline{\tilde u}^{n}
+\]
+with
+\[
+C = \left[\begin{array}{rrr} -1 & 1 & 0  \\ 1 & -1 & 1 \\ 0 & 1 & -1 \end{array}\right].
+\]
+Therefore
+\[
+\tilde u(1,2) = 1, \tilde u(2,2) = 0, \tilde u(3,2) = 1.
+\qedhere
+\]
+\end{loesung}
+
+
