@@ -1,0 +1,493 @@
+%
+% higher.tex - QLPDE in higher dimensions
+%
+% (c) 2021 Prof Dr Andreas Müller, OST Ostschweizer Fachhochschule
+%
+\section{Higher dimensions
+\label{geometry:section:higher-dimensions}}
+\rhead{Higher dimensions}
+The very geometric principles used to solve a quasilinear
+partial differential equation of first order also works in higher
+dimensions.
+
+\subsection{Differential equation in dimension $n$}
+A quasilinear partial differential equation of $n$ variables $x_1,\dots,x_n$
+is of the form
+\begin{equation}
+a_1(x_1,\dots,x_n,u) \frac{\partial u}{\partial x_1}
++
+a_2(x_1,\dots,x_n,u) \frac{\partial u}{\partial x_2}
++
+\dots
++
+a_n(x_1,\dots,x_n,u) \frac{\partial u}{\partial x_n}
+=
+c(x_1,\dots,x_n,u)
+\label{qlpden:eqn:equation}
+\end{equation}
+where the coefficients $a_1$ to $a_n$ and $c$ are functions
+depending on the variables $x_1,\dots,x_n$ and the function $u$.
+If they do not depend on $u$, then the equation is actually linear.
+
+The equation~\eqref{qlpden:eqn:equation} is defined on the domain
+$\Omega\subset\mathbb{R}^n$.
+For brevity, we will write the points $(x_1,\dots,x_n)\in \Omega$
+as just $x\in\Omega$.
+
+In addition, we need some boundary conditions in the form
+$
+u(x) = f(x) 
+$
+for points $x$ in some part of the boundary $\partial\Omega$.
+To compute the solution using the method of characteristics, we need to
+parametrize the part of the boundary, an $n-1$-dimensional surface, using 
+a function
+\begin{equation}
+s=(s_1,\dots,s_{n-1})
+\mapsto
+\xi(s_1,\dots,s_{n-1}) = \xi(s) \in \partial\Omega.
+\end{equation}
+The parameters $s=(s_1,\dots,s_{n-1})$ come from a subset
+$S\subset\mathbb{R}^{h-1}$.
+The boundary conditions for the function $u$ can then be written as
+\begin{equation}
+u(\xi(s)) = f(\xi(s))
+\end{equation}
+for all $s\in S$.
+The boundary surface is an $n-1$-dimensional hypersurface of the
+$n$-dimensional space of the variables $x_1,\dots,x_n$.
+
+\subsection{Solution as a graph}
+The solution of the partial differential equation~\eqref{qlpden:eqn:equation}
+is a function  $u(x_1,\dots,x_n)$.
+This function describes an $n$-dimensional hypersurface in the
+$n+1$-dimensional space with
+variables $(x_1,\dots,x_n,z)\in\mathbb{R}^{n+1}$ consisting of all the
+points of the form $(x_1,\dots,x_n,u(x_1,\dots,x_n))$.
+
+The boundary conditions also have a geometric description.
+For points $x$ on the boundary part for which we have boundary conditions,
+$u(x)=f(x)$.
+This means that the $n$-dimensional surface specified by
+$(x_1,\dots,x_n,u(x))$ has to pass through the points of the $n-1$-dimensional
+surface of points $(x_1,\dots,x_n,f(x))$ where $x$ is in the relevant
+part of the boundary.
+Using the parametrization, the $n-1$-dimensional boundary surface is
+parametrized by $S$ via the function
+\[
+S\to \mathbb{R}^n
+:
+s\mapsto (\xi_1(s), \dots,\xi_n(s), f(\xi(s))).
+\]
+This is the generalized formulation of the Cauchy-Problem.
+
+\subsection{Characteristics}
+As in the two-dimensional situation for $n=2$, the differential
+equation \eqref{qlpden:eqn:equation} can be interpreted as the
+vector equation
+\[
+\underbrace{
+{\color{red}
+\begin{pmatrix}
+a_1(x_1,\dots,x_n,u)\\
+\vdots \\
+a_1(x_1,\dots,x_n,u)\\
+c(x_1,\dots,x_n,u)
+\end{pmatrix}
+}}_{\displaystyle = \vec{v}}
+\cdot
+\begin{pmatrix}
+\frac{\partial u}{\partial x_1}\\
+\vdots \\
+\frac{\partial u}{\partial x_n}\\
+-1
+\end{pmatrix}
+=
+0.
+\]
+The vector on the left was previously called $\vec{v}$ and was usually
+shown in {\color{red}red}.
+The vector on the right is again the normal vector on the $n$-dimensional
+hypersurface defined by $u$.
+To understand this, we have to look at the the function
+$
+g(x,z) = u(x) - z.
+$
+The graph of $u$ is the set of points such that $g(x,z) = 0$.
+The normal to this surface is obtained by taking the gradient of $g$ in
+this $n+1$-dimensional space, i.~e.
+\begin{equation}
+\vec{n}
+=
+\operatorname{grad} g
+=
+\begin{pmatrix}
+\frac{\partial g}{\partial x_1}\\
+\vdots \\
+\frac{\partial g}{\partial x_n}\\
+\frac{\partial g}{\partial z}
+\end{pmatrix}
+=
+\begin{pmatrix}
+\frac{\partial u}{\partial x_1}\\
+\vdots \\
+\frac{\partial u}{\partial x_n}\\
+-\frac{\partial z}{\partial z}
+\end{pmatrix}
+=
+\begin{pmatrix}
+\frac{\partial u}{\partial x_1}\\
+\vdots \\
+\frac{\partial u}{\partial x_n}\\
+-1
+\end{pmatrix}.
+\end{equation}
+The geometric content of the partial differential equation thus is that
+$\vec{v}(x_1,\dots,x_n,z)\perp \vec{n}(x_1,\dots,x_n,u)$ for all points
+on the solution surface.
+
+Following the ideas of the two-dimensional case we conclude that a
+curve that always has $\vec{v}$ as a tangent vector will be contained
+in the solution surface.
+These curves can be parametrized using some parameter $t$ and written
+as functions
+\begin{equation}
+x(t)
+=
+\begin{pmatrix}
+x_1(t)\\
+\vdots\\
+x_n(t)
+\end{pmatrix}.
+\label{qlpden:charparam}
+\end{equation}
+They are solutions of the ordinary differential equations
+\begin{equation}
+\frac{d}{dt}
+\begin{pmatrix}
+x_1(t)\\
+x_2(t)\\
+\vdots\\
+x_n(t)\\
+z(t)
+\end{pmatrix}
+=
+\begin{pmatrix}
+a_1(x_1(t),\dots,x_n(t),z(t))\\
+a_2(x_1(t),\dots,x_n(t),z(t))\\
+\vdots \\
+a_n(x_1(t),\dots,x_n(t),z(t))\\
+c(x_1(t),\cdots,x_n(t),z(t))
+\end{pmatrix}.
+\label{qlpden:chareqn}
+\end{equation}
+The curves should all begin on the $n-1$-dimensional boundary surface,
+so the initial values of the functions $x_i(t)$ and $z(t)$ für $t=0$ 
+must be given by $f$ in the form
+\begin{equation}
+\begin{aligned}
+x_1(0) &= \xi_1(s)
+\\
+x_2(0) &= \xi_2(s)
+\\
+&\phantom{i}\vdots
+\\
+x_n(0) &= \xi_n(s)
+\\
+z(0) &= f(\xi(s)),
+\end{aligned}
+\label{qlpden:initial}
+\end{equation}
+where $s\in S$ is the $n-1$-dimensional parameter that parametrizes the
+boundary.
+
+\subsection{Solution}
+To solve the partial differential equation, we first have to solve
+the ordinary differential equations~\eqref{qlpden:chareqn} with the
+initial conditions~\eqref{qlpden:initial}.
+The solution curves will depend on the parameters $s_1,\dots,s_{n-1}$ 
+of the boundary, so we will get a curve parametrization $x(t,s)$
+with coordinates
+$x_i(t,s_1,\dots,s_{n-1})$
+satisfying the differential equations
+\begin{align*}
+\frac{d}{dt}
+x_i(t,s_1,\dots,s_{n-1})
+&=
+a_i(x(t,s_1,\dots,s_{n-1}), z(t))
+\\
+\frac{d}{dt}
+z(t,s_1,\dots,s_{n-1})
+&=
+c(x(t,s_1,\dots,s_{n-1}),z(t))
+\end{align*}
+with the initial conditions
+\begin{align*}
+x_i(0,s_1,\dots,s_{n-1})
+&=
+\xi(s_1,\dots,s_{n-1})
+\\
+z(0,s_1,\dots,s_{n-1})
+&=
+f(\xi(s_1,\dots,s_{n-1}))
+\end{align*}
+at $t=0$.
+
+Now we have to turn the functions $x_i$ and $z$ into a function
+$u(x_1,\dots,x_n)$.
+The equations
+\[
+\begin{aligned}
+x_i &= x_i(t,s_1,\dots,s_{n-1}) &\qquad 1\le i \le n
+\\
+  u(x_1,\dots,x_n) &= z(t,s_1,\dots,s_{n-1})
+\end{aligned}
+\]
+are $n+1$ equations with variables $x_i$, $t$, $s_j$ and $u$,
+i.~e.~$n+1+(n-1)+1=2n+1$ variables.
+By inverting the first $n$ equations and expressing the parameters
+$t,s_1,\dots,s_n$ in terms of $x_1,\dots,x_n$, we can eliminate the
+parameters by substiting them into the function $z$.
+This gives the solution function in the form $u(x_1,\dots,x_n)$.
+
+\subsection{Well-posedness}
+The method of characteristics was also used in the two-dimensional 
+case to decide whether the specified boundary conditions uniquely
+determine the solution.
+The problem is well posed if the characteristics that emanate from
+the Cauchy initial curve cover all of the domain exactly once.
+Similarly, the problem in $n$ dimensions is well posed if the
+for each point $x\in\Omega$ there is precisely one boundary point
+and boundary value such that the characteristic starting at this
+boundary value passes over the point $x$, and the value of the
+solution is the $z$-coordinate of the characteristic when it passes
+over $x$.
+
+\subsection{Examples}
+\subsubsection{An equation on a a half space}
+Find the solution of the equation
+\[
+\frac{\partial u}{\partial x_1}
++
+2x_1
+\frac{\partial u}{\partial x_2}
++
+3
+\frac{\partial u}{\partial x_3}
+=
+0
+\]
+in the half space
+\[
+\Omega
+=
+\{
+(x_1,x_2,x_3)
+\,|\,
+x_3>0
+\}
+\]
+with boundary values
+\begin{align*}
+u(x_1,x_2,0) = f(x_1,x_2)
+\end{align*}
+for $x_2,x_3\in\mathbb{R}$.
+
+The differential equations for the characteristics are
+\begin{align*}
+\dot{x}_1 &= 1    &&\Rightarrow&  x_1(t) &= t + s_1                 \\
+\dot{x}_2 &= 2x_1 &&\Rightarrow&  x_2(t) &= t^2 + 2s_1t + s_2        \\
+\dot{x}_3 &= 3    &&\Rightarrow&  x_3(t) &= 3t                      \\
+\dot{u}   &= 0    &&\Rightarrow&  u(t)   &= f(s_1,s_2)
+\end{align*}
+From these equations, we have to eliminate $t$, $s_1$ and $s_2$.
+The third equation tells us that $x_3=3t$, which eliminates $t$:
+\begin{align*}
+x_1 &= \frac13x_3 + s_1                   \\
+x_2 &= \frac1{9}x_3^2 + \frac{2s_1x_3}3 + s_2 \\
+u   &= f(s_1,s_2).
+\end{align*}
+The first equation is equivalent to $s_1=x_1-\frac13x_3$,
+which eliminates $s_1$:
+\begin{align*}
+x_2
+&=
+\frac1{9}x_3^2 + \biggl(x_1-\frac{x_3}3\biggr)\frac{2x_3}3 + s_2
+=
+-\frac{x_3^2}{9}
++
+\frac{2x_1x_3}{3} + s_2\\
+u   &= f\biggl(x_1-\frac13x_3,s_2\biggr).
+\end{align*}
+The equation for $x_2$ can be solved for
+\[
+s_2
+=
+x_2+\frac{1}{9}x_3^2-\frac{2x_1x_3}3
+\]
+and substituted into the expression for $u$ which gives the solution
+\begin{equation}
+u(x_1,x_2,x_3)
+=
+f\biggl(x_1-\frac13x_3, x_2+\frac{1}{9}x_3^2-\frac{2x_1x_3}{3}\biggr).
+\label{qlpden:ex1solution}
+\end{equation}
+To verify this solution, we compute the partial derivatives
+\begin{align*}
+\frac{\partial u}{\partial x_1}
+&=
+\frac{\partial f}{\partial s_1}
+-\frac{2x_3}{3}
+\frac{\partial f}{\partial s_2}
+\\
+\frac{\partial u}{\partial x_2}
+&=
+\frac{\partial f}{\partial s_2}
+\\
+\frac{\partial u}{\partial x_3}
+&=
+-
+\frac{1}{3}
+\frac{\partial f}{\partial s_1}
++
+\biggl(
+\frac{2}{9}x_3-\frac{2x_1}{3}
+\biggr)
+\frac{\partial f}{\partial s_2}
+\end{align*}
+and substitute them into the partial differential equation
+\begin{align*}
+\frac{\partial u}{\partial x_1}
++
+2x_1\frac{\partial u}{\partial x_2}
++
+3
+\frac{\partial u}{\partial x_3}
+&=
+\biggl(
+\frac{\partial f}{\partial s_1}
+-\frac{2x_3}3
+\frac{\partial f}{\partial s_2}
+\biggr)
++2x_1
+\frac{\partial f}{\partial s_2}
++
+3
+\biggl(
+-
+\frac{1}{3}
+\frac{\partial f}{\partial s_1}
++
+\biggl(
+\frac{2x_3}{9}
+-\frac{2x_1}{3}
+\biggr)
+\frac{\partial f}{\partial s_2}
+\biggr)
+\\
+&=
+\biggl(
+1-3\cdot\frac13
+\biggr)
+\frac{\partial f}{\partial s_1}
++
+\biggl(
+-\frac{2x_3}{3}
++
+2x_1
++
+3\cdot \frac{2}{9}x_3
+-3\cdot\frac{2x_1}{3}
+\biggr)
+\frac{\partial f}{\partial s_2}
+=0.
+\end{align*}
+So \eqref{qlpden:ex1solution} is in fact the solution of the equation.
+
+\subsubsection{An analog to Burgers equation in three dimensions}
+We want to solve the equation
+\begin{equation}
+u\biggl(
+\frac{\partial u}{\partial x_1}
++
+\frac{\partial u}{\partial x_2}
++
+\frac{\partial u}{\partial x_3}
+\biggr)
+=
+0
+\end{equation}
+which is clearly quasilinear and of first order.
+We want tos olve it in the domain
+\[
+\Omega
+=
+\{ (x_1,x_2,x_3) \,| x_3>0\},
+\]
+the boundary of which is the $x_1$-$x_2$-plane which we can parametrize
+using the $s_1=x_1$ and $s_2=x_2$ with with the function
+\[
+\xi(s)
+=
+\begin{pmatrix}
+s_1\\
+s_2\\
+0
+\end{pmatrix}.
+\]
+The boundary values are given by a function $f(x_1,x_2)$.
+
+The system of ordinary differential equations for the characteristics is
+\begin{align*}
+\dot{x}_1 &= z &&\Rightarrow& x_1(t) = zt + s_1
+\\
+\dot{x}_2 &= z &&\Rightarrow& x_2(t) = zt + s_2
+\\
+\dot{x}_3 &= z &&\Rightarrow& x_3(t) = zt
+\\
+\dot{z} &= 0 &&\rightarrow& z = f(s_1,s_2)
+\end{align*}
+where we have already substituted the boundary conditions.
+We now have to eliminate the variables $t$, $s_1$ and $s_2$ from the
+equations
+\[
+\begin{aligned}
+x_1 &= f(s_1,s_2)t + s_1 \\
+x_2 &= f(s_1,s_2)t + s_2 \\
+x_3 &= f(s_1,s_2)t       \\
+u(x_1,x_2,x_3) &= f(s_1,s_2).
+\end{aligned}
+\]
+The first three equations describe a straight line
+in the domain
+through the point
+\[
+\vec{p}
+=\begin{pmatrix}
+s_1\\s_2\\0
+\end{pmatrix}
+\]
+with direction vector
+\[
+\vec{r}
+=
+f(s_1,s_2)
+\begin{pmatrix} 
+1\\1\\1
+\end{pmatrix}.
+\]
+which establishes the similarity to the solution of Burgers equation
+we have investigated previously.
+In particular, the $3$-dimensional solution surface is covered by straight
+lines
+of the form
+\[
+\begin{pmatrix}
+x_1\\
+x_2\\
+0\\
+f(x_1,x_2)
+\end{pmatrix}
++
+f(x_1,x_2)\begin{pmatrix}1\\1\\1\\0\end{pmatrix}.
+\]

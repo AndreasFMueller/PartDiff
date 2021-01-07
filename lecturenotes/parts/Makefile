@@ -20,41 +20,41 @@ parts = PartDiff-00-front.pdf			\
 all:	$(parts)
 
 PartDiff-00-front.pdf:	../lecturenotes.pdf Makefile
-	pdfjam --outfile PartDiff-00-front.pdf ../lecturenotes.pdf 1-6
+	pdfjam --outfile PartDiff-00-front.pdf ../lecturenotes.pdf 1-8
 
 PartDiff-01-intro.pdf:	../lecturenotes.pdf Makefile
-	pdfjam --outfile PartDiff-01-intro.pdf ../lecturenotes.pdf 7-8
+	pdfjam --outfile PartDiff-01-intro.pdf ../lecturenotes.pdf 9-10
 
 PartDiff-02-chapter1.pdf:	../lecturenotes.pdf Makefile
-	pdfjam --outfile PartDiff-02-chapter1.pdf ../lecturenotes.pdf 9-16
+	pdfjam --outfile PartDiff-02-chapter1.pdf ../lecturenotes.pdf 11-18
 
 PartDiff-03-chapter2.pdf:	../lecturenotes.pdf Makefile
-	pdfjam --outfile PartDiff-03-chapter2.pdf ../lecturenotes.pdf 17-36
+	pdfjam --outfile PartDiff-03-chapter2.pdf ../lecturenotes.pdf 19-38
 
 PartDiff-04-chapter3.pdf:	../lecturenotes.pdf Makefile
-	pdfjam --outfile PartDiff-04-chapter3.pdf ../lecturenotes.pdf 37-56
+	pdfjam --outfile PartDiff-04-chapter3.pdf ../lecturenotes.pdf 39-64
 
 PartDiff-05-chapter4.pdf:	../lecturenotes.pdf Makefile
-	pdfjam --outfile PartDiff-05-chapter4.pdf ../lecturenotes.pdf 57-86
+	pdfjam --outfile PartDiff-05-chapter4.pdf ../lecturenotes.pdf 65-94
 
 PartDiff-06-chapter5.pdf:	../lecturenotes.pdf Makefile
-	pdfjam --outfile PartDiff-06-chapter5.pdf ../lecturenotes.pdf 87-96
+	pdfjam --outfile PartDiff-06-chapter5.pdf ../lecturenotes.pdf 95-104
 
 PartDiff-07-chapter6.pdf:	../lecturenotes.pdf Makefile
-	pdfjam --outfile PartDiff-07-chapter6.pdf ../lecturenotes.pdf 97-106
+	pdfjam --outfile PartDiff-07-chapter6.pdf ../lecturenotes.pdf 105-114
 
 PartDiff-08-chapter7.pdf:	../lecturenotes.pdf Makefile
-	pdfjam --outfile PartDiff-08-chapter7.pdf ../lecturenotes.pdf 107-126
+	pdfjam --outfile PartDiff-08-chapter7.pdf ../lecturenotes.pdf 115-134
 
 PartDiff-09-chapter8.pdf:	../lecturenotes.pdf Makefile
-	pdfjam --outfile PartDiff-09-chapter8.pdf ../lecturenotes.pdf 127-134
+	pdfjam --outfile PartDiff-09-chapter8.pdf ../lecturenotes.pdf 135-142
 
 PartDiff-10-chapter9.pdf:	../lecturenotes.pdf Makefile
-	pdfjam --outfile PartDiff-10-chapter9.pdf ../lecturenotes.pdf 135-156
+	pdfjam --outfile PartDiff-10-chapter9.pdf ../lecturenotes.pdf 143-164
 
 PartDiff-11-appendix.pdf:	../lecturenotes.pdf Makefile
-	pdfjam --outfile PartDiff-11-appendix.pdf ../lecturenotes.pdf 157-164
+	pdfjam --outfile PartDiff-11-appendix.pdf ../lecturenotes.pdf 165-172
 
 PartDiff-12-back.pdf:	../lecturenotes.pdf Makefile
-	pdfjam --outfile PartDiff-12-back.pdf ../lecturenotes.pdf 165-166
+	pdfjam --outfile PartDiff-12-back.pdf ../lecturenotes.pdf 173-174
 
