@@ -30,9 +30,36 @@ and the boundary $\partial\Omega$ is (the boundary of) this square
 \end{teilaufgaben}
 \begin{figure}
 \begin{center}
-\includeagraphics[]{graphs-1}
-\qquad
-\includeagraphics[]{graphs-2}
+\begin{tikzpicture}[>=latex,thick]
+\begin{scope}[xshift=-3cm]
+\fill[color=red!20] (0,0) circle[radius=2];
+\draw[->] (-2.2,0) -- (2.7,0) coordinate[label={$x$}];
+\draw[->] (0,-2.2) -- (0,2.7) coordinate[label={right:$y$}];
+\draw[color=red,line width=2.0pt] circle[radius=2];
+\node[color=red] at (45:2) [above right] {$\partial\Omega$};
+\node[color=red] at (-1,-1) {$\Omega$};
+\foreach \x in {1,...,5}{
+	\draw ({0.4*\x},-0.1) -- ({0.4*\x},0.1);
+	\draw (-0.1,{0.4*\x}) -- (0.1,{0.4*\x});
+	\draw ({-0.4*\x},-0.1) -- ({-0.4*\x},0.1);
+	\draw (-0.1,{-0.4*\x}) -- (0.1,{-0.4*\x});
+}
+\node at (2,0) [below right] {$5$};
+\node at (0,2) [above left] {$5$};
+\end{scope}
+\begin{scope}[xshift=3cm]
+\fill[color=red!20] (2,0) -- (0,2) -- (-2,0) -- (0,-2) -- cycle;
+\draw[->] (-2.2,0) -- (2.5,0) coordinate[label={$x$}];
+\draw[->] (0,-2.2) -- (0,2.5) coordinate[label={right:$y$}];
+\draw[color=red,line width=2.0pt] (2,0) -- (0,2) -- (-2,0) -- (0,-2) -- cycle;
+\node[color=red] at (1,1) [above right] {$\partial\Omega$};
+\node[color=red] at (-1,-1) [above right] {$\Omega$};
+\draw (2,-0.1) -- (2,0.1);
+\draw (-0.1,2) -- (0.1,2);
+\node at (2.1,0) [below] {$1$};
+\node at (0,2.1) [left] {$1$};
+\end{scope}
+\end{tikzpicture}
 \end{center}
 \caption{Domains and boundary for problem \ref{20000003} a) (left)
 and b) (right)\label{20000003:fig}}

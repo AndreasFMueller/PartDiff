@@ -36,9 +36,27 @@ that domains need to be open sets.
 \end{teilaufgaben}
 \begin{figure}
 \begin{center}
-\includeagraphics[]{graphs-1}
-\qquad
-\includeagraphics[]{graphs-2}
+\begin{tikzpicture}[>=latex,thick]
+
+\begin{scope}
+\fill[color=red!20] (0,-3) rectangle (3,3);
+\draw[->] (0,-3.1) -- (0,3.3) coordinate[label={right:$y$}];
+\draw[color=red,line width=2.0pt] (0,-3) -- (0,3);
+\draw[->] (-0.1,0) -- (3.3,0) coordinate[label={$x$}];
+\node[color=red] at (2.5,2.5) {$\Omega$};
+\node at (0,0) [above right] {$0$};
+\end{scope}
+
+\begin{scope}[xshift=8.0cm]
+\fill[color=red!20] (-3,-3) rectangle (3,3);
+\draw[->] (-3.1,0) -- (3.3,0) coordinate[label={$x$}];
+\draw[->] (0,-3.1) -- (0,3.3) coordinate[label={right:$y$}];
+\fill[color=white] (0,0) circle[radius=0.1];
+\node[color=red] at (2.5,2.5) {$\Omega$};
+\node[color=white] at (0,0) [below left] {$0$};
+\end{scope}
+
+\end{tikzpicture}
 \end{center}
 \caption{Subsets $\Omega\subset\mathbb R^2$ for problem \ref{20000002} a)
 (left) 
