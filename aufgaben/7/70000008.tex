@@ -11,20 +11,42 @@ The partial differential equation
 is to be solved in the domain
 $\Omega=\{(x,y)\,|\, 0< x<1,\; 0<y<1\}$.
 On the boundary of $\Omega$, the following values are given:
-\begin{align*}
-&
-	&u(x,1)&=\sin({\textstyle\frac\pi4}(1-x))
-		&&
-			&&\text{für $0<x<1$}\\
-u(0,y)&=\sin({\textstyle\frac\pi4}y)
-	&&
-		&u(1,y)&=\sin({\textstyle\frac\pi4}(1-y))
-			&&\text{für $0<y<1$}\\
-&
-	&u(x,0)&=\sin({\textstyle\frac\pi4} x)
-		&&                
-			&&\text{für $0<x<1$}
-\end{align*}
+\begin{center}
+\begin{tabular}{ccc}
+\begin{minipage}{6cm}
+\[
+\begin{aligned}
+&\text{für $0<x<1$:}&
+u(x,0)&=\sin({\textstyle\frac\pi4} x)\\
+&&
+u(x,1)&=\sin({\textstyle\frac\pi4}(1-x))\\
+\\
+&\text{für $0<y<1$:}&
+u(0,y)&=\sin({\textstyle\frac\pi4}y)\\
+&&
+u(1,y)&=\sin({\textstyle\frac\pi4}(1-y))
+\end{aligned}
+\]
+\end{minipage}
+&\qquad\qquad&
+\begin{minipage}{8cm}
+\begin{center}
+\begin{tikzpicture}[>=latex,thick]
+\fill[color=red!20] (0,0) rectangle (6,6);
+\draw[->] (-0.1,0) -- (6.5,0) coordinate[label={$x$}];
+\draw[->] (0,-0.1) -- (0,6.5) coordinate[label={right:$y$}];
+\draw[color=red,line width=2pt] (0,0) rectangle (6,6);
+\node at (3,6) [above] {$u(x,1) = \sin(\frac{\pi}4(1-x))$};
+\node at (3,0) [below] {$u(x,0) = \sin(\frac{\pi}4x)$};
+\node at (0,3) [above,rotate=90] {$u(0,y) = \sin(\frac{\pi}4y)$};
+\node at (6,3) [below,rotate=90] {$u(1,y) = \sin(\frac{\pi}4(1-y))$};
+\node at (3,3) {$\Omega$};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{tabular}
+\end{center}
+
 The numerically computed solution has produced a value
 $u(\frac12,\frac12)=0.72$.
 Is that value plausible?
