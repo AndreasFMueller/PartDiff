@@ -61,7 +61,7 @@ On the other, the equation for $X(x)$ is
 \[
 X'(x)=\sqrt{n(x)^2-\lambda^2}.
 \]
-No we have to distinguish the cases $x<0$ and $x>0$.
+Now we have to distinguish the cases $x<0$ and $x>0$.
 In each case $n(x)$ is constant, so we have
 \[
 X'(x)=\sqrt{n_i^2-\lambda^2}
@@ -78,7 +78,7 @@ where we have to take the value $n_1$ for $n_i$ in the case $x<0$
 and $n_2$ in the case $x>0$.
 We have collected the constants
 $C_x$ and $C_y$ in a single new constant\footnote{This constant
-is not imporant for the next steps or for the applications.
+is not important for the next steps or for the applications.
 In applications, $u$ is the phase of the wave, an additive constant
 is just a physically unimportant global phase shift.
 In the next step we want to study the gradient of $u$, which is not
@@ -94,15 +94,45 @@ The gradient is
 \lambda
 \end{pmatrix}.
 \]
-For the angle between $x$-axis and gradient we find
-\[
+\begin{figure}
+\centering
+\begin{tikzpicture}[>=latex,thick]
+\draw[->,line width=1.4pt] (0,0) -- (3,4);
+\node at (3,4) [right] {$\displaystyle
+\begin{pmatrix}\sqrt{n_i^2-\lambda^2}\\\lambda\end{pmatrix}$
+};
+\draw[->] (-1,0) -- (6,0) coordinate[label={$x$}];
+\draw[color=red] (0,0) -- (3,0);
+\node[color=red] at (1.5,0) [below] {$\sqrt{n_i^2-\lambda^2}$};
+\draw[color=red] (3,0) -- (3,4);
+\node[color=red] at (3,2) [right] {$\lambda$};
+\end{tikzpicture}
+\caption{Angle between the gradient and the $x$-axis.
+\label{40000007:fig}}
+\end{figure}
+For the tangent of the angle between $x$-axis and gradient we find
+using figure~\ref{40000007:fig}
+\begin{equation}
 \tan\alpha_i
 =
 \frac{\lambda}{\sqrt{n_i^2-\lambda^2}}
 =
 \frac1{\sqrt{\frac{n_i^2}{\lambda^2}-1}}.
+\label{40000007:figtan}
+\end{equation}
+For the law of refraction, we need the sine, but the tangent can be
+expressed in terms of the sine as
+\[
+\tan\alpha_i
+=
+\frac{\sin\alpha_i}{\cos\alpha_i}
+=
+\frac{\sin\alpha_i}{\sqrt{1-\sin^2\alpha_i}}
+=
+\frac{1}{\sqrt{\frac{1}{\sin^2\alpha_i}-1}}.
 \]
-This is equivalent to
+Comparing this to the expression~\eqref{40000007:figtan}
+we find
 \[
 \sin\alpha_i=\frac{\lambda}{n_i}.
 \]

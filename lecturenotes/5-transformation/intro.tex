@@ -24,15 +24,17 @@ function on $\mathbb R$.
 By using Fourier analysis at each point in time, we get a
 Fourier series for the functions $x\mapsto u(t,x)$
 \[
-u(t,x)=\frac{a_0(t)}2+\sum_{k=1}^\infty a_k(t)\cos kx+b_k(t)\sin kx
+u(t,x)
+=
+\frac{a_0(t)}2+\sum_{k=1}^\infty \bigl( a_k(t)\cos kx+b_k(t)\sin kx \bigr)
 \]
 with time dependent Fourier coefficients.
 Substituting this into the wave equation we get
 \begin{align*}
 \partial_t^2u(t,x)&=\frac{a_0''(t)}2
-+\sum_{k=1}^\infty a_k''(t)\cos kx+b_k''(t)\sin kx\\
++\sum_{k=1}^\infty\bigl( a_k''(t)\cos kx+b_k''(t)\sin kx\bigr)\\
 \partial_x^2u(t,x)&=
--\sum_{k=1}^\infty a_k(t)k^2\cos kx+b_k(t)k^2\sin kx
+-\sum_{k=1}^\infty \bigl(a_k(t)k^2\cos kx+b_k(t)k^2\sin kx \bigr)
 \end{align*}
 If these functions are the same the equations
 the equation
@@ -71,20 +73,20 @@ u(0,x)&=f(x)\\
 The functions $f$ and $g$ can also be represented as Fourier series,
 we write them as
 \begin{align*}
-f(x)&=\frac{a_0^f}2+\sum_{k=1}^\infty a_k^f\cos kx+b_k^f\sin kx\\
-g(x)&=\frac{a_0^g}2+\sum_{k=1}^\infty a_k^g\cos kx+b_k^g\sin kx.
+f(x)&=\frac{a_0^f}2+\sum_{k=1}^\infty \bigl( a_k^f\cos kx+b_k^f\sin kx \bigr)\\
+g(x)&=\frac{a_0^g}2+\sum_{k=1}^\infty \bigl( a_k^g\cos kx+b_k^g\sin kx \bigr).
 \end{align*}
 Together with the solution $u(t,x)$ written as a Fourier series 
 we can now identify the coefficients by substiting $u(0,x)$ in
 the initial conditions
 \begin{align*}
-\frac{a_0(0)}2+\sum_{k=1}^\infty a_k(0)\cos kx +b_k(0)\sin kx
+\frac{a_0(0)}2+\sum_{k=1}^\infty \bigl( a_k(0)\cos kx +b_k(0)\sin kx \bigr)
 &=
-\frac{a_0^f}2+\sum_{k=1}^\infty a_k^f\cos kx+b_k^f\sin kx\\
+\frac{a_0^f}2+\sum_{k=1}^\infty \bigl( a_k^f\cos kx+b_k^f\sin kx \bigr)\\
 \\
-\frac{a_0'(0)}2+\sum_{k=1}^\infty a_k'(0)\cos kx+b_k'(0)\sin kx
+\frac{a_0'(0)}2+\sum_{k=1}^\infty \bigl( a_k'(0)\cos kx+b_k'(0)\sin kx \bigr)
 &=
-\frac{a_0^g}2+\sum_{k=1}^\infty a_k^g\cos kx+b_k^g\sin kx.
+\frac{a_0^g}2+\sum_{k=1}^\infty \bigl( a_k^g\cos kx+b_k^g\sin kx \bigr).
 \end{align*}
 Comparing coefficients not gives us the initial conditions
 for the functions $a_k(t)$ and $b_k(t)$:
@@ -100,10 +102,11 @@ m_0&=a_0^g&&&kB_k^a&=a_k^g&\Rightarrow B_k^a&=\frac1ka_k^g&&&kB_k^b&=b_k^g&\Righ
 The complete solution thus is
 \begin{align*}
 u(t,x)=\frac{a_0^gt+a_0^f}2
-+\sum_{k=1}^\infty
-\biggl(a_k^f\cos kt+\frac1ka_k^g\sin kt\biggr)\cos kx
++\sum_{k=1}^\infty \biggl(
+\bigl(a_k^f\cos kt+{\textstyle\frac1k}a_k^g\sin kt\bigr)\cos kx
 +
-\biggl(b_k^f\cos kt+\frac1kb_k^g\sin kt\biggr)\sin kx.
+\bigl(b_k^f\cos kt+{\textstyle\frac1k}b_k^g\sin kt\bigr)\sin kx
+\biggr).
 \end{align*}
 
 \subsection{Inhomogeneous wave equation}
@@ -114,7 +117,11 @@ The method can be generalized to the inhomogeneous wave equation
 The partial function $x\mapsto f(t,x)$ can also be written 
 as a Fourier series in the variable $x$ just as we did for $u$:
 \[
-f(t,x)=\frac{a_0^f(t)}2+\sum_{k=1}^\infty a_k^f(t)\cos kx+b_k^f(t)\sin kx.
+f(t,x)
+=
+\frac{a_0^f(t)}2
++
+\sum_{k=1}^\infty \bigl( a_k^f(t)\cos kx+b_k^f(t)\sin kx \bigr).
 \]
 Substituting this into the inhomegeneous wave equation gives
 \begin{align*}

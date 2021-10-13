@@ -96,7 +96,7 @@ We have to determine $x$, so we first solve the
 equation~\eqref{laplace:transformeddgl} for $\mathcal{L}x$ and
 then try to transform back.
 
-Solving form $(\mathcal{L}x)(x)$ gives
+Solving for $(\mathcal{L}x)(s)$ gives
 \[
 ({\cal L}x)(s)
 =
@@ -105,14 +105,33 @@ Solving form $(\mathcal{L}x)(x)$ gives
 To retrieve the solution $x(t)$, we have to transform it back.
 We do this for $f(t)=q$, using the transform
 \[
-({\cal L}f)(s)=\frac{q}{s}
+({\cal L}f)(s)=\frac{q}{s}.
 \]
-and thus 
-\[
+We get
+\begin{align*}
 ({\cal L}x)(s)
+&=
+\frac{q}{s(s+p)}
+\end{align*}
+and try to decompose these fractions using the partial fraction
+decomposition:
+\begin{align*}
+({\cal L}x)(s)
+&=
+\frac{A}{s} + \frac{B}{s+p}
 =
-\frac{q}{s(s+p)}=\frac{q}{p}\frac{1}{s}-\frac{q}{p}\frac{1}{s+p}.
-\]
+\frac{A(s+p) + Bs}{s(s+p)}
+\quad\Rightarrow\quad
+(A+B)s + Ap = q
+\quad\Rightarrow\quad
+A=-B\;\wedge\; A=\frac{q}{p}.
+\end{align*}
+Substituting $A$ and $B$ into the partial fraction decomposition gives
+\begin{align*}
+({\cal L}x)(s)
+&=
+\frac{q}{p}\frac{1}{s}-\frac{q}{p}\frac{1}{s+p}.
+\end{align*}
 Both terms on the right can be dealt with by the examples
 above.
 The reverse transform then becomes
