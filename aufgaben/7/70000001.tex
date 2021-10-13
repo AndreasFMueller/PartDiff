@@ -41,6 +41,45 @@ The domain in the first quadrant is bounded by two hyperbolas and
 two straight line segments:
 \begin{center}
 \includeagraphics[width=0.6\hsize]{bild-1}
+\begin{tikzpicture}[>=latex,thick]
+\pgfmathparse{sqrt(3.1415)*(1+sqrt(2))/2}
+\xdef\u{\pgfmathresult}
+\begin{scope}
+\clip (-4,-4) rectangle (0,0);
+\fill[color=red!20]
+	plot[domain=-4.2:{-3.1415/4.2},samples=100] (\x,{3.1415/\x})
+	--
+	plot[domain={-2*3.1415/4.2}:-4.2,samples=100] (\x,{2*3.1415/\x})
+	--
+	cycle;
+\draw[color=red,line width=1.4pt]
+	plot[domain=-4.2:{-3.1415/4.2},samples=100] (\x,{3.1415/\x});
+\draw[color=red,line width=1.4pt]
+	plot[domain=-4.2:{-2*3.1415/4.2},samples=100] (\x,{2*3.1415/\x});
+\end{scope}
+\begin{scope}
+\fill[color=red!20]
+	plot[domain=3.1415:1,samples=100] (\x,{3.1415/\x})
+	--
+	plot[domain=2:3.1415,samples=100] (\x,{2*3.1415/\x})
+	-- cycle;
+\draw[color=red,line width=1.4pt]
+	plot[domain=3.1415:1,samples=100] (\x,{3.1415/\x})
+	--
+	plot[domain=2:3.1415,samples=100] (\x,{2*3.1415/\x})
+	-- cycle;
+\end{scope}
+\node at (\u,\u) {$\Omega$};
+\node at (-\u,-\u) {$\Omega$};
+\draw[->] (-4.1,0) -- (4.3,0);
+\draw[->] (0,-4.1) -- (0,4.3);
+\draw (3.1415,-0.1) -- (3.1415,0.1);
+\draw (-3.1415,-0.1) -- (-3.1415,0.1);
+\draw (-0.1,3.1415) -- (0.1,3.1415);
+\draw (-0.1,-3.1415) -- (0.1,-3.1415);
+\node at (3.1415,0) [below] {$\pi\mathstrut$};
+\node at (0,3.1415) [left] {$\pi\mathstrut$};
+\end{tikzpicture}
 \end{center}
 However, there is another part in the third quadrant, not connected to
 the part in the first quadrant.

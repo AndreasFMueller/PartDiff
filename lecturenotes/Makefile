@@ -25,6 +25,7 @@ TEXFILES = lecturenotes.tex						\
 	3-geometry/boundary.tex						\
 	3-geometry/curves.tex						\
 	3-geometry/singularities.tex					\
+	3-geometry/higher.tex						\
 	4-separation/disk.tex						\
 	4-separation/idea.tex						\
 	4-separation/initial.tex					\

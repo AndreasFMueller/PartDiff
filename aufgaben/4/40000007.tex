@@ -34,7 +34,47 @@ $\sin\alpha_1/\sin\alpha_2$.
 \end{teilaufgaben}
 
 \begin{loesung}
-In this case $n$ does does not depend on $y$, so it is just a function
+\begin{figure}
+\centering
+\begin{tikzpicture}[>=latex,thick]
+\def\none{1.1}
+\def\ntwo{1.9}
+\def\l{0.2}
+\fill[color=blue!20] (0,-4) rectangle (6,4);
+\begin{scope}
+\clip (-6,-4) rectangle (6,4);
+\pgfmathparse{sqrt(\ntwo*\ntwo-\l*\l}
+\xdef\m{\pgfmathresult}
+\foreach \b in {-4,...,14}{
+	\draw[color=blue] (0,\b) -- ({(\b+4)/\m},-4);
+}
+\draw[->,color=red,line width=2.0pt] (0,0)--(6,{6/\m});
+\pgfmathparse{sqrt(\none*\none-\l*\l}
+\xdef\m{\pgfmathresult}
+\foreach \b in {-10,...,4}{
+	\draw[color=blue] (0,\b) -- ({(\b-4)/\m},4);
+}
+\draw[->,color=red,line width=2.0pt] (-10,{-10/\m}) -- (0,0);
+\end{scope}
+\draw[->] (-6.1,0) -- (6.4,0) coordinate[label={$x$}];
+\draw[->] (0,-4.1) -- (0,4.4) coordinate[label={right:$y$}];
+\fill[color=white,opacity=0.7] (-5,2.7) rectangle (-3.3,3.3);
+\node at (-5,3) [right] {$n_1=\none$\strut};
+\fill[color=white,opacity=0.7] (3.3,-3.3) rectangle (5,-2.7);
+\node at (5,-3) [left] {$n_2=\ntwo$\strut};
+\end{tikzpicture}
+\caption{Level curves (blue) of one of the the solutions of the
+differential equation~\eqref{40000007:eikonal} for the particular
+value $\lambda=1$ of the separation constant are straight lines with
+slope $m=\sqrt{n_i^2-\lambda^2}/\lambda$.
+The gradients are vectors perpendicular the level curves and are
+shown in red.
+They describe light rays through the medium.
+The solution shows that Snell's law of refraction can be derived from
+the eiconal equation.
+\label{40000007:level}}
+\end{figure}
+In this case $n$ does not depend on $y$, so it is just a function
 of the form $n(x,y)=n(x)$ of $x$ alone.
 \begin{teilaufgaben}
 \item
@@ -84,6 +124,7 @@ is just a physically unimportant global phase shift.
 In the next step we want to study the gradient of $u$, which is not
 affected by the constant $C$.}
 $C$.
+Figure~\ref{40000007:level} shows the level lines of a solution in blue.
 \item
 The gradient is
 \[
@@ -141,6 +182,8 @@ We conclude that
 \frac{ \sin\alpha_1}{\sin\alpha_2}=\frac{n_2}{n_1},
 \]
 this is Snell's law.
+Figure~\ref{40000007:level} shows the gradients of the solutions
+as red arrows.
 \qedhere
 \end{teilaufgaben}
 \end{loesung}
