@@ -1,8 +1,9 @@
 Verwenden Sie die Greensche Funktion für das Interval $I=[-1,1]$,
 um die Differentialgleichung
-\[
+\begin{equation}
 u''(x)=1-x^2
-\]
+\label{70000006:dgl}
+\end{equation}
 auf $I$ mit Randbedingungen $u(-1)=u(1)=0$
 zu lösen.
 
@@ -18,18 +19,19 @@ das Interval $[-1,1]$ durchführen. Drittens kann man
 die Greensche Funktion aus singulänren Lösungen bestimmen.
 
 In der Vorlesung wurde gezeigt, dass die Greensche Funktion
-aus den singulären Lösungen $\sigma(x,\xi)$ berechnet werden
-kann. Dazu muss man $\sigma(x,\xi)$ mit einer in $x$ harmonischen
-Funktion ergänzen, so dass die Summe die Randbedingung erfüllt.
-Im vorliegenden Fall ist also $u_h$ für
+aus den partikulären Lösungen $\sigma(x,\xi)$ berechnet werden
+kann.
+Dazu muss man $\sigma(x,\xi)$ mit einer Lösung der homogenen Gleichung
+ergänzen, so dass die Summe die Randbedingung erfüllt.
+Im vorliegenden Fall ist also $u_r$ für
 \[
-G(x,\xi)=\sigma(x,\xi)+u_h(x,\xi)
+G(x,\xi)=\sigma(x,\xi)+u_r(x,\xi)
 =
-{\textstyle\frac12}|x-\xi|+u_h(x,\xi)
+{\textstyle\frac12}|x-\xi|+u_r(x,\xi)
 \]
-zu suchen, und $u_h$ muss harmonisch sein. In einer Dimension
-heisst das,
-$u_h(x,\xi)=ax+b$, wobei $a$ und $b$ so zu bestimmen sind, dass die
+zu suchen, und $u_r$ muss eine Lösung der homogenen Gleichung sein.
+In einer Dimension heisst das,
+$u_r(x,\xi)=ax+b$, wobei $a$ und $b$ so zu bestimmen sind, dass die
 Randbedingung erfüllt wird.
 \begin{align*}
 G(-1,\xi)&={\textstyle\frac12}|-1-\xi|-a+b&={\textstyle\frac12}(1+\xi)-a+b&=0\\
@@ -38,20 +40,20 @@ G(1,\xi)&={\textstyle\frac12}|1-\xi|+a+b&={\textstyle\frac12}(1-\xi)+a+b&=0
 Aus Summe und Differenz dieser beiden Gleichungen erhält man
 schliesslich
 \begin{align*}
-1+2b&=0&\Rightarrow\qquad b&=\frac12\\
-\xi-2a&=0&\Rightarrow\qquad a&=\frac{\xi}2
+1+2b&=0&\Rightarrow\qquad b&=-\frac12\\
+\xi-2a&=0&\Rightarrow\qquad a&=\phantom{-}\frac{\xi}2
 \end{align*}
 Daraus folgt für die Greensche Funktion
 \begin{align*}
 G(x,\xi)
 &=
-{\textstyle\frac12}(|x-\xi|+x\xi+1)
+{\textstyle\frac12}(|x-\xi|+x\xi-1)
 \\
 &=
 \begin{cases}
-{\textstyle\frac12}(x-\xi+x\xi + 1)
+{\textstyle\frac12}(x-\xi+x\xi - 1)
 &\qquad x>\xi\\
-{\textstyle\frac12}(\xi-x+x\xi + 1)
+{\textstyle\frac12}(\xi-x+x\xi - 1)
 &\qquad x<\xi
 \end{cases}
 \end{align*}
@@ -98,6 +100,40 @@ wobei die Berechnung des Integrals mit Mathematica erfolgte.
 Man kann durch Einsetzen nachprüfen, dass
 $u(-1)=u(1)=0$ und dass $u''(x)=1-x^2$, die Greensche Funktion
 liefert also tatsächlich eine Lösung des Problems.
+\begin{figure}
+\centering
+\begin{tikzpicture}[>=latex,thick]
+\begin{scope}
+\clip (-5,-3) rectangle (5,3);
+\fill[color=gray!20] (-5,-3) rectangle (5,3);
+\fill[color=white] (-2.5,-3.1) rectangle (2.5,3.1);
+\draw[color=blue,line width=1.4pt]
+	plot[domain=-2:2,samples=100]
+		({2.5*\x},{2.5*(1-\x*\x)});
+\draw[color=red,line width=1.4pt]
+	plot[domain=-5:5,samples=100]
+		({2.5*\x},{2.5*(-((\x*\x-6)*\x*\x+5)/12)});
+\end{scope}
+\draw[->] (-5.1,0) -- (5.5,0) coordinate[label={$x$}];
+\draw[->] (0,-3.1) -- (0,3.2) coordinate[label={right:$y$}];
+\draw (2.5,-0.1) -- (2.5,0.1);
+\node at (2.5,0) [below] {$1$};
+\draw (-2.5,-0.1) -- (-2.5,0.1);
+\node at (-2.5,0) [below] {$-1$};
+\draw (-0.1,-2.5) -- (0.1,-2.5);
+\node at (0,-2.5) [left] {$-1$};
+\draw (-0.1,2.5) -- (0.1,2.5);
+\node at (0,2.5) [left] {$1$};
+\end{tikzpicture}
+\caption{Graph der Lösungsfunktion (rot) der Differentialgleichung
+\ref{70000006:dgl}
+mit homogenen Randbedingungen.
+Die rechte Seite der Differentialgleichung ist in blau eingezeichnet.
+Aus der Differentialgleichung~\eqref{70000006:dgl} folgt, dass die zweite
+Ableitung an den Intervallenden verschwindet, die Lösung hat dort
+also nicht nur eine Nullstelle sondern auch einen Wendepunkt.
+\label{70000006:fig}}
+\end{figure}
 
 Nun noch die Berechnung der Greenschen Funktion als Skalierung
 der bereits berechneten Funktion. Die Greensche Funktion $G(x,\xi)$ für
