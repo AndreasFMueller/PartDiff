@@ -1,0 +1,66 @@
+\begin{teilaufgaben}
+\item
+The function $u(x)$ is defined on the interval $\Omega = [0, \pi]$ %.
+%The function
+and
+satisfies in $\Omega$ 
+\[
+- u''(x) = \cos(x)
+\]
+and $u(0) = 0, \  u(\pi) = 0$ on the boundary of $\Omega$.  
+
+Determine an approximation function $\tilde u(x)$ for $u(x)$ with
+the method of Ritz.
+
+Use the ansatz $\tilde u(x) = a_1 \cdot \sin(x) + a_2 \cdot \sin(2 \cdot x).$
+
+\item
+The function $u(x)$ is defined on the interval $\Omega = [0, 1]$ %.
+%The function
+and
+satisfies in $\Omega$ 
+\[
+u''(x) = 0
+\]
+and $u(0) = 100, \  u(1) = 200$ on the boundary of $\Omega$.  
+
+Determine an approximation function $\tilde u(x)$ for $u(x)$ by the
+finite element method.
+
+Use quadratic finite elements with $h = 1$.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+(3 points)
+Set
+\[
+R = \left[\begin{array}{cc} \pi/2 & 0  \\ 0 & 2 \cdot \pi \end{array}\right]
+\qquad\text{and}\qquad
+\underline{r} =  \left(\begin{array}{c} 0 \\ 4/3 \end{array}\right).
+\]
+Then $R \cdot \underline{a} = \underline{r}$.
+Therefore $\underline{r} = (0,2/3 \cdot 1/\pi)$ and
+$\tilde u(x) = 2/3 \cdot 1/\pi \cdot \sin(2 \cdot x) $.
+
+\item
+(3 points)
+Set
+\[
+R
+=
+1/3 \cdot
+\left[ \begin{array}{rrr}
+7 & -8 & 1  \\
+-8 & 16 & - 8 \\
+1 & -8 & 7
+\end{array}\right]
+\qquad \mbox{and}\qquad
+\underline{a} =  \left(\begin{array}{r} 100 \\ a \\ 200 \end{array}\right).
+\]
+Then $R \cdot \underline{a} = \underline{0}$.
+Therefore $a = 150$ and $\tilde u(x) = 100 + 100 \cdot x$.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}

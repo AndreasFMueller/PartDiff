@@ -1,0 +1,58 @@
+\begin{teilaufgaben}
+\item
+The function $u(x)$ is defined on the interval $\Omega = [0,3]$ %. 
+%The function $u(x)$
+and satisfies in $\Omega$ 
+\[
+x^2 \cdot u''(x) - x \cdot u'(x) + u(x) = x^2
+\]
+and  $u(0) = 0, \ u(3) = 9$ on the boundary of $\Omega$. 
+
+Determine approximate values for $u(1)$ and $u(2)$. 
+
+Use centered finite differences with $h = 1$. 
+
+\item
+The function $u(x,y)$ is defined on the rectangle
+$\Omega = [0,2] \times [0,3]$ %. 
+% The function $u(x,y)$
+and satisfies in $\Omega$ 
+\[
+\Delta u(x,y) = 0
+\]
+and $u(x,y) = x \cdot y$ on the boundary of $\Omega$.
+
+Determine approximate values for $u(1,1)$ and $u(1,2)$.
+Use finite differences with $h = 1$.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+(3 points)
+Set $\tilde u_1 = \tilde u(1), \tilde u_2 = \tilde u(2)$ as well as
+\[
+A = \left[\begin{array}{rr} -2 & 1  \\ 5 & -7  \end{array}\right]
+\qquad\text{and}\qquad
+\underline{b}
+=
+\left(\begin{array}{r} 2 \\ -23 \end{array}\right).
+\]
+Then $A \cdot \underline{\tilde u} = \underline{b}$.
+Therefore $\underline{\tilde u} = (1,4)$.
+
+\item
+(3 points)
+Set $\tilde u_1 = \tilde u(1,1), \tilde u_2 = \tilde u(1,2)$ as well as
+\[
+A
+=
+\left[\begin{array}{rr} -4 & 1  \\ 1 & -4  \end{array}\right]
+\qquad\text{and}\qquad
+\underline{b} =  \left(\begin{array}{r} -2 \\ -7 \end{array}\right).
+\]
+Then  $A \cdot \underline{\tilde u} = \underline{b}$.
+Therefore $\underline{\tilde u} = (1,2)$.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}

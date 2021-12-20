@@ -1,0 +1,69 @@
+\begin{teilaufgaben}
+\item
+The function $u(x)$ is defined on the interval $\Omega = [0, \pi]$.
+The function satisfies in $\Omega$ 
+\[
+u''(x) + 2 \cdot u(x) = \cos(x)
+\]
+and $u(0) = 0, \  u(\pi) = 0$ on the boundary of $\Omega$. 
+
+Determine an approximation function $\tilde u(x)$ for $u(x)$ with the
+method of Galerkin.
+
+Use the ansatz $\tilde u(x) = a_1 \cdot \sin(x) + a_2 \cdot \sin(2 \cdot x)$.
+
+\item
+The function $u(x)$ is defined on the interval $\Omega = [0, 1].$
+
+The function satisfies in $\Omega$ 
+\[
+-u''(x) = x
+\]
+and $u(0) = u(1) = 0$ on the boundary of $\Omega$. 
+
+Determine approximate values for $u(1/4)$, $u(2/4)$, $u(3/4)$ by the
+finite element method. 
+
+Use linear finite elements with $h = 1/4$.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+(3 points)
+Set
+\[
+G
+=
+\left[\begin{array}{cc}
+\pi/2 & 0  \\
+0 & - \pi
+\end{array}\right]
+\qquad\text{and}\qquad
+\underline{g}
+=
+\left(\begin{array}{c} 0 \\ 4/3 \end{array}\right).
+\]
+Then $R \cdot \underline{a} = \underline{r}$.
+Therefore $\underline{r} = (0, - 4/3 \cdot 1/\pi)$ and
+$\tilde u(x) = -4/3 \cdot 1/\pi \cdot \sin(2 \cdot x) $.
+
+\item
+(3 points)
+Set $a_k = \tilde u(k/4)$ for $k = 1,2,3$ as well as
+\[
+R =
+\left[\begin{array}{rrr}
+8 & -4 & 0  \\
+-4 & 8 & - 4 \\
+0 & -4 & 8
+\end{array}\right]
+\qquad\text{and}\qquad
+\underline{b} =
+\left(\begin{array}{r} 1/16 \\ 2/16 \\ 3/16 \end{array}\right).
+\]
+Then $R \cdot \underline{a} = \underline{b}$.
+Therefore $\underline{a} = (5/128, 8/128, 7/128)$.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}

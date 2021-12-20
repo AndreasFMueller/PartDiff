@@ -1,0 +1,68 @@
+\begin{teilaufgaben}
+\item
+The function $u(x,t)$ is defined on the strip
+$\Omega = [0, 3] \times [0,\infty)$
+satisfies in $\Omega$
+\[
+u_{t}(x,t) = u_{xx}(x,t)
+\]
+and $u(0,t) = u(3,t) = 1$ as well as $u(x,0) = 3 \cdot x - x^2 + 1$
+on the boundary of $\Omega$.
+
+Determine approximate values for $u(1,2)$ and $u(2,2)$. 
+
+Use the explicit method of Richardson with $\Delta x = 1$ and $\Delta t = 1.$
+
+\item
+The function $u(x,t)$ is defined on the upper half plane
+$\Omega = (-\infty,\infty) \times [0,\infty)$
+and
+%The function $u(x,t)$
+satisfies in $\Omega$ the equation
+\[
+u_{x}(x,t) + u_{t}(x,t) = 0
+\]
+and  $u(x,0) = \sin(\pi/2 \cdot x)^2$ on the boundary of $\Omega$.
+
+Determine approximate values for $u(-1,1)$, $u(0,1)$ and $u(1,1)$. 
+
+Use the scheme of Lax-Wendroff with $\Delta x = 1$ and $\Delta t = 1/2.$
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+(3 points) Set
+$\tilde u_1^{(k)}
+=
+\tilde u(1,k), \tilde u_2^{(k)} = \tilde u(2,k)$
+as well as
+\[
+A
+=
+\left[\begin{array}{rr} -1 & 1  \\ 1 & -1  \end{array}\right]
+\qquad\text{and}\qquad
+\underline{b}
+=
+\left(\begin{array}{r} 1  \\ 1   \end{array}\right).
+\]
+Then $\underline{\tilde u}^{(k+1)}
+= A \cdot \underline{\tilde u}^{(k)} + \underline{b}$.
+With $\underline{\tilde u}^{(0)} = (3,3)$ one has
+$\underline{\tilde u}^{(1)} = (1,1)$ and $\underline{\tilde u}^{(2)} = (1,1)$. 
+
+\item
+(3 points) One has $\tilde u(k \cdot \Delta x, (j+1) \cdot \Delta t) =$
+\[
+3/8 \cdot \tilde u((k-1) \cdot \Delta x, j \cdot \Delta t) + 3/4 \cdot \tilde u(k \cdot \Delta x, j \cdot \Delta t) - 1/8 \cdot \tilde u((k+1) \cdot \Delta x, j \cdot \Delta t).
+\]
+
+With $\tilde u(k \cdot \Delta x, 0) = \sin(\pi/2 \cdot k \cdot \Delta x)^2$
+one obtains
+\[
+\tilde u(-1,1) = 5/8, \tilde u(0,1) = 3/8, \tilde u(1,1) = 5/8.
+\qedhere
+\]
+\end{teilaufgaben}
+\end{loesung}
+
