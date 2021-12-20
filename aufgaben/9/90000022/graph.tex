@@ -1,0 +1,54 @@
+%
+% graph.tex -- characteristics for 90000022
+%
+% (c) 2021 Prof Dr Andreas Müller, OST Ostschweizer Fachhochschule
+%
+\documentclass[tikz]{standalone}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\usetikzlibrary{arrows,intersections,math}
+\begin{document}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\def\skala{6}
+\begin{tikzpicture}[>=latex,thick,scale=\skala]
+
+\fill[color=gray!40] (0,0) rectangle (1,1);
+\begin{scope}
+	\clip (0,0) rectangle (1.68,1.68);
+	\foreach \D in {0.2,0.4,...,6.6}{
+		\draw[color=red,line width=1pt]
+			plot[domain=0:1.68,samples=100]
+				({\x},{\D*exp(-0.5*\x*\x)});
+	}
+	\foreach \C in {0.2,0.4,...,1.6}{
+		\draw[color=darkgreen,line width=1pt]
+			plot[domain=0:1.68,samples=100]
+				({\x},{\C*exp(0.5*\x*\x)});
+	}
+\end{scope}
+\draw[color=blue,line width=2pt] (0,0) -- (0,{exp(0.5)});
+\draw[color=blue] ({-0.1/\skala},{exp(0.5)}) -- ({0.1/\skala},{exp(0.5)});
+\draw[color=blue] ({-0.1/\skala},0) -- ({0.1/\skala},0);
+\node[color=blue] at (0,{exp(0.5)}) [left] {$\sqrt{e}$};
+\fill[color=blue] (1,1) circle[radius={0.07/\skala}];
+\begin{scope}
+	\clip (0,0) rectangle (1.68,1.68);
+	\draw[color=blue,line width=1pt]
+		plot[domain=0:1.68,samples=100] ({\x},{exp(0.5*(1-\x*\x))});
+	\draw[color=blue,line width=1pt]
+		plot[domain=0:1.68,samples=100] ({\x},{exp(0.5*(\x*\x-1))});
+\end{scope}
+\draw ({-0.1/\skala},1) -- ({0.1/\skala},1);
+\node at (0,1) [left] {$1$};
+\draw (1,{-0.1/\skala}) -- (1,{0.1/\skala});
+\node at (1,0) [below] {$1$};
+\node at (0,0) [below] {$0$};
+\node at (0.25,0.5) {$\Omega=I\times I$};
+\draw[->] ({-0.1/\skala},0) -- (1.72,0) coordinate[label={$x$}];
+\draw[->] (0,{-0.1/\skala}) -- (0,1.72) coordinate[label={right:$y$}];
+
+\end{tikzpicture}
+\end{document}

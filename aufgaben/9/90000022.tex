@@ -1,0 +1,97 @@
+On the domain $\Omega = \{ (x,y)\;|\; x>0\wedge y>0\}$, the partial
+differential equation
+\begin{equation}
+\frac{\partial^2 u}{\partial x^2}
+-
+x^2y^2\frac{\partial^2 u}{\partial y^2}
+=
+0
+\label{90000022:eqn}
+\end{equation}
+is to be solved.
+Boundary values are given on the positive $y$-axis.
+\begin{teilaufgaben}
+\item
+Is this differential operator elliptic, parabolic or hyperbolic?
+\item
+Which boundary values can influence the values of a solution of the
+equation in the unit square $I^2 = \{(x,y)\;|\; 0<x<1\wedge 0<y<1\}$.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+The symbol matrix
+\[
+A=
+\begin{pmatrix}
+1&0\\
+0&-x^2y^2
+\end{pmatrix}
+\]
+has determinant
+\[
+\det A = -x^2y^2 < 0
+\]
+in the domain.
+This implies that the operator is hyperbolic.
+\item
+\begin{figure}
+\centering
+\includeagraphics[]{graph.pdf}
+\caption{Characteristics for the hyperbolic partial differential equation
+\eqref{90000022:eqn}.
+Boundary values on the blue part of the boundary can influence the values
+of the solution in the unit square.}
+\end{figure}
+We can decide which part of the boundary can influence the values in the
+unit square by finding the characteristics.
+From the operator, we get the differential equation for the characteristics
+in the form
+\begin{align*}
+\dot{y}^2 - x^2y^2\dot{x}^2 &= 0.
+\intertext{by dividing by $\dot{x}^2$ and substituting $y'=\dot{y}/\dot{x}$,
+we can convert this into an ordinary differential equation for the function 
+$y(x)$:}
+y^{\prime2}-x^2y^2&=0.
+\intertext{To solve the equation, we factor it into}
+(y'-xy)(y'+xy)&=0
+\end{align*}
+So the characteristics are the solutions of the differential equations
+\begin{align*}
+          y' &=xy              &           y' &= -xy       
+\\
+\frac{y'}{y} &=x               & \frac{y'}{y} &= -x
+\\
+      \log y &=\frac12x^2+ c   & \log y       &= -\frac12x^2 + d
+\\
+           y &= Ce^{\frac12x^2}&            y&= D e^{-\frac12x^2}
+\end{align*}
+The curves $De^{-\frac12x^2}$ as Gauss-curves are monotonously
+decreasing, so we have to find the value $D$ such that the corresponding
+curve passes through the upper right corner of the unit square.
+This means that
+\[
+1 = De^{-\frac12}
+\qquad\Rightarrow\qquad
+D=e^{\frac12}=\sqrt{e}.
+\]
+In particular, all the boundary values for $y<\sqrt{e}$ can influence
+the values of the solution in the unit square.
+The curves $Ce^{\frac12x^2}$ are monotonously increasing, so they
+don't increase the set of boundary points that can influence the 
+value of the solution in the unit square.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item symbol matrix ({\bf S}) 1 point,
+hyperbolicity ({\bf H}) 1 point,
+\item Differential equation for characteristics ({\bf D}) 1 point,
+solution of two factor equations ({\bf F}) 2 points,
+boundary interval that can influence the value in the corner of the
+square ({\bf B}) 1 point.
+\end{teilaufgaben}
+\end{bewertung}

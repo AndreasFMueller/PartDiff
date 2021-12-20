@@ -1,0 +1,130 @@
+On the domain $\Omega = \{(x,y)\;|\; x > 0\wedge y>-1\}$,
+the partial differential equation
+\begin{equation}
+\frac{\partial^2u}{\partial x^2}
++
+(y-1)\frac{\partial^2 u}{\partial x\,\partial y}
+-
+y\frac{\partial^2u}{\partial y^2}
+=
+0
+\label{90000023:eqn}
+\end{equation}
+is given.
+\begin{teilaufgaben}
+\item
+Is the equation \eqref{90000023:eqn} elliptic, parabolic or hyperbolic?
+\item
+Where do boundary values need to be specified in order for the solution
+to be uniquely determined on the unit square
+$I^2=I\times I=\{(x,y)\;|\;0<x<1\wedge 0<y<1\}$?
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+The symbol matrix of the partial differential operator of 
+\eqref{90000023:eqn} is
+\[
+A=\begin{pmatrix}
+1&\frac12(y-1)\\
+\frac12(y-1)&-y
+\end{pmatrix}.
+\]
+The determinant is
+\begin{align*}
+\det A
+&=
+-y-\frac14(y-1)^2
+\\
+&=-\frac14(1-2y + y^2+4y)
+\\
+&=-\frac14(1+2y+y^2)
+\\
+&=-\frac14(1+y)^2.
+\end{align*}
+Since $y>-1$, the square on the right hand side will always be $>0$,
+so the determinant will always be negative.
+This implies that the partial differential operator is hyperbolic.
+\item
+To find the interval on the boundary that can influence values
+in the unit square, we have to compute the characteristics.
+The differential equation for the characteristics is
+\begin{align*}
+\dot{y}^2 -(y-1)\dot{y}\dot{x} -y\dot{x}^2 &= 0.
+\intertext{We can turn this into an ordinary differential equation
+for the function $y(x)$ by dividing by $\dot{x}$ and using
+$y'=\dot{y}/\dot{x}$:}
+y^{\prime 2}-(y-1)y' - y&=0.
+\intertext{This equation can be factored into}
+(y'-y)(y'+1)&=0.
+\end{align*}
+To solve the equation, we need to solve for each factor separately:
+\begin{align*}
+y'-y         &=0            &       y'+1 &= 0                      \\
+y'           &=y            &       y'   &= -1                     \\
+\frac{y'}{y} &=1            &       y    &= -x + D                 \\
+\log y       &= x + c \\
+           y &= Ce^x \\
+\end{align*}
+\begin{figure}
+\centering
+\def\skala{3}
+\begin{tikzpicture}[>=latex,scale=\skala]
+\definecolor{darkgreen}{rgb}{0,0.8,0}
+\fill[color=gray!40] (0,0) rectangle (1,1);
+\begin{scope}
+\clip (0,-1) rectangle (3.1,2.2);
+	\foreach \C in {0.05,0.1,0.2,...,2.2}{
+		\draw[color=red,line width=1pt]
+			plot[domain=0:3.1,samples=100] ({\x},{\C*exp(\x)});
+		\draw[color=red,line width=1pt]
+			plot[domain=0:3.1,samples=100] ({\x},{-\C*exp(\x)});
+	}
+	\foreach \D in {-0.8,-0.6,...,5.2}{
+		\draw[color=darkgreen,line width=1pt]
+			(0,\D) -- (3.2,{\D-3.2});
+	}
+	\draw[color=blue,line width=1pt] (0,2) -- (3,-1);
+	\draw[color=blue,line width=1pt]
+		plot[domain=0:1.8,samples=100] ({\x},{exp(\x-1)});
+	\fill[color=blue] (1,1) circle[radius={0.07/\skala}];
+\end{scope}
+\draw[->] ({-0.1/\skala},0) -- (3.2,0) coordinate[label={$x$}];
+\draw[->] (0,-1.1) -- (0,2.3) coordinate[label={left:$y$}];
+\draw[color=red,line width=1pt] (0,0) -- (3.1,0);
+\draw (0,-1) -- (3.2,-1);
+\draw[color=blue,line width=2pt] (0,0) -- (0,2);
+\draw[color=blue] ({-0.1/\skala},2) -- ({0.1/\skala},2);
+\draw[color=blue] ({-0.1/\skala},0) -- ({0.1/\skala},0);
+\node[color=blue] at (0,2) [left] {$2$};
+\node at (0,1) [left] {$1$};
+\node[color=blue] at (0,0) [left] {$0$};
+\node at (1,0) [below] {$1$};
+\draw (1,{-0.1/\skala}) -- (1,{0.1/\skala});
+
+\end{tikzpicture}
+\caption{Characteristics of the partial differential equation
+\eqref{90000023:eqn}.
+The points on the blue part of the boundary are needed to uniquely 
+specify the values of the solution in the unit square.
+\label{90000023:fig}}
+\end{figure}%
+From figure~\ref{90000023:fig} we can read off that only the boundary
+values  for $y$ between $0$ and $2$ can influence the values in the
+unit square.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item Symbol matrix ({\bf S}) 1 point,
+hyperbolicity ({\bf H}) 1 point,
+\item Differential equation for characteristics ({\bf D}) 1 point,
+solution of two factor equations ({\bf F}) 2 points,
+boundary interval that can influence the value in the corner of the
+square ({\bf B}) 1 point.
+\end{teilaufgaben}
+\end{bewertung}
+
