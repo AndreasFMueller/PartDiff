@@ -1,0 +1,88 @@
+Find a solution of the partial differential equation
+\begin{equation}
+y
+\frac{\partial u}{\partial x}
++
+\frac{\partial u}{\partial y}
+=
+3y(x^2+y)
+\label{30000023:eqn}
+\end{equation}
+in the domain $\Omega=\{(x,y)\,|\, y>0, x\in\mathbb{R}\}$ with boundary 
+condition $u(x_0,0) = x_0^3$.
+
+\begin{loesung}
+This is a quaslinear partial differential equation if first order which
+can be solved using the method of characteristics.
+The equations for the characteristics are:
+\begin{align*}
+\dot{y} &= 1
+&&\Rightarrow&
+y &= t+y_0 = t
+\\
+\dot{x} &= y
+&&\Rightarrow&
+x
+&=
+{\textstyle\frac12}t^2+x_0
+&&\Rightarrow&
+x_0 &= x-{\textstyle\frac12}y^2
+\\
+\dot{u} &= 3y(x^2+y)=3t(
+({\textstyle\frac12}t^2+x_0)^2
++t)
+&&\Rightarrow&
+\\
+&=
+{\textstyle\frac34}t^5 + 3 t^3x_0 + 3tx_0^2 +3t^2
+&&\Rightarrow&
+u
+&=
+{\textstyle \frac{1}{8}} t^6
++{\textstyle\frac34}t^4x_0
++{\textstyle\frac32}t^2x_0^2 + t^3 + u_0
+\\
+&&&&
+&=
+{\textstyle \frac{1}{8}} t^6
++{\textstyle\frac34}t^4x_0
++{\textstyle\frac32}t^2x_0^2 + t^3 + x_0^3
+\end{align*}
+In this equation, we have to eliminate $t$ by replacing it by $y$ and
+$x_0$ by replacing it by $x-\frac12y^2$.
+This leads to
+\begin{align}
+u(x,y)
+&=
+\frac{1}{8}y^6
++\frac34y^4\biggl(x-\frac12y^2\biggr)
++\frac32y^2\biggl(x-\frac12y^2\biggr)^2
++y^3
++\biggl(x-\frac12y^2\biggr)^3
+\notag
+\\
+&=
+\frac1{8}y^6
++
+\frac{3}{4}y^4x - \frac38y^6
++\frac32y^2x^2-\frac32y^4x +\frac{3}{8}y^6
++y^3
++x^3-\frac32x^2y^2+\frac34xy^4-\frac18y^6
+\notag
+\\
+&=
+x^3 + y^3.
+\label{30000023:solution}
+\end{align}
+Substituting this expression in the original equation~\eqref{30000023:eqn}
+and in the boundary condition shows that~\eqref{30000023:solution}
+is in fact the solution.
+\end{loesung}
+
+\begin{bewertung}
+Differential equations of characteristics ({\bf D}) 1 point,
+solutions for $x(t)$ ({\bf X}), $y(t)$ ({\bf Y}) and $u(t)$ ({\bf U})
+each 1 point,
+elimination of $y_0$ using the boundary condition ({\bf E}) 1 point,
+solution ({\bf S}) 1 point.
+\end{bewertung}

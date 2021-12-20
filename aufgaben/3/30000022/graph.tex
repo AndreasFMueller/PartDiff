@@ -1,0 +1,35 @@
+%
+% graph.tex -- Graph for problem 30000022
+%
+% (c) 2021 Prof Dr Andreas Müller, OST Ostschweizer Fachhochschule
+%
+\documentclass[tikz]{standalone}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\usetikzlibrary{arrows,intersections,math}
+\begin{document}
+\def\skala{4}
+\begin{tikzpicture}[>=latex,thick,scale=\skala]
+
+\begin{scope}
+\clip (0,-1.02) rectangle (2.03,1.02);
+	\foreach \radius in {0,0.25,...,5}{
+		\draw[color=blue,line width=1pt]
+			(0,0) circle[radius={sqrt(\radius)}];
+	}
+	\foreach \ynull in {-3,-2.9,...,1}{
+		\draw[color=red,line width=1pt]
+			plot[domain=0:2.1,samples=100]
+				({\x},{0.5*\x*\x+\ynull});
+	}
+\end{scope}
+
+\draw[->] (-0.02,0) -- (2.1,0) coordinate[label={$x$}];
+\draw[->] (0,-1.03) -- (0,1.1) coordinate[label={right:$y$}];
+
+\end{tikzpicture}
+\end{document}
+

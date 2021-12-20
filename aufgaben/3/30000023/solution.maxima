@@ -1,0 +1,8 @@
+y: t;
+x: (1/2) * t^2 + x0;
+udot: expand(3*y*(x^2+y));
+u: integrate(udot, t) + u0;
+
+a: subst(x0^3, u0, u);
+b: subst(X-(1/2)*Y^2, x0, a);
+c: expand(subst(Y, t, b));

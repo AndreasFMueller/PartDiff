@@ -1,0 +1,11 @@
+x: t;
+y: (1/2)*t^2 + y0;
+u0: y0^2;
+
+udot: expand(2 * (x + x*y));
+u: integrate(udot, t) + u0;
+
+a: expand(subst(Y-(1/2)*x^2, y0, u));
+a;
+b: subst(X, t, a);
+

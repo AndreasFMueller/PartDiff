@@ -1,0 +1,78 @@
+Find a solution of the partial differential equation
+\begin{equation}
+\frac{\partial u}{\partial x} + x\frac{\partial u}{\partial y}
+=
+2x(1+y)
+\label{30000022:eqn}
+\end{equation}
+in the domain $\Omega = \{(x,y)\,|\, x >0,y\in\mathbb{R}\}$
+with boundary conditions
+$u(0,y_0) = y_0^2$.
+
+\begin{loesung}
+This is a quasilinear partial differential equation of first order which
+can be solved using the method of characteristics.
+The equations for the characteristics are:
+\begin{align}
+\dot{x} &= 1&&\Rightarrow&  x &= t + x_0 = t
+\notag
+\\
+\dot{y} &= x&&\Rightarrow&  y &= {\textstyle\frac12}t^2+y_0
+\notag
+\\
+\dot{u} &= 2x(1+y) = 2t+t^3+2ty_0
+&&\Rightarrow& u &= t^2 + {\textstyle\frac14}t^4 + t^2y_0 + u_0
+=
+t^2+{\textstyle\frac14}t^4+t^2y_0 + y_0^2
+\label{30000022:u}
+\end{align}
+To find the solution, $t$ and $y_0$ have to be eliminated.
+This means that $t$ has to be replaced by $x$ and $y_0$ has to be
+replaced by $y_0=y-\frac12x^2$.
+This gives
+\begin{align*}
+u(x,y)
+&=
+x^2+{\textstyle\frac14}x^4
++x^2\bigl(y-{\textstyle\frac12}x^2\bigr)
++ \bigl(y-{\textstyle\frac12}x^2\bigr)^2
+\\
+&=
+x^2+{\textstyle\frac14}x^4
++
+x^2y
+-{\textstyle\frac12}x^4
++y^2-yx^2+{\textstyle\frac14}x^4
+\\
+&=x^2+y^2.
+\end{align*}
+This completes the solution.
+The characteristics of the equation~\eqref{30000022:eqn} are shown
+in figure~\ref{30000022:graph}.
+
+An alternative way to find the solution is that looking at
+\eqref{30000022:u} intensly reveals that the three terms on
+the right hand side of the last equation are the square of $y$,
+so it follows that
+\[
+u(x,y) = x^2+y^2.
+\]
+Substituting this into the original equation \eqref{30000022:eqn}
+and the boundary condition verifies that $u$ is the correct solution.
+\begin{figure}
+\centering
+\includeagraphics[]{graph.pdf}
+\caption{Characteristics of the partial differential
+equation~\eqref{30000022:eqn} (red) and level curves of the solution
+(blue).
+\label{30000022:graph}}
+\end{figure}
+\end{loesung}
+
+\begin{bewertung}
+Differential equations of characteristics ({\bf D}) 1 point,
+solutions for $x(t)$ ({\bf X}), $y(t)$ ({\bf Y}) and $u(t)$ ({\bf U})
+each 1 point,
+elimination of $y_0$ using the boundary condition ({\bf E}) 1 point,
+solution ({\bf S}) 1 point.
+\end{bewertung}
