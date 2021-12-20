@@ -1,0 +1,128 @@
+The partial differential equation
+\begin{equation}
+\frac{\partial^2 u}{\partial r^2}
++
+\frac{\partial u}{\partial r}
++
+\frac{\partial^2 u}{\partial \varphi^2}
+=
+2
+\label{50000022:eqn}
+\end{equation}
+on the domain $\Omega = \{ (r,\varphi)\,|\,0<\varphi<\pi/2\wedge r>0\}$
+in polar coordinates with boundary conditions
+\begin{align}
+u(r,0)                       &= e^{-r}
+\label{50000022:bottom}
+\\
+u(r,{\textstyle\frac{\pi}2}) &= 1 
+\label{50000022:boundary}
+\end{align}
+is to be solved using the transformation method.
+Note that for $r=0$, the polar coordinate system ist somewhat singular,
+as all pairs $(0,\varphi)$ refer to the same point.
+To deal with this problem, we add additional boundary conditions
+compatible with~\eqref{50000022:boundary}:
+\begin{equation}
+\begin{aligned}
+u(0,\varphi) &= 1
+\\
+\frac{\partial u}{\partial r}(0,\varphi) &= 0
+\end{aligned}
+\label{50000022:additional}
+\end{equation}
+for $0<\varphi<\frac{\pi}2$.
+
+\begin{teilaufgaben}
+\item
+Use the Laplace transform with respect to $r$ to obtain ordinary differential
+equations and boundary conditions.
+\item
+Is the solution to the partial differential equation unique?
+\end{teilaufgaben}
+
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+First we compute the Laplace transform with respect to $r$ of the
+differential equation~\eqref{50000022:eqn}, we call the transformed variable
+$s$:
+\begin{align*}
+s^2 (\mathcal{L}u)(s,\varphi)
+   -s \underbrace{u(0,\varphi)}_{\textstyle=1}
+   -\underbrace{\frac{\partial u}{\partial r}(0,\varphi)}_{\textstyle=0}
++s(\mathcal{L}u)(s,\varphi) - \underbrace{u(0,\varphi)}_{\textstyle=1}
++
+\frac{\partial^2}{\partial\varphi^2}(\mathcal{L}u)(s,\varphi)
+&=
+\frac2s
+\\
+\Rightarrow\hspace{6cm}
+\frac{\partial^2}{\partial\varphi^2}(\mathcal{L}u)(s\varphi)
++
+(s^2+s) (\mathcal{L}u)(s,\varphi)
+&=
+\frac2s
++s+1
+\end{align*}
+Writing $y_s(\varphi)=\mathcal{L}u(s,\varphi)$ and considering
+$s$ just a parameter, these can be seen as a family
+\begin{equation}
+y''_s(\varphi) +s(s+1) y_s(\varphi) = \frac{2}s+s+1
+\label{50000022:transformedeqn}
+\end{equation}
+of linear ordinary
+differential equations of second order.
+
+We also need boundary conditions for each of these ordinary differential
+equations, which we can get from \eqref{50000022:bottom} and
+\eqref{50000022:boundary} by using the Laplace transform once more:
+\begin{align*}
+\mathcal{L}u(s,0) &= \frac{1}{s+1}
+\\
+\mathcal{L}u(s,{\textstyle\frac{\pi}2}) &= \frac1s
+\end{align*}
+So $y_s(\varphi)$ are solutions of~\eqref{50000022:transformedeqn}
+satisfying the boundary conditions
+\[
+y_s(0)=\frac{1}{s+1}
+\qquad\text{and}\qquad
+y_s({\textstyle\frac{\pi}2})=\frac{1}s.
+\]
+\item
+The homegeneous equation of the transformed equation is
+\[
+y_s''(\varphi) + (s^2+s) y_s(\varphi)=0,
+\]
+which has the solutions
+\[
+\cos(\!\sqrt{s^2+s}\,\varphi)
+\qquad\text{and}\qquad
+\sin(\!\sqrt{s^2+s}\,\varphi).
+\]
+The constant
+\[
+y_s(x) = \frac{2/s+s+1}{s(s+1)}
+\]
+is a particular solution for the nonhomogeneous equation.
+Using these solutions, the solution $y_s(\varphi)$ can be uniquely determined
+from the boundary conditions.
+Since there can only be one Laplace transform, the solution $u(r,\varphi)$
+also must be unique.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item
+Laplace transform of differential equation ({\bf L}) 2 points,
+simplify using additional boundary conditions \eqref{50000022:additional}
+({\bf S}) 1 point,
+Laplace transforms of boundary conditions ({\bf B}) 2 points,
+\item
+uniqueness ({\bf U}) 1 point.
+\end{teilaufgaben}
+\end{bewertung}
+

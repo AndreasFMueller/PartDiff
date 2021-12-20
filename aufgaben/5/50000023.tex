@@ -1,0 +1,116 @@
+By differentiating the definition of the Laplace-transform with respect to $s$,
+one can immediately derive the formula
+\begin{equation}
+\frac{d}{ds}\mathcal{L}f(s)
+=
+\frac{d}{ds}\int_0^\infty e^{-st} f(t)\,dt
+=
+\int_0^\infty -t e^{-st} f(t)\,dt
+=
+\mathcal{L}(-tf(t)) (s)
+\quad\Rightarrow\quad
+\mathcal{L}(tf(t)) (s) = -\frac{d}{ds}\mathcal{L}f(s).
+\label{50000023:deriv}
+\end{equation}
+This means that the Laplace transform of $tf(t)$ is up to a sign the
+derivative of the Laplace transform of $f(t)$.
+\begin{teilaufgaben}
+\item
+Use the identity \eqref{50000023:deriv} to Laplace-transform the partial
+differential equation
+\begin{equation}
+\frac{\partial^2u}{\partial x^2}(x,y)
++x\,u(x,y)
++\frac{\partial u}{\partial y}(x,y) = e^{-x}
+\label{50000023:eqn}
+\end{equation}
+on the domain $\Omega=\{(x,y)\,|\,x>0\}$ with respect to the variable $x$.
+The boundary conditions for a solution $u(x,y)$ for equation
+\eqref{50000023:eqn} are
+\begin{align*}
+u(0,y) &= g(y)\\
+\frac{\partial u}{\partial x}(u,y) &= 0
+\end{align*}
+for $y\in\mathbb R$.
+\item
+When using the transformation method, one usually expects to get an
+ordinary differential equation.
+This does not quite work in this example, but it is possible
+to simplify the equation~\eqref{50000023:eqn}
+somewhat to an equation for which we have a solution method.
+What type of partial differential equation have you found?
+\end{teilaufgaben}
+
+\begin{hinweis}
+You are not requested to derive formula~\eqref{50000023:deriv}, you can
+simply use it to solve part a) and b).
+\end{hinweis}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+The Laplace transform of the differential equation is
+\begin{align*}
+s^2(\mathcal{L}u)(s,y)
+-
+s\underbrace{\frac{\partial u}{\partial x}(0,y)}_{\textstyle=0}
+-
+\underbrace{u(0,y)}_{\textstyle=g(y)}
+-\frac{\partial }{\partial s}(\mathcal{L}u)(s,y)
++
+\frac{\partial }{\partial y}(\mathcal{L}u)(s,y)
+&=
+\frac1{s+1},
+\end{align*}
+where the fourth term uses the formula~\eqref{50000023:deriv}.
+Boundary conditions for $u(x,y)$ can be used to simplify the
+second and third term to give
+\[
+s^2(\mathcal{L}u)(s,y)-g(y) - \frac{\partial}{\partial s}(\mathcal{L}u)(s,y)
++
+\frac{\partial}{\partial y}(\mathcal{L}u)(s,y)
+=
+\frac1{s+1}.
+\]
+We abbreviate the transformed function $u$ as $U(s,y) = \mathcal{L}u(s,y)$
+and write the equation again as
+\begin{equation}
+s^2 U(s,y) - g(y) -\frac{\partial U}{\partial s}(s,y)
++ \frac{\partial U}{\partial y}(s,y)
+=
+\frac1{s+1}.
+\label{50000023:firstorder}
+\end{equation}
+So we have managed to reduce the order, it is now a partial differential
+equation of first order.
+\item
+By regrouping the equation \eqref{50000023:firstorder}  and collecting
+the derivatives on the left hand side, we get
+\begin{equation}
+\frac{\partial U}{\partial s} - \frac{\partial U}{\partial y}
+=
+s^2 U - g(y) - \frac{1}{s+1}.
+\label{50000023:qlpde}
+\end{equation}
+The equation~\eqref{50000023:qlpde} is a linear partial differential
+equation of first order, which we could solve using the method of
+characteristics.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item
+Laplace transform of differential equation ({\bf L}) 2 points (1 point
+for each side of the equation),
+simplification using the boundary conditions ({\bf B}) 2 points,
+1 point,
+using the derivative equation~\eqref{50000023:deriv} to reduce the
+equation further ({\bf D}) 1 point.
+\item
+Quasilinear PDE of first order ({\bf Q}) 1 point.
+\end{teilaufgaben}
+\end{bewertung}
+
