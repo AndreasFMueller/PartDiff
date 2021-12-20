@@ -1,0 +1,257 @@
+Consider the coordinate transform
+\[
+\begin{aligned}
+\xi  &= \frac{x}{x^2+y^2} \\
+\eta &= \frac{-y}{x^2+y^2}
+\end{aligned}
+\qquad\text{and}\qquad
+\begin{aligned}
+x &= \frac{\xi}{\xi^2+\eta^2} \\
+y &= \frac{-\eta}{\xi^2+\eta^2}.
+\end{aligned}
+\]
+It transforms lines $x=a$ into circles of radius $1/2a$ with center
+$(1/2a,0)$,
+and lines $y=b$ into circles of radius $1/2b$ with center $(-1/2b,0)$.
+\begin{teilaufgaben}
+\item Express the partial differential operators $\partial/\partial x$ and
+$\partial/\partial y$ in $\xi$-$\eta$-coordinates.
+\item Express the Laplace operator in $\xi$-$\eta$-coordinates.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+The derivative operators are 
+\[
+\frac{\partial}{\partial x}
+=
+\frac{\partial\xi}{\partial x}\frac{\partial}{\partial\xi}
++
+\frac{\partial\eta}{\partial x}\frac{\partial}{\partial\eta}
+\qquad\text{and}\qquad
+\frac{\partial}{\partial y}
+=
+\frac{\partial\xi}{\partial y}\frac{\partial}{\partial\xi}
++
+\frac{\partial\eta}{\partial y}\frac{\partial}{\partial\eta}
+\]
+by the chain rule, so we need the partial derivatives of the functions 
+$\xi(x,y)$ and $\eta(x,y)$ with respect to $x$ and $y$:
+\begin{align*}
+\frac{\partial\xi}{\partial x}
+&=
+\frac{1}{x^2+y^2}-\frac{2x^2}{(x^2+y^2)^2}
+=
+\frac{y^2-x^2}{(x^2+y^2)^2}
+=
+\eta^2-\xi^2,
+\\
+\frac{\partial\eta}{\partial x}
+&=
+\frac{2xy}{(x^2+y^2)^2}
+=-2\xi\eta,
+\\
+\frac{\partial\xi}{\partial y}
+&=
+-
+\frac{2xy}{(x^2+y^2)^2}
+=2\xi\eta,
+\\
+\frac{\partial\eta}{\partial y}
+&=
+\frac{2y^2}{(x^2+y^2)^2}-\frac{1}{x^2+y^2}
+=
+\frac{y^2-x^2}{(x^2+y^2)^2}
+=
+\eta^2-\xi^2.
+\end{align*}
+We conclude that
+\begin{align*}
+\frac{\partial}{\partial x}
+&=
+(\eta^2-\xi^2)
+\frac{\partial}{\partial\xi}
+-
+2\xi\eta
+\frac{\partial}{\partial\eta}
+\\
+\text{and}\qquad
+\frac{\partial}{\partial y}
+&=
+2\xi\eta
+\frac{\partial}{\partial\xi}
++
+(\eta^2-\xi^2)
+\frac{\partial}{\partial\eta}.
+\end{align*}
+\item
+To epress the Laplace operator in $\xi$-$\eta$-coordinates, we have
+to compute the second derivatives:
+\begin{align*}
+\frac{\partial^2}{\partial x^2}
+&=
+\biggl(
+(\eta^2-\xi^2)
+\frac{\partial}{\partial\xi}
+-
+2\xi\eta
+\frac{\partial}{\partial\eta}
+\biggr)
+\biggl(
+(\eta^2-\xi^2)
+\frac{\partial}{\partial\xi}
+-
+2\xi\eta
+\frac{\partial}{\partial\eta}
+\biggr)
+\\
+&=
+(\eta^2-\xi^2)\frac{\partial}{\partial\xi}
+\biggl(
+(\eta^2-\xi^2)
+\frac{\partial}{\partial\xi}
+-
+2\xi\eta
+\frac{\partial}{\partial\eta}
+\biggr)
+-2\xi\eta\frac{\partial}{\partial\eta}
+\biggl(
+(\eta^2-\xi^2)
+\frac{\partial}{\partial\xi}
+-
+2\xi\eta
+\frac{\partial}{\partial\eta}
+\biggr)
+\\
+&=
+(\eta^2-\xi^2)\biggl(
+-2\xi\frac{\partial}{\partial\xi}
++
+(\eta^2-\xi^2)\frac{\partial^2}{\partial\xi^2}
+-2\eta\frac{\partial}{\partial\eta}
+-2\xi\eta\frac{\partial^2}{\partial\xi\,\partial\eta}
+\biggr)
+\\
+&\qquad
+-2\xi\eta\biggl(
+2\eta\frac{\partial}{\partial\xi}
++
+(\eta^2-\xi^2)\frac{\partial^2}{\partial\xi\,\partial\eta}
+-2\xi\frac{\partial}{\partial\eta}
+-2\xi\eta\frac{\partial^2}{\partial\eta^2}
+\biggr)
+\\
+&=
+(\eta^2-\xi^2)^2\frac{\partial^2}{\partial\xi^2}
+-
+4\xi\eta(\eta^2-\xi^2)
+\frac{\partial^2}{\partial\xi\,\partial\eta}
++4\xi^2\eta^2
+\frac{\partial^2}{\partial\eta^2}
+\\
+&\qquad
+-
+2(\eta^2-\xi^2)\bigg(
+\xi\frac{\partial}{\partial\xi}+\eta\frac{\partial}{\partial\eta}
+\biggr)
+-4\xi\eta\biggl(
+\eta\frac{\partial}{\partial\xi}-\xi\frac{\partial}{\partial\eta}
+\biggr)
+\\
+\frac{\partial^2}{\partial y^2}
+&=
+\biggl(
+2\xi\eta
+\frac{\partial}{\partial\xi}
++
+(\eta^2-\xi^2)
+\frac{\partial}{\partial\eta}
+\biggr)
+\biggl(
+2\xi\eta
+\frac{\partial}{\partial\xi}
++
+(\eta^2-\xi^2)
+\frac{\partial}{\partial\eta}
+\biggr)
+\\
+&=
+2\xi\eta
+\frac{\partial}{\partial\xi}
+\biggl(
+2\xi\eta
+\frac{\partial}{\partial\xi}
++
+(\eta^2-\xi^2)
+\frac{\partial}{\partial\eta}
+\biggr)
++(\eta^2-\xi^2)\frac{\partial}{\partial\eta}
+\biggl(
+2\xi\eta
+\frac{\partial}{\partial\xi}
++
+(\eta^2-\xi^2)
+\frac{\partial}{\partial\eta}
+\biggr)
+\\
+&=
+2\xi\eta
+\biggl(
+2\eta\frac{\partial}{\partial\xi}
++2\xi\eta\frac{\partial^2}{\partial\xi^2}
+-2\xi\frac{\partial}{\partial\eta}
++(\eta^2-\xi^2)\frac{\partial^2}{\partial\eta\,\partial\xi}
+\biggr)
+\\
+&\qquad
++(\eta^2-\xi^2)
+\biggl(
+2\xi\frac{\partial}{\partial\xi}
++
+2\xi\frac{\partial^2}{\partial\xi\,\partial\eta}
++
+2\eta\frac{\partial}{\partial\eta}
++
+(\eta^2-\xi^2)\frac{\partial^2}{\partial\eta^2}
+\biggr)
+\\
+&=
+4\xi^2\eta^2\frac{\partial^2}{\partial\xi^2}
++
+2\xi\eta(\eta^2-\xi^2)
+\frac{\partial^2}{\partial\xi\,\partial\eta}
++(\eta^2-\xi^2)^2\frac{\partial^2}{\partial\eta^2}
+\\
+&\qquad
++2\xi\eta\biggl(
+\eta\frac{\partial}{\partial\xi}-\xi\frac{\partial}{\partial\eta}
+\biggl)
++
+4(\eta^2-\xi^2)\biggl(
+\xi\frac{\partial}{\partial\xi}
++
+\eta\frac{\partial}{\partial\eta}
+\biggr)
+\\
+\frac{\partial^2}{\partial x^2}
++
+\frac{\partial^2}{\partial y^2}
+&=
+(\eta^2+\xi^2)^2\frac{\partial^2}{\partial\xi^2}
++
+(\eta^2+\xi^2)^2\frac{\partial^2}{\partial\eta^2},
+\end{align*}
+where we have used that
+\[
+(\eta^2-\xi^2)^2+4\xi^2\eta^2
+=
+\eta^4-2\xi^2\eta^2 +\xi^4 + 4\xi^2\eta^2
+=
+\eta^4+2\xi^2\eta^2 +\xi^4
+=
+(\xi^2+\eta^2)^2.
+\qedhere
+\]
+\end{teilaufgaben}
+\end{loesung}
