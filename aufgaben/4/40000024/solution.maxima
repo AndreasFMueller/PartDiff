@@ -1,0 +1,12 @@
+R: sinh(r^2/2) / r;
+
+s: diff(diff(R,r),r) + diff(R,r)/r - (r^2 +1/r^2)*R;
+
+expand(s);
+
+R: cosh(r^2/2) / r;
+
+s: diff(diff(R,r),r) + diff(R,r)/r - (r^2 +1/r^2)*R;
+
+expand(s);
+

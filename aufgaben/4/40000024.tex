@@ -1,0 +1,254 @@
+On the domain $\Omega = \{ (x,y)\,|\, 1 < x^2+y^2 < 4\}$ the partial
+differential equation
+\begin{equation}
+\Delta u = r^2 u,
+\label{40000024:pde}
+\end{equation}
+where $r^2=x^2+y^2$,
+is given with boundary conditions
+\begin{equation}
+\begin{aligned}
+u(x,y) &= \phantom{\textstyle\frac12}x  & &\text{für $x^2+y^2 = 1$}\\
+u(x,y) &= \phantom{\textstyle\frac12}y  & &\text{für $x^2+y^2 = 4$.}
+\end{aligned}
+\label{40000024:boundarypolar}
+\end{equation}
+\begin{teilaufgaben}
+\item
+Is this equation elliptic, parabolic or hyperbolic?
+\item
+Use separation to obtain ordinary differential equations that can be
+used to find solutions of the partial differential equation.
+\item
+Solve one of the ordinary differential equations you have obtained
+in b)
+\item
+Determine the possible values of the separation constant.
+\item
+Write the general solution as a superposition.
+\end{teilaufgaben}
+
+\begin{loesung}
+Since the domain is a ring, we have to use polar coordinates.
+The boundary conditions in polar coordinates are 
+\[
+\begin{aligned}
+u(1,\varphi) &= \cos\varphi\\
+u(2,\varphi) &= \sin\varphi.
+\end{aligned}
+\]
+\begin{teilaufgaben}
+\item
+Since the operator in question is the Laplace operator, the equation is
+elliptic.
+\item
+We use an ansatz of the form $u=R(r)\Phi(\varphi)$
+and substitute the ansatz into the partial differential equation, which
+we have to rewrite with the well known form of the Laplace operator
+in polar coordinates:
+\begin{align*}
+\Delta u
+=
+\biggl(
+\frac{\partial^2}{\partial r^2}
++
+\frac1r\frac{\partial}{\partial r}
++
+\frac1{r^2}\frac{\partial^2}{\partial\varphi^2}
+\biggr)
+R(r)\Phi(\varphi)
+&=
+r^2R(r)\Phi(\varphi)
+\\
+R''(r)\Phi(\varphi)
++\frac1r R'(r)\Phi(\varphi)
++\frac1{r^2} R(r)\Phi''(\varphi)
+&=r^2R(r)\Phi(\varphi)
+\\
+R''(r)\Phi(\varphi)
++\frac1r R'(r)\Phi(\varphi)
+-r^2R(r)\Phi(\varphi)
+&=
+-\frac1{r^2} R(r)\Phi''(\varphi)
+\\
+\frac{r^2R''(r)+rR'(r)-r^4R(r)}{R(r)}
+&=
+-\frac{\Phi''(\varphi)}{\Phi(\varphi)}
+\end{align*}
+Since the left hand side depends only on $r$ and the right only on $\varphi$,
+both sides are constant, we call this constant $\lambda^2$.
+
+The equation for $R(r)$ becomes
+\begin{align}
+r^2R''(r) + rR'(r) -r^4R(r) &= \lambda^2 R(r)
+\notag
+\\
+R''(r) + \frac1rR'(r) - (r^4+\lambda^2) R(r) &=0
+\label{40000024:Rdiff}
+\end{align}
+This is an linear ordinary differential equation which will in general
+have two linearly independent solutions $R_{\lambda,1}(r)$ and
+$R_{\lambda,2}(r)$.
+Finding a solution is a little more complicated.
+The power series method (also known as the method of Frobenius)
+allows to find such solutions.
+Unfortunately, there is no expression of the solutions in terms of
+well known functions.
+
+For the function $\Phi(\varphi)$, the ordinary differential equation becomes
+\begin{equation}
+\Phi''(\varphi) = -\lambda^2\Phi(\varphi),
+\label{40000024:phieqn}
+\end{equation}
+which is a oscillation differential equation.
+
+\item
+The equation \eqref{40000024:phieqn} has solutions
+\begin{equation}
+\cos(\lambda\varphi)
+\qquad\text{and}\qquad
+\sin(\lambda\varphi).
+\label{40000024:phisolution}
+\end{equation}
+
+\item
+Since a solution of \eqref{40000024:phieqn} must be $2\pi$-periodic,
+the $\lambda$ in \eqref{40000024:phisolution} must be an integer.
+We thus can write $\lambda=k$.
+In this step we have already used all homogneous boundary conditions of
+the problem.
+\item
+The solution of the equation~\eqref{40000024:pde} can now constructed
+as a superposition in the form
+\begin{equation}
+\begin{aligned}
+u(r,\varphi)
+&=
+a_{0,1} R_{0,1}(r) + a_{0,2} R_{0,2}(r)
+\\
+&\qquad
++
+\sum_{k=1}^\infty
+\bigl(
+(a_{k,1}R_{k,1}(r) + a_{k,2}R_{k,2}(r))
+\cos k\varphi
++
+(b_{k,1}R_{k,1}(r) + b_{k,2}R_{k,2}(r))
+\sin k\varphi
+\bigr)
+\end{aligned}
+\label{40000024:series}
+\qedhere
+\end{equation}
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{diskussion}
+The following discussion shows that we can in fact find out a little more
+about the solution.
+
+For any fixed radius $r$, the series \eqref{40000024:series} is 
+a Fourier series.
+On the boundary, the values $R_{k,1}(1)$, $R_{k,2}(1)$, $R_{k,1}(2)$ and
+$R_{k,2}(2)$ become coefficients of a linear system of equations to
+determine the coefficients $a_{k,i}$ and $b_{k,i}$.
+The boundary conditions in polar form~\eqref{40000024:boundarypolar}
+are already very simple Fourier series, name fourier series without
+nonvanishing terms for $k=1$.
+
+If the boundary conditions were arbitrary functions
+\begin{align*}
+u(1,\varphi)
+&=
+f(\varphi)
+&&\text{with Fourier series} &
+f(\varphi)
+&=
+\frac{a^f_0}2 + \sum_{k=1}^\infty (a^f_k\cos k\varphi + b^f_k\sin k\varphi)
+\\
+u(2,\varphi)
+&=
+g(\varphi)
+&&\text{with Fourier series}&
+g(\varphi)
+&=
+\frac{a^g_0}2 + \sum_{k=1}^\infty (a^g_k\cos k\varphi + b^g_k\sin k\varphi),
+\end{align*}
+then we could conclude that the equations
+\[
+\begin{aligned}
+r&=1:&&&
+R_{k,1}(1) a_{k,1} + R_{k,2}(1)a_{k,2} &= a_k^f
+\\
+ &   &&&
+R_{k,1}(1) b_{k,1} + R_{k,2}(1)b_{k,2} &= b_k^f
+\\[5pt]
+r&=2:&&&
+R_{k,1}(2) a_{k,1} + R_{k,2}(2)a_{k,2} &= a_k^g
+\\
+ &   &&&
+R_{k,1}(2) b_{k,1} + R_{k,2}(2)b_{k,2} &= b_k^g
+\end{aligned}
+\]
+must hold.
+These are two linear systems of equations.
+
+In the particular case of the problem, most of the coefficients
+$a_k^f$, $b_k^f$, $a_k^g$ and $b_k^g$ are zero.
+If both coefficents on the right hand side of the linear system
+of equations are zero, so are the corresponding coefficents
+$a_{k,1}$, $a_{k,2}$, $b_{k,1}$ and $b_{k,2}$.
+This happens in all equations except for $k=1$.
+
+For $k=1$, the equations are
+\[
+\begin{linsys}{3}
+a_{1,1}R_{1,1}(1) &+& a_{1,2}R_{1,2}(1) &=& 1 \\
+a_{1,1}R_{1,1}(2) &+& a_{1,2}R_{1,2}(2) &=& 0
+\end{linsys}
+\qquad\text{and}\qquad
+\begin{linsys}{3}
+b_{1,1}R_{1,1}(1) &+& b_{1,2}R_{1,2}(1) &=& 0\phantom{.} \\
+b_{1,1}R_{1,1}(2) &+& b_{1,2}R_{1,2}(2) &=& 1.
+\end{linsys}
+\]
+They are not homogeneous, so there will be a unique solution for
+the coefficients $a_{1,1}$, $a_{1,2}$, $b_{1,1}$ and $b_{1,2}$.
+This then gives the final solution of the equation in the form
+\[
+u(r,\varphi)
+=
+(
+a_{1,1}R_{1,1}(r)
++
+a_{1,2}R_{1,2}(r)
+)
+\cos\varphi
++
+(
+b_{1,1}R_{1,1}(r)
++
+b_{1,2}R_{1,2}(r)
+)
+\sin\varphi.
+\]
+So it is sufficient to find the solutions of the equation
+\eqref{40000024:Rdiff}
+for $\lambda=1$ in order to give a complete solution of the
+partial differential equation.
+Unfortunately, there is no closed form expression for the solutions
+of
+\eqref{40000024:Rdiff}.
+\end{diskussion}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item Elliptic ({\bf E}) 1 point,
+\item separation ansatz, must match domain shape, i.~e.~use polar
+coordinates ({\bf A}) 1 point,
+separated equations ({\bf G}),
+\item solution of oscillation equation ({\bf S}) 1 point,
+\item separation constant from periodicity ({\bf P}) 1 point,
+\item superposition formula for $u$ ({\bf U}) 1 point.
+\end{teilaufgaben}
+\end{bewertung}

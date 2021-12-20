@@ -1,0 +1,24 @@
+R11(r) := sinh(r^2/2)/r;
+R12(r) := cosh(r^2/2)/r;
+
+A: matrix([ R11(1), R12(1) ],
+          [ R11(2), R12(2) ]);
+
+a: invert(A) . matrix([1],[0]);
+float(a);
+
+b: invert(A) . matrix([0],[1]);
+float(b);
+
+u: (a[1,1] * R11(r) + a[2,1] * R12(r)) * cos(phi)
++
+(b[1,1] * R11(r) + b[1,1] * R12(r)) * sin(phi);
+
+E: diff(diff(u,r),r) + diff(u,r)/r + diff(diff(u,phi),phi)/r^2 -r^2*u;
+ratsimp(expand(E));
+
+ratsimp(expand(subst(1, r, u)));
+
+ratsimp(expand(subst(2, r, u)));
+
+

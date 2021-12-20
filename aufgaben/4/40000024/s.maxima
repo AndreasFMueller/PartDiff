@@ -1,0 +1,47 @@
+/*
+R0: sin(r^2/2)/r;
+R1: cos(r^2/2)/r;
+R0: sinh(r^2/2)/r;
+R1: cosh(r^2/2)/r;
+*/
+
+/*
+ratsimp(diff(diff(R0,r),r) + diff(R0,r)/r + R0/(r^2) - R0*r^2);
+ratsimp(diff(diff(R1,r),r) + diff(R1,r)/r + R1/(r^2) - R1*r^2);
+*/
+R:sum(a(i)*r^i, i, -20, 20);
+
+e: expand(diff(diff(R,r),r) + diff(R,r)/r + R/(r^2) - R*r^2);
+
+coeff(e, r, -10);
+coeff(e, r, -9);
+coeff(e, r, -8);
+coeff(e, r, -7);
+coeff(e, r, -6);
+coeff(e, r, -5);
+coeff(e, r, -4);
+coeff(e, r, -3);
+coeff(e, r, -2);
+coeff(e, r, -1);
+coeff(e, r, 0);
+coeff(e, r, 1);
+coeff(e, r, 2);
+coeff(e, r, 3);
+coeff(e, r, 4);
+coeff(e, r, 5);
+coeff(e, r, 6);
+coeff(e, r, 7);
+coeff(e, r, 8);
+coeff(e, r, 9);
+coeff(e, r, 10);
+coeff(e, r, 11);
+coeff(e, r, 12);
+coeff(e, r, 13);
+coeff(e, r, 14);
+coeff(e, r, 15);
+coeff(e, r, 16);
+coeff(e, r, 17);
+
+R: u(r^4) + u(r^(-4))/(r^4);
+e: expand(r^6*(diff(diff(R,r),r) + diff(R,r)/r + R/(r^2) - R*r^2));
+

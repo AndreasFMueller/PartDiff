@@ -1,0 +1,177 @@
+On the rectangular domain
+$\Omega = \{(x,y)\in\mathbb R^2\,|\, 1<x<2\wedge -\pi<y<\pi\}$,
+the differential equation
+\begin{equation}
+\Delta u = x^2u
+\label{40000025:eqn}
+\end{equation}
+is given with boundary conditions
+\begin{equation}
+\left.
+\begin{aligned}
+u(1,y) &= \sin y\\
+u(2,y) &= \cos y
+\end{aligned}
+\quad
+\right\}
+\quad
+\text{for $y\in[-\pi,\pi]$}
+\qquad
+\text{and}
+%\qquad
+\qquad
+\left.
+\begin{aligned}
+u(x,-\pi) &= u(x,\pi)\\
+\frac{\partial u}{\partial y}(x,-\pi) &= \frac{\partial u}{\partial y}(x,\pi)
+\end{aligned}
+\quad\right\}
+\quad
+\text{for $x\in[1,2]$.}
+\end{equation}
+The equations on the right means that the function $y\mapsto u(x,y)$
+can be extended to a differentiable $2\pi$-periodic function for all $y$.
+
+\begin{teilaufgaben}
+\item
+Is the equation elliptic, parabolic er hyperbolic?
+\item
+Use separation to obtain ordinary differential equations that can be
+used to find solutions of they partial differential equation.
+\item
+Solve one of the ordinary differential equations you have obtained in b).
+\item
+Determine the possible values of the separation constant.
+\item
+Write the general solution as a superposition.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+The domain is a rectangle, so wie have work on cartesian coordinates, in
+which the Laplace operator has the form
+\[
+\Delta
+=
+\frac{\partial^2}{\partial x^2}
++
+\frac{\partial^2}{\partial y^2}.
+\]
+This is probably the most famous elliptic partial differential operator.
+\item
+We substitute the ansatz $u(x,y) = X(x) Y(y)$ into the differential
+equation \eqref{40000025:eqn} and obtain
+\begin{align*}
+\Delta u
+=
+\frac{\partial^2 u}{\partial x^2}
++
+\frac{\partial^2 u}{\partial y^2}
+=
+X''(x)Y(y) + X(x)Y''(y)
+&=
+x^2 X(x)Y(x)
+\\
+\frac{X''(x)-x^2X(x)}{X(x)} &= \frac{Y''(y)}{Y(y)}.
+\end{align*}
+The left hand side only depends on $x$, the right hand side only on $y$,
+so both sides must be constant.
+We call the constant $-\lambda^2$, this particular form willl prove to
+be ideal later.
+We get the two separated differential equations
+\begin{align}
+X''(x)-(x^2+\lambda^2)X(x)&=0
+&
+Y''(y)=-\lambda^2 Y(y).
+\label{40000025:separated}
+\end{align}
+\item
+The second equation is an oscillation equation with solutions
+\[
+\sin(\lambda y)
+\qquad\text{and}\qquad
+\cos(\lambda y).
+\]
+\item
+The boundary conditions mean that the solutions are $2\pi$-periodic,
+which implies that $\lambda$ must be an integer, we will write them
+$\lambda=k$, $k\in\mathbb N$.
+\item
+For every possible value $k$, there are two linearly independent 
+solutions $X_{k,1}(x)$ und $X_{k,2}(x)$ for the left hand equation in
+\eqref{40000025:separated}.
+The general solution for $k$ is a linear combination of the form
+$a_{k,1}X_{k,1}(x) + a_{k,2}X_{k,2}(x)$.
+This has to be multiplied by the solutions for $Y(y)$ equation.
+As we have two linearly independent solutions, we need two
+linear combinations of $X_{k,1}(x)$ and $X_{k,2}(x)$.
+This leads to the series
+\begin{equation}
+\begin{aligned}
+u(x,y)
+&=
+\frac{a_{0,1}X_{0,1}(x)+a_{0,2}X_{0,2}(x)}{2}
+\\
+&\qquad
++\sum_{k=1}^\infty
+\bigl(
+(a_{k,1}X_{k,1}(x)+a_{k,2}X_{k,2}(x))\cos ky
++
+(b_{k,1}X_{k,1}(x)+b_{k,2}X_{k,2}(x))\sin ky
+\bigr).
+\end{aligned}
+\label{40000025:series}
+\qedhere
+\end{equation}
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{diskussion}
+For each value of $x$, the series expansion~\eqref{40000025:series}
+is a Fourier series with the value if the linear combination of the
+$X$-functions as coefficient.
+To match them up with the boundary conditions for $u(x,y)$ for $x=1$ and
+$x=2$, we have to expand those boundary conditions as Fourier series
+as well.
+Let the boundary conditions be
+\begin{align*}
+u(1,y) &= f(y)
+&&\text{with Fourier series}&
+f(y)
+&=
+\frac{a^f_0}{2} + \sum_{k=1}^\infty \bigl(a_k^f\cos ky+b_k^f\sin ky\bigr)
+\\
+u(2,y)&=g(y)
+&&\text{with Fourier series}&
+g(y)
+&=
+\frac{a^g_0}{2} + \sum_{k=1}^\infty \bigl(a_k^g\cos ky+b_k^g\sin ky\bigr).
+\end{align*}
+They have to coincide with the Fourier coefficients of $u(x,y)$ on the
+boundaries,
+i.~e.~we get the equations
+\begin{align*}
+a_{k,1}X_{k,1}(1)+a_{k,2}X_{k,2}(1) &= a_k^f \\
+a_{k,1}X_{k,1}(2)+a_{k,2}X_{k,2}(2) &= a_k^g
+\\[5pt]
+b_{k,1}X_{k,1}(1)+b_{k,2}X_{k,2}(1) &= b_k^f \\
+b_{k,1}X_{k,1}(2)+b_{k,2}X_{k,2}(2) &= b_k^g
+\end{align*}
+for the coefficients, which allow to uniquely determine them once the
+values of the $X$-functions for $x=1$ and $x=2$ are known.
+\end{diskussion}
+
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item Elliptic ({\bf E}) 1 point,
+\item separation ansatz using cartesian coordinates ({\bf A}) 1 point,
+separated equations ({\bf S}) 1 point,
+\item solution of oscillation equation ({\bf O}) 1 point,
+\item separation constant from periodicity ({\bf P}) 1 point,
+\item superposition formula~\eqref{40000025:series}
+ or $u$ ({\bf U}) 1 point.
+\end{teilaufgaben}
+\end{bewertung}
+
