@@ -1,0 +1,17 @@
+xi: x/(x^2+y^2);
+eta: -y/(x^2+y^2);
+
+D: matrix(
+[diff(xi,x), diff(eta,x)],
+[diff(xi,y), diff(eta,y)]
+);
+ratsimp(D);
+
+X: Xi/(Xi^2+Eta^2);
+Y: -Eta/(Xi^2+Eta^2);
+
+ratsimp(subst(eta, Eta, subst(xi, Xi, X)));
+ratsimp(subst(eta, Eta, subst(xi, Xi, Y)));
+
+G: ratsimp(expand(subst(Y, y, subst(X, x, D))));
+

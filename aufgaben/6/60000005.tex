@@ -1,4 +1,11 @@
 Consider the coordinate transform
+\begin{figure}
+\centering
+\includeagraphics[]{domain.pdf}
+\caption{$\xi$-$\eta$-coordinate system in the plane as in
+problem~\ref{60000005}
+\label{60000005:domain}}
+\end{figure}
 \[
 \begin{aligned}
 \xi  &= \frac{x}{x^2+y^2} \\
@@ -88,6 +95,8 @@ We conclude that
 \item
 To epress the Laplace operator in $\xi$-$\eta$-coordinates, we have
 to compute the second derivatives:
+\begingroup
+\allowdisplaybreaks
 \begin{align*}
 \frac{\partial^2}{\partial x^2}
 &=
@@ -242,6 +251,7 @@ to compute the second derivatives:
 +
 (\eta^2+\xi^2)^2\frac{\partial^2}{\partial\eta^2},
 \end{align*}
+\endgroup
 where we have used that
 \[
 (\eta^2-\xi^2)^2+4\xi^2\eta^2
@@ -255,3 +265,8 @@ where we have used that
 \]
 \end{teilaufgaben}
 \end{loesung}
+
+\begin{diskussion}
+The coordinate transform in the plane comes from the involution
+$z\mapsto\frac1z$ in the complex plane.
+\end{diskussion}
