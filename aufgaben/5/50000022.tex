@@ -49,24 +49,24 @@ First we compute the Laplace transform with respect to $r$ of the
 differential equation~\eqref{50000022:eqn}, we call the transformed variable
 $s$:
 \begin{align*}
-s^2 (\mathcal{L}u)(s,\varphi)
+s^2 (\mathscr{L}u)(s,\varphi)
    -s \underbrace{u(0,\varphi)}_{\textstyle=1}
    -\underbrace{\frac{\partial u}{\partial r}(0,\varphi)}_{\textstyle=0}
-+s(\mathcal{L}u)(s,\varphi) - \underbrace{u(0,\varphi)}_{\textstyle=1}
++s(\mathscr{L}u)(s,\varphi) - \underbrace{u(0,\varphi)}_{\textstyle=1}
 +
-\frac{\partial^2}{\partial\varphi^2}(\mathcal{L}u)(s,\varphi)
+\frac{\partial^2}{\partial\varphi^2}(\mathscr{L}u)(s,\varphi)
 &=
 \frac2s
 \\
 \Rightarrow\hspace{6cm}
-\frac{\partial^2}{\partial\varphi^2}(\mathcal{L}u)(s\varphi)
+\frac{\partial^2}{\partial\varphi^2}(\mathscr{L}u)(s\varphi)
 +
-(s^2+s) (\mathcal{L}u)(s,\varphi)
+(s^2+s) (\mathscr{L}u)(s,\varphi)
 &=
 \frac2s
 +s+1
 \end{align*}
-Writing $y_s(\varphi)=\mathcal{L}u(s,\varphi)$ and considering
+Writing $y_s(\varphi)=\mathscr{L}u(s,\varphi)$ and considering
 $s$ just a parameter, these can be seen as a family
 \begin{equation}
 y''_s(\varphi) +s(s+1) y_s(\varphi) = \frac{2}s+s+1
@@ -79,9 +79,9 @@ We also need boundary conditions for each of these ordinary differential
 equations, which we can get from \eqref{50000022:bottom} and
 \eqref{50000022:boundary} by using the Laplace transform once more:
 \begin{align*}
-\mathcal{L}u(s,0) &= \frac{1}{s+1}
+\mathscr{L}u(s,0) &= \frac{1}{s+1}
 \\
-\mathcal{L}u(s,{\textstyle\frac{\pi}2}) &= \frac1s
+\mathscr{L}u(s,{\textstyle\frac{\pi}2}) &= \frac1s
 \end{align*}
 So $y_s(\varphi)$ are solutions of~\eqref{50000022:transformedeqn}
 satisfying the boundary conditions

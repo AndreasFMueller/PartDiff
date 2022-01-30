@@ -38,7 +38,7 @@ $B(0)=0$, $B'(0)=1$.
 Show that the functions $A(\sqrt{s}x)$ and $B(\sqrt{s}x)$
 are solutions of the ordinary differential equation obtained in a).
 \item
-Express the Laplace transform $\mathcal{L}u(s,x)$ by means of the functions
+Express the Laplace transform $\mathscr{L}u(s,x)$ by means of the functions
 $A(x)$ and $B(x)$.
 \end{teilaufgaben}
 
@@ -51,13 +51,13 @@ equation into
 \[
 -
 x\biggl(
--u(0,x) + s(\mathcal{L}u)(s,x)
+-u(0,x) + s(\mathscr{L}u)(s,x)
 \biggr)
-+\frac{\partial^2}{\partial x^2} (\mathcal{L}u)(s,x)
++\frac{\partial^2}{\partial x^2} (\mathscr{L}u)(s,x)
 =
 0.
 \]
-Writing $y_s(x) = (\mathcal{L})(s,x)$ simplifies the equation to
+Writing $y_s(x) = (\mathscr{L})(s,x)$ simplifies the equation to
 the family of ordinary differential equations
 \begin{equation}
 y_s''(x)  -sxy_s(x) = 0.
@@ -65,7 +65,7 @@ y_s''(x)  -sxy_s(x) = 0.
 \end{equation}
 The initial conditions $f(t)=e^{-t}$ and $g(t)=1$ also need to be transformed:
 \begin{align*}
-\mathcal{L}f(s)
+\mathscr{L}f(s)
 &=
 \int_0^\infty e^{-t} e^{-st}\,dt
 =
@@ -77,7 +77,7 @@ The initial conditions $f(t)=e^{-t}$ and $g(t)=1$ also need to be transformed:
 =
 \frac1{1+s}
 \\
-\mathcal{L}g(s)
+\mathscr{L}g(s)
 &=
 \int_0^\infty 1\cdot e^{-st}\,dt
 =
@@ -123,7 +123,7 @@ differential equation $y''-xy=0$ for the functions $A(x)$ and $B(x)$.
 So the functions $A(\sqrt{s}x)$ and $B(\sqrt{s}x)$ are solutions of
 the equation \eqref{50000017:ode}.
 \item
-To find $\mathcal{L}u(s,x)$, we have to linearly combine the
+To find $\mathscr{L}u(s,x)$, we have to linearly combine the
 Functions $A(\sqrt{s}x)$ and $B(\sqrt{s}x)$ in such a way that the
 initial conditions are satisfied for all $s$.
 We use coefficients $a(s)$ and $b(s)$  dependent on $s$ for this purpose
@@ -144,7 +144,7 @@ y'_s(0)&= a(s)\sqrt{s}A'(0) + b(s) \sqrt{s}B'(0) = b(s)\sqrt{s} = \frac{1}{s}
 \end{align*}
 so
 \[
-\mathcal{L}u(s,x)
+\mathscr{L}u(s,x)
 =
 \frac1{s+1} A(\sqrt{s}x)
 +

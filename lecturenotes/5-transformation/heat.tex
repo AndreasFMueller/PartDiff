@@ -75,11 +75,11 @@ to get
 +
 s\int_0^{\infty}\hat u(t,k)e^{-st}\,dt
 &=
--k^2{\cal L}\hat u(s,k)
+-k^2\mathscr{L}\hat u(s,k)
 \\
-\hat u(0,k)-s{\cal L}\hat u(s,k)&=k^2{\cal L}\hat u(s,k)
+\hat u(0,k)-s\mathscr{L}\hat u(s,k)&=k^2\mathscr{L}\hat u(s,k)
 \\
-{\cal L}\hat u(s,k)&=\frac{\hat u(0,k)}{s+k^2}.
+\mathscr{L}\hat u(s,k)&=\frac{\hat u(0,k)}{s+k^2}.
 \end{align*}
 
 \subsection{Reverse transform}
@@ -88,7 +88,7 @@ we now have to find the reverse transform.
 In the first step we reverse the Laplace transform to
 formally get
 \begin{align*}
-\hat u(t,k)&={\cal L}^{-1}\left(\frac1{s+k^2}\right)\hat u(0,k)
+\hat u(t,k)&=\mathscr{L}^{-1}\left(\frac1{s+k^2}\right)\hat u(0,k)
 \\
 &=e^{-k^2t}\hat u(0,k).
 \end{align*}

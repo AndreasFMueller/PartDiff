@@ -36,7 +36,7 @@ two solutions $A(x)$ and $B(x)$ of $A''+x^2A=0$ with initial conditions
 $A(0)=1$, $A'(0)=0$, $B(0)=0$ and $B'(0)=1$.
 It can then be shown then that functions $x\mapsto A(\!\sqrt{s}x)$
 and $x\mapsto B(\!\sqrt{s}x)$  are solutions of the equation found in a).
-Express the Laplace transform $\mathcal{L}u(s,x)$ by means of the functions
+Express the Laplace transform $\mathscr{L}u(s,x)$ by means of the functions
 $A(\!\sqrt{s}x)$ and $B(\!\sqrt{s}x)$.
 \end{teilaufgaben}
 
@@ -52,25 +52,25 @@ ordinary differential equation found in a), you can simply assume that.
 The Laplace transform of the equation \eqref{50000018:equation} is
 \[
 x^2\biggl(
--u(0,x) -s\frac{\partial u}{\partial t}(0,x) +s^2\mathcal{L}u(s,x)
+-u(0,x) -s\frac{\partial u}{\partial t}(0,x) +s^2\mathscr{L}u(s,x)
 \biggr)
 +
-\frac{\partial^2}{\partial x^2} (\mathcal{L}u)(s,x)
+\frac{\partial^2}{\partial x^2} (\mathscr{L}u)(s,x)
 =
 0.
 \]
 Substituting the boundary conditions for $t=0$ gives
 \begin{equation}
-x^2s^2\mathcal{L}u(s,x)
+x^2s^2\mathscr{L}u(s,x)
 +
-\frac{\partial^2}{\partial x^2} (\mathcal{L}u)(s,x)
+\frac{\partial^2}{\partial x^2} (\mathscr{L}u)(s,x)
 =
 0
 \qquad\Rightarrow\qquad
 y_s''(x) + x^2s^2y_s(x)=0
 \label{50000018:ode}
 \end{equation}
-using the customary notation $y_s(x)=(\mathcal{L}u)(s,x)$.
+using the customary notation $y_s(x)=(\mathscr{L}u)(s,x)$.
 
 The initial conditions
 $f(t)=\pi$
@@ -78,7 +78,7 @@ and
 $g(t)=e^{-2t}$
 also need to be transformed:
 \begin{align*}
-\mathcal{L}f(s)
+\mathscr{L}f(s)
 &=
 \int_0^\infty \pi\cdot e^{-st}\,dt
 =
@@ -86,7 +86,7 @@ also need to be transformed:
 =
 \frac{\pi}{s}
 \\
-\mathcal{L}g(s)
+\mathscr{L}g(s)
 &=
 \int_0^\infty e^{-2t} e^{-st}\,dt
 =
@@ -132,7 +132,7 @@ y_s'(0)&= a\sqrt{s} A'(0) + b\sqrt{s} B'(0) = b\sqrt{s}
 \end{align*}
 This allows us to write the function $y_s(x)$ as
 \[
-y_s(x) = (\mathcal{L}u)(s,x)
+y_s(x) = (\mathscr{L}u)(s,x)
 =
 \frac{\pi}{s}
 A(\!\sqrt{s}x)

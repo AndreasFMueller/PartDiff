@@ -18,13 +18,13 @@ original differential equation.
 
 \subsection{Definition}
 \begin{definition}
-The Laplace transform ${\cal L}f$ of a function
+The Laplace transform $\mathscr{L}f$ of a function
 $f\colon[0,\infty)\to\mathbb R$ is the function
 \[
-({\cal L}f)(s)=\int_0^\infty f(t)e^{-st}\,dt.
+(\mathscr{L}f)(s)=\int_0^\infty f(t)e^{-st}\,dt.
 \]
 \end{definition}
-Apparently ${\cal L}f$ is well defined for any bounded function $f$.
+Apparently $\mathscr{L}f$ is well defined for any bounded function $f$.
 It is also a linear operation by definition.
 
 \subsection{Examples}
@@ -35,7 +35,7 @@ be useful.
 Let $f(t)=c$ be the constant function.
 Its Lapace transform is
 \[
-({\cal L}f)(s)
+(\mathscr{L}f)(s)
 =
 \int_0^\infty ce^{-st}\,dt
 =
@@ -48,7 +48,7 @@ Its Lapace transform is
 Let $f(t)=e^{-kt}$ with $k>0$ be a bounded exponential function.
 Its Laplace transform is
 \[
-({\cal L}f)(s)=\int_0^\infty e^{-kt}e^{-st}\,dt
+(\mathscr{L}f)(s)=\int_0^\infty e^{-kt}e^{-st}\,dt
 =\int_0^{\infty}e^{-(s+k)t}\,dt
 =
 \left[
@@ -60,9 +60,9 @@ Its Laplace transform is
 \item
 We compute the Laplace transform of the derivative $f'(t)$ of a function
 $f(t)$, namely
-$({\cal L}f')(s)$:
+$(\mathscr{L}f')(s)$:
 \begin{align*}
-({\cal L}f')(s)
+(\mathscr{L}f')(s)
 &=
 \int_0^\infty f'(t)e^{-st}\,dt
 \\
@@ -74,10 +74,52 @@ $({\cal L}f')(s)$:
 &=
 -f(0)+s\int_0^\infty f(t)e^{-st}\,dt
 \\
-&=s({\cal L}f)(s)-f(0).
+&=s(\mathscr{L}f)(s)-f(0).
 \end{align*}
 As promised, the Laplace transform converts a derivative into an
 algebraic operation.
+\item The last formula can be iterated to give the Laplace transform of
+a second or higher order derivative.
+First by writing $f'=g$ we can derive
+\begin{align*}
+(\mathscr{L}f'')(s)
+&=
+(\mathscr{L}g')(s)
+=
+s(\mathscr{L}g)(s)-g(0)
+\\
+&=
+s(\mathscr{L}f')(s)-g'(0)
+=
+s\biggl( s\mathscr{L}f(s)-f(0)\biggr) - f'(0)
+\\
+&=
+s^2(\mathscr{L}f)(s) - sf(0) -f'(0).
+\intertext{Using the same process, we can get a recursion
+formula for the Laplace transform of an $n$-th order derivative.
+Set $g=f^{(n-1)}$ and use $g'=f^{n}$ to simplify}
+(\mathscr{L}f^{(n)})(s)
+&=
+(\mathscr{L}g')(s)
+=
+s(\mathscr{L}g)(s)
+-g(0)
+=
+s(\mathscr{L}f^{(n-1)})(s) - f^{n-1}(0).
+\intertext{Applying this formula repeatedly, we get the general formula
+for the Laplace transform of the $n$-th order derivative}
+(\mathscr{L}f^{(n)})(s)
+&=
+s^n(\mathscr{L}f)(s)
+-
+s^{n-1}f(0)
+-
+s^{n-2}f'(0)
+-
+\dots
+-
+f^{(n-1)}(0).
+\end{align*}
 \end{enumerate}
 
 \subsection{Solving ordinary differential equations}
@@ -89,34 +131,34 @@ with initial condition $x(0)=0$.
 
 The Lapalace transform of the differential equation is
 \begin{equation}
-s({\cal L}x)(s)-x(0)+p({\cal L}x)(s)=({\cal L}f)(s).
+s(\mathscr{L}x)(s)-x(0)+p(\mathscr{L}x)(s)=(\mathscr{L}f)(s).
 \label{laplace:transformeddgl}
 \end{equation}
 We have to determine $x$, so we first solve the
-equation~\eqref{laplace:transformeddgl} for $\mathcal{L}x$ and
+equation~\eqref{laplace:transformeddgl} for $\mathscr{L}x$ and
 then try to transform back.
 
-Solving for $(\mathcal{L}x)(s)$ gives
+Solving for $(\mathscr{L}x)(s)$ gives
 \[
-({\cal L}x)(s)
+(\mathscr{L}x)(s)
 =
-\frac{({\cal L}f)(s)}{s+p}
+\frac{(\mathscr{L}f)(s)}{s+p}
 \]
 To retrieve the solution $x(t)$, we have to transform it back.
 We do this for $f(t)=q$, using the transform
 \[
-({\cal L}f)(s)=\frac{q}{s}.
+(\mathscr{L}f)(s)=\frac{q}{s}.
 \]
 We get
 \begin{align*}
-({\cal L}x)(s)
+(\mathscr{L}x)(s)
 &=
 \frac{q}{s(s+p)}
 \end{align*}
 and try to decompose these fractions using the partial fraction
 decomposition:
 \begin{align*}
-({\cal L}x)(s)
+(\mathscr{L}x)(s)
 &=
 \frac{A}{s} + \frac{B}{s+p}
 =
@@ -128,7 +170,7 @@ A=-B\;\wedge\; A=\frac{q}{p}.
 \end{align*}
 Substituting $A$ and $B$ into the partial fraction decomposition gives
 \begin{align*}
-({\cal L}x)(s)
+(\mathscr{L}x)(s)
 &=
 \frac{q}{p}\frac{1}{s}-\frac{q}{p}\frac{1}{s+p}.
 \end{align*}
@@ -155,7 +197,7 @@ u(0,t)&=0\qquad t>0.
 The Laplace transform of the differential equation with respect to
 the variable $t$ is
 \begin{equation}
-s({\cal L}u)(s,x)-u(0,x)+x\frac{\partial}{\partial x}({\cal L}u)(s,x)
+s(\mathscr{L}u)(s,x)-u(0,x)+x\frac{\partial}{\partial x}(\mathscr{L}u)(s,x)
 =
 \frac{x}{s}.
 \label{laplace:transformedpde}
@@ -163,12 +205,12 @@ s({\cal L}u)(s,x)-u(0,x)+x\frac{\partial}{\partial x}({\cal L}u)(s,x)
 The transform has made the time derivative disappear, it has
 turned into multiplication by $s$.
 For each $s$, the \eqref{laplace:transformedpde} is an ordinary
-differential equationfor the function $x\mapsto ({\cal L}u)(s,x)$
+differential equationfor the function $x\mapsto (\mathscr{L}u)(s,x)$
 with initial condition
-$({\cal L}u)(s,0)=0$.
+$(\mathscr{L}u)(s,0)=0$.
 The solution can be found with any method and is
 \[
-({\cal L}u)(s,x)=\frac{x}{s(s+1)}=\frac{x}{s}-\frac{x}{s+1}.
+(\mathscr{L}u)(s,x)=\frac{x}{s(s+1)}=\frac{x}{s}-\frac{x}{s+1}.
 \]
 Both terms can be transformed back, the solution becomes
 \[
