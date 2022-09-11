@@ -1,0 +1,50 @@
+#! /bin/bash
+#
+# splitpapers -- split PDF into one file per chapter
+#
+# (c) 2020 Prof Dr Andreas Müller, Hochschule Rapperswil
+#
+if [ ! -f lecturenotes.aux ]
+then
+	echo "file lecturenotes.aux missing"
+	exit 1
+fi
+
+if [ ! -d chapters ]
+then
+	mkdir chapters
+fi
+
+awk 'BEGIN {
+	offsetpage = 8
+	startpage = 0
+	identifier = ""
+	chapterno = 0
+	partcounter = 0;
+	printf("pdfjam --outfile chapters/PartDiff-00-frontmatter.pdf lecturenotes.pdf 1-%d\n", offsetpage)
+}
+/newlabel{chapter:/ {
+	s = substr($0, 19, length($0) - 19)
+	i = match(s, "}{{")
+	newidentifier = substr(s, 1, i-1)
+	s = substr(s, i+3, length(s)-i-3)
+	i = match(s, "}{")
+	newchapterno = int(substr(s, 1, i))
+	s = substr(s, i+2, length(s)-i-2)
+	i = match(s, "}{")
+	newpage = int(substr(s, 1, i))
+	firstpage = startpage + offsetpage
+	lastpage = newpage + offsetpage - 1
+	if (lastpage > firstpage) {
+		printf("pdfjam --outfile chapters/PartDiff-%02d-%s.pdf lecturenotes.pdf %d-%d\n", partcounter, identifier, firstpage, lastpage)
+		partcounter++
+	}
+	startpage = newpage
+	chapterno = newchapterno
+	identifier = newidentifier
+}
+END {
+	printf("pdfjam --outfile chapters/PartDiff-%02d-%s.pdf lecturenotes.pdf %d-\n", partcounter, identifier, startpage + offsetpage)
+}' lecturenotes.aux | bash
+
+
