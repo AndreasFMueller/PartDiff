@@ -1,0 +1,83 @@
+Use the Laplace transform to reduce the partial differential equation
+\begin{equation}
+\frac{\partial u}{\partial x}
++
+\frac{1}{\tan y}\frac{\partial u}{\partial y}
+=
+u
+\label{50000025:eqn}
+\end{equation}
+on the domain
+\[
+\Omega
+=
+\biggl\{
+(x,y)
+\;\bigg|\;
+x > 0, 1 < y < \frac32
+\biggr\}
+\]
+with boundary conditions
+\begin{equation}
+\left.
+\begin{aligned}
+u(x,1) &= e^{-ax} &&\text{for} & 0<\mathstrut&x\\
+u(0,y) &= y       &&\text{for} & 1<\mathstrut&y<\frac32
+\end{aligned}
+\quad\right\}
+\label{50000025:boundary}
+\end{equation}
+for some $a>0$
+to a family of ordinary differential equations with suitable boundary
+conditions.
+Do the boundary conditions~\eqref{50000025:boundary} uniquely determine
+the solution?
+
+\begin{loesung}
+Applying the Laplace transform to the variable $x$ in the partial
+differential equation~\eqref{50000025:eqn} equation gives
+\[
+s(\mathscr{L}u)(s,y)
+-
+\underbrace{u(0,y)}_{\displaystyle=y}
++
+\cot y \frac{\partial}{\partial y}(\mathscr{L}u)(s,y)
+=
+(\mathscr{L}u)(s,y).
+\]
+The first boundary condition must also be transformed and gives
+\[
+(\mathscr{L}u)(s,1)
+=
+(\mathscr{L}e^{-ax})(s)
+=
+\frac{1}{s+a}.
+\]
+If we write $f_s(y)=(\mathscr{L}u)(s,y)$ and consider $s$ as a mere
+parameter, we get the ordinary differential equation
+\begin{equation}
+\cot y \cdot f'_s(y) 
++(s-1) f_s(y)
+=
+y
+\label{50000025:ordinary}
+\end{equation}
+on the interval $y\in [1,\frac32)$ with initial condition
+\[
+f_s(1) = \frac{1}{s+a}.
+\]
+The differential equation~\eqref{50000025:ordinary} is a linear
+differential equation of first order with bounded coefficients
+in the specified domain, so it has a unique solution.
+From this we can conclude that the solution of the original 
+partial differential equation also has a unique solution.
+\end{loesung}
+
+\begin{bewertung}
+Choice of variable to transform ({\bf X}) 1 point,
+transform of the equation ({\bf E}) 1 point,
+simplification using the boundary condition ({\bf U}$\mathstrut_0$) 1 point,
+transform of the other boundary condition ({\bf B}) 1 point,
+reformulation as an ordinary differential equation problem ({\bf O}) 1 point,
+argument for well-posedness ({\bf W}) 1 point.
+\end{bewertung}

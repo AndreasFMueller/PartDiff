@@ -1,0 +1,166 @@
+Consider the differential operator 
+\begin{equation}
+L
+=
+\sinh x\,\frac{\partial^2}{\partial x^2}
++
+2\cosh x\,\frac{\partial^2}{\partial x\,\partial y}
++
+\sinh x\,\frac{\partial^2}{\partial y^2}
+\label{90000024:eqn}
+\end{equation}
+in the domain $\Omega=\{(x,y)\mid x\ge \frac12\}$.
+\begin{teilaufgaben}
+\item
+Is $L$ elliptic, parabolic or hyperbolic?
+\item
+Can changes in boundary values on the part $\{(\frac12,y)\mid y>0\}$ 
+of the boundary $\partial\Omega$ of $\Omega$ influence the value
+of a solution of the equation $Lu=0$ with Dirichlet and Neumann
+boundary conditions in the point $P=(1,0)$?
+\end{teilaufgaben}
+
+\begin{hinweis}
+The following formulae about hyperbolic functions may be useful:
+\begin{align*}
+\tanh x &= \frac{\sinh x}{\cosh x}
+&
+\int\frac{dx}{\sinh x} &=
+\log\frac{e^x-1}{e^x+1}
+\\
+\coth x &= \frac{\cosh x}{\sinh x}
+&\int\coth x\,dx &= \log \sinh x
+\end{align*}
+\end{hinweis}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{figure}[ht]
+\centering
+\includeagraphics[]{domain.pdf}
+\caption{Domain and characterstics for the differential operator
+$L$ defined as~\eqref{90000024:eqn} in problem~\ref{90000024}.
+The points in the orange curvilinear triangle can influence the value
+at $P=(1,0)$.
+\label{90000024:char}}
+\end{figure}
+}{}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+The symbol matrix of the operator $L$ is
+\[
+A=\begin{pmatrix}
+\sinh x & \cosh x\\
+\cosh x & \sinh x
+\end{pmatrix}
+\]
+has determinant
+\[
+\det A
+=
+\sinh^2x-\cosh^2x
+=
+-1<0,
+\]
+which means that the operator is hyperbolic.
+\item
+The differential equation for the characteristiscs is
+\[
+\sinh x
+\cdot
+\dot{y}^2
+-2
+\cosh x
+\cdot
+\dot{x}\dot{y}
++
+\sinh x
+\cdot
+\dot{x}^2
+=
+0
+\]
+Dividing by $\dot{x}^2$ and $\sinh x$ gives
+\[
+(y'(x))^2
+-2
+\coth x\cdot y'(x)
++
+1
+=
+0.
+\]
+This is a quadratic equation has the solutions
+\begin{align*}
+y'_\pm(x)
+&=
+\coth x \pm \sqrt{\coth^2 x -1}
+=
+\frac{\cosh x}{\sinh x}
+\pm
+\sqrt{
+\frac{\cosh^2 x-\sinh^2}{\sinh^2x}
+}
+=
+\frac{\cosh x}{\sinh x}
+\pm
+\sqrt{\frac{1}{\sinh^2 x}}
+\\
+&=
+\frac{
+\cosh x \pm 1
+}{
+\sinh x
+}
+=
+\coth x \pm \frac{1}{\sinh x}.
+\end{align*}
+This can easily be integrated to give
+\begin{align*}
+y_\pm(x)
+&=
+\log\sinh x \pm \log\frac{e^x-1}{e^x+1} + C_{\pm}.
+\end{align*}
+A quick plot of $y_{\pm}(x)$ reveals that both families of characteristics
+are graphs of monotonically increasing functions.
+From this it follows that points on the part of the boundary in the upper
+half plane cannot influence the value in points on the $x$-axis, and
+a fortiori in the point $(1,0)$.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{diskussion}
+Using the equations for the characteristic curves it is possible
+to determine the interval on the boundary where changes can affect
+the value of the solution in $(1,0)$.
+To do this, the integration constant for the two solutions needs to
+be determined such that the characteristic passes through $(1,0)$.
+They can be found by solving the equation
+\[
+0
+=
+\log\sinh 1 \pm \log\frac{e-1}{e+1}+C_{\pm}
+\qquad\Rightarrow\qquad
+C_{\pm}
+=
+-\log\sinh 1
+\mp 
+\log\frac{e-1}{e+1}
+\]
+By substituting
+$x=\frac12$ into $y_{\pm}(x)$
+with the right contant $C_\pm$ gives the interval an the line
+$x=\frac12$ which can influence the point $(1,0)$.
+\end{diskussion}
+
+\begin{bewertung}
+Symbol matrix ({\bf S}) 1 point,
+hyperbolicity ({\bf H}) 1 point,
+diffential equation for the characteristidcs ({\bf D}) 1 point,
+factorization or solution for $y'(x)$ ({\bf F}) 1 point,
+solution of differential equation ({\bf Y}) 1 point,
+monotonicity or some other argument to explain the domain of influence
+({\bf I}) 1 point.
+\end{bewertung}
