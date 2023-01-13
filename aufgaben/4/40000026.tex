@@ -1,0 +1,221 @@
+In the domain $\Omega=\{(x,y)\mid x^2+y^2<1\}$ the differential equation
+\begin{equation}
+\frac{\partial^2u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}
++m(x^2+y^2)u=0
+\label{40000026:pde}
+\end{equation}
+with homogeneous Dirichlet boundary conditions is given.
+Reduce the solution of the problem to two ordinary differential 
+equations.
+Also specify the boundary conditions for these two differential equations
+and solve one of them.
+Determine the possible values of constants that you might have introduced
+in the process.
+
+\begin{diskussion}
+Unfortunately, there was a typo in the printed exam, the function $u$
+was missing in the last term on the left hand side of the equation
+\eqref{40000026:pde}.
+This lead to a nonhomogeneous equation, which, by the method discussed
+in in class, should first be simplified by subtracting a particular
+solution.
+To find a particular solution to the equation $\Delta u+mr^2=0$ we try
+a guess $u_p(r)=r^4-1$ and obtain $\Delta u_p=16r^2$, which at least
+works for $m=-16$.
+Subtracting this particular solution leaves a homogenous problem with
+homogeneous boundary conditions as it was discussed in class.
+The remaining equation is the homogeneous equation $\Delta u=0$ which has
+been discussed in class.
+This, although being perfectly in the realm of what has been taught
+during the lectures, is a bit less straightforward than the originally 
+intended problem.
+
+This oversight was taken into account in grading: errors related to the
+second term were essentially ignored, even equations that did not completely
+separate away these terms were counted, if the differential terms were
+handled correctly.
+An additional point was given if the need for polar coordinates was 
+recognized.
+Thus 3 points were given for things that were completely unrelated
+to the erroneous term.
+An additional point was given if it was pointed out that the term
+as it was printed poses a problem.
+
+The domain used in this problem was discussed in class on slides 19--22,
+where the separation method without the additional term $m^2(x^2+y^2)u$
+was discussed.
+Also, the Laplace operator in polar coordinates was introduced there.
+\end{diskussion}
+
+\begin{loesung}
+We use polar coordinates $(r,\varphi)$, in which the Laplace operator
+has the form
+\[
+\Delta 
+=
+\frac{\partial^2}{\partial r^2}
++
+\frac1r
+\frac{\partial }{\partial r}
++
+\frac1{r^2}
+\frac{\partial^2}{\partial\varphi^2}.
+\]
+The differential equation becomes
+\[
+\frac{\partial^2 u}{\partial r^2}
++
+\frac1r
+\frac{\partial u}{\partial r}
++
+\frac1{r^2}
+\frac{\partial^2 u}{\partial\varphi^2}
++mr^2u
+=
+0.
+\]
+A separation ansatz of the form
+$u(r,\varphi)= R(r)\cdot \Phi(\varphi)$
+leads to the equation
+\[
+R''(r)\Phi(\varphi)
++
+\frac1r R'(r)\Phi(\varphi)
++
+\frac{1}{r^2} R(r)\Phi''(\varphi)
++
+mr^2 R(r)\Phi(\varphi)
+=
+0.
+\]
+To separate the variables, the third term needs to be moved 
+to the right hand side:
+\[
+R''(r)\Phi(\varphi)
++
+\frac1r R'(r)\Phi(\varphi)
++
+mr^2 R(r)\Phi(\varphi)
+=
+-
+\frac{1}{r^2} R(r)\Phi''(\varphi).
+\]
+After multiplication by $r^2$ and division by 
+$R(r)\Phi(\varphi)$ we get
+\[
+\frac{r^2R''(r) + rR'(r)+mr^4R(r)}{R(r)}
+=
+-\frac{\Phi''(\varphi)}{\Phi(\varphi)},
+\]
+where the variables have been separated.
+This implies that both sides need tob e constant.
+We use $\mu^2$ as the separation constant and get the two
+ordinary differential equations
+\begin{align*}
+r^2R''(r)+rRr'(r)+(mr^4-\mu^2)R(r)&=0
+&
+&\text{und}&
+\Phi''^(\varphi)&=-\mu^2 \Phi(\varphi)
+\intertext{with boundary conditions}
+ R(1)&=0         &&& \Phi(2\pi)  &= \Phi(0) \\
+R'(0)&=0         &&& \Phi'(2\pi) &= \Phi'(0).
+\end{align*}
+The differential equation for $\Phi(\varphi)$ has the solutions
+$\cos\mu\varphi$ and $\sin\mu\varphi$, but the boundary conditions
+on $\Phi(\varphi)$ are only satisfied if $\mu$ is an integer.
+\end{loesung}
+
+\begin{diskussion}
+The differential equation for $R(r)$ has no easy and well known solution
+but a power series solution can be found as follows using Perron's
+power series method.
+Substituting
+\begin{align*}
+R(r)
+&=
+\sum_{k=0}^\infty a_kr^k
+&R'(r) 
+&=
+\sum_{k=0}^\infty (k-1)a_kr^{k-1}
+\\
+&&
+R''(r)
+&=
+\sum_{k=0}^\infty (k-1)ka_kr^{k-2}
+\end{align*}
+into the differential equation gives
+\[
+\sum_{k=0}^\infty
+k(k-1)
+a_k
+r^k
++
+\sum_{k=0}^\infty
+ka_k r^k
+-
+\sum_{k=0}^\infty
+\mu^2 a_kr^k
++
+\sum_{k=4}^\infty
+m a_{k-4}r^k
+=
+0.
+\]
+For the terms $k\ge 4$ we get
+\begin{align*}
+\sum_{k=4}^\infty \bigl(k(k-1)a_k+ka_k -\mu^2 a_k+ma_{k-4}\bigr)r^k
+&=
+\sum_{k=4}^\infty \bigl((k^2-\mu^2)a_k + ma_{k-4}\bigr) r^k
+&&\Rightarrow&
+(k^2-\mu^2) a_k&= m a_{k-4}.
+\intertext{For $k<4$ we have}
+(k^2-\mu^2)a_k&=0.
+\end{align*}
+Because $\mu$ is an integer, precisely one of the factors 
+$(k^2-\mu^2)$ will be zero.
+This implies that
+\[
+a_k 
+=
+\begin{cases}
+\displaystyle
+\frac{m}{k^2-\mu^2}a_{k-4}&\qquad\text{for $k\ge 4$ and $k\ne \mu$}\\
+\text{arbitrary}&\qquad\text{for $k=\mu$}
+\end{cases}
+\]
+In particular, all coefficients $a_{\mu-4l}=0$ for any natural number.
+It follows that $\mu$ is the lowest index, for which $a_k=0$.
+
+This implies that $a_\mu$ can be chosen, lets call it $a$, then all the
+other nonzero coefficients are
+\[
+a_{\mu+4l}
+=
+a
+\cdot
+\frac{m}{(\mu+4l)^2-\mu^2}
+\cdot
+\frac{m}{(\mu+4(l-1))^2-\mu^2}
+\cdots
+=
+a
+\frac{m}{8l\mu+16l^2}
+\cdot
+\frac{m}{8(l-1)\mu+16(l-1)^2}
+\cdots
+\frac{m}{8\mu +16}.
+\]
+Unfortunatley, this is still not an easily identifiable function, but
+it offers a way to numerically computing a solution.
+\end{diskussion}
+
+\begin{bewertung}
+Need for polar coordinates ({\bf P}) 1 point,
+Laplace operator in polar coordinates ({\bf L}) 1 point,
+Separation ansatz ({\bf A}) 1 point,
+separated equations ({\bf E}) 1 point,
+boundary conditions for the separated equations ({\bf B}) 1 point,
+solution of the $\Phi(\varphi)$-equation ({\bf S}) 1 point,
+determination of $\mu$ ({\bf M}) 1 point.
+\end{bewertung}
+

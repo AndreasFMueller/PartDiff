@@ -1,0 +1,200 @@
+Consider the domain $\Omega$ as depicted in figure~\ref{40000027:domain}.
+\begin{figure}[h]
+\centering
+\includeagraphics[]{domain.pdf}
+\caption{Domain for problem~\ref{40000027} with $\xi$-$\eta$-coordinate
+grid.
+\label{40000027:domain}}
+\end{figure}
+The differential equation
+\begin{equation}
+\Delta u = \frac{\lambda}{r^2} u,
+\label{40000027:dgl}
+\end{equation}
+where $r^2= x^2 +y^2$, is to be solved with homogeneous boundary
+conditions.
+
+There is a $\xi$-$\eta$-coordinate system with coordinates
+\[
+\left.
+\begin{aligned}
+\xi  &= \frac{ x}{x^2+y^2}\\
+\eta &= \frac{-y}{x^2+y^2}
+\end{aligned}
+\quad\right\}
+\qquad\text{and}\qquad
+\left\{\quad
+\begin{aligned}
+x &= \frac{\xi}{\xi^2+\eta^2}\\
+y &= \frac{-\eta}{\xi^2+\eta^2},
+\end{aligned}
+\right.
+\]
+in which the the domain has the description
+\begin{equation}
+\Omega
+=
+\{ (\xi,\eta)\mid 1<\xi<2\text{ and } -1< \eta< 0\}.
+\label{40000027:domainxieta}
+\end{equation}
+Also, the Laplace operator has the form
+\[
+\Delta
+=
+(\xi^2+\eta^2)
+\biggl(\frac{\partial^2}{\partial \xi^2}
++
+\frac{\partial^2}{\partial \eta^2}\biggr)
+\]
+in these coordinates.
+\begin{teilaufgaben}
+\item
+Write the differential equation completely in $\xi$-$\eta$-coordinates.
+\item
+Using these coordinates, reduce the differential equation~\eqref{40000027:dgl}
+to two ordinary differential equations with suitable boundary conditions.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+To write the differential equation in $\xi$-$\eta$-coordinates, we first
+express the factor $1/r^2$ in these coordinates:
+\[
+\frac{1}{r^2}
+=
+\frac{1}{x^2+y^2}
+=
+\frac{1}{
+\displaystyle
+\frac{\xi^2}{(\xi^2+\eta^2)^2}
++
+\frac{\eta^2}{(\xi^2+\eta^2)^2}
+}
+=
+\frac{(\xi^2+\eta^2)^2}{\xi^2+\eta^2}
+=
+\xi^2+\eta^2.
+\]
+Using the expression for the Laplace operator in $\xi$-$\eta$-coordinates,
+the differential equation becomes
+\[
+(\xi^2+\eta^2)
+\biggl(
+\frac{\partial^2 u}{\partial\xi^2}
++
+\frac{\partial^2 u}{\partial\eta^2}
+\biggr)
+=
+\lambda(\xi^2+\eta^2) u.
+\]
+Because $\xi^2+\eta^2>0$, we can divide by it and get the differential
+equation
+\begin{equation}
+\frac{\partial^2 u}{\partial \xi^2}
++
+\frac{\partial^2 u}{\partial \eta^2}
+=
+\lambda u.
+\label{40000027:transformed}
+\end{equation}
+on the domain $\Omega$ expressed as in \eqref{40000027:domainxieta},
+i.~e.~on a rectangle in the $\xi$-$\eta$-plane.
+\item
+The equation~\eqref{40000027:transformed}
+has in fact been solved in class and it turns out
+that the solutions are products of trigonometric functions.
+The solution is summarized below.
+
+This equation can easily be solved using the separation ansatz
+$u(\xi,\eta)=X(\xi)Y(\eta)$, which leads to
+\[
+X''(\xi)Y(\eta)+X(\xi)Y''(\eta) = X(\xi)Y(\eta),
+\]
+and after division by $X(\xi)Y(\eta)$
+\[
+\frac{X''(\xi)}{X(\xi)}
++
+\frac{Y''(\eta)}{Y(\eta)}
+=
+\lambda.
+\]
+Separation gives the two equations
+\begin{equation}
+\frac{X''(\xi)}{X(\xi)}
+=
+\lambda
+-
+\frac{Y''(\eta)}{Y(\eta)},
+\label{40000027:dgl}
+\end{equation}
+where each sides depends only on one variable.
+Each side is therefore equal to a constant $\mu$, giving
+the separated equations
+\[
+X''(\xi) = \mu X(\xi)
+\qquad\text{and}\qquad
+Y''(\eta) = (\lambda -\mu) Y(\eta).
+\]
+The homogeneous boundary conditions for $u(x,y)$ become
+the homogeneous boundary conditions
+\[
+\begin{aligned}
+X(1)&=0\\
+X(2)&=0
+\end{aligned}
+\qquad\text{and}\qquad
+\begin{aligned}
+Y(-1)&=0\\
+Y(0)&=0
+\end{aligned}
+\]
+for $X(\xi)$ and $Y(\eta)$.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{diskussion}
+The differential equations~\eqref{40000027:dgl} can easily be solved using
+trigonometric functions.
+The equation for $X(\xi)$ has solutions
+\[
+X(\xi) = \cos \sqrt{-\mu}\xi
+\qquad\text{and}\qquad
+X(\xi) = \sin \sqrt{-\mu}\xi,
+\]
+but the homogeneous boundary conditions can only be satisfied if $\sqrt{-\mu}$
+ist an integer multiple of $\pi$ or $\mu=-k^2\pi^2$.
+Similarly, the equation for $Y(\eta)$ has solutions
+$\sin \sqrt{\mu-\lambda}\eta$, but again, to satisfy the homogeneous
+boundary conditions, $\sqrt{\mu-\lambda}$ must be an integer multiple of
+$\pi$.
+Therefore
+\[
+\lambda - \mu = -l^2\pi^2
+\qquad\Rightarrow\qquad
+\lambda = -(l^2 + k^2)\pi^2.
+\]
+So the solutions the equation are
+\[
+u_{kl}(\xi,\eta)
+=
+X(\xi)Y(\eta)
+=
+\sin k\pi\xi \sin l\pi\eta.
+\qedhere
+\]
+\end{diskussion}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item
+$r$ in $\xi$-$\eta$-coordinates ({\bf R}) 1 point,
+equation \eqref{40000027:dgl} in $\xi$-$\eta$-coordinates ({\bf D}) 1 point,
+\item
+Separation ansatz ({\bf S}) 1 point,
+equation with separated variables ({\bf V}) 1 point,
+separated differential equations ({\bf E}) 1 point,
+boundary conditions ({\bf B}) 1 point.
+\end{teilaufgaben}
+\end{bewertung}
