@@ -1,0 +1,114 @@
+\begin{teilaufgaben}
+\item 
+The function $u(x)$ is defined on the interval $\Omega = [0, 1].$
+
+The function satisfies in $\Omega$ 
+\[
+-u''(x) = 0
+\]
+and $u(0) = 40$ as well as $u(1) = 10$ on the boundary of $\Omega$.  
+
+Determine approximate values for $u(1/3)$ and $u(2/3)$ by the finite element method. 
+
+Use linear finite elements with $h = 1/3$.
+\ifthenelse{\boolean{pruefung}}{\hfill{(2 points)}}{}
+\item
+The function $u(x)$ is defined on the interval $\Omega = [0, 1].$
+
+The function satisfies in $\Omega$ 
+\[
+x \cdot u''(x) - u'(x) = 3 \cdot x^2
+\]
+and $u(0) = 0, \  u(1) = 0$ on the boundary of $\Omega$.  
+
+Determine an approximation function $\tilde u(x)$ for $u(x)$ with the method of Galerkin.
+
+Use the ansatz $\tilde u(x) = a_1 \cdot (x^2-x) + a_2 \cdot (x^3-x).$
+\ifthenelse{\boolean{pruefung}}{\hfill{(4 points)}}{}
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+The corresponding Ritz matrix is
+\[
+R
+=
+\left[\begin{array}{rrrr}
+3 & -3 & 0 & 0 \\
+-3 & 6 & - 3 & 0 \\
+0 & -3 & 6 & -3 \\
+0 & 0 & -3 & 3
+\end{array}\right],
+\tag{\bf 1P}
+\]
+whereas the Ritz vector $\underline{r}$ is  zero.
+The vector of the knot variables is
+\[
+\underline{a}
+=
+\left(\begin{array}{r} 40 \\ a_1 \\ a_2 \\ 10 \end{array}\right).
+\]
+Reduction of the Ritz system
+$R \cdot  \underline{a} = \underline{0}$ leads to the system 
+\[
+\left[\begin{array}{rr}  6 & - 3  \\  -3 & 6  \end{array}\right]
+\cdot
+\left(\begin{array}{r} a_1 \\ a_2 \end{array}\right)
++
+\left(\begin{array}{r} -120 \\ -30 \end{array}\right)
+=
+\left(\begin{array}{r} 0 \\0 \end{array}\right).
+\]
+Its solution is $\underline{a} = (30, 20)$.
+Therefore we have $\tilde u(1/3) = 30$ and
+$\tilde u(2/3) = 20.$
+\hfill{({\bf 1P})}
+
+\item
+Plugging
+$\tilde u'(x) = a_1 \cdot (2 \cdot x - 1) + a_2 \cdot (3 \cdot x^2 - 1)$
+and
+$\tilde u''(x) = a_1 \cdot 2 + a_2 \cdot 6 \cdot x$
+into the left side of the differential equation we obtain
+\[
+a_1 + a_2 \cdot (1+3 \cdot x^2).
+\tag{\bf 1P}
+\]
+By Galerkin $a_1$ and $a_2$ have to satisfy the equations
+\begin{align*}
+\int_0^1 (a_1 + a_2 \cdot (1+3 \cdot x^2)) \cdot (x^2 -x) \, dx
+&=
+\int_0^1 3 \cdot x^2 \cdot (x^2 -x) \, dx
+\intertext{and}
+\int_0^1 (a_1 + a_2 \cdot (1+3 \cdot x^2)) \cdot (x^3 - x) \, dx
+&=
+\int_0^1 3 \cdot x^2 \cdot (x^3 - x) \ dx.
+\tag{\bf 1P} 
+\end{align*}
+Computing the integrals we obtain the system of two linear equations
+\[
+\left[\begin{array}{cc} -1/8 & -19/60  \\ -1/4 & -1/2 \end{array}\right]
+\cdot
+\left(\begin{array}{c} a_1 \\ a_2 \end{array}\right)
+=
+\left(\begin{array}{c} -3/20 \\ -3/12 \end{array}\right).
+\tag{\bf 1P}
+\]
+Its solution is $(a_1, a_2) = (-1,1)$ and therefore the approximation
+function is
+\[
+\tilde u(x) = x^3 - x^2.
+\tag{\bf 1P}
+\]
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item 2 points
+\item 4 points
+\end{teilaufgaben}
+\end{bewertung}
+
+Grade key for part 2 of the exam: $\text{grade} = \displaystyle\frac{\text{points}}4 + 1.5$

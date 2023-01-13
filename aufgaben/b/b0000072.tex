@@ -1,0 +1,80 @@
+\begin{teilaufgaben}
+\item
+\ifthenelse{\boolean{pruefung}}{(2 points)}{}
+The function $u(x)$ is defined on the interval $\Omega = [0, 1]$.
+
+The function satisfies in $\Omega$ 
+\[
+-u''(x) = 1
+\]
+and $u(0) = u(1) = 0$ on the boundary of $\Omega$.  
+
+Determine an approximate value for $u(1/2)$ by the finite element method. 
+
+Use linear finite elements with $h = 1/2$.
+
+\item
+\ifthenelse{\boolean{pruefung}}{(4 points)}{}
+The function $u(x)$ is defined on the interval $\Omega = [-1, 1].$
+
+The function satisfies in $\Omega$ 
+\[
+u''(x) + u'(x) = 2 \cdot x + 2
+\]
+and $u(-1) = 1$, $u(1) = 1$ on the boundary of $\Omega$.  
+
+Determine an approximation function $\tilde u(x)$ for $u(x)$ with the
+method of Galerkin.
+
+Use the ansatz $\tilde u(x) = 1 + a_1 \cdot (x^2-1) + a_2 \cdot (x^4-1).$
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Set
+\[
+R
+=
+\left[\begin{array}{rrr} 2 & -2 & 0  \\ -2 & 4 & - 2 \\ 0 & -2 & 2 \end{array}\right]
+\qquad\text{and}\qquad
+\underline{b}
+=
+\left(\begin{array}{r} * \\ 1/2 \\ * \end{array}\right).
+\]
+Reduction leads to
+\[
+4 \cdot a = 1/2
+\qquad\text{and}\qquad
+a = 1/8.
+\]
+\item
+Set
+\[
+G
+=
+\left[\begin{array}{cc} -8/3 & -16/5  \\ -16/5 & -32/7 \end{array}\right]
+\qquad\text{and}\qquad
+\underline{g}
+=
+\left(\begin{array}{c} -8/3 \\ -16/5 \end{array}\right).
+\]
+Then $G \cdot \underline{a} = \underline{g}$.
+Therefore 
+\[
+\underline{a} = (1,0)
+\]
+and
+\[
+\tilde u(x) = x^2.
+\qedhere
+\]
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item 2 points
+\item 4 points
+\end{teilaufgaben}
+\end{bewertung}
