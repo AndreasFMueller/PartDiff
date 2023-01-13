@@ -1,0 +1,5 @@
+u: sin(y+log(sin(x)))*sin(x);
+diff(u,x);
+diff(u,y);
+e: diff(u,x) / tan(x) - diff(u,y) - u;
+ratsimp(expand(e));

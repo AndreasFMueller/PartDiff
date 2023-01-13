@@ -1,0 +1,3 @@
+u: cos(x+log(cos(y)))/cos(y);
+diff(u,x);
+diff(u,y);
