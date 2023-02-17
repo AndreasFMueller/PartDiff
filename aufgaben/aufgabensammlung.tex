@@ -35,6 +35,8 @@
 \usepackage{color}
 \usepackage{tikz}
 \input{../common/linsys.tex}
+\newboolean{pruefung}
+\setboolean{pruefung}{false}
 \makeindex
 \begin{document}
 \pagestyle{fancy}
@@ -75,23 +77,23 @@ OST Ostschweizer Fachhochschule, Rapperswil, 2008-2022
 \renewcommand{\qedsymbol}{$\bigcirc$}
 }{\end{proof}}
 \mainmatter
-\input uebungen.tex
+\input{uebungen.tex}
 \setboolean{loesungen}{true}
 \aufgabetoplevel{./}
 
 \chapter{Introductory examples}
 \rhead{Introductory examples}
-\input 1.tex
+\input{1.tex}
 \chapter{Terminology and Notation}
 \rhead{Terminology and Notation}
-\input 2.tex
+\input{2.tex}
 \chapter{Geometry of partial differential equations of first order
 \label{chapter:separation}}
 \rhead{PDE of first order}
-\input 3.tex
+\input{3.tex}
 \chapter{Separation of Variables\label{chapter:separation}}
 \rhead{Separation}
-\input 4.tex
+\input{4.tex}
 \chapter{Transformation}
 \rhead{Transformation}
 Some problems from chapter~\ref{chapter:separation}
@@ -99,23 +101,23 @@ can also be solved with the transform method.
 They are shown again in this chapter with an alternative solution.
 \bigskip
 
-\input 5.tex
+\input{5.tex}
 \chapter{Partial differential equations of second order}
 \rhead{PDE of second order}
-\input 6.tex
+\input{6.tex}
 \chapter{Elliptic partial differential equations}
 \rhead{Elliptic PDE}
-\input 7.tex
+\input{7.tex}
 \chapter{Parabolic partial differential equations}
 \rhead{Parabolic PDE}
-\input 8.tex
+\input{8.tex}
 \chapter{Hyperbolic partial differential equations}
 \rhead{Hyperbolic PDE}
-\input 9.tex
+\input{9.tex}
 %\chapter{Nichtlineare partielle Differentialgleichungen}
 %\rhead{Nichtlineare PDGL}
-%\input a.tex
+%\input{a.tex}
 \chapter{Exam problems for PDE}
 \rhead{Numerics of PDE}
-\input b.tex
+\input{b.tex}
 \end{document}
