@@ -1,0 +1,120 @@
+(2 points + 4 points)
+\begin{teilaufgaben}
+\item
+The function $u(x,t)$ is defined on the upper half plane
+$\Omega = (-\infty,\infty) \times [0,\infty)$.
+
+The function $u(x,t)$ satisfies in $\Omega$ the equation
+\[
+u_{x}(x,t) + u_{t}(x,t) = 0
+\]
+and  $u(x,0) = x^2$ on the boundary of $\Omega$.
+
+Determine an approximate value for $u(0,2)$. 
+
+Use the upwind scheme with $\Delta x = 1$ and $\Delta t = 1.$
+
+\item
+The function $u(x,t)$ is defined on the strip
+$\Omega = [-2, 2] \times [0,\infty)$.
+
+The function $u(x,t)$ satisfies in $\Omega$ the equation
+\[
+u_{xx}(x,t) = u_{tt}(x,t)
+\]
+and  $u(-2,t) = 0$, $u(2,t) = 0$ on the boundary of $\Omega$. 
+
+The function $u(x,t)$ also satisfies the initial conditions
+\[
+u(x,0) = 4 - x^2 \ \ \ \mbox{and} \ \ \ u_t(x,0) = 4 - x^2.
+\]
+
+Determine approximate values for $u(-1,1)$, $u(0,1)$ and $u(1,1)$  
+
+Use finite differences with $\Delta x = 1$ and $\Delta t = 1/2.$
+\end{teilaufgaben}
+
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+We use the upwind scheme with $r = 1$.
+The corresponding iteration formula is
+\begin{equation}
+\tilde u_{j,k+1} = \tilde u_{j-1,k}.
+\tag{\bf 1P}
+\end{equation}
+Therefore
+\begin{equation}
+\tilde u(0,2) = \tilde u(-1,1) = \tilde u(-2,0)
+=
+4.
+\tag{\bf 1P}
+\end{equation}
+
+\item
+We have $f(x) = 4 - x^2$ and $g(x) = 4 - x^2$. 
+
+Hence for the first time step we have by Taylor
+\begin{equation}
+\tilde u(x_j, 1/2)
+=
+(4 - x_j^2) \cdot 1 + (4 - x_j^2) \cdot 1/2 - 2/2 \cdot (1/2)^2
+\tag{\bf 1P}
+\end{equation}
+where $x_{-1} = -1$, $x_0 = 0$ and $x_1 = 1$.
+Therefore
+\begin{equation}
+\tilde u(-1, 1/2)
+=
+17/4, \tilde u(0, 1/2) = 23/4, \tilde u(1, 1/2)
+=
+17/4.
+\tag{\bf 1P}
+\end{equation}
+
+For the second time step we use the leapfrog scheme with $r = 1/2$. We have
+\begin{gather}
+\tilde u(-1, 1)
+=
+1/4 \cdot \tilde u(-2, 1/2)
++
+6/4 \cdot \tilde u(-1,1/2)
++
+1/4 \cdot  \tilde u(0, 1/2)
+-
+\tilde u(-1,0)
+\notag
+\\
+\tilde u(0, 1)
+=
+1/4 \cdot \tilde u(-1, 1/2)
++
+6/4 \cdot \tilde u(0,1/2)
++
+1/4 \cdot  \tilde u(1, 1/2)
+-
+\tilde u(0,0)
+\notag
+\\
+\tilde u(1, 1)
+=
+1/4 \cdot \tilde u(0, 1/2)
++ 6/4 \cdot \tilde u(1,1/2)
++ 1/4 \cdot  \tilde u(2, 1/2)
+-
+\tilde u(1,0).
+\tag{\bf 1P}
+\end{gather}
+
+This leads to
+\begin{equation}
+\tilde u(-1, 1)
+=
+77/16, \ \tilde u(0, 1) = 108/16, \ \tilde u(1, 1)
+=
+77/16.
+\tag{\bf 1P}
+\end{equation}
+\end{teilaufgaben}
+\end{loesung}

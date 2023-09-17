@@ -1,0 +1,51 @@
+For the domain $\Omega = (0,1)$, a function
+$u\colon\overline{\Omega}\to\mathbb{R}:x\mapsto u(x)$ is given.
+\begin{teilaufgaben}
+\item
+Write down Dirichlet boundary conditions on the left
+boundary point and Neumann boundary points on the right boundary.
+\item
+White kind of boundary conditions are the following
+\[
+u(x)
++
+x\frac{\partial u}{\partial x}(x)
+=
+1291
+\qquad
+\text{for $x\in \{0,1\}$}
+\]
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Dirichlet boundary conditions specify values, while Neumann
+boundary conditions specify normal derivatives, which are identical to
+derivatives with respect to $x$ in this case.
+So the boundary conditions required are
+\begin{align*}
+\text{Dirichlet boundary condition at $x=0$:}&
+&
+u(0)&= a
+\\
+\text{Neumann boundary condition at $x=1$:}&
+&
+\frac{\partial u}{\partial x}(1)=u'(1)&= b
+\end{align*}
+\item
+For $x=1$, this condition reduces to
+\[
+u(1) + \frac{\partial u}{\partial x}(1)=1291,
+\]
+which is a mixed boundary condition.
+For $x=0$ however, the second term vanishes and the condition reduces to
+\[
+u(0) = 1291,
+\]
+which is a Dirichlet boundary condition.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+

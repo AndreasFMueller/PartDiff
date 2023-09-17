@@ -1,0 +1,85 @@
+Find the function $F$ that describes the following differential
+expressions:
+\[
+\frac{\partial u}{\partial x_1}
+-
+\frac{\partial u}{\partial x_2}
+\frac{\partial u}{\partial x_3},
+\qquad
+\frac{\partial u}{\partial x_1}
+-
+\frac{\partial }{\partial x_2}
+\frac{\partial u}{\partial x_3},
+\qquad
+\frac{\partial u}{\partial x_1}
+-
+x_2
+\frac{\partial u}{\partial x_3},
+\]
+Which ones are linear?
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+We need variables that stand for the derivatives of $u$
+with respect to $x_1$, $x_2$ und $x_3$.
+We use $p_1$, $p_2$ and $p_3$ for that and get the function
+$F(p_1,p_2,p_3)=p_1-p_2p_3$.
+In fact
+\[
+F\biggl(
+\frac{\partial u}{\partial x_1},
+\frac{\partial u}{\partial x_2},
+\frac{\partial u}{\partial x_3}
+\biggr)
+=
+\frac{\partial u}{\partial x_1}
+-
+\frac{\partial u}{\partial x_2}
+\frac{\partial u}{\partial x_3}
+\]
+This expression is not linear, as it involves the product $p_2p_3$.
+\item We need variables for the first order derivative of $u$ with
+respect to $x_1$, which we call $p_1$, and for the second order
+derivative with respect to $x_2$ and $x_3$, which we call $t_{23}$.
+Then we can use the function $F(p_1,t_{23}) = p_1-t_{23}$.
+In fact
+\[
+F\biggl(
+\frac{\partial u}{\partial x_1},
+\frac{\partial^2 u}{\partial x_2\partial x_3}
+\biggr)
+=
+\frac{\partial u}{\partial x_1}
+-
+\frac{\partial^2 u}{\partial x_2\partial x_3}
+=
+\frac{\partial u}{\partial x_1}
+-
+\frac{\partial}{\partial x_2}
+\frac{\partial u}{\partial x_3}.
+\]
+This expression is linear.
+\item
+We need variables for the first order derivatives of $u$ with
+respect to $x_1$ and $x_3$, which we call $p_1$ und $p_3$.
+In addition, the function $F$ depends on $x_2$, as it appears as a
+variable in the expression.
+Then we can use $F(x_2,p_1,p_3)=p_1-x_2p_3)$.
+In fact
+\[
+F\biggl(
+x_2,
+\frac{\partial u}{\partial x_1},
+\frac{\partial u}{\partial x_3}
+\biggr)
+=
+\frac{\partial u}{\partial x_1}
+-
+x_2
+\frac{\partial u}{\partial x_3}.
+\]
+This expression is linear.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}

@@ -1,0 +1,39 @@
+Given the following first order partial differential equation, derive
+the differential equations for the characteristic curves:
+\[
+x
+\frac{\partial u}{\partial x}
++
+u
+\frac{\partial u}{\partial y}
+=
+y
+\]
+
+\begin{loesung}
+The coefficients of this quasilinear PDE of first order are
+\begin{align*}
+a(x,y,u)&= x \\
+b(x,y,u)&= u \\
+c(x,y,u)&= y.
+\end{align*}
+Whence we derive the differential equation for the three functions
+$x(t)$, $y(t)$ and $u(t)$:
+\[
+\frac{d}{dt}
+\begin{pmatrix}
+x(t)\\y(t)\\u(t)
+\end{pmatrix}
+=
+\begin{pmatrix}
+x(t)\\u(x)\\y(t)
+\end{pmatrix}
+\quad\Rightarrow\quad
+\begin{aligned}
+\dot{x}&=x\\
+\dot{y}&=u\\
+\dot{u}&=y
+\end{aligned}
+\qedhere
+\]
+\end{loesung}

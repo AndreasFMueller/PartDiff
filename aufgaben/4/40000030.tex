@@ -1,0 +1,41 @@
+Use a product ansatz $u(x,y) = X(x)Y(y)$ 
+for the differential equation
+\[
+\frac{\partial^2}{\partial x \partial y} u
+=
+\lambda u.
+\]
+
+\begin{loesung}
+Substituting into the differential equation we get
+\begin{align*}
+\frac{\partial}{\partial x} (X(x)Y(y))
+&=
+X'(x) Y(y)
+\\
+\frac{\partial}{\partial y} (X'(x)Y(y))
+&=
+X'(x)Y'(y)
+\\
+\Rightarrow\qquad
+X'(x) Y'(y) &= \lambda X(x) Y(y).
+\end{align*}
+To separate, divide by $X(x)$ and by $Y'(y)$ to get
+\[
+\frac{X'(x)}{X(x)}
+=
+\lambda
+\frac{Y(y)}{Y'(y)}.
+\]
+Both sides need to be constant so we get the two equations
+\begin{align*}
+\frac{X'(x)}{X(x)}&=\mu
+&
+\lambda\frac{Y(x)}{Y'(y)}&=\mu
+\\
+X'(x)&=\mu X(x)
+&
+Y'(x)&=\frac{\lambda}{\mu}Y(y)
+\qedhere
+\end{align*}
+\end{loesung}

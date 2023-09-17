@@ -1,0 +1,37 @@
+Which of the following sets is open, i.~e.~a domain?
+Also identify the boundary points.
+\begin{teilaufgaben}
+\item $A = \{x\in \mathbb{R} \mid 1<x<2\}$
+\item $B = \{x\in \mathbb{R} \mid 1<x\le 2\}$
+\item $C = \{x\in \mathbb{R} \mid x^2 < 1\}$
+\item $D = \{x^2\mid x \in \mathbb{R} \wedge x < 1\}$
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+$A$ is the open intervall between $1$ and $2$, it does not contain
+the end points and thus with every point there is a small neighborhood
+contained in $A$.
+\item
+$B$ is $A$ with the point $2$ added.
+This point does not have a neighborhood completely contained within $B$,
+as every such neighborhood contains real numbers $>2$ which are not in $A$.
+Thus $B$ is not open.
+\item
+$C$ ist the open intervall $(-1,1)$, this similarly to a), it is open
+and has boundary points $\pm 1$.
+\item
+Since the condition in the definition of $D$ allows for all negative
+real numbers, their squares are nonnegative and thus
+$D$ contains all nonegative numbers.
+So $D=\{x\in \mathbb{R}\mid x\ge 0\}=[0,\infty)$.
+The point $0$ is a boundary point contained in $D$, $D$ cannot be open
+as every neighborhood of the point $0$ contains negative numbers
+which are not contained in $D$.
+So $D$ is not open.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+

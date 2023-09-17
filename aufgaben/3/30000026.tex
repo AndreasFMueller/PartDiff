@@ -1,0 +1,195 @@
+On the domain
+\(
+\Omega = \{(x,y) \mid x>1\},
+\)
+the partial differential equation
+\begin{equation}
+x
+\frac{\partial u}{\partial x}
++
+u
+\frac{\partial u}{\partial y}
+=
+y
+\label{30000026:pde}
+\end{equation}
+is given with homogeneous boundary conditions
+\[
+u(1,y) = 0, \qquad y\in \mathbb{R}.
+\]
+Find the solution $u(x,y)$.
+
+\begin{hinweis}
+It may be useful to note that the system of ordinary differential
+equations
+\[
+\left.
+\begin{aligned}
+\dot{X} &= Y\\
+\dot{Y} &= X
+\end{aligned}
+\right\}
+\qquad\text{has solutions}\qquad
+\left\{
+\begin{aligned}
+X &= A\cosh t + B\sinh t\\
+Y &= A\sinh t + B\cosh t.
+\end{aligned}
+\right.
+\]
+\end{hinweis}
+
+\begin{loesung}
+\begin{figure}
+\centering
+\includeagraphics[]{solution.pdf}
+\caption{Solution surface of the partial differential equation
+\eqref{30000026:pde}.
+The characteristic curves are drawn in red, the Cauchy initial curve
+in green.
+The projection of the characteristic curves into the $x$-$y$-plane is
+shown in light red.
+\label{30000026:fig}}
+\end{figure}
+This is a quasilinear partial differential equation of first order
+which can be solved using the method of characteristics.
+The differential equation for the characteristics is
+\begin{equation}
+\frac{d}{dt}
+\begin{pmatrix*}
+x\\
+y\\
+u
+\end{pmatrix*}
+=
+\begin{pmatrix*}
+x\\
+u\\
+y
+\end{pmatrix*}
+\qquad\Rightarrow\qquad
+\dot{x} = x \qquad\Rightarrow\qquad x(t) = x_0e^t.
+\end{equation}
+The boundary is specified by $x=1$, which means that in order for the 
+characteristic curve to start in point $(1,y_0)$, then we must have
+$1=x_0$.
+
+The two functions $u(t)$ und $y(t)$ satisfy the equations
+\begin{equation}
+\left.
+\begin{aligned}
+\dot{y} &= u \\
+\dot{u} &= y
+\end{aligned}
+\;
+\right\}
+\qquad\Rightarrow\qquad
+\left\{\;
+\begin{aligned}
+\ddot{y}=y\\
+\ddot{u}=u
+\end{aligned}
+\right.
+\label{30000026:chardgl}
+\end{equation}
+These equations have linear combinations of $\sinh t$ und $\cosh t$
+as solutions.
+Let
+\[
+u(t) = A\cosh t + B\sinh t
+\]
+then the boundary condition $u(0)=0$ means that 
+\[
+0 = u(0) = A\cosh 0 + B\sinh 0 = A
+\qquad\Rightarrow\qquad
+u(t) = B\sinh t.
+\]
+From the equation $\dot{u}=y$ we can derive
+\[
+y(t) = A\sinh t + B\cosh t = B\cosh t.
+\]
+On the other hand, $B$ has to be chosen so that the characteristic
+curve starts at $y_0 = y(0) = B\cosh 0 = B$.
+This means that we now have a complete solution 
+\begin{align*}
+x(t) &= e^t        &&\Rightarrow&    t &= \log x\bigg.\\
+y(t) &= y_0\cosh t &&\Rightarrow&  y_0 &= \frac{y}{\cosh\log x}\\
+u(t) &= y_0\sinh t &&\Rightarrow&    u &= \frac{y}{\cosh\log x}\sinh\log x
+= y\tanh\log x.
+\end{align*}
+We thus have found the solution
+\begin{equation}
+u(x,y) = y\tanh\log x
+\label{30000026:eqn:sol}
+\end{equation}
+of the partial differential equation~\eqref{30000026:pde}.
+
+The solution \eqref{30000026:eqn:sol} can be further simplified
+by observing that
+\[
+\tanh t
+=
+\frac{e^t-e^{-t}}{e^t+e^{-t}}
+= 
+\frac{x-x^{-1}}{x+x^{-1}}
+=
+\frac{x^2-1}{x^2+1}.
+\]
+Thus the solution gets the even easier form
+\[
+u(x,y) = y\frac{x^2-1}{x^2+1}.
+\]
+
+We can verify this solution by computing the partial derivatives
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
+y\operatorname{sech}^2(\log x)\cdot \frac{1}{x}
+\\
+\frac{\partial u}{\partial y}
+&=
+\tanh\log x
+\end{align*}
+and substituting them in the partial differential equation
+\begin{align*}
+x\frac{\partial u}{\partial x}
++
+u\frac{\partial u}{\partial y}
+&=
+y\operatorname{sech}^2(\log x)
++
+y\tanh^2(\log x)
+\\
+&=
+y\biggl(
+\frac{1}{\cosh^2\log x}
++
+\frac{\sinh^2\log x}{\cosh^2\log x}
+\biggr)
+\\
+&=
+y\frac{1+\sinh^2\log x}{\cosh^2\log x}
+\\
+&=
+y\frac{\cosh^2\log x}{\cosh^2\log x}
+=
+y
+\end{align*}
+For the boundary condition we substitute $x=1$ und $y=y_0$ into
+$u$ and obtain
+\[
+u(1,y_0) = y_0\tanh\log 1 = y_0\tanh 0 = 0,
+\]
+so the boundary condition is satisfied as well.
+For the second form of the solution, the verification is even easier.
+\end{loesung}
+
+\begin{bewertung}
+Differential equations for characteristics ({\bf C}) 1 point,
+solution for $x(t)$ including $x_0$ from boundary condition $x(0)=1$
+({\bf X}) 1 point,
+general solution for $y(t)$ and $u(t)$ using the hint ({\bf H}) 1 point,
+using the boundary condition $u(0)=0$ to determining $A=0$ ({\bf A}) 1 point,
+using the boundary condition $y(0)=y_0$ to determine $B=y_0$ ({\bf B}) 1 point,
+eliminating $t$ and $y_0$ to get $u(x,y)$ ({\bf U}) 1 point.
+\end{bewertung}

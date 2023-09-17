@@ -1,13 +1,11 @@
 %
 % aufgabensammlung.tex -- exercise collection
-%               gehalten an der Hochschule Rapperswil im Wintersemester 09
 %
-% (c) 2009-2019 Prof. Dr. Andreas Mueller, HSR
+% (c) 2009-2023 Prof. Dr. Andreas Mueller, HSR/OST
 %
 \documentclass[a4paper,12pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-%\usepackage{german}
 \usepackage{times}
 \usepackage{geometry}
 \geometry{papersize={210mm,297mm},total={160mm,240mm},top=31mm,bindingoffset=15mm}
@@ -37,63 +35,28 @@
 \input{../common/linsys.tex}
 \newboolean{pruefung}
 \setboolean{pruefung}{false}
+\input{macros/packages.tex}
 \makeindex
 \begin{document}
-\pagestyle{fancy}
-\lhead{Exercise collection}
-\rhead{}
-\frontmatter
-\newcommand\HRule{\noindent\rule{\linewidth}{1.5pt}}
-\begin{titlepage}
-\vspace*{\stretch{1}}
-\HRule
-\vspace*{2pt}
-\begin{flushright}
-{\Huge
-Partial differential equations\\
-\bigskip
-Exercise collection}
-\end{flushright}
-\HRule
-\begin{flushright}
-\vspace{30pt}
-\LARGE
-Andreas Müller
-\end{flushright}
-\vspace*{\stretch{2}}
-\begin{center}
-OST Ostschweizer Fachhochschule, Rapperswil, 2008-2022
-\end{center}
-\end{titlepage}
-\hypersetup{
-	colorlinks=true,
-	linktoc=all,
-	linkcolor=blue
-}
-\rhead{Contents}
-\tableofcontents
-\newenvironment{beispiel}[1][Example]{%
-\begin{proof}[#1]%
-\renewcommand{\qedsymbol}{$\bigcirc$}
-}{\end{proof}}
+\input{macros/front.tex}
 \mainmatter
-\input{uebungen.tex}
+\input{macros/uebungen.tex}
 \setboolean{loesungen}{true}
 \aufgabetoplevel{./}
 
 \chapter{Introductory examples}
 \rhead{Introductory examples}
-\input{1.tex}
+\input{work/1.tex}
 \chapter{Terminology and Notation}
 \rhead{Terminology and Notation}
-\input{2.tex}
+\input{work/2.tex}
 \chapter{Geometry of partial differential equations of first order
 \label{chapter:separation}}
 \rhead{PDE of first order}
-\input{3.tex}
+\input{work/3.tex}
 \chapter{Separation of Variables\label{chapter:separation}}
 \rhead{Separation}
-\input{4.tex}
+\input{work/4.tex}
 \chapter{Transformation}
 \rhead{Transformation}
 Some problems from chapter~\ref{chapter:separation}
@@ -101,23 +64,23 @@ can also be solved with the transform method.
 They are shown again in this chapter with an alternative solution.
 \bigskip
 
-\input{5.tex}
+\input{work/5.tex}
 \chapter{Partial differential equations of second order}
 \rhead{PDE of second order}
-\input{6.tex}
+\input{work/6.tex}
 \chapter{Elliptic partial differential equations}
 \rhead{Elliptic PDE}
-\input{7.tex}
+\input{work/7.tex}
 \chapter{Parabolic partial differential equations}
 \rhead{Parabolic PDE}
-\input{8.tex}
+\input{work/8.tex}
 \chapter{Hyperbolic partial differential equations}
 \rhead{Hyperbolic PDE}
-\input{9.tex}
+\input{work/9.tex}
 %\chapter{Nichtlineare partielle Differentialgleichungen}
 %\rhead{Nichtlineare PDGL}
 %\input{a.tex}
 \chapter{Exam problems for PDE}
 \rhead{Numerics of PDE}
-\input{b.tex}
+\input{work/b.tex}
 \end{document}

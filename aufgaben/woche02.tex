@@ -1,0 +1,33 @@
+%
+% woche02.tex -- 
+%
+% (c) 2023 Prof. Dr. Andreas Mueller, OST
+%
+\documentclass[a4paper,12pt]{book}
+\input{macros/packages.tex}
+\externaldocument{work/aufgabensammlung}
+\makeindex
+\begin{document}
+\pagestyle{fancy}
+\let\thechapter=1
+\lhead{Chapter~\thechapter, Week 2}
+\rhead{Quasilinear PDE of first order}
+\input{macros/uebungen.tex}
+\setboolean{loesungen}{true}
+\aufgabetoplevel{./}
+\let\thechapter=3
+\setcounter{problemcounter}{27}
+\aufgabe{30000028}
+\aufgabe{30000029}
+\aufgabe{30000030}
+\setcounter{problemcounter}{31}
+\aufgabe{30000032}
+\setcounter{problemcounter}{30}
+\aufgabe{30000031}
+%\let\thechapter=2
+%\rhead{Sprachen}
+%\setcounter{problemcounter}{3}
+%\aufgabe{20000005}
+%\aufgabe{20000006}
+\end{document}
+

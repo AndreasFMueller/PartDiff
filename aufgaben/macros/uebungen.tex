@@ -6,6 +6,8 @@
 %
 \newcounter{uebungsaufgabe}
 \newboolean{loesungen}
+\newboolean{pruefung}
+\setboolean{pruefung}{false}
 % environment fuer uebungsaufgaben
 \newenvironment{uebungsaufgaben}{
 \begin{list}{\arabic{uebungsaufgabe}.}
@@ -63,15 +65,35 @@
 }
 \def\includeagraphics[#1]#2{\expandafter\includegraphics[#1]{\aufgabepath#2}}
 % \aufgabe
-\newcommand{\aufgabe}[2]{%
-\refstepcounter{problemcounter}%
-\label{#2}
-\bigskip{\parindent0pt\strut}\hbox{\bf\theproblemcounter. }%
-\marginpar{\raggedright\tiny #2}%
-\expandafter\def\csname aufgabepath\endcsname{\inputpath/#1/#2/}%
-\expandafter\input{\inputpath#1/#2.tex}
-\bigskip
+%\newcommand{\aufgabe}[2]{%
+%\refstepcounter{problemcounter}%
+%\label{#2}
+%\bigskip{\parindent0pt\strut}\hbox{\bf\theproblemcounter. }%
+%\marginpar{\raggedright\tiny #2}%
+%\expandafter\def\csname aufgabepath\endcsname{\inputpath/#1/#2/}%
+%\expandafter\input{\inputpath#1/#2.tex}
+%\bigskip
+%}
+\newcommand{\aufgabe}[1]{%
+\StrRemoveBraces{#1}[\FirstChar]%
+\StrChar{\FirstChar}{1}[\FirstChar]%
+  \expandafter\def\csname themalist\endcsname{}
+  \refstepcounter{problemcounter}%
+  \label{#1}
+  \bigskip{\parindent0pt\strut}\hbox{\bf\theproblemcounter. }%
+  \marginpar{\raggedright\tiny #1}%
+  \expandafter\def\csname currentaufgabe\endcsname{#1}%
+  \expandafter\def\csname aufgabepath\endcsname{\inputpath/\FirstChar/#1/}%
+  \expandafter\input{\inputpath\FirstChar/#1.tex}
+  %\medskip
+  \bigskip
+
 }
 \renewcommand\theproblemcounter{\thechapter.\arabic{problemcounter}}
 % oft benutzte Macros
 \def\blank{\text{\textvisiblespace}}
+\newenvironment{beispiel}[1][Example]{%
+\begin{proof}[#1]%
+\renewcommand{\qedsymbol}{$\bigcirc$}
+}{\end{proof}}
+\definecolor{darkgreen}{rgb}{0,0.8,0}

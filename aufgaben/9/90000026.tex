@@ -1,0 +1,204 @@
+On the domain $\Omega= \{(x,y)\mid x > 1\}$, the differential operator
+\begin{equation}
+L
+=
+\frac{\partial^2}{\partial x^2}
++
+2x(1+x)\frac{\partial^2}{\partial x\,\partial y}
++
+4x^3
+\frac{\partial^2}{\partial y^2}
+\label{90000026:operator}
+\end{equation}
+is given.
+\begin{teilaufgaben}
+\item
+Is this operator elliptic, parabolic or hyperbolic?
+\item
+Can a change of a Dirichlet boundary condition in the point $Q=(1,0)$
+influence the solution of a partial differential equation involving the
+operator $L$ in the point $P=(\frac32,1)$?
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{figure}
+\centering
+\begin{tikzpicture}[>=latex,thick]
+\def\dx{5}
+\def\dy{5}
+\def\X{1.5}
+\def\Y{1}
+\pgfmathparse{\Y-2*\X*\X*\X/3}
+\xdef\D{\pgfmathresult}
+\pgfmathparse{\Y-\X*\X}
+\xdef\C{\pgfmathresult}
+\begin{scope}
+	\fill[color=gray!10] ({\dx},{-0.7*\dy}) rectangle ({2.2*\dx},{1.2*\dy});
+	\clip ({1*\dx},{-0.7*\dy}) rectangle ({2.2*\dx},{1.2*\dy});
+	\fill[color=blue!20]
+		plot[domain=1:\X,samples=10] 
+			({\x*\dx},{(2*\x*\x*\x/3+(\D))*\dy})
+		--
+		plot[domain=\X:1,samples=10]
+			({\x*\dx},{(\x*\x+(\C))*\dy})
+		--
+		cycle;
+	\draw[color=darkgreen,line width=0.3pt] plot[domain=1:2.2,samples=20]
+			({\x*\dx},{(\x*\x+\C)*\dy});
+	\draw[color=red,line width=0.3pt] plot[domain=1:2.2,samples=20]
+			({\x*\dx},{(2*\x*\x*\x/3+\D)*\dy});
+	\foreach \C in {-10,-9.5,...,2}{
+		\draw[color=darkgreen] plot[domain=1:2.2,samples=20]
+			({\x*\dx},{(\x*\x+\C)*\dy});
+	}
+	\foreach \D in {-10,-9.5,...,2}{
+		\draw[color=red] plot[domain=1:2.2,samples=20]
+			({\x*\dx},{(2*\x*\x*\x/3+\D)*\dy});
+	}
+\end{scope}
+\fill[color=white,opacity=1.0]
+	({\X*\dx+0.05},{\Y*\dy-0.1}) rectangle ({\X*\dx+1.90},{\Y*\dy-0.70});
+\draw[line width=0.2pt] (0,{\Y*\dy}) -- ({\X*\dx},{\Y*\dy});
+\draw (-0.05,{\Y*\dy}) -- (0.05,{\Y*\dy});
+\node at (0,{\Y*\dy}) [left] {$\Y$};
+\draw[line width=0.2pt] ({\X*\dx},0) -- ({\X*\dx},{1.2*\dy});
+\node at ({\X*\dx},{1.2*\dy}) [above] {$\frac32$};
+\node at ({\X*\dx},{\Y*\dy}) [below right] {$P=(1,\frac32)$};
+\draw[color=blue] ({1*\dx},{-0.7*\dy}) -- ({1*\dx},{1.2*\dy});
+\fill[color=blue] ({\X*\dx},{\Y*\dy}) circle[radius=0.08];
+\fill[color=blue] ({1*\dx},{0*\dy}) circle[radius=0.08];
+\node at ({\dx},0) [above left] {$Q$};
+\pgfmathparse{\Y-2*\X*\X*\X/3}
+\xdef\D{\pgfmathresult}
+\pgfmathparse{\Y-\X*\X}
+\xdef\C{\pgfmathresult}
+\draw[color=blue]
+	({1*\dx-0.1},{(1+\C)*\dy})
+	--
+	({1*\dx+0.1},{(1+\C)*\dy});
+\node at (\dx,{(1+\C)*\dy})   [left] {$-\frac{1}{4}$};
+\node at (\dx,{(2/3+\D)*\dy}) [left] {$-\frac{7}{12}$};
+\draw[color=blue]
+	({1*\dx-0.1},{(2/3+\D)*\dy})
+	--
+	({1*\dx+0.1},{(2/3+\D)*\dy});
+\draw[->] (-0.1,0) -- ({2.2*\dx+0.5},0) coordinate[label={$x$}];
+\draw[->] (0,{-0.7*\dy-0.1}) -- (0, {1.2*\dy+0.3}) coordinate[label={$y$}];
+\draw ({\X*\dx},-0.05) -- ({\X*\dx},0.05);
+\end{tikzpicture}
+\caption{Characteristics for the hyperbolic operator $L$ of
+\eqref{90000026:operator}
+\label{90000026:fig}}
+\end{figure}
+\begin{teilaufgaben}
+\item
+The symbol matrix of $L$ is
+\[
+A
+=
+\begin{pmatrix}
+  1    & x(1+x) \\
+x(1+x) & 4x^3
+\end{pmatrix}
+\qquad\Rightarrow\qquad
+\det A = 4x^3 -x^2(1+x)^2
+\]
+Multiplying out we find
+\[
+\det A
+=
+4x^3 - x^2 -2x^3 -x^4
+=
+-x^2 + 2x^3 -x^4
+=
+-(x-x^2)^2
+=
+-x^2 (1-x)^2
+<
+0
+\]
+because $1-x\ne 0$ for $x>1$.
+Thus  $L$ is hyperbolic.
+\item
+The differential equation for the characteristics is
+\[
+\dot{y}^2 -2x(1+x) \dot{y}\dot{x} + 4x^3\dot{x}^2 = 0
+\]
+By dividing by $\dot{x}$ and using $y'=\dot{y}/\dot{x}$ we can simplify
+this to an ordinary differential equation
+\[
+y^{\prime 2} -2x(1+x)y' + 4x^3 = 0.
+\]
+This can be factored as
+\[
+(y'-2x)(y'-2x^2) = 0
+\qquad\Rightarrow\qquad
+y'
+=
+\begin{cases}
+2x\\
+2x^2
+\end{cases}
+\]
+which can also be found using the quadratic formula:
+\begin{align*}
+y'
+&=
+x(1+x) \pm \sqrt{x^2(1+x)^2 - 4x^3}
+\\
+&=
+x(1+x) \pm \sqrt{x^2+2x^3+x^4-4x^3}
+\\
+&=
+x(1+x) \pm \sqrt{x^2-2x^3+x^4}
+\\
+&=
+x(1+x) \pm x(1-x)
+\\
+&=
+\begin{cases}
+2x  \\
+2x^2.
+\end{cases}
+\end{align*}
+This equation can directly be integrated:
+\begin{align*}
+y'&=2x   &&\Rightarrow& y&=x^2 + C \\
+y'&=2x^2 &&\Rightarrow& y&=\frac23 x^3 + D.
+\end{align*}
+Figure~\ref{90000026:fig} shows the first set of characteristics
+as green curves and the second set as red curves.
+We have to find the values for the constant $C$ for the two sets of
+curves.
+\begin{align*}
+	y_0 &= x_0^2 + C         &&\Rightarrow& C &= y_0 - x_0^2 = 1-\frac{9}{4} = -\frac{5}{4}\\
+	y_0 &= \frac23 x_0^3 + D &&\Rightarrow& D &= y_0 -\frac23x_0^3 = 1 - \frac{2}{3}\frac{27}{8} = 1-\frac{9}{4} = -\frac{5}{4}.
+\end{align*}
+The corresponding points on the boundary where $x=1$ are
+\[
+(1,1-{\textstyle\frac54})
+=
+(1,-\textstyle{\frac14})
+\qquad\text{and}\qquad
+(1,{\textstyle\frac23}-{\textstyle\frac54})
+=(1,-{\textstyle\frac{7}{12}}).
+\]
+Only points $(1,y)$ with $y\in[ -\frac{1}{4}, -\frac{7}{12} ]$ can
+influence the given point.
+The point $Q=(1,0)$ is not one of them.
+So no, a change in boundary condition in $(1,0)$ has no influence on
+the value in the point $P=(\frac32,1)$.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+Symbol matrix ({\bf A}) 1 point,
+negative sign of the determinant and conclusion that $L$ is hyperbolic
+({\bf H}) 1 point,
+equation for characteristics ({\bf E}) 1 point,
+factorization or solution of quadratic equation ({\bf F}) 1 point,
+solution curves ({\bf S}) 1 point,
+decision that $Q$ cannot influence $P$ ({\bf D}) 1 point.
+\end{bewertung}
+

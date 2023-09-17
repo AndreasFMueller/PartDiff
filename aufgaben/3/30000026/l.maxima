@@ -1,0 +1,8 @@
+/*
+ * l.maxima
+ *
+ * (c) 2022 Prof Dr Andreas Müller
+ */
+u: y * tanh(log(x));
+
+expand(x * diff(u, x) + u * diff(u, y) - y);

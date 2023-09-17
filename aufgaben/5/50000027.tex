@@ -1,0 +1,105 @@
+On the domain
+\[
+\Omega
+=
+\biggl\{(x,y)
+\;\bigg|\;
+x>0
+\;\text{and}\;
+-\frac{\pi}2 < y < \frac{\pi}2
+\biggr\},
+\]
+the partial differential equation
+\[
+\frac{\partial^2 u}{\partial x^2}
++
+\frac{\partial u}{\partial x}
+=
+(1+y^2)
+\frac{\partial^2 u}{\partial y^2}
+\]
+is to be solved with boundary conditions
+\[
+\begin{aligned}
+u\biggl(x,-\frac{\pi}2\biggr)           &= e^{-x}   &&\text{for}&x&>0\\
+u\biggl(x,\phantom{-}\frac{\pi}2\biggr) &= 2-e^{-x} &&\text{for}&x&>0\\
+u(0,y)                                  &= 1        &&\text{for}&y&\in\biggl(-\frac{\pi}2,\frac{\pi}2\biggr).
+\end{aligned}
+\]
+\begin{teilaufgaben}
+\item
+Use the Laplace transform to convert the partial differential equation
+into a family of ordinary differential equations that can be used to
+find solutions for the differential equation.
+\item
+Are the given boundary conditions sufficient to solve the equation?
+What additional boundary conditions must be specififed for the
+method to work?
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+The Laplace transform of the differential equation with respect to
+the variable $x$ is
+\[
+s^2 (\mathscr{L}u)(s,y)
+-
+s
+\underbrace{u(0,y)}_{\displaystyle=1}
+-
+\underbrace{\frac{\partial u}{\partial x}(0,y)}_{\displaystyle=g(y)}
++
+s (\mathscr{L}u)(s,y)
+-
+\underbrace{u(0,y)}_{\displaystyle=1}
+=
+(1+y^2)\frac{\partial^2}{\partial y^2}
+\mathscr{L}u(s,y).
+\]
+Writing $f_s(y) = \mathscr{L}u(s,y)$, this is a parametrized
+family of ordinary differential equations
+\begin{equation*}
+(s^2+s) f_s(y) - g(y) - (s+1) = (1+y^2)f_s''(y)
+\quad\Rightarrow\quad
+f_s''(y) - \frac{s+s^2}{1+y^2}f_s(y)
+=
+-
+\frac{1+s+g(y)}{1+y^2}.
+\end{equation*}
+The boundary conditions for $y=\pm\frac{\pi}2$ also need to be 
+transformed:
+\[
+\begin{aligned}
+f_s\biggl(-\frac{\pi}2\biggr)
+&=
+\mathscr{L}u\biggl(s,-\frac{\pi}2\biggr) = \frac{1}{s+1},
+\\
+f_s\biggl(\frac{\pi}2\biggr)
+&=
+\mathscr{L}u\biggl(s,\frac{\pi}2\biggr)
+=
+\frac{2}{s} - \frac{1}{s+1}.
+\end{aligned}
+\]
+\item
+The method needs the function
+\[
+g(y) = \frac{\partial u}{\partial x}(0,y)
+\]
+in addition to the boundary conditions given in the problem.
+This is in line with the intuition that second order equations 
+need two initial conditions for the initial value and the initial
+derivative.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+Choice of $X$ as transformation variable ({\bf X}) 1 point,
+transform of the differential equation ({\bf D}) 1 point,
+using the boundary condition for $y=0$ ({\bf B}) 1 point,
+transform of the boundary condition for $x=-\frac{\pi}2$
+and $x=\frac{\pi}2$ ({\bf Y}) 1 point each,
+additional boundary condition $g(y)$ ({\bf G}) 1 point.
+\end{bewertung}
