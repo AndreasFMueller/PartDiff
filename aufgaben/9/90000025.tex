@@ -1,0 +1,144 @@
+Consider the differential operator
+\[
+L
+=
+-2\coth y\frac{\partial^2}{\partial x\,\partial y}
++
+\frac{\partial^2}{\partial y^2}
+\]
+in the domain
+$\Omega = \{ (x,y)\mid y > \frac12\}$.
+\begin{teilaufgaben}
+\item
+Is the operator $L$ elliptic, parabolic or hyperbolic?
+\item
+If $L$ is hyperbolic, can the boundary values on the part
+$\{(x,\frac12)\mid x < 0\}$ of the boundary influence the value
+of a solution in the point $(0,1)$.
+\end{teilaufgaben}
+
+\begin{hinweis}
+The following formulae about hyperbolic functions may be useful:
+\begin{align*}
+\tanh x &= \frac{\sinh x}{\cosh x}
+&
+\int\coth x\,dx &= \log \sinh x + C
+%\int\frac{dx}{\sinh x} &=
+%\log\frac{e^x-1}{e^x+1}
+\\
+\coth x &= \frac{\cosh x}{\sinh x}
+&&
+\end{align*}
+\end{hinweis}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{figure}[ht]
+\centering
+\includeagraphics[]{domain.pdf}
+\caption{Domain $\Omega$ for problem~\ref{90000025} with characteristics
+\label{90000025:graph}}
+\end{figure}
+}{}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+The symbol matrix of the operator $L$ is
+\[
+A=\begin{pmatrix}
+    0    & -\coth y\\
+-\coth y &    1
+\end{pmatrix}
+\]
+and has determinant
+\[
+\det A
+=
+-\coth^2 y
+< 0,
+\]
+which means that the operator is hyperbolic.
+\item
+The equation for the characteristics is
+\begin{align*}
+ 2\dot{x}\dot{y} \coth y + \dot{x}^2 &= 0,
+\intertext{which can be factored as}
+\dot{x}\bigl( \dot{y} \coth y + {\textstyle \frac12}\dot{x}\bigr) &=0.
+\end{align*}
+The factorization implies that either
+\begin{align*}
+\dot{x} &= 0
+&&\text{or}
+&
+y'(x) = -\frac12 \tanh y.
+\end{align*}
+The first equation means that the corresponding characteristics
+are straight lines with constant $x$, they are drawn in red in
+figure~\ref{90000025:graph}.
+The second equation can be solved using separation of variables,
+leading to
+\begin{align*}
+\int \frac{dy}{\tanh y} &= -\frac12x + C
+\\
+\int\coth y\,dy &= -\frac12 x + C
+\\
+\log\sinh y &= -\frac12x + C
+\\
+\sinh y&= e^{-\frac12x+C}
+\\
+y(x)
+&=
+\operatorname{arsinh}\bigl( e^{-\frac12x+C}\bigr).
+\end{align*}
+This means that the second set of characteristics, drawn in
+green in figure~\ref{90000025:graph}, are translates
+of the graph of the function
+\[
+y_0(x)
+=
+\operatorname{arsinh} e^{-\frac12x}.
+\]
+Since the exponential function is monotonically decreasing and the
+$\sinh$-function is monotonically increasing, the function $y_0(x)$
+is monotonically decreasing.
+
+The characteristics are displayed in figure~\ref{90000025:graph},
+which clearly shows that only the points in the orange interval
+on the boundary of $\Omega$ can influence the value of a solution
+in the point $(0,1)$.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{diskussion}
+To compute the full intervall of points on the boundary that can influence
+the value in the point $(0,1)$, we have to find the value of the constant
+$C_+$ such that the corresponding characteristic curve passes throught $(0,1)$.
+This means that 
+\[
+1 = y(0) = \operatorname{arsinh}e^{C_+}
+\qquad\Rightarrow\qquad
+\sinh 1 = e^{C_+}
+\qquad\Rightarrow\qquad
+C_+ = \log\sinh 1.
+\]
+Furthermore, the characteristic curve passes through $y=\frac12$ for an
+$x$-coordinate $x_+$ that satisfies the equation
+\[
+\operatorname{arsinh}e^{-\frac12x_++C_+}=\frac12
+\qquad\Rightarrow\qquad
+\log\sinh\frac12 = -\frac12x_++C_+
+\qquad\Rightarrow\qquad
+x_+
+=2\biggl(C-\log\sinh\frac12\biggr).
+\]
+\end{diskussion}
+
+\begin{bewertung}
+Symbol matrix ({\bf S}) 1 point,
+hyperbolicity ({\bf H}) 1 point,
+differential equation for characteristics ({\bf D}) 1 point,
+factorization and vertical characteristics ({\bf V}) 1 point,
+other characteristics ({\bf R}) 1 point,
+conclusion about domain of influence for the point ({\bf I}) 1 point.
+\end{bewertung}

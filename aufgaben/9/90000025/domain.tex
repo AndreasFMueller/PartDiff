@@ -1,0 +1,97 @@
+%
+% domain.tex -- Template für standalone TIKZ Bilder
+%
+% (c) 2019 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\documentclass[tikz,12pt]{standalone}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\usetikzlibrary{arrows,intersections,math,calc}
+\begin{document}
+\newboolean{fein}
+\setboolean{fein}{true}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\def\skala{2.5}
+\begin{tikzpicture}[>=latex,thick,scale=\skala]
+
+\fill[color=blue!10] (-3.1,0.5) rectangle (3.1,3.1);
+
+\pgfmathparse{ln((exp(1)-exp(-1))/2)}
+\xdef\Ccrit{\pgfmathresult}
+\pgfmathparse{2*(\Ccrit-ln((exp(0.5)-exp(-0.5))/2))}
+\xdef\xmax{\pgfmathresult}
+
+\begin{scope}
+\clip (-3.1,0.5) rectangle (3.1,3.1);
+
+\foreach \x in {-3,-2,-1,1,2,3}{
+	\draw[color=red] (\x,0) -- (\x,3.1);
+}
+
+\foreach \C in {-4,-3.5,...,3.0}{
+	\draw[color=darkgreen]
+		plot[domain=-5.1:3.1,samples=100]
+			({\x-2*\C},{ln(exp(-0.5*\x)+sqrt(exp(-\x)+1))});
+}
+
+\ifthenelse{\boolean{fein}}{
+
+\foreach \x in {-3,-2.8,...,3}{
+	\draw[color=red,line width=0.1pt] (\x,0) -- (\x,3.1);
+}
+
+\foreach \C in {-3.9,-3.8,...,3}{
+	\draw[color=darkgreen,line width=0.1pt]
+		plot[domain=-5.1:3.1,samples=100]
+			({\x-2*\C},{ln(exp(-0.5*\x)+sqrt(exp(-\x)+1))});
+}
+
+}{}
+
+%\xdef\Ccrit{0.2}
+\fill[color=orange!20]
+	plot[domain=0:3.2,samples=100]
+		({\x},{ln(exp(-0.5*\x+\Ccrit)+sqrt(exp(-\x+2*\Ccrit)+1))})
+		--
+		(3,0) -- (0,0) -- cycle;
+	
+\draw[color=darkgreen]
+	plot[domain=0:3.2,samples=100]
+		({\x},{ln(exp(-0.5*\x+\Ccrit)+sqrt(exp(-\x+2*\Ccrit)+1))});
+
+\end{scope}
+
+%\def\xmax{1.7}
+
+\draw[color=blue,line width=1.4pt] (-3.1,0.5) -- (0,0.5);
+\draw[color=orange,line width=1.4pt] (0,0.5) -- (\xmax,0.5);
+\draw[color=blue,line width=1.4pt] (\xmax,0.5) -- (3.1,0.5);
+
+\draw[->] (0,-0.1) -- (0,3.3) coordinate[label={left:$y$}];
+\draw[color=red,line width=1pt] (0,0.5) -- (0,3.1);
+\draw[->] (-3.1,0) -- (3.3,0) coordinate[label={$x$}];
+
+\fill[color=blue] (0,1) circle[radius=0.03];
+\node[color=blue] at (0,1) [above right] {$P$};
+
+\foreach \x in {-3,-2,-1,1,2,3}{
+	\draw (\x,{-0.1/\skala}) -- (\x,{0.1/\skala});
+	\node at (\x,{-0.1/\skala}) [below]  {$\x$};
+}
+\node at (0,0) [below left] {$O$};
+
+\foreach \y in {2,3}{
+	\draw ({-0.1/\skala},\y) -- ({0.1/\skala},\y);
+}
+\foreach \y in {1,2,3}{
+	\node at ({-0.1/\skala},\y) [left] {$\y$};
+}
+
+\node at (-1.5,1.75) {$\Omega$};
+
+\end{tikzpicture}
+\end{document}
+

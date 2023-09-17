@@ -1,0 +1,83 @@
+\begin{teilaufgaben}
+\item
+\ifthenelse{\boolean{pruefung}}{(2 points)}{}
+The function $u(x,t)$ is defined on the upper half plane
+$\Omega = (-\infty,\infty) \times [0,\infty)$.
+
+The function $u(x,t)$ satisfies in $\Omega$ the equation
+\[
+u_{x}(x,t) + u_{t}(x,t) = 0
+\]
+and  $u(x,0) = \cos(\pi/2 \cdot x)$ on the boundary of $\Omega$.
+
+Determine approximate values for $u(-1,1)$, $u(0,1)$ and $u(1,1)$. 
+
+Use the upwind-scheme with $\Delta x = 1$ and $\Delta t = 1/2.$
+
+\item
+\ifthenelse{\boolean{pruefung}}{(4 points)}{}
+The function $u(x,t)$ is defined on the strip
+$\Omega = [-1, 1] \times [0,\infty)$.
+
+The function $u(x,t)$ satisfies in $\Omega$ the equation
+\[
+u_{xx}(x,t) = u_{tt}(x,t)
+\]
+and  $u(-1,t) = u(1,t) = 0$ on the boundary of $\Omega$. 
+
+The function $u(x,t)$ also satisfies the initial conditions
+\[
+u(x,0) = 4 \cdot (1-x^2)
+\qquad\text{and}\qquad
+u_t(x,0) = 4 \cdot (1-x^2).
+\]
+
+Determine approximate values for $u(-1/2,1)$, $u(0,1)$ and $u(1/2,1)$. 
+
+Use finite differences with $\Delta x = 1/2$ and $\Delta t = 1/2.$
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+One has
+\[
+\tilde u(k, j/2+1/2)
+=
+1/2 \cdot \tilde u(k-1, j/2) + 1/2 \cdot \tilde u(k, j/2).
+\]
+With $\tilde u(k, 0) =  \cos(\pi/2 \cdot k)$ one obtains
+\[
+\tilde u(-1,1) = -1/2, \tilde u(0,1) = 0, \tilde u(1,1) = 1/2.
+\]
+
+\item
+One has
+\[
+\tilde u(k/2, j/2+1/2)
+=
+\tilde u(k/2-1/2, j/2) + \tilde u(k/2+1/2, j/2) - \tilde u(k/2, j/2 - 1/2).
+\]
+With
+\[
+\tilde u(-1/2,0) = 3, \tilde u(0,0) = 4, \tilde u(1/2,0) = 3
+\]
+and
+\[
+\tilde u(-1/2,1/2) = 7/2, \tilde u(0,1/2) = 10/2, \tilde u(1/2,1/2) = 7/2
+\]
+one obtains
+\[
+\tilde u(-1/2,1) = 2, \tilde u(0,1) = 3, \tilde u(1/2,1) = 2.
+\qedhere
+\]
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item 2 points
+\item 4 points
+\end{teilaufgaben}
+\end{bewertung}  
+

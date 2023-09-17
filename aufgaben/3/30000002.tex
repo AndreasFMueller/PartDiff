@@ -3,7 +3,7 @@ Consider the Cauchy problem for the partial diffrential equation
 y\frac{\partial u}{\partial x}+x\frac{\partial u}{\partial y}=0
 \label{30000002:1}
 \end{equation}
-with boundary conitions $u(0,y)=y^2$.
+with boundary conditions $u(0,y)=y^2$.
 It could be considered on the domain
 $\Omega_+=\{ (x,y)\in\mathbb R^2\,|\, x > 0\}$
 or on the domain
@@ -11,7 +11,7 @@ $\Omega_-=\{(x,y)\in\mathbb R^2\,|\, x <0\}$,
 both wit a boundary condition specified on the $y$-axis.
 But solutions on those domains can be stitched together to give a solution
 in all of $\mathbb R^2=\overline{\Omega_+\cup\Omega_-}$ with the single
-initial data along the $y$-axis.
+boundary data along the $y$-axis.
 It thus makes sense to talk about a solution of 
 \eqref{30000006:1} in the domain $\Omega=\mathbb R^2$.
 \begin{teilaufgaben}
@@ -40,8 +40,8 @@ Is it a solution?
 \end{teilaufgaben}
 
 \begin{loesung}
-The initial condition in this problem is specified on the $y$-axis.
-To prevent confusions, we will such an initial point by $y_0$, similar
+The boundary condition in this problem is specified on the $y$-axis.
+To prevent confusions, we will such an boundary point by $y_0$, similar
 to what we did in problem \ref{30000001}.
 The method of characteristics will find functions $x(y_0,t)$,
 $y(y_0,t)$ and $u(y_0,t)$ such that the partial differential equation
@@ -53,13 +53,13 @@ $y(y_0,t)$ and $u(y_0,t)$ such that the partial differential equation
 \end{aligned}
 \label{30000002:chareq}
 \end{equation}
-is satisfied with initial conditions
+is satisfied with boundary conditions
 \begin{align*}
 x(y_0, 0)&=0\\
 y(y_0, 0)&=y_0\\
 u(y_0, 0)&=f(y_0),
 \end{align*}
-where $f(y_0)$ gives the Cauchy initial values along the $y$-axis.
+where $f(y_0)$ gives the Cauchy boundary values along the $y$-axis.
 \begin{teilaufgaben}
 \item
 From equation \eqref{30000002:chareq} we can read off that the characteristics
@@ -198,7 +198,7 @@ yg'(x^2-y^2)2x-xg'(x^2-y^2)2y=0&\qquad |y|<|x|,
 \end{cases}
 \]
 which means it is a solution.
-It satisfies the initial condition $u(0,y)=f(y^2)$ for every function $g$.
+It satisfies the boundary condition $u(0,y)=f(y^2)$ for every function $g$.
 By choosing different functions $g$ subject to the conditions noted,
 we can construct arbitrarily many solutions.
 

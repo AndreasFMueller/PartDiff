@@ -1,0 +1,189 @@
+Consider the partial differential equation
+\begin{equation}
+-\frac{1}{\cot x}\frac{\partial u}{\partial x}
+-
+\frac{\partial u}{\partial y}
+=
+-u
+\label{30000024:eqn}
+\end{equation}
+on the domain
+\[
+\Omega
+=
+\biggl\{(x,y)\;\bigg|\; 0 < x < \frac{\pi}2 \biggr\}
+\]
+with the boundary condition
+\[
+u\biggl(\frac{\pi}2,y_0\biggr)
+=
+f(y_0)
+\]
+on $\partial\Omega = \{(\frac{\pi}2,y_0)\mid y_0\in\mathbb{R}\}$ and
+some boundary function $f(y_0)$.
+\begin{teilaufgaben}
+\item
+Are the boundary conditions sufficient to uniquely determine the solution?
+\item
+Find a solution for the boundary function $f(y_0) = \sin y_0$.
+\end{teilaufgaben}
+
+\begin{hinweis}
+Use $\int\cot x\,dx = \log\sin x+C$.
+\end{hinweis}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{figure}[ht]
+\centering
+\includeagraphics[]{domain.pdf}
+\caption{Characteristics for equation \eqref{30000024:eqn} of problem
+\ref{30000024}.
+\label{30000024:char}}
+\end{figure}
+\begin{figure}[ht]
+\centering
+\includeagraphics[]{solution.pdf}
+\caption{Solution surface for the solution of problem
+\ref{30000024}.
+\label{30000024:char}}
+\end{figure}
+}{}
+
+\begin{loesung}
+\eqref{30000024:eqn} is a quasilinear partial differential equation of
+first order, which can be solved using the method of characteristics.
+The ordinary differential equations for the characteristics are
+\[
+\begin{aligned}
+\dot{x} &= -\frac1{\cot x}
+&&\Rightarrow&
+\int \cot x\,dx &= -\int dt + C
+&&\Rightarrow&
+\log\sin x&= -t+C
+\\
+\dot{y}&=-1
+&&\Rightarrow&
+y(t) &= -t + D
+&&\Rightarrow&
+%\frac12y^2 &= t+\frac12
+\\
+\dot{u}&=-u
+&&\Rightarrow&
+u&=Be^{-t}
+\end{aligned}
+\]
+To ensure that the characteristics start on the boundary of the domain
+for $t=0$, we have to choose $C$ such that 
+\[
+\log\sin \frac{\pi}{2} = 0+C
+\qquad\Rightarrow\qquad
+\log 1 = 0 = C,
+\]
+so the function $x(t)$ is $x(t)=\arcsin e^{-t}$.
+
+In order for the characteristic to start in the point $(\frac{\pi}2,y_0)$ 
+for $t=0$, the constant $D$ needs to be chosen such that 
+\[
+y_0
+=
+y(0) = -0 + D = D
+\qquad\Rightarrow\qquad
+D=y_0,
+\]
+so the function
+$y(t)$ is $y(t) = -t+y_0$.
+
+Finally, the constant $B$ in the function $u(t)$ needs to be choosen so
+that $u(0)$ is the boundary value in the point $(\frac{\pi}2,y_0)$,
+i.~e.~$u(t)=u(0)e^{-t} = \sin(y_0)e^{-t}$.
+
+Combining all equations and substituting $t$ into the other equations
+gives
+\[
+\left.
+\begin{aligned}
+\log\sin x &= -t
+\\
+y &= -t + y_0
+\\
+u &= \sin y_0\cdot e^{-t}
+\end{aligned}
+\quad
+\right\}
+\qquad
+\Rightarrow
+\qquad
+\left\{
+\quad
+\begin{aligned}
+y&=\log\sin x+y_0
+\\
+u&=\sin y_0\cdot \sin x
+\end{aligned}
+\right.
+\]
+The $y$-equation allows to express $y_0$ in terms of $x$ and $y$ as
+\(y_0=y-\log\sin x\).
+
+\begin{teilaufgaben}
+\item
+Since it is possible to determine a $t$- and a $y_0$-value for each
+point $(x,y)\in \Omega$, the characteristics cover the whole domain
+and thus the boundary conditions uniquely determine the solution.
+\item
+Substituting the expression for $y_0$ into the $u$-equation gives
+the final solution
+\begin{equation}
+u(x,y)=\sin(y-\log\sin x)\cdot \sin x
+\label{30000024:solution}
+\end{equation}
+
+To verify the solution, we compute the derivatives
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
+-\cos(y-\log\sin x)\frac{1}{\sin x}\cos x\cdot \sin x
++
+\sin(y-\log\sin x)\cdot \cos x
+\\
+&=\biggl(-\cos(y-\log\sin x)\sin x + \sin(y-\log\sin y)\sin x\biggr)
+\frac{\cos x}{\sin x}
+\\
+&=
+\biggl(-\cos(y-\log\sin x)\sin x + u\biggr) \cot x
+\\
+\frac{\partial u}{\partial y}
+&=
+\cos(y-\log\sin x) \sin x
+\\
+-\frac{1}{\cot x}\frac{\partial u}{\partial x}-\frac{\partial u}{\partial y}
+&=
+\cos(y-\log\sin x)\sin x - u - \cos(y-\log\sin x)\sin x
+=
+-u,
+\end{align*}
+so the differential equation is satisfied.
+For the boundary condition, we substitute $(\frac{\pi}2,y_0)$ into the
+formula for $u$ giving
+\[
+u\biggl(\frac{\pi}2,y_0\biggr)
+=
+\sin\biggl(y_0-\log\sin\frac{\pi}2\biggr)\cdot \sin\frac{\pi}2
+=
+\sin(y_0 - \log 1)\cdot 1
+=
+\sin y_0
+\]
+as required.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+Differential equation for characteristics ({\bf D}) 1 point,
+solution to the $x$-equation ({\bf X}) 1 point,
+solution to the $y$-equation ({\bf Y}) 1 point,
+decision method for well posedness ({\bf W}) 1 point,
+solution to the $u$-equation ({\bf U}) 1 point,
+solution of the equation ({\bf S}) 1 point.
+\end{bewertung}

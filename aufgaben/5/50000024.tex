@@ -1,0 +1,90 @@
+Use the Laplace transform to reduce the partial differential equation
+\begin{equation}
+\frac{1}{\cot x}
+\frac{\partial u}{\partial x}
++
+\frac{\partial u}{\partial y}
+=
+0
+\label{50000024:eqn}
+\end{equation}
+on the domain
+\begin{equation}
+\Omega
+=
+\biggl\{
+(x,y)\;\bigg|\; \frac12<x<1, y>0
+\biggr\}
+\label{50000024:domain}
+\end{equation}
+with boundary conditions
+\begin{equation}
+\left.
+\begin{aligned}
+u(x,0) &= 1 &&\text{for} & \frac12<\mathstrut&x<1
+\\
+u(1,y) &=e^{-y}&&\text{for}  & 0<\mathstrut&y
+\end{aligned}
+\quad
+\right\}
+\label{50000024:boundary}
+\end{equation}
+to a family of ordinary differential equations with suitable boundary
+conditions.
+Do the boundary conditions \eqref{50000024:boundary} uniquely determine
+the solution?
+
+\begin{loesung}
+Only the $y$ variable is unbounded in the given domain
+\eqref{50000024:domain}, so that is the variable to transform.
+Applying the Laplace transform to the variable $y$ in the differential
+equation~\eqref{50000024:eqn}, we get the equation
+\[
+\tan x \frac{\partial }{\partial x}
+(\mathscr{L}u)(x,s)
++
+s(\mathscr{L}u)(x,s)
+-
+\underbrace{u(x,0)}_{\displaystyle=1}
+=0.
+\]
+The second boundary condition needs also be transformed, it gives
+\[
+(\mathscr{L}u)(1,s)
+=
+(\mathscr{L}e^{-y})(s)
+=
+\frac{1}{1+s}.
+\]
+If we write $y_s(x)=(\mathscr{L}u)(x,s)$ and consider $s$ as a simple
+parameter, we get the ordinary differential equation
+\begin{equation}
+\tan(x)
+\cdot
+y'_s(x) 
++sy_s(x)
+=
+1
+\end{equation}
+in the interval $x\in(\frac12,1)$ with initial conditions
+\[
+y_s(1)
+=
+\frac{1}{1+s}.
+\]
+The differential equation has well-behaved coefficients in all of the
+domain which implies that there is a unique solution for $y_s(x)$.
+This in turn implies that the solution to the original problem, if it
+exists, must be unique.
+\end{loesung}
+
+\begin{bewertung}
+Choice of variable to subject to the Laplace transform ({\bf V}) 1 point,
+Laplace transform of the equation ({\bf E}) 1 point,
+using the first boundary condition to simplify the transform
+({\bf U}$\mathstrut_0$) 1 point,
+Laplace transform of boundary conditions ({\bf B}) 1 point,
+formulation as an ordinary differential equation problem, ({\bf O}) 1 point,
+argument for well posedness ({\bf W}) 1 point.
+\end{bewertung}
+

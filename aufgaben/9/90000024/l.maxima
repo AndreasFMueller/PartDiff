@@ -1,0 +1,29 @@
+I: log((exp(x)-1)/(exp(x)+1));
+D: diff(I,x) - 2/(exp(x)-exp(-x));
+D: ratsimp(D);
+
+Cplus: -log(sinh(1)) - log((%e-1)/(%e+1));
+float(Cplus);
+Cminus: -log(sinh(1)) + log((%e-1)/(%e+1));
+float(Cminus);
+
+yplus: log(sinh(x)) + log((exp(x)-1)/(exp(x)+1)) + C;
+float(subst(1/2,x,subst(Cplus,C,yplus)));
+yminus: log(sinh(x)) - log((exp(x)-1)/(exp(x)+1)) + C;
+float(subst(1/2,x,subst(Cminus,C,yminus)));
+
+y: subst(0, C, yminus);
+y: subst((exp(x)-exp(-x))/2,sinh(x),y);
+y: subst((exp(x)+exp(-x))/2,cosh(x),y);
+y: ratsimp(y);
+
+y: log((a-1/a)/2)-log((a-1)/(a+1));
+ratsimp(diff(y,a));
+
+y: subst(0, C, yplus);
+y: subst((exp(x)-exp(-x))/2,sinh(x),y);
+y: subst((exp(x)+exp(-x))/2,cosh(x),y);
+y: ratsimp(y);
+
+y: log((a-1/a)/2) + log((a-1)/(a+1));
+ratsimp(diff(y,a));

@@ -1,0 +1,200 @@
+Consider the partial differential equation
+\begin{equation}
+\frac{\partial u}{\partial x}
++
+\frac{1}{\tan y}
+\frac{\partial u}{\partial y}
+=
+u
+\label{30000025:eqn}
+\end{equation}
+on the domain
+\[
+\Omega
+=
+\biggl\{
+(x,y)
+\;\bigg|\;
+0<y<\frac{\pi}2
+\biggr\}
+\]
+with boundary condition
+\[
+u(x_0,0) = f(x_0)
+\]
+for some boundary function $f(x_0)$.
+\begin{teilaufgaben}
+\item
+Are the boundary values provided sufficient to uniquely determine the
+solution of the partial differential equation.
+\item
+Find a solution $u(x,y)$ of \eqref{30000025:eqn} with the boundary function
+$f(x_0)=\cos x_0$.
+\end{teilaufgaben}
+
+\begin{hinweis}
+Use $\int\tan y\,dy = -\log\cos y+C$
+\end{hinweis}
+
+\ifthenelse{\boolean{loesungen}}{
+\begin{figure}
+\centering
+\includeagraphics[]{graph.pdf}
+\caption{Characteristics of the equation~\eqref{30000025:eqn} in
+problem~\ref{30000025}
+\label{30000025:char}}
+\end{figure}
+\begin{figure}
+\centering
+\includeagraphics[]{solution.pdf}
+\caption{Solution surface for the differential equation of
+problem~\ref{30000025}
+\label{30000025:solution}}
+\end{figure}
+}{}
+
+\begin{loesung}
+\eqref{30000025:eqn} is a quasilinear partial differential equation
+which can be solved using the method of characteristics.
+The ordinary differential equations for the characteristics are
+\[
+\begin{aligned}
+\dot{x} &= 1
+&&
+&&
+&&\Rightarrow&
+x&=t+D,
+\\
+\dot{y} &= \frac{1}{\tan y}
+&&\Rightarrow&
+\int \tan y\,dy &= \int dt + C
+&&\Rightarrow&
+-\log\cos y &= t + C,
+\\
+\dot{u} &= u
+&&
+&&
+&&\Rightarrow&
+u&=u_0e^t.
+\end{aligned}
+\]
+The characteristic curves should start on the $x$-axis for $t=0$,
+i.~e. the second line implies
+\[
+0 + C
+=
+-\log\cos 0
+=
+-\log 1
+=
+0
+\qquad\Rightarrow\qquad
+-\log\cos y = t.
+\]
+As the characteristic is supposed to start in the point $(x_0,0)$,
+the first line implies that $D=x_0$ or $x=t+x_0$.
+By substituting $t$ in the second equation we get
+\begin{equation}
+x = x_0 - \log\cos y.
+\label{30000025:xy}
+\end{equation}
+
+\begin{teilaufgaben}
+\item
+From \eqref{30000025:xy} or from the figure~\ref{30000025:char} we
+see that the characteristics cover all of the domain, which means
+that the boundary conditions uniquely determine the solution to the
+differential equation.
+\item
+To find the solution, we substitute $x_0=x+\log\cos y$ and $u_0=\cos x_0$ 
+into the $u$-equation above and get
+\[
+u(x,y)
+=
+u_0 e^t
+=
+\cos x_0\cdot
+e^{-\log\cos y}
+=
+\frac{\cos (x+\log\cos y)}{\cos y}.
+\]
+To verify the solution, we compute the derivatives
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
+-\frac{\sin(x+\log\cos y)}{\cos y}
+\\
+&=
+\frac{\sin y \sin(x+\log\cos y)}{\cos^2 y}
++
+\frac{\sin y \cos(x+\log\cos y)}{\cos^2 y}
+\\
+%(%i4) diff(u,y)
+%           sin(y) sin(log(cos(y)) + x)   sin(y) cos(log(cos(y)) + x)
+%(%o4)      --------------------------- + ---------------------------
+%                        2                             2
+%                     cos (y)                       cos (y)
+\frac{\partial u}{\partial y}
+&=
+\tan y
+\biggl(
+\frac{\sin(x+\log\cos y)}{\cos y}
++
+\frac{\cos(x+\log\cos y)}{\cos y}
+\biggr)
+\\
+&=
+\tan y
+\biggl(
+\frac{\sin(x+\log\cos y)}{\cos y}
++
+u
+\biggr)
+\intertext{implying}
+\frac{\partial u}{\partial x}
++
+\frac{1}{\tan y}
+\frac{\partial u}{\partial y}
+&=
+-\frac{\sin(x+\log\cos y)}{\cos y}
++
+\frac{\sin(x+\log\cos y)}{\cos y}
++
+u
+=
+u,
+\end{align*}
+so the differential equation holds.
+
+For the boundary conditions, we substitute $x_0$ in $u$ and compute
+\[
+u(x_0,0) = \frac{\cos(x_0+\log\cos 0)}{\cos 0} = \cos x_0,
+\]
+so the boundary conditions are satisfied as well.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{diskussion}
+It may be noteworthy that the coefficient of $u_y$ in the differential
+equation diverges as $y$ goes to $0$.
+This implies that it does not make sense to try to evaluate the
+differential equation in points of the boundary, but by definition
+the equation only has to hold in the interior of $\Omega$.
+
+Another consequence is that for the equation to hold, the $y$-derivative
+of $u$ has to tend to $0$ at least as fast as $\tan y$ so that the
+second term of the differential equation remains bounded.
+This becomes evident in figure~\ref{30000025:solution}, which shows that
+the solution surface leaves the initial curve horizontally in the
+$y$-direction.
+\end{diskussion}
+
+\begin{bewertung}
+Differential equation for characteristics ({\bf D}) 1 point,
+solution to the $Y$-equation ({\bf Y}) 1 point,
+determination of the constant $C$ ({\bf C}) 1 point,
+solution to the other two equations ({\bf X}) 1 point,
+elimination of $x_0$ and $t$ ({\bf E}) 1 point,
+solution of the equation ({\bf S}) 1 point.
+\end{bewertung}

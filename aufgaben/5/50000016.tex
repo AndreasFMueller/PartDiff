@@ -1,0 +1,93 @@
+Betrachten Sie die Differentialgleichung
+\begin{equation}
+\frac{\partial u}{\partial t}
++
+e^{x^2}
+\frac{\partial^2 u}{\partial x^2}
+=
+0
+\end{equation}
+auf dem Gebiet
+\[
+\Omega = \{ (t,x)\,|\, t>0, x\in\mathbb R\}
+\]
+mit den Randbedingungen
+\begin{align*}
+u(0,x) &= 0,\\
+u(t,0) &= e^{-t},\\
+\frac{\partial}{\partial x}u(t,0) &=0.
+\end{align*}
+für $x\in\mathbb R$ und $t > 0$.
+\begin{teilaufgaben}
+\item
+Verwenden Sie die Laplace-Transformation und finden Sie eine gewöhnliche
+Differentialgleichung samt Anfangsbedingungen, mit deren Hilfe das
+Problem gelöst werden kann.
+\item
+Ist das Problem gut gestellt?
+\end{teilaufgaben}
+
+\begin{hinweis}
+Es wird nicht verlangt, dass Sie die gewöhnliche Differentialgleichung lösen.
+\end{hinweis}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Die Laplace-Transformation nach $t$ (nur diese Variable hat den für die
+Laplace-Transformation nötigen Definitionsbereich $\mathbb R_+$)
+der Differentialgleichung ergibt
+\[
+s\mathcal{L}u(s,x) - u(0,x)
++ e^{x^2}\frac{\partial^2}{\partial x^2}\mathcal{L}u(s,x)
+= 0.
+\]
+Der zweite Term fällt wegen der Anfangsbedingungen weg.
+Mit der Notation $y_s(x) = \mathcal{L}u(s,x)$ wird die Gleichung zu
+\begin{equation}
+y_s''(x)+se^{-x^2}y_s(x)=0.
+\label{50000016:eq}
+\end{equation}
+
+Die Laplacetransformation der übrigen Bedingungen liefert
+\[
+\begin{aligned}
+u(t,0)&=e^{-t}
+&&\Rightarrow&
+\mathcal{L} u(s,0)&=\frac1{s+1},
+\\
+\frac{\partial}{\partial x}u(t,0)&=0
+&&\Rightarrow&
+\frac{\partial}{\partial x}\mathcal{L}u(s,0)&= 0.
+\end{aligned}
+\]
+Wir suchen also eine Lösungsfunktion $y_s(x)$ für die Differentialgleichung
+\eqref{50000016:eq}, die die Anfangsbedingungen
+\begin{equation}
+y_s(0)=\frac1{s+1}
+\qquad\text{und}\qquad
+y'_s(0)=0
+\label{50000016:anf}
+\end{equation}
+erfüllt.
+\item
+Die Differentialgleichung \eqref{50000016:eq} ist für $s>0$ mit den gegebenen
+Anfangsbedingungen \eqref{50000016:anf} eindeutig lösbar, also ist
+das Problem gut gestellt.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item
+Laplace-Transformation der DGL ({\bf L}) 1 Punkt,
+Vereinfachung $u(0,x)=0$ ({\bf V}) 1 Punkt,
+Laplace-Transformation der Anfangsbedingung $u(t,0)=1$ ({\bf A}) 1 Punkt,
+Laplace-Transformation für die Anfangsbedingungen für die Ableitungen
+({\bf D}) je 1 Punkt,
+\item
+Problem gut gestellt ({\bf G}) 1 Punkt,
+Begründung ({\bf B}) 1 Punkt.
+\end{teilaufgaben}
+\end{bewertung}

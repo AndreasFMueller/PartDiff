@@ -1,0 +1,101 @@
+\begin{teilaufgaben}
+\item
+The function $u(x)$ is defined on the interval $\Omega = [1,4].$ 
+
+The function $u(x)$ satisfies in $\Omega$ 
+\[
+x^2 \cdot u''(x) + u(x) = 3 \cdot x^2
+\]
+and  $u(1) = 1$, $u(4) = 16$ on the boundary of $\Omega$. 
+
+Determine approximate values for $u(2)$ and $u(3)$. 
+
+Use finite differences with $h = 1$. 
+\ifthenelse{\boolean{pruefung}}{\hfill{(2 points)}}{}
+\item
+The function $u(x,t)$ is defined on the strip
+$\Omega = [0, 3] \times [0,\infty)$.
+
+The function $u(x,t)$ satisfies in $\Omega$
+\[
+u_{t}(x,t) = u_{xx}(x,t)
+\]
+
+and $u(0,t) = u(3,t) = 0$ as well as $u(x,0) = 3 \cdot x - x^2$
+on the boundary of $\Omega$.
+
+Determine approximate values for $u(1,1)$ and $u(2,1)$. 
+
+Use the explicit method of Richardson with $\Delta x = 1$ and $\Delta t = 1/4.$
+\ifthenelse{\boolean{pruefung}}{\hfill{(4 points)}}{}
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+By the method of finite differences we have
+\[
+4 \cdot (\tilde u(3) - 2 \cdot \tilde u(2) + 1) + \tilde u(2)
+=
+12
+\qquad
+\text{and}
+\qquad
+9 \cdot (16 - 2 \cdot \tilde u(3) + \tilde u(2)) + \tilde u(3)
+=
+27.
+\tag{\bf 1P}
+\]
+The solution of this system of two linear equations is
+\[
+(\tilde u(2), \tilde u(3)) = (4,9).
+\tag{\bf 1P}
+\]
+\item
+We use the explicit method of Richardson with $r = 1/4$.
+For the
+first time step we  have
+\begin{align*}
+\tilde u(1, 1/4)
+&=
+1/4 \cdot \tilde u(0,0) + 1/2 \cdot \tilde u(1,0) + 1/4 \cdot \tilde u(2,0) 
+\intertext{and}
+\tilde u(2, 1/4)
+&=
+1/4 \cdot \tilde u(1,0) + 1/2
+\cdot \tilde u(2,0) + 1/4 \cdot \tilde u(3,0).
+\tag{\bf 1P}
+\end{align*}
+Since $u(0,t) = u(3,t) = 0$ we have in general 
+\[
+\left(\begin{array}{r} \tilde u(1,k/4) \\ u(2,k/4) \end{array} \right)
+=
+\left[ \begin{array}{rr} 1/2 & 1/4  \\ 1/4 & 1/2  \end{array}\right]^k
+\cdot
+\left(\begin{array}{r} \tilde u(1,0) \\ u(2,0) \end{array} \right)
+\tag{\bf 1P}
+\]
+and in particular
+\[
+\left(\begin{array}{r} \tilde u(1,1) \\ u(2,1) \end{array} \right)
+=
+\left[\begin{array}{rr} 1/2 & 1/4  \\ 1/4 & 1/2  \end{array}\right]^4
+\cdot \left(\begin{array}{r} 2 \\ 2 \end{array} \right)
+\tag{\bf 1P}
+\]
+Therefore
+\[
+(\tilde u(1,1), \tilde u(2,1))
+=
+(81/128; 81/128) = (0.6328125, 0.6328125).
+\tag{\bf 1P}
+\]
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item 2 points
+\item 4 points
+\end{teilaufgaben}
+\end{bewertung}

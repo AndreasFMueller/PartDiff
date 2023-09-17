@@ -1,0 +1,111 @@
+\begin{teilaufgaben}
+\item
+The domain $\Omega$ is a rectangle with vertices
+\[
+(0,0),\quad (3,0),\quad (3, 2),\quad (0, 2).
+\]
+The function $u(x,y)$ is defined on $\Omega$.
+It satisfies in $\Omega$ 
+\[
+\Delta u(x,y) = x \cdot y.
+\]
+On the boundary of $\Omega$ one has $u(x,y) = 0$. 
+
+Determine approximate values for $u(1,1)$ and $u(2,1)$. 
+
+Use finite differences with $h = 1$.
+\ifthenelse{\boolean{pruefung}}{\hfill{(2 points)}}{}
+\item
+The domain $\Omega$ is a square with vertices
+\[
+(4,0),\quad (0,4),\quad (-4, 0),\quad (0,-4)
+\]
+The function $u(x,y)$ is defined on $\Omega$.
+It satisfies in $\Omega$ 
+\[
+\Delta u(x,y) = 0.
+\]
+On the boundary of
+$\Omega$ one has $u(x,y) = y$.
+
+Determine approximate values for $u(-1,-1)$ and $u(1,1)$.
+
+Use finite volumes \`a la Voronoi.  
+\ifthenelse{\boolean{pruefung}}{\hfill{(4 points)}}{}
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+By the five-point-star operator we have
+\[
+\tilde u(3,1) - 4 \cdot \tilde u(2,1) = 1
+\qquad\text{and}\qquad
+\tilde u(2,1) - 4 \cdot \tilde u(3,1) = 2.
+\tag{\bf 1P}
+\]
+The solution of this system of two linear equations is
+\[
+(\tilde u(2,1), \tilde u(3,1)) = (-2/5, -3/5).
+\tag{\bf 1P}
+\]
+
+\item
+By the finite volume method we have
+\[
+\renewcommand{\arraycolsep}{2pt}
+\begin{array}{rcrcrcrcrl}
+4 \cdot (-2 - \tilde u(-1,-1))
+&+&
+(-3 - \tilde u(-1,-1))
+&+&
+(1 - \tilde u(-1,-1))
+&+&
+2 \cdot (\tilde u(1,1) - \tilde u(-1,-1))
+&=&
+0,
+\\
+4 \cdot (2 - \tilde u(1,1))
+&+&
+(3 - \tilde u(1,1))
+&+&
+(-1 - \tilde u(1,1))
+&+&
+2 \cdot (\tilde u(-1,-1) - \tilde u(1,1))
+&=&
+0.
+\end{array}
+\tag{\bf 2P}
+\]
+or simpler
+\[
+\renewcommand{\arraycolsep}{2pt}
+\begin{array}{rcrcr}
+-8 \cdot \tilde u(-1,-1)
+&+&
+2 \cdot \tilde u(1,1)
+&=&
+10,
+\\
+2 \cdot \tilde u(-1,-1)
+&-&
+8 \cdot \tilde u(1,1)
+&=&
+-10.
+\end{array}
+\tag{\bf 1P}
+\]
+Therefore
+\[
+\bigl(\tilde u(-1,-1), \tilde u(1,1)\bigr) = (-1,1).
+\tag{\bf 1P}
+\]
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+\begin{teilaufgaben}
+\item 2 points
+\item 4 points
+\end{teilaufgaben}
+\end{bewertung}
