@@ -1,0 +1,29 @@
+%
+% woche01.tex -- 
+%
+% (c) 2023 Prof. Dr. Andreas Mueller, OST
+%
+\documentclass[a4paper,12pt]{book}
+\input{macros/packages.tex}
+\externaldocument{work/aufgabensammlung}
+\makeindex
+\begin{document}
+\pagestyle{fancy}
+\let\thechapter=1
+\lhead{Chapter~\thechapter, Week 1}
+\rhead{Introduction}
+\input{macros/uebungen.tex}
+\setboolean{loesungen}{true}
+\aufgabetoplevel{./}
+\let\thechapter=2
+\setcounter{problemcounter}{7}
+\aufgabe{20000008}
+\aufgabe{20000009}
+\aufgabe{20000010}
+%\let\thechapter=2
+%\rhead{Sprachen}
+%\setcounter{problemcounter}{3}
+%\aufgabe{20000005}
+%\aufgabe{20000006}
+\end{document}
+
