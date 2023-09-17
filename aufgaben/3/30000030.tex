@@ -1,0 +1,51 @@
+For the equation 
+\[
+x
+\frac{\partial u}{\partial x}
++
+u
+\frac{\partial u}{\partial y}
+=
+y,
+\]
+the differential equations
+\[
+\dot{x} = x,\qquad
+\dot{y} = u,\qquad
+\dot{u} = y
+\]
+for the characteristics.
+Find solutions that satisfy the boundary conditions found in
+problem~\ref{30000029}.
+
+\begin{hinweis}
+For $y$ and $u$, try to find an equation for $\ddot{y}$. 
+Use $\cosh'=\sinh$ and $\sinh'=\cosh$.
+\end{hinweis}
+
+\begin{loesung}
+The first equation $\dot{x}=x$ has the exponential function $x(t)=Ce^t$
+as a solution, the boundary condition $x(0)=Ce^0 = 1$ implies $C=1$, so
+$x(t)=e^t$.
+
+The other two equations can be reduced to a second order differential
+equation by differentiating once more:
+\[
+\ddot{y}=\dot{u}=y
+\qquad\text{and}\qquad
+\ddot{u}=\dot{y}=u.
+\]
+Each of these equations has a linear combination of $\sinh t$ and $\cosh t$
+as the solution.
+Assuming $y(t) = A\cosh t + B \sinh t$, the initial condition $y(0)=y_0$
+implies $A=y_0$.
+Then the derivative ist $u=\dot{y}=y_0\sinh t+B\cosh t$, which has
+boundary condition $\sin y_0 = u(0) = B$.
+So the solutions are
+\begin{align*}
+x(t) &= e^t \\
+y(t) &= y_0 \cosh t + \sin y_0 \sinh t \\
+u(t) &= \sin y_0 \cosh t + y_0 \sinh t
+\qedhere
+\end{align*}
+\end{loesung}

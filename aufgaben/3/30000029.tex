@@ -1,0 +1,33 @@
+Given the equation
+\[
+x
+\frac{\partial u}{\partial x}
++
+u
+\frac{\partial u}{\partial y}
+=
+y
+\]
+of problem~\ref{30000028}, the Cauchy problem is to be solved on the
+domain $\Omega = \{(x,y)\in\mathbb{R}^2 \mid x>1\}$
+for the
+boundary conditions
+\[
+u(1,y_0)
+=
+\sin(y_0),\quad y_0\in\mathbb{R}.
+\]
+Find the initial conditions for the characteristic curves.
+
+\begin{loesung}
+All curves start at $x=1$, so $x(0)=1$ is the initial condition for the
+function $x(t)$.
+The characteristic curves start at the points
+$(1,y_0,\sin(y_0))$, so the functions $y$ and $u$ sattisfy initial
+conditions
+\begin{align*}
+y(0) &= y_0       \\
+u(0) &= \sin(y_0).
+\qedhere
+\end{align*}
+\end{loesung}
