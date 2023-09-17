@@ -40,12 +40,12 @@ as the solution.
 Assuming $y(t) = A\cosh t + B \sinh t$, the initial condition $y(0)=y_0$
 implies $A=y_0$.
 Then the derivative ist $u=\dot{y}=y_0\sinh t+B\cosh t$, which has
-boundary condition $\sin y_0 = u(0) = B$.
+boundary condition $f(y_0) = u(0) = B$.
 So the solutions are
 \begin{align*}
 x(t) &= e^t \\
-y(t) &= y_0 \cosh t + \sin y_0 \sinh t \\
-u(t) &= \sin y_0 \cosh t + y_0 \sinh t
+y(t) &= y_0 \cosh t + f(y_0) \sinh t \\
+u(t) &= f(y_0) \cosh t + y_0 \sinh t
 \qedhere
 \end{align*}
 \end{loesung}

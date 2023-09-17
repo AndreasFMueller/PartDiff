@@ -1,0 +1,31 @@
+In problem~\ref{30000030} we have found the solution
+\begin{align*}
+x(t) &= e^t           \\
+y(t) &= y_0 \cosh t + f(y_0) \sinh t   \\
+u(t) &= f(y_0) \cosh t + y_0 \sinh t
+\end{align*}
+Eliminate $t$ and $y_0$ for the boundary function $f(y_0)\equiv 0$ in order
+to get a solution in the form $u = u(x,y)$.
+
+\begin{hinweis}
+$\cosh \log x = \frac12(x+1/x)$ and
+$\sinh \log x = \frac12(x-1/x)$.
+\end{hinweis}
+
+\begin{loesung}
+To eliminate $t$, solve the first formula for $t$ to get $t=\log x$.
+Substitute into the other equations to get
+\begin{align*}
+y &= y_0 \frac12\biggl(x+\frac1x\biggl) = y_0\frac{x^2+1}{x}
+&&\Rightarrow &
+y_0 &= \frac{xy}{x^2+1}\\
+u &= y_0 \frac12\biggl(x-\frac1x\biggl) = y_0\frac{x^2-1}{x}
+&&\Rightarrow &
+u &= y\frac{x^2-1}{x^2+1}.
+\qedhere
+\end{align*}
+\end{loesung}
+
+
+
+
