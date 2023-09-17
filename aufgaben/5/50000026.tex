@@ -1,0 +1,94 @@
+On the domain
+\[
+\Omega
+=
+\biggl\{(x,y)
+\;\bigg|\;
+-\frac{\pi}2 < x < \frac{\pi}2
+\;\text{and}\;
+y>0
+\biggr\},
+\]
+the heat equation
+\[
+\frac{\partial u}{\partial y}
+=
+(1+x^2)
+\frac{\partial^2 u}{\partial x^2}
+\]
+is to be solved with boundary conditions
+\[
+\begin{aligned}
+u\biggl(-\frac{\pi}2,y\biggr)           &= e^{-y}   &&\text{for}& y&>0\\
+u\biggl(\phantom{-}\frac{\pi}2,y\biggr) &= 2-e^{-y} &&\text{for}& y&>0\\
+u(x,0)                                  &= 1        &&\text{for}& x&\in\biggl(-\frac{\pi}2,\frac{\pi}2\biggr).
+\end{aligned}
+\]
+\begin{teilaufgaben}
+\item
+Use the Laplace transform to convert the partial differential equation
+into a family of ordinary differential equations that can be used to
+find solutions for the differential equation.
+\item
+Guess a particular solution for the ordinary differential equation obtained.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+The Laplace transform of the differential equation with respect to
+the variable $y$ is
+\[
+s (\mathscr{L}u)(x,s) - u(x,0)
+=
+(1+x^2)\frac{\partial^2}{\partial x^2}
+\mathscr{L}u(x,s).
+\]
+Writing $f_s(x) = \mathscr{L}u(x,s)$, this is a parametrized
+family of ordinary differential equations
+\begin{equation}
+sf_s(x) - 1 = (1+x^2)f_s''(x)
+\qquad\Rightarrow\qquad
+f_s''(x)-\frac{s}{1+x^2}f_s(x)
+=
+-
+\frac{1}{1+x^2}
+\label{50000026:ord}
+\end{equation}
+on the interval $(-\frac{\pi}2,\frac{\pi}2)$ with parameter $s$.
+The boundary conditions for $x=\pm\frac{\pi}2$ also need to be 
+transformed:
+\begin{align*}
+f_s\biggl(-\frac{\pi}2\biggr)
+&=
+\mathscr{L}u\biggl(-\frac{\pi}2,s\biggr) = \frac{1}{s+1}
+\\
+f_s\biggl(\frac{\pi}2\biggr)
+&=
+\mathscr{L}u\biggl(\frac{\pi}2,s\biggr)  = \frac{2}{s} - \frac{1}{s+1}
+\end{align*}
+\item
+The constant function $f_s(x)=1/s$ has vanishing second derivative.
+Substituting it into the equation \eqref{50000026:ord} gives
+\[
+f_s''(x) - \frac{s}{1+x^2}f_s(x)
+=
+0
+-\frac{s}{1+x^2}\cdot\frac{1}s
+=
+-
+\frac{1}{1+x^2}.
+\]
+Thus $f_s(x)=1/s$ is a particular solution.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+Choice of $y$ as transformation variable ({\bf Y}) 1 point,
+transform of the differential equation ({\bf D}) 1 point,
+using the boundary condition for $y=0$ ({\bf B}) 1 point,
+transform of the boundary condition for $x=-\frac{\pi}2$
+and $x=\frac{\pi}2$ ({\bf X}) 1 point each,
+particular solution ({\bf P}) 1 point.
+\end{bewertung}
