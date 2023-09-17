@@ -1,0 +1,4 @@
+u: r * (1 - r) * cos(phi);
+
+expand(diff(r * diff(u, r), r) / r + diff(diff(u,phi),phi)/r^2);
+
