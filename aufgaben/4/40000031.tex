@@ -1,0 +1,34 @@
+The separation of the equation in problem~\ref{40000030} gave the
+separated equation
+\begin{align*}
+X'(x) & \mu X(x)
+&
+Y'(y) &=\frac{\lambda}{\mu} Y(y).
+\end{align*}
+Find its solutions and verify that $u(x,y)= X(x)Y(y)$ is a solution
+of the original equation.
+
+\begin{loesung}
+The equations have the general solutions
+\begin{align*}
+X(x) &= Ce^{\mu x}
+&
+Y(y) &= De^{\frac{\lambda}{\mu}y}.
+\end{align*}
+The product is $u(x,y)=X(x)Y(y) = CD e^{\mu x + \lambda y/\mu}$, which
+has derivatives
+\begin{align*}
+\frac{\partial u}{\partial x}
+&=
+CD \mu e^{\mu x+\lambda y /\mu}
+\\
+\frac{\partial^2 u}{\partial y\partial x}
+&=
+CD \mu \frac{\lambda}{\mu} e^{\mu x+\lambda y /\mu}
+=
+\lambda CD e^{\mu x + \lambda y/\mu}
+=
+\lambda u(x,y),
+\end{align*}
+proving that $u(x,y)$ is an solution.
+\end{loesung}

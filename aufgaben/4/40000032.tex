@@ -1,0 +1,23 @@
+Find the values $\lambda$ for which there are solutions of the differential
+equation
+\[
+X''(x)= -\lambda^2 X(x)
+\]
+on the domain $\Omega = (0,1)$ with homogeneous boundary conditions.
+
+\begin{loesung}
+The solutions are lineare combinations of trigonometric functions
+\[
+X(x) = A \cos\lambda x + B \sin\lambda x.
+\]
+Homogeneous boundary conditions imply at $x=0$ that
+$X(0)=A=0$, so only sine functions are possible. 
+In order to get a nontrivial solution, we need $B\ne 0$.
+At the right end of the interval we have
+\[
+B \sin (\lambda\cdot 1) = 0,
+\]
+this equation only is true only if the argument $\lambda$ is an integer
+multiple of $pi$, as these are the zeros of the sine function,
+i.~e.~$\lambda = k\pi$ for $k\in\mathbb{Z}$.
+\end{loesung}

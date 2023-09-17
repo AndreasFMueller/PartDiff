@@ -1,0 +1,101 @@
+On the domain
+\begin{equation}
+\Omega = \{ (x,y)\mid y>0\;\text{and}\; x^2+y^2< 1\},
+\end{equation}
+consider the partial differential equation
+\begin{equation}
+\Delta u =  -\lambda u
+\label{40000028:pde}
+\end{equation}
+with homogeneous boundary conditions.
+Obtain two ordinary differential equations with initial or boundary
+conditions from which solutions to the equation~\eqref{40000028:pde}
+can be constructed.
+Also find all solutions of one of those equations.
+
+\begin{loesung}
+Using polar coordinates, the domain becomes
+\[
+\Omega = \{ (\varphi,r)\mid 0<\varphi<\pi\;\text{and}\; 0<r<1\}.
+\]
+This means that a separation ansatz of the form
+$u(r,\varphi)=R(r)\Phi(\varphi)$ can be used.
+The Laplace operator in polar coordinates is
+\[
+\Delta
+=
+\frac1r \frac{\partial}{\partial r}r\frac{\partial }{\partial r}
++
+\frac1{r^2}\frac{\partial^2}{\partial r^2}.
+\]
+Using the ansatz, we get
+\[
+\Delta u
+=
+\frac{1}{r}\frac{\partial}{\partial r} rR'(r)\Phi(\varphi)
++
+\frac{1}{r^2}R(r)\Phi''(\varphi)
+=
+\frac{1}{r}(R'(r)+rR''(r))\Phi(\varphi)
++
+\frac{1}{r^2}R(r)\Phi''(\varphi)
+=
+-\lambda R(r)\Phi(\varphi)
+\]
+Dividing by $u(r,\varphi)$ and multiplying by $r^2$ gives
+\[
+\frac{rR'(r)+r^2R''(r)+\lambda r^2R(r)}{R(r)}
++
+\frac{\Phi''(\varphi)}{\Phi(\varphi)}
+=
+0.
+\]
+This allows to separate the variables $r$ and $\varphi$, giving
+\[
+\frac{rR'(r)+r^2R''(r)+\lambda r^2R(r)}{R(r)}
+=-
+\frac{\Phi''(\varphi)}{\Phi(\varphi)}
+\;\Rightarrow
+\left\{
+\;
+\begin{aligned}
+rR'(r)+r^2R''(r)+\lambda r^2R(r) &= \mu R(r) \\
+\Phi''(\varphi) &= -\mu \Phi(\varphi).
+\end{aligned}
+\right.
+\]
+The boundary conditions are
+\begin{equation}
+\Phi(0)=\Phi(\pi)=0 
+\qquad\text{and}\qquad
+   R(0)=R(1)= 0.
+\end{equation}
+The $\Phi$-equation is a harmonic oscillation, so the solution must be
+\[
+\Phi(\varphi) = A \cos\sqrt{\mu}\varphi + B \sin\sqrt{\mu}\varphi.
+\]
+At the boundary $\varphi=0$, $0=\Phi(0)=A\cos\sqrt{\mu}0 = A$.
+At the boundary $\varphi=\pi$ we get
+\[
+\Phi(\pi) = B\sin\sqrt{\mu}\pi = 0
+\qquad\Rightarrow\qquad
+\sqrt{\mu}\in\mathbb{N}
+\qquad\Rightarrow\qquad
+\mu = k^2,\;k\in\mathbb{N}.
+\]
+So all the solutions are the functions $\Phi_k(\varphi)=\sin k\varphi$.
+This implies that $R_k(r)$  must be a solution of the equation
+\[
+r^2R''(r) + rR'(r) +(\lambda r^2-k^2) R(r) = 0.
+\]
+This is the Bessel equation which can be solved using Bessel functions.
+\end{loesung}
+
+\begin{bewertung}
+Separation ansatz ({\bf A}) 1 point,
+equation for $R(r)$ ({\bf R}) 1 point,
+boundary conditions for $R(r)$ ({\bf B}) 1 point,
+equation for $\Phi(\varphi)$ with boundary conditions ($\Phi$) 1 point,
+solution for $\Phi(\varphi)$ ({\bf S}) 1 point,
+admissible values of $\mu$ ({\bf M}) 1 point.
+\end{bewertung}
