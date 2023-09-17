@@ -1,0 +1,97 @@
+(2 points + 4 points)
+\begin{teilaufgaben}
+\item
+The domain $\Omega$ is the square $[0,2] \times [0, 2]$.
+The function $u(x,y)$ is defined on $\Omega$.
+
+It satisfies in $\Omega$ 
+\[
+\Delta u(x,y) = 0.
+\]
+On the boundary of $\Omega$ one has $u(1,0) = u(0,1) = 0$ and
+$u(2,1) = u(1,2) = 2$.
+
+Determine an approximate value for $u(1,1)$.
+
+Use finite differences with $h = 1$.
+
+\item
+The domain $\Omega$ is a square with vertices
+\[
+(4,0), (0,4), (-4, 0), (0,-4).
+\]
+The function $u(x,y)$ is defined on $\Omega$.
+It satisfies in $\Omega$ 
+\[
+\Delta u(x,y) = 1.
+\]
+On the boundary of $\Omega$ one has $u(x,y) = 0$.
+
+Determine approximate values for $u(-1,-1)$ and $u(1,1)$.
+
+Use finite volumes \`a la Voronoi.  
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+By the five-point-star operator we have
+\begin{equation}
+\tilde u(2,1)
++
+\tilde u(1,2)
++
+\tilde u(0,1)
++
+\tilde u(1,0)
+-
+4 \cdot    \tilde u(1,1)
+=
+0.
+\tag{\bf 1P}
+\end{equation}
+
+Hence
+\[
+2 + 2 + 0 + 0 - 4 \cdot \tilde u(1,1) = 0
+\]
+and
+\begin{equation}
+\tilde u(1,1) = 1.
+\tag{\bf 1P}
+\end{equation}
+
+\item
+By the finite volume method we have
+\begin{gather}
+4 \cdot (0 - \tilde u(-1,-1)) + (0 - \tilde u(-1,-1))
++ (0 - \tilde u(-1,-1)) + 2 \cdot (\tilde u(1,1) - \tilde u(-1,-1))
+=
+16,
+\notag
+\\
+4 \cdot (0 - \tilde u(1,1)) + (0 - \tilde u(1,1))
++ (0 - \tilde u(1,1)) + 2 \cdot (\tilde u(-1,-1) - \tilde u(1,1))
+=
+16
+\tag{\bf 2P}
+\end{gather}
+or simpler
+\begin{gather}
+-8 \cdot \tilde u(-1,-1) + 2 \cdot \tilde u(1,1) = 16,
+\notag
+\\
+ 2 \cdot \tilde u(-1,-1) -8 \cdot \tilde u(1,1) = 16.
+\tag{\bf 1P}
+\end{gather}
+
+Therefore
+\begin{equation}
+(\tilde u(-1,-1), \tilde u(1,1)) = (-16/6, -16/6).
+\tag{\bf 1P}
+\end{equation}
+\end{teilaufgaben}
+\end{loesung}
+
+
+

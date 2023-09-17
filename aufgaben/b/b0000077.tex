@@ -1,0 +1,135 @@
+(3 points + 3 points)
+\begin{teilaufgaben}
+\item
+The function $u(x)$ is defined on the interval $\Omega = [-2,2].$ 
+
+The function $u(x)$ satisfies in $\Omega$ 
+\[
+u''(x) + 2 \cdot u'(x) + u(x) = x^2 + 4 \cdot x + 2
+\]
+and  $u(-2) = 4, u(2) = 4$ on the boundary of $\Omega$. 
+
+Determine approximate values for $u(-1)$, $u(0)$ and $u(1)$. 
+Use central finite differences with $h = 1$. 
+
+\item
+The function $u(x,t)$ is defined on the strip
+$\Omega = [-2, 2] \times [0,\infty)$.
+
+\vspace{2mm}
+
+The function $u(x,t)$ satisfies in $\Omega$
+\[
+u_{t}(x,t) = u_{xx}(x,t)
+\]
+and $u(-2,t) = u(2,t) = 0$ as well as $u(x,0) = 4 - x^2$ on the
+boundary of $\Omega$.
+
+Determine approximate values for $u(-1,1)$ $u(0,1)$ and $u(1,1)$. 
+
+Use the implicit method of Richardson with $\Delta x = 1$ and
+$\Delta t = 1/2.$
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+By the method of finite differences we have
+\begin{gather*}
+(\tilde u(-2) - 2 \cdot \tilde u(-1) + \tilde u(0))
++ (- \tilde u(-2) + \tilde u(0)) + \tilde u(-1)
+= -1
+\\
+(\tilde u(-1) - 2 \cdot \tilde u(0) + \tilde u(1))
++ (- \tilde u(-1) + \tilde u(1)) + \tilde u(0)
+= 2
+\\
+(\tilde u(0) - 2 \cdot \tilde u(1) + \tilde u(2))
++ (- \tilde u(0) + \tilde u(2)) + \tilde u(1)
+= 7
+\end{gather*}
+This leads to a system of three linear equations:
+\begin{equation}
+\begin{pmatrix*}[r]
+-1 &  2 & 0 \\
+ 0 & -1 & 2 \\
+ 0 & 0 & -1
+\end{pmatrix*}
+\cdot
+\begin{pmatrix}
+\tilde u(-1) \\
+\tilde u(0)  \\
+\tilde u(1)
+\end{pmatrix}
+=
+\begin{pmatrix*}[r]
+-1 \\
+ 2 \\
+-1
+\end{pmatrix*}.
+\tag{\bf 2P}
+\end{equation}
+Its solution is
+\begin{equation}
+(\tilde u(-1),  \tilde u(0), \tilde u(1))
+=
+(1, 0 , 1).
+\tag{\bf 1P}
+\end{equation}
+
+\item
+We use the implicit method of Richardson with $r = 1/2$. 
+
+For the first time step we have  
+\begin{equation}
+\begin{pmatrix*}[r]
+ 3 \\
+ 4 \\
+ 3
+\end{pmatrix*}
+=
+\begin{pmatrix}
+ 2   & -1/2 & 0 \\
+-1/2 & 2 & -1/2 \\
+ 0   & -1/2 & 2
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+\tilde u(-1,1/2) \\
+\tilde u(0,1/2)  \\
+\tilde u(1,1/2)
+\end{pmatrix}.
+\tag{\bf 1P}
+\end{equation}
+
+For the second time step we have  
+\begin{equation}
+\begin{pmatrix*}[r]
+ 16/7 \\
+ 22/7 \\
+ 16/7
+\end{pmatrix*}
+=
+\begin{pmatrix}
+  2   & -1/2 &  0   \\
+ -1/2 &  2   & -1/2 \\
+  0   & -1/2 &  2
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+\tilde u(-1,1)  \\
+\tilde u(0,1) \\
+\tilde u(1,1)
+\end{pmatrix}.
+\tag{\bf 1P}
+\end{equation}
+Therefore
+\begin{equation}
+(\tilde u(-1,1), \tilde u(0,1), \tilde u(1,1))
+=
+(86/49, 120/49, 86/49).
+\tag{\bf 1P}
+\end{equation}
+\qedhere
+\end{teilaufgaben}
+\end{loesung}

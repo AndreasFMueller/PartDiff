@@ -1,0 +1,115 @@
+\begin{teilaufgaben}
+\item (2 points)
+The function $u(x,t)$ is defined on the upper half plane
+$\Omega = (-\infty,\infty) \times [0,\infty)$.
+
+\vspace{2mm}
+
+The function $u(x,t)$ satisfies in $\Omega$ the equation
+\[
+u_{x}(x,t) + u_{t}(x,t) = 0
+\]
+and  $u(x,0) = x^3$ on the boundary of $\Omega$.
+
+\vspace{2mm}
+
+Determine an approximate value for $u(0,1)$. 
+
+\vspace{2mm}
+
+Use the Lax-Wendroff scheme with $\Delta x = 1$ and $\Delta t = 1/2.$
+
+\vspace{8mm}
+
+\item (4 points)
+The function $u(x,t)$ is defined on the strip
+$\Omega = [0, \pi] \times [0,\infty)$.
+
+\vspace{2mm}
+
+The function $u(x,t)$ satisfies in $\Omega$ the equation
+\[
+u_{xx}(x,t) = u_{tt}(x,t)
+\]
+and  $u(0,t) = 0$, $u(\pi,t) = 0$ on the boundary of $\Omega$. 
+
+\vspace{2mm}
+
+The function $u(x,t)$ also satisfies the initial conditions
+\[
+u(x,0) = \sin(x) \ \ \ \mbox{and} \ \ \ u_t(x,0) = \sin(x)^2.
+\]
+
+\vspace{2mm}
+
+Determine approximate values for $u(\pi/2,1)$.
+
+\vspace{2mm}
+
+Use finite differences with $\Delta x = \pi/2$ and $\Delta t = 1/2.$
+
+\end{teilaufgaben}
+
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+We use the Lax-Wendroff scheme with $r = 1/2$.
+The corresponding iteration formula is
+\begin{equation}
+\tilde u_{j,k+1}
+=
+3/8 \cdot \tilde u_{j-1,k} + 6/8 \cdot \tilde u_{j,k}
+- 1/8 \cdot \tilde u_{j+1,k}.
+\tag{1P}
+\end{equation}
+Therefore
+\begin{equation}
+\tilde u(-1,1/2)
+=
+-30/8,
+\quad
+\tilde u(0,1/2) = -4/8,
+\quad
+\tilde u(1,1/2) = -2/8
+\quad\text{and}\quad
+\tilde u(0,1) = -7/4.
+\tag{1P}
+\end{equation}
+
+\vspace{5mm}
+
+\item
+We have $f(x) = \sin(x)$ and $g(x) = \sin(x)^2$. 
+
+\smallskip
+
+Hence for the first time step we have by Taylor
+\begin{equation}
+\tilde u(\pi/2, 1/2)
+=
+\sin(\pi/2) \cdot 1 + \sin(\pi/2)^2 \cdot 1/2
+- 1/2 \cdot \sin(\pi/2) \cdot (1/2)^2.
+\tag{1P}
+\end{equation}
+Therefore
+\begin{equation}
+\tilde u(\pi/2, 1/2) = 11/8.
+\tag{1P}
+\end{equation}
+For the second time step we use the leapfrog scheme with $r = 1/\pi$.
+\begin{equation}
+\tilde u(\pi/2, 1)
+=
+1/\pi^2 \cdot \tilde u(0, 1/2)
++ 2 \cdot (1 - 1/\pi^2) \cdot \tilde u(\pi/2,1/2)
++ 1/\pi^2 \cdot \tilde u(\pi, 1/2) - \tilde u(\pi/2,0).
+\tag{1P}
+\end{equation}
+This leads to
+\begin{equation}
+\tilde u(\pi/2, 1) \approx 1.471. \tag{1P}
+\end{equation}
+\end{teilaufgaben}
+\end{loesung}
+
