@@ -1,0 +1,208 @@
+On the domain $\Omega= \{(x,y)\mid x > 0\}$, the differential operator
+\begin{equation}
+L
+=
+\frac{\partial^2}{\partial x^2}
++
+(2x-1)
+\frac{\partial^2}{\partial x\,\partial y}
+-
+2x
+\frac{\partial^2}{\partial y^2}
+\label{90000027:operator}
+\end{equation}
+is given.
+\begin{teilaufgaben}
+\item
+Is this operator elliptic, parabolic or hyperbolic?
+\item
+Can a change of a Dirichlet boundary condition in the point $Q=(0,0)$
+influence the solution of partial differential equation involving the
+operator $L$ in the point $P=(\frac12,\frac12)$
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{figure}
+\centering
+\begin{tikzpicture}[>=latex,thick]
+\def\dx{5}
+\def\dy{5}
+\def\X{0.5}
+\def\Y{0.5}
+\pgfmathparse{\Y+\X}
+\xdef\D{\pgfmathresult}
+\pgfmathparse{\Y-\X*\X}
+\xdef\C{\pgfmathresult}
+\begin{scope}
+	\fill[color=gray!10] (0,{-0.7*\dy}) rectangle ({2.2*\dx},{1.2*\dy});
+	\clip ({0*\dx},{-0.7*\dy}) rectangle ({2.2*\dx},{1.2*\dy});
+	\fill[color=blue!20]
+		plot[domain=0:\X,samples=10] 
+			({\x*\dx},{(-\x+(\D))*\dy})
+		--
+		plot[domain=\X:0,samples=10]
+			({\x*\dx},{(\x*\x+(\C))*\dy})
+		--
+		cycle;
+	\draw[color=darkgreen,line width=0.3pt] plot[domain=0:2.2,samples=20]
+			({\x*\dx},{(\x*\x+\C)*\dy});
+	\draw[color=red,line width=0.3pt] plot[domain=0:2.2,samples=20]
+			({\x*\dx},{(-\x+\D)*\dy});
+	\foreach \C in {-10,-9.75,...,2}{
+		\draw[color=darkgreen] plot[domain=0:2.2,samples=20]
+			({\x*\dx},{(\x*\x+\C)*\dy});
+	}
+	\foreach \D in {-1,-0.75,...,3}{
+		\draw[color=red] plot[domain=0:2.2,samples=20]
+			({\x*\dx},{(-\x+\D)*\dy});
+	}
+\end{scope}
+\fill[color=white,opacity=1.0]
+	({\X*\dx+0.05},{\Y*\dy-0.1}) rectangle ({\X*\dx+1.90},{\Y*\dy-0.70});
+\draw[line width=0.2pt] (0,{\Y*\dy}) -- ({\X*\dx},{\Y*\dy});
+\draw (-0.05,{\Y*\dy}) -- (0.05,{\Y*\dy});
+\node at (0,{\Y*\dy}) [left] {$\frac12$};
+\draw[line width=0.2pt] ({\X*\dx},0) -- ({\X*\dx},{1.2*\dy});
+\node at ({\X*\dx},{1.2*\dy}) [above] {$\frac12$};
+\node at ({\X*\dx},{\Y*\dy}) [below right] {$P=(\frac12,\frac12)$};
+\node at (0,0) [above left] {$Q$};
+\draw[color=blue] ({0*\dx},{-0.7*\dy}) -- ({0*\dx},{1.2*\dy});
+\fill[color=blue] ({\X*\dx},{\Y*\dy}) circle[radius=0.08];
+\fill[color=blue] ({0*\dx},{0*\dy}) circle[radius=0.08];
+\pgfmathparse{\Y+\X}
+\xdef\D{\pgfmathresult}
+\pgfmathparse{\Y-\X*\X}
+\xdef\C{\pgfmathresult}
+\draw[color=blue] (-0.05,{\C*\dy}) -- (0.05,{\C*\dy});
+\node[color=blue] at (0,{\C*\dy}) [left] {$\frac14$};
+\draw[color=blue] (-0.05,{\D*\dy}) -- (0.05,{\D*\dy});
+\node[color=blue] at (0,{\D*\dy}) [left] {$1$};
+\draw[->] (-0.1,0) -- ({2.2*\dx+0.5},0) coordinate[label={$x$}];
+\draw[->] (0,{-0.7*\dy-0.1}) -- (0,{1.2*\dy+0.3}) coordinate[label={left:$y$}];
+\draw ({\X*\dx},-0.05) -- ({\X*\dx},0.05);
+\draw ({\dx},-0.05) -- ({\dx},0.05);
+\node at ({1*\dx},0) [below] {$1$};
+\draw ({2*\dx},-0.05) -- ({2*\dx},0.05);
+\node at ({2*\dx},0) [below] {$2$};
+\end{tikzpicture}
+\caption{Characteristics for the hyperbolic operator $L$ of
+\eqref{90000027:operator}
+\label{90000027:fig}}
+\end{figure}
+\begin{teilaufgaben}
+\item
+The symbol matrix of $L$ is
+\[
+A
+=
+\begin{pmatrix}
+  1       & x-\frac12 \\
+x-\frac12 &   -2x
+\end{pmatrix}
+\qquad\Rightarrow\qquad
+\det A
+=
+-2x -(x-{\textstyle\frac12})^2.
+\]
+Multiplying out we find
+\[
+\det A
+=
+-2x-x^2 +x-\frac14
+=
+-x^2-x-\frac14
+=
+-(x+{\textstyle\frac12})^2
+<
+0
+\]
+because $x+\frac12\ne 0$ for $x>0$.
+Thus  $L$ is hyperbolic.
+\item
+The differential equation for the characteristics is
+\[
+\dot{y}^2 -(2x-1) \dot{y}\dot{x} - 2x\dot{x}^2 = 0
+\]
+By dividing by $\dot{x}$ and using $y'=\dot{y}/\dot{x}$ we can simplify
+this to an ordinary differential equation
+\[
+y^{\prime 2} -(2x-1)y' - 2x = 0.
+\]
+This can be factored as
+\[
+(y'+1)(y'-2x) = 0
+\qquad\Rightarrow\qquad
+y'
+=
+\begin{cases}
+-1\\
+2x
+\end{cases}
+\]
+which can also be found using the quadratic formula:
+\begin{align*}
+y'
+&=
+(x-{\textstyle\frac12}) \pm \sqrt{(x-{\textstyle\frac12})^2+2x}
+\\
+&=
+(x-{\textstyle\frac12}) \pm \sqrt{x^2-x+\frac14+2x}
+\\
+&=
+(x-{\textstyle\frac12}) \pm \sqrt{x^2+x+\frac14}
+\\
+&=
+x-{\textstyle\frac12} \pm (x+{\textstyle\frac12})
+\\
+&=
+\begin{cases}
+2x  \\
+-1.
+\end{cases}
+\end{align*}
+These equations can directly be integrated:
+\[
+\begin{aligned}
+y'&=2x   &&\Rightarrow& y&= x^2 + C \\
+y'&=-1   &&\Rightarrow& y&=-x   + D.
+\end{aligned}
+\]
+Figure~\ref{90000027:fig} shows the first set of characteristics
+as green curves and the second set as red curves.
+We have to find the values for the constant $C$ for the two sets of
+curves.
+\[
+\begin{aligned}
+	y_0 &= x_0^2 + C         &
+&\Rightarrow&
+C &= y_0 - x_0^2 = \frac12-\frac14 = \frac{1}{4}\\
+	y_0 &= -x_0 + D &
+&\Rightarrow&
+D &= y_0 + x_0 = \frac12 + \frac12 = 1.
+\end{aligned}
+\]
+The corresponding points on the boundary where $x=0$ are
+\[
+(0,{\textstyle\frac14})
+\qquad\text{and}\qquad
+(0,1).
+\]
+Only points $(0,y)$ with $y\in[ \frac{1}{4}, 1]$ can
+influence the given point.
+The point $Q=(0,0)$ is not one of them.
+So no, a change in boundary condition in $(0,0)$ has no influence on
+the value in the point $P=(\frac12,\frac12)$.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+Symbol matrix ({\bf A}) 1 point,
+negative sign of the determinant and conclusion that $L$ is hyperbolic
+({\bf H}) 1 point,
+equation for characteristics ({\bf E}) 1 point,
+factorization ({\bf F}) 1 point,
+solution curves ({\bf S}) 1 point,
+decision that $Q$ cannot influence $P$ ({\bf D}) 1 point.
+\end{bewertung}
+
