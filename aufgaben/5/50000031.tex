@@ -1,0 +1,49 @@
+For the domain $\Omega=\mathbb{R}^2$, a set of
+eigenfunctions of the Laplace operator can be constructed using the 
+so called Bessel functions $J_k(x)$.
+The functions
+\[
+u_{k,\lambda}(\varphi,r)
+=
+J_k(\!\sqrt{\lambda}r) 
+e^{ikr},\qquad k\in\mathbb{Z}
+\]
+satisfy
+\[
+\Delta u_{k,\lambda}
+=
+-
+\lambda u_{k,\lambda}.
+\]
+Boundary conditions will further restrict the eigenvalues $\lambda$
+to a discrete set $\lambda_m$ of eigenvalues.
+Use this the functions $u_{km} = u_{k,\lambda_m}$ to
+transform the wave equation in the plane to a system of
+ordinary differential equations.
+
+\begin{loesung}
+The wave can be described as a superposition
+\[
+u(t,\varphi,r)
+=
+\sum_{k\in\mathbb{Z}}\sum_{m=0}^\infty a_{km}(t) u_{km}(\varphi,r).
+\]
+Applying the wave equation gives
+\begin{align*}
+\frac{\partial^2u}{\partial t^2}(t,\varphi,r)
+&=
+\sum_{k\in\mathbb{Z}} \sum_{m=0}^\infty\ddot{a}_{km}(t) u_{km}(\varphi,r)
+\\
+\Delta
+\sum_{k\in\mathbb{Z}} \sum_{m=0}^\infty a_{km}(t) u_{km}(\varphi,r)
+&=
+\sum_{k\in\mathbb{Z}} \sum_{m=0}^\infty a_{km}(t) \Delta u_{km}(\varphi,r)
+=
+-\sum_{k\in\mathbb{Z}} \sum_{m=0}^\infty a_{km}(t) \lambda_m u_{km}(\varphi,r).
+\end{align*}
+Comparing coefficients now gives the ordinary differential equations
+\[
+\ddot{a}_{km}(t) = -\lambda_m a_{km}(t)
+\]
+for $k\in\mathbb{Z}$ and $m\in\mathbb{N}$.
+\end{loesung}

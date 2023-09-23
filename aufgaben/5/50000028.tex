@@ -1,0 +1,65 @@
+The spherical functions $Y_{lm}(\varphi,\vartheta)$ have the following
+properties:
+\[
+\Delta Y_{lm} = -l(l+1)Y_{lm}
+\qquad
+\text{and}
+\qquad
+\frac{\partial}{\partial\varphi}Y_{lm}
+=
+-im Y_{lm}
+\]
+Use this to convert the partial differential equation
+\[
+\frac{\partial u}{\partial t}
+=
+\Delta u + v \frac{\partial u}{\partial\varphi}
+\]
+into a system of ordinary differential equations.
+
+\begin{loesung}
+First we write the solution as a series 
+\[
+u(t,\varphi,\vartheta)
+=
+\sum_{l=0}^\infty \sum_{m=-l}^l
+a_{lm}(t) Y_{lm}(\varphi,\vartheta).
+\]
+Now we substitute this solution into the equation and get:
+\begin{align*}
+\sum_{l=0}^\infty \sum_{m=-l}^l
+\dot{a}_{lm}(t) Y_{lm}
+&=
+\sum_{l=0}^\infty \sum_{m=-l}^l
+a_{lm}
+\Delta Y_{lm}
++
+v
+\sum_{l=0}^\infty \sum_{m=-l}^l
+a_{lm}
+\frac{\partial}{\partial\varphi} Y_{lm}
+\\
+&=
+-
+\sum_{l=0}^\infty \sum_{m=-l}^l
+l(l+1)
+a_{lm}
+Y_{lm}
++
+i
+v
+\sum_{l=0}^\infty \sum_{m=-l}^l
+m
+a_{lm}
+Y_{lm}.
+\end{align*}
+Finally, comparing coefficients gives the ordinary differential
+equations
+\[
+\dot{a}_{lm}(t) = -l(l+1) a_{lm}(t) + iv\, a_{lm}(t)
+\qquad
+\forall l\in\mathbb{N}, -l\le m\le l
+\qedhere
+\]
+\end{loesung}
+
