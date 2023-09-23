@@ -1,0 +1,36 @@
+Use the particular solution found in problem~\ref{60000006}
+to turn the nonhomogeneous partial differential equation
+\[
+\Delta u = x^2 + y^2
+\]
+on the domain $\Omega=\{(x,y)\mid x^2+y^2<1\}$ with homogeneous
+Dirichlet boundary conditions into a homogenous problem.
+
+\begin{loesung}
+Look for a solution in the form $u=u_r+u_p$ and substitute this ansatz
+into the differntial equation, giving
+\[
+x^2+y^2
+=
+\Delta u 
+=
+\Delta (u_r+u_p)
+=
+\Delta u_r + \underbrace{\Delta u_p}_{\displaystyle \clap{$x^2+y^2$}}
+\qquad\Rightarrow\qquad
+\Delta u_r = 0.
+\]
+So $u_r$ ist the solution of a homogeneous equation, but we still need
+to specify the boundary conditions.
+The original problem had homogenous boundary values, i.~e.~$u = 0$
+on $\partial\Omega$, so $u_r = -u_p$ on $\partial\Omega$.
+But $u_p = 1/12$ on $\partial\Omega$, so the new boundary condition
+for $u_r$ becomes
+\[
+u_r = -\frac1{12}
+\qquad\text{on $\partial\Omega$}.
+\qedhere
+\]
+\end{loesung}
+
+
