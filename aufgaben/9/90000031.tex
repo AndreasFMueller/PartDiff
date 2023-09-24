@@ -1,0 +1,111 @@
+Factor the the following quadratic differential equations of first
+order into two linear differential equations of first order.
+\begin{teilaufgaben}
+\item
+$(y')^2 + 2y' - 15
+=0$
+\item
+$(y')^2 - 4xy' + 3x^2
+=0$
+\item
+$x(y')^2 - y' - \frac2x
+=0$
+\end{teilaufgaben}
+
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item 
+Factoring the equation gives
+\[
+(y')^2 + 2y' - 15 = (y'+5)(y'-3)=0
+\]
+which is equivalent to the equations
+\[
+y'=-5
+\qquad\text{and}\qquad
+y'=3.
+\]
+\item
+Factoring the equation gives
+\[
+(y')^2 - 4xy' + 3x^2
+=
+(y' - x)(y' - 3x)
+=
+0
+\]
+which is equivalent to the equations
+\[
+y' = x
+\qquad\text{and}\qquad
+y' = 3x.
+\]
+\item
+Factoring is a little more difficult in this case, but assuming that
+only integer powers the variables will appear leads to an ansatz of the
+form
+\[
+xy'^2 - y' - \frac2x
+=
+(xy' + b(x))(y' + c(x)),
+\]
+which leads to the conditions
+\[
+xc(x) + b(x) = -1
+\qquad\text{and}\qquad
+b(x)c(x) = -\frac2x.
+\]
+The can be solved by choosing
+\[
+c(x) = \frac1x
+\qquad\text{and}\qquad
+b(x) = -2,
+\]
+giving the factorization
+\[
+0
+=
+xy'^2 - y' - \frac2x
+=
+(xy'-2)\biggl(y' + \frac1x\biggr)
+\qquad\Rightarrow\qquad
+y'=\frac2x\quad\text{and}\quad y'=-\frac1x.
+\]
+
+Alternatively, the quadratic formula can be used to solve the equation
+for $y'$, giving
+\[
+y'(x)
+=
+\frac{1\pm\sqrt{1+4\cdot x\cdot \frac2x}}{2x}
+=
+\frac{1\pm\sqrt{1+8}}{2x}
+=
+\frac{1\pm3}{2x}
+=
+\begin{cases}
+\frac2x\\
+-\frac1x,
+\end{cases}
+\]
+so the two differential equations are
+\[
+y'(x) = \frac2x
+\qquad\text{and}\qquad
+y'(x))= -\frac1x.
+\]
+
+As a third way to get the factorization, one could multiply the
+equation with $x$ giving
+\[
+(xy')^2 -xy' - 2
+=
+(xy'+1)(xy'-2)
+\]
+which leads to the same equations.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+
