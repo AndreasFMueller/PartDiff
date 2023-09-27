@@ -1,0 +1,38 @@
+The Dirac-$\delta$-function has the property that
+\[
+\int_{-\infty}^\infty f(y)\delta(x-y)\,dy = f(x).
+\]
+Suppose there is a function $g(x)$ such that $g''(x)=\delta(x)$.
+Verify formally (without worrying about convergence of integrals, e.~g.)
+that the function
+\[
+u_p(x)
+=
+\int_{-\infty}^\infty f(y)g(x-y)\,dy
+\]
+is a particular solution of the equation $u''=f$.
+
+\begin{loesung}
+By moving the differentiation into the integral we get from the
+definition of the function $u_p$ the equation
+\begin{align*}
+u_p''(x)
+&=
+\frac{d^2}{dx^2}
+\int_{-\infty}^\infty
+f(y)
+g(x-y)
+\,dy
+=
+\int_{-\infty}^\infty
+f(y) g''(x-y)\,dy
+=
+\int_{-\infty}^\infty
+f(y) \delta(x-y)\,dy.
+\intertext{Now applying the definition of $\delta$-function gives}
+&=
+f(x).
+\qedhere
+\end{align*}
+\end{loesung}
+

@@ -1,0 +1,45 @@
+Find a particular solution for the equation
+\[
+\Delta u = x^2 + y^2
+\]
+on the domain $\Omega = \{(x,y)\mid -1<x<1\wedge -1< y\wedge 1\}$.
+
+\begin{loesung}
+The Laplace operator differentiates the particular solution $u_p(x,y)$
+and leads to a sum of polynomial in $x$ and $y$.
+Integrating each polynomial twice with respect to the independent
+variable gives suitable polynomials:
+\[
+u_p(x,y)
+=
+\frac{x^4}{3\cdot 4}
++
+\frac{y^4}{3\cdot 4}.
+\]
+In fact, applying the Laplace operator gives
+\[
+\Delta u_p
+=
+\frac{1}{3\cdot 4}
+\biggl(
+\frac{\partial^2}{\partial x^2}
++
+\frac{\partial^2}{\partial y^2}
+\biggr)
+(x^4+y^4)
+=
+\frac{1}{3}
+\biggl(
+\frac{\partial^2}{\partial x^2}
+x^3
++
+\frac{\partial^2}{\partial y^2}
+y^3
+\biggr)
+=
+x^2+y^2,
+\]
+showing that $u_p(x,y)$ is in fact a particular solution.
+\end{loesung}
+
+

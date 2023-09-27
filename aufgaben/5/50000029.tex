@@ -1,0 +1,37 @@
+Using the definition and partial integration, compute the Laplace 
+transform of the function $f(t)=t$.
+
+\begin{loesung}
+The definition says
+\begin{align*}
+\mathscr{F}f (s)
+&=
+\int_0^\infty te^{-st}\,dt.
+\intertext{Zur partiellen Integration wird der Faktor $t$ abgeleitet
+und der Faktor $e^{-st}$ integriert, so erhält man}
+&=
+\biggl[
+t\frac{e^{-st}}{-s}
+\biggr]_0^\infty
+-
+\int_0^\infty
+\frac{e^{-st}}{-s}
+\,dt.
+\intertext{The first term vanishes as $e^{-st}\to 0$ for $t\to\infty$,
+the remaining term can be integrated directly}
+&=
+\frac{1}{s}
+\biggl[
+\frac{e^{-st}}{-s}
+\biggr]_0^\infty
+=
+\frac{1}{s}
+\biggl(
+-\frac{1}{-s}
+\biggr)
+=
+\frac1{s^2}.
+\qedhere
+\end{align*}
+\end{loesung}
+

@@ -1,0 +1,47 @@
+The transformation method depends on the domain matching the requirements
+of the transform.
+In the following domains, figure out which transformation can be used
+to reduce the number of derivatives in a linear partial differential
+equation on these domains.
+\begin{teilaufgaben}
+\item
+$\Omega = \{ (x,y) \mid -\pi < x <  \pi\wedge y > 0\}$
+\item
+$\Omega = \{ (x,y) \mid -\pi < x <  \pi\wedge y > 0\}$ with
+functions $u(x,y)$ that satisfy periodic boundary conditions
+$u(-\pi,y)=u(\pi,y)$.
+\item
+Using polar coordinates on the entire plane results in the domain
+$\Omega = \{ (\varphi,r) \mid \varphi \in \mathbb{R}\wedge r > 0\}$
+with functions $u(\varphi,r)$ satisfying the periodicity condition
+$u(\varphi+2\pi,r)=u(\varphi,r)$.
+\item
+The first quadrant can be described as
+$\Omega=\{(x,y)\mid x>0\wedge y>0\}$
+in kartesian coordinates or as
+$\Omega= \{(\varphi,r)\mid r>0\wedge 0< \varphi<\frac{\pi}2\}$
+in polar coordinates.
+\end{teilaufgaben}
+
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+The Laplace transform can be used on the variable $y$.
+\item
+Again, the Laplace transform can be used on the variable $y$.
+But in addition, Fourier series can be used for the dependency 
+on the variable $x$.
+\item
+The Laplace transform can be used on on the variable $r$, converting
+the problem into an ordinary differential equation for periodic functions.
+Alternatively, Fourier series can be used on the $\varphi$-coordinate.
+\item
+Using kartesian coordinates, both variables $x$ and $y$ can be transformed
+using the Laplace transform.
+In polar coordinates, only the $r$-coordinate can be transformed using
+the Laplace transform.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+

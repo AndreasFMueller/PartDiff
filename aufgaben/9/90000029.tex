@@ -1,0 +1,40 @@
+Find the differential equation for the characteristics of the
+partial differential equation
+\[
+x\frac{\partial^2 u}{\partial x^2}
+-\frac{\partial^2 u}{\partial x\,\partial y}
++
+\frac{\partial^2 u}{\partial y^2}
+=
+0.
+\]
+
+\begin{loesung}
+The symbol matrix is
+\[
+A
+=
+\begin{pmatrix}
+a&b\\
+b&c
+\end{pmatrix}
+=
+\begin{pmatrix}
+x&-\frac12\\
+-\frac12&1
+\end{pmatrix}.
+\]
+The differential equation for the characteristics becomes
+\begin{align*}
+x\, \dot{y}(s)^2 - 2\biggl(-\frac12\biggr) \dot{x}(s)\dot{y}(s) + \dot{x}(s)^2
+&=
+0
+\\
+x\dot{y}(s)^2 +\dot{x}(s)\dot{y}(s) +\dot{x}(s)^2 &=0.
+\end{align*}
+Note the coefficient $x$ of the second derivative with respect to $x$
+in the partial differential equation shows up as a coefficient to
+$\dot{y}^2(s)$ in the equation for the characteristics.
+\end{loesung}
+
+

@@ -1,0 +1,116 @@
+On the domain
+$
+\Omega 
+=
+\{
+(x,y)
+\mid
+x>1
+\}
+$
+the partial differential equation with the equation for the characteristics
+studied in problem~\ref{90000031}~c), has characteristics
+\begin{equation}
+\begin{aligned}
+y'&=-\frac1x&&\Rightarrow& y&=-\log x+ C \\
+y'&=x       &&\Rightarrow& y&=\frac12x^2+D
+\end{aligned}
+\label{90000032:char}
+\end{equation}
+Which part of the boundary can influence the point $P=(2,1)$?
+
+\begin{loesung}
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[>=latex,thick]
+	\def\s{2}
+	\pgfmathparse{1+ln(2)}
+	\xdef\C{\pgfmathresult}
+	\xdef\D{-1}
+	\begin{scope}
+		\clip (2,-4.1) rectangle (10.2,4.1);
+		\fill[color=blue!10] (2,-4.1) rectangle (10.2,4.1);
+		\fill[color=orange!20]
+			plot[domain=1:2,samples=10]
+				({\s*\x},{\s*(0.5*\x*\x+\D)})
+			--
+			plot[domain=2:1,samples=10]
+				({2*\x},{\s*(-ln(\x)+\C)})
+			-- cycle;
+		\foreach \x in {2,4,...,11}{
+			\draw[color=white] (\x,-4.1) -- (\x,4.1);
+		}
+		\foreach \y in {-4,-2,...,4}{
+			\draw[color=white] (1,\y) -- (10.2,\y);
+		}
+	\end{scope}
+	\draw[color=orange,line width=2pt] (2,{\s*(0.5+\D)}) -- (2,{\s*\C});
+	\node[color=orange!80!black] at (2,{\s*0.5*(0.5+\D+\C)}) [left] {$G$};
+	\node[color=blue] at (5,0.5) {$\Omega$};
+	\begin{scope}
+		\clip (2,-4.1) rectangle (10.2,4.1);
+		\foreach \D in {-15,-14.5,...,2}{
+			\draw[color=red,line width=1.4pt] 
+				plot[domain=1:5.1,samples=100]
+					({2*\x},{\s*(0.5*\x*\x+\D)});
+		}
+		\foreach \C in {-2.5,-2,...,2.5}{
+			\draw[color=darkgreen,line width=1.4pt] 
+				plot[domain=1:5.1,samples=100]
+					({2*\x},{\s*(-ln(\x)+\C)});
+		}
+		\end{scope}
+	\fill[color=blue] (4,2) circle[radius=0.08];
+	\node[color=blue] at (4,2) [above right] {$P$};
+	\draw[->] (-0.1,0) -- (10.7,0) coordinate[label={$x$}];
+	\draw[->] (0,-4.1) -- (0,4.4) coordinate[label={right:$y$}];
+	\foreach \y in {-4,-2,2,4}{
+		\draw (-0.05,\y) -- (0.05,\y);
+	}
+	\node at (-0.05,-4) [left] {$-2\mathstrut$};
+	\node at (-0.05,-2) [left] {$-1\mathstrut$};
+	\node at (-0.05,0) [left] {$0\mathstrut$};
+	\node at (-0.05,2) [left] {$1\mathstrut$};
+	\node at (-0.05,4) [left] {$2\mathstrut$};
+	\foreach \x in {1,...,5}{
+		\draw ({\s*\x},-0.05) -- ({\s*\x},0.05);
+		\node at ({\s*\x},0) [below left] {$\x\mathstrut$};
+	}
+\end{tikzpicture}
+\caption{Characteristics for a partial differential equation
+as given by \eqref{90000032:char}
+and the domain of influence for the point $(2,1)$.
+\label{90000032:fig}}
+\end{figure}
+We have to find the characteristic curves that pass through the point
+$P$, i.~e.~we have to solve the equations
+\begin{align*}
+1 &= -\log 2 + C           &&\Rightarrow& C &= 1+\log 2 \\
+1 &= \frac12\cdot  2^2 + D &&\Rightarrow& D &= 1-2=-1
+\end{align*}
+The characteristics through the point cross
+the left boundary at $x=1$, where the $y$-values are
+\[
+y
+=
+-\log1 + C
+=
+1+\log 2
+\qquad\text{and}\qquad
+y
+=
+\frac12\cdot 1^2 + D
+=
+\frac12-1
+=
+-\frac12.
+\]
+Therefore boundary values in all the points in the set
+\[
+G
+=
+\bigl\{ (1,y)\mid -{\textstyle\frac12} \le y \le 1+\log 2 \bigr\},
+\]
+drawn in orange in figure~\ref{90000032:fig}, can influence the
+value in point $P$.
+\end{loesung}

@@ -1,0 +1,68 @@
+Find the symbol matrix for the following operators:
+\begin{teilaufgaben}
+\item
+$
+\displaystyle
+L_1
+=
+\frac{\partial^2}{\partial x^2}
++
+2\frac{\partial^2}{\partial x\,\partial y}
++
+3\frac{\partial^2}{\partial y^2}
+$
+\item
+$
+\displaystyle
+L_2
+=
+\frac{\partial^2}{\partial x\,\partial y}
++
+\frac{\partial^2}{\partial y\,\partial z}
++
+\frac{\partial^2}{\partial z\,\partial x}
+$
+\item
+$
+\displaystyle
+L_3u
+=
+\frac{\partial^2 u}{\partial x^2}
++
+\frac{\partial }{\partial x}\frac{\partial u}{\partial y}
++
+\frac{\partial u}{\partial x}\frac{\partial u}{\partial y}
+$
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+\(
+\displaystyle
+A_1
+=
+\begin{pmatrix}
+1&1\\
+1&3
+\end{pmatrix}.
+\)
+\item
+\(
+\displaystyle
+A_2
+=
+\renewcommand{\arraystretch}{1.1}
+\begin{pmatrix}
+0&\frac12&\frac12\\
+\frac12&0&\frac12\\
+\frac12&\frac12&0
+\end{pmatrix}.
+\)
+\item
+This is not a linear second order operator, so there is no reasonable
+symbol matrix.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+

@@ -1,0 +1,75 @@
+Find out whether the following operators are elliptic, parabolic or
+hyperbolic.
+\begin{teilaufgaben}
+\item
+$
+\displaystyle
+L_1
+=
+\frac{\partial^2}{\partial x^2}
++
+2\frac{\partial^2}{\partial x\,\partial y}
++
+3\frac{\partial^2}{\partial y^2}
+$
+\item
+$
+\displaystyle
+L_2
+=
+\frac{\partial^2}{\partial x\,\partial y}
++
+\frac{\partial^2}{\partial y\,\partial z}
++
+\frac{\partial^2}{\partial z\,\partial x}
+$
+\item
+$
+\displaystyle
+L_3
+=
+\frac{\partial^2}{\partial x^2}
++
+4\frac{\partial }{\partial x}\frac{\partial u}{\partial y}
++
+4\frac{\partial^2}{\partial y^2}
+$
+\end{teilaufgaben}
+
+\begin{loesung}
+The first two operators were already discussed in problem~\ref{60000008}.
+\begin{teilaufgaben}
+\item 
+$\det A_1 = 2$ and $\tr A_1=2$ allows to conclude that both eigenvalues
+are positiv, implying that $L_1$ is {\em elliptic}.
+\item
+$\det A_2 = \frac18$ means that an even number of
+eigenvalues is negative.
+Since $\tr A_2=0$, there must be negative eigenvalues, so we can conlude
+that there are two negative and one positive eigenvalue.
+Thus $L_2$ is a {\em hyperbolic} operator.
+\item
+The operator $L_3$ has the symbol matrix
+\[
+A_3
+=
+\begin{pmatrix}
+1&2\\
+2&4
+\end{pmatrix}
+\qquad
+\text{with determinant}
+\qquad
+\det A_3
+=
+1\cdot 4 - 2\cdot 2
+=
+0,
+\]
+implying that at least one eigenvalue is $0$.
+But $\tr A_3 =\lambda_1+\lambda_2 = 5$, so the other eigenvalue is
+$\lambda=5$.
+In particular, the operator is {\em parabolic}.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
