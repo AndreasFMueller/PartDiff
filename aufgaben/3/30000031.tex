@@ -8,8 +8,8 @@ cover the square?
 \begin{teilaufgaben}
 \item Left boundary: $\{(0,y)\mid y\in (0,1)\}$
 \item Right boundary: $\{(1,y)\mid y\in (0,1)\}$
-\item Top boundary: $\{(x,0)\mid x\in (0,1)\}$
-\item Bottom boundary: $\{(x,1)\mid x\in (0,1)\}$
+\item Bottom boundary: $\{(x,0)\mid x\in (0,1)\}$
+\item Top boundary: $\{(x,1)\mid x\in (0,1)\}$
 \end{teilaufgaben}
 
 \begin{loesung}
@@ -39,8 +39,10 @@ Die Kurven sind in Abbildung~\ref{30000031:fig} dargestellt.
 \item
 The curve that passes through $(0,y_0)$ passes through
 at $(x,y_0e^x)$.
-So the curve starting at $(0,y^{-x})$ passes through $(x,y)$, thus
-the curves cover the square.
+So the curve starting at $(0,ye^{-x})$ passes through $(x,y)$.
+But $e^{1-x}$ is $\ge 1$ so some the curve passes above
+the upper right corner of the boundary.
+Only the points below the curve $y=e^{1-x}$ can be covered.
 \item
 The curve through $(1,ye^{1-x})$ passes through $(x,y)$, so the curves
 cover the square.
