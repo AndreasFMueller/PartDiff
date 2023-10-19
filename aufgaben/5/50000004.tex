@@ -17,7 +17,12 @@ Use the transformation method or Fourier series to solve the equation.
 \end{hinweis}
 
 \begin{loesung}
-The Fourier transform of functions on the interval $[0,\pi]$ that vanish
+The Fourier transform\footnote{Note that we use the term Fourier transform
+for all Fourier-type transforms, including the complex transform on the
+real line as well as complex or real Fourier series on intervals.
+For the transformatione method you must choose one of those transforms
+to match the domain at hand.}
+of functions on the interval $[0,\pi]$ that vanish
 at the ends of the interval is the Fourier sine series, i.~e.~the
 transformation
 \[
@@ -29,7 +34,7 @@ for the present solution.
 The transformation for the differential equation is
 \begin{equation}
 \frac{\partial^2}{\partial t^2}\hat u(t,k)
-=-k^2\hat u(t,k)
+=-k^2\hat u(t,k).
 \label{gleichungfueruk}
 \end{equation}
 The initial condition transforms to
@@ -39,7 +44,7 @@ The initial condition transforms to
 \begin{cases}
 \frac34&\qquad k= 1\\
 -\frac14&\qquad k= 3\\
-0&\qquad \text{otherwise}
+0&\qquad \text{otherwise.}
 \end{cases}
 \label{40000004:anfbedudot}
 \end{align}
@@ -59,7 +64,7 @@ conditions \eqref{40000004:anfbedu} and \eqref{40000004:anfbedudot}:
 \begin{cases}
 \frac34&\qquad k= 1\\
 -\frac14&\qquad k= 3\\
-0&\qquad \text{otherwise}
+0&\qquad \text{otherwise.}
 \end{cases}
 \end{align*}
 In particular we get
@@ -72,7 +77,7 @@ We thus know the time dependent Fourier coefficients $\hat u(t,k)$:
 \begin{cases}
 \frac34\sin t &\qquad k= 1\\
 -\frac1{12}\sin 3t&\qquad k= 3\\
-0&\qquad \text{otherwise}
+0&\qquad \text{otherwise.}
 \end{cases}
 \]
 Summing the Fourier series gives the solution
