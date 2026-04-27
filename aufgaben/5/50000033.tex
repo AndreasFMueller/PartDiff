@@ -1,0 +1,143 @@
+Use the Laplace transform to reduce the partial differential equation
+\begin{equation}
+\frac{\partial^2 u}{\partial r^2}
++
+\cos(\varphi)\frac{\partial u}{\partial \varphi}
+=
+r^2
+\label{50000033:pde}
+\end{equation}
+on the plane described in polar coordinates $(\varphi,r)$
+with boundary conditions
+\begin{equation}
+\left.
+\begin{aligned}
+u(0,r)                                   &= -1     &\qquad &\forall r>0    \\
+\frac{\partial u}{\partial \varphi}(0,r) &= e^{-r} &\qquad &\forall r>0    \\
+u(\varphi,0)                             &= 3      &\qquad &0<\varphi<2\pi \\
+\frac{\partial u}{\partial r}(\varphi,0) &= 0      &\qquad &0<\varphi<2\pi
+\end{aligned}
+\quad\right\}
+\label{50000033:boundary} \end{equation}
+to a family of ordinary differential equations with suitable boundary
+conditions.
+Do the boundary conditions~\eqref{50000033:boundary} uniquely determine
+the solutions of the equation~\eqref{50000033:pde}?
+
+\begin{hinweis}
+Remember that in polar coordinates, the function $u(\varphi,r)$ must
+satisfy periodic boundary conditions: $u(\varphi+2\pi,r)=u(\varphi,r)$.
+\end{hinweis}
+
+\begin{loesung}
+The transform has to be done with respect to the $r$-coordinate,
+we write the transformed coordinate as $s$.
+The transform of the differential equation becomes
+\begin{align*}
+-
+\frac{\partial u}{\partial r}(\varphi,0)
+-
+su(\varphi,0)
++
+s^2\mathscr{L}u(\varphi,s)
++
+\cos(\varphi)
+\frac{\partial}{\partial \varphi} \mathscr{L}u(\varphi,s)
+&=
+\frac{2}{s^3}
+.
+\intertext{Writing $\mathscr{L}u(s,\varphi)=U_s(\varphi)$,
+this equation becomes}
+-
+3s
++
+s^2 U_s(\varphi)
++
+\cos(\varphi)U'_s(\varphi)
+&=
+\frac{2}{s^3}
+\\
+\cos(\varphi)U'_s(\varphi)
++
+s^2U_s(\varphi)
+&=
+3s
++\frac{2}{s^3},
+\end{align*}
+which is a family of linear first order ordinary differential
+equations with parameter $s$.
+It also satisfies the boundary conditions obtained from transforming
+the first two boundary conditions in \eqref{50000033:boundary}
+\begin{align*}
+\mathscr{L}u(0,s)
+&=
+-\frac1s
+&&\Rightarrow&
+U_s(0)&=-\frac{1}{s}
+\\
+\frac{\partial \mathscr{L}u}{\partial y}(0,s)
+&=
+\frac{1}{s+1}
+&&\Rightarrow&
+U'_s(0)
+&=
+\frac{1}{1+s}.
+\end{align*}
+As the boundary conditions uniquely determine the function $U_s(y)$,
+there can only be a single solution for $u(x,y)$.
+\end{loesung}
+
+\begin{diskussion}
+The Laplace transform of the function $r^2$ may not be as well known
+as the other transforms, here is its derivation using partial
+integration twice:
+\begin{align*}
+(\mathscr{L}r^2)(s)
+&=
+\int_0^{\infty} r^2e^{-sr}\,dr
+=
+\biggl[
+-\frac{r^2e^{-sr}}{s}
+\biggr]_0^\infty
++
+\int_0^\infty
+\frac{2re^{-sr}}{s}
+\,dr
+=
+-\frac{2}{s}
+\int_0^\infty
+re^{-sr}\,dr
+\\
+&=
+-\frac{2}{s}
+\biggl(
+\biggl[
+-
+\frac{re^{-sr}}{s}
+\biggr]_0^\infty
+-
+\int_0^\infty
+-
+\frac{e^{-sr}}{s}
+\,dr
+\biggr)
+=
+\frac{2}{s^2}
+\int_0^\infty e^{-sr}\,dr
+=
+\frac{2}{s^2}
+\biggl[ -\frac{e^{-sx}}{s}\biggr]_0^\infty
+=
+\frac{2}{s^3}.
+\end{align*}
+\end{diskussion}
+
+\begin{bewertung}
+Choice of coordinate for the Laplace transform ({\bf C}) 1 point,
+Laplace transform of derivatives ({\bf D}) 1 point,
+substitution of boundary conditions ({\bf S}) 1 point,
+Laplace transform of the equation ({\bf E}) 1 point,
+Laplace transform of boundary conditions ({\bf B}) 1 point,
+uniqueness of solution ({\bf U}) 1 point.
+\end{bewertung}
+
