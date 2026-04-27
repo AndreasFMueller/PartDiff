@@ -1,0 +1,150 @@
+On the domain $\Omega = \{(x,y)\mid x > 1\}$, the linear partial
+differential operator
+\begin{equation}
+L
+=
+\frac{\partial^2}{\partial x^2}
++
+\biggl(x-\frac1x\biggr)\frac{\partial^2}{\partial x\,\partial y}
+-
+\frac{\partial^2}{\partial y^2}
+\label{90000033:operator}
+\end{equation}
+of second order is given.
+\begin{teilaufgaben}
+\item
+Is the operator $L$ elliptic, parabolic or hyperbolic?
+\item
+Which part of the boundary can influence the value in the point
+$P(2,1)$, or in other words, assuming that the $x$-direction is the
+timelike direction, which part of the boundary is in the past
+of the point $P$?
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{figure}[h]
+\definecolor{darkred}{rgb}{0.8,0,0}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\centering
+\begin{tikzpicture}[>=latex,thick,scale=4]
+\fill[color=blue!20]
+	plot[domain=1:2,samples=40]
+		({\x},{0.5*\x*\x-1})
+	--
+	plot[domain=0:1,samples=50]
+		({2-\x},{-ln(2-\x)+1+ln(2)})
+	--
+	cycle;
+\draw[->] (-0.1,0) -- (2.5,0) coordinate[label={$x$}];
+\draw[->] (0,-0.7) -- (0,2) coordinate[label={right:$y$}];
+\draw[color=gray,line width=1.2pt] (1,-0.7) -- (1,1.9);
+\begin{scope}
+\clip (1,-0.7) rectangle (2.4,1.9);
+\foreach \c in {-0.6,-0.4,...,3.4}{
+	\draw[color=darkred,line width=1.2pt]
+		plot[domain=1:2.5,samples=20] ({\x},{-ln(\x)+\c});
+}
+\foreach \d in {-4,-3.8,...,2}{
+	\draw[color=darkgreen,line width=1.2pt]
+		plot[domain=1:2.5,samples=20] ({\x},{0.5*\x^2+\d});
+}
+\end{scope}
+\draw[color=orange,line width=1.4pt] (1,-0.5) -- (1,{1+ln(2)});
+\fill[color=blue] (2,1) circle[radius=0.02];
+\draw (-0.02,1) -- (0.02,1);
+\node at (0,1) [left] {$1$};
+\node at (0,0) [below left] {$0$};
+\node at (1,0) [below left] {$1$};
+\draw (2,-0.02) -- (2,0.02);
+\node at (2,0) [below] {$2$};
+\node[color=blue] at (1.98,1) [right] {$P$};
+\end{tikzpicture}
+\caption{Characteristics of the operator~\eqref{90000033:operator}
+\label{90000033:fig}}
+\end{figure}
+\begin{teilaufgaben}
+\item
+The symbol matrix is
+\[
+A
+=
+\begin{pmatrix}
+    1     & \frac12(x-\frac1x) \\
+\frac12(x-\frac1x) &   -1
+\end{pmatrix}
+\]
+and has determinante
+\[
+\det A
+=
+-1 -\frac14\biggl(x-\frac1x\biggr)^2 < 0,
+\]
+thus the operator is hyperbolic.
+\item
+The equation for the characteristic curves can be derived from the 
+symbol matrix as
+\[
+\dot{y}^2 - \biggl(x-\frac1x\biggr)\dot{y}\dot{x} - \dot{x}^2 = 0.
+\]
+Dividing by $\dot{x}$ and using $y'=\dot{y}/\dot{x}$ gives
+\[
+y^{\prime 2} + \biggl(\frac1x-x\biggr)y' - 1 = 0.
+\]
+This differential equation has the factorization
+\[
+y^{\prime 2}
++
+\biggl(\frac{1}x-x\biggr)y'
+-
+1
+=
+\biggl(y'+\frac1x\biggr)(y'-x)=0.
+\]
+This means that the characteristic curves satisfy the ordinary 
+differential equations
+\begin{align*}
+y'&=-\frac1x
+&
+y'&=x
+\intertext{which have the solutions}
+y&=-\log x + C
+&
+y&=\frac12x^2 + D.
+\end{align*}
+The characteristic curves are shown in figure~\ref{90000033:fig}.
+The curves through the point $P=(2,1)$ have the parameters
+\begin{align*}
+1=-\log2+C &\Rightarrow C=1+\log 2
+&
+1=\frac122^2+D
+&\Rightarrow
+D=-1.
+\intertext{The two characteristic curves cross the boundary $x=1$ at}
+y&=-\log 1+1+\log 2
+=
+1+\log 2
+&
+y&=\frac121^2-1
+=
+-\frac12.
+\end{align*}
+Thus only the boundary values in the points in the set
+\(
+\{(1,y) \mid -\frac12\le y\le 1+\log 2\}
+\),
+shown in orange in figure~\ref{90000033:fig},
+can influence the value of the solution in the point $P$.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{bewertung}
+Symbol matrix ({\bf A}) 1 point,
+operator is hyperbolic ({\bf H}) 1 point,
+differential equation of characteristics ({\bf D}) 1 point,
+factorization or other method to convert them into two first order
+differential equations ({\bf F}) 1 point,
+characteristic curves ({\bf C}) 1 point,
+domain of influence for the point $P$ ({\bf P}) 1 point.
+\end{bewertung}
+
