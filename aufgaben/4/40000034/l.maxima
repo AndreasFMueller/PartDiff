@@ -1,0 +1,13 @@
+/*
+ * l.maxima
+ *
+ * (c) 2023 Prof Dr Andreas Müller
+ */
+Y: exp(a * y) * sin(b * y);
+dgl: 
+ratsimp(
+diff(diff(Y, y), y)
++
+diff(Y, y)
++
+(mu^2 + lambda) * Y);

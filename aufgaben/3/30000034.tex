@@ -1,0 +1,65 @@
+On the domain $\Omega=\{(x,y)\in\mathbb{R}^2 \mid 0 < y\}$, solve the
+partial differential equation
+\begin{equation}
+u
+\frac{\partial u}{\partial x}
++
+\frac{\partial u}{\partial y}
+=
+x
+\label{30000034:pde}
+\end{equation}
+with boundary conditions
+\[
+u(x_0,0) = f(x_0)
+\qquad\text{for $x_0\in\mathbb{R}$.}
+\]
+Give an explicit solution for $f(x_0)=-x_0$.
+
+\begin{loesung}
+The ordinary differential equation for the characteristics is
+\begin{align*}
+\dot{x}(t) &= u(t) \\
+\dot{y}(t) &= 1 \\
+\dot{u}(t) &= x(t).
+\end{align*}
+The second equation gives $y(t)=t+y_0$, but as the $x$-axis is the
+boundary of the domain, $y_0=0$, so $y=t$ are the same.
+
+The other two equations can be differentiated again and give
+\begin{align*}
+\dot{x}(t) &= u(t) &&\Rightarrow& \ddot{x}(t) &= \dot{u}(t) = x(t) \\
+\dot{u}(t) &= x(t) &&\Rightarrow& \ddot{u}(t) &= \dot{x}(t) = u(t) 
+\end{align*}
+and have solutions of the form $x(t) = A\cosh t + B \sinh t$ and 
+$u(t)=\dot{x}(t) = A\sinh t + B \cosh t$.
+The boundary condition $u(x_0,0) = f(x_0)$ means $x(0)=x_0$ and thus
+$A=x_0$ and $u(0)=f(x_0)=B$, so the solution becomes
+\begin{align*}
+x &= x_0 \cosh y + f(x_0) \sinh y
+\\
+u &= f(x_0) \cosh y + x_0 \sinh y.
+\end{align*}
+In general, this will not be easy to solve, but for $f(x_0)=-x_0$,
+it reduces to
+\begin{align*}
+x &= \phantom{-} x_0 (\cosh y - \sinh y)
+&&\Rightarrow&
+x_0 &= \frac{x}{\cosh y - \sinh y}
+\\
+u &= -x_0 (\cosh y - \sinh y)
+&&\Rightarrow&
+u &= -x,
+\end{align*}
+which can easily be verified to be a solution.
+\end{loesung}
+
+\begin{bewertung}
+Differential equations for characteristics ({\bf D}) 1 point,
+solution for $y(t)$ including $x_0=0$ ({\bf Y}) 1 point,
+solutions for $x(t)$ und $u(t)$ ({\bf XU}) 1 point,
+using boundary condition $x(0)=1$ to determine $A=1$ ({\bf A}) 1 point,
+using boundary condition $u(0)=x_0$ to determine $B=x_0$ ({\bf B}) 1 point,
+eliminate $x_0$ and $t$ giving $u(x,y)$ ({\bf U}) 1 point.
+\end{bewertung}
+

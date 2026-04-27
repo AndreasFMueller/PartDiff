@@ -1,0 +1,138 @@
+On the domain depicted in figure~\ref{40000034:domain}, the equation
+\begin{equation}
+Lu=\lambda u
+\qquad\text{with}\qquad
+L
+=
+\frac{\partial^2}{\partial x^2}
+-
+\frac{\partial}{\partial y}
++
+\frac{\partial^2}{\partial y^2}
+\label{40000034:pde}
+\end{equation}
+with homogeneous boundary conditions is given.
+Convert the equation~\eqref{40000034:pde} into two ordinary differential
+equations and suitable boundary conditions and solve one of them.
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[>=latex,thick,scale=4]
+\fill[color=red!20] (0,0) -- (1,0) -- +(45:1) -- (45:1) -- cycle;
+\fill[color=gray!20,opacity=0.5] (0,0) -- (0.3,0) arc (0:45:0.3) -- cycle;
+\node at (22.5:0.2) {$\frac{\pi}4$};
+\draw[color=red,line width=1.4pt] (0,0) -- (1,0) -- +(45:1) -- (45:1) -- cycle;
+\draw[->] (-0.1,0) -- (1.4,0) coordinate[label={$x$}];
+\draw[->] (-135:0.1) -- (45:1.2) coordinate[label={above left:$y$}];
+\draw (1,-0.02) -- (1,0.02);
+\node at (1,0) [below] {$1$};
+\draw ($(45:1)+(-45:0.02)$) -- +(135:0.02);
+\node at (45:1) [above left] {$1$};
+\node[color=red] at ($0.5*(1,0)+0.5*(45:1)$) {$\Omega$};
+\end{tikzpicture}
+\caption{Domain for problem~\ref{40000034}
+\label{40000034:domain}}
+\end{figure}
+
+\begin{loesung}
+We write the solution as a product $u(x,y) = X(x)Y(y)$ and substitute
+that into the differential equation~\eqref{40000034:pde} giving
+\[
+X''(x)Y(y) - X(x)Y'(y) + X(x)Y''(y) = \lambda X(x)Y(y)
+\qquad\Rightarrow\qquad
+\frac{X''(x)}{X(x)}
+-
+\frac{Y'(y)}{Y(y)}
++
+\frac{Y''(x)}{Y(y)}
+=
+\lambda.
+\]
+The variables $x$ and $y$ can now be separated to
+\[
+\frac{X''(x)}{X(x)}
+=
+\lambda -\frac{Y''(y)}{Y(y} + \frac{Y'(y)}{Y(y)}.
+\]
+Since the left hand side only depends on $x$ and the right hand side
+only depends on $y$, both must be constant.
+We call this constant $-\mu^2$ and get the equations
+\begin{align*}
+X''(x)
+&=
+-\mu^2 X(x)
+&&\text{and}&
+Y''(y) - Y'(y) &= (\mu^2-\lambda)Y(y).
+\end{align*}
+The equation for $X(x)$ has trigonometric functions as solutions,
+but only the sine function
+\[
+X(x) = \sin \mu x
+\]
+also satisfies the homogeneous boundary condition at $x=0$.
+The homogenous boundary condition at $x=1$ implies that $\mu = \pi k$
+with $k\in\mathbb{N}$.
+\end{loesung}
+
+\begin{diskussion}
+The solutions for $Y(y)$ are of the form $Y(y) = e^{ay}\sin by$.
+Substituting this into the equation gives
+\begin{align*}
+Y'(y)  &= ae^{ay}\sin by + b e^{ay} \cos by\\
+Y''(y) &= a^2e^{ay}\sin by + abe^{ay}\cos by + bae^{ay}\cos by - b^2e^{ay}\sin by
+\\
+&= (a^2 -b^2) e^{ay}\sin by + 2abe^{ay} \cos by.
+\end{align*}
+Substituting this in the 
+\begin{align*}
+(a^2-b^2-a)e^{ay}\sin by
++(2ab-b)e^{ay}\cos by
+&=
+(\mu^2+\lambda)e^{ay}\sin by
+\\
+(a^2-b^2-a-\mu^2-\lambda)e^{ay}\sin by
++
+(2a-1)be^{ay} \cos by
+&=
+0.
+\end{align*}
+The cosine term can only disappear at $y=0$ if the coefficient is zero,
+which implies that $a=-\frac12$. 
+Then the first coefficient only disappears if
+\[
+0
+=
+a^2-b^2-a-\mu^2-\lambda
+=
+\frac14-b^2+\frac12-\pi^2k^2-\lambda
+=
+\frac34 - b^2 -\pi^2k^2-\lambda.
+\]
+On the other hand, the homogeneous boundary condition at $y=1$ implies that
+$b = \pi l$ allowing us to conclude that the possible $\lambda$-values
+are
+\[
+\lambda_{k,l}
+=
+\frac34
+-\pi^2 l^2
+-\pi^2 k^2.
+\]
+Thus the corresponding solutions are
+\[
+u_{k,l}(x,y)
+=
+\sin(k\pi x)
+\sin(l\pi y)
+e^{-y/2}
+\]
+with $k,l\in\mathbb{N}$.
+\end{diskussion}
+
+\begin{bewertung}
+Product ansatz ({\bf A}) 1 point,
+separation of variables ({\bf S}) 1 point,
+two separated differential equations ({\bf D}) 2 points,
+solutions of the equations ({\bf S}) 1 point,
+restriction of the value of $\mu$ from boundary conditions ({\bf B}) 1 point.
+\end{bewertung}
+

@@ -1,0 +1,196 @@
+On the domain $\Omega=\{(x,y)\in\mathbb{R}^2 \mid 0 < x < \frac{\pi}2\}$,
+solve the
+partial differential equation
+\begin{equation}
+\frac{\partial u}{\partial x}
++
+u\frac{\partial u}{\partial y}
+=
+-y
+\end{equation}
+with the boundary condition
+\[
+u(0,y_0) = f(y_0)\quad \text{for $y_0\in\mathbb{R}$}.
+\]
+\begin{teilaufgaben}
+\item
+Is the problem well posed?
+\item
+Find an explicit solution in the form $u(x,y)$ for $f(y_0)=y_0$.
+\end{teilaufgaben}
+
+\begin{loesung}
+This is a quasilinear partial differential equation of first order which
+can be solved using the method of characteristics.
+The system of ordinary differential equations for the characteristics
+is
+\begin{align*}
+\dot{x}(t) &=  1 \\
+\dot{y}(t) &=  u(t) \\
+\dot{u}(t) &= -y(t).
+\end{align*}
+The first equation has the solution $x(t)=t+x_0$, the boundary condition
+implies that $x_0=0$.
+The variables $t$ and $x$ are thus interchangable.
+
+Combining the last two equations gives the coupled second order differential
+equations
+\begin{align*}
+\ddot{y} &= \phantom{-}\dot{u} = -y \\
+\ddot{u} &=          - \dot{y} = -u,
+\end{align*}
+both of which have linear combinations of the functions $\sin t$ and
+$\cos t$.
+Thus we set $y(t) = A\cos t + B \sin t$ and derive from the second
+equation, that $u(t) = \dot{y}(t) = -A\sin t + B \cos t$.
+
+The boundary condition at $x=0$ implies $y_0=y(0)=A$ and thus
+$f(y_0) = u(0) = B$.
+Thus the solutions with $t$ already eliminated are
+\begin{align*}
+y(x) &= f(y_0)\cos x +   y_0  \sin x \\
+u(x) &=   y_0 \cos x - f(y_0) \sin x 
+\end{align*}
+For $f(y_0)=y_0$ these become
+\begin{align}
+y(x) &=   y_0(\cos x + \sin x) 
+&&\Rightarrow &
+y_0 &= \frac{y}{\cos x + \sin x}
+\label{30000033:eqn:ysol}
+\\
+u(x) &=   y_0(\cos x - \sin x)
+&&\Rightarrow &
+u &= y\frac{\cos x - \sin x}{\cos x + \sin x},
+\label{30000033:eqn:usol}
+\end{align}
+giving the solution formula requested in b).
+\begin{figure}
+\centering
+\begin{tikzpicture}[>=latex,thick]
+\definecolor{darkred}{rgb}{0.8,0,0}
+\pgfmathparse{2*3.14159}
+\xdef\twopi{\pgfmathresult}
+\def\oben{4}
+\def\unten{-4}
+\fill[color=blue!10] (0,\unten) rectangle (\twopi,\oben);
+\node[color=blue] at ({0.5*\twopi},0) [above] {$\Omega$};
+\draw[->] (-0.1,0) -- ({2*\twopi+0.7},0) coordinate[label={$x$}];
+\draw[->] (0,{\unten-0.1}) -- (0,{\oben+0.4}) coordinate[label={right:$y$}];
+\begin{scope}
+\clip (0,\unten) rectangle ({2*\twopi},\oben);
+\foreach \y in {-4,-3.5,...,4}{
+	\draw[color=darkred,line width=1.2pt] 
+		plot[domain=0:90]
+			({\twopi*\x/90},{\y*(sin(\x)+cos(\x))});
+}
+\foreach \y in {-5,-4.5,...,5}{
+	\draw[color=darkred!20,line width=1.2pt] 
+		plot[domain=90:180]
+			({\twopi*\x/90},{\y*(sin(\x)+cos(\x))});
+}
+\draw (\twopi,0) -- ({2*\twopi},0);
+\end{scope}
+\foreach \y in {\unten,...,\oben}{
+	\draw (-0.05,\y) -- (0.05,\y);
+	\node at (-0.05,\y) [left] {$\y\mathstrut$};
+}
+\draw[color=darkgreen,line width=1.4pt] (0,\unten) -- (0,\oben);
+%\node at (0,0) [left] {$0\mathstrut$};
+\node at (\twopi,0) [below right] {$\displaystyle\frac{\pi}2\mathstrut$};
+\draw (\twopi,-0.05) -- (\twopi,0.05);
+\node at ({2*\twopi},0) [below right] {$\pi\mathstrut$};
+\draw ({2*\twopi},-0.05) -- ({2*\twopi},0.05);
+\draw ({1.5*\twopi},-0.05) -- ({1.5*\twopi},0.05);
+\node at ({1.5*\twopi},-0.1) [below] {$\displaystyle\frac{3\pi}{4}\mathstrut$};
+\end{tikzpicture}
+\caption{Projection of characteristic curves into the domain of the
+differential equation of problem \ref{30000033}.
+\label{30000033:char}}
+\end{figure}
+The questions asked can now be answered directly from the solution formulae
+\eqref{30000033:eqn:ysol} and \eqref{30000033:eqn:usol}.
+\begin{teilaufgaben}
+\item
+Since the denominator in \eqref{30000033:eqn:ysol} does not vanish
+in the interval $(0,\frac{\pi}2)$, there is a well defined characteristic
+curve for each point $(x,y)$ that reaches the point.
+Also all the characteristic curves are obtained by stretching along
+the $y$-direction, no point is reached via two different characteristics.
+Therefore, the problem is well posed.
+\item
+The solution is given by \eqref{30000033:eqn:usol}.
+Using $\cos x = \sin(\frac{\pi}2-x)$ and the identity
+\[
+\sin\alpha\pm\sin\beta
+=
+2\sin\frac{\alpha\pm\beta}2 \cos\frac{\alpha\mp\beta}2
+,
+\]
+we can further simplify
+\begin{align*}
+\cos x \pm \sin x
+&=
+\sin\biggl(\frac{\pi}2-x\biggr) \pm \sin x
+=
+2
+\sin\bigl(\frac12\biggl(\frac{\pi}2-x \pm x\biggr)\biggr)
+\cos\bigl(\frac12\biggl(\frac{\pi}2-x \mp x\biggr)\biggr)
+\\
+&=
+\begin{cases}
+2
+\sin \frac{\pi}4
+\cos \bigl(\frac{\pi}4-x\bigr)
+=
+\sqrt{2}\cos\bigl(\frac{\pi}4-x\bigr)
+\\
+2
+\cos \frac{\pi}4
+\sin \bigl(\frac{\pi}4-x\bigr)
+=
+\sqrt{2}\sin\bigl(\frac{\pi}4-x\bigr)
+\end{cases}
+\qedhere
+\end{align*}
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{diskussion}
+Note that figure~\ref{30000033:char} also shows how the characteristics
+no longer cover the domain if it is extended in the $x$-direction beyond
+$x=\frac{3\pi}{4}$.
+At this point, the problem would no longer be well posed, as the values
+of the function $u(x,y)$ in the points $(\frac{3\pi}4,y)$ cannot be
+determined from boundary conditions.
+Not surprisingly, this coincides with the fact that at this point, the
+denominator
+\[
+\cos\frac{3\pi}{4} + \sin\frac{3\pi}{4} 
+=
+-
+\frac{\!\sqrt{2}}2
++
+\frac{\!\sqrt{2}}2
+=
+0
+\]
+of the solution formula \eqref{30000033:eqn:usol} vanishes.
+\end{diskussion}
+
+\begin{bewertung}
+Differential equations for characteristics ({\bf D}) 1 point,
+solution for $x(t)$ including $x_0=0$ ({\bf X}) 1 point,
+solutions for $y(t)$ und $u(t)$ ({\bf YU}) 1 point,
+using boundary condition $y(0)=1$ to determine $A=1$ ({\bf A}) 1 point,
+using boundary condition $u(0)=y_0$ to determine $B=y_0$ ({\bf B}) 1 point,
+eliminate $y_0$ and $t$ giving $u(x,y)$ ({\bf U}) 1 point.
+A common error was losing the minus sign in the third component of the
+differential equation.
+This leads to linear combinations of $\cosh x$ and $\sinh x$ instead
+of $\cos x$ and $\sin x$.
+However, determining the coefficients $A$ and $B$ and elimination of
+$y_0$ still work the same, so partial credit was given for such solutions.
+\end{bewertung}
+
+
+

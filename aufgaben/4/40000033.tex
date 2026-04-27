@@ -1,0 +1,189 @@
+The domain $\Omega=\{(x,y)\in \mathbb{R}^2 \mid 0<x<1\wedge 0<y<1\}$
+in the coordinate system of figure~\ref{40000033:domain} is a rhombus.
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[>=latex,thick,scale=4]
+\fill[color=red!20] (0,0) -- (1,0) -- +(60:1) -- (60:1) -- cycle;
+\fill[color=gray!20,opacity=0.5] (0,0) -- (0:0.3) arc(0:60:0.3) -- cycle;
+\draw[color=red,line width=1.4pt] (0,0) -- (1,0) -- +(60:1) -- (60:1) -- cycle;
+\node[color=red] at ($0.5*(1,0)+0.5*(60:1)$) {$\Omega$};
+\draw[->] (-0.1,0) -- (1.6,0) coordinate[label={$x$}];
+\draw[->] (-120:0.1) -- (60:1.6) coordinate[label={$y$}];
+\node at (30:0.2) {$\frac{\pi}3$};
+\draw (1,-0.02) -- (1,0.02);
+\node at (1,0) [below] {$1$};
+\draw ($1*(60:1)+1*(-30:0.02)$) -- +(150:0.04);
+\node at (60:1) [above left] {$1$};
+\end{tikzpicture}
+\caption{Domain for problem~\ref{40000033}
+\label{40000033:domain}}
+\end{figure}
+Determine the values $\lambda$, for which the
+partial differential equation 
+\[
+\biggl(
+\frac{\partial^2}{\partial x^2}
++
+\frac{\partial^2}{\partial y^2}
+\biggr) u = \lambda u
+\]
+with homogenous boundary conditions has a solution.
+
+\begin{loesung}
+We write the operator as
+\[
+L
+=
+\frac{\partial^2}{\partial x^2}
++
+\frac{\partial^2}{\partial y^2}.
+\]
+We write the solution $u(x,y)$ as a product $u(x,y)=X(x)Y(y)$.
+Inserting this into the differential equations gives
+\[
+L u
+=
+X''(x)Y(y) + X(x) Y''(y)
+=
+\lambda X(x) Y(y).
+\]
+Dividing by $X(x) Y(y)$ gives
+\[
+\frac{X''(x)}{X(x)}
++
+\frac{Y''(y)}{Y(y)}
+=
+\lambda
+\quad
+\Rightarrow
+\quad
+\frac{X''(x)}{X(x)}
+=
+\lambda
+-
+\frac{Y''(y)}{Y(y)}.
+\]
+As the left side only depends on $x$ and the right only on $y$, both
+sides need to be constant, we call this constant $-\mu^2$, giving
+the ordinary differential equations
+\begin{align*}
+X''(x)
+&=
+-\mu^2 X(x)
+&
+Y''(x)
+&=
+(-\lambda + \mu^2)Y(x)
+\intertext{with solutions}
+X(x)
+&=
+\sin\mu x
+&
+Y(y)
+&=
+\sin \!\sqrt{\lambda-\mu^2} y
+\end{align*}
+From the homogeneous boundary conditions we conclude that
+$0=X(1) = \sin\mu$ which implies $\mu = \pi k$ with $k\in\mathbb{Z}$.
+Similarly, $\pi^2 l=\!\sqrt{\lambda-mu^2}=\!\sqrt{\lambda-\pi^2 k^2}\in\mathbb{N}$.
+This means that
+\[
+\lambda = \pi (k^2 +l^2).
+\]
+Put together, the solutions are
+\[
+u_{k,l}(x,y)
+=
+\sin(\pi k x)
+\sin(\pi l y)
+\]
+with $k,l\in \mathbb{N}$.
+\end{loesung}
+
+\begin{diskussion}
+Note that the operator $L$ is not the Laplace operator,
+The correct form of the Laplace operator can be derived as follows.
+Rectangular coordinates $(\xi,\eta)$ can be expressed by $x$ and $y$
+using
+\[
+\renewcommand{\arraycolsep}{3pt}
+\begin{array}{rcrcr}
+\xi  &=& x &+& \frac12 y          \\
+\eta &=&   & & \frac{\!\sqrt{3}}2 y
+\end{array}
+\qquad\Leftrightarrow\qquad
+\begin{array}{rcrcr}
+x &=& \xi &-& \frac{1}{\!\sqrt{3}} \eta\\
+y &=&     & & \frac{2}{\!\sqrt{3}} \eta
+\end{array}
+\]
+This equations imply the partial derivatives
+\begin{align*}
+\frac{\partial \xi}{\partial x}  &= 1 
+&
+\frac{\partial x}{\partial \xi}  &= 1
+\\
+\frac{\partial \xi}{\partial y}  &= \frac12
+&
+\frac{\partial x}{\partial \eta} &= -\frac{1}{\!\sqrt{3}}
+\\
+\frac{\partial \eta}{\partial x} &= 0
+&
+\frac{\partial y}{\partial \xi}  &= 0
+\\
+\frac{\partial \eta}{\partial y} &= \frac{\!\sqrt{3}}2
+&
+\frac{\partial y}{\partial \eta} &= \frac{2}{\!\sqrt{3}}
+\end{align*}
+This can be used to express the first and second derivatives with
+respect to the rectangular coordinates in terms of derivatives with
+respect to $x$ and $y$.
+They are
+\begin{align*}
+\frac{\partial}{\partial \xi}
+&=
+\frac{\partial x}{\partial \xi}\frac{\partial}{\partial x}
++
+\frac{\partial y}{\partial\xi}\frac{\partial}{\partial y}
+=
+\frac{\partial}{\partial x}
+&
+\frac{\partial}{\partial\eta}
+&=
+\frac{\partial x}{\partial\eta}\frac{\partial}{\partial x}
++
+\frac{\partial y}{\partial\eta}\frac{\partial}{\partial y}
+=
+-\frac{1}{\!\sqrt{3}}\frac{\partial}{\partial x}
++\frac{2}{\!\sqrt{3}}\frac{\partial}{\partial y}
+\end{align*}
+and
+\[
+\Delta
+=
+\frac{\partial^2}{\partial\xi^2}
++
+\frac{\partial^2}{\partial\eta^2}
+=
+\frac{\partial^2}{\partial x^2}
++\frac13\frac{\partial^2}{\partial x^2}
+-\frac{4}{3}\frac{\partial^2}{\partial x\,\partial y}
++\frac{4}{3}\frac{\partial^2}{\partial y^2}
+=
+\frac43\biggl(
+\frac{\partial^2}{\partial x^2}
+-\frac{\partial^2}{\partial x\,\partial y} + \frac{\partial^2}{\partial y^2}
+\biggr)
+\]
+This shows that $L$ ist not $\Delta$.
+\end{diskussion}
+
+\begin{bewertung}
+Product ansatz ({\bf A}) 1 point,
+separation of variables ({\bf S}) 1 point,
+two separated differential equations ({\bf D}) 1 point,
+solutions of the equations ({\bf S}) 1 point,
+restriction of the value of $\mu$ from boundary conditions ({\bf B}) 1 point,
+possible values for $\lambda$ ({\bf L}) 1 point.
+\end{bewertung}
+
