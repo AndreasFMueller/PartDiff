@@ -1,0 +1,56 @@
+%
+% graph.tex -- Template für standalone TIKZ Bilder
+%
+% (c) 2019 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\documentclass[tikz,12pt]{standalone}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\definecolor{darkred}{rgb}{0.8,0,0}
+\usetikzlibrary{arrows,intersections,math,calc}
+\begin{document}
+\def\skala{1}
+\begin{tikzpicture}[>=latex,thick,scale=\skala]
+
+\pgfmathparse{2*3.14159}
+\xdef\twopi{\pgfmathresult}
+\def\oben{4}
+\def\unten{-4}
+\fill[color=blue!10] (0,\unten) rectangle (\twopi,\oben);
+\node[color=blue] at ({0.5*\twopi},0) [above] {$\Omega$};
+\draw[->] (-0.1,0) -- ({2*\twopi+0.7},0) coordinate[label={$x$}];
+\draw[->] (0,{\unten-0.1}) -- (0,{\oben+0.4}) coordinate[label={right:$y$}];
+\begin{scope}
+\clip (0,\unten) rectangle ({2*\twopi},\oben);
+\foreach \y in {-4,-3.5,...,4}{
+	\draw[color=darkred,line width=1.2pt] 
+		plot[domain=0:90]
+			({\twopi*\x/90},{\y*(sin(\x)+cos(\x))});
+}
+\foreach \y in {-5,-4.5,...,5}{
+	\draw[color=darkred!20,line width=1.2pt] 
+		plot[domain=90:180]
+			({\twopi*\x/90},{\y*(sin(\x)+cos(\x))});
+}
+\draw (\twopi,0) -- ({2*\twopi},0);
+\end{scope}
+\foreach \y in {\unten,...,\oben}{
+	\draw (-0.05,\y) -- (0.05,\y);
+	\node at (-0.05,\y) [left] {$\y\mathstrut$};
+}
+\draw[color=darkgreen,line width=1.4pt] (0,\unten) -- (0,\oben);
+%\node at (0,0) [left] {$0\mathstrut$};
+\node at (\twopi,0) [below right] {$\displaystyle\frac{\pi}2\mathstrut$};
+\draw (\twopi,-0.05) -- (\twopi,0.05);
+\node at ({2*\twopi},0) [below right] {$\pi\mathstrut$};
+\draw ({2*\twopi},-0.05) -- ({2*\twopi},0.05);
+\draw ({1.5*\twopi},-0.05) -- ({1.5*\twopi},0.05);
+\node at ({1.5*\twopi},-0.1) [below] {$\displaystyle\frac{3\pi}{4}\mathstrut$};
+
+\end{tikzpicture}
+\end{document}
+
