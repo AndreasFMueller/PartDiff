@@ -24,25 +24,6 @@ be a $2\pi$-periodic, i.~e.
 \begin{figure}
 \centering
 \includeagraphics[]{graph.pdf}
-%\definecolor{darkred}{rgb}{0.8,0,0}
-%\definecolor{darkgreen}{rgb}{0,0.6,0}
-%\begin{tikzpicture}[>=latex,thick,scale=2]
-%\begin{scope}
-%\clip (-2,-2) rectangle (2,2);
-%\fill[color=darkgreen!10] (-2,-2) rectangle (2,2);
-%\fill[color=white] (0,0) circle[radius=1];
-%\end{scope}
-%\begin{scope}
-%\clip (-2,-2) rectangle (2,2);
-%\foreach \phinull in {-180,-170,...,180}{
-%	\draw[color=darkred,line width=1.2pt] plot[domain=0:1.4,samples=20]
-%		({180*\x/3.1415+\phinull}:{exp(\x)});
-%}
-%\end{scope}
-%\draw[color=darkgreen,line width=1.2pt] (0,0) circle[radius=1];
-%\draw[->] (0,0) -- (2.3,0) coordinate[label={$r$}];
-%\fill (0,0) circle[radius=0.025];
-%\end{tikzpicture}
 \end{figure}
 This is a quasilinear partial differential equation of first order
 which can be solved using the method of characteristics.
