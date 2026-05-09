@@ -1,0 +1,105 @@
+\begin{teilaufgaben}
+\item
+The function $u(x,y)$ is defined on the rectangle
+$\Omega = [0,3] \times [0,2]$
+
+The function $u(x,y)$ satisfies in $\Omega$ the equation
+\[
+\Delta u(x,y) = 0
+\]
+and  $u(x,y) = x+y$ on the boundary of $\Omega$.
+
+Determine approximate values for $u(1,1)$ and $u(2,1)$.
+
+Use finite differences with $h = 1$. 
+
+\item
+The function $u(x,t)$ is defined on the strip
+$\Omega = [0, 1] \times [0,\infty)$.
+
+The function $u(x,t)$ satisfies in $\Omega$ the equation
+\[
+u_{xx}(x,t) = u_{tt}(x,t)
+\]
+and  $u(0,t) = 0$, $u(1,t) = 0$ on the boundary of $\Omega$. 
+
+The function $u(x,t)$ also satisfies the initial conditions
+\[
+u(x,0) = x-x^2 \qquad\text{and} \qquad u_t(x,0) = 0.
+\]
+Determine approximate values for $u(1/3,1)$ and $u(2/3,1)$.
+
+Use finite differences with $\Delta x = 1/3$ and $\Delta t = 1/2.$
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+By the five-point-star operator we have
+\begin{align*}
+\tilde u(2,1) + 3 + 1 + 1 - 4 \cdot \tilde u(1,1) &= 0
+\\
+4 + 4 + \tilde u(1,1) + 2 - 4 \cdot \tilde u(2,1) &= 0
+\end{align*}
+This leads to a system of two linear equations:
+\begin{equation}
+\begin{pmatrix*}[r]
+ -4 & 1 \\
+  1 & -4
+\end{pmatrix*}
+\cdot
+\begin{pmatrix}
+\tilde u(1,1)  \\
+\tilde u(2,1)
+\end{pmatrix}
+=
+\begin{pmatrix*}[r]
+ -5  \\
+-10
+\end{pmatrix*}
+\tag{\bf 2P}
+\end{equation}
+Hence
+\begin{equation}
+\tilde u(1,1) = 2
+\qquad\text{and}\qquad
+\tilde u(2,1) = 3.
+\tag{\bf 1P}
+\end{equation}
+
+\item
+We have $f(x) = x-x^2$ and $g(x) = 0$. 
+
+\smallskip
+
+Hence for the first time step we have by Taylor
+\[
+\tilde u(1/3, 1/2)
+=
+(1/3)-(1/3)^2 + 0 \cdot (1/2) - 2 \cdot 1/2 \cdot (1/2)^2
+=
+- 1/36.
+\]
+By symmetry we have
+\begin{equation}
+\tilde u(2/3, 1/2) = - 1/36.
+\tag{\bf 1P}
+\end{equation}
+
+
+For the second time step we use the leapfrog scheme with $r = 3/2$:
+\[
+\tilde u(1/3, 1)
+=
+-5/2 \cdot \tilde u(1/3, 1/2) + 9/4 \cdot \tilde u(2/3,1/2) - \tilde u(1/3,0)
+=
+-31/144.
+\]
+By symmetry we have
+\begin{equation}
+\tilde u(2/3, 1) = - 31/144.
+\tag{\bf 2P}
+\end{equation}
+\end{teilaufgaben}
+\end{loesung}
+

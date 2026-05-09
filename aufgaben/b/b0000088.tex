@@ -1,0 +1,148 @@
+\begin{teilaufgaben}
+\item
+The function $u(x)$ is defined on the interval $\Omega = [0, 1].$
+
+The function satisfies in $\Omega$ 
+\[
+-u''(x) = x
+\]
+and $u(0) = 1$ and $u(1) = 2$ on the boundary of $\Omega$.
+
+Determine approximate values for $u(1/3)$ and $u(2/3)$ by the
+finite element method. 
+
+Use linear finite elements.
+\item
+The function $u(x)$ is defined on the interval $\Omega = [0, 1].$
+The function satisfies in $\Omega$ 
+\[
+x \cdot u''(x) = u'(x)
+\]
+and $u(0) = 0$ and $u(1) = 1$ on the boundary of $\Omega$.  
+
+Determine an approximation function $\tilde u(x)$ for $u(x)$ with
+the method of Galerkin.
+
+Use the ansatz $\tilde u(x) = x + a_1 \cdot (x^2-x) + a_2 \cdot (x^3-x^2).$
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+The corresponding Ritz matrix is
+\begin{equation}
+R
+=
+\left[
+\begin{array}{rrrr}
+ 3 & -3 &  0 &  0 \\
+-3 &  6 & -3 &  0 \\
+ 0 & -3 &  6 & -3 \\
+ 0 &  0 & -3 &  3
+\end{array}
+\right]
+\tag{\bf 1P}
+\end{equation}
+whereas the Ritz vector is
+\begin{equation}
+\underline{r} = (*,1/9,2/9,*)
+\tag{\bf 1P}
+\end{equation}
+The vector of the knot variables is
+\[
+\underline{a}
+=
+(1, a_1, a_2, 2)
+\]
+Reduction of the Ritz system leads to  
+\[
+\left[
+\begin{array}{rr}
+  6 & -3 \\
+ -3 &  6
+\end{array}
+\right]
+\cdot
+\left(
+\begin{array}{r}
+a_1 \\
+a_2
+\end{array}
+\right)
++
+\left(
+\begin{array}{r}
+-3 \\
+-6
+\end{array}
+\right)
+=
+\left(
+\begin{array}{r}
+1/9 \\
+2/9
+\end{array}
+\right)
+\]
+Its solution is
+\[
+\underline{a} = (5/81, 88/81). 
+\]
+
+Therefore we have
+\begin{equation}
+\tilde u(1/3) = 112/81
+\qquad
+\text{and}
+\qquad
+\tilde u(2/3) = 140/81.
+\tag{\bf 1P}
+\end{equation}
+
+\item
+Plugging
+\[
+\tilde u'(x)
+=
+1 + a_1 \cdot (2 \cdot x - 1) + a_2 \cdot (3 \cdot x^2 - 2 \cdot x)
+\]
+and
+\[
+\tilde u''(x) = a_1 \cdot 2 + a_2 \cdot (6 \cdot x - 2)
+\]
+into the differential equation we obtain
+\[
+x \cdot (a_1 \cdot 2 + a_2 \cdot (6 \cdot x - 2)) \approx 1
++
+a_1 \cdot (2 \cdot x - 1) + a_2 \cdot (3 \cdot x^2 - 2 \cdot x)
+\]
+or
+\begin{equation}
+a_2 \cdot 3 \cdot x^2 \approx 1 - a_1
+\tag{\bf 1P}
+\end{equation}
+By Galerkin $a_1$ and $a_2$ have to satisfy the equations
+\[
+\int_{0}^1 a_2 \cdot 3 \cdot x^2 \cdot (x^2 - x) \,dx
+=
+\int_0^1 (1 - a_1) \cdot (x^2-x) \,dx
+\]
+and
+\begin{equation}
+\int_{0}^1 a_2 \cdot 3 \cdot x^2 \cdot (x^3 - x^2) \,dx
+=
+\int_0^1 (1 - a_1) \cdot (x^3-x^2) \,dx
+\tag{\bf 1P}
+\end{equation}
+This system of two linear equations has the obvious solution
+\[
+(a_1, a_2) = (1,0).
+\]
+Therefore the approximation function is
+\begin{equation}
+\tilde u(x) = x + 1 \cdot (x^2 - x) = x^2
+\tag{\bf 1P}
+\end{equation}
+\end{teilaufgaben}
+\end{loesung}
+
