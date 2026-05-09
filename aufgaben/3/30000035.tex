@@ -1,0 +1,145 @@
+On the domain
+$\Omega=\{ (\varphi,r) \mid \varphi\in [-\pi,\pi)\wedge r>1\}$
+in polar coordinates solve the partial differential equation
+\[
+\frac{\partial u}{\partial \varphi}
+-
+r
+\frac{\partial u}{\partial r}
+=
+\sin\varphi
+\]
+with the boundary conditions
+\[
+u(\varphi,1) = 0
+\qquad\text{for $-\pi \le \varphi < \pi$.}
+\]
+Note that for polar coordinates, the function $u(\varphi,r)$ needs to
+be a $2\pi$-periodic, i.~e.
+\[
+\lim_{\varphi\to \pi-} u(\varphi,1) = u(\pi,1).
+\]
+
+\begin{loesung}
+\begin{figure}
+\centering
+\definecolor{darkred}{rgb}{0.8,0,0}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\begin{tikzpicture}[>=latex,thick,scale=2]
+\begin{scope}
+\clip (-2,-2) rectangle (2,2);
+\fill[color=darkgreen!10] (-2,-2) rectangle (2,2);
+\fill[color=white] (0,0) circle[radius=1];
+\end{scope}
+\begin{scope}
+\clip (-2,-2) rectangle (2,2);
+\foreach \phinull in {-180,-170,...,180}{
+	\draw[color=darkred,line width=1.2pt] plot[domain=0:1.4,samples=20]
+		({180*\x/3.1415+\phinull}:{exp(\x)});
+}
+\end{scope}
+\draw[color=darkgreen,line width=1.2pt] (0,0) circle[radius=1];
+\draw[->] (0,0) -- (2.3,0) coordinate[label={$r$}];
+\fill (0,0) circle[radius=0.025];
+\end{tikzpicture}
+\end{figure}
+This is a quasilinear partial differential equation of first order
+which can be solved using the method of characteristics.
+The equation for the characteristics with the parameter $t$ are
+\begin{equation*}
+\left.
+\begin{aligned}
+\dot{\varphi} &=  1\\
+\dot{r}       &= -r\\
+\dot{u}       &=  \sin\varphi
+\end{aligned}
+\right\}
+\qquad\Rightarrow\qquad
+\left\{
+\begin{aligned}
+\varphi(t) &= t + \varphi_0 \\
+r(t)       &= r_0e^{-t}.     \\
+\end{aligned}
+\right.
+\end{equation*}
+The boundary conditions imply that $r_0=1$ and the characteristic
+curve starting at the boundary point $(\varphi_0,1)$ has the parametrization
+$t \mapsto (\varphi_0+t,e^{-t})$.
+These are spirals starting in the unit circle.
+Obviously, these curves cover all of $\Omega$ which implies that the
+problem is well posed.
+
+What remains is to solve the equation for $u$ and to eliminate the
+$\varphi_0$ variable.
+The equation is
+\[
+\dot{u} = \sin(t+\varphi_0)
+\]
+and can be solved by integrating, giving the solution
+\begin{equation}
+u(t)
+=
+\int_0^t \sin(\tau+\varphi_0)\,d\tau
+=
+\biggl[-\cos(\tau+\varphi_0)\biggr]_0^t
+=
+-\cos(t+\varphi_0) + \cos\varphi_0.
+\label{30000035:u}
+\end{equation}
+The boundary condition for $t=0$ is
+\[
+u(0)
+=
+-\cos(0+\varphi_0) +\cos \varphi_0
+=
+0
+\]
+and is therefore automatically satisfied.
+
+We still have to eliminate $\varphi_0$.
+Using $t=-\log r$ und $\varphi_0 = \varphi - t = \varphi+\log r$, we get
+from
+\eqref{30000035:u}
+\[
+u(\varphi, r)
+=
+-\cos(-\log r+\varphi+\log r) + \cos(\varphi+\log r)
+=
+\cos(\varphi+\log r)
+-
+\cos(\varphi).
+\]
+
+We verify that this function really is a solution by computing the derivatives:
+\begin{align*}
+\frac{\partial u}{\partial \varphi}
+&=
+-\sin(\varphi+\log r)+\sin(\varphi)
+\\
+\frac{\partial u}{\partial r}
+&=
+-
+\sin(\varphi+\log r)\frac{1}{r}.
+\end{align*}
+Substituting them into
+\[
+\frac{\partial u}{\partial \varphi}
+-r\frac{\partial u}{\partial r}
+=
+-\sin(\varphi+\log r)+\sin(\varphi)
++r
+\sin(\varphi+\log r)\frac{1}{r}
+=
+\sin\varphi,
+\]
+which is the original equation.
+\end{loesung}
+
+\begin{bewertung}
+Quasilinear partial differential equation of first order ({\bf Q}) 1 point,
+equation for characteristic curves ({\bf C}) 1 point,
+solution for $\varphi$ ({\bf \textPhi}) and $r$ ({\bf R}) 1 point each,
+solution for $u(t)$, ({\bf U}) 1 point,
+elimination of $t$ and $\varphi_0$ ({\bf E}) 1 point.
+\end{bewertung}
+

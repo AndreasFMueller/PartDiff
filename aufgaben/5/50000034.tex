@@ -1,0 +1,126 @@
+Use the Laplace transform to reduce the partial differential equation
+\begin{equation}
+\frac{\partial^2 u}{\partial x^2}
++
+y\frac{\partial u}{\partial y}
+=
+x
+\label{50000034:pde}
+\end{equation}
+on the domain
+\[
+\Omega
+=
+\{
+(x,y)
+\mid
+x>0\wedge 0<y<2\pi
+\}
+\]
+with boundary conditions
+\begin{equation}
+\left.
+\begin{aligned}
+u(x,0)                             &= -1      &\qquad &\forall x>0\\
+\frac{\partial u}{\partial y}(x,0) &= e^{-x}  &\qquad &\forall x>0\\
+u(0,y)                             &= \sin(y) &\qquad &0<y<2\pi   \\
+\frac{\partial u}{\partial x}(0,y) &= \cos(y) &\qquad &0<y<2\pi
+\end{aligned}
+\quad\right\}
+\label{50000034:boundary} \end{equation}
+to a family of ordinary differential equations with suitable boundary
+conditions.
+Do the boundary conditions~\eqref{50000034:boundary} uniquely determine
+the solutions of the equation~\eqref{50000034:pde}?
+
+\begin{loesung}
+The transform has to be done with respect to the $x$-coordinate,
+we write the transformed coordinate as $s$.
+The transform of the differential equation becomes
+\begin{align*}
+-
+\frac{\partial u}{\partial x}(0, y)
+-
+su(0,y)
++
+s^2\mathscr{L}u(s,y)
++
+y
+\frac{\partial}{\partial y} \mathscr{L}u(s, y)
+&=
+\frac{1}{s^2}.
+\intertext{Writing $\mathscr{L}u(s,y)=U_s(y)$, this equation becomes}
+-
+\cos(y)
+-
+s\sin(y)
++
+s^2 U_s(y)
++
+yU'_s(y)
+&=
+\frac{1}{s^2}
+\\
+yU'_s(y)
++
+s^2U_s(y)
+&=
+\cos(y)+s\sin(y)+\frac{1}{s^2},
+\end{align*}
+which is a family of linear first order ordinary differential
+equations with parameter $s$.
+It also satisfies the boundary conditions obtained from transforming
+the first two boundary conditions in \eqref{50000034:boundary}
+\begin{align*}
+\mathscr{L}u(s,0)
+&=
+-\frac1s
+&&\Rightarrow&
+U_s(0)&=-\frac{1}{s}
+\\
+\frac{\partial \mathscr{L}u}{\partial y}(s,0)
+&=
+\frac{1}{s+1}
+&&\Rightarrow&
+U'_s(0)
+&=
+\frac{1}{1+s}.
+\end{align*}
+As the boundary conditions uniquely determine the function $U_s(y)$,
+there can only be a single solution for $u(x,y)$.
+\end{loesung}
+
+\begin{diskussion}
+The Laplace transform of the function $x$ may not be as well known
+as the other transforms, here is its derivation:
+\begin{align*}
+(\mathscr{L}x)(s)
+&=
+\int_0^{\infty} xe^{-sx}\,dx
+=
+\biggl[
+-\frac{xe^{-sx}}{s}
+\biggr]_0^\infty
++
+\int_0^\infty
+\frac{e^{-sx}}{s}
+\,dx
+=
+-\frac{1}{s}
+\biggl[
+\frac{e^{-sx}}s
+\biggr]_0^\infty
+=
+\frac{1}{s^2}.
+\end{align*}
+\end{diskussion}
+
+\begin{bewertung}
+Choice of coordinate for the Laplace transform ({\bf C}) 1 point,
+Laplace transform of derivatives ({\bf D}) 1 point,
+substitution of boundary conditions ({\bf S}) 1 point,
+Laplace transform of the equation ({\bf E}) 1 point,
+Laplace transform of boundary conditions ({\bf B}) 1 point,
+uniqueness of solution ({\bf U}) 1 point.
+\end{bewertung}
+
