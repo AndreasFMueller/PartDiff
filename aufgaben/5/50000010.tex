@@ -16,7 +16,7 @@ erfüllen.
 Dabei ist $J_0(t)$ eine sogenannte Bessel-Funktion, von der man nur
 die Laplace-Transformation kennt:
 \[
-{\cal L}J_0(s)=\frac1{\sqrt{s^2+1}}
+\mathscr{L}J_0(s)=\frac1{\sqrt{s^2+1}}
 \]
 Sie sieht ein bisschen aus wie $\sin(t)/t$, aber die genaue Kenntnis der
 Funktion ist für die Lösung der Aufgabe nicht erforderlich.
@@ -48,30 +48,30 @@ dargestellt.
 Die Laplacetransformation nach der Variablen $t$
 ergibt für die Differentialgleichung
 \[
-x\frac{\partial{\cal L}u(x,s)}{\partial x}
+x\frac{\partial\mathscr{L}u(x,s)}{\partial x}
 -
-u(x,0)+s{\cal L}u(x,s)=0.
+u(x,0)+s\mathscr{L}u(x,s)=0.
 \]
 Dank der Randbedingung $u(x,0)=0$ wird die Differentialgleichung
 homogen:
 \[
-x\frac{\partial{\cal L}u(x,s)}{\partial x}
+x\frac{\partial\mathscr{L}u(x,s)}{\partial x}
 +
-s{\cal L}u(x,s)=0.
+s\mathscr{L}u(x,s)=0.
 \]
-Die Anfangsbedingung für ${\cal L}u(x,s)$ für $x=1$ ist die
+Die Anfangsbedingung für $\mathscr{L}u(x,s)$ für $x=1$ ist die
 Laplacetransformierte von $1-J_0(t)$, also
 \[
-{\cal L}u(1,s)=\frac1s-\frac{1}{\sqrt{s^2+1}}.
+\mathscr{L}u(1,s)=\frac1s-\frac{1}{\sqrt{s^2+1}}.
 \]
 Weil $\sqrt{s^2+1}>\sqrt{s^2}=s$ ist, kann man folgern, dass
-die Laplacetransformierte ${\cal L}u(1,s)$ für alle $s$ negativ ist.
+die Laplacetransformierte $\mathscr{L}u(1,s)$ für alle $s$ negativ ist.
 \item
 Die Theorie der gewöhnlichen Differentialgleichungen garantiert, dass
-die Funktionen ${\cal L}u(x,s)$ eindeutig festgelegt sind, damit folgt
+die Funktionen $\mathscr{L}u(x,s)$ eindeutig festgelegt sind, damit folgt
 auch, dass $u(x,t)$ eindeutig festgelegt ist.
 \item
-Schreiben wir $y_s(x)={\cal L}u(x,s)$ erhalten wir die Differentialgleichung
+Schreiben wir $y_s(x)=\mathscr{L}u(x,s)$ erhalten wir die Differentialgleichung
 in etwas übersichtlicherer Form
 \begin{equation}
 xy_s'(x)+sy_s(x)=0.
@@ -113,9 +113,9 @@ schreiben, damit wird klar, dass $u(x,t)$ nur eine um $\log x$ verschobene
 Version der Funktion $u(1,t)$ ist. 
 Die zweite Verschiebeeigenschaft der Laplace-Transformation lautet nämlich
 \[
-{\cal L}\bigl(f(t-\log x)\theta(t-\log x)\bigr)
+\mathscr{L}\bigl(f(t-\log x)\theta(t-\log x)\bigr)
 =
-e^{-s\log x}{\cal L}(f(t)),
+e^{-s\log x}\mathscr{L}(f(t)),
 \]
 wobei $\theta(t)$ die Heaviside-Funktion
 \[

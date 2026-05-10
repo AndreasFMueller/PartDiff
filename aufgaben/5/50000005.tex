@@ -42,7 +42,7 @@ gelöst.
 Die Lösung mit der Transformationsmethode
 verwendet Fourier-Transformation
 entlang der $x$-Achse und Laplace-Transformation entlang der Zeit-Achse.
-Wir schreiben $\hat u(t,k)$ für die Fourier-Transformation und ${\cal L} u$
+Wir schreiben $\hat u(t,k)$ für die Fourier-Transformation und $\mathscr{L} u$
 für die Laplace-Transformation.
 
 Die Anfangsbedingungen sind ungerade, so dass auch die Lösung der
@@ -60,9 +60,9 @@ der $\hat u(t,k)$
 \]
 Diese Gleichung kann man jetzt nach Laplace transformieren:
 \begin{align*}
-s{\cal L}\hat u(s,k) - \hat u(0,k)&=-k^2 {\cal L}\hat u(s,k)\\
-(s+k^2){\cal L}\hat u(s,k)&=\hat u(0,k)\\
-{\cal L}\hat u(s,k)&=\frac{\hat u(0,k)}{s+k^2}
+s\mathscr{L}\hat u(s,k) - \hat u(0,k)&=-k^2 \mathscr{L}\hat u(s,k)\\
+(s+k^2)\mathscr{L}\hat u(s,k)&=\hat u(0,k)\\
+\mathscr{L}\hat u(s,k)&=\frac{\hat u(0,k)}{s+k^2}
 \end{align*}
 Rücktransformation ergibt:
 \[

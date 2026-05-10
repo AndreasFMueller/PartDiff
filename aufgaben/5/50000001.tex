@@ -11,26 +11,26 @@ u(0,x)&=0.
 \begin{loesung}
 Die Bedingung $t>0$ zeigt an, dass die Laplace-Transformation
 der Variablen $t$ in die Variable $s$ zum Erfolg führen könnte.
-Wir schreiben $\cal L$ für die Laplace-Transformation von $s$.
+Wir schreiben $\mathscr{L}$ für die Laplace-Transformation von $s$.
 Die transformierte Differentialgleichung ist
 \[
-s{\cal L}u(s, x)-u(0,x)=\kappa \partial_x^2{\cal L}u(s,x).
+s\mathscr{L}u(s, x)-u(0,x)=\kappa \partial_x^2\mathscr{L}u(s,x).
 \]
 Setzt man die Anfangsbedingung $u(0,x)=0$ ein, wird daraus
 \[
-s{\cal L}u(s, x)=\kappa \partial_x^2{\cal L}u(s,x),
+s\mathscr{L}u(s, x)=\kappa \partial_x^2\mathscr{L}u(s,x),
 \]
 also eine mit $s$ parametrisierte Familie von gewöhnlichen
-Differentialgleichung der Funktion $x\mapsto {\cal L}u(s,x)$.
+Differentialgleichung der Funktion $x\mapsto \mathscr{L}u(s,x)$.
 Etwas umgestellt ist sie äquivalent zu
 \[
-\partial_x^2{\cal L}u(s,x)
+\partial_x^2\mathscr{L}u(s,x)
 =
-\frac{s}{\kappa}{\cal L}u(s, x),
+\frac{s}{\kappa}\mathscr{L}u(s, x),
 \]
 mit den Lösungen
 \[
-{\cal L}u(s,x)=\begin{cases}
+\mathscr{L}u(s,x)=\begin{cases}
 C_1(s)e^{\sqrt{\frac{s}{\kappa}}x}\\
 C_2(s)e^{-\sqrt{\frac{s}{\kappa}}x}
 \end{cases}
@@ -40,20 +40,20 @@ beschränkt sein müssen, kommt nur die zweite Lösung in Frage.
 
 Die Randbedingung muss ebenfalls transformiert werden:
 \[
-{\cal L}u(s,0)=\frac{c}{s},
+\mathscr{L}u(s,0)=\frac{c}{s},
 \]
 dies ist die Anfangsbedingung für die Differentialgleichung,
 \[
-{\cal L}u(s,0)=C_2(s)=\frac{c}{s}.
+\mathscr{L}u(s,0)=C_2(s)=\frac{c}{s}.
 \]
 Somit ist die Laplace-Transformierte der gesuchten Lösung
 \[
-{\cal L}u(s,x)=\frac{c}{s}e^{-\sqrt{\frac{s}{\kappa}}x}
+\mathscr{L}u(s,x)=\frac{c}{s}e^{-\sqrt{\frac{s}{\kappa}}x}
 \]
 Diese Funktion muss jetzt zurück transformiert werden.
 Dazu schreiben wir die rechte Seite zunächst noch um:
 \[
-{\cal L}u(s,x)=c\cdot \frac{1}{s}e^{-k\sqrt{s}}
+\mathscr{L}u(s,x)=c\cdot \frac{1}{s}e^{-k\sqrt{s}}
 \]
 mit $k=x/\sqrt{\kappa}$.
 Aus der

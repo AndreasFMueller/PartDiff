@@ -23,12 +23,12 @@ die Rücktransformation nicht finden.
 \begin{loesung}
 Die Laplace-Transformierte der Differentialgleichung ist
 \[
-s{\cal L}u(x,s) - \underbrace{u(x,0)}_{\displaystyle =0}
-+ 3\frac{\partial }{\partial x}{\cal L}u(x,s)
+s\mathscr{L}u(x,s) - \underbrace{u(x,0)}_{\displaystyle =0}
++ 3\frac{\partial }{\partial x}\mathscr{L}u(x,s)
 =
--\frac1x{\cal L}u(x,s).
+-\frac1x\mathscr{L}u(x,s).
 \]
-Der besseren Übersicht halber kürzen wir ${\cal L}u(x,s)=y_s(x)$ ab
+Der besseren Übersicht halber kürzen wir $\mathscr{L}u(x,s)=y_s(x)$ ab
 und erhalten
 \begin{align*}
 3y_s'(x) + sy_s(x) &= -\frac1x y_s(x)
@@ -47,7 +47,7 @@ Darin ist die Konstante $C(s)$ aus den Randbedingungen für $x=1$
 noch zu ermitteln.
 Die Laplace-Transformiere von $u(1,t)$ ist
 \begin{align*}
-{\cal L}u(1,s)
+\mathscr{L}u(1,s)
 &=
 \int_0^\infty u(1,t)e^{-st}\,dt
 =
@@ -60,7 +60,7 @@ Die Laplace-Transformiere von $u(1,t)$ ist
 \end{align*}
 Setzt man dies in die Randbedingung für $y_s(1)$ ein, erhält man
 \[
-{\cal L}u(1,s) = \frac1{s^2} = y_s(1)=C(s) e^{-s/3}
+\mathscr{L}u(1,s) = \frac1{s^2} = y_s(1)=C(s) e^{-s/3}
 \qquad
 \Rightarrow
 \qquad
@@ -69,7 +69,7 @@ C(s) = \frac{e^{s/3}}{s^2}.
 Damit kann man jetzt auch die Laplace-Transformierte der Lösung der gegeben
 partiellen Differentialgleichung hinschreiben:
 \[
-{\cal L}u(x,s)
+\mathscr{L}u(x,s)
 =
 y_s(x)
 =
