@@ -1,17 +1,18 @@
 By differentiating the definition of the Laplace-transform with respect to $s$,
 one can immediately derive the formula
-\begin{equation}
+\begin{align*}
 \frac{d}{ds}\mathscr{L}f(s)
-=
+&=
 \frac{d}{ds}\int_0^\infty e^{-st} f(t)\,dt
 =
 \int_0^\infty -t e^{-st} f(t)\,dt
 =
 \mathscr{L}(-tf(t)) (s)
+\\
 \quad\Rightarrow\quad
-\mathscr{L}(tf(t)) (s) = -\frac{d}{ds}\mathscr{L}f(s).
+\mathscr{L}(tf(t)) (s) &= -\frac{d}{ds}\mathscr{L}f(s).
 \label{50000023:deriv}
-\end{equation}
+\end{align*}
 This means that the Laplace transform of $tf(t)$ is up to a sign the
 derivative of the Laplace transform of $f(t)$.
 \begin{teilaufgaben}
