@@ -1,0 +1,9 @@
+/*
+ * verify solution to 30000035
+ *
+ * (c) 2026 Prof Dr Andreas Müller
+ */
+u: cos(phi + log(r)) - cos(phi);
+diff(u,phi);
+diff(u,r);
+diff(u,phi) - r * diff(u,r) - sin(phi);

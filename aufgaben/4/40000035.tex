@@ -1,0 +1,141 @@
+On the ring shaped domain
+\(
+\Omega
+=
+\{
+(\varphi,r)
+\mid
+0\le \varphi < 2\pi
+\wedge
+1<r<2
+\}
+\)
+in polar coordinates, consider the partial differential equation
+\begin{equation}
+\Delta u = \lambda u
+\label{40000035:pde}
+\end{equation}
+with homogeneous boundary conditions.
+Convert this equation into two ordinary differential equations
+with appropriate boundary conditions and solve at least one of them.
+
+\begin{hinweis}
+Note that the ring shape of the domain implies periodic boundary conditions
+for the variable $\varphi$.
+\end{hinweis}
+
+\begin{loesung}
+The Laplace operator in polar coordinates has the form
+\[
+\Delta
+=
+\frac1r \frac{\partial}{\partial r}\frac{\partial}{\partial r}
++
+\frac{1}{r^2}\frac{\partial^2}{\partial\varphi^2}
+=
+\frac{\partial^2}{\partial r^2} + \frac1r\frac{\partial}{\partial r}
++
+\frac{1}{r^2}\frac{\partial^2}{\partial\varphi^2}.
+\]
+To separate $\varphi$ and $r$, we write the solution as a product
+$u(\varphi,r)=\Phi(\varphi)R(r)$ and substitute this ansatz into the
+differential equation~\eqref{40000035:pde}.
+This gives
+\[
+R''(r)\Phi(\varphi)
++
+\frac1rR'(r)\Phi(\varphi)
++
+\frac1{r^2}R(r)\Phi''(\varphi)
+=
+\lambda R(r)\Phi(\varphi).
+\]
+Dividing by $R(r)\Phi(\varphi)$ allows to separate $\varphi$ and $r$
+as follows:
+\begin{align*}
+\frac{R''(r)}{R(r)}
++
+\frac{1}{r}\frac{R'(r)}{R(r)}
++
+\frac{1}{r^2} \frac{\Phi''(\varphi)}{\Phi(\varphi)}
+&=
+\lambda.
+\intertext{We need to remove the $r$ in the $\Phi$-term by multiplying the
+equation by $r^2$:}
+r^2 \frac{R''(r)}{R(r)}
++
+r \frac{R'(r)}{R(r)}
+-
+\lambda r^2
+&=
+-\frac{\Phi''(\varphi)}{\Phi(\varphi)}.
+\end{align*}
+The left hand side only depends on $r$, the right hand side only on
+$\varphi$, so they must both be constant.
+As we need periodic solutions for $\Phi(\varphi)$, the constant
+must be positive, we write it as $\mu^2$.
+Thus we get the two differential equations
+\begin{align}
+\Phi''(\varphi) &= -\mu^2 \Phi(\varphi)
+&
+r^2 R''(r) + rR'(r) -\lambda r^2 R(r) &= \mu^2 R(r).
+\label{40000035:separated}
+\end{align}
+The first equation can be solved by trigonometric functions
+\[
+\Phi(\varphi)
+=
+\begin{cases}
+\cos \mu \varphi \\
+\sin \mu \varphi.
+\end{cases}
+\]
+Periodic boundary conditions imply that
+$\cos\mu\varphi=\cos(\varphi+2\pi)$
+and
+$\sin\mu\varphi=\sin(\varphi+2\pi)$
+for all $\varphi$.
+Using the addition formula for the trigonometric functions, we get
+\[
+\renewcommand{\arraycolsep}{2pt}
+\begin{array}{rcrcl}
+\cos\mu\varphi &=& \cos\mu\varphi\cos 2\mu\pi &-& \sin\mu\varphi\sin2\mu\pi
+\\
+\sin\mu\varphi &=& \sin\mu\varphi\cos 2\mu\pi &+& \cos\mu\varphi\sin2\mu\pi.
+\end{array}
+\]
+In both cases, this is only possible if $\cos2\mu\pi=1$ and
+$\sin2\mu\pi=0$.
+The second condition imples that $2\mu\pi$ must be an integer
+multiple of $\pi$, but if it is an odd multiple of $\pi$, then
+$\cos2\mu\pi=-1$ and first condition would be violated.
+Consequently, $2\mu\pi$ must be an even multiple of $\pi$ or $\mu$
+must be an integer.
+Thus the solutions of the first equation are the functions
+\[
+\cos k\varphi
+\qquad\text{and}\qquad
+\sin k\varphi
+\qquad\text{with $k\in\mathbb{N}$.}
+\]
+The second differential equation in \eqref{40000035:separated} is 
+\[
+r^2R''(r)
++
+r R'(r)
+-
+(k^2-\lambda r^2)R(r)
+=
+0,
+\]
+this is Bessel's equation, which can be solved using Bessel functions.
+\end{loesung}
+
+\begin{bewertung}
+Product ansatz ({\bf A}) 1 point,
+separation of variables ({\bf S}) 1 point,
+two separated differential equations ({\bf D}) 2 point,
+solutions of the equations ({\bf L}) 1 point,
+restriction of the value of $\mu$ from boundary conditions ({\bf B}) 1 point.
+\end{bewertung}
+

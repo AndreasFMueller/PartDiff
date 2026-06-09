@@ -1,0 +1,152 @@
+(3 points + 3 points)
+\begin{teilaufgaben}
+\item
+The function $u(x,t)$ is defined on the strip
+$\Omega = [0,1] \times [0,\infty)$.
+
+The function $u(x,t)$ satisfies in $\Omega$ the equation
+\[
+u_{t}(x,t) = u_{xx}(x,t)
+\]
+and  $u(0,t) = u(1,t) = 1$ for $t \in [0,\infty)$.
+
+One also has the initial values $u(1/3,0) = u(2/3,0) = 2$ .
+
+Determine approximate values for $u(1/3,1)$ and $u(2/3,1)$.
+
+Use the implicit method of Richardson with $\Delta x = 1/3$ and
+$\Delta t = 1/3$.
+
+\item
+The boundary of $\Omega$ is a closed polygon with the vertices:
+\[
+(0,0), (8,0), (8,2), (4,2), (0,6). 
+\]
+
+The function $u(x,y)$ is defined on $\Omega$. It satisfies in $\Omega$ 
+\[
+\Delta u(x,y) = 1.
+\]
+On the boundary of $\Omega$ one has $u(x,y) = 0$. 
+
+Determine approximate values for $u(1,1)$ and $u(7,1)$. 
+
+Use finite volumes with two Voronoi cells.  
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Set $U_k^{j} = \tilde u(k/3,j/3)$. We apply the implicit method
+of Richardson with $r = 3$ and obtain. 
+\begin{equation}
+\begin{pmatrix*}[r]
+-3 & 7 & -3 & 0 \\
+0 & -3 & 7 & -3
+\end{pmatrix*}
+\cdot
+\begin{pmatrix}
+1 \\
+U_1^{j+1} \\
+U_2^{j+1} \\
+1
+\end{pmatrix}
+=
+\begin{pmatrix}
+U_1^{j} \\
+U_2^{j}
+\end{pmatrix}.
+\tag{\textbf{1P}}
+\end{equation}
+We use the initial values to obtain:
+\[
+\begin{pmatrix*}[r]  7 & -3 &  \\  -3 & 7 \end{pmatrix*}
+\cdot
+\begin{pmatrix} U_1^{1} \\  U_2^{1}  \end{pmatrix}
+-
+\begin{pmatrix} 3\\  3  \end{pmatrix}
+=
+\begin{pmatrix} 2 \\  2  \end{pmatrix}
+\]
+Therefore we have for the first time-step:
+\begin{equation}
+\tilde u(1/3,1/3) = \tilde u(2/3, 1/3) = 5/4.
+\tag{\textbf{1P}}
+\end{equation}
+Next we have:
+\[
+\begin{pmatrix*}[r]  7 & -3 &  \\  -3 & 7 \end{pmatrix*}
+\cdot
+\begin{pmatrix} U_1^{2} \\  U_2^{2}  \end{pmatrix}
+-
+\begin{pmatrix} 3\\  3  \end{pmatrix}
+=
+\begin{pmatrix} 5/4 \\  5/4  \end{pmatrix}
+\]
+Therefore we have for the second time-step:
+\[
+\tilde u(1/3,2/3) = \tilde u(2/3, 2/3) = 17/16.
+\]
+Finally we have:
+\[
+\begin{pmatrix*}[r]  7 & -3 &  \\  -3 & 7 \end{pmatrix*}
+\cdot
+\begin{pmatrix} U_1^{3} \\  U_2^{3}  \end{pmatrix}
+-
+\begin{pmatrix} 3\\  3  \end{pmatrix}
+=
+\begin{pmatrix} 17/16 \\  17/16 \end{pmatrix}
+\]
+Therefore we have for the last time-step:
+\begin{equation}
+\tilde u(1/3,1) = \tilde u(2/3, 1) = 65/64.
+\tag{\textbf{1P}}
+\end{equation}
+\item
+By the finite volume method we have
+\[
+2/6 \cdot (\tilde u(7,1) - \tilde u(1,1))
++
+\sqrt{32}/\sqrt{8} \cdot (0 - \tilde u(1,1))
++
+6/1 \cdot (0 - \tilde u(1,1))
++
+4/1 \cdot (0 - \tilde u(1,1))
+=
+16
+\]
+and
+\[
+2/1 \cdot (\tilde 0 - \tilde u(7,1))
++
+4/1 \cdot (0  - \tilde u(7,1))
++
+2/6 \cdot (\tilde u(1,1)- \tilde u(7,1))
++
+4/1 \cdot (0 - \tilde u(7,1)) = 8,
+\]
+This leads to a system of two linear equations:
+\begin{equation}
+1/3
+\cdot
+\begin{pmatrix*}[r]
+-37 & 2 \\
+ 2 & -31
+\end{pmatrix*}
+\cdot
+\begin{pmatrix}
+\tilde u(1,1)  \\
+\tilde u(7,1)
+\end{pmatrix}
+=
+\begin{pmatrix*}[r]
+16 \\
+ 8
+\end{pmatrix*}.
+\tag{\textbf{2P}}
+\end{equation}
+Hence $\tilde u(1,1) = -252/191 \approx -1.3194$ and
+$\tilde u(7,1) = -156/191 \approx -0.8168$ (\textbf{1P}).
+\qedhere
+\end{teilaufgaben}
+\end{loesung}

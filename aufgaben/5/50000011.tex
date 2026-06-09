@@ -23,10 +23,10 @@ die Rücktransformation nicht finden.
 \begin{loesung}
 Die Laplace-Transformierte der Differentialgleichung~\eqref{50000011:dgl} ist
 \begin{equation}
-x^2\frac{\partial}{\partial x}{\cal L}u(x,s) + s{\cal L}u(x,s) - u(x,0)=0.
+x^2\frac{\partial}{\partial x}\mathscr{L}u(x,s) + s\mathscr{L}u(x,s) - u(x,0)=0.
 \end{equation}
 Der letzte Term fällt wegen der zweiten Randbedingung weg.
-Wir schreiben $y_s(x)={\cal L}u(x,s)$, und suchen jetzt also eine Lösung
+Wir schreiben $y_s(x)=\mathscr{L}u(x,s)$, und suchen jetzt also eine Lösung
 der gewöhnlichen Differentialgleichung
 \begin{equation}
 x^2y'_s(x) + sy_s(x)=0.
@@ -35,7 +35,7 @@ x^2y'_s(x) + sy_s(x)=0.
 Die Anfangsbedingung von $y_s(x)$ für $x=1$ entsteht durch
 Laplace-Transformation der ersten Randbedingung in~\eqref{50000011:rb} ist
 \begin{align*}
-{\cal L}u(1,s)
+\mathscr{L}u(1,s)
 &=
 \int_0^\infty u(1,t)e^{-st}\,dt
 =
@@ -61,7 +61,7 @@ y_s&=C(s)e^{s/x}.
 \end{align*}
 Die Konstante $C(s)$ muss aus der Anfangsbedingung bestimmt werden:
 \[
-y_s(1)={\cal L}u(1,s)=\frac1{s^2}=C(s)e^{s}
+y_s(1)=\mathscr{L}u(1,s)=\frac1{s^2}=C(s)e^{s}
 \qquad\Rightarrow\qquad
 C(s)=\frac1{s^2}e^{-s}.
 \]
@@ -69,7 +69,7 @@ Damit ist die Differentialgleichung~\eqref{50000011:odgl} gelöst, wir haben
 \begin{equation}
 y_s(x)
 =
-{\cal L}u(x,s)
+\mathscr{L}u(x,s)
 =
 \frac1{s^2}e^{\frac{s}{x}-s}
 =

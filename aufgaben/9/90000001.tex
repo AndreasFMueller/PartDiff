@@ -106,33 +106,7 @@ these are parabolas.
 \end{teilaufgaben}
 \begin{figure}
 \centering
-\definecolor{darkgreen}{rgb}{0,0.6,0}
-\begin{tikzpicture}[>=latex,thick]
-\pgfmathparse{sqrt(3)+2}
-\xdef\rplus{\pgfmathresult}
-\pgfmathparse{-sqrt(3)+2}
-\xdef\rminus{\pgfmathresult}
-\begin{scope}
-\clip (-8.1,0) rectangle (8.3,6);
-\foreach \s in {-16,...,8}{
-	\draw[color=red,line width=1.4pt] plot[domain=0:0.8,samples=40]
-		({\s+8*0.5*\rplus*\x*\x},{8*\x});
-}
-\foreach \s in {-16,...,8}{
-	\draw[color=darkgreen,line width=1.4pt] plot[domain=0:0.8,samples=40]
-		({\s+8*0.5*(1/\rplus)*\x*\x},{8*\x});
-}
-\end{scope}
-\draw[->] (-8.1,0) -- (8.4,0) coordinate[label={$x$}];
-\draw[->] (0,-0.1) -- (0,6.5) coordinate[label={right:$y$}];
-\draw (8,-0.1) -- (8,0.1);
-\draw (-8,-0.1) -- (-8,0.1);
-\node at (8,0) [below] {$1$\strut};
-\node at (0,0) [below] {$0$\strut};
-\node at (-8,0) [below] {$-1$\strut};
-\draw (-0.1,4) -- (0.1,4);
-\node at (0,4) [left] {$\frac12$};
-\end{tikzpicture}
+\includeagraphics[]{graph.pdf}
 \caption{Characteristics of the differential equation~\eqref{90000001:eqn}
 are parabolas given by \eqref{90000001:parabola} for the two values
 of $r$ found in \eqref{90000001:r}, red parabolas for $r=\sqrt{3}+2$ and

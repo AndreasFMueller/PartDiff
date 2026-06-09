@@ -22,7 +22,7 @@ Ist die Lösung der Differentialgleichung~\eqref{50000008:gleichung} durch
 die Randbedingungen eindeutig festgelegt?
 \item
 Lösen Sie die in a) gefundene gewöhnliche Differentialgleichung,
-soweit dies in geschlossener Form\footnote{In geschlossener Form
+soweit dies in ge\-schlos\-se\-ner Form\footnote{In geschlossener Form
 lösen heisst, dass man eine Formel für die Lösung angeben kann, die 
 nur die wohlbekannten Funktionen verwendet, und in der keine nicht
 ausgerechneten Integrale mehr stehen.
@@ -44,30 +44,30 @@ Anfangsbedingungen nicht vergessen!
 Die Laplacetransformation nach der Variablen $t$
 ergibt für die Differentialgleichung
 \[
-x\frac{\partial{\cal L}u(x,s)}{\partial x}
+x\frac{\partial\mathscr{L}u(x,s)}{\partial x}
 -
-u(x,0)+{\cal L}u(x,s)=0.
+u(x,0)+\mathscr{L}u(x,s)=0.
 \]
 Dank der Randbedingung $u(x,0)=0$ wird die Differentialgleichung
 homogen:
 \[
-x\frac{\partial{\cal L}u(x,s)}{\partial x}
+x\frac{\partial\mathscr{L}u(x,s)}{\partial x}
 +
-s{\cal L}u(x,s)=0.
+s\mathscr{L}u(x,s)=0.
 \]
-Die Anfangsbedingung für ${\cal L}u(x,s)$ für $x=1$ ist die
+Die Anfangsbedingung für $\mathscr{L}u(x,s)$ für $x=1$ ist die
 Laplacetransformierte der Kosinusfunktion
 \[
-{\cal L}u(1,s)=\frac1s-\frac{s}{s^2+a^2} = \frac{a^2}{s(s^2+a^2)}.
+\mathscr{L}u(1,s)=\frac1s-\frac{s}{s^2+a^2} = \frac{a^2}{s(s^2+a^2)}.
 \]
 In der letzten Form erkennt man auch, dass die Laplacetransformierte
 für alle $s$ positiv ist.
 \item
 Die Theorie der gewöhnlichen Differentialgleichungen garantiert, dass
-die Funktionen ${\cal L}u(x,s)$ eindeutig festgelegt sind, damit folgt
+die Funktionen $\mathscr{L}u(x,s)$ eindeutig festgelegt sind, damit folgt
 auch, dass $u(x,t)$ eindeutig festgelegt ist.
 \item
-Schreiben wir $y_s(x)={\cal L}u(x,s)$ erhalten wir die Differentialgleichung
+Schreiben wir $y_s(x)=\mathscr{L}u(x,s)$ erhalten wir die Differentialgleichung
 in etwas übersichtlicherer Form
 \begin{equation}
 xy_s'(x)+sy_s(x)=0.
@@ -112,9 +112,9 @@ schreiben, damit wird klar, dass $u(x,t)$ nur eine um $\log x$ verschobene
 Version der Funktion $u(1,t)$ ist. 
 Die zweite Verschiebeeigenschaft der Laplace-Transformation lautet nämlich
 \[
-{\cal L}\bigl(f(t-\log x)\theta(t-\log x)\bigr)
+\mathscr{L}\bigl(f(t-\log x)\theta(t-\log x)\bigr)
 =
-e^{-s\log x}{\cal L}(f(t)),
+e^{-s\log x}\mathscr{L}(f(t)),
 \]
 wobei $\theta(t)$ die Heaviside-Funktion
 \[

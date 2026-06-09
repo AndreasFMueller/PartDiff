@@ -1,0 +1,81 @@
+%
+% graph.tex -- Template für standalone TIKZ Bilder
+%
+% (c) 2019 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\documentclass[tikz,12pt]{standalone}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\usetikzlibrary{arrows,intersections,math,calc}
+\definecolor{darkred}{rgb}{0.8,0,0}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\begin{document}
+\def\skala{1}
+\begin{tikzpicture}[>=latex,thick,scale=\skala]
+
+\def\dx{5}
+\def\dy{5}
+\def\X{0.5}
+\def\Y{0.5}
+\pgfmathparse{\Y+\X}
+\xdef\D{\pgfmathresult}
+\pgfmathparse{\Y-\X*\X}
+\xdef\C{\pgfmathresult}
+\begin{scope}
+	\fill[color=gray!10] (0,{-0.7*\dy}) rectangle ({2.2*\dx},{1.2*\dy});
+	\clip ({0*\dx},{-0.7*\dy}) rectangle ({2.2*\dx},{1.2*\dy});
+	\fill[color=blue!20]
+		plot[domain=0:\X,samples=60] 
+			({\x*\dx},{(-\x+(\D))*\dy})
+		--
+		plot[domain=\X:0,samples=60]
+			({\x*\dx},{(\x*\x+(\C))*\dy})
+		--
+		cycle;
+	\draw[color=darkgreen,line width=0.3pt] plot[domain=0:2.2,samples=60]
+			({\x*\dx},{(\x*\x+\C)*\dy});
+	\draw[color=red,line width=0.3pt] plot[domain=0:2.2,samples=60]
+			({\x*\dx},{(-\x+\D)*\dy});
+	\foreach \C in {-10,-9.75,...,2}{
+		\draw[color=darkgreen] plot[domain=0:2.2,samples=60]
+			({\x*\dx},{(\x*\x+\C)*\dy});
+	}
+	\foreach \D in {-1,-0.75,...,3}{
+		\draw[color=red] plot[domain=0:2.2,samples=60]
+			({\x*\dx},{(-\x+\D)*\dy});
+	}
+\end{scope}
+\fill[color=white,opacity=1.0]
+	({\X*\dx+0.05},{\Y*\dy-0.1}) rectangle ({\X*\dx+1.90},{\Y*\dy-0.70});
+\draw[line width=0.2pt] (0,{\Y*\dy}) -- ({\X*\dx},{\Y*\dy});
+\draw (-0.05,{\Y*\dy}) -- (0.05,{\Y*\dy});
+\node at (0,{\Y*\dy}) [left] {$\frac12$};
+\draw[line width=0.2pt] ({\X*\dx},0) -- ({\X*\dx},{1.2*\dy});
+\node at ({\X*\dx},{1.2*\dy}) [above] {$\frac12$};
+\node at ({\X*\dx},{\Y*\dy}) [below right] {$P=(\frac12,\frac12)$};
+\node at (0,0) [above left] {$Q$};
+\draw[color=blue] ({0*\dx},{-0.7*\dy}) -- ({0*\dx},{1.2*\dy});
+\fill[color=blue] ({\X*\dx},{\Y*\dy}) circle[radius=0.08];
+\fill[color=blue] ({0*\dx},{0*\dy}) circle[radius=0.08];
+\pgfmathparse{\Y+\X}
+\xdef\D{\pgfmathresult}
+\pgfmathparse{\Y-\X*\X}
+\xdef\C{\pgfmathresult}
+\draw[color=blue] (-0.05,{\C*\dy}) -- (0.05,{\C*\dy});
+\node[color=blue] at (0,{\C*\dy}) [left] {$\frac14$};
+\draw[color=blue] (-0.05,{\D*\dy}) -- (0.05,{\D*\dy});
+\node[color=blue] at (0,{\D*\dy}) [left] {$1$};
+\draw[->] (-0.1,0) -- ({2.2*\dx+0.5},0) coordinate[label={$x$}];
+\draw[->] (0,{-0.7*\dy-0.1}) -- (0,{1.2*\dy+0.3}) coordinate[label={left:$y$}];
+\draw ({\X*\dx},-0.05) -- ({\X*\dx},0.05);
+\draw ({\dx},-0.05) -- ({\dx},0.05);
+\node at ({1*\dx},0) [below] {$1$};
+\draw ({2*\dx},-0.05) -- ({2*\dx},0.05);
+\node at ({2*\dx},0) [below] {$2$};
+
+\end{tikzpicture}
+\end{document}
+

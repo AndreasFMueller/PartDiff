@@ -1,0 +1,92 @@
+\begin{teilaufgaben}
+\item
+The function $u(x)$ is defined on the interval $\Omega = [0, \pi].$
+The function satisfies in $\Omega$ 
+\[
+u''(x) - u(x) = 1
+\]
+and $u(0) = u(\pi) = 0$ on the boundary of $\Omega$.
+
+Determine an approximation function $\tilde u(x)$ for $u(x)$ by
+the method of Galerkin. 
+Use the ansatz $\tilde u(x) = a_1 \cdot \sin(x) + a_2 \cdot \sin(3 \cdot x).$
+
+\item
+The function $u(x)$ is defined on the interval $\Omega = [0, 1].$
+The function satisfies in $\Omega$ 
+\[
+- u''(x) = x
+\]
+and $u(0) = 1$ and $u(1) = 2$ on the boundary of $\Omega$.  
+
+Determine an approximate value for $u(1/2)$ by the method of finite elements.
+
+Use linear finite elements with $h = 1/2$.
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Plugging the ansatz into the differential equation
+\[
+u''(x) - u(x) - 1 = 0
+\]
+we obtain
+\[
+-2 \cdot a_1 \cdot \sin(x) - 10 \cdot a_2 \cdot \sin(3 \cdot x) - 1 \approx 0.
+\]
+Since
+\[
+\int_0^\pi \sin(x) \ dx = 2, \ \ \ \int_0^\pi \sin(3 \cdot x) \ dx = 2/3,
+\]
+as well as
+\[
+\int_0^\pi \sin(x)^2 \ dx = \pi/2, \ \ \ \int_0^\pi \sin(3 \cdot x)^2 \ dx = \pi/2, \ \ \  \int_0^\pi \sin(x) \cdot \sin(3 \cdot x) \ dx = 0,
+\]
+we obtain by Galerkin the linear system of equations
+\begin{equation}
+\left[\begin{array}{cc}  -\pi& 0 \\  0& -5 \cdot \pi  \end{array}\right]
+\cdot
+\left(\begin{array}{r} a_1 \\ a_2 \end{array}\right)
+-
+\left(\begin{array}{c} 2 \\ 2/3 \end{array}\right)
+=
+\left(\begin{array}{r} 0 \\ 0 \end{array}\right).
+\tag{\bf{2P}}
+\end{equation}
+Therefore
+\begin{equation}
+(a_1, a_2) = -1/\pi \cdot (2, 2/15).
+\tag{\bf{1P}}
+\end{equation}
+
+\item
+The corresponding Ritz matrix is
+\begin{equation}
+R
+=
+\left[\begin{array}{rrr} 2 & -2 & 0 \\ -2 & 4 & -2  \\ 0 & -2 & 2 \end{array}\right],
+\tag{\bf{1P}}
+\end{equation}
+whereas the Ritz vector is
+\begin{equation}
+\underline{r}
+=
+(*,1/4,*).
+\tag{\bf{1P}}
+\end{equation}
+The vector of the knot variable is
+\[
+\underline{a} = (1, a, 2).
+\]
+Reduction of the Ritz system leads to  
+\[
+4 \cdot a - 6 = 1/4.
+\]
+Therefore we have
+\begin{equation}
+\tilde u(1/2) = 25/16.
+\tag{\bf{1P}}
+\end{equation}
+\end{teilaufgaben}
+\end{loesung}

@@ -1,6 +1,6 @@
 The domain $\Omega=\{(x,y)\in \mathbb{R}^2 \mid 0<x<1\wedge 0<y<1\}$
 in the coordinate system of figure~\ref{40000033:domain} is a rhombus.
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \begin{tikzpicture}[>=latex,thick,scale=4]
 \fill[color=red!20] (0,0) -- (1,0) -- +(60:1) -- (60:1) -- cycle;
@@ -73,7 +73,7 @@ X''(x)
 &
 Y''(x)
 &=
-(-\lambda + \mu^2)Y(x)
+(\lambda + \mu^2)Y(x)
 \intertext{with solutions}
 X(x)
 &=
@@ -81,14 +81,15 @@ X(x)
 &
 Y(y)
 &=
-\sin \!\sqrt{\lambda-\mu^2} y
+\sin \!\sqrt{\lambda+\mu^2} y
 \end{align*}
 From the homogeneous boundary conditions we conclude that
 $0=X(1) = \sin\mu$ which implies $\mu = \pi k$ with $k\in\mathbb{Z}$.
-Similarly, $\pi^2 l=\!\sqrt{\lambda-mu^2}=\!\sqrt{\lambda-\pi^2 k^2}\in\mathbb{N}$.
+Similarly,
+$\pi l=\!\sqrt{\lambda+\mu^2}=\!\sqrt{\lambda+\pi^2 k^2}\in\mathbb{N}$.
 This means that
 \[
-\lambda = \pi (k^2 +l^2).
+\lambda = -\pi^2 (k^2 +l^2).
 \]
 Put together, the solutions are
 \[

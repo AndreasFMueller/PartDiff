@@ -1,0 +1,106 @@
+(2 points + 4 points)
+\begin{teilaufgaben}
+\item
+The function $u(x,t)$ is defined on the upper half plane
+$\Omega = (-\infty, \infty) \times [0,\infty)$.
+
+The function $u(x,t)$ satisfies in $\Omega$ the equation
+\[
+u_{x}(x,t) + u_{t}(x,t) = 0
+\]
+and $u(x,0) = x^3+17$ on the boundary of $\Omega$. 
+
+Determine an approximate value for $u(0,1)$.
+
+Use the scheme of Lax-Wendroff with $\Delta x = 0.1$ and $\Delta t = 0.1.$
+
+\item
+The function $u(x,t)$ is defined on the strip
+$\Omega = [0, 3] \times [0,\infty)$.
+
+The function $u(x,t)$ satisfies in $\Omega$ the equation
+\[
+u_{xx}(x,t) = u_{tt}(x,t)
+\]
+and  $u(0,t) = 0$, $u(3,t) = t$ on the boundary of $\Omega$. 
+
+The function $u(x,t)$ also satisfies the initial conditions
+\[
+u(x,0)
+=
+0
+\qquad \text{and} \qquad
+u_t(x,0)
+=
+1/3 \cdot (x^3 - 6 \cdot x^2 + 12 \cdot x - 6).
+\]
+
+Determine approximate values for $u(1,1)$ and $u(2,1)$  
+
+Use finite differences with $\Delta x = 1$ and $\Delta t = 1/2.$
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Set
+\[
+U_{k,j} = \tilde u(k/10, j/10).
+\]
+Apply the Lax-Wendroff scheme with $r = 1$ to obtain:
+\begin{equation}
+U_{k+1,j+1} = U_{k,j}.
+\tag{\textbf{1P}}
+\end{equation}
+Therefore:
+\begin{equation}
+\tilde u(0,1) = 17 + (-1)^3 = 16.
+\tag{\textbf{1P}}
+\end{equation}
+
+\item
+We have $f(x) = 0$ and $g(x) = 1/3 \cdot (x^3 - 6 \cdot x^2 + 12 \cdot x - 6)$.
+Hence for the first time step we have by Taylor
+\begin{equation}
+\tilde u(1, 1/2)
+=
+1/3 \cdot 1 \cdot 1/2 = 1/6
+\qquad
+\text{and}
+\qquad
+\tilde u(2, 1/2) = 1/3 \cdot 2 \cdot 1/2 = 1/3.
+\tag{\textbf{1P}}
+\end{equation}
+
+For the second time step we use the leapfrog scheme with $r = 1/2$. We have
+ 
+\[
+\tilde u(1, 1)
+=
+1/4 \cdot \tilde u(0, 1/2) + 6/4 \cdot \tilde u(1,1/2) + 1/4
+\cdot 
+\tilde u(2, 1/2) - \tilde u(1,0) 
+\]
+and
+\begin{equation}
+\tilde u(2, 1)
+=
+1/4 \cdot \tilde u(1, 1/2)
++
+6/4 \cdot \tilde u(2,1/2)
++
+1/4 \cdot  \tilde u(3, 1/2)
+-
+\tilde u(2,0).
+\tag{\textbf{2P}}
+\end{equation}
+This leads to
+\begin{equation}
+\tilde u(1, 1) = 1/3, \quad \tilde u(2, 1) = 2/3
+\tag{\textbf{1P}}
+\end{equation}
+
+\end{teilaufgaben}
+\end{loesung}
+
+

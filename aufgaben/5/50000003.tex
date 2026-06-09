@@ -20,7 +20,7 @@ gewöhnliche Differentialgleichung über.
 \begin{loesung}
 Die Laplacetransformierte ist
 \[
-{\cal L}u(s,x)=\int_0^{\infty}e^{-ts}u(t,x)\,dt
+\mathscr{L}u(s,x)=\int_0^{\infty}e^{-ts}u(t,x)\,dt
 \]
 Die zweite Ableitung transformiert sich wie folgt mit Hilfe
 partieller Integration
@@ -57,20 +57,20 @@ u(0,x)
 \\
 &=
 -\frac{\partial u}{\partial t}(0,x)
--s\,u(0,x)+s^2{\cal L}u(s,x)
+-s\,u(0,x)+s^2\mathscr{L}u(s,x)
 \end{align*}
 Der Term mit der ersten Ableitung fällt nach Voraussetzung weg.
-Die Differentialgleichung für ${\cal L}u$ wird dann
+Die Differentialgleichung für $\mathscr{L}u$ wird dann
 \begin{align*}
-\frac1{1-x^2}\frac{\partial^2}{\partial x^2}{\cal L}u
-+s(1-x^2)-s^2{\cal L}u(s,x)
+\frac1{1-x^2}\frac{\partial^2}{\partial x^2}\mathscr{L}u
++s(1-x^2)-s^2\mathscr{L}u(s,x)
 &=0
 \\
-\frac1{1-x^2}\frac{\partial^2}{\partial x^2}{\cal L}u
--s^2{\cal L}u(s,x)
+\frac1{1-x^2}\frac{\partial^2}{\partial x^2}\mathscr{L}u
+-s^2\mathscr{L}u(s,x)
 &=-s(1-x^2)
 \end{align*}
 Dies ist für jeden Wert von $s$ eine gewöhnliche Differentialgleichung
-für ${\cal L}u$ in der unabhängigen Variablen $x$.
-Aus der Randbedingung folgt ausserdem ${\cal L}u(s,\pm 1)=0$.
+für $\mathscr{L}u$ in der unabhängigen Variablen $x$.
+Aus der Randbedingung folgt ausserdem $\mathscr{L}u(s,\pm 1)=0$.
 \end{loesung}
