@@ -1,7 +1,8 @@
 On the domain of figure~\ref{40000029:domain}, the differential equation
-\[
+\begin{equation}
 \Delta u = \lambda u
-\]
+\label{40000029:evproblem}
+\end{equation}
 is to be solved with homogeneous boundary conditions.
 Reduce this problem to the solution of two ordinary differential equations
 with boundary conditions and solve at least one of them.
@@ -59,11 +60,11 @@ Using the ansatz, we get
 +
 \frac{1}{r^2}R(r)\Phi''(\varphi)
 =
--\lambda R(r)\Phi(\varphi)
+\lambda R(r)\Phi(\varphi)
 \]
 Dividing by $u(r,\varphi)$ and multiplying by $r^2$ gives
 \[
-\frac{rR'(r)+r^2R''(r)+\lambda r^2R(r)}{R(r)}
+\frac{rR'(r)+r^2R''(r)-\lambda r^2R(r)}{R(r)}
 +
 \frac{\Phi''(\varphi)}{\Phi(\varphi)}
 =
@@ -71,14 +72,14 @@ Dividing by $u(r,\varphi)$ and multiplying by $r^2$ gives
 \]
 This allows to separate the variables $r$ and $\varphi$, giving
 \[
-\frac{rR'(r)+r^2R''(r)+\lambda r^2R(r)}{R(r)}
+\frac{rR'(r)+r^2R''(r)-\lambda r^2R(r)}{R(r)}
 =-
 \frac{\Phi''(\varphi)}{\Phi(\varphi)}
 \;\Rightarrow
 \left\{
 \;
 \begin{aligned}
-rR'(r)+r^2R''(r)+\lambda r^2R(r) &= \mu R(r) \\
+rR'(r)+r^2R''(r)-\lambda r^2R(r) &= \mu R(r) \\
 \Phi''(\varphi) &= -\mu \Phi(\varphi).
 \end{aligned}
 \right.
@@ -98,14 +99,17 @@ A \cos\sqrt{\mu}\varphi + B \sin\sqrt{\mu}\varphi
 C\sin(\sqrt{\mu}\varphi + \delta).
 \]
 At the boundary $\varphi=\frac{\pi}4$, we have
-\[
+\begin{equation}
 0
 =
 \Phi\biggl(\frac{\pi}4\biggr)
 =
 C\sin\biggl(\sqrt{\mu}\frac{\pi}4+\delta\biggr)
-\]
+\label{40000029:bc1}
+\end{equation}
 with the solution $\delta=-\sqrt{\mu}\frac{\pi}4$.
+Other solutions of \eqref{40000029:bc1} lead to the linearly
+dependent solution function und need therefore not be considered.
 
 At the boundary $\varphi=\frac{3\pi}4$ we get
 \[
@@ -122,11 +126,19 @@ C\sin\sqrt{\mu}\frac{\pi}{2}
 \mu = 4k^2,\;k\in\mathbb{N}.
 \]
 This means that $R_k(r)$  must be a solution
-\[
-r^2R''(r) + rR'(r) +(\lambda r^2-4k^2) R(r) = 0.
-\]
+\begin{equation}
+r^2R''(r) + rR'(r) +(-\lambda r^2-4k^2) R(r) = 0.
+\label{40000029:bessel}
+\end{equation}
 This is the Bessel equation which can be solved using Bessel functions.
 \end{loesung}
+
+\begin{diskussion}
+The eigenvalue problem \eqref{40000029:evproblem} is often formulated with
+a negative sign for $\lambda$, which makes the negative sign in front of
+$\lambda$ in \eqref{40000029:bessel} disappear, leading to a more common
+form of the Bessel-equation.
+\end{diskussion}
 
 \begin{bewertung}
 Separation ansatz ({\bf A}) 1 point,
