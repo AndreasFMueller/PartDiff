@@ -22,7 +22,7 @@ with boundary conditions
 \left.
 \begin{aligned}
 u(x,0)                             &= -1      &\qquad &\forall x>0\\
-\frac{\partial u}{\partial y}(x,0) &= e^{-x}  &\qquad &\forall x>0\\
+%\frac{\partial u}{\partial y}(x,0) &= e^{-x}  &\qquad &\forall x>0\\
 u(0,y)                             &= \sin(y) &\qquad &0<y<2\pi   \\
 \frac{\partial u}{\partial x}(0,y) &= \cos(y) &\qquad &0<y<2\pi
 \end{aligned}
@@ -77,14 +77,15 @@ the first two boundary conditions in \eqref{50000034:boundary}
 -\frac1s
 &&\Rightarrow&
 U_s(0)&=-\frac{1}{s}
-\\
-\frac{\partial \mathscr{L}u}{\partial y}(s,0)
-&=
-\frac{1}{s+1}
-&&\Rightarrow&
-U'_s(0)
-&=
-\frac{1}{1+s}.
+.
+%\\
+%\frac{\partial \mathscr{L}u}{\partial y}(s,0)
+%&=
+%\frac{1}{s+1}
+%&&\Rightarrow&
+%U'_s(0)
+%&=
+%\frac{1}{1+s}.
 \end{align*}
 As the boundary conditions uniquely determine the function $U_s(y)$,
 there can only be a single solution for $u(x,y)$.
