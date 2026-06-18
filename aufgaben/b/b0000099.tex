@@ -1,0 +1,98 @@
+(2 points + 4 points)
+\begin{teilaufgaben}
+\item
+The function $u(x,t)$ is defined on the upper half plane
+$\Omega = (-\infty, \infty) \times [0,\infty)$.
+
+The function $u(x,t)$ satisfies in $\Omega$ the equation
+\[
+u_{x}(x,t) + u_{t}(x,t) = 0 
+\]
+and $u(x,0) = x$ on the boundary of $\Omega$. 
+
+Determine an approximate value for $u(0,0.2)$.
+
+Use the scheme of Lax-Wendroff with $\Delta x = 0.12$ and $\Delta t = 0.10.$
+
+\item
+The function $u(x,t)$ is defined on the strip
+$\Omega = [-1, 1] \times [0,\infty)$.
+
+The function $u(x,t)$ satisfies in $\Omega$ the equation
+\[
+u_{xx}(x,t) = u_{tt}(x,t)
+\]
+and  $u(-1,t) = u(1,t) = 0$ on the boundary of $\Omega$. 
+
+The function $u(x,t)$ also satisfies the initial conditions
+\[
+u(x,0) = 1-x^4 \qquad\text{and}\qquad u_t(x,0) = 0.
+\]
+
+Determine approximate values for $u(-1/2,1/2)$, $u(0,1/2)$ and $u(1/2,1/2)$.
+
+Use finite differences with $\Delta x = 1/2$ and $\Delta t = 1/4.$
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Set
+\[
+U_{k,j} = \tilde u(0.12 \cdot k , 0.10 \cdot j).
+\]
+Apply the Lax-Wendroff scheme with $r = 5/6$ to obtain:
+\begin{equation}
+U_{k,j+1}
+=
+55/72 \cdot U_{k-1,j} + 22/72 \cdot U_{k,j} - 5/72 \cdot U_{k+1,j}.
+\tag{{\bf 1P}}
+\end{equation}
+Therefore:
+\[
+\tilde u(-0.12,0.1) = -0.22,
+\qquad
+\tilde u(0,0.1) = -0.1,
+\qquad
+\tilde u(0.12,0.1) = 0.02
+\]
+and
+\begin{equation}
+\tilde u(0,0.2) = -0.2.
+\tag{{\bf 1P}}
+\end{equation}
+
+\item
+We have $f(x) = 1-x^4$ and $g(x) = 0$.
+Hence for the first time step we have by Taylor
+\[
+u(x,1/4) \approx (1-x^4) + (-12 \cdot x^2) \cdot 1/32.
+\]
+This leads to 
+\begin{equation}
+\tilde u(-1/2, 1/4)
+=
+27/32, \qquad \tilde u(0, 1/4) = 1, \qquad \tilde u(0, 1/4) = 27/32. \qquad
+\tag{{\bf 1P}}
+\end{equation}    
+For the second time step we use the leapfrog scheme with $r = 1/2$.
+In this way we obtain the formula for $\tilde u(k \cdot 1/2, 1/2)$
+(with $k = -1,0,1$):
+\begin{equation}
+1/4 \cdot \tilde u((k-1) \cdot 1/2, 1/4)
++ 6/4 \cdot \tilde u(k \cdot 1/2,1/4)
++ 1/4 \cdot  \tilde u((k+1) \cdot 1/2, 1/4)
+- \tilde u(k \cdot 1/2,0)
+\tag{{\bf 1P}}
+\end{equation}
+Finally we have
+\begin{equation}
+\tilde u(-1/2, 1/2)
+=
+\tilde u(1/2, 1/2) = 37/64, \qquad
+\tilde u(0, 1/2) = 59/64.
+\tag{{\bf 2P}}
+\end{equation}
+\end{teilaufgaben}
+\end{loesung}
+

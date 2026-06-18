@@ -1,0 +1,69 @@
+%
+% graph.tex -- Template für standalone TIKZ Bilder
+%
+% (c) 2019 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\documentclass[tikz,12pt]{standalone}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\usetikzlibrary{arrows,intersections,math,calc}
+\definecolor{darkred}{rgb}{0.8,0,0}
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+\def\Cminus{0.5348}
+\def\Cplus{-1.2279}
+\def\a{0.785398}
+\begin{document}
+\def\skala{4}
+\begin{tikzpicture}[>=latex,thick,scale=\skala,
+declare function = {
+w(\X) = 180 * \X / 3.1415;
+fplus(\X,\C)  = -ln(cos(w(\X)))+0.5*ln((1+sin(w(\X)))/(1-sin(w(\X))))+(\C);
+fminus(\X,\C) = -ln(cos(w(\X)))-0.5*ln((1+sin(w(\X)))/(1-sin(w(\X))))+(\C);
+}]
+
+\fill[color=gray!20] (0,-1.5) rectangle (1,1);
+\draw[color=gray,line width=0.2pt] (1,-1.5) -- (1,1);
+\node[color=white] at (0.6,-1.1) [scale=6] {$\Omega$};
+\node[color=white] at (0.6,0.6) [scale=6] {$\Omega$};
+
+\fill[color=blue!10]
+	plot[domain=0:\a,samples=20] (\x,{fplus(\x,\Cplus)})
+	--
+	plot[domain=0:\a,samples=20] ({\a-\x},{fminus((\a-\x),\Cminus)})
+	--
+	cycle;
+\draw[color=blue]
+	plot[domain=0:\a,samples=20] (\x,{fplus(\x,\Cplus)})
+	--
+	plot[domain=0:\a,samples=20] ({\a-\x},{fminus((\a-\x),\Cminus)});
+
+\begin{scope}
+\clip (0,-1.5) rectangle (1.1,1.0);
+\foreach \c in {-3.6,-3.4,...,1.0}{
+	\draw[color=darkgreen]
+		plot[domain=0:1.1,samples=100] ({\x},{fplus(\x,\c)});
+}
+\foreach \c in {-1.4,-1.2,...,1.6}{
+	\draw[color=darkred]
+		plot[domain=0:1.1,samples=100] ({\x},{fminus(\x,\c)});
+}
+\end{scope}
+
+\draw[->] (-0.02,0) -- (1.4,0) coordinate[label={$x$}];
+\draw[->] (0,-1.52) -- (0,1.06) coordinate[label={left:$y$}];
+\node at (-0.02,0) [left] {$0$};
+
+\fill[color=blue] (\a,0) circle[radius=0.0125];
+\node[color=blue] at (\a,0) [above right] {$P$};
+
+\fill[color=blue] (0,\Cplus) circle[radius=0.0125];
+\node[color=blue] at (0,\Cplus) [left] {$C_+$};
+\fill[color=blue] (0,\Cminus) circle[radius=0.0125];
+\node[color=blue] at (0,\Cminus) [left] {$C_-$};
+
+\end{tikzpicture}
+\end{document}
+

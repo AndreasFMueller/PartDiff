@@ -1,0 +1,229 @@
+Consider the partial differential equation
+\begin{equation}
+\frac{\partial^2 u}{\partial x^2}
++
+2\tan x
+\frac{\partial^2 u}{\partial x\,\partial y}
+-
+\frac{\partial^2 u}{\partial y^2}
+=
+0
+\label{90000037:pde}
+\end{equation}
+on the domain
+\begin{equation}
+\Omega
+=
+\{
+(x,y)
+\mid
+0<x<1
+\}.
+\end{equation}
+\begin{teilaufgaben}
+\item
+Is the differential operator in the equation \eqref{90000037:pde}
+elliptic, parabolic or hyperbolic?
+\item
+Is the origin contained in the interval of the $y$-axis that is in the past
+of the point $P=(\frac{\pi}4,0)$, if the future is in the direction
+of the $x$-axis?
+\end{teilaufgaben}
+
+\begin{hinweis}
+To answer the question in b), it is not necessary to solve a differential
+equation.
+A discussion of the sign of the slopes should be sufficient.
+In case a solution needs to be computed,
+the following integrals may turn out to be useful:
+\begin{align*}
+\int \tan x\,dx &= -\log\cos x + C
+\\
+\int \frac{dx}{\cos x} &= \frac12\log\frac{1+\sin x}{1-\sin x} + C
+=
+\operatorname{artanh}\sin x + C
+\end{align*}
+in the relevant $x$-intervals.
+\end{hinweis}
+
+\begin{loesung}
+\begin{figure}
+\centering
+\includeagraphics[]{graph.pdf}
+\caption{Characteristics through the point $P=(\frac{\pi}4,0)$ for
+the partial differential equation \eqref{90000037:pde}.
+\label{90000037:graph}}
+\end{figure}
+\begin{teilaufgaben}
+\item
+The symbol matrix of the differential operator of
+\eqref{90000037:pde}
+is
+\begin{align*}
+A
+=
+\begin{pmatrix}
+   1   & \tan x \\
+\tan x &  -1
+\end{pmatrix}
+\qquad\Rightarrow\qquad
+\det A
+&=
+-1 - \tan^2 x
+=
+-(1+\tan^2x)
+\\
+&=
+\displaystyle
+-\frac{\sin^2x +\cos^2 x}{\cos^2x}
+=
+-
+\frac{1}{\cos^2x}
+<
+0.
+\end{align*}
+The operator is thus hyperbolic.
+\item
+The differential equation for the characteristisc is
+\[
+\dot{y}^2 - 2\tan x\cdot \dot{x}\dot{y} - \dot{x}^2 = 0.
+\]
+Dividing by $\dot{x}$ gives the easier diffrential equation
+\[
+(y')^2 - 2\tan x\cdot y' - 1 = 0
+\]
+which can be solved using the quadratic formula
+\begin{equation}
+y'
+=
+\tan x \pm\!\sqrt{\tan^2 x+1}.
+\label{90000037:dgl}
+\end{equation}
+Note that the right hand side does not depend on $y$, so the differential
+equation can be solved by a simple integration.
+The solutions are functions
+\[
+y_{\pm}(x)
+=
+\int
+\tan x \pm\!\sqrt{\tan^2 x+1}
+\,dx
++ C.
+\]
+Since for $x\in [0,1]$ we have
+\[
+\renewcommand{\arraycolsep}{2pt}
+\begin{array}{rcccl}
+y_+'(x) &=& \tan x +\!\sqrt{\tan^2 x+1} &>& 0
+\\
+y_-'(x) &=& \tan x -\!\sqrt{\tan^2 x+1} &<& 0,
+\end{array}
+\]
+we conclude that the slope of the $y_+$ curve is positive,
+while the slope of the $y_-$-curve is always negative.
+Thus the $y_-$-curve through $P$ starts on the positive $y$-axis
+and slopes down through the first quadrant,
+while the $y_+$-curve through $P$ starts on the negative $y$-axis
+and slopes up throught the fourth quadrant.
+In particular, the origin is between those two characteristics
+and it can in fact influence the value of the solution in $P$.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+\begin{diskussion}
+To decide whether the origin can influence the point $(\frac{\pi}4,0)$,
+we did not need to determine the characteristics.
+But using the integral formulas given in the hint, it is in fact possible
+to give closed form expressions for the characteristics.
+
+The square root on the right hand side of
+\eqref{90000037:dgl}
+can be written as
+\begin{align*}
+\!\sqrt{\tan^2 x+1}
+&=
+\!\sqrt{
+\frac{\mathstrut\smash{\cos\!\mathstrut^2\,x+\sin\!\mathstrut^2\,x}}{\cos^2x}
+}
+=
+\!\sqrt{\frac{1}{\cos^2x}}
+=
+\frac{1}{\cos x},
+\end{align*}
+since in $\Omega$ we have $\cos x > 0$.
+Combining this with \eqref{90000037:dgl} gives the solution
+\begin{align}
+y(x)
+&=
+\int \tan x\pm\frac{1}{\cos x}\,dx
+=
+-\log\cos x \pm \log\frac{1 + \sin x}{1 - \sin x} + C.
+\label{90000037:solution}
+\end{align}
+
+We can even to determine the value of $C$ for the characteristics
+that pass through the point $(\frac{\pi}{4},0)$.
+For this we need to substitute $x=\frac{\pi}{4}$ into the
+right hand side of \eqref{90000037:solution}
+and equate it to $0$.
+Since
+\[
+\sin\frac{\pi}4=\cos\frac{\pi}4=\frac{\!\sqrt{2}}{2},
+\]
+this gives
+\begin{align*}
+0
+&=
+-\log\cos \frac{\pi}4
+\pm
+\log\frac{1+\sin\frac{\pi}4}{1-\sin\frac{\pi}4}
++
+C_\pm
+\\
+C_\pm
+&=
+\log\frac{\!\sqrt{2}}{2}
+\mp
+\log\frac{1+\frac{\!\sqrt{2}}{2}}{1-\frac{\!\sqrt{2}}2}
+=
+-\log\!\sqrt{2}
+\mp
+\log\frac{2+\!\sqrt{2}}{2-\!\sqrt{2}}
+=
+-\log\!\sqrt{2}
+\mp
+\log\frac{\!\sqrt{2}+1}{\!\sqrt{2}-1}
+\\
+&=
+\left\{
+\begin{aligned}
+-1.22794717729951567993\phantom{.}
+\\
+0.53479999673957037053.
+\end{aligned}
+\right.
+\end{align*}
+These are also the $y$-values at which the characteristics through
+$P$ intersect the $y$-axis.
+The past of the point $P$ is indicated in blue in 
+figure~\ref{90000037:graph}.
+
+Finally note that the product of the two slopes is by Vieta's theorem
+\[
+y'_+\cdot y'_- = -1,
+\]
+so the characteristics always intersect orthogonally.
+This also is clearly visible in figure~\ref{90000037:graph}.
+\end{diskussion}
+
+\begin{bewertung}
+Symbol matrix ({\bf A}) 1 point,
+operator is hyperbolic ({\bf H}) 1 point,
+differential equation of characteristics ({\bf D}) 1 point,
+factorization or other method to convert them into two first order
+differential equations ({\bf F}) 1 point,
+characteristic curves or slopes ({\bf C}) 1 point,
+is the point $P$ in the domain of influence ({\bf P}) 1 point.
+\end{bewertung}
+

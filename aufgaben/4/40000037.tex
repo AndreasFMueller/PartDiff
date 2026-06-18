@@ -1,0 +1,174 @@
+On the domain
+$\Omega = \{ (\varphi,r) \mid 0\le \varphi < \pi \wedge 1<r<2 \}$
+in polar coordinates,
+two nonegative functions $f(r)$ and $g(r)$ are given.
+The partial differential equation
+\begin{equation}
+\frac{\partial^2 u}{\partial r^2}
++
+f(r)
+\frac{\partial u}{\partial r}
++
+g(r)
+\frac{\partial^2 u}{\partial \varphi^2}
+=
+\lambda u
+\label{40000037:pde}
+\end{equation}
+is to be solved with homogeneous boundary conditions.
+Convert this equation into two ordinary differential equations with
+appropriate boundary conditions and solve at least one of them.
+
+\begin{loesung}
+The domain is a ``rectangle'' in polar coordinates, so we use 
+the separation ansatz $u(\varphi,r) = R(r) \Phi(\varphi)$ and
+substitute it into the differential equation \eqref{40000037:pde}
+giving
+\begin{align*}
+R''(r)\Phi(\varphi)
++
+f(r) R'(r)\Phi(\varphi)
++
+g(r) R(r)\Phi''(\varphi)
+&=
+\lambda R(r) \Phi(\varphi).
+\intertext{Dividing by $R(r)\Phi(\varphi)$ gives}
+\frac{R''(r)}{R(r)}
++
+f(r) \frac{R'(r)}{R(r)}
++
+g(r) \frac{\Phi''(\varphi)}{\Phi(\varphi)}
+&=
+\lambda.
+\end{align*}
+To separate variables, we need to devide by $g(r)$, which does not
+cause any problems because $g(r)>0$.
+Moving $\varphi$-terms to the right hand side gives the equation
+\begin{equation}
+\frac{1}{g(r)}
+\biggl(
+\frac{R''(r)}{R(r)}
++
+f(r)
+\frac{R'(r)}{R(r)}
+-
+\lambda
+\biggr)
+=
+-\frac{\Phi''(\varphi)}{\Phi(\varphi)}.
+\label{40000037:sepeq}
+\end{equation}
+The left hand side only depends on $r$, the right hand side only
+on $\varphi$.
+Therefore both sides are constant, we call this constant $\mu^2$
+and separate
+\eqref{40000037:sepeq}
+and get
+\begin{align*}
+\frac{1}{g(r)}
+\biggl(
+\frac{R''(r)}{R(r)}
++
+f(r)
+\frac{R'(r)}{R(r)}
+-
+\lambda
+\biggr)
+&=
+\mu^2
+&&\text{and}
+&
+\mu^2
+&=
+-\frac{\Phi''(\varphi)}{\Phi(\varphi)}
+\intertext{or}
+R''(r)
++
+f(r)R'(r)
+-
+(
+\lambda
++
+\mu^2 g(r)
+)
+R(r)
+&=
+0
+&&\text{and}
+&
+\Phi''(\varphi)&=-\mu^2\Phi(\varphi).
+\end{align*}
+Appropriate boundary conditions are
+\[
+\begin{aligned}
+R(1) &= 0 \\
+R(2) &= 0 
+\end{aligned}
+\qquad\text{and}\qquad
+\begin{aligned}
+ \Phi(0)   &= 0 \\
+ \Phi(\pi) &= 0.
+\end{aligned}
+\]
+The equation for $R(r)$ can obviously not be solved without additional
+knowledge of the functions $f(r)$ und $g(r)$, but the equation for
+$\Phi(\varphi)$ is a harmonic oscillator equation that can be solved
+by functions of the form
+\[
+\Phi(\varphi)
+=
+A\cos\mu \varphi + B\sin\mu\varphi
+\]
+with frequency $\mu$.
+The boundary conditions imply
+\[
+\renewcommand{\arraycolsep}{1.5pt}
+\begin{array}{lrccclcrclcrcl}
+\text{at $\varphi=0$:}\quad&
+0 &=& \Phi(0)   &=& A
+&\quad\Rightarrow\quad&
+A&=&0
+\\
+\text{at $\varphi=\pi$:}\quad&
+0 &=& \Phi(\pi) &=& A\cos\mu\pi + B \sin\mu\pi
+&\quad\Rightarrow\quad&
+B\sin\mu\pi &=& 0
+&\quad\Rightarrow\quad&
+\mu\pi &=& k\pi,
+\end{array}
+\]
+where $k\in\mathbb{Z}$.
+Therefore the possible values for $\mu$ are $\mu=k\in\mathbb{Z}$
+with solutions $\Phi_k(\varphi)=\sin k\varphi$.
+\end{loesung}
+
+\begin{diskussion}
+To find a complete solution, the equation
+\[
+R''(r) + f(r)R'(r) - (\lambda+k^2g(r)) R(r) = 0
+\]
+needs to be solved with boundary conditions $R(1)=R(2)=0$.
+For each $k$, this will only be possible for a discrete set of
+values $\lambda_{lk}$ for the parameter $\lambda$, with
+$l\in\mathbb{N}$, and will give solution functions $R_{lk}(r)$.
+The eigenfunctions of the differential operator in
+\eqref{40000037:pde}
+for eigenvalue $\lambda_{lk}$ are thus
+\[
+u_{lk}(r,\varphi)
+=
+R_{lk}(r)\Phi_k(\varphi)
+=
+R_{lk}(r)\sin k\varphi.
+\]
+\end{diskussion}
+
+\begin{bewertung}
+Product ansatz ({\bf A}) 1 point,
+separation of variables ({\bf S}) 1 point,
+two separated differential equations ({\bf D}) 1 point,
+boundary conditions ({\bf B}) 1 point,
+solutions of the equation for $\Phi(\varphi)$ ({\bf L}) 1 point,
+restriction of the value of $\mu$ from boundary conditions ({\bf R}) 1 point.
+\end{bewertung}
+
