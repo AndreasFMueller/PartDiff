@@ -178,7 +178,7 @@ von $Lu=0$ mit Randbedingungen $u_{|\partial\Omega}=0$. Nach Satz
 \ref{maximumprinzip} nimmt $u$ sein Maximum und sein Minimum auf dem Rand an,
 es gilt
 also $0\le u\le 0$ in ganz $\Omega$.
-Daher ist $u=0$ oder $u_1=u-2$,
+Daher ist $u=0$ oder $u_1=u_2$,
 zwei verschiedene Lösungen kann es also nicht geben.
 \end{proof}
 
@@ -261,7 +261,7 @@ $u''(x)=F'(x)=f(x)$. Trotzdem ist $u$ noch keine Lösung, denn
 sie erfüllt die Randbedingungen noch nicht.
 
 \subsection{Lineare Gleichungen}
-Man kann sich vorstellen, dass durch Diskretisation aus der 
+Man kann sich vorstellen, dass durch Diskretisierung aus der
 Differentialgleichung $u''=f$ auf dem Interval $[a,b]$ ein lineares Gleichungssystem
 $Au=f$ entsteht. Die Komponenten der Vektoren $u$ und $f$ sind dabei
 Werte von $u$ und $f$ an ausgewählten Punkten. Und es ist nicht
@@ -295,7 +295,7 @@ wieder zu einer grossen Summe
 \sum_{i}K(x,a_i)g(a_i),
 \]
 wobei die Punkte $a_i$ auf dem Rand liegen. In der Grenze erwartet man
-als für die Randwerte einen zweiten Beitrag
+also für die Randwerte einen zweiten Beitrag
 \[
 \int_{\partial\Omega}K(x,\xi)g(\xi)\,d\xi
 \]
@@ -1018,8 +1018,8 @@ Lu=\biggl(\sum_{i,j}a_{ij}\frac{\partial^2}{\partial x_i\partial x_j}
 zweiter Ordnung konstruiert werden.
 
 \subsection{Abstrakte Formulierung}
-Das in diesem Kapitel erreichte kann auch wie folgt formuliert werden.
-Gegeben war elliptischen Operator $L$ und ein weiterer Operator $B$,
+Das in diesem Kapitel Erreichte kann auch wie folgt formuliert werden.
+Gegeben war ein elliptischer Operator $L$ und ein weiterer Operator $B$,
 der aus der Funktion $u$ die relevanten Randwerte ermittelte. $Bu$
 ist ein Funktion auf dem Rand $\partial \Omega$ des Gebietes. 
 Das Problem
@@ -1028,7 +1028,7 @@ Lu&=f(x)&&x\in\Omega
 \\
 Bu&=g(x)&&x\in\partial\Omega
 \end{align*}
-konnte mit Hilfe einer Integralformel
+konnte mit Hilfe der Integralformel
 \[
 u(x)=\int_\Omega G(x,\xi)f(\xi)\,d\mu(\xi)+\int_{\partial \Omega}K(x,\xi)g(\xi)\,d\mu(\xi)
 \]
