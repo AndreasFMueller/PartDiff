@@ -66,17 +66,19 @@ outward, but these forces don't necessarily have the same direction,
 resulting in a vertical force component.
 This component turns out to be
 \[
-F\frac{\partial u}{\partial x}(x+\Delta x)-F\frac{\partial u}{\partial x}(x).
+F\frac{\partial u}{\partial x}(x+\Delta x,t)-F\frac{\partial u}{\partial x}(x,t).
 \]
 Since the acceleration of the string segment is
 $\displaystyle\frac{\partial^2u}{\partial t^2}$
 we obtain the equation of motion
 \begin{align*}
-\mu\Delta x\frac{\partial^2u}{\partial t^2}(x)&=
-F\frac{\partial u}{\partial x}(x+\Delta x)-F\frac{\partial u}{\partial x}(x)\\
+\mu\Delta x\frac{\partial^2u}{\partial t^2}(x,t)&=
+F\frac{\partial u}{\partial x}(x+\Delta x,t)
+-
+F\frac{\partial u}{\partial x}(x,t)\\
 \Rightarrow\qquad
-\frac{\mu}{F}\frac{\partial^2u}{\partial t^2}(x)&=
-\frac1{\Delta x}\left(\frac{\partial u}{\partial x}(x+\Delta x)-\frac{\partial u}{\partial x}(x)\right)
+\frac{\mu}{F}\frac{\partial^2u}{\partial t^2}(x,t)&=
+\frac1{\Delta x}\left(\frac{\partial u}{\partial x}(x+\Delta x,t)-\frac{\partial u}{\partial x}(x,t)\right)
 \end{align*}
 By going to the limit 
 $\Delta x\to 0$ we obtain the partial differential equation
