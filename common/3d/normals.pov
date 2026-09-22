@@ -33,13 +33,15 @@ sphere {
 	}
 }
 
+#declare normalcolor = rgb<0,0.6,0>;
+
 #declare a = 0;
 #while (a < 2 * pi)
 
 	cylinder {
 		<0, 0, 0>, <0, 1, 0>, 0.05
 		pigment {
-			color rgb <0.6, 0.6, 1>
+			color normalcolor
 		}
 		matrix <cos(a), -sin(a), 0,
 			sin(a),  cos(a), 0,
@@ -49,7 +51,7 @@ sphere {
 	cone {
 		<0, 1, 0>, 0.08, <0, 1.2, 0>, 0
 		pigment {
-			color rgb <0.6, 0.6, 1>
+			color normalcolor
 		}
 		matrix <cos(a), -sin(a), 0,
 			sin(a),  cos(a), 0,

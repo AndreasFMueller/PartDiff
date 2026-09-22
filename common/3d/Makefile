@@ -124,4 +124,13 @@ kugel.jpg:	kugel.png Makefile
 	convert -extract 2860x2180+392+0 kugel.png -scale 50% \
 			-density 300 -units PixelsPerInch kugel.jpg
 
-
+normals.png:	normals.pov
+	povray $(povrayoptions) -W1920 -H1080 -Onormals.png normals.pov
+normals.jpg:	normals.png Makefile
+	magick -extract 1300x810+270+100 normals.png \
+		-density 300 -units PixelsPerInch normals.jpg
+normplanes.png:	normplanes.pov
+	povray $(povrayoptions) -W1920 -H1080 -Onormplanes.png normplanes.pov
+normplanes.jpg:	normplanes.png Makefile
+	magick -extract 1340x790+230+170 normplanes.png \
+		-density 300 -units PixelsPerInch normplanes.jpg
