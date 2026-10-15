@@ -15,13 +15,13 @@ least we can decide whether the solution is uniquely determined.
 Without this assurance, we can not expect a numerical method to
 return a stable solution.
 
-\subsection{Laplace equation}
+\subsection{Poisson and Laplace equations}
 To better understand the properties of solutions of elliptic linear
-partial differential equations, we study the Laplace equation
+partial differential equations, we study the Poisson equation
 on a domain $\Omega\subset\mathbb R^n$
 \begin{align}
 \Delta u&=f \qquad\text{in $\Omega$}
-\label{elliptisch:laplaceequation}
+\label{elliptisch:poissonequation}
 \\
 \intertext{with Dirichlet boundary conditions}
 u&=g \qquad \text{on $\partial\Omega$},
@@ -45,7 +45,7 @@ we derive that we have to proceed as follows to get a solution:
 \begin{enumerate}
 \item
 First we need a particular solution $u_p$ of the Poisson equation
-\eqref{elliptisch:laplaceequation}.
+\eqref{elliptisch:poissonequation}.
 \item
 Given $u_p$ the problem is reduced to find a solution
 $u_r=u-u_p$ of the homogeneous equation $\Delta u_r=0$ which
@@ -57,7 +57,12 @@ on $\partial\Omega$.
 \item
 Additional solutions of the problem differ from the solution
 just found by a function $u_h$ which satisfies
-$\Delta u_h=0$ in $\Omega$ and $u_h=0$ on $\partial\Omega$.
+\begin{equation}
+\Delta u_h=0 \quad \text{in $\Omega$},
+\label{elliptisch:laplacequation}
+\end{equation}
+which is called the Laplace equation,
+with homogeneous boundary conditions $u_h=0$ on $\partial\Omega$.
 \end{enumerate}
 We will show in this chapter that the solutions of such problems
 are unique and that the only possible solution is $u_h=0$.
@@ -71,6 +76,11 @@ we give them a special name:
 
 \begin{definition}
 A twice continuously differentiable function $u$ on the domain $\Omega$
-is called harmonic if $\Delta u=0$.
+is called harmonic if they are solutions of the homogeneous Poisson
+equation
+\[
+\Delta u=0,
+\]
+also called the Laplace equation.
 \end{definition}
 

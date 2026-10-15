@@ -6,16 +6,17 @@
 \section{Uniqueness of a solution}
 \rhead{Uniqueness of a solution}
 We now study the question whether the solution of the Dirichlet problem
-\eqref{elliptisch:laplaceequation} and \eqref{dirichletrandbedingung},
+\eqref{elliptisch:poissonequation} and \eqref{dirichletrandbedingung},
 if it exist, is unique.
 
 Let $u_1$ and $u_2$ be two solutions of the problem.
 The difference satisfies
 \[
-\begin{aligned}
-\Delta u&=\Delta u_1-\Delta u_2=f-f=0&&\text{in $\Omega$,}\\
-u&=u_1-u_2=g-g=0&&\text{on $\partial\Omega$,}
-\end{aligned}
+\renewcommand{\arraycolsep}{2.5pt}
+\begin{array}{rclclclcl}
+\Delta u &=& \Delta u_1-\Delta u_2 &=& f-f &=& 0 &\quad&\text{in $\Omega$,}\\
+u        &=& u_1-u_2               &=& g-g &=& 0 &     &\text{on $\partial\Omega$,}
+\end{array}
 \]
 so $u$ is a solution of the homogeneous problem with homogeneous 
 boundary conditions.
